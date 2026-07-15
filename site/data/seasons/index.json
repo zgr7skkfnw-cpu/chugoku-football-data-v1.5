@@ -83,6 +83,32 @@
           "teamStats": null
         }
       ]
+    },
+    {
+      "season": 2024,
+      "updatedAt": "2026-07-15T02:51:14.207Z",
+      "competitions": [
+        {
+          "id": "jufa-chugoku-2024-division-1",
+          "name": "2024年度 中国大学サッカーリーグ 1部",
+          "leagueName": "中国大学サッカーリーグ 1部",
+          "division": 1,
+          "stage": "regular",
+          "stageName": "リーグ戦",
+          "matches": "seasons/2024/matches.json",
+          "teamStats": "seasons/2024/team-stats.json"
+        },
+        {
+          "id": "jufa-chugoku-2024-division-2",
+          "name": "2024年度 中国大学サッカーリーグ 2部",
+          "leagueName": "中国大学サッカーリーグ 2部",
+          "division": 2,
+          "stage": "regular",
+          "stageName": "リーグ戦",
+          "matches": "seasons/2024/div2/matches.json",
+          "teamStats": "seasons/2024/div2/team-stats.json"
+        }
+      ]
     }
   ]
 }

@@ -10,6 +10,30 @@ import { buildHeadToHead } from "../build/build-head-to-head.mjs";
 import { buildSeasonIndex } from "../build/build-season-index.mjs";
 
 const TARGETS = {
+  "2024-1": {
+    season: 2024,
+    division: 1,
+    competitionId: "jufa-chugoku-2024-division-1",
+    stage: "regular",
+    sourcePageUrl: "https://jufa-chugoku.jp/result/2024/tid_485/",
+    outputPath: "../../site/data/seasons/2024/matches.json",
+    minimumScheduleCount: 44,
+    minimumDetailCount: 44,
+    allowIncompleteLineups: true,
+    buildStats: true,
+  },
+  "2024-2": {
+    season: 2024,
+    division: 2,
+    competitionId: "jufa-chugoku-2024-division-2",
+    stage: "regular",
+    sourcePageUrl: "https://jufa-chugoku.jp/result/2024/tid_486/",
+    outputPath: "../../site/data/seasons/2024/div2/matches.json",
+    minimumScheduleCount: 44,
+    minimumDetailCount: 44,
+    allowIncompleteLineups: true,
+    buildStats: true,
+  },
   "2025-1": {
     season: 2025,
     division: 1,

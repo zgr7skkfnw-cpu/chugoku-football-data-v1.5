@@ -1,0 +1,7126 @@
+{
+  "schemaVersion": 1,
+  "seasonId": "jufa-chugoku-2024-division-2",
+  "updatedAt": "2026-07-15T03:18:19.914Z",
+  "competitionId": "jufa-chugoku-2024-division-2",
+  "division": 2,
+  "periodRules": {
+    "first": {
+      "fromRound": 1,
+      "toRound": 9
+    },
+    "second": {
+      "fromRound": 10,
+      "toRound": 18
+    }
+  },
+  "periods": {
+    "all": {
+      "standings": [
+        {
+          "teamId": "okayama-science",
+          "played": 18,
+          "won": 15,
+          "drawn": 3,
+          "lost": 0,
+          "points": 48,
+          "goalsFor": 78,
+          "goalsAgainst": 23,
+          "goalDifference": 55,
+          "rank": 1,
+          "rankChange": 0
+        },
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "played": 18,
+          "won": 14,
+          "drawn": 2,
+          "lost": 2,
+          "points": 44,
+          "goalsFor": 75,
+          "goalsAgainst": 25,
+          "goalDifference": 50,
+          "rank": 2,
+          "rankChange": 0
+        },
+        {
+          "teamId": "hiroshima-international",
+          "played": 18,
+          "won": 12,
+          "drawn": 1,
+          "lost": 5,
+          "points": 37,
+          "goalsFor": 49,
+          "goalsAgainst": 25,
+          "goalDifference": 24,
+          "rank": 3,
+          "rankChange": 0
+        },
+        {
+          "teamId": "kibi-international",
+          "played": 18,
+          "won": 11,
+          "drawn": 3,
+          "lost": 4,
+          "points": 36,
+          "goalsFor": 43,
+          "goalsAgainst": 27,
+          "goalDifference": 16,
+          "rank": 4,
+          "rankChange": 0
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "played": 18,
+          "won": 7,
+          "drawn": 3,
+          "lost": 8,
+          "points": 24,
+          "goalsFor": 42,
+          "goalsAgainst": 54,
+          "goalDifference": -12,
+          "rank": 5,
+          "rankChange": 0
+        },
+        {
+          "teamId": "tottori",
+          "played": 17,
+          "won": 6,
+          "drawn": 0,
+          "lost": 11,
+          "points": 18,
+          "goalsFor": 36,
+          "goalsAgainst": 39,
+          "goalDifference": -3,
+          "rank": 6,
+          "rankChange": 0
+        },
+        {
+          "teamId": "shimane",
+          "played": 18,
+          "won": 5,
+          "drawn": 2,
+          "lost": 11,
+          "points": 17,
+          "goalsFor": 24,
+          "goalsAgainst": 36,
+          "goalDifference": -12,
+          "rank": 7,
+          "rankChange": 0
+        },
+        {
+          "teamId": "shujitsu",
+          "played": 17,
+          "won": 3,
+          "drawn": 4,
+          "lost": 10,
+          "points": 13,
+          "goalsFor": 36,
+          "goalsAgainst": 58,
+          "goalDifference": -22,
+          "rank": 8,
+          "rankChange": 1
+        },
+        {
+          "teamId": "onomichi-city",
+          "played": 18,
+          "won": 4,
+          "drawn": 0,
+          "lost": 14,
+          "points": 12,
+          "goalsFor": 20,
+          "goalsAgainst": 54,
+          "goalDifference": -34,
+          "rank": 9,
+          "rankChange": -1
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "played": 18,
+          "won": 1,
+          "drawn": 4,
+          "lost": 13,
+          "points": 7,
+          "goalsFor": 17,
+          "goalsAgainst": 79,
+          "goalDifference": -62,
+          "rank": 10,
+          "rankChange": 0
+        }
+      ],
+      "homeStandings": [
+        {
+          "teamId": "okayama-science",
+          "played": 9,
+          "won": 8,
+          "drawn": 1,
+          "lost": 0,
+          "points": 25,
+          "goalsFor": 46,
+          "goalsAgainst": 12,
+          "goalDifference": 34,
+          "rank": 1
+        },
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "played": 9,
+          "won": 6,
+          "drawn": 2,
+          "lost": 1,
+          "points": 20,
+          "goalsFor": 36,
+          "goalsAgainst": 12,
+          "goalDifference": 24,
+          "rank": 2
+        },
+        {
+          "teamId": "hiroshima-international",
+          "played": 9,
+          "won": 6,
+          "drawn": 0,
+          "lost": 3,
+          "points": 18,
+          "goalsFor": 22,
+          "goalsAgainst": 12,
+          "goalDifference": 10,
+          "rank": 3
+        },
+        {
+          "teamId": "kibi-international",
+          "played": 9,
+          "won": 5,
+          "drawn": 1,
+          "lost": 3,
+          "points": 16,
+          "goalsFor": 25,
+          "goalsAgainst": 15,
+          "goalDifference": 10,
+          "rank": 4
+        },
+        {
+          "teamId": "shujitsu",
+          "played": 9,
+          "won": 2,
+          "drawn": 2,
+          "lost": 5,
+          "points": 8,
+          "goalsFor": 17,
+          "goalsAgainst": 25,
+          "goalDifference": -8,
+          "rank": 5
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "played": 9,
+          "won": 2,
+          "drawn": 2,
+          "lost": 5,
+          "points": 8,
+          "goalsFor": 19,
+          "goalsAgainst": 32,
+          "goalDifference": -13,
+          "rank": 6
+        },
+        {
+          "teamId": "shimane",
+          "played": 9,
+          "won": 2,
+          "drawn": 0,
+          "lost": 7,
+          "points": 6,
+          "goalsFor": 11,
+          "goalsAgainst": 19,
+          "goalDifference": -8,
+          "rank": 7
+        },
+        {
+          "teamId": "tottori",
+          "played": 8,
+          "won": 1,
+          "drawn": 0,
+          "lost": 7,
+          "points": 3,
+          "goalsFor": 7,
+          "goalsAgainst": 23,
+          "goalDifference": -16,
+          "rank": 8
+        },
+        {
+          "teamId": "onomichi-city",
+          "played": 9,
+          "won": 1,
+          "drawn": 0,
+          "lost": 8,
+          "points": 3,
+          "goalsFor": 8,
+          "goalsAgainst": 29,
+          "goalDifference": -21,
+          "rank": 9
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "played": 9,
+          "won": 0,
+          "drawn": 3,
+          "lost": 6,
+          "points": 3,
+          "goalsFor": 10,
+          "goalsAgainst": 40,
+          "goalDifference": -30,
+          "rank": 10
+        }
+      ],
+      "awayStandings": [
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "played": 9,
+          "won": 8,
+          "drawn": 0,
+          "lost": 1,
+          "points": 24,
+          "goalsFor": 39,
+          "goalsAgainst": 13,
+          "goalDifference": 26,
+          "rank": 1
+        },
+        {
+          "teamId": "okayama-science",
+          "played": 9,
+          "won": 7,
+          "drawn": 2,
+          "lost": 0,
+          "points": 23,
+          "goalsFor": 32,
+          "goalsAgainst": 11,
+          "goalDifference": 21,
+          "rank": 2
+        },
+        {
+          "teamId": "kibi-international",
+          "played": 9,
+          "won": 6,
+          "drawn": 2,
+          "lost": 1,
+          "points": 20,
+          "goalsFor": 18,
+          "goalsAgainst": 12,
+          "goalDifference": 6,
+          "rank": 3
+        },
+        {
+          "teamId": "hiroshima-international",
+          "played": 9,
+          "won": 6,
+          "drawn": 1,
+          "lost": 2,
+          "points": 19,
+          "goalsFor": 27,
+          "goalsAgainst": 13,
+          "goalDifference": 14,
+          "rank": 4
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "played": 9,
+          "won": 5,
+          "drawn": 1,
+          "lost": 3,
+          "points": 16,
+          "goalsFor": 23,
+          "goalsAgainst": 22,
+          "goalDifference": 1,
+          "rank": 5
+        },
+        {
+          "teamId": "tottori",
+          "played": 9,
+          "won": 5,
+          "drawn": 0,
+          "lost": 4,
+          "points": 15,
+          "goalsFor": 29,
+          "goalsAgainst": 16,
+          "goalDifference": 13,
+          "rank": 6
+        },
+        {
+          "teamId": "shimane",
+          "played": 9,
+          "won": 3,
+          "drawn": 2,
+          "lost": 4,
+          "points": 11,
+          "goalsFor": 13,
+          "goalsAgainst": 17,
+          "goalDifference": -4,
+          "rank": 7
+        },
+        {
+          "teamId": "onomichi-city",
+          "played": 9,
+          "won": 3,
+          "drawn": 0,
+          "lost": 6,
+          "points": 9,
+          "goalsFor": 12,
+          "goalsAgainst": 25,
+          "goalDifference": -13,
+          "rank": 8
+        },
+        {
+          "teamId": "shujitsu",
+          "played": 8,
+          "won": 1,
+          "drawn": 2,
+          "lost": 5,
+          "points": 5,
+          "goalsFor": 19,
+          "goalsAgainst": 33,
+          "goalDifference": -14,
+          "rank": 9
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "played": 9,
+          "won": 1,
+          "drawn": 1,
+          "lost": 7,
+          "points": 4,
+          "goalsFor": 7,
+          "goalsAgainst": 39,
+          "goalDifference": -32,
+          "rank": 10
+        }
+      ],
+      "teams": [
+        {
+          "teamId": "tottori",
+          "rank": 6,
+          "overall": {
+            "played": 17,
+            "won": 6,
+            "drawn": 0,
+            "lost": 11,
+            "points": 18,
+            "goalsFor": 36,
+            "goalsAgainst": 39,
+            "goalDifference": -3
+          },
+          "home": {
+            "played": 8,
+            "won": 1,
+            "drawn": 0,
+            "lost": 7,
+            "points": 3,
+            "goalsFor": 7,
+            "goalsAgainst": 23,
+            "goalDifference": -16
+          },
+          "away": {
+            "played": 9,
+            "won": 5,
+            "drawn": 0,
+            "lost": 4,
+            "points": 15,
+            "goalsFor": 29,
+            "goalsAgainst": 16,
+            "goalDifference": 13
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20880",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 1,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20874",
+              "kickoffAt": "2024-10-20T12:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20868",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20864",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20860",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 1,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2.12,
+            "averageConceded": 2.29,
+            "cleanSheets": 2,
+            "scorelessMatches": 4,
+            "yellowCards": 10,
+            "redCards": 0,
+            "benchSelections": 136,
+            "averageBench": 8,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 10
+            },
+            {
+              "round": 2,
+              "rank": 10
+            },
+            {
+              "round": 3,
+              "rank": 10
+            },
+            {
+              "round": 4,
+              "rank": 8
+            },
+            {
+              "round": 5,
+              "rank": 6
+            },
+            {
+              "round": 6,
+              "rank": 6
+            },
+            {
+              "round": 7,
+              "rank": 7
+            },
+            {
+              "round": 8,
+              "rank": 7
+            },
+            {
+              "round": 9,
+              "rank": 7
+            },
+            {
+              "round": 10,
+              "rank": 7
+            },
+            {
+              "round": 11,
+              "rank": 7
+            },
+            {
+              "round": 12,
+              "rank": 7
+            },
+            {
+              "round": 13,
+              "rank": 7
+            },
+            {
+              "round": 14,
+              "rank": 7
+            },
+            {
+              "round": 15,
+              "rank": 7
+            },
+            {
+              "round": 16,
+              "rank": 6
+            },
+            {
+              "round": 17,
+              "rank": 6
+            },
+            {
+              "round": 18,
+              "rank": 6
+            }
+          ]
+        },
+        {
+          "teamId": "onomichi-city",
+          "rank": 9,
+          "overall": {
+            "played": 18,
+            "won": 4,
+            "drawn": 0,
+            "lost": 14,
+            "points": 12,
+            "goalsFor": 20,
+            "goalsAgainst": 54,
+            "goalDifference": -34
+          },
+          "home": {
+            "played": 9,
+            "won": 1,
+            "drawn": 0,
+            "lost": 8,
+            "points": 3,
+            "goalsFor": 8,
+            "goalsAgainst": 29,
+            "goalDifference": -21
+          },
+          "away": {
+            "played": 9,
+            "won": 3,
+            "drawn": 0,
+            "lost": 6,
+            "points": 9,
+            "goalsFor": 12,
+            "goalsAgainst": 25,
+            "goalDifference": -13
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20882",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20877",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20871",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20865",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 0,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20859",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            }
+          ],
+          "stats": {
+            "averageGoals": 1.11,
+            "averageConceded": 3,
+            "cleanSheets": 4,
+            "scorelessMatches": 5,
+            "yellowCards": 7,
+            "redCards": 0,
+            "benchSelections": 93,
+            "averageBench": 5.17,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 1
+            },
+            {
+              "round": 2,
+              "rank": 6
+            },
+            {
+              "round": 3,
+              "rank": 8
+            },
+            {
+              "round": 4,
+              "rank": 9
+            },
+            {
+              "round": 5,
+              "rank": 10
+            },
+            {
+              "round": 6,
+              "rank": 10
+            },
+            {
+              "round": 7,
+              "rank": 9
+            },
+            {
+              "round": 8,
+              "rank": 9
+            },
+            {
+              "round": 9,
+              "rank": 9
+            },
+            {
+              "round": 10,
+              "rank": 9
+            },
+            {
+              "round": 11,
+              "rank": 9
+            },
+            {
+              "round": 12,
+              "rank": 9
+            },
+            {
+              "round": 13,
+              "rank": 9
+            },
+            {
+              "round": 14,
+              "rank": 9
+            },
+            {
+              "round": 15,
+              "rank": 9
+            },
+            {
+              "round": 16,
+              "rank": 8
+            },
+            {
+              "round": 17,
+              "rank": 8
+            },
+            {
+              "round": 18,
+              "rank": 9
+            }
+          ]
+        },
+        {
+          "teamId": "shimane",
+          "rank": 7,
+          "overall": {
+            "played": 18,
+            "won": 5,
+            "drawn": 2,
+            "lost": 11,
+            "points": 17,
+            "goalsFor": 24,
+            "goalsAgainst": 36,
+            "goalDifference": -12
+          },
+          "home": {
+            "played": 9,
+            "won": 2,
+            "drawn": 0,
+            "lost": 7,
+            "points": 6,
+            "goalsFor": 11,
+            "goalsAgainst": 19,
+            "goalDifference": -8
+          },
+          "away": {
+            "played": 9,
+            "won": 3,
+            "drawn": 2,
+            "lost": 4,
+            "points": 11,
+            "goalsFor": 13,
+            "goalsAgainst": 17,
+            "goalDifference": -4
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20878",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 0,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20873",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 0,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20868",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20863",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20858",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ],
+          "stats": {
+            "averageGoals": 1.33,
+            "averageConceded": 2,
+            "cleanSheets": 4,
+            "scorelessMatches": 7,
+            "yellowCards": 11,
+            "redCards": 1,
+            "benchSelections": 142,
+            "averageBench": 7.89,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 2
+            },
+            {
+              "round": 2,
+              "rank": 2
+            },
+            {
+              "round": 3,
+              "rank": 6
+            },
+            {
+              "round": 4,
+              "rank": 2
+            },
+            {
+              "round": 5,
+              "rank": 5
+            },
+            {
+              "round": 6,
+              "rank": 5
+            },
+            {
+              "round": 7,
+              "rank": 5
+            },
+            {
+              "round": 8,
+              "rank": 6
+            },
+            {
+              "round": 9,
+              "rank": 6
+            },
+            {
+              "round": 10,
+              "rank": 5
+            },
+            {
+              "round": 11,
+              "rank": 5
+            },
+            {
+              "round": 12,
+              "rank": 5
+            },
+            {
+              "round": 13,
+              "rank": 5
+            },
+            {
+              "round": 14,
+              "rank": 6
+            },
+            {
+              "round": 15,
+              "rank": 6
+            },
+            {
+              "round": 16,
+              "rank": 7
+            },
+            {
+              "round": 17,
+              "rank": 7
+            },
+            {
+              "round": 18,
+              "rank": 7
+            }
+          ]
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "rank": 10,
+          "overall": {
+            "played": 18,
+            "won": 1,
+            "drawn": 4,
+            "lost": 13,
+            "points": 7,
+            "goalsFor": 17,
+            "goalsAgainst": 79,
+            "goalDifference": -62
+          },
+          "home": {
+            "played": 9,
+            "won": 0,
+            "drawn": 3,
+            "lost": 6,
+            "points": 3,
+            "goalsFor": 10,
+            "goalsAgainst": 40,
+            "goalDifference": -30
+          },
+          "away": {
+            "played": 9,
+            "won": 1,
+            "drawn": 1,
+            "lost": 7,
+            "points": 4,
+            "goalsFor": 7,
+            "goalsAgainst": 39,
+            "goalDifference": -32
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20879",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 1,
+              "goalsAgainst": 5,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20875",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 0,
+              "goalsAgainst": 9,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20862",
+              "kickoffAt": "2024-10-13T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 1,
+              "goalsAgainst": 10,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20871",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20867",
+              "kickoffAt": "2024-09-29T16:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 0.94,
+            "averageConceded": 4.39,
+            "cleanSheets": 1,
+            "scorelessMatches": 9,
+            "yellowCards": 6,
+            "redCards": 1,
+            "benchSelections": 120,
+            "averageBench": 6.67,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 9
+            },
+            {
+              "round": 2,
+              "rank": 9
+            },
+            {
+              "round": 3,
+              "rank": 9
+            },
+            {
+              "round": 4,
+              "rank": 10
+            },
+            {
+              "round": 5,
+              "rank": 9
+            },
+            {
+              "round": 6,
+              "rank": 9
+            },
+            {
+              "round": 7,
+              "rank": 10
+            },
+            {
+              "round": 8,
+              "rank": 10
+            },
+            {
+              "round": 9,
+              "rank": 10
+            },
+            {
+              "round": 10,
+              "rank": 10
+            },
+            {
+              "round": 11,
+              "rank": 10
+            },
+            {
+              "round": 12,
+              "rank": 10
+            },
+            {
+              "round": 13,
+              "rank": 10
+            },
+            {
+              "round": 14,
+              "rank": 10
+            },
+            {
+              "round": 15,
+              "rank": 10
+            },
+            {
+              "round": 16,
+              "rank": 10
+            },
+            {
+              "round": 17,
+              "rank": 10
+            },
+            {
+              "round": 18,
+              "rank": 10
+            }
+          ]
+        },
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "rank": 2,
+          "overall": {
+            "played": 18,
+            "won": 14,
+            "drawn": 2,
+            "lost": 2,
+            "points": 44,
+            "goalsFor": 75,
+            "goalsAgainst": 25,
+            "goalDifference": 50
+          },
+          "home": {
+            "played": 9,
+            "won": 6,
+            "drawn": 2,
+            "lost": 1,
+            "points": 20,
+            "goalsFor": 36,
+            "goalsAgainst": 12,
+            "goalDifference": 24
+          },
+          "away": {
+            "played": 9,
+            "won": 8,
+            "drawn": 0,
+            "lost": 1,
+            "points": 24,
+            "goalsFor": 39,
+            "goalsAgainst": 13,
+            "goalDifference": 26
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20879",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 5,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20873",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 3,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20869",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 4,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20865",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 3,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20861",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 5,
+              "goalsAgainst": 5,
+              "result": "D"
+            }
+          ],
+          "stats": {
+            "averageGoals": 4.17,
+            "averageConceded": 1.39,
+            "cleanSheets": 6,
+            "scorelessMatches": 0,
+            "yellowCards": 12,
+            "redCards": 0,
+            "benchSelections": 157,
+            "averageBench": 8.72,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 7
+            },
+            {
+              "round": 2,
+              "rank": 3
+            },
+            {
+              "round": 3,
+              "rank": 2
+            },
+            {
+              "round": 4,
+              "rank": 4
+            },
+            {
+              "round": 5,
+              "rank": 2
+            },
+            {
+              "round": 6,
+              "rank": 2
+            },
+            {
+              "round": 7,
+              "rank": 2
+            },
+            {
+              "round": 8,
+              "rank": 2
+            },
+            {
+              "round": 9,
+              "rank": 2
+            },
+            {
+              "round": 10,
+              "rank": 2
+            },
+            {
+              "round": 11,
+              "rank": 2
+            },
+            {
+              "round": 12,
+              "rank": 2
+            },
+            {
+              "round": 13,
+              "rank": 2
+            },
+            {
+              "round": 14,
+              "rank": 2
+            },
+            {
+              "round": 15,
+              "rank": 2
+            },
+            {
+              "round": 16,
+              "rank": 2
+            },
+            {
+              "round": 17,
+              "rank": 2
+            },
+            {
+              "round": 18,
+              "rank": 2
+            }
+          ]
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "rank": 5,
+          "overall": {
+            "played": 18,
+            "won": 7,
+            "drawn": 3,
+            "lost": 8,
+            "points": 24,
+            "goalsFor": 42,
+            "goalsAgainst": 54,
+            "goalDifference": -12
+          },
+          "home": {
+            "played": 9,
+            "won": 2,
+            "drawn": 2,
+            "lost": 5,
+            "points": 8,
+            "goalsFor": 19,
+            "goalsAgainst": 32,
+            "goalDifference": -13
+          },
+          "away": {
+            "played": 9,
+            "won": 5,
+            "drawn": 1,
+            "lost": 3,
+            "points": 16,
+            "goalsFor": 23,
+            "goalsAgainst": 22,
+            "goalDifference": 1
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20881",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 1,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20877",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20872",
+              "kickoffAt": "2024-10-06T16:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20866",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 0,
+              "goalsAgainst": 7,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20860",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 2,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2.33,
+            "averageConceded": 3,
+            "cleanSheets": 1,
+            "scorelessMatches": 1,
+            "yellowCards": 18,
+            "redCards": 1,
+            "benchSelections": 62,
+            "averageBench": 3.44,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 6
+            },
+            {
+              "round": 2,
+              "rank": 8
+            },
+            {
+              "round": 3,
+              "rank": 3
+            },
+            {
+              "round": 4,
+              "rank": 6
+            },
+            {
+              "round": 5,
+              "rank": 7
+            },
+            {
+              "round": 6,
+              "rank": 8
+            },
+            {
+              "round": 7,
+              "rank": 6
+            },
+            {
+              "round": 8,
+              "rank": 5
+            },
+            {
+              "round": 9,
+              "rank": 5
+            },
+            {
+              "round": 10,
+              "rank": 6
+            },
+            {
+              "round": 11,
+              "rank": 6
+            },
+            {
+              "round": 12,
+              "rank": 6
+            },
+            {
+              "round": 13,
+              "rank": 6
+            },
+            {
+              "round": 14,
+              "rank": 5
+            },
+            {
+              "round": 15,
+              "rank": 5
+            },
+            {
+              "round": 16,
+              "rank": 5
+            },
+            {
+              "round": 17,
+              "rank": 5
+            },
+            {
+              "round": 18,
+              "rank": 5
+            }
+          ]
+        },
+        {
+          "teamId": "hiroshima-international",
+          "rank": 3,
+          "overall": {
+            "played": 18,
+            "won": 12,
+            "drawn": 1,
+            "lost": 5,
+            "points": 37,
+            "goalsFor": 49,
+            "goalsAgainst": 25,
+            "goalDifference": 24
+          },
+          "home": {
+            "played": 9,
+            "won": 6,
+            "drawn": 0,
+            "lost": 3,
+            "points": 18,
+            "goalsFor": 22,
+            "goalsAgainst": 12,
+            "goalDifference": 10
+          },
+          "away": {
+            "played": 9,
+            "won": 6,
+            "drawn": 1,
+            "lost": 2,
+            "points": 19,
+            "goalsFor": 27,
+            "goalsAgainst": 13,
+            "goalDifference": 14
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20881",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 4,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20875",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 9,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20869",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 0,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20863",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20859",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2.72,
+            "averageConceded": 1.39,
+            "cleanSheets": 6,
+            "scorelessMatches": 3,
+            "yellowCards": 15,
+            "redCards": 0,
+            "benchSelections": 157,
+            "averageBench": 8.72,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 8
+            },
+            {
+              "round": 2,
+              "rank": 5
+            },
+            {
+              "round": 3,
+              "rank": 7
+            },
+            {
+              "round": 4,
+              "rank": 5
+            },
+            {
+              "round": 5,
+              "rank": 4
+            },
+            {
+              "round": 6,
+              "rank": 4
+            },
+            {
+              "round": 7,
+              "rank": 4
+            },
+            {
+              "round": 8,
+              "rank": 4
+            },
+            {
+              "round": 9,
+              "rank": 4
+            },
+            {
+              "round": 10,
+              "rank": 4
+            },
+            {
+              "round": 11,
+              "rank": 3
+            },
+            {
+              "round": 12,
+              "rank": 4
+            },
+            {
+              "round": 13,
+              "rank": 4
+            },
+            {
+              "round": 14,
+              "rank": 4
+            },
+            {
+              "round": 15,
+              "rank": 3
+            },
+            {
+              "round": 16,
+              "rank": 3
+            },
+            {
+              "round": 17,
+              "rank": 3
+            },
+            {
+              "round": 18,
+              "rank": 3
+            }
+          ]
+        },
+        {
+          "teamId": "kibi-international",
+          "rank": 4,
+          "overall": {
+            "played": 18,
+            "won": 11,
+            "drawn": 3,
+            "lost": 4,
+            "points": 36,
+            "goalsFor": 43,
+            "goalsAgainst": 27,
+            "goalDifference": 16
+          },
+          "home": {
+            "played": 9,
+            "won": 5,
+            "drawn": 1,
+            "lost": 3,
+            "points": 16,
+            "goalsFor": 25,
+            "goalsAgainst": 15,
+            "goalDifference": 10
+          },
+          "away": {
+            "played": 9,
+            "won": 6,
+            "drawn": 2,
+            "lost": 1,
+            "points": 20,
+            "goalsFor": 18,
+            "goalsAgainst": 12,
+            "goalDifference": 6
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20882",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20876",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 7,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20870",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            },
+            {
+              "matchId": "football-system-15-486-20864",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20858",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2.39,
+            "averageConceded": 1.5,
+            "cleanSheets": 4,
+            "scorelessMatches": 2,
+            "yellowCards": 16,
+            "redCards": 1,
+            "benchSelections": 103,
+            "averageBench": 5.72,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 3
+            },
+            {
+              "round": 2,
+              "rank": 4
+            },
+            {
+              "round": 3,
+              "rank": 5
+            },
+            {
+              "round": 4,
+              "rank": 3
+            },
+            {
+              "round": 5,
+              "rank": 3
+            },
+            {
+              "round": 6,
+              "rank": 3
+            },
+            {
+              "round": 7,
+              "rank": 3
+            },
+            {
+              "round": 8,
+              "rank": 3
+            },
+            {
+              "round": 9,
+              "rank": 3
+            },
+            {
+              "round": 10,
+              "rank": 3
+            },
+            {
+              "round": 11,
+              "rank": 4
+            },
+            {
+              "round": 12,
+              "rank": 3
+            },
+            {
+              "round": 13,
+              "rank": 3
+            },
+            {
+              "round": 14,
+              "rank": 3
+            },
+            {
+              "round": 15,
+              "rank": 4
+            },
+            {
+              "round": 16,
+              "rank": 4
+            },
+            {
+              "round": 17,
+              "rank": 4
+            },
+            {
+              "round": 18,
+              "rank": 4
+            }
+          ]
+        },
+        {
+          "teamId": "shujitsu",
+          "rank": 8,
+          "overall": {
+            "played": 17,
+            "won": 3,
+            "drawn": 4,
+            "lost": 10,
+            "points": 13,
+            "goalsFor": 36,
+            "goalsAgainst": 58,
+            "goalDifference": -22
+          },
+          "home": {
+            "played": 9,
+            "won": 2,
+            "drawn": 2,
+            "lost": 5,
+            "points": 8,
+            "goalsFor": 17,
+            "goalsAgainst": 25,
+            "goalDifference": -8
+          },
+          "away": {
+            "played": 8,
+            "won": 1,
+            "drawn": 2,
+            "lost": 5,
+            "points": 5,
+            "goalsFor": 19,
+            "goalsAgainst": 33,
+            "goalDifference": -14
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20880",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 3,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20876",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 2,
+              "goalsAgainst": 7,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20872",
+              "kickoffAt": "2024-10-06T16:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20867",
+              "kickoffAt": "2024-09-29T16:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20861",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 5,
+              "goalsAgainst": 5,
+              "result": "D"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2.12,
+            "averageConceded": 3.41,
+            "cleanSheets": 0,
+            "scorelessMatches": 2,
+            "yellowCards": 11,
+            "redCards": 0,
+            "benchSelections": 114,
+            "averageBench": 6.71,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 5
+            },
+            {
+              "round": 2,
+              "rank": 7
+            },
+            {
+              "round": 3,
+              "rank": 4
+            },
+            {
+              "round": 4,
+              "rank": 7
+            },
+            {
+              "round": 5,
+              "rank": 8
+            },
+            {
+              "round": 6,
+              "rank": 7
+            },
+            {
+              "round": 7,
+              "rank": 8
+            },
+            {
+              "round": 8,
+              "rank": 8
+            },
+            {
+              "round": 9,
+              "rank": 8
+            },
+            {
+              "round": 10,
+              "rank": 8
+            },
+            {
+              "round": 11,
+              "rank": 8
+            },
+            {
+              "round": 12,
+              "rank": 8
+            },
+            {
+              "round": 13,
+              "rank": 8
+            },
+            {
+              "round": 14,
+              "rank": 8
+            },
+            {
+              "round": 15,
+              "rank": 8
+            },
+            {
+              "round": 16,
+              "rank": 9
+            },
+            {
+              "round": 17,
+              "rank": 9
+            },
+            {
+              "round": 18,
+              "rank": 8
+            }
+          ]
+        },
+        {
+          "teamId": "okayama-science",
+          "rank": 1,
+          "overall": {
+            "played": 18,
+            "won": 15,
+            "drawn": 3,
+            "lost": 0,
+            "points": 48,
+            "goalsFor": 78,
+            "goalsAgainst": 23,
+            "goalDifference": 55
+          },
+          "home": {
+            "played": 9,
+            "won": 8,
+            "drawn": 1,
+            "lost": 0,
+            "points": 25,
+            "goalsFor": 46,
+            "goalsAgainst": 12,
+            "goalDifference": 34
+          },
+          "away": {
+            "played": 9,
+            "won": 7,
+            "drawn": 2,
+            "lost": 0,
+            "points": 23,
+            "goalsFor": 32,
+            "goalsAgainst": 11,
+            "goalDifference": 21
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20878",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 4,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20874",
+              "kickoffAt": "2024-10-20T12:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20862",
+              "kickoffAt": "2024-10-13T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 10,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20870",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            },
+            {
+              "matchId": "football-system-15-486-20866",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 7,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 4.33,
+            "averageConceded": 1.28,
+            "cleanSheets": 5,
+            "scorelessMatches": 0,
+            "yellowCards": 19,
+            "redCards": 1,
+            "benchSelections": 162,
+            "averageBench": 9,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 4
+            },
+            {
+              "round": 2,
+              "rank": 1
+            },
+            {
+              "round": 3,
+              "rank": 1
+            },
+            {
+              "round": 4,
+              "rank": 1
+            },
+            {
+              "round": 5,
+              "rank": 1
+            },
+            {
+              "round": 6,
+              "rank": 1
+            },
+            {
+              "round": 7,
+              "rank": 1
+            },
+            {
+              "round": 8,
+              "rank": 1
+            },
+            {
+              "round": 9,
+              "rank": 1
+            },
+            {
+              "round": 10,
+              "rank": 1
+            },
+            {
+              "round": 11,
+              "rank": 1
+            },
+            {
+              "round": 12,
+              "rank": 1
+            },
+            {
+              "round": 13,
+              "rank": 1
+            },
+            {
+              "round": 14,
+              "rank": 1
+            },
+            {
+              "round": 15,
+              "rank": 1
+            },
+            {
+              "round": 16,
+              "rank": 1
+            },
+            {
+              "round": 17,
+              "rank": 1
+            },
+            {
+              "round": 18,
+              "rank": 1
+            }
+          ]
+        }
+      ],
+      "rankings": {
+        "averageGoals": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 4.33
+          },
+          {
+            "rank": 2,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 4.17
+          },
+          {
+            "rank": 3,
+            "teamId": "hiroshima-international",
+            "value": 2.72
+          },
+          {
+            "rank": 4,
+            "teamId": "kibi-international",
+            "value": 2.39
+          },
+          {
+            "rank": 5,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 2.33
+          },
+          {
+            "rank": 6,
+            "teamId": "shujitsu",
+            "value": 2.12
+          },
+          {
+            "rank": 7,
+            "teamId": "tottori",
+            "value": 2.12
+          },
+          {
+            "rank": 8,
+            "teamId": "shimane",
+            "value": 1.33
+          },
+          {
+            "rank": 9,
+            "teamId": "onomichi-city",
+            "value": 1.11
+          },
+          {
+            "rank": 10,
+            "teamId": "shimonoseki-city",
+            "value": 0.94
+          }
+        ],
+        "averageConceded": [
+          {
+            "rank": 1,
+            "teamId": "shimonoseki-city",
+            "value": 4.39
+          },
+          {
+            "rank": 2,
+            "teamId": "shujitsu",
+            "value": 3.41
+          },
+          {
+            "rank": 3,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 3
+          },
+          {
+            "rank": 4,
+            "teamId": "onomichi-city",
+            "value": 3
+          },
+          {
+            "rank": 5,
+            "teamId": "tottori",
+            "value": 2.29
+          },
+          {
+            "rank": 6,
+            "teamId": "shimane",
+            "value": 2
+          },
+          {
+            "rank": 7,
+            "teamId": "kibi-international",
+            "value": 1.5
+          },
+          {
+            "rank": 8,
+            "teamId": "hiroshima-international",
+            "value": 1.39
+          },
+          {
+            "rank": 9,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 1.39
+          },
+          {
+            "rank": 10,
+            "teamId": "okayama-science",
+            "value": 1.28
+          }
+        ],
+        "cleanSheets": [
+          {
+            "rank": 1,
+            "teamId": "hiroshima-international",
+            "value": 6
+          },
+          {
+            "rank": 2,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 6
+          },
+          {
+            "rank": 3,
+            "teamId": "okayama-science",
+            "value": 5
+          },
+          {
+            "rank": 4,
+            "teamId": "kibi-international",
+            "value": 4
+          },
+          {
+            "rank": 5,
+            "teamId": "onomichi-city",
+            "value": 4
+          },
+          {
+            "rank": 6,
+            "teamId": "shimane",
+            "value": 4
+          },
+          {
+            "rank": 7,
+            "teamId": "tottori",
+            "value": 2
+          },
+          {
+            "rank": 8,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 1
+          },
+          {
+            "rank": 9,
+            "teamId": "shimonoseki-city",
+            "value": 1
+          },
+          {
+            "rank": 10,
+            "teamId": "shujitsu",
+            "value": 0
+          }
+        ],
+        "scorelessMatches": [
+          {
+            "rank": 1,
+            "teamId": "shimonoseki-city",
+            "value": 9
+          },
+          {
+            "rank": 2,
+            "teamId": "shimane",
+            "value": 7
+          },
+          {
+            "rank": 3,
+            "teamId": "onomichi-city",
+            "value": 5
+          },
+          {
+            "rank": 4,
+            "teamId": "tottori",
+            "value": 4
+          },
+          {
+            "rank": 5,
+            "teamId": "hiroshima-international",
+            "value": 3
+          },
+          {
+            "rank": 6,
+            "teamId": "kibi-international",
+            "value": 2
+          },
+          {
+            "rank": 7,
+            "teamId": "shujitsu",
+            "value": 2
+          },
+          {
+            "rank": 8,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 1
+          },
+          {
+            "rank": 9,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 0
+          },
+          {
+            "rank": 10,
+            "teamId": "okayama-science",
+            "value": 0
+          }
+        ],
+        "yellowCards": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 19
+          },
+          {
+            "rank": 2,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 18
+          },
+          {
+            "rank": 3,
+            "teamId": "kibi-international",
+            "value": 16
+          },
+          {
+            "rank": 4,
+            "teamId": "hiroshima-international",
+            "value": 15
+          },
+          {
+            "rank": 5,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 12
+          },
+          {
+            "rank": 6,
+            "teamId": "shimane",
+            "value": 11
+          },
+          {
+            "rank": 7,
+            "teamId": "shujitsu",
+            "value": 11
+          },
+          {
+            "rank": 8,
+            "teamId": "tottori",
+            "value": 10
+          },
+          {
+            "rank": 9,
+            "teamId": "onomichi-city",
+            "value": 7
+          },
+          {
+            "rank": 10,
+            "teamId": "shimonoseki-city",
+            "value": 6
+          }
+        ],
+        "redCards": [
+          {
+            "rank": 1,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 1
+          },
+          {
+            "rank": 2,
+            "teamId": "kibi-international",
+            "value": 1
+          },
+          {
+            "rank": 3,
+            "teamId": "okayama-science",
+            "value": 1
+          },
+          {
+            "rank": 4,
+            "teamId": "shimane",
+            "value": 1
+          },
+          {
+            "rank": 5,
+            "teamId": "shimonoseki-city",
+            "value": 1
+          },
+          {
+            "rank": 6,
+            "teamId": "hiroshima-international",
+            "value": 0
+          },
+          {
+            "rank": 7,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 0
+          },
+          {
+            "rank": 8,
+            "teamId": "onomichi-city",
+            "value": 0
+          },
+          {
+            "rank": 9,
+            "teamId": "shujitsu",
+            "value": 0
+          },
+          {
+            "rank": 10,
+            "teamId": "tottori",
+            "value": 0
+          }
+        ],
+        "benchSelections": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 162
+          },
+          {
+            "rank": 2,
+            "teamId": "hiroshima-international",
+            "value": 157
+          },
+          {
+            "rank": 3,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 157
+          },
+          {
+            "rank": 4,
+            "teamId": "shimane",
+            "value": 142
+          },
+          {
+            "rank": 5,
+            "teamId": "tottori",
+            "value": 136
+          },
+          {
+            "rank": 6,
+            "teamId": "shimonoseki-city",
+            "value": 120
+          },
+          {
+            "rank": 7,
+            "teamId": "shujitsu",
+            "value": 114
+          },
+          {
+            "rank": 8,
+            "teamId": "kibi-international",
+            "value": 103
+          },
+          {
+            "rank": 9,
+            "teamId": "onomichi-city",
+            "value": 93
+          },
+          {
+            "rank": 10,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 62
+          }
+        ],
+        "averageBench": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 9
+          },
+          {
+            "rank": 2,
+            "teamId": "hiroshima-international",
+            "value": 8.72
+          },
+          {
+            "rank": 3,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 8.72
+          },
+          {
+            "rank": 4,
+            "teamId": "tottori",
+            "value": 8
+          },
+          {
+            "rank": 5,
+            "teamId": "shimane",
+            "value": 7.89
+          },
+          {
+            "rank": 6,
+            "teamId": "shujitsu",
+            "value": 6.71
+          },
+          {
+            "rank": 7,
+            "teamId": "shimonoseki-city",
+            "value": 6.67
+          },
+          {
+            "rank": 8,
+            "teamId": "kibi-international",
+            "value": 5.72
+          },
+          {
+            "rank": 9,
+            "teamId": "onomichi-city",
+            "value": 5.17
+          },
+          {
+            "rank": 10,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 3.44
+          }
+        ],
+        "averageStartingAge": []
+      }
+    },
+    "first": {
+      "standings": [
+        {
+          "teamId": "okayama-science",
+          "played": 9,
+          "won": 7,
+          "drawn": 2,
+          "lost": 0,
+          "points": 23,
+          "goalsFor": 32,
+          "goalsAgainst": 15,
+          "goalDifference": 17,
+          "rank": 1,
+          "rankChange": 0
+        },
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "played": 9,
+          "won": 7,
+          "drawn": 1,
+          "lost": 1,
+          "points": 22,
+          "goalsFor": 36,
+          "goalsAgainst": 10,
+          "goalDifference": 26,
+          "rank": 2,
+          "rankChange": 0
+        },
+        {
+          "teamId": "kibi-international",
+          "played": 9,
+          "won": 6,
+          "drawn": 1,
+          "lost": 2,
+          "points": 19,
+          "goalsFor": 19,
+          "goalsAgainst": 12,
+          "goalDifference": 7,
+          "rank": 3,
+          "rankChange": 0
+        },
+        {
+          "teamId": "hiroshima-international",
+          "played": 9,
+          "won": 6,
+          "drawn": 0,
+          "lost": 3,
+          "points": 18,
+          "goalsFor": 22,
+          "goalsAgainst": 13,
+          "goalDifference": 9,
+          "rank": 4,
+          "rankChange": 0
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "played": 9,
+          "won": 3,
+          "drawn": 2,
+          "lost": 4,
+          "points": 11,
+          "goalsFor": 24,
+          "goalsAgainst": 23,
+          "goalDifference": 1,
+          "rank": 5,
+          "rankChange": 0
+        },
+        {
+          "teamId": "shimane",
+          "played": 9,
+          "won": 3,
+          "drawn": 1,
+          "lost": 5,
+          "points": 10,
+          "goalsFor": 15,
+          "goalsAgainst": 18,
+          "goalDifference": -3,
+          "rank": 6,
+          "rankChange": 0
+        },
+        {
+          "teamId": "tottori",
+          "played": 8,
+          "won": 2,
+          "drawn": 0,
+          "lost": 6,
+          "points": 6,
+          "goalsFor": 12,
+          "goalsAgainst": 19,
+          "goalDifference": -7,
+          "rank": 7,
+          "rankChange": 0
+        },
+        {
+          "teamId": "shujitsu",
+          "played": 8,
+          "won": 1,
+          "drawn": 3,
+          "lost": 4,
+          "points": 6,
+          "goalsFor": 13,
+          "goalsAgainst": 25,
+          "goalDifference": -12,
+          "rank": 8,
+          "rankChange": 0
+        },
+        {
+          "teamId": "onomichi-city",
+          "played": 9,
+          "won": 2,
+          "drawn": 0,
+          "lost": 7,
+          "points": 6,
+          "goalsFor": 11,
+          "goalsAgainst": 31,
+          "goalDifference": -20,
+          "rank": 9,
+          "rankChange": 0
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "played": 9,
+          "won": 0,
+          "drawn": 4,
+          "lost": 5,
+          "points": 4,
+          "goalsFor": 8,
+          "goalsAgainst": 26,
+          "goalDifference": -18,
+          "rank": 10,
+          "rankChange": 0
+        }
+      ],
+      "homeStandings": [
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "played": 6,
+          "won": 4,
+          "drawn": 1,
+          "lost": 1,
+          "points": 13,
+          "goalsFor": 23,
+          "goalsAgainst": 7,
+          "goalDifference": 16,
+          "rank": 1
+        },
+        {
+          "teamId": "hiroshima-international",
+          "played": 7,
+          "won": 4,
+          "drawn": 0,
+          "lost": 3,
+          "points": 12,
+          "goalsFor": 12,
+          "goalsAgainst": 12,
+          "goalDifference": 0,
+          "rank": 2
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "played": 5,
+          "won": 2,
+          "drawn": 1,
+          "lost": 2,
+          "points": 7,
+          "goalsFor": 13,
+          "goalsAgainst": 11,
+          "goalDifference": 2,
+          "rank": 3
+        },
+        {
+          "teamId": "okayama-science",
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "points": 6,
+          "goalsFor": 9,
+          "goalsAgainst": 4,
+          "goalDifference": 5,
+          "rank": 4
+        },
+        {
+          "teamId": "shujitsu",
+          "played": 5,
+          "won": 1,
+          "drawn": 2,
+          "lost": 2,
+          "points": 5,
+          "goalsFor": 8,
+          "goalsAgainst": 15,
+          "goalDifference": -7,
+          "rank": 5
+        },
+        {
+          "teamId": "shimane",
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "points": 3,
+          "goalsFor": 8,
+          "goalsAgainst": 10,
+          "goalDifference": -2,
+          "rank": 6
+        },
+        {
+          "teamId": "kibi-international",
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "points": 3,
+          "goalsFor": 5,
+          "goalsAgainst": 7,
+          "goalDifference": -2,
+          "rank": 7
+        },
+        {
+          "teamId": "tottori",
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "points": 3,
+          "goalsFor": 4,
+          "goalsAgainst": 9,
+          "goalDifference": -5,
+          "rank": 8
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "played": 4,
+          "won": 0,
+          "drawn": 3,
+          "lost": 1,
+          "points": 3,
+          "goalsFor": 5,
+          "goalsAgainst": 12,
+          "goalDifference": -7,
+          "rank": 9
+        },
+        {
+          "teamId": "onomichi-city",
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "points": 3,
+          "goalsFor": 3,
+          "goalsAgainst": 15,
+          "goalDifference": -12,
+          "rank": 10
+        }
+      ],
+      "awayStandings": [
+        {
+          "teamId": "okayama-science",
+          "played": 7,
+          "won": 5,
+          "drawn": 2,
+          "lost": 0,
+          "points": 17,
+          "goalsFor": 23,
+          "goalsAgainst": 11,
+          "goalDifference": 12,
+          "rank": 1
+        },
+        {
+          "teamId": "kibi-international",
+          "played": 6,
+          "won": 5,
+          "drawn": 1,
+          "lost": 0,
+          "points": 16,
+          "goalsFor": 14,
+          "goalsAgainst": 5,
+          "goalDifference": 9,
+          "rank": 2
+        },
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "points": 9,
+          "goalsFor": 13,
+          "goalsAgainst": 3,
+          "goalDifference": 10,
+          "rank": 3
+        },
+        {
+          "teamId": "shimane",
+          "played": 5,
+          "won": 2,
+          "drawn": 1,
+          "lost": 2,
+          "points": 7,
+          "goalsFor": 7,
+          "goalsAgainst": 8,
+          "goalDifference": -1,
+          "rank": 4
+        },
+        {
+          "teamId": "hiroshima-international",
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "points": 6,
+          "goalsFor": 10,
+          "goalsAgainst": 1,
+          "goalDifference": 9,
+          "rank": 5
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "played": 4,
+          "won": 1,
+          "drawn": 1,
+          "lost": 2,
+          "points": 4,
+          "goalsFor": 11,
+          "goalsAgainst": 12,
+          "goalDifference": -1,
+          "rank": 6
+        },
+        {
+          "teamId": "tottori",
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "points": 3,
+          "goalsFor": 8,
+          "goalsAgainst": 10,
+          "goalDifference": -2,
+          "rank": 7
+        },
+        {
+          "teamId": "onomichi-city",
+          "played": 5,
+          "won": 1,
+          "drawn": 0,
+          "lost": 4,
+          "points": 3,
+          "goalsFor": 8,
+          "goalsAgainst": 16,
+          "goalDifference": -8,
+          "rank": 8
+        },
+        {
+          "teamId": "shujitsu",
+          "played": 3,
+          "won": 0,
+          "drawn": 1,
+          "lost": 2,
+          "points": 1,
+          "goalsFor": 5,
+          "goalsAgainst": 10,
+          "goalDifference": -5,
+          "rank": 9
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "played": 5,
+          "won": 0,
+          "drawn": 1,
+          "lost": 4,
+          "points": 1,
+          "goalsFor": 3,
+          "goalsAgainst": 14,
+          "goalDifference": -11,
+          "rank": 10
+        }
+      ],
+      "teams": [
+        {
+          "teamId": "tottori",
+          "rank": 7,
+          "overall": {
+            "played": 8,
+            "won": 2,
+            "drawn": 0,
+            "lost": 6,
+            "points": 6,
+            "goalsFor": 12,
+            "goalsAgainst": 19,
+            "goalDifference": -7
+          },
+          "home": {
+            "played": 4,
+            "won": 1,
+            "drawn": 0,
+            "lost": 3,
+            "points": 3,
+            "goalsFor": 4,
+            "goalsAgainst": 9,
+            "goalDifference": -5
+          },
+          "away": {
+            "played": 4,
+            "won": 1,
+            "drawn": 0,
+            "lost": 3,
+            "points": 3,
+            "goalsFor": 8,
+            "goalsAgainst": 10,
+            "goalDifference": -2
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20829",
+              "kickoffAt": "2024-07-07T15:30:00+09:00",
+              "round": 8,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20823",
+              "kickoffAt": "2024-06-09T14:00:00+09:00",
+              "round": 7,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20819",
+              "kickoffAt": "2024-06-02T13:00:00+09:00",
+              "round": 6,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 1,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20815",
+              "kickoffAt": "2024-05-26T13:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20811",
+              "kickoffAt": "2024-05-19T10:00:00+09:00",
+              "round": 4,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 1.5,
+            "averageConceded": 2.38,
+            "cleanSheets": 0,
+            "scorelessMatches": 2,
+            "yellowCards": 9,
+            "redCards": 0,
+            "benchSelections": 60,
+            "averageBench": 7.5,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 10
+            },
+            {
+              "round": 2,
+              "rank": 10
+            },
+            {
+              "round": 3,
+              "rank": 10
+            },
+            {
+              "round": 4,
+              "rank": 8
+            },
+            {
+              "round": 5,
+              "rank": 6
+            },
+            {
+              "round": 6,
+              "rank": 6
+            },
+            {
+              "round": 7,
+              "rank": 7
+            },
+            {
+              "round": 8,
+              "rank": 7
+            },
+            {
+              "round": 9,
+              "rank": 7
+            }
+          ]
+        },
+        {
+          "teamId": "onomichi-city",
+          "rank": 9,
+          "overall": {
+            "played": 9,
+            "won": 2,
+            "drawn": 0,
+            "lost": 7,
+            "points": 6,
+            "goalsFor": 11,
+            "goalsAgainst": 31,
+            "goalDifference": -20
+          },
+          "home": {
+            "played": 4,
+            "won": 1,
+            "drawn": 0,
+            "lost": 3,
+            "points": 3,
+            "goalsFor": 3,
+            "goalsAgainst": 15,
+            "goalDifference": -12
+          },
+          "away": {
+            "played": 5,
+            "won": 1,
+            "drawn": 0,
+            "lost": 4,
+            "points": 3,
+            "goalsFor": 8,
+            "goalsAgainst": 16,
+            "goalDifference": -8
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20837",
+              "kickoffAt": "2024-07-14T17:00:00+09:00",
+              "round": 9,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 1,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20832",
+              "kickoffAt": "2024-07-07T13:00:00+09:00",
+              "round": 8,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 1,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20826",
+              "kickoffAt": "2024-06-09T13:00:00+09:00",
+              "round": 7,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20820",
+              "kickoffAt": "2024-06-02T11:30:00+09:00",
+              "round": 6,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 1,
+              "goalsAgainst": 9,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20814",
+              "kickoffAt": "2024-05-26T11:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ],
+          "stats": {
+            "averageGoals": 1.22,
+            "averageConceded": 3.44,
+            "cleanSheets": 2,
+            "scorelessMatches": 2,
+            "yellowCards": 3,
+            "redCards": 0,
+            "benchSelections": 42,
+            "averageBench": 4.67,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 1
+            },
+            {
+              "round": 2,
+              "rank": 6
+            },
+            {
+              "round": 3,
+              "rank": 8
+            },
+            {
+              "round": 4,
+              "rank": 9
+            },
+            {
+              "round": 5,
+              "rank": 10
+            },
+            {
+              "round": 6,
+              "rank": 10
+            },
+            {
+              "round": 7,
+              "rank": 9
+            },
+            {
+              "round": 8,
+              "rank": 9
+            },
+            {
+              "round": 9,
+              "rank": 9
+            }
+          ]
+        },
+        {
+          "teamId": "shimane",
+          "rank": 6,
+          "overall": {
+            "played": 9,
+            "won": 3,
+            "drawn": 1,
+            "lost": 5,
+            "points": 10,
+            "goalsFor": 15,
+            "goalsAgainst": 18,
+            "goalDifference": -3
+          },
+          "home": {
+            "played": 4,
+            "won": 1,
+            "drawn": 0,
+            "lost": 3,
+            "points": 3,
+            "goalsFor": 8,
+            "goalsAgainst": 10,
+            "goalDifference": -2
+          },
+          "away": {
+            "played": 5,
+            "won": 2,
+            "drawn": 1,
+            "lost": 2,
+            "points": 7,
+            "goalsFor": 7,
+            "goalsAgainst": 8,
+            "goalDifference": -1
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20833",
+              "kickoffAt": "2024-07-14T17:00:00+09:00",
+              "round": 9,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20828",
+              "kickoffAt": "2024-07-07T13:00:00+09:00",
+              "round": 8,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 1,
+              "goalsAgainst": 5,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20823",
+              "kickoffAt": "2024-06-09T14:00:00+09:00",
+              "round": 7,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20818",
+              "kickoffAt": "2024-06-02T13:00:00+09:00",
+              "round": 6,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20813",
+              "kickoffAt": "2024-05-26T13:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 1,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ],
+          "stats": {
+            "averageGoals": 1.67,
+            "averageConceded": 2,
+            "cleanSheets": 3,
+            "scorelessMatches": 1,
+            "yellowCards": 5,
+            "redCards": 1,
+            "benchSelections": 75,
+            "averageBench": 8.33,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 2
+            },
+            {
+              "round": 2,
+              "rank": 2
+            },
+            {
+              "round": 3,
+              "rank": 6
+            },
+            {
+              "round": 4,
+              "rank": 2
+            },
+            {
+              "round": 5,
+              "rank": 5
+            },
+            {
+              "round": 6,
+              "rank": 5
+            },
+            {
+              "round": 7,
+              "rank": 5
+            },
+            {
+              "round": 8,
+              "rank": 6
+            },
+            {
+              "round": 9,
+              "rank": 6
+            }
+          ]
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "rank": 10,
+          "overall": {
+            "played": 9,
+            "won": 0,
+            "drawn": 4,
+            "lost": 5,
+            "points": 4,
+            "goalsFor": 8,
+            "goalsAgainst": 26,
+            "goalDifference": -18
+          },
+          "home": {
+            "played": 4,
+            "won": 0,
+            "drawn": 3,
+            "lost": 1,
+            "points": 3,
+            "goalsFor": 5,
+            "goalsAgainst": 12,
+            "goalDifference": -7
+          },
+          "away": {
+            "played": 5,
+            "won": 0,
+            "drawn": 1,
+            "lost": 4,
+            "points": 1,
+            "goalsFor": 3,
+            "goalsAgainst": 14,
+            "goalDifference": -11
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20834",
+              "kickoffAt": "2024-07-14T10:00:00+09:00",
+              "round": 9,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 0,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20830",
+              "kickoffAt": "2024-07-07T13:00:00+09:00",
+              "round": 8,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 1,
+              "goalsAgainst": 8,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20826",
+              "kickoffAt": "2024-06-09T13:00:00+09:00",
+              "round": 7,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20822",
+              "kickoffAt": "2024-06-02T13:00:00+09:00",
+              "round": 6,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            },
+            {
+              "matchId": "football-system-15-486-20817",
+              "kickoffAt": "2024-05-26T13:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 3,
+              "goalsAgainst": 3,
+              "result": "D"
+            }
+          ],
+          "stats": {
+            "averageGoals": 0.89,
+            "averageConceded": 2.89,
+            "cleanSheets": 1,
+            "scorelessMatches": 4,
+            "yellowCards": 4,
+            "redCards": 1,
+            "benchSelections": 62,
+            "averageBench": 6.89,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 9
+            },
+            {
+              "round": 2,
+              "rank": 9
+            },
+            {
+              "round": 3,
+              "rank": 9
+            },
+            {
+              "round": 4,
+              "rank": 10
+            },
+            {
+              "round": 5,
+              "rank": 9
+            },
+            {
+              "round": 6,
+              "rank": 9
+            },
+            {
+              "round": 7,
+              "rank": 10
+            },
+            {
+              "round": 8,
+              "rank": 10
+            },
+            {
+              "round": 9,
+              "rank": 10
+            }
+          ]
+        },
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "rank": 2,
+          "overall": {
+            "played": 9,
+            "won": 7,
+            "drawn": 1,
+            "lost": 1,
+            "points": 22,
+            "goalsFor": 36,
+            "goalsAgainst": 10,
+            "goalDifference": 26
+          },
+          "home": {
+            "played": 6,
+            "won": 4,
+            "drawn": 1,
+            "lost": 1,
+            "points": 13,
+            "goalsFor": 23,
+            "goalsAgainst": 7,
+            "goalDifference": 16
+          },
+          "away": {
+            "played": 3,
+            "won": 3,
+            "drawn": 0,
+            "lost": 0,
+            "points": 9,
+            "goalsFor": 13,
+            "goalsAgainst": 3,
+            "goalDifference": 10
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20834",
+              "kickoffAt": "2024-07-14T10:00:00+09:00",
+              "round": 9,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 4,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20828",
+              "kickoffAt": "2024-07-07T13:00:00+09:00",
+              "round": 8,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 5,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20824",
+              "kickoffAt": "2024-06-09T13:00:00+09:00",
+              "round": 7,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20820",
+              "kickoffAt": "2024-06-02T11:30:00+09:00",
+              "round": 6,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 9,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20816",
+              "kickoffAt": "2024-05-26T17:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 8,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 4,
+            "averageConceded": 1.11,
+            "cleanSheets": 2,
+            "scorelessMatches": 0,
+            "yellowCards": 7,
+            "redCards": 0,
+            "benchSelections": 78,
+            "averageBench": 8.67,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 7
+            },
+            {
+              "round": 2,
+              "rank": 3
+            },
+            {
+              "round": 3,
+              "rank": 2
+            },
+            {
+              "round": 4,
+              "rank": 4
+            },
+            {
+              "round": 5,
+              "rank": 2
+            },
+            {
+              "round": 6,
+              "rank": 2
+            },
+            {
+              "round": 7,
+              "rank": 2
+            },
+            {
+              "round": 8,
+              "rank": 2
+            },
+            {
+              "round": 9,
+              "rank": 2
+            }
+          ]
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "rank": 5,
+          "overall": {
+            "played": 9,
+            "won": 3,
+            "drawn": 2,
+            "lost": 4,
+            "points": 11,
+            "goalsFor": 24,
+            "goalsAgainst": 23,
+            "goalDifference": 1
+          },
+          "home": {
+            "played": 5,
+            "won": 2,
+            "drawn": 1,
+            "lost": 2,
+            "points": 7,
+            "goalsFor": 13,
+            "goalsAgainst": 11,
+            "goalDifference": 2
+          },
+          "away": {
+            "played": 4,
+            "won": 1,
+            "drawn": 1,
+            "lost": 2,
+            "points": 4,
+            "goalsFor": 11,
+            "goalsAgainst": 12,
+            "goalDifference": -1
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20836",
+              "kickoffAt": "2024-07-14T17:00:00+09:00",
+              "round": 9,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 3,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20832",
+              "kickoffAt": "2024-07-07T13:00:00+09:00",
+              "round": 8,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 2,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20827",
+              "kickoffAt": "2024-06-09T13:02:00+09:00",
+              "round": 7,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 6,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20821",
+              "kickoffAt": "2024-06-02T13:00:00+09:00",
+              "round": 6,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 2,
+              "goalsAgainst": 6,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20815",
+              "kickoffAt": "2024-05-26T13:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2.67,
+            "averageConceded": 2.56,
+            "cleanSheets": 0,
+            "scorelessMatches": 0,
+            "yellowCards": 10,
+            "redCards": 0,
+            "benchSelections": 33,
+            "averageBench": 3.67,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 6
+            },
+            {
+              "round": 2,
+              "rank": 8
+            },
+            {
+              "round": 3,
+              "rank": 3
+            },
+            {
+              "round": 4,
+              "rank": 6
+            },
+            {
+              "round": 5,
+              "rank": 7
+            },
+            {
+              "round": 6,
+              "rank": 8
+            },
+            {
+              "round": 7,
+              "rank": 6
+            },
+            {
+              "round": 8,
+              "rank": 5
+            },
+            {
+              "round": 9,
+              "rank": 5
+            }
+          ]
+        },
+        {
+          "teamId": "hiroshima-international",
+          "rank": 4,
+          "overall": {
+            "played": 9,
+            "won": 6,
+            "drawn": 0,
+            "lost": 3,
+            "points": 18,
+            "goalsFor": 22,
+            "goalsAgainst": 13,
+            "goalDifference": 9
+          },
+          "home": {
+            "played": 7,
+            "won": 4,
+            "drawn": 0,
+            "lost": 3,
+            "points": 12,
+            "goalsFor": 12,
+            "goalsAgainst": 12,
+            "goalDifference": 0
+          },
+          "away": {
+            "played": 2,
+            "won": 2,
+            "drawn": 0,
+            "lost": 0,
+            "points": 6,
+            "goalsFor": 10,
+            "goalsAgainst": 1,
+            "goalDifference": 9
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20836",
+              "kickoffAt": "2024-07-14T17:00:00+09:00",
+              "round": 9,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 4,
+              "goalsAgainst": 3,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20830",
+              "kickoffAt": "2024-07-07T13:00:00+09:00",
+              "round": 8,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 8,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20824",
+              "kickoffAt": "2024-06-09T13:00:00+09:00",
+              "round": 7,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20818",
+              "kickoffAt": "2024-06-02T13:00:00+09:00",
+              "round": 6,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20814",
+              "kickoffAt": "2024-05-26T11:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2.44,
+            "averageConceded": 1.44,
+            "cleanSheets": 2,
+            "scorelessMatches": 2,
+            "yellowCards": 8,
+            "redCards": 0,
+            "benchSelections": 77,
+            "averageBench": 8.56,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 8
+            },
+            {
+              "round": 2,
+              "rank": 5
+            },
+            {
+              "round": 3,
+              "rank": 7
+            },
+            {
+              "round": 4,
+              "rank": 5
+            },
+            {
+              "round": 5,
+              "rank": 4
+            },
+            {
+              "round": 6,
+              "rank": 4
+            },
+            {
+              "round": 7,
+              "rank": 4
+            },
+            {
+              "round": 8,
+              "rank": 4
+            },
+            {
+              "round": 9,
+              "rank": 4
+            }
+          ]
+        },
+        {
+          "teamId": "kibi-international",
+          "rank": 3,
+          "overall": {
+            "played": 9,
+            "won": 6,
+            "drawn": 1,
+            "lost": 2,
+            "points": 19,
+            "goalsFor": 19,
+            "goalsAgainst": 12,
+            "goalDifference": 7
+          },
+          "home": {
+            "played": 3,
+            "won": 1,
+            "drawn": 0,
+            "lost": 2,
+            "points": 3,
+            "goalsFor": 5,
+            "goalsAgainst": 7,
+            "goalDifference": -2
+          },
+          "away": {
+            "played": 6,
+            "won": 5,
+            "drawn": 1,
+            "lost": 0,
+            "points": 16,
+            "goalsFor": 14,
+            "goalsAgainst": 5,
+            "goalDifference": 9
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20837",
+              "kickoffAt": "2024-07-14T17:00:00+09:00",
+              "round": 9,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 2,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20831",
+              "kickoffAt": "2024-07-07T17:00:00+09:00",
+              "round": 8,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20825",
+              "kickoffAt": "2024-06-09T13:00:00+09:00",
+              "round": 7,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 1,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20819",
+              "kickoffAt": "2024-06-02T13:00:00+09:00",
+              "round": 6,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 2,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20813",
+              "kickoffAt": "2024-05-26T13:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 2,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2.11,
+            "averageConceded": 1.33,
+            "cleanSheets": 2,
+            "scorelessMatches": 1,
+            "yellowCards": 10,
+            "redCards": 1,
+            "benchSelections": 52,
+            "averageBench": 5.78,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 3
+            },
+            {
+              "round": 2,
+              "rank": 4
+            },
+            {
+              "round": 3,
+              "rank": 5
+            },
+            {
+              "round": 4,
+              "rank": 3
+            },
+            {
+              "round": 5,
+              "rank": 3
+            },
+            {
+              "round": 6,
+              "rank": 3
+            },
+            {
+              "round": 7,
+              "rank": 3
+            },
+            {
+              "round": 8,
+              "rank": 3
+            },
+            {
+              "round": 9,
+              "rank": 3
+            }
+          ]
+        },
+        {
+          "teamId": "shujitsu",
+          "rank": 8,
+          "overall": {
+            "played": 8,
+            "won": 1,
+            "drawn": 3,
+            "lost": 4,
+            "points": 6,
+            "goalsFor": 13,
+            "goalsAgainst": 25,
+            "goalDifference": -12
+          },
+          "home": {
+            "played": 5,
+            "won": 1,
+            "drawn": 2,
+            "lost": 2,
+            "points": 5,
+            "goalsFor": 8,
+            "goalsAgainst": 15,
+            "goalDifference": -7
+          },
+          "away": {
+            "played": 3,
+            "won": 0,
+            "drawn": 1,
+            "lost": 2,
+            "points": 1,
+            "goalsFor": 5,
+            "goalsAgainst": 10,
+            "goalDifference": -5
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20831",
+              "kickoffAt": "2024-07-07T17:00:00+09:00",
+              "round": 8,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20827",
+              "kickoffAt": "2024-06-09T13:02:00+09:00",
+              "round": 7,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 2,
+              "goalsAgainst": 6,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20822",
+              "kickoffAt": "2024-06-02T13:00:00+09:00",
+              "round": 6,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            },
+            {
+              "matchId": "football-system-15-486-20816",
+              "kickoffAt": "2024-05-26T17:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 1,
+              "goalsAgainst": 8,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20810",
+              "kickoffAt": "2024-05-19T11:00:00+09:00",
+              "round": 4,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            }
+          ],
+          "stats": {
+            "averageGoals": 1.63,
+            "averageConceded": 3.13,
+            "cleanSheets": 0,
+            "scorelessMatches": 1,
+            "yellowCards": 5,
+            "redCards": 0,
+            "benchSelections": 56,
+            "averageBench": 7,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 5
+            },
+            {
+              "round": 2,
+              "rank": 7
+            },
+            {
+              "round": 3,
+              "rank": 4
+            },
+            {
+              "round": 4,
+              "rank": 7
+            },
+            {
+              "round": 5,
+              "rank": 8
+            },
+            {
+              "round": 6,
+              "rank": 7
+            },
+            {
+              "round": 7,
+              "rank": 8
+            },
+            {
+              "round": 8,
+              "rank": 8
+            },
+            {
+              "round": 9,
+              "rank": 8
+            }
+          ]
+        },
+        {
+          "teamId": "okayama-science",
+          "rank": 1,
+          "overall": {
+            "played": 9,
+            "won": 7,
+            "drawn": 2,
+            "lost": 0,
+            "points": 23,
+            "goalsFor": 32,
+            "goalsAgainst": 15,
+            "goalDifference": 17
+          },
+          "home": {
+            "played": 2,
+            "won": 2,
+            "drawn": 0,
+            "lost": 0,
+            "points": 6,
+            "goalsFor": 9,
+            "goalsAgainst": 4,
+            "goalDifference": 5
+          },
+          "away": {
+            "played": 7,
+            "won": 5,
+            "drawn": 2,
+            "lost": 0,
+            "points": 17,
+            "goalsFor": 23,
+            "goalsAgainst": 11,
+            "goalDifference": 12
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20833",
+              "kickoffAt": "2024-07-14T17:00:00+09:00",
+              "round": 9,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20829",
+              "kickoffAt": "2024-07-07T15:30:00+09:00",
+              "round": 8,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20825",
+              "kickoffAt": "2024-06-09T13:00:00+09:00",
+              "round": 7,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 2,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20821",
+              "kickoffAt": "2024-06-02T13:00:00+09:00",
+              "round": 6,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 6,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20817",
+              "kickoffAt": "2024-05-26T13:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 3,
+              "goalsAgainst": 3,
+              "result": "D"
+            }
+          ],
+          "stats": {
+            "averageGoals": 3.56,
+            "averageConceded": 1.67,
+            "cleanSheets": 1,
+            "scorelessMatches": 0,
+            "yellowCards": 7,
+            "redCards": 1,
+            "benchSelections": 81,
+            "averageBench": 9,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 1,
+              "rank": 4
+            },
+            {
+              "round": 2,
+              "rank": 1
+            },
+            {
+              "round": 3,
+              "rank": 1
+            },
+            {
+              "round": 4,
+              "rank": 1
+            },
+            {
+              "round": 5,
+              "rank": 1
+            },
+            {
+              "round": 6,
+              "rank": 1
+            },
+            {
+              "round": 7,
+              "rank": 1
+            },
+            {
+              "round": 8,
+              "rank": 1
+            },
+            {
+              "round": 9,
+              "rank": 1
+            }
+          ]
+        }
+      ],
+      "rankings": {
+        "averageGoals": [
+          {
+            "rank": 1,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 4
+          },
+          {
+            "rank": 2,
+            "teamId": "okayama-science",
+            "value": 3.56
+          },
+          {
+            "rank": 3,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 2.67
+          },
+          {
+            "rank": 4,
+            "teamId": "hiroshima-international",
+            "value": 2.44
+          },
+          {
+            "rank": 5,
+            "teamId": "kibi-international",
+            "value": 2.11
+          },
+          {
+            "rank": 6,
+            "teamId": "shimane",
+            "value": 1.67
+          },
+          {
+            "rank": 7,
+            "teamId": "shujitsu",
+            "value": 1.63
+          },
+          {
+            "rank": 8,
+            "teamId": "tottori",
+            "value": 1.5
+          },
+          {
+            "rank": 9,
+            "teamId": "onomichi-city",
+            "value": 1.22
+          },
+          {
+            "rank": 10,
+            "teamId": "shimonoseki-city",
+            "value": 0.89
+          }
+        ],
+        "averageConceded": [
+          {
+            "rank": 1,
+            "teamId": "onomichi-city",
+            "value": 3.44
+          },
+          {
+            "rank": 2,
+            "teamId": "shujitsu",
+            "value": 3.13
+          },
+          {
+            "rank": 3,
+            "teamId": "shimonoseki-city",
+            "value": 2.89
+          },
+          {
+            "rank": 4,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 2.56
+          },
+          {
+            "rank": 5,
+            "teamId": "tottori",
+            "value": 2.38
+          },
+          {
+            "rank": 6,
+            "teamId": "shimane",
+            "value": 2
+          },
+          {
+            "rank": 7,
+            "teamId": "okayama-science",
+            "value": 1.67
+          },
+          {
+            "rank": 8,
+            "teamId": "hiroshima-international",
+            "value": 1.44
+          },
+          {
+            "rank": 9,
+            "teamId": "kibi-international",
+            "value": 1.33
+          },
+          {
+            "rank": 10,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 1.11
+          }
+        ],
+        "cleanSheets": [
+          {
+            "rank": 1,
+            "teamId": "shimane",
+            "value": 3
+          },
+          {
+            "rank": 2,
+            "teamId": "hiroshima-international",
+            "value": 2
+          },
+          {
+            "rank": 3,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 2
+          },
+          {
+            "rank": 4,
+            "teamId": "kibi-international",
+            "value": 2
+          },
+          {
+            "rank": 5,
+            "teamId": "onomichi-city",
+            "value": 2
+          },
+          {
+            "rank": 6,
+            "teamId": "okayama-science",
+            "value": 1
+          },
+          {
+            "rank": 7,
+            "teamId": "shimonoseki-city",
+            "value": 1
+          },
+          {
+            "rank": 8,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 0
+          },
+          {
+            "rank": 9,
+            "teamId": "shujitsu",
+            "value": 0
+          },
+          {
+            "rank": 10,
+            "teamId": "tottori",
+            "value": 0
+          }
+        ],
+        "scorelessMatches": [
+          {
+            "rank": 1,
+            "teamId": "shimonoseki-city",
+            "value": 4
+          },
+          {
+            "rank": 2,
+            "teamId": "hiroshima-international",
+            "value": 2
+          },
+          {
+            "rank": 3,
+            "teamId": "onomichi-city",
+            "value": 2
+          },
+          {
+            "rank": 4,
+            "teamId": "tottori",
+            "value": 2
+          },
+          {
+            "rank": 5,
+            "teamId": "kibi-international",
+            "value": 1
+          },
+          {
+            "rank": 6,
+            "teamId": "shimane",
+            "value": 1
+          },
+          {
+            "rank": 7,
+            "teamId": "shujitsu",
+            "value": 1
+          },
+          {
+            "rank": 8,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 0
+          },
+          {
+            "rank": 9,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 0
+          },
+          {
+            "rank": 10,
+            "teamId": "okayama-science",
+            "value": 0
+          }
+        ],
+        "yellowCards": [
+          {
+            "rank": 1,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 10
+          },
+          {
+            "rank": 2,
+            "teamId": "kibi-international",
+            "value": 10
+          },
+          {
+            "rank": 3,
+            "teamId": "tottori",
+            "value": 9
+          },
+          {
+            "rank": 4,
+            "teamId": "hiroshima-international",
+            "value": 8
+          },
+          {
+            "rank": 5,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 7
+          },
+          {
+            "rank": 6,
+            "teamId": "okayama-science",
+            "value": 7
+          },
+          {
+            "rank": 7,
+            "teamId": "shimane",
+            "value": 5
+          },
+          {
+            "rank": 8,
+            "teamId": "shujitsu",
+            "value": 5
+          },
+          {
+            "rank": 9,
+            "teamId": "shimonoseki-city",
+            "value": 4
+          },
+          {
+            "rank": 10,
+            "teamId": "onomichi-city",
+            "value": 3
+          }
+        ],
+        "redCards": [
+          {
+            "rank": 1,
+            "teamId": "kibi-international",
+            "value": 1
+          },
+          {
+            "rank": 2,
+            "teamId": "okayama-science",
+            "value": 1
+          },
+          {
+            "rank": 3,
+            "teamId": "shimane",
+            "value": 1
+          },
+          {
+            "rank": 4,
+            "teamId": "shimonoseki-city",
+            "value": 1
+          },
+          {
+            "rank": 5,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 0
+          },
+          {
+            "rank": 6,
+            "teamId": "hiroshima-international",
+            "value": 0
+          },
+          {
+            "rank": 7,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 0
+          },
+          {
+            "rank": 8,
+            "teamId": "onomichi-city",
+            "value": 0
+          },
+          {
+            "rank": 9,
+            "teamId": "shujitsu",
+            "value": 0
+          },
+          {
+            "rank": 10,
+            "teamId": "tottori",
+            "value": 0
+          }
+        ],
+        "benchSelections": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 81
+          },
+          {
+            "rank": 2,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 78
+          },
+          {
+            "rank": 3,
+            "teamId": "hiroshima-international",
+            "value": 77
+          },
+          {
+            "rank": 4,
+            "teamId": "shimane",
+            "value": 75
+          },
+          {
+            "rank": 5,
+            "teamId": "shimonoseki-city",
+            "value": 62
+          },
+          {
+            "rank": 6,
+            "teamId": "tottori",
+            "value": 60
+          },
+          {
+            "rank": 7,
+            "teamId": "shujitsu",
+            "value": 56
+          },
+          {
+            "rank": 8,
+            "teamId": "kibi-international",
+            "value": 52
+          },
+          {
+            "rank": 9,
+            "teamId": "onomichi-city",
+            "value": 42
+          },
+          {
+            "rank": 10,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 33
+          }
+        ],
+        "averageBench": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 9
+          },
+          {
+            "rank": 2,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 8.67
+          },
+          {
+            "rank": 3,
+            "teamId": "hiroshima-international",
+            "value": 8.56
+          },
+          {
+            "rank": 4,
+            "teamId": "shimane",
+            "value": 8.33
+          },
+          {
+            "rank": 5,
+            "teamId": "tottori",
+            "value": 7.5
+          },
+          {
+            "rank": 6,
+            "teamId": "shujitsu",
+            "value": 7
+          },
+          {
+            "rank": 7,
+            "teamId": "shimonoseki-city",
+            "value": 6.89
+          },
+          {
+            "rank": 8,
+            "teamId": "kibi-international",
+            "value": 5.78
+          },
+          {
+            "rank": 9,
+            "teamId": "onomichi-city",
+            "value": 4.67
+          },
+          {
+            "rank": 10,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 3.67
+          }
+        ],
+        "averageStartingAge": []
+      }
+    },
+    "second": {
+      "standings": [
+        {
+          "teamId": "okayama-science",
+          "played": 9,
+          "won": 8,
+          "drawn": 1,
+          "lost": 0,
+          "points": 25,
+          "goalsFor": 46,
+          "goalsAgainst": 8,
+          "goalDifference": 38,
+          "rank": 1,
+          "rankChange": 0
+        },
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "played": 9,
+          "won": 7,
+          "drawn": 1,
+          "lost": 1,
+          "points": 22,
+          "goalsFor": 39,
+          "goalsAgainst": 15,
+          "goalDifference": 24,
+          "rank": 2,
+          "rankChange": 0
+        },
+        {
+          "teamId": "hiroshima-international",
+          "played": 9,
+          "won": 6,
+          "drawn": 1,
+          "lost": 2,
+          "points": 19,
+          "goalsFor": 27,
+          "goalsAgainst": 12,
+          "goalDifference": 15,
+          "rank": 3,
+          "rankChange": 0
+        },
+        {
+          "teamId": "kibi-international",
+          "played": 9,
+          "won": 5,
+          "drawn": 2,
+          "lost": 2,
+          "points": 17,
+          "goalsFor": 24,
+          "goalsAgainst": 15,
+          "goalDifference": 9,
+          "rank": 4,
+          "rankChange": 0
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "played": 9,
+          "won": 4,
+          "drawn": 1,
+          "lost": 4,
+          "points": 13,
+          "goalsFor": 18,
+          "goalsAgainst": 31,
+          "goalDifference": -13,
+          "rank": 5,
+          "rankChange": 0
+        },
+        {
+          "teamId": "tottori",
+          "played": 9,
+          "won": 4,
+          "drawn": 0,
+          "lost": 5,
+          "points": 12,
+          "goalsFor": 24,
+          "goalsAgainst": 20,
+          "goalDifference": 4,
+          "rank": 6,
+          "rankChange": 0
+        },
+        {
+          "teamId": "shimane",
+          "played": 9,
+          "won": 2,
+          "drawn": 1,
+          "lost": 6,
+          "points": 7,
+          "goalsFor": 9,
+          "goalsAgainst": 18,
+          "goalDifference": -9,
+          "rank": 7,
+          "rankChange": 0
+        },
+        {
+          "teamId": "shujitsu",
+          "played": 9,
+          "won": 2,
+          "drawn": 1,
+          "lost": 6,
+          "points": 7,
+          "goalsFor": 23,
+          "goalsAgainst": 33,
+          "goalDifference": -10,
+          "rank": 8,
+          "rankChange": 1
+        },
+        {
+          "teamId": "onomichi-city",
+          "played": 9,
+          "won": 2,
+          "drawn": 0,
+          "lost": 7,
+          "points": 6,
+          "goalsFor": 9,
+          "goalsAgainst": 23,
+          "goalDifference": -14,
+          "rank": 9,
+          "rankChange": -1
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "played": 9,
+          "won": 1,
+          "drawn": 0,
+          "lost": 8,
+          "points": 3,
+          "goalsFor": 9,
+          "goalsAgainst": 53,
+          "goalDifference": -44,
+          "rank": 10,
+          "rankChange": 0
+        }
+      ],
+      "homeStandings": [
+        {
+          "teamId": "okayama-science",
+          "played": 7,
+          "won": 6,
+          "drawn": 1,
+          "lost": 0,
+          "points": 19,
+          "goalsFor": 37,
+          "goalsAgainst": 8,
+          "goalDifference": 29,
+          "rank": 1
+        },
+        {
+          "teamId": "kibi-international",
+          "played": 6,
+          "won": 4,
+          "drawn": 1,
+          "lost": 1,
+          "points": 13,
+          "goalsFor": 20,
+          "goalsAgainst": 8,
+          "goalDifference": 12,
+          "rank": 2
+        },
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "played": 3,
+          "won": 2,
+          "drawn": 1,
+          "lost": 0,
+          "points": 7,
+          "goalsFor": 13,
+          "goalsAgainst": 5,
+          "goalDifference": 8,
+          "rank": 3
+        },
+        {
+          "teamId": "hiroshima-international",
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "points": 6,
+          "goalsFor": 10,
+          "goalsAgainst": 0,
+          "goalDifference": 10,
+          "rank": 4
+        },
+        {
+          "teamId": "shujitsu",
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "points": 3,
+          "goalsFor": 9,
+          "goalsAgainst": 10,
+          "goalDifference": -1,
+          "rank": 5
+        },
+        {
+          "teamId": "shimane",
+          "played": 5,
+          "won": 1,
+          "drawn": 0,
+          "lost": 4,
+          "points": 3,
+          "goalsFor": 3,
+          "goalsAgainst": 9,
+          "goalDifference": -6,
+          "rank": 6
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "played": 4,
+          "won": 0,
+          "drawn": 1,
+          "lost": 3,
+          "points": 1,
+          "goalsFor": 6,
+          "goalsAgainst": 21,
+          "goalDifference": -15,
+          "rank": 7
+        },
+        {
+          "teamId": "onomichi-city",
+          "played": 5,
+          "won": 0,
+          "drawn": 0,
+          "lost": 5,
+          "points": 0,
+          "goalsFor": 5,
+          "goalsAgainst": 14,
+          "goalDifference": -9,
+          "rank": 8
+        },
+        {
+          "teamId": "tottori",
+          "played": 4,
+          "won": 0,
+          "drawn": 0,
+          "lost": 4,
+          "points": 0,
+          "goalsFor": 3,
+          "goalsAgainst": 14,
+          "goalDifference": -11,
+          "rank": 9
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "played": 5,
+          "won": 0,
+          "drawn": 0,
+          "lost": 5,
+          "points": 0,
+          "goalsFor": 5,
+          "goalsAgainst": 28,
+          "goalDifference": -23,
+          "rank": 10
+        }
+      ],
+      "awayStandings": [
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "played": 6,
+          "won": 5,
+          "drawn": 0,
+          "lost": 1,
+          "points": 15,
+          "goalsFor": 26,
+          "goalsAgainst": 10,
+          "goalDifference": 16,
+          "rank": 1
+        },
+        {
+          "teamId": "hiroshima-international",
+          "played": 7,
+          "won": 4,
+          "drawn": 1,
+          "lost": 2,
+          "points": 13,
+          "goalsFor": 17,
+          "goalsAgainst": 12,
+          "goalDifference": 5,
+          "rank": 2
+        },
+        {
+          "teamId": "tottori",
+          "played": 5,
+          "won": 4,
+          "drawn": 0,
+          "lost": 1,
+          "points": 12,
+          "goalsFor": 21,
+          "goalsAgainst": 6,
+          "goalDifference": 15,
+          "rank": 3
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "played": 5,
+          "won": 4,
+          "drawn": 0,
+          "lost": 1,
+          "points": 12,
+          "goalsFor": 12,
+          "goalsAgainst": 10,
+          "goalDifference": 2,
+          "rank": 4
+        },
+        {
+          "teamId": "okayama-science",
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "points": 6,
+          "goalsFor": 9,
+          "goalsAgainst": 0,
+          "goalDifference": 9,
+          "rank": 5
+        },
+        {
+          "teamId": "onomichi-city",
+          "played": 4,
+          "won": 2,
+          "drawn": 0,
+          "lost": 2,
+          "points": 6,
+          "goalsFor": 4,
+          "goalsAgainst": 9,
+          "goalDifference": -5,
+          "rank": 6
+        },
+        {
+          "teamId": "shimane",
+          "played": 4,
+          "won": 1,
+          "drawn": 1,
+          "lost": 2,
+          "points": 4,
+          "goalsFor": 6,
+          "goalsAgainst": 9,
+          "goalDifference": -3,
+          "rank": 7
+        },
+        {
+          "teamId": "kibi-international",
+          "played": 3,
+          "won": 1,
+          "drawn": 1,
+          "lost": 1,
+          "points": 4,
+          "goalsFor": 4,
+          "goalsAgainst": 7,
+          "goalDifference": -3,
+          "rank": 8
+        },
+        {
+          "teamId": "shujitsu",
+          "played": 5,
+          "won": 1,
+          "drawn": 1,
+          "lost": 3,
+          "points": 4,
+          "goalsFor": 14,
+          "goalsAgainst": 23,
+          "goalDifference": -9,
+          "rank": 9
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "points": 3,
+          "goalsFor": 4,
+          "goalsAgainst": 25,
+          "goalDifference": -21,
+          "rank": 10
+        }
+      ],
+      "teams": [
+        {
+          "teamId": "tottori",
+          "rank": 6,
+          "overall": {
+            "played": 9,
+            "won": 4,
+            "drawn": 0,
+            "lost": 5,
+            "points": 12,
+            "goalsFor": 24,
+            "goalsAgainst": 20,
+            "goalDifference": 4
+          },
+          "home": {
+            "played": 4,
+            "won": 0,
+            "drawn": 0,
+            "lost": 4,
+            "points": 0,
+            "goalsFor": 3,
+            "goalsAgainst": 14,
+            "goalDifference": -11
+          },
+          "away": {
+            "played": 5,
+            "won": 4,
+            "drawn": 0,
+            "lost": 1,
+            "points": 12,
+            "goalsFor": 21,
+            "goalsAgainst": 6,
+            "goalDifference": 15
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20880",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 1,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20874",
+              "kickoffAt": "2024-10-20T12:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20868",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20864",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20860",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 1,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2.67,
+            "averageConceded": 2.22,
+            "cleanSheets": 2,
+            "scorelessMatches": 2,
+            "yellowCards": 1,
+            "redCards": 0,
+            "benchSelections": 76,
+            "averageBench": 8.44,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 10,
+              "rank": 4
+            },
+            {
+              "round": 11,
+              "rank": 6
+            },
+            {
+              "round": 12,
+              "rank": 8
+            },
+            {
+              "round": 13,
+              "rank": 6
+            },
+            {
+              "round": 14,
+              "rank": 7
+            },
+            {
+              "round": 15,
+              "rank": 5
+            },
+            {
+              "round": 16,
+              "rank": 4
+            },
+            {
+              "round": 17,
+              "rank": 6
+            },
+            {
+              "round": 18,
+              "rank": 6
+            }
+          ]
+        },
+        {
+          "teamId": "onomichi-city",
+          "rank": 9,
+          "overall": {
+            "played": 9,
+            "won": 2,
+            "drawn": 0,
+            "lost": 7,
+            "points": 6,
+            "goalsFor": 9,
+            "goalsAgainst": 23,
+            "goalDifference": -14
+          },
+          "home": {
+            "played": 5,
+            "won": 0,
+            "drawn": 0,
+            "lost": 5,
+            "points": 0,
+            "goalsFor": 5,
+            "goalsAgainst": 14,
+            "goalDifference": -9
+          },
+          "away": {
+            "played": 4,
+            "won": 2,
+            "drawn": 0,
+            "lost": 2,
+            "points": 6,
+            "goalsFor": 4,
+            "goalsAgainst": 9,
+            "goalDifference": -5
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20882",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20877",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20871",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20865",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 0,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20859",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            }
+          ],
+          "stats": {
+            "averageGoals": 1,
+            "averageConceded": 2.56,
+            "cleanSheets": 2,
+            "scorelessMatches": 3,
+            "yellowCards": 4,
+            "redCards": 0,
+            "benchSelections": 51,
+            "averageBench": 5.67,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 10,
+              "rank": 7
+            },
+            {
+              "round": 11,
+              "rank": 10
+            },
+            {
+              "round": 12,
+              "rank": 10
+            },
+            {
+              "round": 13,
+              "rank": 9
+            },
+            {
+              "round": 14,
+              "rank": 9
+            },
+            {
+              "round": 15,
+              "rank": 9
+            },
+            {
+              "round": 16,
+              "rank": 8
+            },
+            {
+              "round": 17,
+              "rank": 8
+            },
+            {
+              "round": 18,
+              "rank": 9
+            }
+          ]
+        },
+        {
+          "teamId": "shimane",
+          "rank": 7,
+          "overall": {
+            "played": 9,
+            "won": 2,
+            "drawn": 1,
+            "lost": 6,
+            "points": 7,
+            "goalsFor": 9,
+            "goalsAgainst": 18,
+            "goalDifference": -9
+          },
+          "home": {
+            "played": 5,
+            "won": 1,
+            "drawn": 0,
+            "lost": 4,
+            "points": 3,
+            "goalsFor": 3,
+            "goalsAgainst": 9,
+            "goalDifference": -6
+          },
+          "away": {
+            "played": 4,
+            "won": 1,
+            "drawn": 1,
+            "lost": 2,
+            "points": 4,
+            "goalsFor": 6,
+            "goalsAgainst": 9,
+            "goalDifference": -3
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20878",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 0,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20873",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 0,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20868",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20863",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20858",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ],
+          "stats": {
+            "averageGoals": 1,
+            "averageConceded": 2,
+            "cleanSheets": 1,
+            "scorelessMatches": 6,
+            "yellowCards": 6,
+            "redCards": 0,
+            "benchSelections": 67,
+            "averageBench": 7.44,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 10,
+              "rank": 3
+            },
+            {
+              "round": 11,
+              "rank": 3
+            },
+            {
+              "round": 12,
+              "rank": 3
+            },
+            {
+              "round": 13,
+              "rank": 4
+            },
+            {
+              "round": 14,
+              "rank": 5
+            },
+            {
+              "round": 15,
+              "rank": 6
+            },
+            {
+              "round": 16,
+              "rank": 7
+            },
+            {
+              "round": 17,
+              "rank": 7
+            },
+            {
+              "round": 18,
+              "rank": 7
+            }
+          ]
+        },
+        {
+          "teamId": "shimonoseki-city",
+          "rank": 10,
+          "overall": {
+            "played": 9,
+            "won": 1,
+            "drawn": 0,
+            "lost": 8,
+            "points": 3,
+            "goalsFor": 9,
+            "goalsAgainst": 53,
+            "goalDifference": -44
+          },
+          "home": {
+            "played": 5,
+            "won": 0,
+            "drawn": 0,
+            "lost": 5,
+            "points": 0,
+            "goalsFor": 5,
+            "goalsAgainst": 28,
+            "goalDifference": -23
+          },
+          "away": {
+            "played": 4,
+            "won": 1,
+            "drawn": 0,
+            "lost": 3,
+            "points": 3,
+            "goalsFor": 4,
+            "goalsAgainst": 25,
+            "goalDifference": -21
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20879",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 1,
+              "goalsAgainst": 5,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20875",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 0,
+              "goalsAgainst": 9,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20862",
+              "kickoffAt": "2024-10-13T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 1,
+              "goalsAgainst": 10,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20871",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20867",
+              "kickoffAt": "2024-09-29T16:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 1,
+            "averageConceded": 5.89,
+            "cleanSheets": 0,
+            "scorelessMatches": 5,
+            "yellowCards": 2,
+            "redCards": 0,
+            "benchSelections": 58,
+            "averageBench": 6.44,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 10,
+              "rank": 8
+            },
+            {
+              "round": 11,
+              "rank": 8
+            },
+            {
+              "round": 12,
+              "rank": 9
+            },
+            {
+              "round": 13,
+              "rank": 10
+            },
+            {
+              "round": 14,
+              "rank": 10
+            },
+            {
+              "round": 15,
+              "rank": 10
+            },
+            {
+              "round": 16,
+              "rank": 10
+            },
+            {
+              "round": 17,
+              "rank": 10
+            },
+            {
+              "round": 18,
+              "rank": 10
+            }
+          ]
+        },
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "rank": 2,
+          "overall": {
+            "played": 9,
+            "won": 7,
+            "drawn": 1,
+            "lost": 1,
+            "points": 22,
+            "goalsFor": 39,
+            "goalsAgainst": 15,
+            "goalDifference": 24
+          },
+          "home": {
+            "played": 3,
+            "won": 2,
+            "drawn": 1,
+            "lost": 0,
+            "points": 7,
+            "goalsFor": 13,
+            "goalsAgainst": 5,
+            "goalDifference": 8
+          },
+          "away": {
+            "played": 6,
+            "won": 5,
+            "drawn": 0,
+            "lost": 1,
+            "points": 15,
+            "goalsFor": 26,
+            "goalsAgainst": 10,
+            "goalDifference": 16
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20879",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 5,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20873",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 3,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20869",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 4,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20865",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 3,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20861",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 5,
+              "goalsAgainst": 5,
+              "result": "D"
+            }
+          ],
+          "stats": {
+            "averageGoals": 4.33,
+            "averageConceded": 1.67,
+            "cleanSheets": 4,
+            "scorelessMatches": 0,
+            "yellowCards": 5,
+            "redCards": 0,
+            "benchSelections": 79,
+            "averageBench": 8.78,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 10,
+              "rank": 2
+            },
+            {
+              "round": 11,
+              "rank": 2
+            },
+            {
+              "round": 12,
+              "rank": 2
+            },
+            {
+              "round": 13,
+              "rank": 2
+            },
+            {
+              "round": 14,
+              "rank": 2
+            },
+            {
+              "round": 15,
+              "rank": 2
+            },
+            {
+              "round": 16,
+              "rank": 2
+            },
+            {
+              "round": 17,
+              "rank": 2
+            },
+            {
+              "round": 18,
+              "rank": 2
+            }
+          ]
+        },
+        {
+          "teamId": "hiroshima-institute-of-technology",
+          "rank": 5,
+          "overall": {
+            "played": 9,
+            "won": 4,
+            "drawn": 1,
+            "lost": 4,
+            "points": 13,
+            "goalsFor": 18,
+            "goalsAgainst": 31,
+            "goalDifference": -13
+          },
+          "home": {
+            "played": 4,
+            "won": 0,
+            "drawn": 1,
+            "lost": 3,
+            "points": 1,
+            "goalsFor": 6,
+            "goalsAgainst": 21,
+            "goalDifference": -15
+          },
+          "away": {
+            "played": 5,
+            "won": 4,
+            "drawn": 0,
+            "lost": 1,
+            "points": 12,
+            "goalsFor": 12,
+            "goalsAgainst": 10,
+            "goalDifference": 2
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20881",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-international",
+              "opponentName": "広島国際大学",
+              "goalsFor": 1,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20877",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20872",
+              "kickoffAt": "2024-10-06T16:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20866",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 0,
+              "goalsAgainst": 7,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20860",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 2,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2,
+            "averageConceded": 3.44,
+            "cleanSheets": 1,
+            "scorelessMatches": 1,
+            "yellowCards": 8,
+            "redCards": 1,
+            "benchSelections": 29,
+            "averageBench": 3.22,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 10,
+              "rank": 9
+            },
+            {
+              "round": 11,
+              "rank": 5
+            },
+            {
+              "round": 12,
+              "rank": 6
+            },
+            {
+              "round": 13,
+              "rank": 7
+            },
+            {
+              "round": 14,
+              "rank": 6
+            },
+            {
+              "round": 15,
+              "rank": 7
+            },
+            {
+              "round": 16,
+              "rank": 6
+            },
+            {
+              "round": 17,
+              "rank": 5
+            },
+            {
+              "round": 18,
+              "rank": 5
+            }
+          ]
+        },
+        {
+          "teamId": "hiroshima-international",
+          "rank": 3,
+          "overall": {
+            "played": 9,
+            "won": 6,
+            "drawn": 1,
+            "lost": 2,
+            "points": 19,
+            "goalsFor": 27,
+            "goalsAgainst": 12,
+            "goalDifference": 15
+          },
+          "home": {
+            "played": 2,
+            "won": 2,
+            "drawn": 0,
+            "lost": 0,
+            "points": 6,
+            "goalsFor": 10,
+            "goalsAgainst": 0,
+            "goalDifference": 10
+          },
+          "away": {
+            "played": 7,
+            "won": 4,
+            "drawn": 1,
+            "lost": 2,
+            "points": 13,
+            "goalsFor": 17,
+            "goalsAgainst": 12,
+            "goalDifference": 5
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20881",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 4,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20875",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 9,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20869",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 0,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20863",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20859",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 3,
+            "averageConceded": 1.33,
+            "cleanSheets": 4,
+            "scorelessMatches": 1,
+            "yellowCards": 7,
+            "redCards": 0,
+            "benchSelections": 80,
+            "averageBench": 8.89,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 10,
+              "rank": 5
+            },
+            {
+              "round": 11,
+              "rank": 4
+            },
+            {
+              "round": 12,
+              "rank": 4
+            },
+            {
+              "round": 13,
+              "rank": 3
+            },
+            {
+              "round": 14,
+              "rank": 3
+            },
+            {
+              "round": 15,
+              "rank": 3
+            },
+            {
+              "round": 16,
+              "rank": 3
+            },
+            {
+              "round": 17,
+              "rank": 3
+            },
+            {
+              "round": 18,
+              "rank": 3
+            }
+          ]
+        },
+        {
+          "teamId": "kibi-international",
+          "rank": 4,
+          "overall": {
+            "played": 9,
+            "won": 5,
+            "drawn": 2,
+            "lost": 2,
+            "points": 17,
+            "goalsFor": 24,
+            "goalsAgainst": 15,
+            "goalDifference": 9
+          },
+          "home": {
+            "played": 6,
+            "won": 4,
+            "drawn": 1,
+            "lost": 1,
+            "points": 13,
+            "goalsFor": 20,
+            "goalsAgainst": 8,
+            "goalDifference": 12
+          },
+          "away": {
+            "played": 3,
+            "won": 1,
+            "drawn": 1,
+            "lost": 1,
+            "points": 4,
+            "goalsFor": 4,
+            "goalsAgainst": 7,
+            "goalDifference": -3
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20882",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "onomichi-city",
+              "opponentName": "尾道市立大学",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20876",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shujitsu",
+              "opponentName": "就実大学",
+              "goalsFor": 7,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20870",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "okayama-science",
+              "opponentName": "岡山理科大学",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            },
+            {
+              "matchId": "football-system-15-486-20864",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20858",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2.67,
+            "averageConceded": 1.67,
+            "cleanSheets": 2,
+            "scorelessMatches": 1,
+            "yellowCards": 6,
+            "redCards": 0,
+            "benchSelections": 51,
+            "averageBench": 5.67,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 10,
+              "rank": 6
+            },
+            {
+              "round": 11,
+              "rank": 7
+            },
+            {
+              "round": 12,
+              "rank": 5
+            },
+            {
+              "round": 13,
+              "rank": 5
+            },
+            {
+              "round": 14,
+              "rank": 4
+            },
+            {
+              "round": 15,
+              "rank": 4
+            },
+            {
+              "round": 16,
+              "rank": 5
+            },
+            {
+              "round": 17,
+              "rank": 4
+            },
+            {
+              "round": 18,
+              "rank": 4
+            }
+          ]
+        },
+        {
+          "teamId": "shujitsu",
+          "rank": 8,
+          "overall": {
+            "played": 9,
+            "won": 2,
+            "drawn": 1,
+            "lost": 6,
+            "points": 7,
+            "goalsFor": 23,
+            "goalsAgainst": 33,
+            "goalDifference": -10
+          },
+          "home": {
+            "played": 4,
+            "won": 1,
+            "drawn": 0,
+            "lost": 3,
+            "points": 3,
+            "goalsFor": 9,
+            "goalsAgainst": 10,
+            "goalDifference": -1
+          },
+          "away": {
+            "played": 5,
+            "won": 1,
+            "drawn": 1,
+            "lost": 3,
+            "points": 4,
+            "goalsFor": 14,
+            "goalsAgainst": 23,
+            "goalDifference": -9
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20880",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 3,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20876",
+              "kickoffAt": "2024-10-20T13:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 2,
+              "goalsAgainst": 7,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20872",
+              "kickoffAt": "2024-10-06T16:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20867",
+              "kickoffAt": "2024-09-29T16:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
+            {
+              "matchId": "football-system-15-486-20861",
+              "kickoffAt": "2024-09-23T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 5,
+              "goalsAgainst": 5,
+              "result": "D"
+            }
+          ],
+          "stats": {
+            "averageGoals": 2.56,
+            "averageConceded": 3.67,
+            "cleanSheets": 0,
+            "scorelessMatches": 1,
+            "yellowCards": 6,
+            "redCards": 0,
+            "benchSelections": 58,
+            "averageBench": 6.44,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 10,
+              "rank": 10
+            },
+            {
+              "round": 11,
+              "rank": 9
+            },
+            {
+              "round": 12,
+              "rank": 7
+            },
+            {
+              "round": 13,
+              "rank": 8
+            },
+            {
+              "round": 14,
+              "rank": 8
+            },
+            {
+              "round": 15,
+              "rank": 8
+            },
+            {
+              "round": 16,
+              "rank": 9
+            },
+            {
+              "round": 17,
+              "rank": 9
+            },
+            {
+              "round": 18,
+              "rank": 8
+            }
+          ]
+        },
+        {
+          "teamId": "okayama-science",
+          "rank": 1,
+          "overall": {
+            "played": 9,
+            "won": 8,
+            "drawn": 1,
+            "lost": 0,
+            "points": 25,
+            "goalsFor": 46,
+            "goalsAgainst": 8,
+            "goalDifference": 38
+          },
+          "home": {
+            "played": 7,
+            "won": 6,
+            "drawn": 1,
+            "lost": 0,
+            "points": 19,
+            "goalsFor": 37,
+            "goalsAgainst": 8,
+            "goalDifference": 29
+          },
+          "away": {
+            "played": 2,
+            "won": 2,
+            "drawn": 0,
+            "lost": 0,
+            "points": 6,
+            "goalsFor": 9,
+            "goalsAgainst": 0,
+            "goalDifference": 9
+          },
+          "form": [
+            {
+              "matchId": "football-system-15-486-20878",
+              "kickoffAt": "2024-10-27T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shimane",
+              "opponentName": "島根大学",
+              "goalsFor": 4,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20874",
+              "kickoffAt": "2024-10-20T12:00:00+09:00",
+              "round": 17,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "tottori",
+              "opponentName": "鳥取大学",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20862",
+              "kickoffAt": "2024-10-13T13:00:00+09:00",
+              "round": 14,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shimonoseki-city",
+              "opponentName": "下関市立大学",
+              "goalsFor": 10,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
+            {
+              "matchId": "football-system-15-486-20870",
+              "kickoffAt": "2024-10-06T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kibi-international",
+              "opponentName": "吉備国際大学",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            },
+            {
+              "matchId": "football-system-15-486-20866",
+              "kickoffAt": "2024-09-29T13:00:00+09:00",
+              "round": 15,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-institute-of-technology",
+              "opponentName": "広島工業大学",
+              "goalsFor": 7,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ],
+          "stats": {
+            "averageGoals": 5.11,
+            "averageConceded": 0.89,
+            "cleanSheets": 4,
+            "scorelessMatches": 0,
+            "yellowCards": 12,
+            "redCards": 0,
+            "benchSelections": 81,
+            "averageBench": 9,
+            "averageStartingAge": null
+          },
+          "rankProgression": [
+            {
+              "round": 10,
+              "rank": 1
+            },
+            {
+              "round": 11,
+              "rank": 1
+            },
+            {
+              "round": 12,
+              "rank": 1
+            },
+            {
+              "round": 13,
+              "rank": 1
+            },
+            {
+              "round": 14,
+              "rank": 1
+            },
+            {
+              "round": 15,
+              "rank": 1
+            },
+            {
+              "round": 16,
+              "rank": 1
+            },
+            {
+              "round": 17,
+              "rank": 1
+            },
+            {
+              "round": 18,
+              "rank": 1
+            }
+          ]
+        }
+      ],
+      "rankings": {
+        "averageGoals": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 5.11
+          },
+          {
+            "rank": 2,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 4.33
+          },
+          {
+            "rank": 3,
+            "teamId": "hiroshima-international",
+            "value": 3
+          },
+          {
+            "rank": 4,
+            "teamId": "kibi-international",
+            "value": 2.67
+          },
+          {
+            "rank": 5,
+            "teamId": "tottori",
+            "value": 2.67
+          },
+          {
+            "rank": 6,
+            "teamId": "shujitsu",
+            "value": 2.56
+          },
+          {
+            "rank": 7,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 2
+          },
+          {
+            "rank": 8,
+            "teamId": "onomichi-city",
+            "value": 1
+          },
+          {
+            "rank": 9,
+            "teamId": "shimane",
+            "value": 1
+          },
+          {
+            "rank": 10,
+            "teamId": "shimonoseki-city",
+            "value": 1
+          }
+        ],
+        "averageConceded": [
+          {
+            "rank": 1,
+            "teamId": "shimonoseki-city",
+            "value": 5.89
+          },
+          {
+            "rank": 2,
+            "teamId": "shujitsu",
+            "value": 3.67
+          },
+          {
+            "rank": 3,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 3.44
+          },
+          {
+            "rank": 4,
+            "teamId": "onomichi-city",
+            "value": 2.56
+          },
+          {
+            "rank": 5,
+            "teamId": "tottori",
+            "value": 2.22
+          },
+          {
+            "rank": 6,
+            "teamId": "shimane",
+            "value": 2
+          },
+          {
+            "rank": 7,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 1.67
+          },
+          {
+            "rank": 8,
+            "teamId": "kibi-international",
+            "value": 1.67
+          },
+          {
+            "rank": 9,
+            "teamId": "hiroshima-international",
+            "value": 1.33
+          },
+          {
+            "rank": 10,
+            "teamId": "okayama-science",
+            "value": 0.89
+          }
+        ],
+        "cleanSheets": [
+          {
+            "rank": 1,
+            "teamId": "hiroshima-international",
+            "value": 4
+          },
+          {
+            "rank": 2,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 4
+          },
+          {
+            "rank": 3,
+            "teamId": "okayama-science",
+            "value": 4
+          },
+          {
+            "rank": 4,
+            "teamId": "kibi-international",
+            "value": 2
+          },
+          {
+            "rank": 5,
+            "teamId": "onomichi-city",
+            "value": 2
+          },
+          {
+            "rank": 6,
+            "teamId": "tottori",
+            "value": 2
+          },
+          {
+            "rank": 7,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 1
+          },
+          {
+            "rank": 8,
+            "teamId": "shimane",
+            "value": 1
+          },
+          {
+            "rank": 9,
+            "teamId": "shimonoseki-city",
+            "value": 0
+          },
+          {
+            "rank": 10,
+            "teamId": "shujitsu",
+            "value": 0
+          }
+        ],
+        "scorelessMatches": [
+          {
+            "rank": 1,
+            "teamId": "shimane",
+            "value": 6
+          },
+          {
+            "rank": 2,
+            "teamId": "shimonoseki-city",
+            "value": 5
+          },
+          {
+            "rank": 3,
+            "teamId": "onomichi-city",
+            "value": 3
+          },
+          {
+            "rank": 4,
+            "teamId": "tottori",
+            "value": 2
+          },
+          {
+            "rank": 5,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 1
+          },
+          {
+            "rank": 6,
+            "teamId": "hiroshima-international",
+            "value": 1
+          },
+          {
+            "rank": 7,
+            "teamId": "kibi-international",
+            "value": 1
+          },
+          {
+            "rank": 8,
+            "teamId": "shujitsu",
+            "value": 1
+          },
+          {
+            "rank": 9,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 0
+          },
+          {
+            "rank": 10,
+            "teamId": "okayama-science",
+            "value": 0
+          }
+        ],
+        "yellowCards": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 12
+          },
+          {
+            "rank": 2,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 8
+          },
+          {
+            "rank": 3,
+            "teamId": "hiroshima-international",
+            "value": 7
+          },
+          {
+            "rank": 4,
+            "teamId": "kibi-international",
+            "value": 6
+          },
+          {
+            "rank": 5,
+            "teamId": "shimane",
+            "value": 6
+          },
+          {
+            "rank": 6,
+            "teamId": "shujitsu",
+            "value": 6
+          },
+          {
+            "rank": 7,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 5
+          },
+          {
+            "rank": 8,
+            "teamId": "onomichi-city",
+            "value": 4
+          },
+          {
+            "rank": 9,
+            "teamId": "shimonoseki-city",
+            "value": 2
+          },
+          {
+            "rank": 10,
+            "teamId": "tottori",
+            "value": 1
+          }
+        ],
+        "redCards": [
+          {
+            "rank": 1,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 1
+          },
+          {
+            "rank": 2,
+            "teamId": "hiroshima-international",
+            "value": 0
+          },
+          {
+            "rank": 3,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 0
+          },
+          {
+            "rank": 4,
+            "teamId": "kibi-international",
+            "value": 0
+          },
+          {
+            "rank": 5,
+            "teamId": "okayama-science",
+            "value": 0
+          },
+          {
+            "rank": 6,
+            "teamId": "onomichi-city",
+            "value": 0
+          },
+          {
+            "rank": 7,
+            "teamId": "shimane",
+            "value": 0
+          },
+          {
+            "rank": 8,
+            "teamId": "shimonoseki-city",
+            "value": 0
+          },
+          {
+            "rank": 9,
+            "teamId": "shujitsu",
+            "value": 0
+          },
+          {
+            "rank": 10,
+            "teamId": "tottori",
+            "value": 0
+          }
+        ],
+        "benchSelections": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 81
+          },
+          {
+            "rank": 2,
+            "teamId": "hiroshima-international",
+            "value": 80
+          },
+          {
+            "rank": 3,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 79
+          },
+          {
+            "rank": 4,
+            "teamId": "tottori",
+            "value": 76
+          },
+          {
+            "rank": 5,
+            "teamId": "shimane",
+            "value": 67
+          },
+          {
+            "rank": 6,
+            "teamId": "shimonoseki-city",
+            "value": 58
+          },
+          {
+            "rank": 7,
+            "teamId": "shujitsu",
+            "value": 58
+          },
+          {
+            "rank": 8,
+            "teamId": "kibi-international",
+            "value": 51
+          },
+          {
+            "rank": 9,
+            "teamId": "onomichi-city",
+            "value": 51
+          },
+          {
+            "rank": 10,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 29
+          }
+        ],
+        "averageBench": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 9
+          },
+          {
+            "rank": 2,
+            "teamId": "hiroshima-international",
+            "value": 8.89
+          },
+          {
+            "rank": 3,
+            "teamId": "kawasaki-medical-welfare",
+            "value": 8.78
+          },
+          {
+            "rank": 4,
+            "teamId": "tottori",
+            "value": 8.44
+          },
+          {
+            "rank": 5,
+            "teamId": "shimane",
+            "value": 7.44
+          },
+          {
+            "rank": 6,
+            "teamId": "shimonoseki-city",
+            "value": 6.44
+          },
+          {
+            "rank": 7,
+            "teamId": "shujitsu",
+            "value": 6.44
+          },
+          {
+            "rank": 8,
+            "teamId": "kibi-international",
+            "value": 5.67
+          },
+          {
+            "rank": 9,
+            "teamId": "onomichi-city",
+            "value": 5.67
+          },
+          {
+            "rank": 10,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 3.22
+          }
+        ],
+        "averageStartingAge": []
+      }
+    }
+  }
+}
