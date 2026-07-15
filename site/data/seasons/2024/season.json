@@ -24,6 +24,14 @@
         "first",
         "second"
       ]
+    },
+    "division2Playoff": {
+      "firstRound": [
+        "2部3位 対 2部6位",
+        "2部4位 対 2部5位"
+      ],
+      "decidingMatch": "1回戦の勝者同士",
+      "drawResolution": "リーグ戦上位チームの勝ち"
     }
   },
   "competitions": [
@@ -89,6 +97,22 @@
         "kibi-international",
         "shujitsu",
         "okayama-science"
+      ]
+    },
+    {
+      "id": "jufa-chugoku-2024-division-2-playoff",
+      "name": "2024年度 中国大学サッカーリーグ 2部プレーオフ",
+      "leagueName": "中国大学サッカーリーグ 2部",
+      "division": 2,
+      "stage": "division-2-playoff",
+      "stageName": "2部プレーオフ",
+      "matches": "./div2/playoff/matches.json",
+      "teamStats": null,
+      "teamIds": [
+        "hiroshima-international",
+        "tottori",
+        "kibi-international",
+        "hiroshima-institute-of-technology"
       ]
     }
   ]

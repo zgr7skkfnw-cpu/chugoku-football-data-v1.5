@@ -107,6 +107,16 @@
           "stageName": "リーグ戦",
           "matches": "seasons/2024/div2/matches.json",
           "teamStats": "seasons/2024/div2/team-stats.json"
+        },
+        {
+          "id": "jufa-chugoku-2024-division-2-playoff",
+          "name": "2024年度 中国大学サッカーリーグ 2部プレーオフ",
+          "leagueName": "中国大学サッカーリーグ 2部",
+          "division": 2,
+          "stage": "division-2-playoff",
+          "stageName": "2部プレーオフ",
+          "matches": "seasons/2024/div2/playoff/matches.json",
+          "teamStats": null
         }
       ]
     }

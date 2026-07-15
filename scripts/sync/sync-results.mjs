@@ -34,6 +34,18 @@ const TARGETS = {
     allowIncompleteLineups: true,
     buildStats: true,
   },
+  "2024-2-playoff": {
+    season: 2024,
+    division: 2,
+    competitionId: "jufa-chugoku-2024-division-2-playoff",
+    stage: "division-2-playoff",
+    sourcePageUrl: "https://jufa-chugoku.jp/result/2024/tid_508/",
+    outputPath: "../../site/data/seasons/2024/div2/playoff/matches.json",
+    minimumScheduleCount: 3,
+    minimumDetailCount: 3,
+    allowIncompleteLineups: true,
+    buildStats: false,
+  },
   "2025-1": {
     season: 2025,
     division: 1,
