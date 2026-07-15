@@ -100,8 +100,8 @@ if (seasonData.regulations?.division2?.teamCount !== 11) {
 if (seasonIndexData.schemaVersion !== 1 || seasonIndexData.defaultSeason !== 2026) {
   errors.push("seasons/index.json must use schemaVersion 1 and default to 2026");
 }
-if ((seasonIndexData.items ?? []).map((item) => item.season).join(",") !== "2026,2025") {
-  errors.push("seasons/index.json must list 2026 and 2025 in descending order");
+if ((seasonIndexData.items ?? []).map((item) => item.season).join(",") !== "2026,2025,2024") {
+  errors.push("seasons/index.json must list 2026, 2025 and 2024 in descending order");
 }
 if (season2025Data.schemaVersion !== 1 || season2025Data.season !== 2025) {
   errors.push("2025/season.json must describe season 2025 with schemaVersion 1");

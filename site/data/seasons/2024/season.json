@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "season": 2024,
+  "updatedAt": "2026-07-15T02:51:14.207Z",
+  "regulations": {
+    "matchMinutes": 90,
+    "points": {
+      "win": 3,
+      "draw": 1,
+      "loss": 0
+    },
+    "division1": {
+      "teamCount": 10,
+      "format": "double-round-robin",
+      "phases": [
+        "first",
+        "second"
+      ]
+    },
+    "division2": {
+      "teamCount": 10,
+      "format": "double-round-robin",
+      "phases": [
+        "first",
+        "second"
+      ]
+    },
+    "division2Playoff": {
+      "firstRound": [
+        "2部3位 対 2部6位",
+        "2部4位 対 2部5位"
+      ],
+      "decidingMatch": "1回戦の勝者同士",
+      "drawResolution": "リーグ戦上位チームの勝ち"
+    }
+  },
+  "competitions": [
+    {
+      "id": "jufa-chugoku-2024-division-1",
+      "name": "2024年度 中国大学サッカーリーグ 1部",
+      "leagueName": "中国大学サッカーリーグ 1部",
+      "division": 1,
+      "stage": "regular",
+      "stageName": "リーグ戦",
+      "matches": "./matches.json",
+      "teamStats": "./team-stats.json",
+      "periodRules": {
+        "first": {
+          "fromRound": 1,
+          "toRound": 9
+        },
+        "second": {
+          "fromRound": 10,
+          "toRound": 18
+        }
+      },
+      "teamIds": [
+        "ipu",
+        "yamaguchi",
+        "hiroshima-keizai",
+        "hiroshima-bunka-gakuen",
+        "shunan-public",
+        "fukuyama-heisei",
+        "hiroshima-shudo",
+        "fukuyama",
+        "hiroshima",
+        "okayama"
+      ]
+    },
+    {
+      "id": "jufa-chugoku-2024-division-2",
+      "name": "2024年度 中国大学サッカーリーグ 2部",
+      "leagueName": "中国大学サッカーリーグ 2部",
+      "division": 2,
+      "stage": "regular",
+      "stageName": "リーグ戦",
+      "matches": "./div2/matches.json",
+      "teamStats": "./div2/team-stats.json",
+      "periodRules": {
+        "first": {
+          "fromRound": 1,
+          "toRound": 9
+        },
+        "second": {
+          "fromRound": 10,
+          "toRound": 18
+        }
+      },
+      "teamIds": [
+        "tottori",
+        "onomichi-city",
+        "shimane",
+        "shimonoseki-city",
+        "kawasaki-medical-welfare",
+        "hiroshima-institute-of-technology",
+        "hiroshima-international",
+        "kibi-international",
+        "shujitsu",
+        "okayama-science"
+      ]
+    },
+    {
+      "id": "jufa-chugoku-2024-division-2-playoff",
+      "name": "2024年度 中国大学サッカーリーグ 2部プレーオフ",
+      "leagueName": "中国大学サッカーリーグ 2部",
+      "division": 2,
+      "stage": "division-2-playoff",
+      "stageName": "2部プレーオフ",
+      "matches": "./div2/playoff/matches.json",
+      "teamStats": null,
+      "teamIds": [
+        "hiroshima-international",
+        "tottori",
+        "kibi-international",
+        "hiroshima-institute-of-technology"
+      ]
+    }
+  ]
+}

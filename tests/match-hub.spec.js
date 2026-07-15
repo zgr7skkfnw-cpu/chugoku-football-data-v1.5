@@ -46,11 +46,14 @@ test("試合前のプレビュー・順位表・対戦を公開データで表�
   await page.getByRole("tab", { name: "対戦", exact: true }).click();
   await expect(page.getByRole("heading", { name: "対戦成績" })).toBeVisible();
   await expect(page.locator(".h2h-summary .h2h-team")).toHaveCount(2);
-  await expect(page.locator(".h2h-history-row")).toHaveCount(1);
-  await expect(page.locator(".h2h-history-row .h2h-match-context")).toContainText("2026年度 / 中国大学サッカーリーグ 1部 / リーグ戦");
-  await expect(page.locator(".h2h-history-row")).toContainText("2026年");
-  await expect(page.locator(".h2h-history-row")).not.toContainText("前期");
-  await expect(page.locator(".h2h-history-row")).not.toContainText("後期");
+  const currentSeasonH2h = page
+    .locator(".h2h-history-row")
+    .filter({ hasText: "2026年度 / 中国大学サッカーリーグ 1部 / リーグ戦" });
+
+  await expect(currentSeasonH2h).toHaveCount(1);
+  await expect(currentSeasonH2h).toContainText("2026年");
+  await expect(currentSeasonH2h).not.toContainText("前期");
+  await expect(currentSeasonH2h).not.toContainText("後期");
   expect(errors).toEqual([]);
 });
 
