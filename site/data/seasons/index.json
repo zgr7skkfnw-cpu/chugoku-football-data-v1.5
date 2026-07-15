@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "defaultSeason": 2026,
+  "items": [
+    {
+      "season": 2026,
+      "updatedAt": "2026-07-14T00:00:00+09:00",
+      "competitions": [
+        {
+          "id": "jufa-chugoku-2026-division-1",
+          "name": "2026年度 中国大学サッカーリーグ 1部",
+          "leagueName": "中国大学サッカーリーグ 1部",
+          "division": 1,
+          "stage": "regular",
+          "stageName": "リーグ戦",
+          "matches": "seasons/2026/matches.json",
+          "teamStats": "seasons/2026/team-stats.json"
+        },
+        {
+          "id": "jufa-chugoku-2026-division-2",
+          "name": "2026年度 中国大学サッカーリーグ 2部",
+          "leagueName": "中国大学サッカーリーグ 2部",
+          "division": 2,
+          "stage": "regular",
+          "stageName": "リーグ戦",
+          "matches": "seasons/2026/div2/matches.json",
+          "teamStats": "seasons/2026/div2/team-stats.json"
+        },
+        {
+          "id": "jufa-chugoku-2026-division-1-promotion-playoff",
+          "name": "2026年度 1部リーグ昇格プレーオフ",
+          "leagueName": "中国大学サッカーリーグ",
+          "division": 2,
+          "stage": "promotion-playoff",
+          "stageName": "1部リーグ昇格プレーオフ",
+          "matches": null,
+          "teamStats": null
+        }
+      ]
+    },
+    {
+      "season": 2025,
+      "updatedAt": "2025-11-16T23:59:59+09:00",
+      "competitions": [
+        {
+          "id": "jufa-chugoku-2025-division-1",
+          "name": "2025年度 中国大学サッカーリーグ 1部",
+          "leagueName": "中国大学サッカーリーグ 1部",
+          "division": 1,
+          "stage": "regular",
+          "stageName": "リーグ戦",
+          "matches": "seasons/2025/matches.json",
+          "teamStats": "seasons/2025/team-stats.json"
+        },
+        {
+          "id": "jufa-chugoku-2025-division-2",
+          "name": "2025年度 中国大学サッカーリーグ 2部",
+          "leagueName": "中国大学サッカーリーグ 2部",
+          "division": 2,
+          "stage": "regular",
+          "stageName": "リーグ戦",
+          "matches": "seasons/2025/div2/matches.json",
+          "teamStats": "seasons/2025/div2/team-stats.json"
+        },
+        {
+          "id": "jufa-chugoku-2025-division-2-playoff",
+          "name": "2025年度 中国大学サッカーリーグ 2部プレーオフ",
+          "leagueName": "中国大学サッカーリーグ 2部",
+          "division": 2,
+          "stage": "division-2-playoff",
+          "stageName": "2部プレーオフ",
+          "matches": "seasons/2025/div2/playoff/matches.json",
+          "teamStats": null
+        },
+        {
+          "id": "jufa-chugoku-2025-promotion-relegation",
+          "name": "2025年度 中国大学サッカーリーグ 入替戦",
+          "leagueName": "中国大学サッカーリーグ",
+          "division": null,
+          "stage": "promotion-relegation",
+          "stageName": "入替戦",
+          "matches": "seasons/2025/promotion-relegation/matches.json",
+          "teamStats": null
+        }
+      ]
+    }
+  ]
+}

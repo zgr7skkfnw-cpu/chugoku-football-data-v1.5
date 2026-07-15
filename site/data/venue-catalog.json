@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-14T00:00:00+09:00",
+  "displayNameStrategy": "source",
+  "items": [
+    {
+      "id": "axis-bird-stadium",
+      "name": "Axisバードスタジアム",
+      "aliases": ["とりぎんバードスタジアム"],
+      "identityStatus": "confirmed"
+    },
+    {
+      "id": "yamata-sports-park-multipurpose",
+      "name": "ヤマタスポーツパーク多目的広場",
+      "aliases": ["コカ・コーラボトラーズジャパンスポーツパーク多目的広場"],
+      "identityStatus": "confirmed"
+    },
+    {
+      "id": "yamata-sports-park-ball-field",
+      "name": "ヤマタスポーツパーク球技場",
+      "aliases": ["コカ・コーラボトラーズジャパンスポーツパーク球技場"],
+      "identityStatus": "confirmed"
+    },
+    {
+      "id": "city-light-stadium",
+      "name": "シティライトスタジアム",
+      "aliases": ["桃太郎スタジアム"],
+      "identityStatus": "confirmed"
+    },
+    {
+      "id": "okayama-general-ground-auxiliary-athletics",
+      "name": "岡山県総合グラウンド補助陸上競技場",
+      "aliases": ["桃太郎スタジアム 補助陸上競技場"],
+      "identityStatus": "confirmed"
+    },
+    {
+      "id": "sanyo-onoda-soccer-exchange-park",
+      "name": "山陽小野田市立サッカー交流公園",
+      "aliases": ["山口県立おのだサッカー交流公園"],
+      "identityStatus": "confirmed"
+    },
+    {
+      "id": "wakabadai-sports-center",
+      "name": "若葉台スポーツセンター",
+      "aliases": [],
+      "identityStatus": "distinct"
+    },
+    {
+      "id": "wakabadai-sports-center-ground-1",
+      "name": "若葉台スポーツセンター第1グラウンド",
+      "aliases": [],
+      "identityStatus": "distinct"
+    },
+    {
+      "id": "wakabadai-sports-center-ground-2",
+      "name": "若葉台スポーツセンター第2グラウンド",
+      "aliases": [],
+      "identityStatus": "distinct"
+    },
+    {
+      "id": "shunan-city-athletics-stadium-historical",
+      "name": "周南市陸上競技場",
+      "aliases": [],
+      "identityStatus": "historical"
+    }
+  ]
+}

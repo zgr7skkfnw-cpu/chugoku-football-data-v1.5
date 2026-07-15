@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-14T00:00:00+09:00",
+  "items": [
+    { "id": "ipu", "name": "IPU・環太平洋大学", "shortName": "IPU", "aliases": ["環太平洋大学"], "profileStatus": "complete" },
+    { "id": "yamaguchi", "name": "山口大学", "shortName": "山口大", "aliases": [], "profileStatus": "complete" },
+    { "id": "kawasaki-medical-welfare", "name": "川崎医療福祉大学", "shortName": "川崎福", "aliases": [], "profileStatus": "complete" },
+    { "id": "fukuyama-heisei", "name": "福山平成大学", "shortName": "福平大", "aliases": [], "profileStatus": "complete" },
+    { "id": "hiroshima-shudo", "name": "広島修道大学", "shortName": "広修大", "aliases": [], "profileStatus": "complete" },
+    { "id": "shunan-public", "name": "周南公立大学", "shortName": "周南大", "aliases": ["徳山大学"], "profileStatus": "complete" },
+    { "id": "hiroshima-bunka-gakuen", "name": "広島文化学園大学", "shortName": "文化大", "aliases": [], "profileStatus": "complete" },
+    { "id": "hiroshima", "name": "広島大学", "shortName": "広島大", "aliases": [], "profileStatus": "complete" },
+    { "id": "fukuyama", "name": "福山大学", "shortName": "福山大", "aliases": [], "profileStatus": "complete" },
+    { "id": "hiroshima-keizai", "name": "広島経済大学", "shortName": "広経大", "aliases": [], "profileStatus": "complete" },
+    { "id": "shimonoseki-city", "name": "下関市立大学", "shortName": "下市大", "aliases": [], "emblem": "/assets/images/teams/shimonoseki-city/emblem.png", "profileStatus": "partial" },
+    { "id": "kibi-international", "name": "吉備国際大学", "shortName": "吉備国大", "aliases": [], "emblem": "/assets/images/teams/kibi-international/emblem.png", "profileStatus": "partial" },
+    { "id": "shujitsu", "name": "就実大学", "shortName": "就実大", "aliases": [], "emblem": "/assets/images/teams/shujitsu/emblem.png", "profileStatus": "partial" },
+    { "id": "onomichi-city", "name": "尾道市立大学", "shortName": "尾市大", "aliases": [], "emblem": "/assets/images/teams/onomichi-city/emblem.png", "profileStatus": "partial" },
+    { "id": "okayama", "name": "岡山大学", "shortName": "岡山大", "aliases": [], "emblem": "/assets/images/teams/okayama/emblem.png", "profileStatus": "partial" },
+    { "id": "okayama-science", "name": "岡山理科大学", "shortName": "岡理大", "aliases": [], "emblem": "/assets/images/teams/okayama-science/emblem.png", "profileStatus": "partial" },
+    { "id": "shimane", "name": "島根大学", "shortName": "島根大", "aliases": [], "emblem": "/assets/images/teams/shimane/emblem.png", "profileStatus": "partial" },
+    { "id": "university-of-shimane", "name": "島根県立大学", "shortName": "島県大", "aliases": [], "profileStatus": "pending" },
+    { "id": "hiroshima-international", "name": "広島国際大学", "shortName": "広国大", "aliases": [], "emblem": "/assets/images/teams/hiroshima-international/emblem.png", "profileStatus": "partial" },
+    { "id": "hiroshima-institute-of-technology", "name": "広島工業大学", "shortName": "広工大", "aliases": [], "emblem": "/assets/images/teams/hiroshima-institute-of-technology/emblem.png", "profileStatus": "partial" },
+    { "id": "tottori", "name": "鳥取大学", "shortName": "鳥取大", "aliases": [], "emblem": "/assets/images/teams/tottori/emblem.png", "profileStatus": "partial" },
+    { "id": "toa", "name": "東亜大学", "shortName": "東亜大", "aliases": [], "profileStatus": "pending" }
+  ]
+}

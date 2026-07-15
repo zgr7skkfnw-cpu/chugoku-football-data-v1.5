@@ -1,0 +1,1090 @@
+{
+  "schemaVersion": 1,
+  "seasonId": 2026,
+  "updatedAt": "2026-07-14T03:38:52.586Z",
+  "items": [
+    {
+      "id": "ipu",
+      "name": "IPU・環太平洋大学",
+      "shortName": "IPU",
+      "emblem": "/assets/images/teams/ipu/emblem.png",
+      "teamPhoto": "/assets/images/teams/ipu/team.jpg",
+      "kits": {
+        "home": "/assets/images/kits/ipu/home.svg",
+        "away": "/assets/images/kits/ipu/away.svg"
+      },
+      "colors": {
+        "primary": "#183E91",
+        "secondary": "#FFFFFF"
+      },
+      "homeGround": "IPU・環太平洋大学 赤坂グラウンド",
+      "hometown": "岡山県岡山市",
+      "coach": "桂 秀樹",
+      "founded": "",
+      "website": "https://ipu2007.wixsite.com/ipusoccer",
+      "instagram": "https://www.instagram.com/ipusoccer/",
+      "staff": [
+        {
+          "role": "監督",
+          "name": "桂 秀樹",
+          "englishName": "KATSURA Hideki",
+          "license": "A級"
+        },
+        {
+          "role": "GKコーチ",
+          "name": "清水 健太",
+          "englishName": "SHIMIZU Kenta",
+          "license": "B級"
+        },
+        {
+          "role": "コーチ",
+          "name": "降屋 丞",
+          "englishName": "FURUYA Tasuku",
+          "license": "C級"
+        },
+        {
+          "role": "コーチ",
+          "name": "坂手 雅斗",
+          "englishName": "SAKATE Masato",
+          "license": "A級"
+        },
+        {
+          "role": "学生コーチ",
+          "name": "栗田 武",
+          "englishName": "KURITA Takeru",
+          "license": "C級"
+        },
+        {
+          "role": "主将",
+          "name": "田中 純",
+          "englishName": "TANAKA Makoto",
+          "license": ""
+        },
+        {
+          "role": "主務",
+          "name": "秋本 慶太郎",
+          "englishName": "AKIMOTO Keitaro",
+          "license": ""
+        },
+        {
+          "role": "副務",
+          "name": "坂口 花菜",
+          "englishName": "SAKAGUCHI Kana",
+          "license": ""
+        },
+        {
+          "role": "アナリスト",
+          "name": "大賀 海翔",
+          "englishName": "OGA Kaito",
+          "license": ""
+        },
+        {
+          "role": "フィジカルトレーナー",
+          "name": "三村 亮太",
+          "englishName": "MIMURA Ryota",
+          "license": "C級"
+        },
+        {
+          "role": "メディカルトレーナー",
+          "name": "吉原 知輝",
+          "englishName": "YOSHIHARA Tomoki",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "杉本 瑞季",
+          "englishName": "SUGIMOTO Mizuki",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "藤本 美優",
+          "englishName": "FUJIMOTO Miyu",
+          "license": ""
+        },
+        {
+          "role": "メディカルトレーナー",
+          "name": "小松原 新",
+          "englishName": "KOMATSUBARA Arata",
+          "license": ""
+        }
+      ],
+      "sources": {
+        "team": "https://jufa-chugoku.jp/team/595.html",
+        "registration": "https://football-system.jp/fss/pub_teaminfo_jufa_chugoku.php?tid=Vb2DRDIZ%2B2M%3D"
+      }
+    },
+    {
+      "id": "hiroshima-keizai",
+      "name": "広島経済大学",
+      "shortName": "広経大",
+      "emblem": "/assets/images/teams/hiroshima-keizai/emblem.png",
+      "teamPhoto": "/assets/images/teams/hiroshima-keizai/team.jpg",
+      "kits": {
+        "home": "/assets/images/kits/hiroshima-keizai/home.svg",
+        "away": "/assets/images/kits/hiroshima-keizai/away.svg"
+      },
+      "colors": {
+        "primary": "#DF102B",
+        "secondary": "#78172D"
+      },
+      "homeGround": "広島経済大学 陸上競技場",
+      "hometown": "広島県広島市",
+      "coach": "服部 公太",
+      "founded": "",
+      "website": "https://www.hue.ac.jp/circle/taiku/huefc/",
+      "instagram": "",
+      "staff": [
+        {
+          "role": "監督",
+          "name": "服部 公太",
+          "englishName": "HATTORI Kota",
+          "license": "A級"
+        },
+        {
+          "role": "顧問",
+          "name": "友松 修",
+          "englishName": "TOMOMATSU Osamu",
+          "license": "C級"
+        },
+        {
+          "role": "部長",
+          "name": "足立 知久",
+          "englishName": "ADACHI Tomohisa",
+          "license": "C級"
+        },
+        {
+          "role": "コーチ",
+          "name": "上 禅世",
+          "englishName": "UE Zense",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "三浦 颯太",
+          "englishName": "MIURA Sota",
+          "license": ""
+        },
+        {
+          "role": "トレーナー",
+          "name": "日高 聡一郎",
+          "englishName": "HIDAKA Soichiro",
+          "license": ""
+        },
+        {
+          "role": "トレーナー",
+          "name": "栖原 大和",
+          "englishName": "SUHARA Yamato",
+          "license": ""
+        },
+        {
+          "role": "トレーナー",
+          "name": "金本 颯大",
+          "englishName": "KANEMOTO Sodai",
+          "license": ""
+        },
+        {
+          "role": "主将",
+          "name": "今村 真仁",
+          "englishName": "IMAMURA Masato",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "高橋 星那",
+          "englishName": "TAKAHASHI Sena",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "松原 朋榮",
+          "englishName": "MATSUBARA Tomohide",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "若松 快英",
+          "englishName": "WAKAMATSU Kaiei",
+          "license": ""
+        },
+        {
+          "role": "主務",
+          "name": "向井 秀斗",
+          "englishName": "MUKAI Shuto",
+          "license": ""
+        },
+        {
+          "role": "副務",
+          "name": "目次 康晟",
+          "englishName": "METSUGI Kosei",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "木村 彩乃",
+          "englishName": "KIMURA Ayano",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "伯野 太駿",
+          "englishName": "HAKUNO Taishun",
+          "license": ""
+        },
+        {
+          "role": "審判",
+          "name": "宮崎 樹",
+          "englishName": "MIYAZAKI Itsuki",
+          "license": ""
+        },
+        {
+          "role": "審判",
+          "name": "中村 日優",
+          "englishName": "NAKAMURA Hiyu",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "田中 秀",
+          "englishName": "TANAKA Shu",
+          "license": ""
+        }
+      ],
+      "sources": {
+        "team": "https://jufa-chugoku.jp/team/598.html",
+        "registration": "https://football-system.jp/fss/pub_teaminfo.php?tid=5lA0uLGR2%2BA%3D"
+      }
+    },
+    {
+      "id": "fukuyama",
+      "name": "福山大学",
+      "shortName": "福山大",
+      "emblem": "/assets/images/teams/fukuyama/emblem.png",
+      "teamPhoto": "/assets/images/teams/fukuyama/team.jpg",
+      "kits": {
+        "home": "/assets/images/kits/fukuyama/home.svg",
+        "away": "/assets/images/kits/fukuyama/away.svg"
+      },
+      "colors": {
+        "primary": "#173A70",
+        "secondary": "#FFFFFF"
+      },
+      "homeGround": "福山大学",
+      "hometown": "広島県福山市",
+      "coach": "岩成 智和",
+      "founded": "",
+      "website": "https://www.footballnavi.jp/fukuyama_univ/",
+      "instagram": "https://www.instagram.com/fukuyama_univ.football_club/",
+      "staff": [
+        {
+          "role": "監督",
+          "name": "岩成 智和",
+          "englishName": "IWANARI Tomokazu",
+          "license": "A級"
+        },
+        {
+          "role": "部長",
+          "name": "斜森 琢也",
+          "englishName": "NANAMORI Takuya",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "大坪 博和",
+          "englishName": "OTSUBO Hirokazu",
+          "license": "B級"
+        },
+        {
+          "role": "コーチ",
+          "name": "木村 友哉",
+          "englishName": "KIMURA Tomoya",
+          "license": "B級"
+        },
+        {
+          "role": "コーチ",
+          "name": "碇野 真利",
+          "englishName": "IKARINO Shinri",
+          "license": "B級"
+        },
+        {
+          "role": "GKコーチ",
+          "name": "萩原 繁徳",
+          "englishName": "HAGIWARA Shigenori",
+          "license": ""
+        },
+        {
+          "role": "強化",
+          "name": "増井 誠徳",
+          "englishName": "MASUI Jotoku",
+          "license": ""
+        },
+        {
+          "role": "強化",
+          "name": "児玉 英史",
+          "englishName": "KODAMA Hideshi",
+          "license": ""
+        },
+        {
+          "role": "トレーナー",
+          "name": "岩田 祐二",
+          "englishName": "IWATA Yuji",
+          "license": "C級"
+        },
+        {
+          "role": "主将",
+          "name": "新中 優大",
+          "englishName": "SHINNAKA Yuta",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "松島 朝日",
+          "englishName": "MATSUSHIMA Asahi",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "飯冨 開世",
+          "englishName": "IITOMI Kaise",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "川本 陸",
+          "englishName": "KAWAMOTO Riku",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "篠原 太希",
+          "englishName": "SHINOHARA Taiki",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "坂根 秀",
+          "englishName": "SAKANE Shu",
+          "license": ""
+        },
+        {
+          "role": "主務",
+          "name": "荒牧 元気",
+          "englishName": "ARAMAKI Genki",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "小澤 陸央",
+          "englishName": "OZAWA Rio",
+          "license": ""
+        }
+      ],
+      "sources": {
+        "team": "https://jufa-chugoku.jp/team/604.html",
+        "registration": "https://football-system.jp/fss/pub_teaminfo.php?tid=mP77admFzug%3D"
+      }
+    },
+    {
+      "id": "hiroshima",
+      "name": "広島大学",
+      "shortName": "広島大",
+      "emblem": "/assets/images/teams/hiroshima/emblem.png",
+      "teamPhoto": "/assets/images/teams/hiroshima/team.jpg",
+      "kits": {
+        "home": "/assets/images/kits/hiroshima/home.svg",
+        "away": "/assets/images/kits/hiroshima/away.svg"
+      },
+      "colors": {
+        "primary": "#472495",
+        "secondary": "#FFFFFF"
+      },
+      "homeGround": "広島大学",
+      "hometown": "広島県東広島市",
+      "coach": "田部井 祐介",
+      "founded": "",
+      "website": "https://hiroshima-u-soccer.jimdofree.com/",
+      "instagram": "",
+      "staff": [
+        {
+          "role": "監督",
+          "name": "田部井 祐介",
+          "englishName": "TABEI Yusuke",
+          "license": "B級"
+        },
+        {
+          "role": "総監督",
+          "name": "上泉 康樹",
+          "englishName": "UWAIZUMI Koki",
+          "license": "A級ジェネラル"
+        },
+        {
+          "role": "顧問",
+          "name": "沖原 謙",
+          "englishName": "OKIHARA Ken",
+          "license": ""
+        },
+        {
+          "role": "部長",
+          "name": "川野 貴志",
+          "englishName": "KAWANO Takashi",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "小島 拓",
+          "englishName": "KOJIMA Taku",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "細川 恭汰",
+          "englishName": "HOSOKAWA Kyota",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "前田 俊輔",
+          "englishName": "MAEDA Shunsuke",
+          "license": ""
+        },
+        {
+          "role": "トレーナー",
+          "name": "森脇 萌",
+          "englishName": "MORIWAKI Moe",
+          "license": ""
+        },
+        {
+          "role": "トレーナー",
+          "name": "佐藤 蓮",
+          "englishName": "SATO Ren",
+          "license": ""
+        },
+        {
+          "role": "主将",
+          "name": "中尾 誉",
+          "englishName": "NAKAO Takashi",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "福田 駿介",
+          "englishName": "FUKUDA Shunsuke",
+          "license": ""
+        },
+        {
+          "role": "主務",
+          "name": "出口 向陽",
+          "englishName": "DEGUCHI Koyo",
+          "license": ""
+        },
+        {
+          "role": "副務",
+          "name": "田中 薫",
+          "englishName": "TANAKA Kaoru",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "神戸 ひな子",
+          "englishName": "KANBE Hinako",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "羽場 杏梓",
+          "englishName": "HABA Anji",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "立本 仁心",
+          "englishName": "TACHIMOTO Niko",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "佐藤 夏菜",
+          "englishName": "SATO Kana",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "堀 結月",
+          "englishName": "HORI Yuzuki",
+          "license": ""
+        }
+      ],
+      "sources": {
+        "team": "https://jufa-chugoku.jp/team/605.html",
+        "registration": "https://football-system.jp/fss/pub_teaminfo.php?tid=n0ziWt124vM%3D"
+      }
+    },
+    {
+      "id": "hiroshima-bunka-gakuen",
+      "name": "広島文化学園大学",
+      "shortName": "文化大",
+      "emblem": "/assets/images/teams/hiroshima-bunka-gakuen/emblem.png",
+      "teamPhoto": "/assets/images/teams/hiroshima-bunka-gakuen/team.jpg",
+      "kits": {
+        "home": "/assets/images/kits/hiroshima-bunka-gakuen/home.svg",
+        "away": "/assets/images/kits/hiroshima-bunka-gakuen/away.svg"
+      },
+      "colors": {
+        "primary": "#0B3F8A",
+        "secondary": "#FFFFFF"
+      },
+      "homeGround": "広島文化学園大学",
+      "hometown": "広島県呉市",
+      "coach": "房野 真也",
+      "founded": "",
+      "website": "https://www.footballnavi.jp/hbg_soccer/",
+      "instagram": "",
+      "staff": [
+        {
+          "role": "監督",
+          "name": "房野 真也",
+          "englishName": "BONO Shinya",
+          "license": "B級"
+        },
+        {
+          "role": "部長",
+          "name": "河野 喬",
+          "englishName": "KAWANO Takashi",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "甲田 大二",
+          "englishName": "KODA Daiji",
+          "license": "A級"
+        },
+        {
+          "role": "主将",
+          "name": "上田 史詠",
+          "englishName": "UEDA Shieru",
+          "license": ""
+        },
+        {
+          "role": "副主将",
+          "name": "大川 蒼人",
+          "englishName": "OKAWA Aoto",
+          "license": ""
+        },
+        {
+          "role": "副主将",
+          "name": "三村 歓",
+          "englishName": "MIMURA Kan",
+          "license": ""
+        },
+        {
+          "role": "副主将",
+          "name": "境 悠太",
+          "englishName": "SAKAI Yuta",
+          "license": ""
+        },
+        {
+          "role": "主務",
+          "name": "瀧本 唯楓",
+          "englishName": "TAKIMOTO Ibuki",
+          "license": ""
+        },
+        {
+          "role": "副務",
+          "name": "吾郷 千怜",
+          "englishName": "AGO Chisato",
+          "license": ""
+        },
+        {
+          "role": "副務",
+          "name": "石川 優樹成",
+          "englishName": "ISHIKAWA Yukinari",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "吉田 杏音",
+          "englishName": "YOSHIDA Anne",
+          "license": ""
+        }
+      ],
+      "sources": {
+        "team": "https://jufa-chugoku.jp/team/601.html",
+        "registration": "https://football-system.jp/fss/pub_teaminfo.php?tid=sG9eESVG1Bo%3D"
+      }
+    },
+    {
+      "id": "shunan-public",
+      "name": "周南公立大学",
+      "shortName": "周南大",
+      "aliases": [
+        "徳山大学"
+      ],
+      "emblem": "/assets/images/teams/shunan-public/emblem.png",
+      "teamPhoto": "/assets/images/teams/shunan-public/team.jpg",
+      "kits": {
+        "home": "/assets/images/kits/shunan-public/home.svg",
+        "away": "/assets/images/kits/shunan-public/away.svg"
+      },
+      "colors": {
+        "primary": "#D71F32",
+        "secondary": "#FFFFFF"
+      },
+      "homeGround": "周南公立大学",
+      "hometown": "山口県",
+      "coach": "田中 龍哉",
+      "founded": "",
+      "website": "",
+      "instagram": "https://www.instagram.com/shunan_u/",
+      "staff": [
+        {
+          "role": "監督",
+          "name": "田中 龍哉",
+          "englishName": "TANAKA Tatsuya",
+          "license": "B級"
+        },
+        {
+          "role": "部長",
+          "name": "山本 晋也",
+          "englishName": "YAMAMOTO Shinya",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "森山 愁斗",
+          "englishName": "MORIYAMA Shuto",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "西山 翼",
+          "englishName": "NISHIYAMA Tsubasa",
+          "license": "C級"
+        },
+        {
+          "role": "学生コーチ",
+          "name": "高井 陽生",
+          "englishName": "TAKAI Haru",
+          "license": ""
+        },
+        {
+          "role": "学生トレーナー",
+          "name": "新村 陸",
+          "englishName": "NIIMURA Riku",
+          "license": "C級"
+        },
+        {
+          "role": "マネージャー",
+          "name": "岩村 花那",
+          "englishName": "IWAMURA Hana",
+          "license": ""
+        },
+        {
+          "role": "学生コーチ",
+          "name": "森本 晃正",
+          "englishName": "MORIMOTO Kosei",
+          "license": ""
+        },
+        {
+          "role": "学生トレーナー",
+          "name": "中山 絢翔",
+          "englishName": "NAKAYAMA Kento",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "山本 大将",
+          "englishName": "YAMAMOTO Taisho",
+          "license": ""
+        }
+      ],
+      "sources": {
+        "team": "https://jufa-chugoku.jp/team/668.html",
+        "registration": "https://football-system.jp/fss/pub_teaminfo.php?tid=QWJhLXmDJpw%3D"
+      }
+    },
+    {
+      "id": "hiroshima-shudo",
+      "name": "広島修道大学",
+      "shortName": "広修大",
+      "emblem": "/assets/images/teams/hiroshima-shudo/emblem.png",
+      "teamPhoto": "/assets/images/teams/hiroshima-shudo/team.jpg",
+      "kits": {
+        "home": "/assets/images/kits/hiroshima-shudo/home.svg",
+        "away": "/assets/images/kits/hiroshima-shudo/away.svg"
+      },
+      "colors": {
+        "primary": "#173F94",
+        "secondary": "#FFFFFF"
+      },
+      "homeGround": "広島修道大学",
+      "hometown": "広島県広島市",
+      "coach": "畑 裕喜",
+      "founded": "",
+      "website": "https://www.shudo-u.ac.jp/club/sports/soccer.html",
+      "instagram": "https://www.instagram.com/shudosoccer1960/",
+      "staff": [
+        {
+          "role": "監督",
+          "name": "畑 裕喜",
+          "englishName": "HATA Hiroki",
+          "license": "B級"
+        },
+        {
+          "role": "顧問",
+          "name": "尾嶋 潤哉",
+          "englishName": "OJIMA Junya",
+          "license": ""
+        },
+        {
+          "role": "部長",
+          "name": "森河 亮",
+          "englishName": "MORIKAWA Ryo",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "中島 浩司",
+          "englishName": "NAKAJIMA Koji",
+          "license": "B級"
+        },
+        {
+          "role": "主将",
+          "name": "近本 結平",
+          "englishName": "CHIKAMOTO Kippei",
+          "license": ""
+        },
+        {
+          "role": "主務",
+          "name": "松本 達弥",
+          "englishName": "MATSUMOTO Tatsuya",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "辰見 竜之介",
+          "englishName": "TATSUMI Ryunosuke",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "沖田 理矩",
+          "englishName": "OKITA Riku",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "菊崎 妃南",
+          "englishName": "KIKUZAKI Hina",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "永田 彩花",
+          "englishName": "NAGATA Ayaka",
+          "license": ""
+        },
+        {
+          "role": "総監督",
+          "name": "石田 一雄",
+          "englishName": "ISHIDA Kazuo",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "宮本 浩希",
+          "englishName": "MIYAMOTO Koki",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "川原 颯斗",
+          "englishName": "KAWAHARA Hayato",
+          "license": ""
+        },
+        {
+          "role": "副将",
+          "name": "井上 太陽",
+          "englishName": "INOUE Taiyo",
+          "license": ""
+        },
+        {
+          "role": "学生コーチ",
+          "name": "井上 陽登",
+          "englishName": "INOUE Haruto",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "川崎 すみれ",
+          "englishName": "KAWASAKI Sumire",
+          "license": ""
+        }
+      ],
+      "sources": {
+        "team": "https://jufa-chugoku.jp/team/599.html",
+        "registration": "https://football-system.jp/fss/pub_teaminfo.php?tid=FLuWDd0daWs%3D"
+      }
+    },
+    {
+      "id": "fukuyama-heisei",
+      "name": "福山平成大学",
+      "shortName": "福平大",
+      "emblem": "/assets/images/teams/fukuyama-heisei/emblem.png",
+      "teamPhoto": "/assets/images/teams/fukuyama-heisei/team.jpg",
+      "kits": {
+        "home": "/assets/images/kits/fukuyama-heisei/home.svg",
+        "away": "/assets/images/kits/fukuyama-heisei/away.svg"
+      },
+      "colors": {
+        "primary": "#146BD2",
+        "secondary": "#FFFFFF"
+      },
+      "homeGround": "福山平成大学",
+      "hometown": "広島県福山市",
+      "coach": "若井 研治",
+      "founded": "",
+      "website": "https://www.heisei-u.ac.jp/club-blog/category/04/",
+      "instagram": "",
+      "staff": [
+        {
+          "role": "監督",
+          "name": "若井 研治",
+          "englishName": "WAKAI Kenji",
+          "license": "S級"
+        },
+        {
+          "role": "部長",
+          "name": "石橋 勇",
+          "englishName": "ISHIBASHI Tsuyoshi",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "松田 基弘",
+          "englishName": "MATSUDA Motohiro",
+          "license": "A級"
+        },
+        {
+          "role": "主将",
+          "name": "水津 陽音",
+          "englishName": "SUIZU Haruto",
+          "license": ""
+        },
+        {
+          "role": "主務",
+          "name": "藤木 由翔",
+          "englishName": "FUJIKI Yuito",
+          "license": ""
+        },
+        {
+          "role": "副務",
+          "name": "田村 蒼",
+          "englishName": "TAMURA So",
+          "license": ""
+        }
+      ],
+      "sources": {
+        "team": "https://jufa-chugoku.jp/team/603.html",
+        "registration": "https://football-system.jp/fss/pub_teaminfo.php?tid=sKjyqqP9CH4%3D"
+      }
+    },
+    {
+      "id": "kawasaki-medical-welfare",
+      "name": "川崎医療福祉大学",
+      "shortName": "川崎福",
+      "emblem": "/assets/images/teams/kawasaki-medical-welfare/emblem.png",
+      "teamPhoto": "/assets/images/teams/kawasaki-medical-welfare/team.jpg",
+      "kits": {
+        "home": "/assets/images/kits/kawasaki-medical-welfare/home.svg",
+        "away": "/assets/images/kits/kawasaki-medical-welfare/away.svg"
+      },
+      "colors": {
+        "primary": "#087C59",
+        "secondary": "#FFFFFF"
+      },
+      "homeGround": "川崎医療福祉大学グラウンド",
+      "hometown": "岡山県倉敷市",
+      "coach": "松枝 秀二",
+      "founded": "",
+      "website": "https://w.kawasaki-m.ac.jp/life/activities_club_06/",
+      "instagram": "",
+      "staff": [
+        {
+          "role": "監督",
+          "name": "松枝 秀二",
+          "englishName": "MATSUEDA Shuji",
+          "license": ""
+        },
+        {
+          "role": "顧問",
+          "name": "山形 高司",
+          "englishName": "YAMAGATA Takashi",
+          "license": ""
+        },
+        {
+          "role": "部長",
+          "name": "深田 康介",
+          "englishName": "FUKADA Kosuke",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "藤原 久勧",
+          "englishName": "FUJIWARA Hisayuki",
+          "license": "B級"
+        },
+        {
+          "role": "主務",
+          "name": "所司 七海",
+          "englishName": "SHOSHI Nanami",
+          "license": ""
+        },
+        {
+          "role": "副務",
+          "name": "原田 瑞央",
+          "englishName": "HARADA Mio",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "岡本 優香",
+          "englishName": "OKAMOTO Yuka",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "平田 綾華音",
+          "englishName": "HIRATA Akane",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "光岡 樹輝",
+          "englishName": "MITSUOKA Juki",
+          "license": ""
+        }
+      ],
+      "sources": {
+        "team": "https://jufa-chugoku.jp/team/596.html",
+        "registration": "https://football-system.jp/fss/pub_teaminfo.php?tid=W7lDL2HlcOw%3D"
+      }
+    },
+    {
+      "id": "yamaguchi",
+      "name": "山口大学",
+      "shortName": "山口大",
+      "emblem": "/assets/images/teams/yamaguchi/emblem.png",
+      "teamPhoto": "/assets/images/teams/yamaguchi/team.jpg",
+      "kits": {
+        "home": "/assets/images/kits/yamaguchi/home.svg",
+        "away": "/assets/images/kits/yamaguchi/away.svg"
+      },
+      "colors": {
+        "primary": "#07824C",
+        "secondary": "#242A31"
+      },
+      "homeGround": "やまぐちサッカー交流広場",
+      "hometown": "山口県山口市",
+      "coach": "丹 信介",
+      "founded": "",
+      "website": "",
+      "instagram": "https://www.instagram.com/yamadai.soccer/",
+      "staff": [
+        {
+          "role": "監督",
+          "name": "丹 信介",
+          "englishName": "TAN Nobusuke",
+          "license": ""
+        },
+        {
+          "role": "顧問",
+          "name": "上地 広昭",
+          "englishName": "UECHI Hiroaki",
+          "license": ""
+        },
+        {
+          "role": "コーチ",
+          "name": "礒部 宏昭",
+          "englishName": "ISOBE Hiroaki",
+          "license": "B級"
+        },
+        {
+          "role": "トレーナー",
+          "name": "上條 寛司",
+          "englishName": "UEJO Hiroshi",
+          "license": ""
+        },
+        {
+          "role": "トレーナー",
+          "name": "高田 凌雅",
+          "englishName": "TAKADA Ryoga",
+          "license": ""
+        },
+        {
+          "role": "主将",
+          "name": "三宅 隼人",
+          "englishName": "MIYAKE Hayato",
+          "license": ""
+        },
+        {
+          "role": "主務",
+          "name": "後藤 利希",
+          "englishName": "GOTO Riki",
+          "license": ""
+        },
+        {
+          "role": "副務",
+          "name": "佐井門 敬太",
+          "englishName": "SAIMON Keita",
+          "license": ""
+        },
+        {
+          "role": "副務",
+          "name": "藤原 陸",
+          "englishName": "FUJIWARA Riku",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "吉冨 彩羅",
+          "englishName": "YOSHITOMI Sarara",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "新庄 知花",
+          "englishName": "SHINJO Chika",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "千々岩 姫奈",
+          "englishName": "Chijiiwa Hina",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "末永 真子",
+          "englishName": "SUENAGA Mako",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "穴田 美宇",
+          "englishName": "ANADA Miu",
+          "license": ""
+        },
+        {
+          "role": "マネージャー",
+          "name": "串間 裕月",
+          "englishName": "KUSHIMA Yuzuki",
+          "license": ""
+        }
+      ],
+      "sources": {
+        "team": "https://jufa-chugoku.jp/team/609.html",
+        "registration": "https://football-system.jp/fss/pub_teaminfo.php?tid=bfZzFj6WQ2I%3D"
+      }
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "checkedAt": "2026-07-14T03:38:52.586Z",
+  "source": "JUFA中国 2026年度チーム登録",
+  "checkedLineupEntries": 315,
+  "missing": [],
+  "numberMismatches": [],
+  "positionMismatches": [
+    {
+      "matchId": "football-system-15-558-25625",
+      "teamId": "fukuyama",
+      "name": "灘 遥希",
+      "matchPosition": "MF",
+      "registeredPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-558-25625",
+      "teamId": "fukuyama",
+      "name": "飯冨 開世",
+      "matchPosition": "FW",
+      "registeredPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-558-25629",
+      "teamId": "fukuyama-heisei",
+      "name": "宮本 泰誠",
+      "matchPosition": "MF",
+      "registeredPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-558-25629",
+      "teamId": "fukuyama-heisei",
+      "name": "竹杉 勇真",
+      "matchPosition": "FW",
+      "registeredPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-558-25629",
+      "teamId": "yamaguchi",
+      "name": "藤原 陸",
+      "matchPosition": "DF",
+      "registeredPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-558-25636",
+      "teamId": "hiroshima-keizai",
+      "name": "成田 創",
+      "matchPosition": "MF",
+      "registeredPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-558-25636",
+      "teamId": "hiroshima-keizai",
+      "name": "出原 琉羽",
+      "matchPosition": "FW",
+      "registeredPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-558-25645",
+      "teamId": "fukuyama-heisei",
+      "name": "田村 蒼",
+      "matchPosition": "FW",
+      "registeredPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-558-25645",
+      "teamId": "fukuyama-heisei",
+      "name": "寺岡 隆希",
+      "matchPosition": "DF",
+      "registeredPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-558-25645",
+      "teamId": "fukuyama-heisei",
+      "name": "橋岡 倫太郎",
+      "matchPosition": "MF",
+      "registeredPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-558-25645",
+      "teamId": "fukuyama-heisei",
+      "name": "小黒 翼",
+      "matchPosition": "FW",
+      "registeredPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-558-25648",
+      "teamId": "hiroshima-bunka-gakuen",
+      "name": "實久 佑真",
+      "matchPosition": "DF",
+      "registeredPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-558-25651",
+      "teamId": "fukuyama-heisei",
+      "name": "小澤 惟里",
+      "matchPosition": "DF",
+      "registeredPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-558-25653",
+      "teamId": "hiroshima",
+      "name": "藤本 晃平",
+      "matchPosition": "FW",
+      "registeredPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-558-25657",
+      "teamId": "fukuyama-heisei",
+      "name": "吉岡 力",
+      "matchPosition": "MF",
+      "registeredPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-558-25659",
+      "teamId": "hiroshima-keizai",
+      "name": "最上 尚哉",
+      "matchPosition": "FW",
+      "registeredPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-558-25666",
+      "teamId": "fukuyama-heisei",
+      "name": "手塚 佳祐",
+      "matchPosition": "MF",
+      "registeredPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-558-25666",
+      "teamId": "fukuyama-heisei",
+      "name": "京泉 公太",
+      "matchPosition": "MF",
+      "registeredPosition": "DF"
+    }
+  ]
+}

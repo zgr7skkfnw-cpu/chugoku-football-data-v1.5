@@ -1,0 +1,11 @@
+node_modules/
+playwright-report/
+test-results/
+
+# 同期処理の一時ファイルと取得原本
+data/raw/*
+!data/raw/.gitkeep
+
+# OS / editor
+.DS_Store
+*.log

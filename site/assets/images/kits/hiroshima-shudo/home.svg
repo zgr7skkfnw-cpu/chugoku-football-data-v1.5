@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="hsu-home-title hsu-home-desc">
+  <title id="hsu-home-title">広島修道大学 FP正ユニフォーム</title>
+  <desc id="hsu-home-desc">青の無地、袖先から首元まで続く白い1本線、脇下から裾までの細い白い直線、中央にHSUを配した簡略ユニフォーム</desc>
+  <style>
+    svg { --kit-primary: #173f94; --kit-secondary: #173f94; --kit-accent: #f7f8f6; --kit-trim: #ffffff; --kit-text: #ffffff; --kit-text-stroke: #153571; }
+    .primary { fill: var(--kit-primary); } .secondary { fill: var(--kit-secondary); }
+    .accent { fill: var(--kit-accent); } .trim { stroke: var(--kit-trim); }
+    .label { fill: var(--kit-text); stroke: var(--kit-text-stroke); stroke-width: .5; paint-order: stroke; font: 800 6.4px Arial, sans-serif; letter-spacing: -.25px; text-anchor: middle; }
+    .outline { fill: none; stroke: #07101b; stroke-width: 1.35; stroke-linejoin: round; }
+  </style>
+  <defs>
+    <clipPath id="hsu-home-body"><path d="M15 7 21 4h6l6 3v35H15Z"/></clipPath>
+    <linearGradient id="hsu-home-shade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".12"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".15"/></linearGradient>
+  </defs>
+  <path class="primary" d="M15 7 5 13l5 9 5-3Zm18 0 10 6-5 9-5-3Z"/>
+  <path class="primary" d="M15 7 21 4h6l6 3v35H15Z"/>
+  <path class="trim" d="M7.5 13.6 15 9l6-3.7m19.5 8.3L33 9l-6-3.7" fill="none" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="accent" d="M15 19h1.1v23H15zm16.9 0H33v23h-1.1z"/>
+  <path d="M15 7 21 4h6l6 3v35H15Z" fill="url(#hsu-home-shade)"/>
+  <text class="label" x="24" y="29">HSU</text>
+  <path class="trim" d="M20.8 5.2q3.2 5.4 6.4 0" fill="none" stroke-width="1.3"/>
+  <path class="outline" d="M15 7 21 4h6l6 3 10 6-5 9-5-3v23H15V19l-5 3-5-9Z"/>
+</svg>

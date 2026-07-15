@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "season": 2026,
+  "updatedAt": "2026-07-14T00:00:00+09:00",
+  "regulations": {
+    "matchMinutes": 90,
+    "points": { "win": 3, "draw": 1, "loss": 0 },
+    "division1": {
+      "teamCount": 10,
+      "format": "double-round-robin",
+      "phases": ["first", "second"],
+      "automaticRelegationPositions": [],
+      "relegationPlayoffPositions": []
+    },
+    "division2": {
+      "teamCount": 11,
+      "format": "double-round-robin",
+      "phases": ["first", "second"],
+      "automaticPromotionPositions": [1, 2, 3],
+      "promotionPlayoffPositions": [4, 5, 6]
+    },
+    "promotionPlayoff": {
+      "name": "1部リーグ昇格プレーオフ",
+      "firstRound": "2部5位 対 2部6位",
+      "decidingMatch": "2部4位 対 1回戦勝者",
+      "winner": "1部昇格",
+      "drawResolution": "リーグ戦上位チームの勝ち"
+    }
+  },
+  "competitions": [
+    {
+      "id": "jufa-chugoku-2026-division-1",
+      "name": "2026年度 中国大学サッカーリーグ 1部",
+      "leagueName": "中国大学サッカーリーグ 1部",
+      "division": 1,
+      "stage": "regular",
+      "stageName": "リーグ戦",
+      "periodRules": {
+        "first": { "fromRound": 1, "toRound": 9 },
+        "second": { "fromRound": 10, "toRound": 18 }
+      },
+      "matches": "./matches.json",
+      "teamStats": "./team-stats.json",
+      "teamIds": [
+        "ipu",
+        "yamaguchi",
+        "kawasaki-medical-welfare",
+        "fukuyama-heisei",
+        "hiroshima-shudo",
+        "shunan-public",
+        "hiroshima-bunka-gakuen",
+        "hiroshima",
+        "fukuyama",
+        "hiroshima-keizai"
+      ]
+    },
+    {
+      "id": "jufa-chugoku-2026-division-2",
+      "name": "2026年度 中国大学サッカーリーグ 2部",
+      "leagueName": "中国大学サッカーリーグ 2部",
+      "division": 2,
+      "stage": "regular",
+      "stageName": "リーグ戦",
+      "periodRules": {
+        "first": { "fromRound": 1, "toRound": 11 },
+        "second": { "fromRound": 12, "toRound": 22 }
+      },
+      "matches": "./div2/matches.json",
+      "teamStats": "./div2/team-stats.json",
+      "teamIds": [
+        "shimonoseki-city",
+        "kibi-international",
+        "shujitsu",
+        "onomichi-city",
+        "okayama",
+        "okayama-science",
+        "shimane",
+        "university-of-shimane",
+        "hiroshima-international",
+        "hiroshima-institute-of-technology",
+        "tottori"
+      ]
+    },
+    {
+      "id": "jufa-chugoku-2026-division-1-promotion-playoff",
+      "name": "2026年度 1部リーグ昇格プレーオフ",
+      "leagueName": "中国大学サッカーリーグ",
+      "division": 2,
+      "stage": "promotion-playoff",
+      "stageName": "1部リーグ昇格プレーオフ",
+      "status": "pending",
+      "matches": null,
+      "teamStats": null,
+      "teamIds": []
+    }
+  ]
+}
