@@ -26,19 +26,44 @@ export async function loadMatches() {
 }
 
 async function loadCompetition(competition) {
-  const response = await fetch(dataUrl(competition.matches), {
-    headers: { Accept: "application/json" },
-    cache: "force-cache",
-  });
-  if (!response.ok) throw new Error(`${competition.name}の試合データを取得できませんでした（HTTP ${response.status}）`);
+  const matchesUrl = dataUrl(competition.matches);
+  const overrideUrl = new URL(
+    "manual-match-overrides.json",
+    matchesUrl,
+  );
+
+  const [response, manualOverrides] = await Promise.all([
+    fetch(matchesUrl, {
+      headers: { Accept: "application/json" },
+      cache: "no-store",
+    }),
+    loadManualOverrides(overrideUrl),
+  ]);
+
+  if (!response.ok) {
+    throw new Error(
+      `${competition.name}の試合データを取得できませんでした（HTTP ${response.status}）`,
+    );
+  }
+
   const data = await response.json();
-  if (data.schemaVersion !== 1 || !Array.isArray(data.items)) throw new Error(`${competition.name}の試合データ形式が対応していません`);
+
+  if (data.schemaVersion !== 1 || !Array.isArray(data.items)) {
+    throw new Error(
+      `${competition.name}の試合データ形式が対応していません`,
+    );
+  }
+
+  const mergedItems = applyManualOverrides(
+    data.items,
+    manualOverrides,
+  );
 
   return {
     season: competition.season,
     division: competition.division,
     stageId: competition.stage,
-    matches: data.items.map((match) => ({
+    matches: mergedItems.map((match) => ({
       ...match,
       season: competition.season,
       competitionId: competition.id,
@@ -58,6 +83,103 @@ async function loadCompetition(competition) {
       matchCount: data.matchCount,
       scheduleCount: data.scheduleCount,
       source: data.source,
+      manualOverrideCount: manualOverrides.length,
     },
   };
+}
+
+/**
+ * 同じフォルダにある手動補正ファイルを読み込みます。
+ *
+ * 補正ファイルが存在しない大会では、空配列を返します。
+ */
+async function loadManualOverrides(url) {
+  const response = await fetch(url, {
+    headers: { Accept: "application/json" },
+    cache: "no-store",
+  });
+
+  if (response.status === 404) {
+    return [];
+  }
+
+  if (!response.ok) {
+    console.warn(
+      `手動補正データを取得できませんでした（HTTP ${response.status}）`,
+    );
+    return [];
+  }
+
+  const data = await response.json();
+
+  if (data.schemaVersion !== 1 || !Array.isArray(data.items)) {
+    console.warn("手動補正データの形式が正しくありません。");
+    return [];
+  }
+
+  return data.items;
+}
+
+/**
+ * matchIdが一致する試合へ手動補正を重ねます。
+ */
+function applyManualOverrides(matches, overrides) {
+  const overrideMap = new Map(
+    overrides
+      .filter((item) => item?.matchId && item?.override)
+      .map((item) => [item.matchId, item]),
+  );
+
+  return matches.map((match) => {
+    const manual = overrideMap.get(match.id);
+
+    if (!manual) {
+      return match;
+    }
+
+    return mergeMatchData(match, {
+      ...manual.override,
+      manualOverride: true,
+      manualOverrideReason: manual.reason ?? null,
+      manualOverrideUpdatedAt: manual.updatedAt ?? null,
+    });
+  });
+}
+
+/**
+ * オブジェクトは深く統合し、配列は補正側の内容で置き換えます。
+ */
+function mergeMatchData(original, override) {
+  if (
+    !isPlainObject(original)
+    || !isPlainObject(override)
+  ) {
+    return override;
+  }
+
+  const merged = { ...original };
+
+  for (const [key, value] of Object.entries(override)) {
+    if (
+      isPlainObject(value)
+      && isPlainObject(original[key])
+    ) {
+      merged[key] = mergeMatchData(
+        original[key],
+        value,
+      );
+    } else {
+      merged[key] = value;
+    }
+  }
+
+  return merged;
+}
+
+function isPlainObject(value) {
+  return (
+    value !== null
+    && typeof value === "object"
+    && !Array.isArray(value)
+  );
 }

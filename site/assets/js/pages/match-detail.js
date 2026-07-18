@@ -44,13 +44,40 @@ export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, 
     createScoreTeam(away, match.awayTeam.name, "アウェイ", "away"),
   ]);
 
-  const information = element("div", { className: "detail-list" }, [
+  const informationRows = [
     createDetailRow("日時", formatKickoff(match, { includeYear: true, includeTime: true })),
     createDetailRow("節", match.roundLabel ?? `第${match.round}節`),
     createDetailRow("会場", match.venue ?? "未掲載"),
-    createDetailRow("観客数", match.attendance === null ? "未掲載" : `${match.attendance}人`),
+    createDetailRow(
+      "観客数",
+      match.attendance == null ? "未掲載" : `${match.attendance}人`,
+    ),
     createDetailRow("試合形式", match.matchFormat ?? "未掲載"),
-  ]);
+  ];
+
+  if (match.wasResumed) {
+    informationRows.push(
+      createDetailRow(
+        "再開日",
+        match.resumedDate
+          ? match.resumedDate.replaceAll("-", "/")
+          : "日付未掲載",
+      ),
+    );
+
+    informationRows.push(
+      createDetailRow(
+        "備考",
+        match.statusNote ?? "中断後に再開された試合",
+      ),
+    );
+  }
+
+  const information = element(
+    "div",
+    { className: "detail-list" },
+    informationRows,
+  );
   const periods = element(
     "div",
     { className: "period-score-list" },
@@ -86,11 +113,22 @@ export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, 
     ...match.substitutions.home.map((text) => ({ side: match.homeTeam.name, text })),
     ...match.substitutions.away.map((text) => ({ side: match.awayTeam.name, text })),
   ];
-  const officials = match.officials.map((official) => ({
+  const officials = (match.officials ?? []).map((official) => ({
     side: official.role,
     text: official.name,
   }));
-  const lineups = createLineups(match.lineups, teamDirectory, matchPlayerDirectory);
+
+  const statistics = createMatchStatistics(
+    match.manualStatistics,
+    match.homeTeam.name,
+    match.awayTeam.name,
+  );
+
+  const lineups = createLineups(
+    match.lineups,
+    teamDirectory,
+    matchPlayerDirectory,
+  );
 
   return element("article", { className: "page", attributes: { "data-page": "match", "data-match-id": match.id } }, [
     createPageHeader({
@@ -105,11 +143,122 @@ export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, 
       createPanel("得点経過", goals, `${match.goals.length}得点`),
       createPanel("スタメン", lineups, "先発11人"),
       createPanel("警告・退場", createTextEventList(disciplinary), `${disciplinary.length}件`),
-      createPanel("交代", createTextEventList(substitutions), `${substitutions.length}件`),
-      createPanel("審判・運営", createTextEventList(officials), `${officials.length}名`),
-      createNotice(`football-system / game_id=${match.gameId}`),
+      createPanel(
+        "交代",
+        createTextEventList(substitutions),
+        `${substitutions.length}件`,
+      ),
+      statistics
+        ? createPanel(
+            "チームスタッツ",
+            statistics,
+            "試合合計",
+          )
+        : null,
+      createPanel(
+        "審判・運営",
+        createTextEventList(officials),
+        `${officials.length}名`,
+      ),
+      createMatchSourceNotice(match),
     ]),
   ]);
+}
+
+function createMatchStatistics(
+  statistics,
+  homeTeamName,
+  awayTeamName,
+) {
+  if (!statistics?.home || !statistics?.away) {
+    return null;
+  }
+
+  const rows = [
+    ["シュート", "shots"],
+    ["ゴールキック", "goalKicks"],
+    ["コーナーキック", "cornerKicks"],
+    ["直接フリーキック", "directFreeKicks"],
+    ["間接フリーキック", "indirectFreeKicks"],
+    ["オフサイド", "offsides"],
+    ["PK", "penalties"],
+  ];
+
+  const hasAnyValue = rows.some(([, key]) =>
+    statistics.home[key] != null
+    || statistics.away[key] != null
+  );
+
+  if (!hasAnyValue) {
+    return null;
+  }
+
+  const table = element("table", {
+    className: "match-statistics-table",
+  });
+
+  table.append(
+    element("thead", {}, [
+      element("tr", {}, [
+        element("th", {
+          text: homeTeamName,
+        }),
+        element("th", {
+          text: "項目",
+        }),
+        element("th", {
+          text: awayTeamName,
+        }),
+      ]),
+    ]),
+    element(
+      "tbody",
+      {},
+      rows.map(([label, key]) =>
+        element("tr", {}, [
+          element("td", {
+            text: formatStatisticValue(
+              statistics.home[key],
+            ),
+          }),
+          element("th", {
+            text: label,
+          }),
+          element("td", {
+            text: formatStatisticValue(
+              statistics.away[key],
+            ),
+          }),
+        ]),
+      ),
+    ),
+  );
+
+  return element("div", {
+    className: "table-scroll",
+  }, [table]);
+}
+
+function formatStatisticValue(value) {
+  return value == null
+    ? "–"
+    : String(value);
+}
+
+function createMatchSourceNotice(match) {
+  if (match.manualOverride) {
+    return createNotice(
+      "football-systemの公式試合記録を基に手動補完したデータです。",
+    );
+  }
+
+  if (match.gameId != null) {
+    return createNotice(
+      `football-system / game_id=${match.gameId}`,
+    );
+  }
+
+  return createNotice("試合記録の取得元情報は未掲載です。");
 }
 
 function createScheduledMatchPage(match, home, away, teamDirectory, teamStats, headToHead) {
@@ -201,13 +350,35 @@ function createCompactStandingTable(standings, teamDirectory, highlightedTeamIds
   const rows = includeAll ? standings : standings.filter((row) => ids.has(row.teamId));
   const table = element("table", { className: "prematch-standing-table" });
   table.append(
-    element("thead", {}, [element("tr", {}, ["#", "チーム", "試", "勝", "分", "敗", "+/-", "勝点"].map((label) => element("th", { text: label })))]),
+    element("thead", {}, [
+      element(
+        "tr",
+        {},
+        ["#", "チーム", "試", "勝", "分", "負", "+/-", "差", "点"]
+          .map((label) => element("th", { text: label })),
+      ),
+    ]),
     element("tbody", {}, rows.map((row) => {
       const team = getTeam(teamDirectory, row.teamId);
       return element("tr", { className: ids.has(row.teamId) ? "is-highlighted" : "", attributes: { "data-prematch-standing-team": row.teamId } }, [
         element("td", { text: String(row.rank ?? "–") }),
         element("td", {}, [element("div", { className: "standing-team" }, [createTeamEmblem(team, "team-emblem team-emblem--standing"), createTeamNameLink(team, row.teamId)])]),
-        element("td", { text: String(row.played) }), element("td", { text: String(row.won) }), element("td", { text: String(row.drawn) }), element("td", { text: String(row.lost) }), element("td", { text: signed(row.goalDifference) }), element("td", { className: "points", text: String(row.points) }),
+        element("td", { text: String(row.played) }),
+        element("td", { text: String(row.won) }),
+        element("td", { text: String(row.drawn) }),
+        element("td", { text: String(row.lost) }),
+        element("td", {
+          className: "goals-for-against",
+          text: `${row.goalsFor ?? 0}-${row.goalsAgainst ?? 0}`,
+        }),
+        element("td", {
+          className: "goal-difference",
+          text: signed(row.goalDifference),
+        }),
+        element("td", {
+          className: "points",
+          text: String(row.points),
+        }),
       ]);
     })),
   );

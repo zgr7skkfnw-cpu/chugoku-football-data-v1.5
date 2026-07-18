@@ -1,7 +1,12 @@
 import { createNotice, createPageHeader, createPanel, element } from "../ui/elements.js";
 import { createSeasonPeriodTabs } from "../ui/season-period.js";
-import { filterMatchesByPeriod, sortMatchesNewestFirst } from "../utils/football.js";
-import { createMatchRow } from "./shared.js";
+import {
+  filterMatchesByPeriod,
+  groupMatchesByRound,
+  positionMatchTimeline,
+  sortMatchesChronologically,
+} from "../utils/football.js";
+import { createMatchRoundGroup } from "./shared.js";
 import { createSeasonSelect } from "../ui/season-select.js";
 
 export function renderMatchesPage({ matches, teamDirectory, leagueTeams, seasonPeriod, selectedSeason, availableSeasons }) {
@@ -12,7 +17,9 @@ export function renderMatchesPage({ matches, teamDirectory, leagueTeams, seasonP
   const sides = new Set(["home", "away"]);
   let teamId = "";
   let query = "";
-  const list = element("div", { className: "match-list" });
+  const list = element("div", {
+    className: "match-list match-list--timeline",
+  });
   const count = element("span", { text: "0試合" });
 
   const teamSelect = element("select", {
@@ -45,29 +52,58 @@ export function renderMatchesPage({ matches, teamDirectory, leagueTeams, seasonP
   });
 
   function renderList() {
-    const filtered = sortMatchesNewestFirst(filterMatchesByPeriod(seasonMatches, seasonPeriod)).filter((match) => {
-      const statusKey = match.status === "finished" ? "finished" : "scheduled";
-      if (!statuses.has(statusKey)) return false;
-      const searchable = normalizeSearch([
-        match.homeTeam.name,
-        match.awayTeam.name,
-        match.venue,
-        match.kickoffAt,
-        `第${match.round}節`,
-      ].filter(Boolean).join(" "));
-      if (query && !searchable.includes(query)) return false;
-      if (!teamId) return true;
-      if (match.homeTeam.teamId === teamId) return sides.has("home");
-      if (match.awayTeam.teamId === teamId) return sides.has("away");
-      return false;
-    });
+    const filtered = sortMatchesChronologically(
+      filterMatchesByPeriod(seasonMatches, seasonPeriod)
+        .filter((match) => {
+          const statusKey = match.status === "finished"
+            ? "finished"
+            : "scheduled";
+
+          if (!statuses.has(statusKey)) {
+            return false;
+          }
+
+          const searchable = normalizeSearch([
+            match.homeTeam.name,
+            match.awayTeam.name,
+            match.venue,
+            match.kickoffAt,
+            `第${match.round}節`,
+          ].filter(Boolean).join(" "));
+
+          if (query && !searchable.includes(query)) {
+            return false;
+          }
+
+          if (!teamId) {
+            return true;
+          }
+
+          if (match.homeTeam.teamId === teamId) {
+            return sides.has("home");
+          }
+
+          if (match.awayTeam.teamId === teamId) {
+            return sides.has("away");
+          }
+
+          return false;
+        }),
+    );
+
+    const roundGroups = groupMatchesByRound(filtered);
+
     list.replaceChildren(
-      ...(filtered.length
-        ? filtered.map((match) => createMatchRow(match, teamDirectory))
+      ...(roundGroups.length
+        ? roundGroups.map((group) =>
+            createMatchRoundGroup(group.matches, teamDirectory))
         : [createNotice("条件に一致する試合はありません。")]),
     );
+
     list.dataset.matchCount = String(filtered.length);
     count.textContent = `${filtered.length}試合`;
+
+    positionMatchTimeline(list, filtered);
   }
 
   renderList();
