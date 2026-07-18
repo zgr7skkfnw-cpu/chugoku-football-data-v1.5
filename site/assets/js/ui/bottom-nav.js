@@ -12,7 +12,9 @@ const icons = {
 const navigationViews = ["home", "standings", "following", "search"];
 
 export function renderBottomNavigation(container, currentView) {
-  const activeView = currentView === "match" || currentView === "matches"
+  const activeView = currentView === "league"
+    ? "standings"
+    : currentView === "match" || currentView === "matches"
     ? "home"
     : currentView === "team" || currentView === "player"
       ? "search"

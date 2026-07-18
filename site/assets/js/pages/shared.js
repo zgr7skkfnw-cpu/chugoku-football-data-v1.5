@@ -124,3 +124,33 @@ export function createPlayerLinkRow({ player, team, metric = null, metricLabel =
     ],
   );
 }
+
+export function createMatchRoundGroup(matches, teamDirectory) {
+  const firstMatch = matches[0];
+  const roundLabel =
+    firstMatch?.roundLabel
+    ?? (firstMatch?.round != null ? `第${firstMatch.round}節` : "節未設定");
+
+  const roundKey =
+    firstMatch?.round != null
+      ? String(firstMatch.round)
+      : roundLabel;
+
+  return element("section", {
+    className: "match-round-group",
+    attributes: {
+      "data-match-round": roundKey,
+    },
+  }, [
+    element("header", {
+      className: "match-round-group__header",
+    }, [
+      element("strong", { text: roundLabel }),
+      element("span", { text: `${matches.length}試合` }),
+    ]),
+    element("div", {
+      className: "match-round-group__matches",
+    }, matches.map((match) =>
+      createMatchRow(match, teamDirectory))),
+  ]);
+}

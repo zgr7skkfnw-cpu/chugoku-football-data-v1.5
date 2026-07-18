@@ -14,25 +14,29 @@ import { renderMatchesPage } from "./pages/matches.js";
 import { renderPlayersPage } from "./pages/players.js";
 import { renderRankingsPage } from "./pages/rankings.js";
 import { renderStandingsPage } from "./pages/standings.js";
+import { renderLeaguesPage } from "./pages/leagues.js";
 import { renderTeamsPage } from "./pages/teams.js";
 import { renderMatchDetailPage } from "./pages/match-detail.js";
 import { renderTeamProfilePage } from "./pages/team-profile.js";
 import { renderPlayerProfilePage } from "./pages/player-profile.js";
 import { renderFollowingPage } from "./pages/following.js";
 import { renderSearchPage } from "./pages/search.js";
+import { renderAdminPage } from "./pages/admin.js";
 
 const pageRenderers = {
   home: renderHomePage,
   following: renderFollowingPage,
   search: renderSearchPage,
   matches: renderMatchesPage,
-  standings: renderStandingsPage,
+  standings: renderLeaguesPage,
+  league: renderStandingsPage,
   teams: renderTeamsPage,
   players: renderPlayersPage,
   rankings: renderRankingsPage,
   match: renderMatchDetailPage,
   team: renderTeamProfilePage,
   player: renderPlayerProfilePage,
+  admin: renderAdminPage,
 };
 
 const main = document.querySelector("#main-content");

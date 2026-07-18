@@ -5,13 +5,15 @@ export const routes = Object.freeze({
   following: { label: "フォロー中", title: "フォロー中" },
   search: { label: "検索", title: "検索" },
   matches: { label: "試合", title: "試合" },
-  standings: { label: "リーグ", title: "順位表" },
+  standings: { label: "リーグ", title: "リーグ" },
+  league: { title: "中国大学サッカーリーグ" },
   teams: { label: "チーム", title: "チーム" },
   players: { label: "選手", title: "選手" },
   rankings: { label: "ランク", title: "ランキング" },
   match: { title: "試合詳細" },
   team: { title: "チーム詳細" },
   player: { title: "選手詳細" },
+  admin: { title: "試合データ補正" },
 });
 
 function readRouteFromUrl() {

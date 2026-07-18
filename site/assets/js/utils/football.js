@@ -175,3 +175,161 @@ export function formatUpdatedAt(value) {
     minute: "2-digit",
   }).format(new Date(value))} 更新`;
 }
+
+/**
+
+ * 試合を節ごとにまとめます。
+
+ * 節の順番は、各グループの最初の試合日時に従います。
+
+ */
+
+export function groupMatchesByRound(matches) {
+
+  const sorted = sortMatchesChronologically(matches);
+
+  const groups = [];
+
+  const groupMap = new Map();
+
+  for (const match of sorted) {
+
+    const roundKey =
+
+      match?.round != null
+
+        ? String(match.round)
+
+        : String(match?.roundLabel ?? "unknown");
+
+    if (!groupMap.has(roundKey)) {
+
+      const group = {
+
+        roundKey,
+
+        matches: [],
+
+      };
+
+      groupMap.set(roundKey, group);
+
+      groups.push(group);
+
+    }
+
+    groupMap.get(roundKey).matches.push(match);
+
+  }
+
+  return groups;
+
+}
+
+/**
+
+ * 今日または次の試合を含む節を、一覧枠の一番上に合わせます。
+
+ * 今後の試合がない場合は、一番古い節から表示します。
+
+ */
+
+export function positionMatchTimeline(list, matches) {
+  const sortedMatches = sortMatchesChronologically(matches);
+  const nowTime = Date.now();
+
+  // まず現在以降の未終了試合を探す
+  let targetMatch = sortedMatches.find((match) => {
+    const kickoffTime = new Date(match?.kickoffAt).getTime();
+
+    return (
+      match?.status !== "finished"
+      && Number.isFinite(kickoffTime)
+      && kickoffTime >= nowTime
+    );
+  });
+
+  // 日付が古いまま未終了になっている試合がある場合の予備処理
+  if (!targetMatch) {
+    targetMatch = sortedMatches.find(
+      (match) => match?.status !== "finished",
+    );
+  }
+
+  // 今後の試合がなければ最初から表示
+  if (!targetMatch) {
+    list.scrollTop = 0;
+    return;
+  }
+
+  const roundKey =
+    targetMatch?.round != null
+      ? String(targetMatch.round)
+      : String(targetMatch?.roundLabel ?? "unknown");
+
+  const escapedRoundKey =
+    typeof CSS !== "undefined" && CSS.escape
+      ? CSS.escape(roundKey)
+      : roundKey;
+
+  let attempts = 0;
+  const maxAttempts = 30;
+
+  const moveToTargetRound = () => {
+    attempts += 1;
+
+    // ページへの接続とレイアウト確定を待つ
+    if (!list.isConnected) {
+      if (attempts < maxAttempts) {
+        requestAnimationFrame(moveToTargetRound);
+      }
+      return;
+    }
+
+    const target = list.querySelector(
+      `[data-match-round="${escapedRoundKey}"]`,
+    );
+
+    if (!target) {
+      list.scrollTop = 0;
+      return;
+    }
+
+    const listRect = list.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const targetTop =
+      list.scrollTop + targetRect.top - listRect.top;
+
+    list.scrollTop = targetTop;
+
+    // 高さがまだ変化中なら再計算
+    if (
+      attempts < maxAttempts
+      && Math.abs(list.scrollTop - targetTop) > 2
+    ) {
+      requestAnimationFrame(moveToTargetRound);
+    }
+  };
+
+  requestAnimationFrame(moveToTargetRound);
+}
+
+/**
+ * 試合を開催日時の古い順に並べます。
+ */
+export function sortMatchesChronologically(matches) {
+  return [...matches].sort((left, right) => {
+    const leftTime = new Date(left?.kickoffAt).getTime();
+    const rightTime = new Date(right?.kickoffAt).getTime();
+
+    const safeLeftTime = Number.isFinite(leftTime)
+      ? leftTime
+      : Number.MAX_SAFE_INTEGER;
+
+    const safeRightTime = Number.isFinite(rightTime)
+      ? rightTime
+      : Number.MAX_SAFE_INTEGER;
+
+    return safeLeftTime - safeRightTime;
+  });
+}

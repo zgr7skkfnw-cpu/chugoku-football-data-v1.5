@@ -71,14 +71,14 @@
         },
         {
           "teamId": "shunan-public",
-          "played": 8,
+          "played": 9,
           "won": 5,
           "drawn": 0,
-          "lost": 3,
+          "lost": 4,
           "points": 15,
-          "goalsFor": 12,
-          "goalsAgainst": 14,
-          "goalDifference": -2,
+          "goalsFor": 13,
+          "goalsAgainst": 16,
+          "goalDifference": -3,
           "rank": 5,
           "rankChange": 1
         },
@@ -97,16 +97,16 @@
         },
         {
           "teamId": "hiroshima-bunka-gakuen",
-          "played": 8,
-          "won": 2,
+          "played": 9,
+          "won": 3,
           "drawn": 1,
           "lost": 5,
-          "points": 7,
-          "goalsFor": 10,
-          "goalsAgainst": 12,
-          "goalDifference": -2,
+          "points": 10,
+          "goalsFor": 12,
+          "goalsAgainst": 13,
+          "goalDifference": -1,
           "rank": 7,
-          "rankChange": 2
+          "rankChange": 0
         },
         {
           "teamId": "fukuyama-heisei",
@@ -119,7 +119,7 @@
           "goalsAgainst": 21,
           "goalDifference": -12,
           "rank": 8,
-          "rankChange": -1
+          "rankChange": 0
         },
         {
           "teamId": "kawasaki-medical-welfare",
@@ -132,7 +132,7 @@
           "goalsAgainst": 39,
           "goalDifference": -31,
           "rank": 9,
-          "rankChange": -1
+          "rankChange": 0
         },
         {
           "teamId": "yamaguchi",
@@ -222,6 +222,18 @@
           "rank": 6
         },
         {
+          "teamId": "hiroshima-bunka-gakuen",
+          "played": 5,
+          "won": 1,
+          "drawn": 1,
+          "lost": 3,
+          "points": 4,
+          "goalsFor": 7,
+          "goalsAgainst": 10,
+          "goalDifference": -3,
+          "rank": 7
+        },
+        {
           "teamId": "fukuyama-heisei",
           "played": 5,
           "won": 1,
@@ -230,18 +242,6 @@
           "points": 3,
           "goalsFor": 6,
           "goalsAgainst": 10,
-          "goalDifference": -4,
-          "rank": 7
-        },
-        {
-          "teamId": "hiroshima-bunka-gakuen",
-          "played": 4,
-          "won": 0,
-          "drawn": 1,
-          "lost": 3,
-          "points": 1,
-          "goalsFor": 5,
-          "goalsAgainst": 9,
           "goalDifference": -4,
           "rank": 8
         },
@@ -345,14 +345,14 @@
         },
         {
           "teamId": "shunan-public",
-          "played": 4,
+          "played": 5,
           "won": 2,
           "drawn": 0,
-          "lost": 2,
+          "lost": 3,
           "points": 6,
-          "goalsFor": 5,
-          "goalsAgainst": 8,
-          "goalDifference": -3,
+          "goalsFor": 6,
+          "goalsAgainst": 10,
+          "goalDifference": -4,
           "rank": 7
         },
         {
@@ -812,7 +812,7 @@
             },
             {
               "round": 6,
-              "rank": 8
+              "rank": 9
             },
             {
               "round": 7,
@@ -820,7 +820,7 @@
             },
             {
               "round": 8,
-              "rank": 8
+              "rank": 9
             },
             {
               "round": 9,
@@ -945,15 +945,15 @@
             },
             {
               "round": 3,
-              "rank": 7
+              "rank": 8
             },
             {
               "round": 4,
-              "rank": 7
+              "rank": 8
             },
             {
               "round": 5,
-              "rank": 7
+              "rank": 8
             },
             {
               "round": 6,
@@ -965,7 +965,7 @@
             },
             {
               "round": 8,
-              "rank": 7
+              "rank": 8
             },
             {
               "round": 9,
@@ -1090,11 +1090,11 @@
             },
             {
               "round": 3,
-              "rank": 5
+              "rank": 6
             },
             {
               "round": 4,
-              "rank": 6
+              "rank": 7
             },
             {
               "round": 5,
@@ -1122,14 +1122,14 @@
           "teamId": "shunan-public",
           "rank": 5,
           "overall": {
-            "played": 8,
+            "played": 9,
             "won": 5,
             "drawn": 0,
-            "lost": 3,
+            "lost": 4,
             "points": 15,
-            "goalsFor": 12,
-            "goalsAgainst": 14,
-            "goalDifference": -2
+            "goalsFor": 13,
+            "goalsAgainst": 16,
+            "goalDifference": -3
           },
           "home": {
             "played": 4,
@@ -1142,14 +1142,14 @@
             "goalDifference": 1
           },
           "away": {
-            "played": 4,
+            "played": 5,
             "won": 2,
             "drawn": 0,
-            "lost": 2,
+            "lost": 3,
             "points": 6,
-            "goalsFor": 5,
-            "goalsAgainst": 8,
-            "goalDifference": -3
+            "goalsFor": 6,
+            "goalsAgainst": 10,
+            "goalDifference": -4
           },
           "form": [
             {
@@ -1214,24 +1214,28 @@
             }
           ],
           "stats": {
-            "averageGoals": 1.5,
-            "averageConceded": 1.75,
+            "averageGoals": 1.44,
+            "averageConceded": 1.78,
             "cleanSheets": 3,
             "scorelessMatches": 1,
             "yellowCards": 8,
             "redCards": 0,
-            "benchSelections": 72,
-            "averageBench": 9,
-            "averageStartingAge": 20.54
+            "benchSelections": 84,
+            "averageBench": 9.33,
+            "averageStartingAge": 20.57
           },
           "rankProgression": [
+            {
+              "round": 1,
+              "rank": 6
+            },
             {
               "round": 2,
               "rank": 7
             },
             {
               "round": 3,
-              "rank": 6
+              "rank": 7
             },
             {
               "round": 4,
@@ -1263,24 +1267,24 @@
           "teamId": "hiroshima-bunka-gakuen",
           "rank": 7,
           "overall": {
-            "played": 8,
-            "won": 2,
+            "played": 9,
+            "won": 3,
             "drawn": 1,
             "lost": 5,
-            "points": 7,
-            "goalsFor": 10,
-            "goalsAgainst": 12,
-            "goalDifference": -2
+            "points": 10,
+            "goalsFor": 12,
+            "goalsAgainst": 13,
+            "goalDifference": -1
           },
           "home": {
-            "played": 4,
-            "won": 0,
+            "played": 5,
+            "won": 1,
             "drawn": 1,
             "lost": 3,
-            "points": 1,
-            "goalsFor": 5,
-            "goalsAgainst": 9,
-            "goalDifference": -4
+            "points": 4,
+            "goalsFor": 7,
+            "goalsAgainst": 10,
+            "goalDifference": -3
           },
           "away": {
             "played": 4,
@@ -1355,36 +1359,40 @@
             }
           ],
           "stats": {
-            "averageGoals": 1.25,
-            "averageConceded": 1.5,
+            "averageGoals": 1.33,
+            "averageConceded": 1.44,
             "cleanSheets": 2,
             "scorelessMatches": 2,
             "yellowCards": 3,
             "redCards": 0,
-            "benchSelections": 72,
-            "averageBench": 9,
-            "averageStartingAge": 20.11
+            "benchSelections": 82,
+            "averageBench": 9.11,
+            "averageStartingAge": 20.09
           },
           "rankProgression": [
+            {
+              "round": 1,
+              "rank": 5
+            },
             {
               "round": 2,
               "rank": 6
             },
             {
               "round": 3,
-              "rank": 8
+              "rank": 5
             },
             {
               "round": 4,
-              "rank": 8
+              "rank": 6
             },
             {
               "round": 5,
-              "rank": 8
+              "rank": 7
             },
             {
               "round": 6,
-              "rank": 9
+              "rank": 8
             },
             {
               "round": 7,
@@ -1392,7 +1400,7 @@
             },
             {
               "round": 8,
-              "rank": 9
+              "rank": 7
             },
             {
               "round": 9,
@@ -1866,12 +1874,12 @@
           {
             "rank": 6,
             "teamId": "shunan-public",
-            "value": 1.5
+            "value": 1.44
           },
           {
             "rank": 7,
             "teamId": "hiroshima-bunka-gakuen",
-            "value": 1.25
+            "value": 1.33
           },
           {
             "rank": 8,
@@ -1913,12 +1921,12 @@
           {
             "rank": 5,
             "teamId": "shunan-public",
-            "value": 1.75
+            "value": 1.78
           },
           {
             "rank": 6,
             "teamId": "hiroshima-bunka-gakuen",
-            "value": 1.5
+            "value": 1.44
           },
           {
             "rank": 7,
@@ -2152,79 +2160,79 @@
         "benchSelections": [
           {
             "rank": 1,
+            "teamId": "shunan-public",
+            "value": 84
+          },
+          {
+            "rank": 2,
+            "teamId": "hiroshima-bunka-gakuen",
+            "value": 82
+          },
+          {
+            "rank": 3,
             "teamId": "hiroshima-shudo",
             "value": 81
           },
           {
-            "rank": 2,
+            "rank": 4,
             "teamId": "ipu",
             "value": 81
           },
           {
-            "rank": 3,
+            "rank": 5,
             "teamId": "kawasaki-medical-welfare",
             "value": 81
           },
           {
-            "rank": 4,
+            "rank": 6,
             "teamId": "fukuyama",
             "value": 80
           },
           {
-            "rank": 5,
+            "rank": 7,
             "teamId": "hiroshima-keizai",
             "value": 80
           },
           {
-            "rank": 6,
+            "rank": 8,
             "teamId": "yamaguchi",
             "value": 80
           },
           {
-            "rank": 7,
+            "rank": 9,
             "teamId": "hiroshima",
             "value": 78
           },
           {
-            "rank": 8,
+            "rank": 10,
             "teamId": "fukuyama-heisei",
             "value": 73
-          },
-          {
-            "rank": 9,
-            "teamId": "hiroshima-bunka-gakuen",
-            "value": 72
-          },
-          {
-            "rank": 10,
-            "teamId": "shunan-public",
-            "value": 72
           }
         ],
         "averageBench": [
           {
             "rank": 1,
-            "teamId": "hiroshima-bunka-gakuen",
-            "value": 9
+            "teamId": "shunan-public",
+            "value": 9.33
           },
           {
             "rank": 2,
+            "teamId": "hiroshima-bunka-gakuen",
+            "value": 9.11
+          },
+          {
+            "rank": 3,
             "teamId": "hiroshima-shudo",
             "value": 9
           },
           {
-            "rank": 3,
+            "rank": 4,
             "teamId": "ipu",
             "value": 9
           },
           {
-            "rank": 4,
-            "teamId": "kawasaki-medical-welfare",
-            "value": 9
-          },
-          {
             "rank": 5,
-            "teamId": "shunan-public",
+            "teamId": "kawasaki-medical-welfare",
             "value": 9
           },
           {
@@ -2277,7 +2285,7 @@
           {
             "rank": 5,
             "teamId": "shunan-public",
-            "value": 20.54
+            "value": 20.57
           },
           {
             "rank": 6,
@@ -2292,7 +2300,7 @@
           {
             "rank": 8,
             "teamId": "hiroshima-bunka-gakuen",
-            "value": 20.11
+            "value": 20.09
           },
           {
             "rank": 9,
@@ -2363,14 +2371,14 @@
         },
         {
           "teamId": "shunan-public",
-          "played": 8,
+          "played": 9,
           "won": 5,
           "drawn": 0,
-          "lost": 3,
+          "lost": 4,
           "points": 15,
-          "goalsFor": 12,
-          "goalsAgainst": 14,
-          "goalDifference": -2,
+          "goalsFor": 13,
+          "goalsAgainst": 16,
+          "goalDifference": -3,
           "rank": 5,
           "rankChange": 1
         },
@@ -2389,16 +2397,16 @@
         },
         {
           "teamId": "hiroshima-bunka-gakuen",
-          "played": 8,
-          "won": 2,
+          "played": 9,
+          "won": 3,
           "drawn": 1,
           "lost": 5,
-          "points": 7,
-          "goalsFor": 10,
-          "goalsAgainst": 12,
-          "goalDifference": -2,
+          "points": 10,
+          "goalsFor": 12,
+          "goalsAgainst": 13,
+          "goalDifference": -1,
           "rank": 7,
-          "rankChange": 2
+          "rankChange": 0
         },
         {
           "teamId": "fukuyama-heisei",
@@ -2411,7 +2419,7 @@
           "goalsAgainst": 21,
           "goalDifference": -12,
           "rank": 8,
-          "rankChange": -1
+          "rankChange": 0
         },
         {
           "teamId": "kawasaki-medical-welfare",
@@ -2424,7 +2432,7 @@
           "goalsAgainst": 39,
           "goalDifference": -31,
           "rank": 9,
-          "rankChange": -1
+          "rankChange": 0
         },
         {
           "teamId": "yamaguchi",
@@ -2514,6 +2522,18 @@
           "rank": 6
         },
         {
+          "teamId": "hiroshima-bunka-gakuen",
+          "played": 5,
+          "won": 1,
+          "drawn": 1,
+          "lost": 3,
+          "points": 4,
+          "goalsFor": 7,
+          "goalsAgainst": 10,
+          "goalDifference": -3,
+          "rank": 7
+        },
+        {
           "teamId": "fukuyama-heisei",
           "played": 5,
           "won": 1,
@@ -2522,18 +2542,6 @@
           "points": 3,
           "goalsFor": 6,
           "goalsAgainst": 10,
-          "goalDifference": -4,
-          "rank": 7
-        },
-        {
-          "teamId": "hiroshima-bunka-gakuen",
-          "played": 4,
-          "won": 0,
-          "drawn": 1,
-          "lost": 3,
-          "points": 1,
-          "goalsFor": 5,
-          "goalsAgainst": 9,
           "goalDifference": -4,
           "rank": 8
         },
@@ -2637,14 +2645,14 @@
         },
         {
           "teamId": "shunan-public",
-          "played": 4,
+          "played": 5,
           "won": 2,
           "drawn": 0,
-          "lost": 2,
+          "lost": 3,
           "points": 6,
-          "goalsFor": 5,
-          "goalsAgainst": 8,
-          "goalDifference": -3,
+          "goalsFor": 6,
+          "goalsAgainst": 10,
+          "goalDifference": -4,
           "rank": 7
         },
         {
@@ -3104,7 +3112,7 @@
             },
             {
               "round": 6,
-              "rank": 8
+              "rank": 9
             },
             {
               "round": 7,
@@ -3112,7 +3120,7 @@
             },
             {
               "round": 8,
-              "rank": 8
+              "rank": 9
             },
             {
               "round": 9,
@@ -3237,15 +3245,15 @@
             },
             {
               "round": 3,
-              "rank": 7
+              "rank": 8
             },
             {
               "round": 4,
-              "rank": 7
+              "rank": 8
             },
             {
               "round": 5,
-              "rank": 7
+              "rank": 8
             },
             {
               "round": 6,
@@ -3257,7 +3265,7 @@
             },
             {
               "round": 8,
-              "rank": 7
+              "rank": 8
             },
             {
               "round": 9,
@@ -3382,11 +3390,11 @@
             },
             {
               "round": 3,
-              "rank": 5
+              "rank": 6
             },
             {
               "round": 4,
-              "rank": 6
+              "rank": 7
             },
             {
               "round": 5,
@@ -3414,14 +3422,14 @@
           "teamId": "shunan-public",
           "rank": 5,
           "overall": {
-            "played": 8,
+            "played": 9,
             "won": 5,
             "drawn": 0,
-            "lost": 3,
+            "lost": 4,
             "points": 15,
-            "goalsFor": 12,
-            "goalsAgainst": 14,
-            "goalDifference": -2
+            "goalsFor": 13,
+            "goalsAgainst": 16,
+            "goalDifference": -3
           },
           "home": {
             "played": 4,
@@ -3434,14 +3442,14 @@
             "goalDifference": 1
           },
           "away": {
-            "played": 4,
+            "played": 5,
             "won": 2,
             "drawn": 0,
-            "lost": 2,
+            "lost": 3,
             "points": 6,
-            "goalsFor": 5,
-            "goalsAgainst": 8,
-            "goalDifference": -3
+            "goalsFor": 6,
+            "goalsAgainst": 10,
+            "goalDifference": -4
           },
           "form": [
             {
@@ -3506,24 +3514,28 @@
             }
           ],
           "stats": {
-            "averageGoals": 1.5,
-            "averageConceded": 1.75,
+            "averageGoals": 1.44,
+            "averageConceded": 1.78,
             "cleanSheets": 3,
             "scorelessMatches": 1,
             "yellowCards": 8,
             "redCards": 0,
-            "benchSelections": 72,
-            "averageBench": 9,
-            "averageStartingAge": 20.54
+            "benchSelections": 84,
+            "averageBench": 9.33,
+            "averageStartingAge": 20.57
           },
           "rankProgression": [
+            {
+              "round": 1,
+              "rank": 6
+            },
             {
               "round": 2,
               "rank": 7
             },
             {
               "round": 3,
-              "rank": 6
+              "rank": 7
             },
             {
               "round": 4,
@@ -3555,24 +3567,24 @@
           "teamId": "hiroshima-bunka-gakuen",
           "rank": 7,
           "overall": {
-            "played": 8,
-            "won": 2,
+            "played": 9,
+            "won": 3,
             "drawn": 1,
             "lost": 5,
-            "points": 7,
-            "goalsFor": 10,
-            "goalsAgainst": 12,
-            "goalDifference": -2
+            "points": 10,
+            "goalsFor": 12,
+            "goalsAgainst": 13,
+            "goalDifference": -1
           },
           "home": {
-            "played": 4,
-            "won": 0,
+            "played": 5,
+            "won": 1,
             "drawn": 1,
             "lost": 3,
-            "points": 1,
-            "goalsFor": 5,
-            "goalsAgainst": 9,
-            "goalDifference": -4
+            "points": 4,
+            "goalsFor": 7,
+            "goalsAgainst": 10,
+            "goalDifference": -3
           },
           "away": {
             "played": 4,
@@ -3647,36 +3659,40 @@
             }
           ],
           "stats": {
-            "averageGoals": 1.25,
-            "averageConceded": 1.5,
+            "averageGoals": 1.33,
+            "averageConceded": 1.44,
             "cleanSheets": 2,
             "scorelessMatches": 2,
             "yellowCards": 3,
             "redCards": 0,
-            "benchSelections": 72,
-            "averageBench": 9,
-            "averageStartingAge": 20.11
+            "benchSelections": 82,
+            "averageBench": 9.11,
+            "averageStartingAge": 20.09
           },
           "rankProgression": [
+            {
+              "round": 1,
+              "rank": 5
+            },
             {
               "round": 2,
               "rank": 6
             },
             {
               "round": 3,
-              "rank": 8
+              "rank": 5
             },
             {
               "round": 4,
-              "rank": 8
+              "rank": 6
             },
             {
               "round": 5,
-              "rank": 8
+              "rank": 7
             },
             {
               "round": 6,
-              "rank": 9
+              "rank": 8
             },
             {
               "round": 7,
@@ -3684,7 +3700,7 @@
             },
             {
               "round": 8,
-              "rank": 9
+              "rank": 7
             },
             {
               "round": 9,
@@ -4158,12 +4174,12 @@
           {
             "rank": 6,
             "teamId": "shunan-public",
-            "value": 1.5
+            "value": 1.44
           },
           {
             "rank": 7,
             "teamId": "hiroshima-bunka-gakuen",
-            "value": 1.25
+            "value": 1.33
           },
           {
             "rank": 8,
@@ -4205,12 +4221,12 @@
           {
             "rank": 5,
             "teamId": "shunan-public",
-            "value": 1.75
+            "value": 1.78
           },
           {
             "rank": 6,
             "teamId": "hiroshima-bunka-gakuen",
-            "value": 1.5
+            "value": 1.44
           },
           {
             "rank": 7,
@@ -4444,79 +4460,79 @@
         "benchSelections": [
           {
             "rank": 1,
+            "teamId": "shunan-public",
+            "value": 84
+          },
+          {
+            "rank": 2,
+            "teamId": "hiroshima-bunka-gakuen",
+            "value": 82
+          },
+          {
+            "rank": 3,
             "teamId": "hiroshima-shudo",
             "value": 81
           },
           {
-            "rank": 2,
+            "rank": 4,
             "teamId": "ipu",
             "value": 81
           },
           {
-            "rank": 3,
+            "rank": 5,
             "teamId": "kawasaki-medical-welfare",
             "value": 81
           },
           {
-            "rank": 4,
+            "rank": 6,
             "teamId": "fukuyama",
             "value": 80
           },
           {
-            "rank": 5,
+            "rank": 7,
             "teamId": "hiroshima-keizai",
             "value": 80
           },
           {
-            "rank": 6,
+            "rank": 8,
             "teamId": "yamaguchi",
             "value": 80
           },
           {
-            "rank": 7,
+            "rank": 9,
             "teamId": "hiroshima",
             "value": 78
           },
           {
-            "rank": 8,
+            "rank": 10,
             "teamId": "fukuyama-heisei",
             "value": 73
-          },
-          {
-            "rank": 9,
-            "teamId": "hiroshima-bunka-gakuen",
-            "value": 72
-          },
-          {
-            "rank": 10,
-            "teamId": "shunan-public",
-            "value": 72
           }
         ],
         "averageBench": [
           {
             "rank": 1,
-            "teamId": "hiroshima-bunka-gakuen",
-            "value": 9
+            "teamId": "shunan-public",
+            "value": 9.33
           },
           {
             "rank": 2,
+            "teamId": "hiroshima-bunka-gakuen",
+            "value": 9.11
+          },
+          {
+            "rank": 3,
             "teamId": "hiroshima-shudo",
             "value": 9
           },
           {
-            "rank": 3,
+            "rank": 4,
             "teamId": "ipu",
             "value": 9
           },
           {
-            "rank": 4,
-            "teamId": "kawasaki-medical-welfare",
-            "value": 9
-          },
-          {
             "rank": 5,
-            "teamId": "shunan-public",
+            "teamId": "kawasaki-medical-welfare",
             "value": 9
           },
           {
@@ -4569,7 +4585,7 @@
           {
             "rank": 5,
             "teamId": "shunan-public",
-            "value": 20.54
+            "value": 20.57
           },
           {
             "rank": 6,
@@ -4584,7 +4600,7 @@
           {
             "rank": 8,
             "teamId": "hiroshima-bunka-gakuen",
-            "value": 20.11
+            "value": 20.09
           },
           {
             "rank": 9,

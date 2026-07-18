@@ -1,0 +1,77 @@
+import { routeHref } from "../router.js";
+import { setState } from "../state.js";
+import { createNotice, createPageHeader, element } from "../ui/elements.js";
+
+const LEAGUES = [
+  {
+    division: 1,
+    name: "中国大学サッカーリーグ1部",
+    shortName: "1部",
+    description: "中国地区の大学サッカー最上位リーグ",
+  },
+  {
+    division: 2,
+    name: "中国大学サッカーリーグ2部",
+    shortName: "2部",
+    description: "中国地区の大学サッカー2部リーグ",
+  },
+];
+
+export function renderLeaguesPage() {
+  const cards = LEAGUES.map(createLeagueCard);
+
+  return element(
+    "article",
+    {
+      className: "page",
+      attributes: { "data-page": "leagues" },
+    },
+    [
+      createPageHeader({
+        eyebrow: "Competitions",
+        title: "リーグ",
+        description: "リーグを選択して、順位表や試合、過去シーズンを確認できます。",
+        badge: "一覧",
+      }),
+      element("div", { className: "section-stack" }, [
+        element("div", { className: "league-card-list" }, cards),
+        createNotice("現在は中国大学サッカーリーグ1部・2部を掲載しています。"),
+      ]),
+    ],
+  );
+}
+
+function createLeagueCard(league) {
+  const link = element(
+    "a",
+    {
+      className: "league-card",
+      attributes: {
+        href: routeHref("league"),
+        "data-route": "league",
+        "aria-label": `${league.name}の詳細を表示`,
+      },
+    },
+    [
+      element("div", {
+        className: `league-card__badge league-card__badge--division-${league.division}`,
+        text: league.shortName,
+      }),
+      element("div", { className: "league-card__copy" }, [
+        element("strong", { text: league.name }),
+        element("span", { text: league.description }),
+      ]),
+      element("span", {
+        className: "league-card__arrow",
+        text: "›",
+        attributes: { "aria-hidden": "true" },
+      }),
+    ],
+  );
+
+  link.addEventListener("click", () => {
+    setState({ leagueDivision: league.division });
+  });
+
+  return link;
+}

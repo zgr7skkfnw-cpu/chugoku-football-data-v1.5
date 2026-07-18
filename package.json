@@ -24,7 +24,8 @@
     "build:seasons": "node scripts/build/build-season-index.mjs",
     "sync:data": "npm run sync",
     "validate:data": "node scripts/validate/index.js",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "apply:overrides": "node scripts/apply-manual-overrides.mjs"
   },
   "dependencies": {
     "cheerio": ">=1.0.0 <2"
