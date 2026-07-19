@@ -2099,8 +2099,10 @@ function nonEmptyInputLines(value) {
 
 function isValidMinuteInput(value, allowHalfTime = false) {
   const normalized = String(value)
+    .normalize("NFKC")
     .trim()
-    .replaceAll("＋", "+")
+    .replace(/\s*\+\s*/g, "+")
+    .replace(/\s+/g, "")
     .toUpperCase();
 
   if (allowHalfTime && normalized === "HT") {
@@ -2292,8 +2294,12 @@ function parseDisciplinaryLineForValidation(value) {
     };
   }
 
-  const legacyMatch = text.match(
-    /^(\d+(?:[＋+]\d+)?)\s*分\s+(.+?)\s+(C\d+|CS|S\d+|警告|退場)\s*(.*)$/i,
+  const normalizedLegacyText = text
+    .normalize("NFKC")
+    .replace(/(\d)\s*\+\s*(\d)/g, "$1+$2");
+
+  const legacyMatch = normalizedLegacyText.match(
+    /^(\d+(?:\+\d+)?)\s*分\s+(.+?)\s+(C\d+|CS|S\d+|警告|退場)\s*(.*)$/i,
   );
 
   if (!legacyMatch) {
