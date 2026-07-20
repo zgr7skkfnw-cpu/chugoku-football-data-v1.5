@@ -680,13 +680,27 @@ export function renderAdminPage({ matches }) {
       homeStarters.length > 0
       || awayStarters.length > 0;
 
-    if (hasLineupData && homeStarters.length !== 11) {
+    const match = selectedMatch();
+    const keepsOfficialHomeCount =
+      match?.source?.provider === "football-system.jp"
+      && match.status === "finished"
+      && match.lineups?.home?.starters?.length > 0
+      && match.lineups.home.starters.length !== 11
+      && homeStarters.length === match.lineups.home.starters.length;
+    const keepsOfficialAwayCount =
+      match?.source?.provider === "football-system.jp"
+      && match.status === "finished"
+      && match.lineups?.away?.starters?.length > 0
+      && match.lineups.away.starters.length !== 11
+      && awayStarters.length === match.lineups.away.starters.length;
+
+    if (hasLineupData && homeStarters.length !== 11 && !keepsOfficialHomeCount) {
       errors.push(
         `ホームの先発は11人必要です。現在は${homeStarters.length}人です。`,
       );
     }
 
-    if (hasLineupData && awayStarters.length !== 11) {
+    if (hasLineupData && awayStarters.length !== 11 && !keepsOfficialAwayCount) {
       errors.push(
         `アウェーの先発は11人必要です。現在は${awayStarters.length}人です。`,
       );

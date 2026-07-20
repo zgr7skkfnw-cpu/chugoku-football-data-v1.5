@@ -132,6 +132,17 @@ export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, 
     teamDirectory,
     matchPlayerDirectory,
   );
+  const homeStarterCount = match.lineups?.home?.starters?.length ?? 0;
+  const awayStarterCount = match.lineups?.away?.starters?.length ?? 0;
+  const officialLineupNotice = match.status === "finished"
+    && match.source?.provider === "football-system.jp"
+    && (homeStarterCount > 0 || awayStarterCount > 0)
+    && (homeStarterCount !== 11 || awayStarterCount !== 11)
+    ? createNotice([
+        homeStarterCount !== 11 ? `${match.homeTeam.name} ${homeStarterCount}名` : null,
+        awayStarterCount !== 11 ? `${match.awayTeam.name} ${awayStarterCount}名` : null,
+      ].filter(Boolean).join("、") + "が公式記録の先発欄に掲載されています。掲載内容をそのまま表示しています。")
+    : null;
 
   return element("article", { className: "page", attributes: { "data-page": "match", "data-match-id": match.id } }, [
     createPageHeader({
@@ -144,7 +155,8 @@ export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, 
       createPanel("前後半スコア", periods, match.matchNumber == null ? "Match No. 未掲載" : `Match No. ${match.matchNumber}`),
       createPanel("試合情報", information, "試合記録"),
       createPanel("得点経過", goals, `${match.goals?.length ?? 0}得点`),
-      createPanel("スタメン", lineups, "先発11人"),
+      createPanel("スタメン", lineups, `先発 ${homeStarterCount}人 / ${awayStarterCount}人`),
+      officialLineupNotice,
       createPanel("警告・退場", createTextEventList(disciplinary), `${disciplinary.length}件`),
       createPanel(
         "交代",

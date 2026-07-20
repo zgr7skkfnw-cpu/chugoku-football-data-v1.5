@@ -8,6 +8,7 @@ import {
 test("出場時間へ前後半の追加時間を加算しない", () => {
   expect(parseMatchMinute("45+2")).toBe(45);
   expect(parseMatchMinute("90+5")).toBe(90);
+  expect(parseMatchMinute("90 ＋4 分")).toBe(90);
   expect(parseMatchMinute("HT")).toBe(45);
 
   const players = [
@@ -31,10 +32,10 @@ test("出場時間へ前後半の追加時間を加算しない", () => {
       away: null,
     },
     substitutions: {
-      home: ["45+2分 [out]先発 選手 [in]交代 選手"],
+      home: ["45 ＋2 分 [out]先発 選手 [in]交代 選手"],
       away: [],
     },
-    disciplinary: { home: [], away: [] },
+    disciplinary: { home: ["90 ＋4 分 交代 選手 C1 反スポーツ"], away: [] },
     goals: [],
   }];
   const teamDirectory = { byId: new Map([["team-a", { id: "team-a", name: "チームA" }]]) };
@@ -42,4 +43,5 @@ test("出場時間へ前後半の追加時間を加算しない", () => {
 
   expect(stats.get("team-a-starter").minutes).toBe(45);
   expect(stats.get("team-a-substitute").minutes).toBe(45);
+  expect(stats.get("team-a-substitute").yellowCards).toBe(1);
 });

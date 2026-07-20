@@ -219,15 +219,16 @@ function getMatchDuration(match) {
 }
 
 export function parseMatchMinute(value) {
-  if (value === "HT") return 45;
-  const match = String(value).match(/^(\d+)(?:\+(\d+))?/);
+  const normalized = String(value).normalize("NFKC").replace(/\s+/g, "");
+  if (normalized === "HT") return 45;
+  const match = normalized.match(/^(\d+)(?:\+(\d+))?/);
   if (!match) return null;
   // 出場時間は所定の90分を基準にし、前後半の追加時間は加算しない。
   return Number(match[1]);
 }
 
 function parseSubstitution(text) {
-  const match = String(text).match(/^(HT|\d+(?:\+\d+)?)\s*(?:分)?\s+\[out\](.*?)\s+\[in\](.*)$/);
+  const match = String(text).match(/^(HT|\d+(?:\s*[+＋]\s*\d+)?)\s*(?:分)?\s+\[out\](.*?)\s+\[in\](.*)$/);
   if (!match) return null;
   return {
     minute: parseMatchMinute(match[1]),
@@ -238,7 +239,7 @@ function parseSubstitution(text) {
 
 function parseDisciplinary(text) {
   const match = String(text).match(
-    /^(HT|\d+(?:\+\d+)?)\s*(?:分)?\s+(.+?)\s+(C[1-9]|CS|S[1-9])(?:\s|$)/,
+    /^(HT|\d+(?:\s*[+＋]\s*\d+)?)\s*(?:分)?\s+(.+?)\s+(C[1-9]|CS|S[1-9])(?:\s|$)/,
   );
   if (!match) return null;
   const code = match[3];

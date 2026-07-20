@@ -10,7 +10,7 @@ import {
 import { getTeam } from "../utils/teams.js";
 import { saveFavoriteTeamId } from "../utils/favorites.js";
 import { setState } from "../state.js";
-import { createPlayerLinkRow, createTeamNameLink } from "./shared.js";
+import { createMatchRow, createPlayerLinkRow, createTeamNameLink } from "./shared.js";
 import { createSeasonPeriodTabs } from "../ui/season-period.js";
 import { selectPlayerStatisticsPeriod } from "../utils/players.js";
 
@@ -25,6 +25,7 @@ export function renderTeamProfilePage({
   playerStatistics,
   seasonPeriod,
   selectedSeason,
+  matches,
 }) {
   const team = getTeam(teamDirectory, currentTeamId);
 
@@ -37,12 +38,22 @@ export function renderTeamProfilePage({
   const roster = players
     .filter((player) => player.teamId === team.id)
     .sort((left, right) => (left.number ?? 999) - (right.number ?? 999));
+  const staff = team.staff ?? [];
   const isFavorite = favoriteTeamId === team.id;
   const activeTeamStats = Object.values(leagueStats?.[selectedSeason] ?? {})
     .find((stats) => stats?.periods?.all?.teams?.some((entry) => entry.teamId === team.id)) ?? teamStats;
   const analytics = activeTeamStats?.periods?.[seasonPeriod]?.teams?.find((entry) => entry.teamId === team.id);
   const opponents = headToHead?.items?.find((entry) => entry.teamId === team.id)?.opponents ?? [];
   const periodPlayerStats = selectPlayerStatisticsPeriod(playerStatistics, seasonPeriod);
+  const seasonMatches = matches
+    .filter((match) => match.season === selectedSeason)
+    .filter((match) => match.homeTeam.teamId === team.id || match.awayTeam.teamId === team.id);
+  const finishedMatches = seasonMatches
+    .filter((match) => match.status === "finished")
+    .sort((left, right) => new Date(right.kickoffAt) - new Date(left.kickoffAt));
+  const upcomingMatches = seasonMatches
+    .filter((match) => match.status !== "finished")
+    .sort((left, right) => new Date(left.kickoffAt) - new Date(right.kickoffAt));
   const favoriteButton = element("button", {
     className: `favorite-button${isFavorite ? " is-active" : ""}`,
     text: isFavorite ? "♥ マイチーム登録済み" : "♡ マイチームに登録",
@@ -83,6 +94,8 @@ export function renderTeamProfilePage({
         createPanel("今季戦績", createRecordSummary(analytics?.overall), analytics?.rank ? `${analytics.rank}位` : "–"),
         createPanel("ホーム・アウェイ成績", createHomeAwayRecords(analytics), "試合結果"),
         createPanel("直近5試合", createForm(analytics?.form, teamDirectory), `${analytics?.form?.length ?? 0}試合`),
+        createPanel("終了試合", createTeamMatchList(finishedMatches, teamDirectory), `${finishedMatches.length}試合`),
+        createPanel("今後の日程", createTeamMatchList(upcomingMatches, teamDirectory), `${upcomingMatches.length}試合`),
         createPanel("チームスタッツ", createTeamStatGrid(analytics?.stats), "シーズン分析"),
         createPanel("順位推移", createRankChart(analytics?.rankProgression, seasonPeriod), "各節終了時"),
         createPanel("Head to Head", createHeadToHead(opponents, teamDirectory, seasonPeriod), "対戦成績"),
@@ -105,13 +118,19 @@ export function renderTeamProfilePage({
           ]),
           "チーム登録",
         ),
-        createPanel("スタッフ", createStaffList(team.staff), `${team.staff.length}名`),
+        createPanel("スタッフ", createStaffList(staff), `${staff.length}名`),
         createPanel("SNS・Webサイト", createSocialLinks(team), "外部リンク"),
         createPanel("登録選手", createRoster(roster, team), `${roster.length}選手`),
         createNotice("スタッフ・登録選手は2026年度のチーム登録を表示しています。"),
       ]),
     ],
   );
+}
+
+function createTeamMatchList(matches, teamDirectory) {
+  if (!matches.length) return createNotice("該当する試合はありません。");
+  return element("div", { className: "match-list" }, matches.map((match) =>
+    createMatchRow(match, teamDirectory)));
 }
 
 function createRecordSummary(record = {}) {
