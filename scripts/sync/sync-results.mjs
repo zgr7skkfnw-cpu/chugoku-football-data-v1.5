@@ -640,6 +640,27 @@ function countChanges(previousItems = [], nextItems = []) {
   return changes;
 }
 
+function preserveScheduledMatchIds(previousItems = [], nextItems = []) {
+  const previousByFixture = new Map(previousItems.map((match) => [
+    `${match.round}\0${match.homeTeam?.name}\0${match.awayTeam?.name}`,
+    match,
+  ]));
+
+  return nextItems.map((match) => {
+    const fixture = `${match.round}\0${match.homeTeam?.name}\0${match.awayTeam?.name}`;
+    const previous = previousByFixture.get(fixture);
+    if (
+      previous?.id?.startsWith("football-system-schedule-")
+      && match.id !== previous.id
+      && match.gameId != null
+    ) {
+      console.log(`既存試合IDを維持: ${previous.id} (game_id=${match.gameId})`);
+      return { ...match, id: previous.id };
+    }
+    return match;
+  });
+}
+
 async function writeOutput(data) {
   await mkdir(dirname(OUTPUT_PATH), { recursive: true });
   const temporaryPath = `${OUTPUT_PATH}.tmp`;
@@ -697,12 +718,13 @@ async function main() {
       throw new Error(`詳細取得件数が最低件数未満です: ${detailResult.matches.length}/${MINIMUM_DETAIL_COUNT}件`);
     }
 
-    const items = [...detailResult.matches, ...parsedList.scheduledMatches]
+    const fetchedItems = [...detailResult.matches, ...parsedList.scheduledMatches]
       .map(({ sourceOrder, ...match }) => match)
       .sort((left, right) =>
         left.kickoffAt.localeCompare(right.kickoffAt) || (left.gameId ?? 0) - (right.gameId ?? 0),
       );
     const previous = await readPreviousOutput();
+    const items = preserveScheduledMatchIds(previous?.items, fetchedItems);
     changeCount = countChanges(previous?.items, items);
 
     if (changeCount > 0 || !previous) {
