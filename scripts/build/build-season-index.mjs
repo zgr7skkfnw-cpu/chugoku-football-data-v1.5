@@ -26,6 +26,9 @@ export async function buildSeasonIndex() {
         stage: competition.stage,
         stageName: competition.stageName,
         matches: competition.matches ? dataRelativePath(resolve(seasonDirectory, competition.matches)) : null,
+        manualOverrides: competition.manualOverrides
+          ? dataRelativePath(resolve(seasonDirectory, competition.manualOverrides))
+          : null,
         teamStats: competition.teamStats ? dataRelativePath(resolve(seasonDirectory, competition.teamStats)) : null,
       })),
     });

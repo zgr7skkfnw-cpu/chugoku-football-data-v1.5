@@ -10,7 +10,7 @@ export function createMatchRow(match, teamDirectory) {
   const row = element(
     "div",
     {
-      className: `match-row${match.status === "finished" ? "" : " match-row--scheduled"}`,
+      className: `match-row match-row--${match.status ?? "scheduled"}`,
       attributes: {
         "data-route": "match",
         "data-match-id": match.id,
@@ -19,7 +19,7 @@ export function createMatchRow(match, teamDirectory) {
         tabindex: "0",
         "aria-label": match.status === "finished"
           ? `${match.homeTeam.name} ${match.homeTeam.score}対${match.awayTeam.score} ${match.awayTeam.name} の詳細`
-          : `${match.homeTeam.name}対${match.awayTeam.name} 開催予定`,
+          : `${match.homeTeam.name}対${match.awayTeam.name} ${matchStatusLabel(match.status)}`,
       },
     },
     [

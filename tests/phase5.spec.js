@@ -39,6 +39,7 @@ test("チーム分析・フォーム・H2H・順位推移を表示する", async
 test("順位・選手ランキング・チームランキングを期間切替する", async ({ page }) => {
   const errors = collectErrors(page);
   await page.goto(`${BASE_URL}?view=standings`);
+  await page.getByRole("link", { name: /中国大学サッカーリーグ1部の詳細/ }).click();
   await expect(page.locator(".standing-table tbody tr")).toHaveCount(10);
   await expect(page.locator('[data-standing-team="IPU・環太平洋大学"] .rank-number')).toHaveText("1");
   await page.getByRole("tab", { name: "後期", exact: true }).click();

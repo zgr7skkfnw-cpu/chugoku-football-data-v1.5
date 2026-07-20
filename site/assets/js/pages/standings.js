@@ -7,6 +7,7 @@ import {
 } from "../ui/elements.js";
 import { createSeasonPeriodTabs } from "../ui/season-period.js";
 import { createSeasonSelect } from "../ui/season-select.js";
+import { setState } from "../state.js";
 import {
   filterMatchesByPeriod,
   formatUpdatedAt,
@@ -280,6 +281,23 @@ export function renderStandingsPage({
     metadata?.competitionName
     ?? `中国大学サッカーリーグ${leagueDivision}部`;
 
+  const divisionTabs = element("div", {
+    className: "league-division-tabs",
+    attributes: { role: "tablist", "aria-label": "リーグ区分" },
+  }, [1, 2].map((division) => {
+    const button = element("button", {
+      className: `league-division-tab${division === leagueDivision ? " is-active" : ""}`,
+      text: `${division}部`,
+      attributes: {
+        type: "button",
+        role: "tab",
+        "aria-selected": String(division === leagueDivision),
+      },
+    });
+    button.addEventListener("click", () => setState({ leagueDivision: division }));
+    return button;
+  }));
+
   return element(
     "article",
     {
@@ -296,6 +314,7 @@ export function renderStandingsPage({
         description: "順位表、試合、過去シーズンの情報を確認できます。",
         badge: String(selectedSeason),
       }),
+      divisionTabs,
       leagueTabs,
       leagueContent,
     ],
@@ -349,7 +368,7 @@ function createStandingTable(standings, teamDirectory, mode) {
       element(
         "tr",
         {},
-        ["#", "変動", "チーム", "試", "勝", "分", "負", "+/-", "差", "点"]
+        ["#", "変動", "チーム", "試", "勝", "分", "負", "+/-", "差", "勝率", "点"]
           .map((label) => element("th", { text: label })),
       ),
     ]),
@@ -389,6 +408,10 @@ function createStandingTable(standings, teamDirectory, mode) {
           element("td", {
             className: "goal-difference",
             text: signed(row.goalDifference),
+          }),
+          element("td", {
+            className: "win-rate",
+            text: row.played ? `${Math.round((row.won / row.played) * 100)}%` : "–",
           }),
           element("td", {
             className: "points",

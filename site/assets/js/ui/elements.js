@@ -46,9 +46,9 @@ export function createPanel(title, body, meta = "2026") {
   ]);
 }
 
-export function createCrest(label, color = "#344352") {
+export function createCrest(label, color = "#344352", className = "") {
   const crest = element("span", {
-    className: "crest",
+    className: `crest${className ? ` ${className}` : ""}`,
     text: label,
     attributes: { "aria-hidden": "true" },
   });
@@ -84,7 +84,7 @@ export function createTeamImage({
 
 export function createTeamEmblem(team, className = "team-emblem") {
   if (!team?.emblem) {
-    return createCrest(team?.shortName ?? "–", team?.colors?.primary);
+    return createCrest(team?.shortName ?? "–", team?.colors?.primary, className);
   }
   return createTeamImage({
     src: team.emblem,

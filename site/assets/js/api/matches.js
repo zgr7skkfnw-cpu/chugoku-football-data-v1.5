@@ -4,9 +4,9 @@ let matchesPromise;
 
 export async function loadMatches() {
   matchesPromise ??= loadSeasonIndex().then(async (index) => {
-    const definitions = index.items.flatMap((season) => season.competitions
-      .filter((competition) => competition.matches)
+    const competitionDefinitions = index.items.flatMap((season) => season.competitions
       .map((competition) => ({ ...competition, season: season.season })));
+    const definitions = competitionDefinitions.filter((competition) => competition.matches);
     const competitions = await Promise.all(definitions.map(loadCompetition));
     const competitionMetadata = {};
     for (const competition of competitions.filter((entry) => entry.stageId === "regular")) {
@@ -18,6 +18,7 @@ export async function loadMatches() {
       matches: competitions.flatMap((competition) => competition.matches),
       metadata: defaultMetadata,
       competitionMetadata,
+      competitionDefinitions,
       availableSeasons: index.items.map((item) => item.season),
       defaultSeason: index.defaultSeason,
     };
@@ -27,17 +28,15 @@ export async function loadMatches() {
 
 async function loadCompetition(competition) {
   const matchesUrl = dataUrl(competition.matches);
-  const overrideUrl = new URL(
-    "manual-match-overrides.json",
-    matchesUrl,
-  );
 
   const [response, manualOverrides] = await Promise.all([
     fetch(matchesUrl, {
       headers: { Accept: "application/json" },
       cache: "no-store",
     }),
-    loadManualOverrides(overrideUrl),
+    competition.manualOverrides
+      ? loadManualOverrides(dataUrl(competition.manualOverrides))
+      : Promise.resolve([]),
   ]);
 
   if (!response.ok) {

@@ -11,6 +11,7 @@ const state = {
   matches: [],
   metadata: null,
   competitionMetadata: null,
+  competitionDefinitions: [],
   availableSeasons: [],
   selectedSeason: 2026,
   teams: [],

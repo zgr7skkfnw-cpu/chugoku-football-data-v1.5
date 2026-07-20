@@ -230,7 +230,7 @@ export function groupMatchesByRound(matches) {
 
  * 今日または次の試合を含む節を、一覧枠の一番上に合わせます。
 
- * 今後の試合がない場合は、一番古い節から表示します。
+ * 今後の試合がない場合は、直近に終了した試合の節を表示します。
 
  */
 
@@ -256,7 +256,13 @@ export function positionMatchTimeline(list, matches) {
     );
   }
 
-  // 今後の試合がなければ最初から表示
+  // 今後の試合がなければ、直近に終了した試合を表示
+  if (!targetMatch) {
+    targetMatch = [...sortedMatches]
+      .reverse()
+      .find((match) => Number.isFinite(new Date(match?.kickoffAt).getTime()));
+  }
+
   if (!targetMatch) {
     list.scrollTop = 0;
     return;

@@ -38,10 +38,12 @@ test("2部10校のエンブレムを表示しミニユニフォームを追加�
   });
 
   await page.goto("http://localhost:4173/?view=standings");
-  await page.getByRole("tab", { name: "2部", exact: true }).click();
+  await page.getByRole("link", { name: /中国大学サッカーリーグ2部の詳細/ }).click();
   await expect(page.locator(".standing-table tbody tr")).toHaveCount(11);
-  await expect(page.locator(".standing-table .team-emblem")).toHaveCount(10);
-  await expect.poll(() => page.locator(".standing-table .team-emblem").evaluateAll((images) =>
+  await expect(page.locator(".standing-table .team-emblem")).toHaveCount(11);
+  await expect(page.locator(".standing-table img.team-emblem")).toHaveCount(10);
+  await expect(page.locator('[data-standing-team="島根県立大学"] .crest')).toHaveText("島県大");
+  await expect.poll(() => page.locator(".standing-table img.team-emblem").evaluateAll((images) =>
     images.filter((image) => image.complete && image.naturalWidth > 0 && image.naturalHeight > 0).length,
   )).toBe(10);
   await expect(page.locator(".standing-table")).toContainText("島根県立大学");

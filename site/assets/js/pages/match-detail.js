@@ -53,6 +53,7 @@ export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, 
       match.attendance == null ? "未掲載" : `${match.attendance}人`,
     ),
     createDetailRow("試合形式", match.matchFormat ?? "未掲載"),
+    createDetailRow("天候", formatConditions(match.conditions)),
   ];
 
   if (match.wasResumed) {
@@ -81,17 +82,19 @@ export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, 
   const periods = element(
     "div",
     { className: "period-score-list" },
-    match.scoreByPeriod.map((period) =>
-      element("div", { className: "period-score-row" }, [
-        element("strong", { text: String(period.home) }),
-        element("span", { text: period.label }),
-        element("strong", { text: String(period.away) }),
-      ]),
-    ),
+    match.scoreByPeriod?.length
+      ? match.scoreByPeriod.map((period) =>
+          element("div", { className: "period-score-row" }, [
+            element("strong", { text: String(period.home) }),
+            element("span", { text: period.label }),
+            element("strong", { text: String(period.away) }),
+          ]),
+        )
+      : [createNotice("前後半スコアは掲載されていません。")],
   );
   const goals = createEventList(
-    match.goals,
-    (goal) => `${goal.minute}分`,
+    match.goals ?? [],
+    (goal) => `${goal.minuteLabel ?? goal.minute ?? "時刻未掲載"}分`,
     (goal) => {
       const teamId = goal.teamName === match.homeTeam.name ? home?.id : away?.id;
       return createPlayerInlineLink(goal.scorerName, teamId, matchPlayerDirectory);
@@ -106,12 +109,12 @@ export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, 
     },
   );
   const disciplinary = [
-    ...match.disciplinary.home.map((text) => ({ side: match.homeTeam.name, text })),
-    ...match.disciplinary.away.map((text) => ({ side: match.awayTeam.name, text })),
+    ...(match.disciplinary?.home ?? []).map((text) => ({ side: match.homeTeam.name, text })),
+    ...(match.disciplinary?.away ?? []).map((text) => ({ side: match.awayTeam.name, text })),
   ];
   const substitutions = [
-    ...match.substitutions.home.map((text) => ({ side: match.homeTeam.name, text })),
-    ...match.substitutions.away.map((text) => ({ side: match.awayTeam.name, text })),
+    ...(match.substitutions?.home ?? []).map((text) => ({ side: match.homeTeam.name, text })),
+    ...(match.substitutions?.away ?? []).map((text) => ({ side: match.awayTeam.name, text })),
   ];
   const officials = (match.officials ?? []).map((official) => ({
     side: official.role,
@@ -134,13 +137,13 @@ export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, 
     createPageHeader({
       eyebrow: "Match Detail",
       title: "試合詳細",
-      description: `${match.competitionName} / ${match.roundLabel}`,
+      description: `${match.competitionName ?? match.leagueName ?? "大会名未掲載"} / ${match.roundLabel ?? `第${match.round}節`}`,
     }),
     element("div", { className: "section-stack" }, [
       score,
-      createPanel("前後半スコア", periods, `Match No. ${match.matchNumber}`),
+      createPanel("前後半スコア", periods, match.matchNumber == null ? "Match No. 未掲載" : `Match No. ${match.matchNumber}`),
       createPanel("試合情報", information, "試合記録"),
-      createPanel("得点経過", goals, `${match.goals.length}得点`),
+      createPanel("得点経過", goals, `${match.goals?.length ?? 0}得点`),
       createPanel("スタメン", lineups, "先発11人"),
       createPanel("警告・退場", createTextEventList(disciplinary), `${disciplinary.length}件`),
       createPanel(
@@ -243,6 +246,12 @@ function formatStatisticValue(value) {
   return value == null
     ? "–"
     : String(value);
+}
+
+function formatConditions(conditions) {
+  const values = [conditions?.weather, conditions?.wind, conditions?.pitch]
+    .filter((value) => value != null && String(value).trim());
+  return values.length ? values.join(" / ") : "未掲載";
 }
 
 function createMatchSourceNotice(match) {
@@ -452,13 +461,15 @@ function createLineupTeam(lineup, teamDirectory, playerDirectory) {
       lineup.starters.map((player) => createLineupPlayer(player, team?.id, playerDirectory)),
     ),
     element("div", { className: "lineup-section-label", text: "ベンチ" }),
-    element(
-      "ol",
-      { className: "lineup-list lineup-list--bench" },
-      (lineup.substitutes ?? []).map((player) =>
-        createLineupPlayer(player, team?.id, playerDirectory),
-      ),
-    ),
+    lineup.substitutes?.length
+      ? element(
+          "ol",
+          { className: "lineup-list lineup-list--bench" },
+          lineup.substitutes.map((player) =>
+            createLineupPlayer(player, team?.id, playerDirectory),
+          ),
+        )
+      : createNotice("控え選手は掲載されていません。"),
   ]);
 }
 

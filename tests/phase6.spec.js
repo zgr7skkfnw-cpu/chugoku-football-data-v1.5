@@ -13,9 +13,9 @@ test("試合検索と複合フィルターを併用できる", async ({ page }) 
   const errors = collectErrors(page);
   await page.goto(`${BASE_URL}?view=matches`);
   await page.getByLabel("試合検索").fill("IPU");
-  await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "21");
+  await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "18");
   await page.getByRole("button", { name: "未開催" }).click();
-  await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "10");
+  await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "9");
   await page.getByLabel("試合検索").fill("存在しない試合");
   await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "0");
   expect(errors).toEqual([]);
@@ -24,6 +24,7 @@ test("試合検索と複合フィルターを併用できる", async ({ page }) 
 test("ホーム・アウェイ順位と勝率・順位変動を表示する", async ({ page }) => {
   const errors = collectErrors(page);
   await page.goto(`${BASE_URL}?view=standings`);
+  await page.getByRole("link", { name: /中国大学サッカーリーグ1部の詳細/ }).click();
   await expect(page.locator(".standing-mode-tabs button")).toHaveCount(3);
   await expect(page.locator('table[data-standing-mode="overall"]')).toBeVisible();
   await expect(page.locator(".rank-change")).toHaveCount(10);

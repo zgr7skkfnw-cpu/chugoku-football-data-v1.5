@@ -14,6 +14,7 @@
           "stage": "regular",
           "stageName": "リーグ戦",
           "matches": "seasons/2026/matches.json",
+          "manualOverrides": "seasons/2026/manual-match-overrides.json",
           "teamStats": "seasons/2026/team-stats.json"
         },
         {
@@ -24,6 +25,7 @@
           "stage": "regular",
           "stageName": "リーグ戦",
           "matches": "seasons/2026/div2/matches.json",
+          "manualOverrides": null,
           "teamStats": "seasons/2026/div2/team-stats.json"
         },
         {
@@ -34,6 +36,7 @@
           "stage": "promotion-playoff",
           "stageName": "1部リーグ昇格プレーオフ",
           "matches": null,
+          "manualOverrides": null,
           "teamStats": null
         }
       ]
@@ -50,6 +53,7 @@
           "stage": "regular",
           "stageName": "リーグ戦",
           "matches": "seasons/2025/matches.json",
+          "manualOverrides": null,
           "teamStats": "seasons/2025/team-stats.json"
         },
         {
@@ -60,6 +64,7 @@
           "stage": "regular",
           "stageName": "リーグ戦",
           "matches": "seasons/2025/div2/matches.json",
+          "manualOverrides": null,
           "teamStats": "seasons/2025/div2/team-stats.json"
         },
         {
@@ -70,6 +75,7 @@
           "stage": "division-2-playoff",
           "stageName": "2部プレーオフ",
           "matches": "seasons/2025/div2/playoff/matches.json",
+          "manualOverrides": null,
           "teamStats": null
         },
         {
@@ -80,6 +86,7 @@
           "stage": "promotion-relegation",
           "stageName": "入替戦",
           "matches": "seasons/2025/promotion-relegation/matches.json",
+          "manualOverrides": null,
           "teamStats": null
         }
       ]
@@ -96,6 +103,7 @@
           "stage": "regular",
           "stageName": "リーグ戦",
           "matches": "seasons/2024/matches.json",
+          "manualOverrides": null,
           "teamStats": "seasons/2024/team-stats.json"
         },
         {
@@ -106,6 +114,7 @@
           "stage": "regular",
           "stageName": "リーグ戦",
           "matches": "seasons/2024/div2/matches.json",
+          "manualOverrides": null,
           "teamStats": "seasons/2024/div2/team-stats.json"
         },
         {
@@ -116,6 +125,7 @@
           "stage": "division-2-playoff",
           "stageName": "2部プレーオフ",
           "matches": "seasons/2024/div2/playoff/matches.json",
+          "manualOverrides": null,
           "teamStats": null
         }
       ]

@@ -1912,7 +1912,7 @@ function createAdminGroup(
 }
 
 function createField(label, control) {
-  return element("div", {
+  return element("label", {
     className: "detail-row",
   }, [
     element("span", { text: label }),

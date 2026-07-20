@@ -19,6 +19,7 @@ test("2025年度の日程・1部・2部・入替戦を切り替えて表示す�
   await expect(page.locator(".match-row")).toHaveCount(2);
 
   await page.goto(`${BASE_URL}?view=standings`);
+  await page.getByRole("link", { name: /中国大学サッカーリーグ1部の詳細/ }).click();
   await page.getByLabel("年度を選択").selectOption("2025");
   await expect(page.locator(".standing-table tbody tr")).toHaveCount(10);
   await expect(page.locator(".standing-table")).toContainText("岡山理科大学");

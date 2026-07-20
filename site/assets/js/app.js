@@ -82,7 +82,7 @@ initializeRouter();
 setState({ favoriteTeamId: loadFavoriteTeamId() });
 
 Promise.all([loadMatches(), loadTeams(), loadTeamCatalog(), loadLeagueStats(), loadHeadToHead()])
-  .then(([{ matches, metadata, competitionMetadata, availableSeasons, defaultSeason }, { teams }, teamCatalog, leagueStats, headToHead]) => {
+  .then(([{ matches, metadata, competitionMetadata, competitionDefinitions, availableSeasons, defaultSeason }, { teams }, teamCatalog, leagueStats, headToHead]) => {
     const profilesById = new Map(teams.map((team) => [team.id, team]));
     const leagueTeams = teamCatalog.map((team) => ({ ...team, ...(profilesById.get(team.id) ?? {}) }));
     const teamDirectory = createTeamDirectory(leagueTeams);
@@ -93,6 +93,7 @@ Promise.all([loadMatches(), loadTeams(), loadTeamCatalog(), loadLeagueStats(), l
       matches: linkedMatches,
       metadata,
       competitionMetadata,
+      competitionDefinitions,
       availableSeasons,
       selectedSeason: defaultSeason,
       teams,
@@ -110,6 +111,7 @@ Promise.all([loadMatches(), loadTeams(), loadTeamCatalog(), loadLeagueStats(), l
       matches: [],
       metadata: null,
       competitionMetadata: null,
+      competitionDefinitions: [],
       availableSeasons: [],
       teams: [],
       leagueTeams: [],
