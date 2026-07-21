@@ -7,7 +7,7 @@ import {
 } from "../ui/elements.js";
 import { createSeasonPeriodTabs } from "../ui/season-period.js";
 import { createSeasonSelect } from "../ui/season-select.js";
-import { setState } from "../state.js";
+import { navigate } from "../router.js";
 import {
   filterMatchesByPeriod,
   formatUpdatedAt,
@@ -45,16 +45,24 @@ export function renderStandingsPage({
   competitionDefinitions = [],
   selectedCompetitionId = null,
 }) {
-  const seasonCompetitions = competitionDefinitions.filter((entry) =>
+  const eligibleCompetitions = competitionDefinitions.filter((entry) =>
     entry.season === selectedSeason
     && entry.matches
-    && (entry.teamStats || ["tournament", "rookie-tournament"].includes(entry.competitionType)),
+    && (entry.teamStats || ["not-published", "not-held"].includes(entry.dataStatus) || ["tournament", "rookie-tournament", "playoff", "promotion-relegation", "i-league-playoff"].includes(entry.competitionType)),
   );
-  const activeCompetition = seasonCompetitions.find((entry) => entry.id === selectedCompetitionId)
-    ?? seasonCompetitions.find((entry) => entry.stage === "regular" && entry.division === leagueDivision)
-    ?? seasonCompetitions[0];
+  const requestedGroup = competitionGroupFromId(selectedCompetitionId);
+  const requestedDivision = selectedCompetitionId?.includes("division-2") ? 2
+    : selectedCompetitionId?.includes("division-1") ? 1
+      : null;
+  const activeCompetition = eligibleCompetitions.find((entry) => entry.id === selectedCompetitionId)
+    ?? eligibleCompetitions.find((entry) => competitionGroup(entry) === requestedGroup && (requestedDivision == null || entry.division === requestedDivision))
+    ?? eligibleCompetitions.find((entry) => entry.stage === "regular" && entry.division === leagueDivision)
+    ?? eligibleCompetitions[0];
+  const activeGroup = competitionGroup(activeCompetition);
+  const seasonCompetitions = eligibleCompetitions.filter((entry) => competitionGroup(entry) === activeGroup);
   const competitionId = activeCompetition?.id;
-  const isTournament = ["tournament", "rookie-tournament"].includes(activeCompetition?.competitionType);
+  const isTournament = ["tournament", "rookie-tournament", "playoff", "promotion-relegation", "i-league-playoff"].includes(activeCompetition?.competitionType);
+  const isNotPublished = ["not-published", "not-held"].includes(activeCompetition?.dataStatus);
   const activeStats = leagueStats?.[selectedSeason]?.byCompetition?.[competitionId]
     ?? leagueStats?.[selectedSeason]?.[leagueDivision];
   const metadata = competitionMetadata?.[selectedSeason]?.[leagueDivision];
@@ -238,7 +246,7 @@ export function renderStandingsPage({
       activeCompetition?.competitionType === "rookie-tournament"
         ? createRookieGroupStandings(leagueMatches)
         : null,
-      createPanel(
+      isNotPublished ? createNotice(unpublishedMessage(activeCompetition, selectedSeason)) : createPanel(
         activeCompetition?.name ?? `${selectedSeason}年度 中国大学サッカーリーグ${leagueDivision}部`,
         matchList,
         matchCount,
@@ -246,7 +254,7 @@ export function renderStandingsPage({
       isTournament && leagueMatches.some((match) => match.goals?.length)
         ? createTournamentRankings(leagueMatches)
         : null,
-      createNotice("終了した試合と未開催の試合を切り替えられます。"),
+      isNotPublished ? null : createNotice("終了した試合と未開催の試合を切り替えられます。"),
     ]),
   ]);
 
@@ -323,6 +331,12 @@ export function renderStandingsPage({
       className: `league-division-tab${selected ? " is-active" : ""}`,
       text: competition.competitionType === "i-league"
         ? `I ${competition.division}部`
+        : competition.competitionType === "i-league-playoff"
+          ? competition.stageName
+          : competition.competitionType === "playoff"
+            ? "昇格プレーオフ"
+            : competition.competitionType === "promotion-relegation"
+              ? "入替戦"
         : competition.competitionType === "tournament"
           ? "選手権"
           : competition.competitionType === "rookie-tournament"
@@ -334,9 +348,9 @@ export function renderStandingsPage({
         "aria-selected": String(selected),
       },
     });
-    button.addEventListener("click", () => setState({
-      leagueDivision: competition.division,
-      selectedCompetitionId: competition.id,
+    button.addEventListener("click", () => navigate("league", {
+      competitionId: competition.id,
+      season: selectedSeason,
     }));
     return button;
   }));
@@ -347,7 +361,7 @@ export function renderStandingsPage({
       className: "page",
       attributes: {
         "data-page": "league",
-        "data-league-division": String(leagueDivision),
+        "data-league-division": String(activeCompetition?.division ?? leagueDivision),
       },
     },
     [
@@ -362,6 +376,37 @@ export function renderStandingsPage({
       leagueContent,
     ],
   );
+}
+
+function competitionGroup(competition) {
+  if (!competition) return "unknown";
+  if (competition.competitionGroup === "division-2") return "regular-league";
+  if (competition.competitionGroup) return competition.competitionGroup;
+  if (competition.competitionType === "i-league") return "i-league";
+  if (competition.stage === "division-2-playoff" || competition.stage === "promotion-playoff") return "regular-league";
+  if (competition.stage === "regular") return "regular-league";
+  return competition.id;
+}
+
+function competitionGroupFromId(competitionId) {
+  if (!competitionId) return null;
+  if (competitionId.includes("i-league")) return "i-league";
+  if (competitionId.includes("promotion-relegation")) return "promotion-relegation";
+  if (competitionId.includes("division-1") || competitionId.includes("division-2") || competitionId.includes("promotion-playoff")) return "regular-league";
+  return competitionId;
+}
+
+function unpublishedMessage(competition, season) {
+  if (competition.dataStatus === "not-held") {
+    return `${season}年度は大会要項上、1部・2部入替戦を実施しません。`;
+  }
+  if (competition.competitionType === "i-league-playoff") {
+    return `${season}年のIリーグ順位決定プレーオフ情報はまだ公式発表されていません。\n公式日程が公開され次第、試合情報を追加します。`;
+  }
+  if (competition.competitionType === "playoff") {
+    return `${season}年の昇格プレーオフ情報はまだ公式発表されていません。\n公式日程が公開され次第、試合情報を追加します。`;
+  }
+  return "大会情報はまだ公式発表されていません。\n公式日程が公開され次第、試合情報を追加します。";
 }
 
 function createTournamentRankings(matches) {

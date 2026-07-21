@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "season": 2025,
+  "items": [
+    {"id":"i-league-2025-ipu-a","name":"IPU・環太平洋大学A","parentClubId":"ipu"},
+    {"id":"i-league-2025-ipu-b","name":"IPU・環太平洋大学B","parentClubId":"ipu"},
+    {"id":"i-league-2025-ipu-c","name":"IPU・環太平洋大学C","parentClubId":"ipu"},
+    {"id":"i-league-2025-ipu-d","name":"IPU・環太平洋大学D","parentClubId":"ipu"},
+    {"id":"i-league-2025-fukuyama-a","name":"福山大学A","parentClubId":"fukuyama"},
+    {"id":"i-league-2025-fukuyama-b","name":"福山大学B","parentClubId":"fukuyama"},
+    {"id":"i-league-2025-hue-a","name":"広島経済大学A","parentClubId":"hue"},
+    {"id":"i-league-2025-hue-b","name":"広島経済大学B","parentClubId":"hue"},
+    {"id":"i-league-2025-hiroshima-a","name":"広島大学A","parentClubId":"hiroshima"},
+    {"id":"i-league-2025-hiroshima-b","name":"広島大学B","parentClubId":"hiroshima"},
+    {"id":"i-league-2025-hbg-a","name":"広島文化学園大学A","parentClubId":"hbg"},
+    {"id":"i-league-2025-hbg-b","name":"広島文化学園大学B","parentClubId":"hbg"},
+    {"id":"i-league-2025-shudo","name":"広島修道大学","parentClubId":"shudo"},
+    {"id":"i-league-2025-ous","name":"岡山理科大学","parentClubId":"ous"},
+    {"id":"i-league-2025-heisei","name":"福山平成大学","parentClubId":"heisei"}
+  ]
+}

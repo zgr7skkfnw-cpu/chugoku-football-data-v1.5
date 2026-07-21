@@ -49,8 +49,16 @@ export function renderAdminPage({ matches, competitionDefinitions = [], availabl
 
   function updateCompetitionOptions(preferredId = null) {
     const competitions = competitionsForSeason();
-    competitionSelect.replaceChildren(...competitions.map((competition) =>
-      createOption(competition.id, competition.name.replace(/^\d{4}年度\s*/, "")),
+    const groups = new Map();
+    for (const competition of competitions) {
+      const label = adminGroupLabel(competition);
+      if (!groups.has(label)) groups.set(label, []);
+      groups.get(label).push(competition);
+    }
+    competitionSelect.replaceChildren(...[...groups.entries()].map(([label, entries]) =>
+      element("optgroup", { attributes: { label } }, entries.map((competition) =>
+        createOption(competition.id, competition.name.replace(/^\d{4}年度\s*/, "")),
+      )),
     ));
     if (preferredId && competitions.some((entry) => entry.id === preferredId)) {
       competitionSelect.value = preferredId;
@@ -82,9 +90,13 @@ export function renderAdminPage({ matches, competitionDefinitions = [], availabl
       ),
     );
     matchSelect.disabled = availableMatches.length === 0;
-    competitionStatus.textContent = availableMatches.length
-      ? `${availableMatches.length}試合から選択できます。`
-      : "この大会の試合データはまだありません。";
+    competitionStatus.textContent = competition?.dataStatus === "not-held"
+      ? "2026年度は大会要項上、1部・2部入替戦を実施しません。"
+      : competition?.dataStatus === "not-published"
+        ? "この大会の公式試合データはまだ公開されていません。"
+        : availableMatches.length
+        ? `${availableMatches.length}試合から選択できます。`
+        : "この大会の試合データはまだありません。";
     editTarget.textContent = competition
       ? `編集対象：${competition.season}年／${competition.name.replace(/^\d{4}年度\s*/, "")}`
       : "編集対象を選択してください。";
@@ -2150,6 +2162,14 @@ function createOption(value, label) {
     text: label,
     attributes: { value },
   });
+}
+
+function adminGroupLabel(competition) {
+  if (competition.competitionGroup === "i-league" || competition.competitionType === "i-league") return "Iリーグ";
+  if (competition.competitionGroup === "division-2") return "中国大学サッカーリーグ2部";
+  if (["tournament", "rookie-tournament"].includes(competition.competitionType)) return "カップ戦";
+  if (competition.competitionGroup === "promotion-relegation") return "昇降格";
+  return "中国大学サッカーリーグ";
 }
 
 function parseNullableNumber(value) {

@@ -178,6 +178,8 @@ const historicalCompetitionSpecs = [
   [2025, "jufa-chugoku-2025-division-2", "site/data/seasons/2025/div2/matches.json", "site/data/seasons/2025/div2/team-stats.json", "site/data/seasons/2025/div2/manual-match-overrides.json", 90, 10, 15, 517],
   [2025, "jufa-chugoku-2025-division-2-playoff", "site/data/seasons/2025/div2/playoff/matches.json", null, "site/data/seasons/2025/div2/playoff/manual-match-overrides.json", 3, 4, 15, 546],
   [2025, "jufa-chugoku-2025-promotion-relegation", "site/data/seasons/2025/promotion-relegation/matches.json", null, "site/data/seasons/2025/promotion-relegation/manual-match-overrides.json", 2, 4, 15, 547],
+  [2025, "jufa-chugoku-2025-i-league-upper-playoff", "site/data/seasons/2025/i-league/playoff/upper/matches.json", null, "site/data/seasons/2025/i-league/playoff/upper/manual-match-overrides.json", 6, 6, 17, 538],
+  [2025, "jufa-chugoku-2025-i-league-lower-playoff", "site/data/seasons/2025/i-league/playoff/lower/matches.json", null, "site/data/seasons/2025/i-league/playoff/lower/manual-match-overrides.json", 9, 9, 17, null],
   [2024, "jufa-chugoku-2024-division-1", "site/data/seasons/2024/matches.json", "site/data/seasons/2024/team-stats.json", "site/data/seasons/2024/manual-match-overrides.json", 90, 10, 15, 485],
   [2024, "jufa-chugoku-2024-division-2", "site/data/seasons/2024/div2/matches.json", "site/data/seasons/2024/div2/team-stats.json", "site/data/seasons/2024/div2/manual-match-overrides.json", 90, 10, 15, 486],
   [2024, "jufa-chugoku-2024-division-2-playoff", "site/data/seasons/2024/div2/playoff/matches.json", null, "site/data/seasons/2024/div2/playoff/manual-match-overrides.json", 3, 4, 15, 508],
@@ -201,13 +203,15 @@ for (const entry of historicalCompetitionData) {
     historicalMatchIds.add(match.id);
     if (!match.id.startsWith("football-system-")) errors.push(`${match.id}: unstable historical match id format`);
     for (const teamName of [match.homeTeam?.name, match.awayTeam?.name]) {
-      if (!catalogNames.has(teamName)) errors.push(`${match.id}: unresolved historical team ${teamName}`);
+      if (!catalogNames.has(teamName) && !competitionTeamNames.has(`${entry.competitionId}\0${teamName}`)) {
+        errors.push(`${match.id}: unresolved historical team ${teamName}`);
+      }
     }
     if (match.status === "finished" && (!Number.isFinite(match.homeTeam?.score) || !Number.isFinite(match.awayTeam?.score))) {
       errors.push(`${match.id}: finished historical match has no score`);
     }
     if (match.status !== "finished" && (match.lineups || match.goals?.length)) errors.push(`${match.id}: unpublished historical detail must not be required`);
-    if (match.gameId != null && (match.fedId !== entry.fedId || match.taikaiHoldId !== entry.taikaiHoldId)) {
+    if (match.gameId != null && (match.fedId !== entry.fedId || (entry.taikaiHoldId != null && match.taikaiHoldId !== entry.taikaiHoldId))) {
       errors.push(`${match.id}: official identifiers mismatch`);
     }
   }

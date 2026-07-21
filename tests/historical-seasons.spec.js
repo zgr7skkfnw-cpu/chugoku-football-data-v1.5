@@ -104,7 +104,7 @@ test("管理画面で2024・2025大会と大会別補正先を分離する", asy
 test("過年度補正ファイルは年度・大会ごとに一意な保存先を持つ", () => {
   const paths = [[2024, season2024], [2025, season2025]].flatMap(([season, data]) =>
     data.competitions.map((competition) => `${competition.id}:${season}/${competition.manualOverrides}`));
-  expect(paths).toHaveLength(7);
-  expect(new Set(paths.map((entry) => entry.split(":")[1])).size).toBe(7);
+  expect(paths).toHaveLength(9);
+  expect(new Set(paths.map((entry) => entry.split(":")[1])).size).toBe(9);
   expect(paths.every((entry) => entry.endsWith("manual-match-overrides.json"))).toBeTruthy();
 });

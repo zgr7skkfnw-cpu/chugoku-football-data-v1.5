@@ -38,6 +38,21 @@
     { "id": "i-league-2026-hue-b", "parentClubId": "hiroshima-keizai", "competitionId": "jufa-chugoku-2026-i-league-division-2", "officialPageId": 636, "name": "広島経済大学B", "shortName": "広経大B", "aliases": [], "profileStatus": "competition" },
     { "id": "i-league-2026-fukuyama-b", "parentClubId": "fukuyama", "competitionId": "jufa-chugoku-2026-i-league-division-2", "officialPageId": 622, "name": "福山大学B", "shortName": "福山大B", "aliases": [], "profileStatus": "competition" },
     { "id": "i-league-2026-ipu-c", "parentClubId": "ipu", "competitionId": "jufa-chugoku-2026-i-league-division-2", "officialPageId": 626, "name": "IPU・環太平洋大学C", "shortName": "IPU C", "aliases": [], "profileStatus": "competition" },
-    { "id": "i-league-2026-hiroshima-b", "parentClubId": "hiroshima", "competitionId": "jufa-chugoku-2026-i-league-division-2", "officialPageId": 632, "name": "広島大学B", "shortName": "広島大B", "aliases": [], "profileStatus": "competition" }
+    { "id": "i-league-2026-hiroshima-b", "parentClubId": "hiroshima", "competitionId": "jufa-chugoku-2026-i-league-division-2", "officialPageId": 632, "name": "広島大学B", "shortName": "広島大B", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-ipu-a", "parentClubId": "ipu", "competitionId": "jufa-chugoku-2025-i-league-upper-playoff", "name": "IPU・環太平洋大学A", "shortName": "IPU A", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-ipu-b", "parentClubId": "ipu", "competitionId": "jufa-chugoku-2025-i-league-upper-playoff", "name": "IPU・環太平洋大学B", "shortName": "IPU B", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-ipu-d", "parentClubId": "ipu", "competitionId": "jufa-chugoku-2025-i-league-upper-playoff", "name": "IPU・環太平洋大学D", "shortName": "IPU D", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-fukuyama-a", "parentClubId": "fukuyama", "competitionId": "jufa-chugoku-2025-i-league-upper-playoff", "name": "福山大学A", "shortName": "福山大A", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-hue-a", "parentClubId": "hiroshima-keizai", "competitionId": "jufa-chugoku-2025-i-league-upper-playoff", "name": "広島経済大学A", "shortName": "広経大A", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-hiroshima-a", "parentClubId": "hiroshima", "competitionId": "jufa-chugoku-2025-i-league-upper-playoff", "name": "広島大学A", "shortName": "広島大A", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-ipu-c", "parentClubId": "ipu", "competitionId": "jufa-chugoku-2025-i-league-lower-playoff", "name": "IPU・環太平洋大学C", "shortName": "IPU C", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-fukuyama-b", "parentClubId": "fukuyama", "competitionId": "jufa-chugoku-2025-i-league-lower-playoff", "name": "福山大学B", "shortName": "福山大B", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-hue-b", "parentClubId": "hiroshima-keizai", "competitionId": "jufa-chugoku-2025-i-league-lower-playoff", "name": "広島経済大学B", "shortName": "広経大B", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-hiroshima-b", "parentClubId": "hiroshima", "competitionId": "jufa-chugoku-2025-i-league-lower-playoff", "name": "広島大学B", "shortName": "広島大B", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-hbg-a", "parentClubId": "hiroshima-bunka-gakuen", "competitionId": "jufa-chugoku-2025-i-league-lower-playoff", "name": "広島文化学園大学A", "shortName": "文化大A", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-hbg-b", "parentClubId": "hiroshima-bunka-gakuen", "competitionId": "jufa-chugoku-2025-i-league-lower-playoff", "name": "広島文化学園大学B", "shortName": "文化大B", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-shudo", "parentClubId": "hiroshima-shudo", "competitionId": "jufa-chugoku-2025-i-league-lower-playoff", "name": "広島修道大学", "shortName": "広修大I", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-ous", "parentClubId": "okayama-science", "competitionId": "jufa-chugoku-2025-i-league-lower-playoff", "name": "岡山理科大学", "shortName": "岡理大I", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2025-heisei", "parentClubId": "fukuyama-heisei", "competitionId": "jufa-chugoku-2025-i-league-lower-playoff", "name": "福山平成大学", "shortName": "福平大I", "aliases": [], "profileStatus": "competition" }
   ]
 }

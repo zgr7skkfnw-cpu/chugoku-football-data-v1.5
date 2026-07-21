@@ -167,6 +167,30 @@ const TARGETS = {
     allowIncompleteLineups: true,
     buildStats: false,
   },
+  "2025-i-league-upper-playoff": {
+    season: 2025,
+    division: null,
+    competitionId: "jufa-chugoku-2025-i-league-upper-playoff",
+    stage: "i-league-playoff-upper",
+    sourcePageUrl: "https://jufa-chugoku.jp/result/2025/tid_538/",
+    outputPath: "../../site/data/seasons/2025/i-league/playoff/upper/matches.json",
+    minimumScheduleCount: 5,
+    minimumDetailCount: 5,
+    allowIncompleteLineups: true,
+    buildStats: false,
+  },
+  "2025-i-league-lower-playoff": {
+    season: 2025,
+    division: null,
+    competitionId: "jufa-chugoku-2025-i-league-lower-playoff",
+    stage: "i-league-playoff-lower",
+    sourcePageUrl: "https://jufa-chugoku.jp/result/2025/tid_539/",
+    outputPath: "../../site/data/seasons/2025/i-league/playoff/lower/matches.json",
+    minimumScheduleCount: 8,
+    minimumDetailCount: 8,
+    allowIncompleteLineups: true,
+    buildStats: false,
+  },
 };
 const targetKey = process.argv.find((argument) => argument.startsWith("--target="))?.split("=")[1] ?? "2026-1";
 const target = TARGETS[targetKey];
