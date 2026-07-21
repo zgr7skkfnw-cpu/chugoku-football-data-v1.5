@@ -3,12 +3,12 @@
   "seasonId": "jufa-chugoku-2026-division-2",
   "stage": "regular",
   "competitionName": "2026年度 中国大学サッカーリーグ 2部",
-  "updatedAt": "2026-07-20T04:12:02.391Z",
+  "updatedAt": "2026-07-21T04:11:03.973Z",
   "source": {
     "pageUrl": "https://jufa-chugoku.jp/result/2026/tid_559/",
     "iframeUrl": "https://football-system.jp/fss/pub_taikaigamelist.php?lid=XIi6FZyy0FQ=",
     "detailPostUrl": "https://football-system.jp/fss/pubGameResultConf.php",
-    "retrievedAt": "2026-07-20T04:12:02.391Z"
+    "retrievedAt": "2026-07-21T04:11:03.973Z"
   },
   "scheduleCount": 110,
   "matchCount": 110,
@@ -20507,7 +20507,7 @@
       "goalSummary": {
         "home": [],
         "away": [
-          "23 分 水畑 柊志",
+          "23 分 水畑 柊志 （辻村 空翔）",
           "24 分 宮地 優成 （原田 大成）",
           "29 分 島田 凌 （岡村 圭修）",
           "41 分 田村 遥人 （島田 凌）",
@@ -20523,15 +20523,13 @@
           "teamName": "岡山大学",
           "scorerNumber": "16",
           "scorerName": "水畑 柊志",
-          "assistNames": [],
+          "assistNames": [
+            "辻村 空翔"
+          ],
           "buildUp": [
             {
               "number": "37",
-              "action": "～"
-            },
-            {
-              "number": "37",
-              "action": "→"
+              "action": "∩"
             }
           ],
           "finish": "HS"
