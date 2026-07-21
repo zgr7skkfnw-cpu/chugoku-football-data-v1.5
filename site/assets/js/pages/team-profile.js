@@ -35,7 +35,8 @@ export function renderTeamProfilePage({
     ]);
   }
 
-  const roster = players
+  const hasSeasonRoster = selectedSeason === 2026;
+  const roster = (hasSeasonRoster ? players : [])
     .filter((player) => player.teamId === team.id)
     .sort((left, right) => (left.number ?? 999) - (right.number ?? 999));
   const staff = team.staff ?? [];
@@ -104,7 +105,9 @@ export function renderTeamProfilePage({
         createPanel("チームスタッツ", createTeamStatGrid(analytics?.stats), "シーズン分析"),
         createPanel("順位推移", createRankChart(analytics?.rankProgression, seasonPeriod), "各節終了時"),
         createPanel("Head to Head", createHeadToHead(opponents, teamDirectory, seasonPeriod), "対戦成績"),
-        createPanel("チーム内ランキング", createInternalRankings(periodPlayerStats, team), "TOP 5"),
+        hasSeasonRoster
+          ? createPanel("チーム内ランキング", createInternalRankings(periodPlayerStats, team), "TOP 5")
+          : createNotice(`${selectedSeason}年度の大会別選手名簿は未整備のため、スカッドと選手ランキングは表示していません。`),
         createPanel(
           "ユニフォーム",
           element("div", { className: "team-kits" }, [
@@ -125,10 +128,10 @@ export function renderTeamProfilePage({
         ),
         createPanel("スタッフ", createStaffList(staff), `${staff.length}名`),
         createPanel("SNS・Webサイト", createSocialLinks(team), "外部リンク"),
-        createPanel("登録選手", createRoster(roster, team), `${roster.length}選手`),
-        createNotice(team.competitionId
+        hasSeasonRoster ? createPanel("登録選手", createRoster(roster, team), `${roster.length}選手`) : null,
+        hasSeasonRoster ? createNotice(team.competitionId
           ? "Iリーグの大会別公式登録を表示しています。トップチームや別チームの登録とは統合していません。"
-          : "スタッフ・登録選手は2026年度のチーム登録を表示しています。"),
+          : "スタッフ・登録選手は2026年度のチーム登録を表示しています。") : null,
       ]),
     ],
   );

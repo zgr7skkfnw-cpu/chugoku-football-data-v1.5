@@ -43,6 +43,7 @@
       "stage": "regular",
       "stageName": "リーグ戦",
       "matches": "./matches.json",
+      "manualOverrides": "./manual-match-overrides.json",
       "teamStats": "./team-stats.json",
       "periodRules": {
         "first": {
@@ -75,6 +76,7 @@
       "stage": "regular",
       "stageName": "リーグ戦",
       "matches": "./div2/matches.json",
+      "manualOverrides": "./div2/manual-match-overrides.json",
       "teamStats": "./div2/team-stats.json",
       "periodRules": {
         "first": {
@@ -107,6 +109,7 @@
       "stage": "division-2-playoff",
       "stageName": "2部プレーオフ",
       "matches": "./div2/playoff/matches.json",
+      "manualOverrides": "./div2/playoff/manual-match-overrides.json",
       "teamStats": null,
       "teamIds": [
         "hiroshima-international",

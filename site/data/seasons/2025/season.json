@@ -38,6 +38,7 @@
       "stage": "regular",
       "stageName": "リーグ戦",
       "matches": "./matches.json",
+      "manualOverrides": "./manual-match-overrides.json",
       "teamStats": "./team-stats.json",
       "periodRules": {
         "first": { "fromRound": 1, "toRound": 9 },
@@ -57,6 +58,7 @@
       "stage": "regular",
       "stageName": "リーグ戦",
       "matches": "./div2/matches.json",
+      "manualOverrides": "./div2/manual-match-overrides.json",
       "teamStats": "./div2/team-stats.json",
       "periodRules": {
         "first": { "fromRound": 1, "toRound": 9 },
@@ -76,6 +78,7 @@
       "stage": "division-2-playoff",
       "stageName": "2部プレーオフ",
       "matches": "./div2/playoff/matches.json",
+      "manualOverrides": "./div2/playoff/manual-match-overrides.json",
       "teamStats": null,
       "teamIds": ["hiroshima-international", "tottori", "shimonoseki-city", "shimane"]
     },
@@ -87,6 +90,7 @@
       "stage": "promotion-relegation",
       "stageName": "入替戦",
       "matches": "./promotion-relegation/matches.json",
+      "manualOverrides": "./promotion-relegation/manual-match-overrides.json",
       "teamStats": null,
       "teamIds": ["kawasaki-medical-welfare", "okayama", "fukuyama-heisei", "hiroshima-international"]
     }

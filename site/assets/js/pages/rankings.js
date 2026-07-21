@@ -38,7 +38,8 @@ export function renderRankingsPage({ matches, playerStatistics, teamStats, leagu
   let activeMetric = "goals";
   let teamFilter = "";
   let gradeFilter = "";
-  const periodStatistics = selectPlayerStatisticsPeriod(playerStatistics, seasonPeriod);
+  const hasSeasonRoster = selectedSeason === 2026;
+  const periodStatistics = hasSeasonRoster ? selectPlayerStatisticsPeriod(playerStatistics, seasonPeriod) : [];
   const availableCompetitions = competitionDefinitions.filter((competition) => competition.season === selectedSeason && competition.matches && ["league", "i-league"].includes(competition.competitionType));
   const activeCompetition = availableCompetitions.find((competition) => competition.id === selectedCompetitionId)
     ?? availableCompetitions.find((competition) => competition.competitionType === "league" && competition.division === leagueDivision)
@@ -133,6 +134,7 @@ export function renderRankingsPage({ matches, playerStatistics, teamStats, leagu
     element("div", { className: "filter-grid ranking-filter-grid" }, [teamSelect, gradeSelect]),
     chips,
     element("div", { className: "section-stack" }, [
+      hasSeasonRoster ? null : createNotice(`${selectedSeason}年度の選手名簿は未整備のため、選手ランキングは表示していません。チーム集計は当該年度の試合結果を使用しています。`),
       content,
       createTeamRankings(activeTeamStats?.periods?.[seasonPeriod]?.rankings, teamDirectory),
       createNotice(`${reflectedMatches.length}試合の記録から集計しています。`),

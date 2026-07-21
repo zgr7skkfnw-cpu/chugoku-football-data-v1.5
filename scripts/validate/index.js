@@ -147,6 +147,56 @@ for (const [label, data] of [["2025 division 1", stats2025Division1], ["2025 div
     errors.push(`${label} team stats must contain 10 standings rows`);
   }
 }
+
+const historicalCompetitionSpecs = [
+  [2025, "jufa-chugoku-2025-division-1", "site/data/seasons/2025/matches.json", "site/data/seasons/2025/team-stats.json", "site/data/seasons/2025/manual-match-overrides.json", 90, 10, 15, 516],
+  [2025, "jufa-chugoku-2025-division-2", "site/data/seasons/2025/div2/matches.json", "site/data/seasons/2025/div2/team-stats.json", "site/data/seasons/2025/div2/manual-match-overrides.json", 90, 10, 15, 517],
+  [2025, "jufa-chugoku-2025-division-2-playoff", "site/data/seasons/2025/div2/playoff/matches.json", null, "site/data/seasons/2025/div2/playoff/manual-match-overrides.json", 3, 4, 15, 546],
+  [2025, "jufa-chugoku-2025-promotion-relegation", "site/data/seasons/2025/promotion-relegation/matches.json", null, "site/data/seasons/2025/promotion-relegation/manual-match-overrides.json", 2, 4, 15, 547],
+  [2024, "jufa-chugoku-2024-division-1", "site/data/seasons/2024/matches.json", "site/data/seasons/2024/team-stats.json", "site/data/seasons/2024/manual-match-overrides.json", 90, 10, 15, 485],
+  [2024, "jufa-chugoku-2024-division-2", "site/data/seasons/2024/div2/matches.json", "site/data/seasons/2024/div2/team-stats.json", "site/data/seasons/2024/div2/manual-match-overrides.json", 90, 10, 15, 486],
+  [2024, "jufa-chugoku-2024-division-2-playoff", "site/data/seasons/2024/div2/playoff/matches.json", null, "site/data/seasons/2024/div2/playoff/manual-match-overrides.json", 3, 4, 15, 508],
+];
+const historicalCompetitionData = await Promise.all(historicalCompetitionSpecs.map(async ([season, competitionId, matchPath, statsPath, overridePath, expectedMatches, expectedTeams, fedId, taikaiHoldId]) => ({
+  season, competitionId, expectedMatches, expectedTeams, fedId, taikaiHoldId,
+  matches: await readJson(matchPath),
+  stats: statsPath ? await readJson(statsPath) : null,
+  overrides: await readJson(overridePath),
+})));
+const historicalMatchIds = new Set();
+for (const entry of historicalCompetitionData) {
+  const items = entry.matches.items ?? [];
+  if (entry.matches.seasonId !== entry.competitionId || items.length !== entry.expectedMatches) {
+    errors.push(`${entry.competitionId}: expected ${entry.expectedMatches} matches and matching seasonId`);
+  }
+  const competition = seasonIndexData.items.find((item) => item.season === entry.season)?.competitions.find((item) => item.id === entry.competitionId);
+  if (!competition || competition.teamIds.length !== entry.expectedTeams) errors.push(`${entry.competitionId}: season index team count mismatch`);
+  for (const match of items) {
+    if (historicalMatchIds.has(match.id)) errors.push(`${match.id}: duplicate historical match id`);
+    historicalMatchIds.add(match.id);
+    if (!match.id.startsWith("football-system-")) errors.push(`${match.id}: unstable historical match id format`);
+    for (const teamName of [match.homeTeam?.name, match.awayTeam?.name]) {
+      if (!catalogNames.has(teamName)) errors.push(`${match.id}: unresolved historical team ${teamName}`);
+    }
+    if (match.status === "finished" && (!Number.isFinite(match.homeTeam?.score) || !Number.isFinite(match.awayTeam?.score))) {
+      errors.push(`${match.id}: finished historical match has no score`);
+    }
+    if (match.status !== "finished" && (match.lineups || match.goals?.length)) errors.push(`${match.id}: unpublished historical detail must not be required`);
+    if (match.gameId != null && (match.fedId !== entry.fedId || match.taikaiHoldId !== entry.taikaiHoldId)) {
+      errors.push(`${match.id}: official identifiers mismatch`);
+    }
+  }
+  if (entry.stats) {
+    const finished = items.filter((match) => match.status === "finished").length;
+    const reflected = (entry.stats.periods?.all?.standings ?? []).reduce((sum, row) => sum + row.played, 0) / 2;
+    if (entry.stats.competitionId !== entry.competitionId || entry.stats.periods?.all?.standings?.length !== entry.expectedTeams || reflected !== finished) {
+      errors.push(`${entry.competitionId}: historical team-stats mismatch`);
+    }
+  }
+  if (entry.overrides.schemaVersion !== 1 || !Array.isArray(entry.overrides.items)) errors.push(`${entry.competitionId}: invalid manual overrides`);
+  const matchIds = new Set(items.map((match) => match.id));
+  for (const override of entry.overrides.items ?? []) if (!matchIds.has(override.matchId)) errors.push(`${entry.competitionId}: override target ${override.matchId} does not exist`);
+}
 if ((seasonData.regulations?.division1?.automaticRelegationPositions ?? []).length !== 0) {
   errors.push("season.json division 1 must not have automatic relegation in 2026");
 }
@@ -369,7 +419,8 @@ if (errors.length) {
   console.log(`I-League division 1 matches: ${(iLeague1MatchesData.items ?? []).length}`);
   console.log(`I-League division 2 matches: ${(iLeague2MatchesData.items ?? []).length}`);
   console.log(`Division 2 emblems: ${expectedDivision2Emblems.size}/${division2TeamIds.size}`);
-  console.log(`Historical matches (2025): ${historicalCounts.reduce((sum, [, data]) => sum + data.items.length, 0)}`);
+  console.log(`Historical competitions: ${historicalCompetitionData.length}`);
+  console.log(`Historical matches (2024-2025): ${historicalCompetitionData.reduce((sum, entry) => sum + entry.matches.items.length, 0)}`);
   console.log(`Bench registrations: ${calculatedBenchRegistrations}`);
   console.log(`Unresolved lineup players: ${unresolvedLineupPlayers}`);
 }

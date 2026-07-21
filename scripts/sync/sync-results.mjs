@@ -1,6 +1,7 @@
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, mkdtemp, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { dirname, resolve } from "node:path";
+import { tmpdir } from "node:os";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { request } from "@playwright/test";
@@ -688,8 +689,27 @@ function preserveScheduledMatchIds(previousItems = [], nextItems = []) {
 async function writeOutput(data) {
   await mkdir(dirname(OUTPUT_PATH), { recursive: true });
   const temporaryPath = `${OUTPUT_PATH}.tmp`;
-  await writeFile(temporaryPath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
-  await rename(temporaryPath, OUTPUT_PATH);
+  const backupDirectory = await mkdtemp(join(tmpdir(), `chugoku-results-${targetKey}-`));
+  const backupPath = resolve(backupDirectory, "matches.json");
+  let hasBackup = false;
+  try {
+    try {
+      await copyFile(OUTPUT_PATH, backupPath);
+      hasBackup = true;
+      console.log(`同期前バックアップ: ${backupDirectory}`);
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+    }
+    await writeFile(temporaryPath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+    JSON.parse(await readFile(temporaryPath, "utf8"));
+    await rename(temporaryPath, OUTPUT_PATH);
+  } catch (error) {
+    if (hasBackup) await copyFile(backupPath, OUTPUT_PATH);
+    throw error;
+  } finally {
+    await rm(temporaryPath, { force: true });
+    await rm(backupDirectory, { recursive: true, force: true });
+  }
 }
 
 async function main() {

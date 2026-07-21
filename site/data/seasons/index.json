@@ -145,7 +145,7 @@
           "stageName": "リーグ戦",
           "matches": "seasons/2025/matches.json",
           "teams": null,
-          "manualOverrides": null,
+          "manualOverrides": "seasons/2025/manual-match-overrides.json",
           "teamStats": "seasons/2025/team-stats.json",
           "teamIds": [
             "ipu",
@@ -170,7 +170,7 @@
           "stageName": "リーグ戦",
           "matches": "seasons/2025/div2/matches.json",
           "teams": null,
-          "manualOverrides": null,
+          "manualOverrides": "seasons/2025/div2/manual-match-overrides.json",
           "teamStats": "seasons/2025/div2/team-stats.json",
           "teamIds": [
             "shimonoseki-city",
@@ -195,7 +195,7 @@
           "stageName": "2部プレーオフ",
           "matches": "seasons/2025/div2/playoff/matches.json",
           "teams": null,
-          "manualOverrides": null,
+          "manualOverrides": "seasons/2025/div2/playoff/manual-match-overrides.json",
           "teamStats": null,
           "teamIds": [
             "hiroshima-international",
@@ -214,7 +214,7 @@
           "stageName": "入替戦",
           "matches": "seasons/2025/promotion-relegation/matches.json",
           "teams": null,
-          "manualOverrides": null,
+          "manualOverrides": "seasons/2025/promotion-relegation/manual-match-overrides.json",
           "teamStats": null,
           "teamIds": [
             "kawasaki-medical-welfare",
@@ -239,7 +239,7 @@
           "stageName": "リーグ戦",
           "matches": "seasons/2024/matches.json",
           "teams": null,
-          "manualOverrides": null,
+          "manualOverrides": "seasons/2024/manual-match-overrides.json",
           "teamStats": "seasons/2024/team-stats.json",
           "teamIds": [
             "ipu",
@@ -264,7 +264,7 @@
           "stageName": "リーグ戦",
           "matches": "seasons/2024/div2/matches.json",
           "teams": null,
-          "manualOverrides": null,
+          "manualOverrides": "seasons/2024/div2/manual-match-overrides.json",
           "teamStats": "seasons/2024/div2/team-stats.json",
           "teamIds": [
             "tottori",
@@ -289,7 +289,7 @@
           "stageName": "2部プレーオフ",
           "matches": "seasons/2024/div2/playoff/matches.json",
           "teams": null,
-          "manualOverrides": null,
+          "manualOverrides": "seasons/2024/div2/playoff/manual-match-overrides.json",
           "teamStats": null,
           "teamIds": [
             "hiroshima-international",
