@@ -38,6 +38,17 @@
           "matches": null,
           "manualOverrides": null,
           "teamStats": null
+        },
+        {
+          "id": "jufa-chugoku-2026-promotion-relegation",
+          "name": "2026年度 中国大学サッカーリーグ 入替戦",
+          "leagueName": "中国大学サッカーリーグ",
+          "division": null,
+          "stage": "promotion-relegation",
+          "stageName": "入替戦",
+          "matches": null,
+          "manualOverrides": null,
+          "teamStats": null
         }
       ]
     },

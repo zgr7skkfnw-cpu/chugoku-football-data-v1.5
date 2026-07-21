@@ -6,12 +6,92 @@ import {
 } from "../ui/elements.js";
 import { dataUrl } from "../api/seasons.js";
 
-export function renderAdminPage({ matches }) {
-  const availableMatches = [...matches].sort(
+export function renderAdminPage({ matches, competitionDefinitions = [], availableSeasons = [] }) {
+  const definitions = competitionDefinitions.length
+    ? competitionDefinitions
+    : createCompetitionDefinitionsFromMatches(matches);
+  const seasons = availableSeasons.length
+    ? availableSeasons
+    : [...new Set(definitions.map((entry) => entry.season))].sort((left, right) => right - left);
+  let availableMatches = [];
+  let hasUnsavedChanges = false;
+
+  const seasonSelect = element("select", {
+    className: "admin-input",
+    attributes: { "aria-label": "補正する年度" },
+  }, seasons.map((season) => createOption(String(season), `${season}年度`)));
+
+  const competitionSelect = element("select", {
+    className: "admin-input",
+    attributes: { "aria-label": "補正する大会" },
+  });
+
+  const editTarget = element("strong", {
+    className: "admin-edit-target",
+    text: "編集対象を選択してください。",
+  });
+
+  const saveTarget = element("p", {
+    className: "admin-save-target",
+  });
+
+  const competitionStatus = element("p", {
+    className: "admin-competition-status",
+  });
+
+  function selectedCompetition() {
+    return definitions.find((entry) => entry.id === competitionSelect.value) ?? null;
+  }
+
+  function competitionsForSeason() {
+    return definitions.filter((entry) => entry.season === Number(seasonSelect.value));
+  }
+
+  function updateCompetitionOptions(preferredId = null) {
+    const competitions = competitionsForSeason();
+    competitionSelect.replaceChildren(...competitions.map((competition) =>
+      createOption(competition.id, competition.name.replace(/^\d{4}年度\s*/, "")),
+    ));
+    if (preferredId && competitions.some((entry) => entry.id === preferredId)) {
+      competitionSelect.value = preferredId;
+    }
+  }
+
+  function updateMatchOptions() {
+    const competition = selectedCompetition();
+    availableMatches = [...matches]
+      .filter((match) => match.competitionId === competition?.id)
+      .sort(
     (left, right) =>
       new Date(right.kickoffAt).getTime()
       - new Date(left.kickoffAt).getTime(),
-  );
+      );
+
+    matchSelect.replaceChildren(
+      element("option", {
+        text: availableMatches.length
+          ? "試合を選択してください"
+          : "試合データはまだありません",
+        attributes: { value: "" },
+      }),
+      ...availableMatches.map((match) =>
+        element("option", {
+          text: createMatchOptionLabel(match),
+          attributes: { value: match.id },
+        }),
+      ),
+    );
+    matchSelect.disabled = availableMatches.length === 0;
+    competitionStatus.textContent = availableMatches.length
+      ? `${availableMatches.length}試合から選択できます。`
+      : "この大会の試合データはまだありません。";
+    editTarget.textContent = competition
+      ? `編集対象：${competition.season}年／${competition.name.replace(/^\d{4}年度\s*/, "")}`
+      : "編集対象を選択してください。";
+    saveTarget.textContent = competition
+      ? `保存対象：${competition.season}年 ${createCompetitionLabel(competition)} 手動補正データ`
+      : "保存対象を選択してください。";
+  }
 
   let existingOverrideItems = [];
   let overrideLoadStatus = "idle";
@@ -23,18 +103,9 @@ export function renderAdminPage({ matches }) {
     },
   });
 
-  matchSelect.append(
-    element("option", {
-      text: "試合を選択してください",
-      attributes: { value: "" },
-    }),
-    ...availableMatches.map((match) =>
-      element("option", {
-        text: createMatchOptionLabel(match),
-        attributes: { value: match.id },
-      }),
-    ),
-  );
+  seasonSelect.value = String(seasons[0] ?? "");
+  updateCompetitionOptions();
+  updateMatchOptions();
 
   const statusSelect = element("select", {
     className: "admin-input",
@@ -360,22 +431,39 @@ export function renderAdminPage({ matches }) {
       match.manualOverrideReason
       ?? "管理画面から手動補正";
 
-    destination.textContent =
-      createDestinationPath(match);
+    const competition = selectedCompetition();
+    destination.textContent = competition
+      ? `保存先：${competition.season}年 ${createCompetitionLabel(competition)} 手動補正データ（${createDestinationPath(competition)}）`
+      : "大会の保存先を確認できません。";
 
     downloadButton.disabled = true;
     overrideLoadStatus = "loading";
     existingStatus.textContent =
       "既存の補正データを確認しています…";
 
-    await loadExistingOverrides(match);
+    await loadExistingOverrides(match, competition);
 
     downloadButton.disabled = false;
     updatePreview();
   }
 
-  async function loadExistingOverrides(match) {
-    const path = createOverrideDataPath(match);
+  async function loadExistingOverrides(match, competition) {
+    const path = createOverrideDataPath(competition);
+
+    if (!path) {
+      existingOverrideItems = [];
+      overrideLoadStatus = "error";
+      existingStatus.textContent = "選択中の大会の保存先を確認できません。";
+      return;
+    }
+
+    if (!competition.manualOverrides) {
+      existingOverrideItems = [];
+      overrideLoadStatus = "ready";
+      existingStatus.textContent =
+        "既存の補正ファイルはありません。選択中の大会用として新しく作成します。";
+      return;
+    }
 
     try {
       const response = await fetch(dataUrl(path), {
@@ -1352,14 +1440,25 @@ export function renderAdminPage({ matches }) {
   };
 
   function createDraftStorageKey() {
-    if (!matchSelect.value) {
+    const competition = selectedCompetition();
+    if (!matchSelect.value || !competition) {
       return null;
     }
 
     return (
       "chugoku-football-admin-draft:"
+      + competition.season
+      + ":"
+      + competition.id
+      + ":"
       + matchSelect.value
     );
+  }
+
+  function createLegacyDraftStorageKey() {
+    return matchSelect.value
+      ? `chugoku-football-admin-draft:${matchSelect.value}`
+      : null;
   }
 
   function saveDraft() {
@@ -1381,6 +1480,8 @@ export function renderAdminPage({ matches }) {
 
     const draft = {
       matchId: matchSelect.value,
+      season: selectedCompetition()?.season,
+      competitionId: selectedCompetition()?.id,
       savedAt: new Date().toISOString(),
       resumed: resumedCheckbox.checked,
       values,
@@ -1408,8 +1509,8 @@ export function renderAdminPage({ matches }) {
       return false;
     }
 
-    const rawDraft =
-      localStorage.getItem(storageKey);
+    const rawDraft = localStorage.getItem(storageKey)
+      ?? localStorage.getItem(createLegacyDraftStorageKey());
 
     if (!rawDraft) {
       clearDraftButton.disabled = true;
@@ -1474,6 +1575,7 @@ export function renderAdminPage({ matches }) {
     }
 
     localStorage.removeItem(storageKey);
+    localStorage.removeItem(createLegacyDraftStorageKey());
 
     clearDraftButton.disabled = true;
 
@@ -1486,8 +1588,42 @@ export function renderAdminPage({ matches }) {
     async () => {
       await updateFormFromMatch();
       restoreDraft();
+      hasUnsavedChanges = false;
     },
   );
+
+  let activeSeason = seasonSelect.value;
+  let activeCompetition = competitionSelect.value;
+
+  function confirmCompetitionChange() {
+    return !hasUnsavedChanges || window.confirm(
+      "未保存の変更があります。大会を切り替えると入力内容が失われます。",
+    );
+  }
+
+  seasonSelect.addEventListener("change", () => {
+    if (!confirmCompetitionChange()) {
+      seasonSelect.value = activeSeason;
+      return;
+    }
+    activeSeason = seasonSelect.value;
+    updateCompetitionOptions();
+    activeCompetition = competitionSelect.value;
+    updateMatchOptions();
+    updateFormFromMatch();
+    hasUnsavedChanges = false;
+  });
+
+  competitionSelect.addEventListener("change", () => {
+    if (!confirmCompetitionChange()) {
+      competitionSelect.value = activeCompetition;
+      return;
+    }
+    activeCompetition = competitionSelect.value;
+    updateMatchOptions();
+    updateFormFromMatch();
+    hasUnsavedChanges = false;
+  });
 
   for (const control of [
     statusSelect,
@@ -1534,17 +1670,20 @@ export function renderAdminPage({ matches }) {
     awaySubstitutesInput,
   ]) {
     control.addEventListener("input", () => {
+      hasUnsavedChanges = true;
       updatePreview();
       saveDraft();
     });
 
     control.addEventListener("change", () => {
+      hasUnsavedChanges = true;
       updatePreview();
       saveDraft();
     });
   }
 
   resumedCheckbox.addEventListener("change", () => {
+    hasUnsavedChanges = true;
     resumedDateInput.disabled =
       !resumedCheckbox.checked;
 
@@ -1598,6 +1737,13 @@ export function renderAdminPage({ matches }) {
       buildCurrentOverrideItem();
 
     const match = selectedMatch();
+    const competition = selectedCompetition();
+
+    if (!competition || match?.competitionId !== competition.id) {
+      validationStatus.textContent = "選択中の大会と試合の保存先が一致しないため、出力を停止しました。";
+      validationStatus.style.color = "crimson";
+      return;
+    }
 
     const homeStarterCount =
       currentItem?.override?.lineups
@@ -1624,7 +1770,10 @@ export function renderAdminPage({ matches }) {
     const confirmationMessage = [
       "次の内容で補正JSONを作成します。",
       "",
+      `年度：${competition.season}`,
+      `大会：${createCompetitionLabel(competition)}`,
       `試合：${match?.homeTeam?.name ?? ""} vs ${match?.awayTeam?.name ?? ""}`,
+      `出力先：${competition.season}年 ${createCompetitionLabel(competition)}の手動補正`,
       `スコア：${homeScoreInput.value || "未入力"} - ${awayScoreInput.value || "未入力"}`,
       `先発人数：${homeStarterCount}人 / ${awayStarterCount}人`,
       `得点記録：${goalCount}件`,
@@ -1651,10 +1800,11 @@ export function renderAdminPage({ matches }) {
     const link = document.createElement("a");
 
     link.href = url;
-    link.download = "manual-match-overrides.json";
+    link.download = createOverrideDownloadName(competition);
     link.click();
 
     URL.revokeObjectURL(url);
+    hasUnsavedChanges = false;
   });
 
   const basicInformationGroup =
@@ -1864,6 +2014,17 @@ export function renderAdminPage({ matches }) {
     }, [
       createNotice(
         "試合を選ぶと既存の補正ファイルを読み込み、内容を統合したJSONを作成します。",
+      ),
+      createPanel(
+        "編集対象",
+        element("div", { className: "admin-save-status" }, [
+          createField("年度選択", seasonSelect),
+          createField("大会選択", competitionSelect),
+          editTarget,
+          saveTarget,
+          competitionStatus,
+        ]),
+        "年度・大会",
       ),
       createPanel(
         "基本情報",
@@ -3168,27 +3329,49 @@ function parseSubstitutions(value) {
     });
 }
 
-function createOverrideDataPath(match) {
-  const base = `seasons/${match.season}`;
-
-  if (
-    match.division === 2
-    && match.stageId === "regular"
-  ) {
-    return `${base}/div2/manual-match-overrides.json`;
-  }
-
-  if (match.stageId === "division-2-playoff") {
-    return `${base}/div2/playoff/manual-match-overrides.json`;
-  }
-
-  if (match.stageId === "promotion-relegation") {
-    return `${base}/promotion-relegation/manual-match-overrides.json`;
-  }
-
-  return `${base}/manual-match-overrides.json`;
+function createOverrideDataPath(competition) {
+  if (!competition) return null;
+  if (competition.manualOverrides) return competition.manualOverrides;
+  if (!competition.matches) return null;
+  return competition.matches.replace(/matches\.json$/, "manual-match-overrides.json");
 }
 
-function createDestinationPath(match) {
-  return `site/data/${createOverrideDataPath(match)}`;
+function createDestinationPath(competition) {
+  const path = createOverrideDataPath(competition);
+  return path ? `site/data/${path}` : "保存先未設定";
+}
+
+function createCompetitionLabel(competition) {
+  if (competition.stage === "regular" && competition.division != null) {
+    return `${competition.division}部`;
+  }
+  if (competition.stage === "promotion-playoff") return "プレーオフ";
+  if (competition.stage === "division-2-playoff") return "2部プレーオフ";
+  if (competition.stage === "promotion-relegation") return "入替戦";
+  return competition.stageName ?? competition.name;
+}
+
+function createOverrideDownloadName(competition) {
+  let suffix = competition.stage;
+  if (competition.stage === "regular") suffix = `division-${competition.division}`;
+  if (competition.stage === "promotion-playoff") suffix = "playoff";
+  return `${competition.season}-${suffix}-manual-match-overrides.json`;
+}
+
+function createCompetitionDefinitionsFromMatches(matches) {
+  const definitions = new Map();
+  for (const match of matches) {
+    if (!definitions.has(match.competitionId)) {
+      definitions.set(match.competitionId, {
+        id: match.competitionId,
+        season: match.season,
+        name: `${match.season}年度 ${match.leagueName} ${match.stageName}`,
+        division: match.division,
+        stage: match.stageId,
+        stageName: match.stageName,
+        matches: null,
+      });
+    }
+  }
+  return [...definitions.values()];
 }

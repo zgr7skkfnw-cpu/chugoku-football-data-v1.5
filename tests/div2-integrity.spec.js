@@ -68,11 +68,13 @@ test("2部チームページと島根県立大学の文字クレストを表示�
 
 test("公式由来の先発10人は管理画面で補正JSONを生成できる", async ({ page }) => {
   await page.goto(`${BASE_URL}?view=admin`);
+  await page.getByLabel("補正する大会").selectOption("jufa-chugoku-2026-division-2");
   await page.getByLabel("補正する試合").selectOption("football-system-15-559-25734");
   page.on("dialog", (dialog) => dialog.accept());
   const downloadPromise = page.waitForEvent("download");
   await page.getByRole("button", { name: "統合済み補正JSONをダウンロード" }).click();
   const download = await downloadPromise;
+  expect(download.suggestedFilename()).toBe("2026-division-2-manual-match-overrides.json");
   const output = JSON.parse(await readFile(await download.path(), "utf8"));
   expect(output.items).toHaveLength(1);
   expect(output.items[0].override.lineups.away.starters).toHaveLength(10);

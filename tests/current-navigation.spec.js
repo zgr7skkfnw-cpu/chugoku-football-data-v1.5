@@ -80,7 +80,7 @@ test("管理画面から既存補正を保持したJSONをダウンロードで�
   const downloadPromise = page.waitForEvent("download");
   await page.getByRole("button", { name: "統合済み補正JSONをダウンロード" }).click();
   const download = await downloadPromise;
-  expect(download.suggestedFilename()).toBe("manual-match-overrides.json");
+  expect(download.suggestedFilename()).toBe("2026-division-1-manual-match-overrides.json");
 
   const downloaded = JSON.parse(await readFile(await download.path(), "utf8"));
   expect(downloaded.schemaVersion).toBe(1);
@@ -90,6 +90,76 @@ test("管理画面から既存補正を保持したJSONをダウンロードで�
     "football-system-schedule-8e61b1e5d3d5",
   ]);
   await download.delete();
+});
+
+test("管理画面で年度・大会を分離しデータ未設定大会を安全に表示する", async ({ page }) => {
+  await page.goto(`${BASE_URL}?view=admin`);
+  const season = page.getByLabel("補正する年度");
+  const competition = page.getByLabel("補正する大会");
+  const matches = page.getByLabel("補正する試合");
+
+  await expect(season).toHaveValue("2026");
+  await expect(competition).toHaveValue("jufa-chugoku-2026-division-1");
+  await expect(matches.locator('option[value="football-system-schedule-8e61b1e5d3d5"]')).toHaveCount(1);
+  await expect(matches.locator('option[value="football-system-15-559-25734"]')).toHaveCount(0);
+
+  await competition.selectOption("jufa-chugoku-2026-division-2");
+  await expect(matches.locator('option[value="football-system-15-559-25734"]')).toHaveCount(1);
+  await expect(matches.locator('option[value="football-system-schedule-8e61b1e5d3d5"]')).toHaveCount(0);
+
+  await competition.selectOption("jufa-chugoku-2026-division-1-promotion-playoff");
+  await expect(page.getByText("この大会の試合データはまだありません。")).toBeVisible();
+  await expect(matches).toBeDisabled();
+
+  await competition.selectOption("jufa-chugoku-2026-promotion-relegation");
+  await expect(page.getByText("この大会の試合データはまだありません。")).toBeVisible();
+
+  await season.selectOption("2025");
+  await competition.selectOption("jufa-chugoku-2025-promotion-relegation");
+  await expect(matches).toBeEnabled();
+  await expect(matches.locator("option")).toHaveCount(3);
+});
+
+test("管理画面で未保存変更の大会切替を警告し2部用ファイル名で出力する", async ({ page }) => {
+  await page.goto(`${BASE_URL}?view=admin`);
+  const competition = page.getByLabel("補正する大会");
+  await competition.selectOption("jufa-chugoku-2026-division-2");
+  await page.getByLabel("補正する試合").selectOption("football-system-15-559-25734");
+  await page.getByLabel("補正理由").fill("大会分離テスト");
+
+  let warning = "";
+  page.once("dialog", async (dialog) => {
+    warning = dialog.message();
+    await dialog.dismiss();
+  });
+  await competition.selectOption("jufa-chugoku-2026-division-1");
+  expect(warning).toContain("未保存の変更があります");
+  await expect(competition).toHaveValue("jufa-chugoku-2026-division-2");
+
+  page.on("dialog", (dialog) => dialog.accept());
+  const downloadPromise = page.waitForEvent("download");
+  await page.getByRole("button", { name: "統合済み補正JSONをダウンロード" }).click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toBe("2026-division-2-manual-match-overrides.json");
+  const output = JSON.parse(await readFile(await download.path(), "utf8"));
+  expect(output.items).toHaveLength(1);
+  expect(output.items[0].matchId).toBe("football-system-15-559-25734");
+  await download.delete();
+});
+
+test("管理画面の手動補正では先発11人検証を維持する", async ({ page }) => {
+  await page.goto(`${BASE_URL}?view=admin`);
+  const matchSelect = page.getByLabel("補正する試合");
+  const finishedMatchId = "football-system-15-558-25650";
+  await matchSelect.selectOption(finishedMatchId);
+
+  await page.getByText("監督・選手", { exact: true }).click();
+  const starters = page.getByLabel("ホーム先発");
+  const lines = (await starters.inputValue()).split("\n").filter(Boolean);
+  expect(lines).toHaveLength(11);
+  await starters.fill(lines.slice(0, 10).join("\n"));
+  await page.getByRole("button", { name: "統合済み補正JSONをダウンロード" }).click();
+  await expect(page.locator(".admin-validation-status")).toContainText("ホームの先発は11人必要です");
 });
 
 test("手動補正済みの再開試合と詳細を表示する", async ({ page }) => {
