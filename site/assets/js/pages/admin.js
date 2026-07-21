@@ -662,6 +662,8 @@ export function renderAdminPage({ matches, competitionDefinitions = [], availabl
 
     return {
       matchId: match.id,
+      season: match.season,
+      competitionId: match.competitionId,
       reason:
         reasonInput.value.trim()
         || "管理画面から手動補正",
@@ -3348,6 +3350,7 @@ function createCompetitionLabel(competition) {
   if (competition.stage === "promotion-playoff") return "プレーオフ";
   if (competition.stage === "division-2-playoff") return "2部プレーオフ";
   if (competition.stage === "promotion-relegation") return "入替戦";
+  if (competition.stage === "i-league-regular") return `Iリーグ${competition.division}部`;
   return competition.stageName ?? competition.name;
 }
 
@@ -3355,6 +3358,7 @@ function createOverrideDownloadName(competition) {
   let suffix = competition.stage;
   if (competition.stage === "regular") suffix = `division-${competition.division}`;
   if (competition.stage === "promotion-playoff") suffix = "playoff";
+  if (competition.stage === "i-league-regular") suffix = `i-league-division-${competition.division}`;
   return `${competition.season}-${suffix}-manual-match-overrides.json`;
 }
 

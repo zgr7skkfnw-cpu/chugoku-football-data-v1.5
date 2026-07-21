@@ -23,6 +23,20 @@
     { "id": "hiroshima-international", "name": "広島国際大学", "shortName": "広国大", "aliases": [], "emblem": "/assets/images/teams/hiroshima-international/emblem.png", "profileStatus": "partial" },
     { "id": "hiroshima-institute-of-technology", "name": "広島工業大学", "shortName": "広工大", "aliases": [], "emblem": "/assets/images/teams/hiroshima-institute-of-technology/emblem.png", "profileStatus": "partial" },
     { "id": "tottori", "name": "鳥取大学", "shortName": "鳥取大", "aliases": [], "emblem": "/assets/images/teams/tottori/emblem.png", "profileStatus": "partial" },
-    { "id": "toa", "name": "東亜大学", "shortName": "東亜大", "aliases": [], "profileStatus": "pending" }
+    { "id": "toa", "name": "東亜大学", "shortName": "東亜大", "aliases": [], "profileStatus": "pending" },
+    { "id": "i-league-2026-ipu-a", "parentClubId": "ipu", "competitionId": "jufa-chugoku-2026-i-league-division-1", "officialPageId": 624, "name": "IPU・環太平洋大学A", "shortName": "IPU A", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-fukuyama-a", "parentClubId": "fukuyama", "competitionId": "jufa-chugoku-2026-i-league-division-1", "officialPageId": 621, "name": "福山大学A", "shortName": "福山大A", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-hue-a", "parentClubId": "hiroshima-keizai", "competitionId": "jufa-chugoku-2026-i-league-division-1", "officialPageId": 635, "name": "広島経済大学A", "shortName": "広経大A", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-hiroshima-a", "parentClubId": "hiroshima", "competitionId": "jufa-chugoku-2026-i-league-division-1", "officialPageId": 631, "name": "広島大学A", "shortName": "広島大A", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-shudo", "parentClubId": "hiroshima-shudo", "competitionId": "jufa-chugoku-2026-i-league-division-1", "officialPageId": 638, "name": "広島修道大学", "shortName": "広修大I", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-hbg", "parentClubId": "hiroshima-bunka-gakuen", "competitionId": "jufa-chugoku-2026-i-league-division-1", "officialPageId": 658, "name": "広島文化学園大学", "shortName": "文化大I", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-heisei", "parentClubId": "fukuyama-heisei", "competitionId": "jufa-chugoku-2026-i-league-division-1", "officialPageId": 640, "name": "福山平成大学", "shortName": "福平大I", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-ous", "parentClubId": "okayama-science", "competitionId": "jufa-chugoku-2026-i-league-division-1", "officialPageId": 810, "name": "岡山理科大学", "shortName": "岡理大I", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-ipu-b", "parentClubId": "ipu", "competitionId": "jufa-chugoku-2026-i-league-division-2", "officialPageId": 660, "name": "IPU・環太平洋大学B", "shortName": "IPU B", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-ipu-d", "parentClubId": "ipu", "competitionId": "jufa-chugoku-2026-i-league-division-2", "officialPageId": 627, "name": "IPU・環太平洋大学D", "shortName": "IPU D", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-hue-b", "parentClubId": "hiroshima-keizai", "competitionId": "jufa-chugoku-2026-i-league-division-2", "officialPageId": 636, "name": "広島経済大学B", "shortName": "広経大B", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-fukuyama-b", "parentClubId": "fukuyama", "competitionId": "jufa-chugoku-2026-i-league-division-2", "officialPageId": 622, "name": "福山大学B", "shortName": "福山大B", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-ipu-c", "parentClubId": "ipu", "competitionId": "jufa-chugoku-2026-i-league-division-2", "officialPageId": 626, "name": "IPU・環太平洋大学C", "shortName": "IPU C", "aliases": [], "profileStatus": "competition" },
+    { "id": "i-league-2026-hiroshima-b", "parentClubId": "hiroshima", "competitionId": "jufa-chugoku-2026-i-league-division-2", "officialPageId": 632, "name": "広島大学B", "shortName": "広島大B", "aliases": [], "profileStatus": "competition" }
   ]
 }

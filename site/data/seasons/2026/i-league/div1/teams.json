@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "season": 2026,
+  "competitionId": "jufa-chugoku-2026-i-league-division-1",
+  "items": [
+    { "id": "i-league-2026-ipu-a", "parentClubId": "ipu", "officialPageId": 624, "name": "IPU・環太平洋大学A" },
+    { "id": "i-league-2026-fukuyama-a", "parentClubId": "fukuyama", "officialPageId": 621, "name": "福山大学A" },
+    { "id": "i-league-2026-hue-a", "parentClubId": "hiroshima-keizai", "officialPageId": 635, "name": "広島経済大学A" },
+    { "id": "i-league-2026-hiroshima-a", "parentClubId": "hiroshima", "officialPageId": 631, "name": "広島大学A" },
+    { "id": "i-league-2026-shudo", "parentClubId": "hiroshima-shudo", "officialPageId": 638, "name": "広島修道大学" },
+    { "id": "i-league-2026-hbg", "parentClubId": "hiroshima-bunka-gakuen", "officialPageId": 658, "name": "広島文化学園大学" },
+    { "id": "i-league-2026-heisei", "parentClubId": "fukuyama-heisei", "officialPageId": 640, "name": "福山平成大学" },
+    { "id": "i-league-2026-ous", "parentClubId": "okayama-science", "officialPageId": 810, "name": "岡山理科大学" }
+  ]
+}

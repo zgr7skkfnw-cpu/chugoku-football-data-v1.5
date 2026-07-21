@@ -1,17 +1,31 @@
 export function createTeamDirectory(teams) {
   const byName = new Map();
+  const byCompetitionAndName = new Map();
   for (const team of teams) {
-    byName.set(team.name, team);
-    for (const alias of team.aliases ?? []) byName.set(alias, team);
+    if (team.competitionId) {
+      byCompetitionAndName.set(`${team.competitionId}\0${team.name}`, team);
+      for (const alias of team.aliases ?? []) {
+        byCompetitionAndName.set(`${team.competitionId}\0${alias}`, team);
+      }
+    } else {
+      byName.set(team.name, team);
+      for (const alias of team.aliases ?? []) byName.set(alias, team);
+    }
   }
   return {
     byId: new Map(teams.map((team) => [team.id, team])),
     byName,
+    byCompetitionAndName,
   };
 }
 
-export function getTeam(teamDirectory, reference) {
+export function getTeam(teamDirectory, reference, competitionId = null) {
   if (!reference) return null;
+  const name = typeof reference === "string" ? reference : reference.name;
+  const competitionTeam = competitionId && name
+    ? teamDirectory?.byCompetitionAndName?.get(`${competitionId}\0${name}`)
+    : null;
+  if (competitionTeam) return competitionTeam;
   if (typeof reference === "string") {
     return teamDirectory?.byId.get(reference) ?? teamDirectory?.byName.get(reference) ?? null;
   }
@@ -24,8 +38,8 @@ export function getTeam(teamDirectory, reference) {
 
 export function linkMatchesToTeams(matches, teamDirectory) {
   return matches.map((match) => {
-    const home = getTeam(teamDirectory, match.homeTeam);
-    const away = getTeam(teamDirectory, match.awayTeam);
+    const home = getTeam(teamDirectory, match.homeTeam, match.competitionId);
+    const away = getTeam(teamDirectory, match.awayTeam, match.competitionId);
     return {
       ...match,
       homeTeam: { ...match.homeTeam, teamId: home?.id ?? null },

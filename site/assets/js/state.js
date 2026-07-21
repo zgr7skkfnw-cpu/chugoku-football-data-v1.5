@@ -25,6 +25,7 @@ const state = {
   teamStats: null,
   leagueStats: null,
   leagueDivision: 1,
+  selectedCompetitionId: null,
   headToHead: null,
 };
 

@@ -23,13 +23,16 @@ export async function buildSeasonIndex() {
         name: competition.name,
         leagueName: competition.leagueName,
         division: competition.division,
+        competitionType: competition.competitionType ?? "league",
         stage: competition.stage,
         stageName: competition.stageName,
         matches: competition.matches ? dataRelativePath(resolve(seasonDirectory, competition.matches)) : null,
+        teams: competition.teams ? dataRelativePath(resolve(seasonDirectory, competition.teams)) : null,
         manualOverrides: competition.manualOverrides
           ? dataRelativePath(resolve(seasonDirectory, competition.manualOverrides))
           : null,
         teamStats: competition.teamStats ? dataRelativePath(resolve(seasonDirectory, competition.teamStats)) : null,
+        teamIds: competition.teamIds ?? [],
       })),
     });
   }

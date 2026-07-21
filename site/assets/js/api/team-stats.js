@@ -5,7 +5,7 @@ let leagueStatsPromise;
 export function loadLeagueStats() {
   leagueStatsPromise ??= loadSeasonIndex().then(async (index) => {
     const definitions = index.items.flatMap((season) => season.competitions
-      .filter((competition) => competition.stage === "regular" && competition.teamStats)
+      .filter((competition) => competition.teamStats)
       .map((competition) => ({ ...competition, season: season.season })));
     const entries = await Promise.all(definitions.map(async (competition) => {
       const response = await fetch(dataUrl(competition.teamStats), {
@@ -15,12 +15,16 @@ export function loadLeagueStats() {
       if (!response.ok) throw new Error(`${competition.name}のチーム分析データを取得できませんでした（HTTP ${response.status}）`);
       const data = await response.json();
       if (data.schemaVersion !== 1 || !data.periods) throw new Error(`${competition.name}のチーム分析データ形式が対応していません`);
-      return { season: competition.season, division: competition.division, data };
+      return { season: competition.season, division: competition.division, competition, data };
     }));
     const result = {};
     for (const entry of entries) {
       result[entry.season] ??= {};
-      result[entry.season][entry.division] = entry.data;
+      result[entry.season].byCompetition ??= {};
+      result[entry.season].byCompetition[entry.competition.id] = entry.data;
+      if (entry.competition.stage === "regular") {
+        result[entry.season][entry.division] = entry.data;
+      }
     }
     return result;
   });

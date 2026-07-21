@@ -105,6 +105,43 @@
       "matches": null,
       "teamStats": null,
       "teamIds": []
+    },
+    {
+      "id": "jufa-chugoku-2026-i-league-division-1",
+      "name": "Iリーグ 中国2026 1部",
+      "leagueName": "Iリーグ中国 1部",
+      "division": 1,
+      "competitionType": "i-league",
+      "stage": "i-league-regular",
+      "stageName": "Iリーグ1部",
+      "periodRules": { "first": { "fromRound": 1, "toRound": 7 }, "second": { "fromRound": 8, "toRound": 99 } },
+      "matches": "./i-league/div1/matches.json",
+      "teams": "./i-league/div1/teams.json",
+      "teamStats": "./i-league/div1/team-stats.json",
+      "teamIds": [
+        "i-league-2026-ipu-a", "i-league-2026-fukuyama-a",
+        "i-league-2026-hue-a", "i-league-2026-hiroshima-a",
+        "i-league-2026-shudo", "i-league-2026-hbg",
+        "i-league-2026-heisei", "i-league-2026-ous"
+      ]
+    },
+    {
+      "id": "jufa-chugoku-2026-i-league-division-2",
+      "name": "Iリーグ 中国2026 2部",
+      "leagueName": "Iリーグ中国 2部",
+      "division": 2,
+      "competitionType": "i-league",
+      "stage": "i-league-regular",
+      "stageName": "Iリーグ2部",
+      "periodRules": { "first": { "fromRound": 1, "toRound": 5 }, "second": { "fromRound": 6, "toRound": 99 } },
+      "matches": "./i-league/div2/matches.json",
+      "teams": "./i-league/div2/teams.json",
+      "teamStats": "./i-league/div2/team-stats.json",
+      "teamIds": [
+        "i-league-2026-ipu-b", "i-league-2026-ipu-d",
+        "i-league-2026-hue-b", "i-league-2026-fukuyama-b",
+        "i-league-2026-ipu-c", "i-league-2026-hiroshima-b"
+      ]
     }
   ]
 }

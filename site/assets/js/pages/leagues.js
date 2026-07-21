@@ -15,6 +15,20 @@ const LEAGUES = [
     shortName: "2部",
     description: "中国地区の大学サッカー2部リーグ",
   },
+  {
+    division: 1,
+    competitionId: "jufa-chugoku-2026-i-league-division-1",
+    name: "Iリーグ中国 1部",
+    shortName: "I 1部",
+    description: "Iリーグ中国2026 1部",
+  },
+  {
+    division: 2,
+    competitionId: "jufa-chugoku-2026-i-league-division-2",
+    name: "Iリーグ中国 2部",
+    shortName: "I 2部",
+    description: "Iリーグ中国2026 2部",
+  },
 ];
 
 export function renderLeaguesPage() {
@@ -35,7 +49,7 @@ export function renderLeaguesPage() {
       }),
       element("div", { className: "section-stack" }, [
         element("div", { className: "league-card-list" }, cards),
-        createNotice("現在は中国大学サッカーリーグ1部・2部を掲載しています。"),
+        createNotice("中国大学サッカーリーグとIリーグ中国を大会別に掲載しています。"),
       ]),
     ],
   );
@@ -70,7 +84,10 @@ function createLeagueCard(league) {
   );
 
   link.addEventListener("click", () => {
-    setState({ leagueDivision: league.division });
+    setState({
+      leagueDivision: league.division,
+      selectedCompetitionId: league.competitionId ?? null,
+    });
   });
 
   return link;

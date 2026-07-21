@@ -9,7 +9,7 @@ const OUTPUT_PATH = resolve(ROOT, "site/data/head-to-head.json");
 
 export async function buildHeadToHead() {
   const catalog = await readJson(TEAM_CATALOG_PATH);
-  const teamByName = createTeamNameIndex(catalog.items ?? []);
+  const teamIndexes = createTeamNameIndexes(catalog.items ?? []);
   const seasonDirectories = (await readdir(SEASONS_PATH, { withFileTypes: true }))
     .filter((entry) => entry.isDirectory() && /^\d{4}$/.test(entry.name))
     .sort((left, right) => Number(left.name) - Number(right.name));
@@ -39,8 +39,8 @@ export async function buildHeadToHead() {
       let accepted = 0;
       for (const match of matchData.items ?? []) {
         if (match.status !== "finished") continue;
-        const homeTeamId = teamByName.get(normalizeName(match.homeTeam?.name));
-        const awayTeamId = teamByName.get(normalizeName(match.awayTeam?.name));
+        const homeTeamId = resolveTeamId(teamIndexes, competition.id, match.homeTeam?.name);
+        const awayTeamId = resolveTeamId(teamIndexes, competition.id, match.awayTeam?.name);
         if (!homeTeamId || !awayTeamId || homeTeamId === awayTeamId) continue;
         games.push(createGame(match, manifest, competition, homeTeamId, awayTeamId));
         accepted += 1;
@@ -137,12 +137,24 @@ function addPerspective(byTeam, game, teamId, opponentTeamId, side, goalsFor, go
   });
 }
 
-function createTeamNameIndex(teams) {
-  const index = new Map();
+function createTeamNameIndexes(teams) {
+  const global = new Map();
+  const byCompetition = new Map();
   for (const team of teams) {
-    for (const name of [team.name, ...(team.aliases ?? [])]) index.set(normalizeName(name), team.id);
+    const index = team.competitionId ? byCompetition : global;
+    for (const name of [team.name, ...(team.aliases ?? [])]) {
+      const key = team.competitionId
+        ? `${team.competitionId}\0${normalizeName(name)}`
+        : normalizeName(name);
+      index.set(key, team.id);
+    }
   }
-  return index;
+  return { global, byCompetition };
+}
+
+function resolveTeamId(indexes, competitionId, name) {
+  return indexes.byCompetition.get(`${competitionId}\0${normalizeName(name)}`)
+    ?? indexes.global.get(normalizeName(name));
 }
 
 function normalizeName(value) {

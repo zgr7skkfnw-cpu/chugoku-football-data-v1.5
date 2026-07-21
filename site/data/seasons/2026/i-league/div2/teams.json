@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "season": 2026,
+  "competitionId": "jufa-chugoku-2026-i-league-division-2",
+  "items": [
+    { "id": "i-league-2026-ipu-b", "parentClubId": "ipu", "officialPageId": 660, "name": "IPU・環太平洋大学B" },
+    { "id": "i-league-2026-ipu-d", "parentClubId": "ipu", "officialPageId": 627, "name": "IPU・環太平洋大学D" },
+    { "id": "i-league-2026-hue-b", "parentClubId": "hiroshima-keizai", "officialPageId": 636, "name": "広島経済大学B" },
+    { "id": "i-league-2026-fukuyama-b", "parentClubId": "fukuyama", "officialPageId": 622, "name": "福山大学B" },
+    { "id": "i-league-2026-ipu-c", "parentClubId": "ipu", "officialPageId": 626, "name": "IPU・環太平洋大学C" },
+    { "id": "i-league-2026-hiroshima-b", "parentClubId": "hiroshima", "officialPageId": 632, "name": "広島大学B" }
+  ]
+}

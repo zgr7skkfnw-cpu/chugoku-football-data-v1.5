@@ -118,6 +118,30 @@ const TARGETS = {
     allowIncompleteLineups: true,
     buildStats: true,
   },
+  "2026-i-league-1": {
+    season: 2026,
+    division: 1,
+    competitionId: "jufa-chugoku-2026-i-league-division-1",
+    stage: "i-league-regular",
+    sourcePageUrl: "https://jufa-chugoku.jp/result/2026/tid_566/",
+    outputPath: "../../site/data/seasons/2026/i-league/div1/matches.json",
+    minimumScheduleCount: 28,
+    minimumDetailCount: 1,
+    allowIncompleteLineups: true,
+    buildStats: false,
+  },
+  "2026-i-league-2": {
+    season: 2026,
+    division: 2,
+    competitionId: "jufa-chugoku-2026-i-league-division-2",
+    stage: "i-league-regular",
+    sourcePageUrl: "https://jufa-chugoku.jp/result/2026/tid_567/",
+    outputPath: "../../site/data/seasons/2026/i-league/div2/matches.json",
+    minimumScheduleCount: 15,
+    minimumDetailCount: 1,
+    allowIncompleteLineups: true,
+    buildStats: false,
+  },
 };
 const targetKey = process.argv.find((argument) => argument.startsWith("--target="))?.split("=")[1] ?? "2026-1";
 const target = TARGETS[targetKey];
@@ -719,7 +743,9 @@ async function main() {
     }
 
     const fetchedItems = [...detailResult.matches, ...parsedList.scheduledMatches]
-      .map(({ sourceOrder, ...match }) => match)
+      .map(({ sourceOrder, ...match }) => target.stage === "i-league-regular"
+        ? ({ ...match, competitionId: target.competitionId })
+        : match)
       .sort((left, right) =>
         left.kickoffAt.localeCompare(right.kickoffAt) || (left.gameId ?? 0) - (right.gameId ?? 0),
       );

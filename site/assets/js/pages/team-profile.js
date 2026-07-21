@@ -40,7 +40,8 @@ export function renderTeamProfilePage({
     .sort((left, right) => (left.number ?? 999) - (right.number ?? 999));
   const staff = team.staff ?? [];
   const isFavorite = favoriteTeamId === team.id;
-  const activeTeamStats = Object.values(leagueStats?.[selectedSeason] ?? {})
+  const competitionStats = Object.values(leagueStats?.[selectedSeason]?.byCompetition ?? {});
+  const activeTeamStats = competitionStats
     .find((stats) => stats?.periods?.all?.teams?.some((entry) => entry.teamId === team.id)) ?? teamStats;
   const analytics = activeTeamStats?.periods?.[seasonPeriod]?.teams?.find((entry) => entry.teamId === team.id);
   const opponents = headToHead?.items?.find((entry) => entry.teamId === team.id)?.opponents ?? [];
@@ -86,6 +87,10 @@ export function renderTeamProfilePage({
           element("p", { className: "page-eyebrow", text: "Team Profile" }),
           element("h1", { className: "team-profile__name", text: team.name }),
           element("span", { className: "team-profile__short-name", text: team.shortName }),
+          team.parentClubId ? element("span", {
+            className: "team-profile__short-name",
+            text: `所属大学：${getTeam(teamDirectory, team.parentClubId)?.name ?? team.parentClubId}`,
+          }) : null,
         ]),
         favoriteButton,
       ]),
@@ -99,7 +104,9 @@ export function renderTeamProfilePage({
         createPanel("チームスタッツ", createTeamStatGrid(analytics?.stats), "シーズン分析"),
         createPanel("順位推移", createRankChart(analytics?.rankProgression, seasonPeriod), "各節終了時"),
         createPanel("Head to Head", createHeadToHead(opponents, teamDirectory, seasonPeriod), "対戦成績"),
-        createPanel("チーム内ランキング", createInternalRankings(periodPlayerStats, team), "TOP 5"),
+        team.competitionId
+          ? createNotice("Iリーグの選手名簿・選手ランキングはまだ登録されていません。公式試合記録の氏名は試合詳細に表示します。")
+          : createPanel("チーム内ランキング", createInternalRankings(periodPlayerStats, team), "TOP 5"),
         createPanel(
           "ユニフォーム",
           element("div", { className: "team-kits" }, [
@@ -120,8 +127,8 @@ export function renderTeamProfilePage({
         ),
         createPanel("スタッフ", createStaffList(staff), `${staff.length}名`),
         createPanel("SNS・Webサイト", createSocialLinks(team), "外部リンク"),
-        createPanel("登録選手", createRoster(roster, team), `${roster.length}選手`),
-        createNotice("スタッフ・登録選手は2026年度のチーム登録を表示しています。"),
+        team.competitionId ? null : createPanel("登録選手", createRoster(roster, team), `${roster.length}選手`),
+        team.competitionId ? null : createNotice("スタッフ・登録選手は2026年度のチーム登録を表示しています。"),
       ]),
     ],
   );

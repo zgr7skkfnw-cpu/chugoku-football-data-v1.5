@@ -7,15 +7,17 @@ const PLAYERS_PATH = resolve(ROOT, "site/data/players.json");
 const TEAM_CATALOG_PATH = resolve(ROOT, "site/data/team-catalog.json");
 const PERIODS = ["all", "first", "second"];
 
-export async function buildTeamStats({ season = 2026, division = 1 } = {}) {
+export async function buildTeamStats({ season = 2026, division = 1, competitionId = null } = {}) {
   const seasonPath = resolve(ROOT, `site/data/seasons/${season}/season.json`);
   const [seasonData, catalogData, playersData] = await Promise.all([
     readJson(seasonPath),
     readJson(TEAM_CATALOG_PATH),
     season === 2026 ? readJson(PLAYERS_PATH) : Promise.resolve({ items: [] }),
   ]);
-  const competition = seasonData.competitions.find((entry) => entry.division === division && entry.stage === "regular");
-  if (!competition?.matches || !competition?.teamStats) throw new Error(`${division}部の大会設定が見つかりません`);
+  const competition = competitionId
+    ? seasonData.competitions.find((entry) => entry.id === competitionId)
+    : seasonData.competitions.find((entry) => entry.division === division && entry.stage === "regular");
+  if (!competition?.matches || !competition?.teamStats) throw new Error(`${competitionId ?? `${division}部`}の大会設定が見つかりません`);
   const matchesPath = resolve(dirname(seasonPath), competition.matches);
   const outputPath = resolve(dirname(seasonPath), competition.teamStats);
   const matchesData = await readJson(matchesPath);
@@ -68,7 +70,7 @@ export async function buildTeamStats({ season = 2026, division = 1 } = {}) {
   };
   await writeJsonAtomic(outputPath, output);
   console.log(`チーム分析JSON保存: ${outputPath}`);
-  console.log(`対象: ${season}年度 ${division}部 / ${teams.length}チーム / ${finishedMatches.length}試合`);
+  console.log(`対象: ${season}年度 ${competition.name} / ${teams.length}チーム / ${finishedMatches.length}試合`);
   return output;
 }
 
@@ -208,5 +210,6 @@ async function writeJsonAtomic(path, data) { await mkdir(dirname(path), { recurs
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const division = Number(process.argv.find((argument) => argument.startsWith("--division="))?.split("=")[1] ?? 1);
   const season = Number(process.argv.find((argument) => argument.startsWith("--season="))?.split("=")[1] ?? 2026);
-  await buildTeamStats({ season, division });
+  const competitionId = process.argv.find((argument) => argument.startsWith("--competition="))?.split("=")[1] ?? null;
+  await buildTeamStats({ season, division, competitionId });
 }

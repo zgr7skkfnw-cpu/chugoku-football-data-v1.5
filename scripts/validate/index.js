@@ -17,7 +17,7 @@ const PLAYER_KEYS = [
   "previousTeam",
 ];
 
-const [teamsData, playersData, matchesData, teamStatsData, teamCatalogData, venueCatalogData, seasonData, division2MatchesData, division2TeamStatsData, headToHeadData, seasonIndexData, season2025Data, matches2025Division1, matches2025Division2, matches2025Playoff, matches2025Relegation, stats2025Division1, stats2025Division2] = await Promise.all([
+const [teamsData, playersData, matchesData, teamStatsData, teamCatalogData, venueCatalogData, seasonData, division2MatchesData, division2TeamStatsData, iLeague1MatchesData, iLeague2MatchesData, iLeague1StatsData, iLeague2StatsData, headToHeadData, seasonIndexData, season2025Data, matches2025Division1, matches2025Division2, matches2025Playoff, matches2025Relegation, stats2025Division1, stats2025Division2] = await Promise.all([
   readJson("site/data/teams.json"),
   readJson("site/data/players.json"),
   readJson("site/data/seasons/2026/matches.json"),
@@ -27,6 +27,10 @@ const [teamsData, playersData, matchesData, teamStatsData, teamCatalogData, venu
   readJson("site/data/seasons/2026/season.json"),
   readJson("site/data/seasons/2026/div2/matches.json"),
   readJson("site/data/seasons/2026/div2/team-stats.json"),
+  readJson("site/data/seasons/2026/i-league/div1/matches.json"),
+  readJson("site/data/seasons/2026/i-league/div2/matches.json"),
+  readJson("site/data/seasons/2026/i-league/div1/team-stats.json"),
+  readJson("site/data/seasons/2026/i-league/div2/team-stats.json"),
   readJson("site/data/head-to-head.json"),
   readJson("site/data/seasons/index.json"),
   readJson("site/data/seasons/2025/season.json"),
@@ -48,10 +52,18 @@ const playerDirectory = createPlayerDirectory(players);
 const matches = linkMatchesToTeams(matchesData.items ?? [], teamDirectory);
 const catalogIds = new Set(teamCatalog.map((team) => team.id));
 const catalogNames = new Map();
+const competitionTeamNames = new Map();
 const division2TeamIds = new Set(seasonData.competitions.find((competition) => competition.division === 2 && competition.stage === "regular")?.teamIds ?? []);
 const expectedDivision2Emblems = new Set([...division2TeamIds].filter((teamId) => teamId !== "university-of-shimane"));
 
 for (const team of teamCatalog) {
+  if (team.competitionId) {
+    const key = `${team.competitionId}\0${team.name}`;
+    if (competitionTeamNames.has(key)) errors.push(`${key}: duplicate competition team name`);
+    competitionTeamNames.set(key, team.id);
+    if (!catalogIds.has(team.parentClubId)) errors.push(`${team.id}: unknown parentClubId ${team.parentClubId}`);
+    continue;
+  }
   for (const name of [team.name, ...(team.aliases ?? [])]) {
     if (catalogNames.has(name) && catalogNames.get(name) !== team.id) {
       errors.push(`${name}: duplicate team catalog name`);
@@ -157,6 +169,34 @@ for (const match of division2MatchesData.items ?? []) {
 
 if (division2MatchesData.seasonId !== "jufa-chugoku-2026-division-2") {
   errors.push("division 2 matches seasonId mismatch");
+}
+
+const iLeagueChecks = [
+  ["jufa-chugoku-2026-i-league-division-1", iLeague1MatchesData, iLeague1StatsData, 28, 8],
+  ["jufa-chugoku-2026-i-league-division-2", iLeague2MatchesData, iLeague2StatsData, 15, 6],
+];
+const allMatchIds = new Set([...matchesData.items, ...division2MatchesData.items].map((match) => match.id));
+for (const [competitionId, matchData, statsData, expectedMatches, expectedTeams] of iLeagueChecks) {
+  if (matchData.seasonId !== competitionId || matchData.items?.length !== expectedMatches) {
+    errors.push(`${competitionId}: expected ${expectedMatches} matches`);
+  }
+  const competition = seasonData.competitions.find((entry) => entry.id === competitionId);
+  const teamIds = new Set(competition?.teamIds ?? []);
+  if (teamIds.size !== expectedTeams) errors.push(`${competitionId}: expected ${expectedTeams} unique teamIds`);
+  const linked = linkMatchesToTeams(matchData.items ?? [], teamDirectory);
+  for (const match of linked) {
+    if (allMatchIds.has(match.id)) errors.push(`${match.id}: match id collides across competitions`);
+    allMatchIds.add(match.id);
+    if (!teamIds.has(match.homeTeam.teamId) || !teamIds.has(match.awayTeam.teamId)) {
+      errors.push(`${match.id}: I-league team does not resolve inside ${competitionId}`);
+    }
+  }
+  if (statsData.competitionId !== competitionId || statsData.periods?.all?.standings?.length !== expectedTeams) {
+    errors.push(`${competitionId}: team-stats mismatch`);
+  }
+  const finishedCount = (matchData.items ?? []).filter((match) => match.status === "finished").length;
+  const statsPlayed = (statsData.periods?.all?.standings ?? []).reduce((sum, row) => sum + row.played, 0) / 2;
+  if (statsPlayed !== finishedCount) errors.push(`${competitionId}: team-stats match count mismatch`);
 }
 
 if (teamStatsData.schemaVersion !== 1) errors.push("team-stats.json schemaVersion must be 1");
@@ -296,6 +336,8 @@ if (errors.length) {
   console.log(`Team catalog: ${teamCatalog.length}`);
   console.log(`Venue catalog: ${(venueCatalogData.items ?? []).length}`);
   console.log(`Division 2 matches: ${(division2MatchesData.items ?? []).length}`);
+  console.log(`I-League division 1 matches: ${(iLeague1MatchesData.items ?? []).length}`);
+  console.log(`I-League division 2 matches: ${(iLeague2MatchesData.items ?? []).length}`);
   console.log(`Division 2 emblems: ${expectedDivision2Emblems.size}/${division2TeamIds.size}`);
   console.log(`Historical matches (2025): ${historicalCounts.reduce((sum, [, data]) => sum + data.items.length, 0)}`);
   console.log(`Bench registrations: ${calculatedBenchRegistrations}`);

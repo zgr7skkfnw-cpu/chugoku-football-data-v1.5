@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-21T04:11:04.150Z",
+  "generatedAt": "2026-07-21T05:42:41.929Z",
   "sourceSeasons": [
     2024,
     2025,
@@ -78,9 +78,25 @@
       "stageId": "regular",
       "stageName": "リーグ戦",
       "matchCount": 55
+    },
+    {
+      "season": 2026,
+      "competitionId": "jufa-chugoku-2026-i-league-division-1",
+      "leagueName": "Iリーグ中国 1部",
+      "stageId": "i-league-regular",
+      "stageName": "Iリーグ1部",
+      "matchCount": 16
+    },
+    {
+      "season": 2026,
+      "competitionId": "jufa-chugoku-2026-i-league-division-2",
+      "leagueName": "Iリーグ中国 2部",
+      "stageId": "i-league-regular",
+      "stageName": "Iリーグ2部",
+      "matchCount": 9
     }
   ],
-  "matchCount": 467,
+  "matchCount": 492,
   "items": [
     {
       "teamId": "ipu",
@@ -17192,6 +17208,1376 @@
     {
       "teamId": "toa",
       "opponents": []
+    },
+    {
+      "teamId": "i-league-2026-ipu-a",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-hbg",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 10,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26205",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-30T13:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 10,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-heisei",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 11,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26201",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-23T13:00:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 11,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ous",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 5,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26197",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-16T13:00:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 5,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-shudo",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 3,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26209",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-06-06T13:00:00+09:00",
+              "round": 4,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 0,
+              "goalsAgainst": 3,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-fukuyama-a",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-heisei",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 7,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26198",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-16T11:00:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 7,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hue-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26208",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-30T13:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ous",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 3,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26212",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-06-06T13:00:00+09:00",
+              "round": 4,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 3,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-shudo",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 4,
+          "goalsAgainst": 3,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26203",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-23T13:00:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 4,
+              "goalsAgainst": 3,
+              "result": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-hue-a",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-fukuyama-a",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26208",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-30T13:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 2,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hbg",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 4,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26199",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-16T12:30:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 4,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-heisei",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 6,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26211",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-06-06T13:00:00+09:00",
+              "round": 4,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 6,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hiroshima-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26204",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-23T14:00:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-hiroshima-a",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-hbg",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26210",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-06-06T17:00:00+09:00",
+              "round": 4,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hue-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26204",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-23T14:00:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ous",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26207",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-30T17:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 2,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-shudo",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26200",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-16T17:30:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-shudo",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-fukuyama-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 3,
+          "goalsAgainst": 4,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26203",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-23T13:00:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 3,
+              "goalsAgainst": 4,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-heisei",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 5,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26206",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-30T13:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 5,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hiroshima-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26200",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-16T17:30:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-a",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 3,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26209",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-06-06T13:00:00+09:00",
+              "round": 4,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 3,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-hbg",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-hiroshima-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26210",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-06-06T17:00:00+09:00",
+              "round": 4,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hue-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 4,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26199",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-16T12:30:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 0,
+              "goalsAgainst": 4,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 10,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26205",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-30T13:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 10,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ous",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 3,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26202",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-23T12:30:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 3,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-heisei",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-fukuyama-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 7,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26198",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-16T11:00:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 0,
+              "goalsAgainst": 7,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hue-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 6,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26211",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-06-06T13:00:00+09:00",
+              "round": 4,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 0,
+              "goalsAgainst": 6,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 11,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26201",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-23T13:00:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 11,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-shudo",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 5,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26206",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-30T13:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 5,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-ous",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-fukuyama-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 3,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26212",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-06-06T13:00:00+09:00",
+              "round": 4,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 3,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hbg",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 3,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26202",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-23T12:30:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 3,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hiroshima-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26207",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-30T17:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 5,
+          "matches": [
+            {
+              "matchId": "football-system-17-566-26197",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-1",
+              "leagueName": "Iリーグ中国 1部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ1部",
+              "kickoffAt": "2026-05-16T13:00:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 0,
+              "goalsAgainst": 5,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-ipu-b",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-fukuyama-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26231",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-06-06T15:30:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 2,
+              "goalsAgainst": 2,
+              "result": "D"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hiroshima-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26225",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-16T13:00:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-c",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 12,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26228",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-30T15:30:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 12,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-ipu-d",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-hiroshima-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 2,
+          "goalsAgainst": 3,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26233",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-06-06T14:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 2,
+              "goalsAgainst": 3,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hue-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 3,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26230",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-30T15:30:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 3,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-c",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 6,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26226",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-16T15:30:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 6,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-hue-b",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-fukuyama-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 3,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26227",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-16T13:30:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 0,
+              "goalsAgainst": 3,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-c",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 4,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26232",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-06-06T13:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 4,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-d",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 3,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26230",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-30T15:30:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 3,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-fukuyama-b",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-hiroshima-b",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 6,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26229",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-30T13:00:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 6,
+              "goalsAgainst": 2,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-hue-b",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 3,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26227",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-16T13:30:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 3,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26231",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-06-06T15:30:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 2,
+              "goalsAgainst": 2,
+              "result": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-ipu-c",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-hue-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 4,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26232",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-06-06T13:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 4,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 12,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26228",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-30T15:30:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 12,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-d",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 6,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26226",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-16T15:30:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 0,
+              "goalsAgainst": 6,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2026-hiroshima-b",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2026-fukuyama-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 2,
+          "goalsAgainst": 6,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26229",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-30T13:00:00+09:00",
+              "round": 2,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 2,
+              "goalsAgainst": 6,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-b",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26225",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-05-16T13:00:00+09:00",
+              "round": 1,
+              "period": "first",
+              "side": "away",
+              "goalsFor": 2,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2026-ipu-d",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 3,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-567-26233",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-i-league-division-2",
+              "leagueName": "Iリーグ中国 2部",
+              "stageId": "i-league-regular",
+              "stageName": "Iリーグ2部",
+              "kickoffAt": "2026-06-06T14:00:00+09:00",
+              "round": 3,
+              "period": "first",
+              "side": "home",
+              "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

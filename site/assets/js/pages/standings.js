@@ -42,16 +42,25 @@ export function renderStandingsPage({
   seasonPeriod,
   selectedSeason,
   availableSeasons,
+  competitionDefinitions = [],
+  selectedCompetitionId = null,
 }) {
-  const activeStats = leagueStats?.[selectedSeason]?.[leagueDivision];
+  const seasonCompetitions = competitionDefinitions.filter((entry) =>
+    entry.season === selectedSeason && entry.teamStats,
+  );
+  const activeCompetition = seasonCompetitions.find((entry) => entry.id === selectedCompetitionId)
+    ?? seasonCompetitions.find((entry) => entry.stage === "regular" && entry.division === leagueDivision)
+    ?? seasonCompetitions[0];
+  const competitionId = activeCompetition?.id;
+  const activeStats = leagueStats?.[selectedSeason]?.byCompetition?.[competitionId]
+    ?? leagueStats?.[selectedSeason]?.[leagueDivision];
   const metadata = competitionMetadata?.[selectedSeason]?.[leagueDivision];
   const periodData = activeStats?.periods?.[seasonPeriod];
   const periodRules = activeStats?.periodRules?.[seasonPeriod];
 
   const reflectedMatches = matches.filter((match) =>
     match.season === selectedSeason
-    && match.division === leagueDivision
-    && match.stageId === "regular"
+    && match.competitionId === competitionId
     && match.status === "finished"
     && (
       seasonPeriod === "all"
@@ -87,7 +96,7 @@ export function renderStandingsPage({
 
     standingsContent.replaceChildren(
       createPanel(
-        `${metadata?.competitionName ?? `中国大学サッカーリーグ${leagueDivision}部`} ${label}`,
+        `${activeCompetition?.name ?? metadata?.competitionName ?? `中国大学サッカーリーグ${leagueDivision}部`} ${label}`,
         element(
           "div",
           { className: "table-scroll" },
@@ -127,6 +136,16 @@ export function renderStandingsPage({
     modeTabs,
     element("div", { className: "section-stack" }, [
       standingsContent,
+      createPanel(
+        "参加チーム",
+        element("div", { className: "detail-list" }, (activeCompetition?.teamIds ?? []).map((teamId) => {
+          const team = getTeam(teamDirectory, teamId);
+          return element("div", { className: "detail-row" }, [
+            createTeamNameLink(team, team?.name ?? teamId),
+          ]);
+        })),
+        `${activeCompetition?.teamIds?.length ?? 0}チーム`,
+      ),
       createNotice(
         `順位決定順: 勝点、得失点差、総得点。変動は直近2節の順位比較です。${formatUpdatedAt(metadata?.updatedAt)}`,
       ),
@@ -135,8 +154,7 @@ export function renderStandingsPage({
 
   const leagueMatches = matches.filter((match) =>
     match.season === selectedSeason
-    && match.division === leagueDivision
-    && match.stageId === "regular"
+    && match.competitionId === competitionId
   );
 
   const matchStatuses = new Set(["finished", "scheduled"]);
@@ -210,7 +228,7 @@ export function renderStandingsPage({
     ]),
     element("div", { className: "section-stack" }, [
       createPanel(
-        `${selectedSeason}年度 中国大学サッカーリーグ${leagueDivision}部`,
+        activeCompetition?.name ?? `${selectedSeason}年度 中国大学サッカーリーグ${leagueDivision}部`,
         matchList,
         matchCount,
       ),
@@ -278,23 +296,28 @@ export function renderStandingsPage({
   renderLeagueTab();
 
   const leagueName =
-    metadata?.competitionName
+    activeCompetition?.name
+    ?? metadata?.competitionName
     ?? `中国大学サッカーリーグ${leagueDivision}部`;
 
   const divisionTabs = element("div", {
     className: "league-division-tabs",
     attributes: { role: "tablist", "aria-label": "リーグ区分" },
-  }, [1, 2].map((division) => {
+  }, seasonCompetitions.map((competition) => {
+    const selected = competition.id === competitionId;
     const button = element("button", {
-      className: `league-division-tab${division === leagueDivision ? " is-active" : ""}`,
-      text: `${division}部`,
+      className: `league-division-tab${selected ? " is-active" : ""}`,
+      text: competition.competitionType === "i-league" ? `I ${competition.division}部` : `${competition.division}部`,
       attributes: {
         type: "button",
         role: "tab",
-        "aria-selected": String(division === leagueDivision),
+        "aria-selected": String(selected),
       },
     });
-    button.addEventListener("click", () => setState({ leagueDivision: division }));
+    button.addEventListener("click", () => setState({
+      leagueDivision: competition.division,
+      selectedCompetitionId: competition.id,
+    }));
     return button;
   }));
 
