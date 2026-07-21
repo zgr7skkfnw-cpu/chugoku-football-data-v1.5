@@ -71,7 +71,7 @@ export function renderPlayerProfilePage({
         ]),
       ]),
       element("div", { className: "section-stack" }, [
-        createPanel("基本情報", createBasicInformation(player, team), "選手登録"),
+        createPanel("基本情報", createBasicInformation(player, team, teamDirectory), "選手登録"),
         createSeasonStatistics(stats),
         createPanel(
           "試合別成績",
@@ -84,7 +84,7 @@ export function renderPlayerProfilePage({
   );
 }
 
-function createBasicInformation(player, team) {
+function createBasicInformation(player, team, teamDirectory) {
   const rows = [
     ["氏名", player.name],
     ["読み方", player.englishName || "未掲載"],
@@ -97,6 +97,7 @@ function createBasicInformation(player, team) {
     ["出身地", player.hometown || "未掲載"],
     ["出身高校・前所属", player.previousTeam || "未掲載"],
     ["所属大学", team?.name ?? "未掲載"],
+    ...(player.competitionId ? [["大会登録", player.competitionId], ["親クラブ", teamDirectory?.byId.get(player.parentClubId)?.name ?? player.parentClubId ?? "未掲載"]] : []),
   ];
   return element(
     "div",

@@ -2,7 +2,8 @@ import { createNotice, createPageHeader, createPanel, element } from "../ui/elem
 import { getTeam } from "../utils/teams.js";
 import { createPlayerLinkRow } from "./shared.js";
 
-export function renderPlayersPage({ players, teams, teamDirectory }) {
+export function renderPlayersPage({ players, teams, leagueTeams = teams, teamDirectory }) {
+  let registrationFilter = "regular";
   const list = element("div", {
     className: "player-list",
     attributes: { "data-player-count": String(players.length) },
@@ -18,7 +19,7 @@ export function renderPlayersPage({ players, teams, teamDirectory }) {
   });
   const teamFilter = createSelect("チーム", [
     ["", "すべてのチーム"],
-    ...teams.map((team) => [team.id, team.name]),
+    ...leagueTeams.filter((team) => players.some((player) => player.teamId === team.id)).map((team) => [team.id, team.name]),
   ]);
   const positionFilter = createSelect("ポジション", [
     ["", "全ポジション"],
@@ -27,6 +28,11 @@ export function renderPlayersPage({ players, teams, teamDirectory }) {
   const gradeFilter = createSelect("推定学年", [
     ["", "全学年"],
     ...[1, 2, 3, 4].map((grade) => [String(grade), `${grade}年（推定）`]),
+  ]);
+  const competitionFilter = createSelect("選手登録大会", [
+    ["regular", "中国大学リーグ登録"],
+    ["jufa-chugoku-2026-i-league-division-1", "Iリーグ中国 1部登録"],
+    ["jufa-chugoku-2026-i-league-division-2", "Iリーグ中国 2部登録"],
   ]);
 
   function updateList() {
@@ -38,6 +44,7 @@ export function renderPlayersPage({ players, teams, teamDirectory }) {
         .toLocaleLowerCase("ja")
         .replace(/[\s　]+/g, "");
       return (
+        (registrationFilter === "regular" ? !player.competitionId : player.competitionId === registrationFilter) &&
         (!query || searchable.includes(query)) &&
         (!teamFilter.value || player.teamId === teamFilter.value) &&
         (!positionFilter.value || player.position === positionFilter.value) &&
@@ -58,6 +65,7 @@ export function renderPlayersPage({ players, teams, teamDirectory }) {
   for (const control of [search, teamFilter, positionFilter, gradeFilter]) {
     control.addEventListener(control === search ? "input" : "change", updateList);
   }
+  competitionFilter.addEventListener("change", () => { registrationFilter = competitionFilter.value; updateList(); });
   updateList();
 
   return element("article", { className: "page", attributes: { "data-page": "players" } }, [
@@ -69,7 +77,7 @@ export function renderPlayersPage({ players, teams, teamDirectory }) {
     element("div", { className: "section-stack" }, [
       element("section", { className: "player-filters" }, [
         search,
-        element("div", { className: "filter-grid" }, [teamFilter, positionFilter, gradeFilter]),
+        element("div", { className: "filter-grid" }, [competitionFilter, teamFilter, positionFilter, gradeFilter]),
       ]),
       createPanel("登録選手", list, resultMeta),
       createNotice("学年のみ生年月日から標準進学時の学年を推定しています。"),

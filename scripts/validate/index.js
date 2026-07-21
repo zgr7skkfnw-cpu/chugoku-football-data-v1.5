@@ -17,9 +17,10 @@ const PLAYER_KEYS = [
   "previousTeam",
 ];
 
-const [teamsData, playersData, matchesData, teamStatsData, teamCatalogData, venueCatalogData, seasonData, division2MatchesData, division2TeamStatsData, iLeague1MatchesData, iLeague2MatchesData, iLeague1StatsData, iLeague2StatsData, headToHeadData, seasonIndexData, season2025Data, matches2025Division1, matches2025Division2, matches2025Playoff, matches2025Relegation, stats2025Division1, stats2025Division2] = await Promise.all([
+const [teamsData, playersData, iLeaguePlayersData, matchesData, teamStatsData, teamCatalogData, venueCatalogData, seasonData, division2MatchesData, division2TeamStatsData, iLeague1MatchesData, iLeague2MatchesData, iLeague1StatsData, iLeague2StatsData, headToHeadData, seasonIndexData, season2025Data, matches2025Division1, matches2025Division2, matches2025Playoff, matches2025Relegation, stats2025Division1, stats2025Division2] = await Promise.all([
   readJson("site/data/teams.json"),
   readJson("site/data/players.json"),
+  readJson("site/data/seasons/2026/i-league/players.json"),
   readJson("site/data/seasons/2026/matches.json"),
   readJson("site/data/seasons/2026/team-stats.json"),
   readJson("site/data/team-catalog.json"),
@@ -45,6 +46,7 @@ const [teamsData, playersData, matchesData, teamStatsData, teamCatalogData, venu
 const errors = [];
 const teams = teamsData.items ?? [];
 const players = playersData.items ?? [];
+const iLeaguePlayers = iLeaguePlayersData.items ?? [];
 const teamCatalog = teamCatalogData.items ?? [];
 const profilesById = new Map(teams.map((team) => [team.id, team]));
 const teamDirectory = createTeamDirectory(teamCatalog.map((team) => ({ ...team, ...(profilesById.get(team.id) ?? {}) })));
@@ -238,8 +240,35 @@ for (const period of ["all", "first", "second"]) {
 if (playersData.schemaVersion !== 3) {
   errors.push(`players.json schemaVersion: expected 3, got ${playersData.schemaVersion}`);
 }
+if (players.length !== 829) errors.push(`players.json must retain 829 regular-league players, got ${players.length}`);
+const playerIds = new Set(players.map((player) => player.id));
 
-const playerIds = new Set();
+if (iLeaguePlayersData.schemaVersion !== 1 || iLeaguePlayers.length < 140) {
+  errors.push(`I-League players must use schemaVersion 1 and contain at least 140 registrations`);
+}
+const iLeagueRosterTeamIds = new Set();
+const iLeaguePlayerIds = new Set();
+const iLeagueRosterNames = new Set();
+for (const player of iLeaguePlayers) {
+  const team = teamDirectory.byId.get(player.teamId);
+  if (!team?.competitionId || team.competitionId !== player.competitionId) {
+    errors.push(`${player.id}: I-League competition/team mismatch`);
+  }
+  if (team?.parentClubId !== player.parentClubId) errors.push(`${player.id}: parentClubId mismatch`);
+  if (playerIds.has(player.id) || iLeaguePlayerIds.has(player.id)) errors.push(`${player.id}: player id collision`);
+  iLeaguePlayerIds.add(player.id);
+  iLeagueRosterTeamIds.add(player.teamId);
+  const rosterKey = `${player.teamId}\0${player.normalizedName}`;
+  if (iLeagueRosterNames.has(rosterKey)) errors.push(`${player.id}: duplicate normalized name inside I-League team`);
+  iLeagueRosterNames.add(rosterKey);
+  if (player.personId !== null) errors.push(`${player.id}: personId must remain unresolved`);
+}
+const expectedILeagueTeamIds = new Set(iLeagueChecks.flatMap(([competitionId]) => seasonData.competitions.find((entry) => entry.id === competitionId)?.teamIds ?? []));
+if (iLeagueRosterTeamIds.size !== 14 || [...expectedILeagueTeamIds].some((teamId) => !iLeagueRosterTeamIds.has(teamId))) {
+  errors.push("I-League roster must contain all 14 competition teams");
+}
+
+playerIds.clear();
 for (const player of players) {
   const actualKeys = Object.keys(player);
   if (actualKeys.join("|") !== PLAYER_KEYS.join("|")) {
@@ -331,6 +360,7 @@ if (errors.length) {
   console.log("Data validation passed");
   console.log(`Teams: ${teams.length}`);
   console.log(`Players: ${players.length}`);
+  console.log(`I-League registrations: ${iLeaguePlayers.length}`);
   console.log(`Inferred grades: ${inferredGrades}`);
   console.log(`Matches: ${matches.length}`);
   console.log(`Team catalog: ${teamCatalog.length}`);

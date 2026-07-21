@@ -2,7 +2,8 @@ export function normalizePlayerName(value) {
   return String(value ?? "")
     .normalize("NFKC")
     .replace(/\s*\[Cap\]\s*$/i, "")
-    .replace(/[\s　]+/g, "");
+    .replace(/[\s　]+/g, "")
+    .replaceAll("遙", "遥");
 }
 
 export function createPlayerDirectory(players) {

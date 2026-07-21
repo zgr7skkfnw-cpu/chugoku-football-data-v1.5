@@ -1,0 +1,1200 @@
+{
+  "checkedAt": "2026-07-21T06:19:27.399Z",
+  "source": "JUFA中国 2026年度Iリーグチーム登録",
+  "checkedLineupEntries": 995,
+  "missing": [],
+  "missingOccurrences": [],
+  "numberMismatches": [
+    {
+      "matchId": "football-system-17-566-26198",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "古川 竣也",
+      "matchNumber": 61,
+      "rosterNumber": 31
+    },
+    {
+      "matchId": "football-system-17-566-26203",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "古川 竣也",
+      "matchNumber": 61,
+      "rosterNumber": 31
+    },
+    {
+      "matchId": "football-system-17-566-26208",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "古川 竣也",
+      "matchNumber": 61,
+      "rosterNumber": 31
+    }
+  ],
+  "positionMismatches": [
+    {
+      "matchId": "football-system-17-566-26199",
+      "teamId": "i-league-2026-hbg",
+      "name": "岡本 大和",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-17-566-26206",
+      "teamId": "i-league-2026-heisei",
+      "name": "寺岡 隆希",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-17-566-26206",
+      "teamId": "i-league-2026-heisei",
+      "name": "吉原 風真",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-17-566-26206",
+      "teamId": "i-league-2026-heisei",
+      "name": "沼村 頼輝",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-17-566-26211",
+      "teamId": "i-league-2026-heisei",
+      "name": "田村 蒼",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-17-566-26211",
+      "teamId": "i-league-2026-heisei",
+      "name": "沼村 頼輝",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    }
+  ],
+  "normalizedNameMatches": [
+    {
+      "matchId": "football-system-17-566-26198",
+      "teamId": "i-league-2026-heisei",
+      "matchName": "水津 陽音 [Cap]",
+      "rosterName": "水津 陽音"
+    },
+    {
+      "matchId": "football-system-17-566-26198",
+      "teamId": "i-league-2026-fukuyama-a",
+      "matchName": "吉永 陸翔 [Cap]",
+      "rosterName": "吉永 陸翔"
+    },
+    {
+      "matchId": "football-system-17-566-26199",
+      "teamId": "i-league-2026-hbg",
+      "matchName": "中村 颯冴 [Cap]",
+      "rosterName": "中村 颯冴"
+    },
+    {
+      "matchId": "football-system-17-566-26199",
+      "teamId": "i-league-2026-hue-a",
+      "matchName": "若松 快英 [Cap]",
+      "rosterName": "若松 快英"
+    },
+    {
+      "matchId": "football-system-17-566-26197",
+      "teamId": "i-league-2026-ous",
+      "matchName": "薄井 佑太郎 [Cap]",
+      "rosterName": "薄井 佑太郎"
+    },
+    {
+      "matchId": "football-system-17-566-26197",
+      "teamId": "i-league-2026-ipu-a",
+      "matchName": "長倉 晴南 [Cap]",
+      "rosterName": "長倉 晴南"
+    },
+    {
+      "matchId": "football-system-17-566-26200",
+      "teamId": "i-league-2026-shudo",
+      "matchName": "川原 颯斗 [Cap]",
+      "rosterName": "川原 颯斗"
+    },
+    {
+      "matchId": "football-system-17-566-26200",
+      "teamId": "i-league-2026-shudo",
+      "matchName": "伊津 遥人",
+      "rosterName": "伊津 遙人"
+    },
+    {
+      "matchId": "football-system-17-566-26200",
+      "teamId": "i-league-2026-hiroshima-a",
+      "matchName": "橋本 拓磨 [Cap]",
+      "rosterName": "橋本 拓磨"
+    },
+    {
+      "matchId": "football-system-17-566-26202",
+      "teamId": "i-league-2026-hbg",
+      "matchName": "稲住 楽輝斗 [Cap]",
+      "rosterName": "稲住 楽輝斗"
+    },
+    {
+      "matchId": "football-system-17-566-26202",
+      "teamId": "i-league-2026-ous",
+      "matchName": "片岡 樹希也 [Cap]",
+      "rosterName": "片岡 樹希也"
+    },
+    {
+      "matchId": "football-system-17-566-26201",
+      "teamId": "i-league-2026-ipu-a",
+      "matchName": "石川 遥翔 [Cap]",
+      "rosterName": "石川 遥翔"
+    },
+    {
+      "matchId": "football-system-17-566-26201",
+      "teamId": "i-league-2026-heisei",
+      "matchName": "水津 陽音 [Cap]",
+      "rosterName": "水津 陽音"
+    },
+    {
+      "matchId": "football-system-17-566-26203",
+      "teamId": "i-league-2026-shudo",
+      "matchName": "吉田 崚汰 [Cap]",
+      "rosterName": "吉田 崚汰"
+    },
+    {
+      "matchId": "football-system-17-566-26203",
+      "teamId": "i-league-2026-shudo",
+      "matchName": "伊津 遥人",
+      "rosterName": "伊津 遙人"
+    },
+    {
+      "matchId": "football-system-17-566-26203",
+      "teamId": "i-league-2026-fukuyama-a",
+      "matchName": "小笠原 蒼 [Cap]",
+      "rosterName": "小笠原 蒼"
+    },
+    {
+      "matchId": "football-system-17-566-26204",
+      "teamId": "i-league-2026-hue-a",
+      "matchName": "若松 快英 [Cap]",
+      "rosterName": "若松 快英"
+    },
+    {
+      "matchId": "football-system-17-566-26204",
+      "teamId": "i-league-2026-hiroshima-a",
+      "matchName": "橋本 拓磨 [Cap]",
+      "rosterName": "橋本 拓磨"
+    },
+    {
+      "matchId": "football-system-17-566-26205",
+      "teamId": "i-league-2026-ipu-a",
+      "matchName": "百々 歩夢 [Cap]",
+      "rosterName": "百々 歩夢"
+    },
+    {
+      "matchId": "football-system-17-566-26205",
+      "teamId": "i-league-2026-hbg",
+      "matchName": "瀧本 唯楓 [Cap]",
+      "rosterName": "瀧本 唯楓"
+    },
+    {
+      "matchId": "football-system-17-566-26206",
+      "teamId": "i-league-2026-heisei",
+      "matchName": "紙下 将太郎 [Cap]",
+      "rosterName": "紙下 将太郎"
+    },
+    {
+      "matchId": "football-system-17-566-26206",
+      "teamId": "i-league-2026-shudo",
+      "matchName": "吉田 崚汰 [Cap]",
+      "rosterName": "吉田 崚汰"
+    },
+    {
+      "matchId": "football-system-17-566-26208",
+      "teamId": "i-league-2026-hue-a",
+      "matchName": "若松 快英 [Cap]",
+      "rosterName": "若松 快英"
+    },
+    {
+      "matchId": "football-system-17-566-26208",
+      "teamId": "i-league-2026-fukuyama-a",
+      "matchName": "三家本 明日斗 [Cap]",
+      "rosterName": "三家本 明日斗"
+    },
+    {
+      "matchId": "football-system-17-566-26207",
+      "teamId": "i-league-2026-hiroshima-a",
+      "matchName": "橋本 拓磨 [Cap]",
+      "rosterName": "橋本 拓磨"
+    },
+    {
+      "matchId": "football-system-17-566-26207",
+      "teamId": "i-league-2026-ous",
+      "matchName": "片岡 樹希也 [Cap]",
+      "rosterName": "片岡 樹希也"
+    },
+    {
+      "matchId": "football-system-17-566-26209",
+      "teamId": "i-league-2026-shudo",
+      "matchName": "宮本 浩希 [Cap]",
+      "rosterName": "宮本 浩希"
+    },
+    {
+      "matchId": "football-system-17-566-26209",
+      "teamId": "i-league-2026-shudo",
+      "matchName": "伊津 遥人",
+      "rosterName": "伊津 遙人"
+    },
+    {
+      "matchId": "football-system-17-566-26209",
+      "teamId": "i-league-2026-ipu-a",
+      "matchName": "百々 歩夢 [Cap]",
+      "rosterName": "百々 歩夢"
+    },
+    {
+      "matchId": "football-system-17-566-26211",
+      "teamId": "i-league-2026-heisei",
+      "matchName": "福本 秀翔 [Cap]",
+      "rosterName": "福本 秀翔"
+    },
+    {
+      "matchId": "football-system-17-566-26211",
+      "teamId": "i-league-2026-hue-a",
+      "matchName": "岸田 紘季 [Cap]",
+      "rosterName": "岸田 紘季"
+    },
+    {
+      "matchId": "football-system-17-566-26212",
+      "teamId": "i-league-2026-ous",
+      "matchName": "薄井 佑太郎 [Cap]",
+      "rosterName": "薄井 佑太郎"
+    },
+    {
+      "matchId": "football-system-17-566-26212",
+      "teamId": "i-league-2026-fukuyama-a",
+      "matchName": "小田 虎哲 [Cap]",
+      "rosterName": "小田 虎哲"
+    },
+    {
+      "matchId": "football-system-17-566-26210",
+      "teamId": "i-league-2026-hiroshima-a",
+      "matchName": "橋本 拓磨 [Cap]",
+      "rosterName": "橋本 拓磨"
+    },
+    {
+      "matchId": "football-system-17-566-26210",
+      "teamId": "i-league-2026-hbg",
+      "matchName": "瀧本 唯楓 [Cap]",
+      "rosterName": "瀧本 唯楓"
+    },
+    {
+      "matchId": "football-system-17-567-26225",
+      "teamId": "i-league-2026-ipu-b",
+      "matchName": "大崎 竣介 [Cap]",
+      "rosterName": "大崎 竣介"
+    },
+    {
+      "matchId": "football-system-17-567-26225",
+      "teamId": "i-league-2026-hiroshima-b",
+      "matchName": "筒井 康太 [Cap]",
+      "rosterName": "筒井 康太"
+    },
+    {
+      "matchId": "football-system-17-567-26227",
+      "teamId": "i-league-2026-fukuyama-b",
+      "matchName": "佐藤 温真 [Cap]",
+      "rosterName": "佐藤 温真"
+    },
+    {
+      "matchId": "football-system-17-567-26227",
+      "teamId": "i-league-2026-hue-b",
+      "matchName": "渡邊 太陽 [Cap]",
+      "rosterName": "渡邊 太陽"
+    },
+    {
+      "matchId": "football-system-17-567-26226",
+      "teamId": "i-league-2026-ipu-c",
+      "matchName": "森 亜由夢 [Cap]",
+      "rosterName": "森 亜由夢"
+    },
+    {
+      "matchId": "football-system-17-567-26226",
+      "teamId": "i-league-2026-ipu-d",
+      "matchName": "西川 玲生 [Cap]",
+      "rosterName": "西川 玲生"
+    },
+    {
+      "matchId": "football-system-17-567-26229",
+      "teamId": "i-league-2026-fukuyama-b",
+      "matchName": "佐藤 温真 [Cap]",
+      "rosterName": "佐藤 温真"
+    },
+    {
+      "matchId": "football-system-17-567-26229",
+      "teamId": "i-league-2026-hiroshima-b",
+      "matchName": "筒井 康太 [Cap]",
+      "rosterName": "筒井 康太"
+    },
+    {
+      "matchId": "football-system-17-567-26228",
+      "teamId": "i-league-2026-ipu-b",
+      "matchName": "大崎 竣介 [Cap]",
+      "rosterName": "大崎 竣介"
+    },
+    {
+      "matchId": "football-system-17-567-26228",
+      "teamId": "i-league-2026-ipu-c",
+      "matchName": "森 亜由夢 [Cap]",
+      "rosterName": "森 亜由夢"
+    },
+    {
+      "matchId": "football-system-17-567-26230",
+      "teamId": "i-league-2026-hue-b",
+      "matchName": "渡邊 太陽 [Cap]",
+      "rosterName": "渡邊 太陽"
+    },
+    {
+      "matchId": "football-system-17-567-26230",
+      "teamId": "i-league-2026-ipu-d",
+      "matchName": "西川 玲生 [Cap]",
+      "rosterName": "西川 玲生"
+    },
+    {
+      "matchId": "football-system-17-567-26232",
+      "teamId": "i-league-2026-ipu-c",
+      "matchName": "森 亜由夢 [Cap]",
+      "rosterName": "森 亜由夢"
+    },
+    {
+      "matchId": "football-system-17-567-26232",
+      "teamId": "i-league-2026-hue-b",
+      "matchName": "渡邊 太陽 [Cap]",
+      "rosterName": "渡邊 太陽"
+    },
+    {
+      "matchId": "football-system-17-567-26233",
+      "teamId": "i-league-2026-hiroshima-b",
+      "matchName": "筒井 康太 [Cap]",
+      "rosterName": "筒井 康太"
+    },
+    {
+      "matchId": "football-system-17-567-26233",
+      "teamId": "i-league-2026-ipu-d",
+      "matchName": "守安 正騎 [Cap]",
+      "rosterName": "守安 正騎"
+    },
+    {
+      "matchId": "football-system-17-567-26231",
+      "teamId": "i-league-2026-fukuyama-b",
+      "matchName": "佐藤 温真 [Cap]",
+      "rosterName": "佐藤 温真"
+    },
+    {
+      "matchId": "football-system-17-567-26231",
+      "teamId": "i-league-2026-ipu-b",
+      "matchName": "大崎 竣介 [Cap]",
+      "rosterName": "大崎 竣介"
+    }
+  ],
+  "rosterNeverAppeared": [
+    {
+      "id": "i-league-2026-ipu-a-7e4512e4eb79",
+      "teamId": "i-league-2026-ipu-a",
+      "name": "大野 公瑛"
+    },
+    {
+      "id": "i-league-2026-ipu-a-b8c5a556d5a6",
+      "teamId": "i-league-2026-ipu-a",
+      "name": "石川 悠生"
+    },
+    {
+      "id": "i-league-2026-fukuyama-a-bb2368541b87",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "小林 俊雅"
+    },
+    {
+      "id": "i-league-2026-fukuyama-a-7124504048f0",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "児玉 晴"
+    },
+    {
+      "id": "i-league-2026-fukuyama-a-7f3818a45420",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "神手 プラナヤマ 晃明"
+    },
+    {
+      "id": "i-league-2026-fukuyama-a-c409c19e2263",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "福田 虹斗"
+    },
+    {
+      "id": "i-league-2026-fukuyama-a-eab7d627ccef",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "松本 凰暉"
+    },
+    {
+      "id": "i-league-2026-fukuyama-a-bc87bc77092b",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "中谷 瑠希"
+    },
+    {
+      "id": "i-league-2026-fukuyama-a-6f7106874cfa",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "飯冨 開世"
+    },
+    {
+      "id": "i-league-2026-fukuyama-a-1b9fac47f77f",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "灘 遥希"
+    },
+    {
+      "id": "i-league-2026-fukuyama-a-39bfdb8c44fb",
+      "teamId": "i-league-2026-fukuyama-a",
+      "name": "田中 陽己良"
+    },
+    {
+      "id": "i-league-2026-hue-a-10643734a7ed",
+      "teamId": "i-league-2026-hue-a",
+      "name": "成田 創"
+    },
+    {
+      "id": "i-league-2026-hue-a-f0c4b37bf496",
+      "teamId": "i-league-2026-hue-a",
+      "name": "出原 琉羽"
+    },
+    {
+      "id": "i-league-2026-hue-a-cf9ef211ef0e",
+      "teamId": "i-league-2026-hue-a",
+      "name": "高橋 星那"
+    },
+    {
+      "id": "i-league-2026-hue-a-678a610f86bf",
+      "teamId": "i-league-2026-hue-a",
+      "name": "浅野 颯真"
+    },
+    {
+      "id": "i-league-2026-hue-a-f52946e2e9e7",
+      "teamId": "i-league-2026-hue-a",
+      "name": "今村 真仁"
+    },
+    {
+      "id": "i-league-2026-hue-a-46dc74962153",
+      "teamId": "i-league-2026-hue-a",
+      "name": "桑原 光司"
+    },
+    {
+      "id": "i-league-2026-hue-a-1dfae2a99fbf",
+      "teamId": "i-league-2026-hue-a",
+      "name": "橋本 亮太"
+    },
+    {
+      "id": "i-league-2026-hue-a-ccf5bd6247d8",
+      "teamId": "i-league-2026-hue-a",
+      "name": "熊谷 弾"
+    },
+    {
+      "id": "i-league-2026-hue-a-a5b4c8459dad",
+      "teamId": "i-league-2026-hue-a",
+      "name": "松原 朋榮"
+    },
+    {
+      "id": "i-league-2026-hue-a-ccab6cbb7010",
+      "teamId": "i-league-2026-hue-a",
+      "name": "冨家 巧充"
+    },
+    {
+      "id": "i-league-2026-hue-a-7c3f7c4f147c",
+      "teamId": "i-league-2026-hue-a",
+      "name": "那須 優稀斗"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-907d5ad02b24",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "佐伯 航汰"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-992a75b25787",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "開地 心之介"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-f2b0ea1b0385",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "中尾 誉"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-2acad8d8a01b",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "廣畑 俊汰"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-1949e967be15",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "瀬口 廉太郎"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-d44aa4a0548f",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "岩﨑 惺"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-bf75096a8109",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "松浦 太誠"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-7d889dce6136",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "木村 侑生"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-cd57c8c657ed",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "宮本 哲宏"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-abdb4a578a8e",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "大渡 祐希"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-f1311141a4e8",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "井上 款斗"
+    },
+    {
+      "id": "i-league-2026-hiroshima-a-0ba24db2d97f",
+      "teamId": "i-league-2026-hiroshima-a",
+      "name": "増森 正悟"
+    },
+    {
+      "id": "i-league-2026-shudo-7555b68cd770",
+      "teamId": "i-league-2026-shudo",
+      "name": "由元 優成"
+    },
+    {
+      "id": "i-league-2026-shudo-483f653f4cba",
+      "teamId": "i-league-2026-shudo",
+      "name": "小笠 楓馬"
+    },
+    {
+      "id": "i-league-2026-shudo-01b2627062fb",
+      "teamId": "i-league-2026-shudo",
+      "name": "森澤 怜王"
+    },
+    {
+      "id": "i-league-2026-shudo-e0fedce1be44",
+      "teamId": "i-league-2026-shudo",
+      "name": "佐々木 吹"
+    },
+    {
+      "id": "i-league-2026-shudo-d6ac258b6212",
+      "teamId": "i-league-2026-shudo",
+      "name": "近本 結平"
+    },
+    {
+      "id": "i-league-2026-shudo-d0ad8f1ec7d1",
+      "teamId": "i-league-2026-shudo",
+      "name": "井上 太陽"
+    },
+    {
+      "id": "i-league-2026-shudo-68a0a56c84c5",
+      "teamId": "i-league-2026-shudo",
+      "name": "岡村 尚昇"
+    },
+    {
+      "id": "i-league-2026-shudo-2b1dc9fb0c65",
+      "teamId": "i-league-2026-shudo",
+      "name": "長野 一希"
+    },
+    {
+      "id": "i-league-2026-shudo-25cb4ff53150",
+      "teamId": "i-league-2026-shudo",
+      "name": "戸田 透空"
+    },
+    {
+      "id": "i-league-2026-shudo-03e52b40079e",
+      "teamId": "i-league-2026-shudo",
+      "name": "小野 羽楽"
+    },
+    {
+      "id": "i-league-2026-shudo-67b8654fe003",
+      "teamId": "i-league-2026-shudo",
+      "name": "山村 悠斗"
+    },
+    {
+      "id": "i-league-2026-shudo-8d490ff0f4f1",
+      "teamId": "i-league-2026-shudo",
+      "name": "三野 真渚人"
+    },
+    {
+      "id": "i-league-2026-shudo-574ca0c9f89c",
+      "teamId": "i-league-2026-shudo",
+      "name": "堂下 楽"
+    },
+    {
+      "id": "i-league-2026-shudo-e9e05da7fc47",
+      "teamId": "i-league-2026-shudo",
+      "name": "今村 日陽"
+    },
+    {
+      "id": "i-league-2026-shudo-0d18b5d3a349",
+      "teamId": "i-league-2026-shudo",
+      "name": "西本 竣亮"
+    },
+    {
+      "id": "i-league-2026-shudo-f8ffd67df7fd",
+      "teamId": "i-league-2026-shudo",
+      "name": "佐古 星真"
+    },
+    {
+      "id": "i-league-2026-shudo-68d356843d80",
+      "teamId": "i-league-2026-shudo",
+      "name": "廣嶋 修"
+    },
+    {
+      "id": "i-league-2026-shudo-d3b7d25db22e",
+      "teamId": "i-league-2026-shudo",
+      "name": "行政 壮大"
+    },
+    {
+      "id": "i-league-2026-hbg-cee5e776e9fd",
+      "teamId": "i-league-2026-hbg",
+      "name": "刀祢 秀幸"
+    },
+    {
+      "id": "i-league-2026-hbg-1bec2012083a",
+      "teamId": "i-league-2026-hbg",
+      "name": "實久 佑真"
+    },
+    {
+      "id": "i-league-2026-hbg-cc36e853eb12",
+      "teamId": "i-league-2026-hbg",
+      "name": "山﨑 智輝"
+    },
+    {
+      "id": "i-league-2026-hbg-7151524e869e",
+      "teamId": "i-league-2026-hbg",
+      "name": "石田 怜汰"
+    },
+    {
+      "id": "i-league-2026-hbg-7bbbe30f7def",
+      "teamId": "i-league-2026-hbg",
+      "name": "室賀 優龍"
+    },
+    {
+      "id": "i-league-2026-hbg-7630fabcb091",
+      "teamId": "i-league-2026-hbg",
+      "name": "三村 歓"
+    },
+    {
+      "id": "i-league-2026-hbg-41233e1e4407",
+      "teamId": "i-league-2026-hbg",
+      "name": "松本 大雅"
+    },
+    {
+      "id": "i-league-2026-hbg-a3eb3a72eb90",
+      "teamId": "i-league-2026-hbg",
+      "name": "丸本 夏瑞馬"
+    },
+    {
+      "id": "i-league-2026-hbg-f68c0614a26a",
+      "teamId": "i-league-2026-hbg",
+      "name": "加納 世羅"
+    },
+    {
+      "id": "i-league-2026-hbg-c9997ca6e4e7",
+      "teamId": "i-league-2026-hbg",
+      "name": "高橋 憲世"
+    },
+    {
+      "id": "i-league-2026-hbg-8464f39c55a6",
+      "teamId": "i-league-2026-hbg",
+      "name": "宮﨑 修平"
+    },
+    {
+      "id": "i-league-2026-hbg-fe35d6683f21",
+      "teamId": "i-league-2026-hbg",
+      "name": "由良 駿弥"
+    },
+    {
+      "id": "i-league-2026-hbg-ad0b71a86fc2",
+      "teamId": "i-league-2026-hbg",
+      "name": "黒川 泰輝"
+    },
+    {
+      "id": "i-league-2026-hbg-1ad4c79a3d21",
+      "teamId": "i-league-2026-hbg",
+      "name": "上田 史詠"
+    },
+    {
+      "id": "i-league-2026-hbg-48f97d94c5da",
+      "teamId": "i-league-2026-hbg",
+      "name": "石川 優樹成"
+    },
+    {
+      "id": "i-league-2026-hbg-913e660c744a",
+      "teamId": "i-league-2026-hbg",
+      "name": "露口 創一朗"
+    },
+    {
+      "id": "i-league-2026-hbg-28c1d8fe499e",
+      "teamId": "i-league-2026-hbg",
+      "name": "田中 遥大"
+    },
+    {
+      "id": "i-league-2026-hbg-25250ee505d0",
+      "teamId": "i-league-2026-hbg",
+      "name": "末岡 遥斗"
+    },
+    {
+      "id": "i-league-2026-hbg-24c49f8c61c5",
+      "teamId": "i-league-2026-hbg",
+      "name": "末岡 宏斗"
+    },
+    {
+      "id": "i-league-2026-hbg-e5e9c066f04d",
+      "teamId": "i-league-2026-hbg",
+      "name": "亀山 徠羽"
+    },
+    {
+      "id": "i-league-2026-hbg-7550ee3606a6",
+      "teamId": "i-league-2026-hbg",
+      "name": "有田 蒼大"
+    },
+    {
+      "id": "i-league-2026-heisei-6c74c0a30d82",
+      "teamId": "i-league-2026-heisei",
+      "name": "藤木 由翔"
+    },
+    {
+      "id": "i-league-2026-heisei-8728f4aa8893",
+      "teamId": "i-league-2026-heisei",
+      "name": "橋岡 倫太郎"
+    },
+    {
+      "id": "i-league-2026-heisei-e5ce06929297",
+      "teamId": "i-league-2026-heisei",
+      "name": "竹杉 勇真"
+    },
+    {
+      "id": "i-league-2026-heisei-d9894ebc2336",
+      "teamId": "i-league-2026-heisei",
+      "name": "岡田 脩平"
+    },
+    {
+      "id": "i-league-2026-heisei-1dbc81a364cd",
+      "teamId": "i-league-2026-heisei",
+      "name": "宮本 泰誠"
+    },
+    {
+      "id": "i-league-2026-heisei-c84bfe0c1f95",
+      "teamId": "i-league-2026-heisei",
+      "name": "手塚 佳祐"
+    },
+    {
+      "id": "i-league-2026-heisei-787537cb72de",
+      "teamId": "i-league-2026-heisei",
+      "name": "佐々木 陸斗"
+    },
+    {
+      "id": "i-league-2026-heisei-b77d3990a785",
+      "teamId": "i-league-2026-heisei",
+      "name": "小黒 翼"
+    },
+    {
+      "id": "i-league-2026-heisei-6f8e3c61ebda",
+      "teamId": "i-league-2026-heisei",
+      "name": "小澤 惟里"
+    },
+    {
+      "id": "i-league-2026-heisei-a766f4a882cb",
+      "teamId": "i-league-2026-heisei",
+      "name": "野田 知載"
+    },
+    {
+      "id": "i-league-2026-heisei-ec72acd0cea3",
+      "teamId": "i-league-2026-heisei",
+      "name": "瀧田 寛汰"
+    },
+    {
+      "id": "i-league-2026-heisei-25b30744bb1a",
+      "teamId": "i-league-2026-heisei",
+      "name": "西尾 太樹"
+    },
+    {
+      "id": "i-league-2026-heisei-9d41312bbbb1",
+      "teamId": "i-league-2026-heisei",
+      "name": "田川 蓮之介"
+    },
+    {
+      "id": "i-league-2026-heisei-faa7b1fcc304",
+      "teamId": "i-league-2026-heisei",
+      "name": "曽我 颯馬"
+    },
+    {
+      "id": "i-league-2026-heisei-74ace1c12e9e",
+      "teamId": "i-league-2026-heisei",
+      "name": "中島 悠一朗"
+    },
+    {
+      "id": "i-league-2026-heisei-05d0aa441d9e",
+      "teamId": "i-league-2026-heisei",
+      "name": "宮城 澄海"
+    },
+    {
+      "id": "i-league-2026-ous-e8aa94db2684",
+      "teamId": "i-league-2026-ous",
+      "name": "綱島 翠星"
+    },
+    {
+      "id": "i-league-2026-ous-25dc60b586fd",
+      "teamId": "i-league-2026-ous",
+      "name": "眞鍋 悠"
+    },
+    {
+      "id": "i-league-2026-ous-829c2a150fbf",
+      "teamId": "i-league-2026-ous",
+      "name": "久本 育夢"
+    },
+    {
+      "id": "i-league-2026-ous-fef087a6ba93",
+      "teamId": "i-league-2026-ous",
+      "name": "長谷原 雄介"
+    },
+    {
+      "id": "i-league-2026-ous-fdf13703bbf6",
+      "teamId": "i-league-2026-ous",
+      "name": "池口 十来"
+    },
+    {
+      "id": "i-league-2026-ous-9ebddf4f9e48",
+      "teamId": "i-league-2026-ous",
+      "name": "市之瀬 巧真"
+    },
+    {
+      "id": "i-league-2026-ous-40effde2a8c0",
+      "teamId": "i-league-2026-ous",
+      "name": "中廻 遥"
+    },
+    {
+      "id": "i-league-2026-ous-d740e39886a5",
+      "teamId": "i-league-2026-ous",
+      "name": "冨家 未来"
+    },
+    {
+      "id": "i-league-2026-ous-f91500eaf466",
+      "teamId": "i-league-2026-ous",
+      "name": "東 煌"
+    },
+    {
+      "id": "i-league-2026-ous-0570778d611a",
+      "teamId": "i-league-2026-ous",
+      "name": "濵崎 隼太"
+    },
+    {
+      "id": "i-league-2026-ous-4a076641d02a",
+      "teamId": "i-league-2026-ous",
+      "name": "小谷 仁"
+    },
+    {
+      "id": "i-league-2026-ous-7fdee38ee42d",
+      "teamId": "i-league-2026-ous",
+      "name": "岡崎 蒼汰"
+    },
+    {
+      "id": "i-league-2026-ous-920b2e1d23f5",
+      "teamId": "i-league-2026-ous",
+      "name": "柴田 大和"
+    },
+    {
+      "id": "i-league-2026-ous-24c5b42932ba",
+      "teamId": "i-league-2026-ous",
+      "name": "井上 泰雅"
+    },
+    {
+      "id": "i-league-2026-ous-1be0bb8b5089",
+      "teamId": "i-league-2026-ous",
+      "name": "杉野 涼"
+    },
+    {
+      "id": "i-league-2026-ous-78622f01bcc9",
+      "teamId": "i-league-2026-ous",
+      "name": "川上 慎吾"
+    },
+    {
+      "id": "i-league-2026-ous-86d450c870be",
+      "teamId": "i-league-2026-ous",
+      "name": "照本 虹大"
+    },
+    {
+      "id": "i-league-2026-ous-d1462fc43f04",
+      "teamId": "i-league-2026-ous",
+      "name": "久城 直樹"
+    },
+    {
+      "id": "i-league-2026-ous-9a52fc50182e",
+      "teamId": "i-league-2026-ous",
+      "name": "沖田 流矢"
+    },
+    {
+      "id": "i-league-2026-ous-acbe9e560704",
+      "teamId": "i-league-2026-ous",
+      "name": "三宅 悠我"
+    },
+    {
+      "id": "i-league-2026-ous-766536cefc4e",
+      "teamId": "i-league-2026-ous",
+      "name": "末次 櫂"
+    },
+    {
+      "id": "i-league-2026-ous-3780fc4421db",
+      "teamId": "i-league-2026-ous",
+      "name": "綾田 匠眞"
+    },
+    {
+      "id": "i-league-2026-ous-4e8dffd5775a",
+      "teamId": "i-league-2026-ous",
+      "name": "小谷 梢太"
+    },
+    {
+      "id": "i-league-2026-ous-a461fbfd9201",
+      "teamId": "i-league-2026-ous",
+      "name": "加賀野 心二郎"
+    },
+    {
+      "id": "i-league-2026-hue-b-ac9f126b49b1",
+      "teamId": "i-league-2026-hue-b",
+      "name": "栂 安悠希"
+    },
+    {
+      "id": "i-league-2026-hue-b-de85485a391b",
+      "teamId": "i-league-2026-hue-b",
+      "name": "板倉 光生"
+    },
+    {
+      "id": "i-league-2026-hue-b-a89a3cdb0edf",
+      "teamId": "i-league-2026-hue-b",
+      "name": "河野 陽己"
+    },
+    {
+      "id": "i-league-2026-hue-b-5547e56c8794",
+      "teamId": "i-league-2026-hue-b",
+      "name": "森 虹太朗"
+    },
+    {
+      "id": "i-league-2026-fukuyama-b-6411a42ca99a",
+      "teamId": "i-league-2026-fukuyama-b",
+      "name": "小林 左京"
+    },
+    {
+      "id": "i-league-2026-fukuyama-b-1e00197f86c3",
+      "teamId": "i-league-2026-fukuyama-b",
+      "name": "美濃 理一"
+    },
+    {
+      "id": "i-league-2026-fukuyama-b-f274ad4aaae0",
+      "teamId": "i-league-2026-fukuyama-b",
+      "name": "丁 健"
+    },
+    {
+      "id": "i-league-2026-fukuyama-b-945fb4471588",
+      "teamId": "i-league-2026-fukuyama-b",
+      "name": "久富 光晟"
+    },
+    {
+      "id": "i-league-2026-hiroshima-b-b8114a658a23",
+      "teamId": "i-league-2026-hiroshima-b",
+      "name": "井上 真尋"
+    },
+    {
+      "id": "i-league-2026-hiroshima-b-6682060a0b06",
+      "teamId": "i-league-2026-hiroshima-b",
+      "name": "仲元 太一"
+    },
+    {
+      "id": "i-league-2026-hiroshima-b-e1e486a56d0a",
+      "teamId": "i-league-2026-hiroshima-b",
+      "name": "川合 巧"
+    },
+    {
+      "id": "i-league-2026-hiroshima-b-8cf8b6cea111",
+      "teamId": "i-league-2026-hiroshima-b",
+      "name": "山場 渓生"
+    },
+    {
+      "id": "i-league-2026-hiroshima-b-7615d33910bb",
+      "teamId": "i-league-2026-hiroshima-b",
+      "name": "原川 健太郎"
+    },
+    {
+      "id": "i-league-2026-hiroshima-b-d323c0de903b",
+      "teamId": "i-league-2026-hiroshima-b",
+      "name": "荒川 佳音"
+    },
+    {
+      "id": "i-league-2026-hiroshima-b-270197b8c424",
+      "teamId": "i-league-2026-hiroshima-b",
+      "name": "窪田 知将"
+    },
+    {
+      "id": "i-league-2026-hiroshima-b-73c0994acca5",
+      "teamId": "i-league-2026-hiroshima-b",
+      "name": "異島 躍飛"
+    },
+    {
+      "id": "i-league-2026-hiroshima-b-a71ed19ad752",
+      "teamId": "i-league-2026-hiroshima-b",
+      "name": "出田 幸成"
+    }
+  ],
+  "duplicateCandidates": [],
+  "season": 2026,
+  "competitions": [
+    "jufa-chugoku-2026-i-league-division-1",
+    "jufa-chugoku-2026-i-league-division-2"
+  ],
+  "sources": [
+    {
+      "teamId": "i-league-2026-ipu-a",
+      "teamName": "IPU・環太平洋大学A",
+      "parentClubId": "ipu",
+      "competitionId": "jufa-chugoku-2026-i-league-division-1",
+      "officialPageId": 624,
+      "pageUrl": "https://jufa-chugoku.jp/team/624.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=YvTdpsiMjMk%3D",
+      "count": 25
+    },
+    {
+      "teamId": "i-league-2026-fukuyama-a",
+      "teamName": "福山大学A",
+      "parentClubId": "fukuyama",
+      "competitionId": "jufa-chugoku-2026-i-league-division-1",
+      "officialPageId": 621,
+      "pageUrl": "https://jufa-chugoku.jp/team/621.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=kZoCsXhZuqM%3D",
+      "count": 30
+    },
+    {
+      "teamId": "i-league-2026-hue-a",
+      "teamName": "広島経済大学A",
+      "parentClubId": "hiroshima-keizai",
+      "competitionId": "jufa-chugoku-2026-i-league-division-1",
+      "officialPageId": 635,
+      "pageUrl": "https://jufa-chugoku.jp/team/635.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=aznoqthYid0%3D",
+      "count": 39
+    },
+    {
+      "teamId": "i-league-2026-hiroshima-a",
+      "teamName": "広島大学A",
+      "parentClubId": "hiroshima",
+      "competitionId": "jufa-chugoku-2026-i-league-division-1",
+      "officialPageId": 631,
+      "pageUrl": "https://jufa-chugoku.jp/team/631.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=Q%2BcTxR6Brt4%3D",
+      "count": 36
+    },
+    {
+      "teamId": "i-league-2026-shudo",
+      "teamName": "広島修道大学",
+      "parentClubId": "hiroshima-shudo",
+      "competitionId": "jufa-chugoku-2026-i-league-division-1",
+      "officialPageId": 638,
+      "pageUrl": "https://jufa-chugoku.jp/team/638.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=sAKTwWcP7LM%3D",
+      "count": 52
+    },
+    {
+      "teamId": "i-league-2026-hbg",
+      "teamName": "広島文化学園大学",
+      "parentClubId": "hiroshima-bunka-gakuen",
+      "competitionId": "jufa-chugoku-2026-i-league-division-1",
+      "officialPageId": 658,
+      "pageUrl": "https://jufa-chugoku.jp/team/658.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=unmjnbOyHX8%3D",
+      "count": 54
+    },
+    {
+      "teamId": "i-league-2026-heisei",
+      "teamName": "福山平成大学",
+      "parentClubId": "fukuyama-heisei",
+      "competitionId": "jufa-chugoku-2026-i-league-division-1",
+      "officialPageId": 640,
+      "pageUrl": "https://jufa-chugoku.jp/team/640.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=ZRrboeWy6F8%3D",
+      "count": 40
+    },
+    {
+      "teamId": "i-league-2026-ous",
+      "teamName": "岡山理科大学",
+      "parentClubId": "okayama-science",
+      "competitionId": "jufa-chugoku-2026-i-league-division-1",
+      "officialPageId": 810,
+      "pageUrl": "https://jufa-chugoku.jp/team/810.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=%2FdYJlEUzKOM%3D",
+      "count": 50
+    },
+    {
+      "teamId": "i-league-2026-ipu-b",
+      "teamName": "IPU・環太平洋大学B",
+      "parentClubId": "ipu",
+      "competitionId": "jufa-chugoku-2026-i-league-division-2",
+      "officialPageId": 660,
+      "pageUrl": "https://jufa-chugoku.jp/team/660.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=z7CfVtSetGY%3D",
+      "count": 20
+    },
+    {
+      "teamId": "i-league-2026-ipu-d",
+      "teamName": "IPU・環太平洋大学D",
+      "parentClubId": "ipu",
+      "competitionId": "jufa-chugoku-2026-i-league-division-2",
+      "officialPageId": 627,
+      "pageUrl": "https://jufa-chugoku.jp/team/627.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=olzV%2F13Uv1A%3D",
+      "count": 20
+    },
+    {
+      "teamId": "i-league-2026-hue-b",
+      "teamName": "広島経済大学B",
+      "parentClubId": "hiroshima-keizai",
+      "competitionId": "jufa-chugoku-2026-i-league-division-2",
+      "officialPageId": 636,
+      "pageUrl": "https://jufa-chugoku.jp/team/636.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=pG73JmxcQzI%3D",
+      "count": 29
+    },
+    {
+      "teamId": "i-league-2026-fukuyama-b",
+      "teamName": "福山大学B",
+      "parentClubId": "fukuyama",
+      "competitionId": "jufa-chugoku-2026-i-league-division-2",
+      "officialPageId": 622,
+      "pageUrl": "https://jufa-chugoku.jp/team/622.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=oSPaKtogmTI%3D",
+      "count": 33
+    },
+    {
+      "teamId": "i-league-2026-ipu-c",
+      "teamName": "IPU・環太平洋大学C",
+      "parentClubId": "ipu",
+      "competitionId": "jufa-chugoku-2026-i-league-division-2",
+      "officialPageId": 626,
+      "pageUrl": "https://jufa-chugoku.jp/team/626.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=VWdtBHKEoqw%3D",
+      "count": 20
+    },
+    {
+      "teamId": "i-league-2026-hiroshima-b",
+      "teamName": "広島大学B",
+      "parentClubId": "hiroshima",
+      "competitionId": "jufa-chugoku-2026-i-league-division-2",
+      "officialPageId": 632,
+      "pageUrl": "https://jufa-chugoku.jp/team/632.html",
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=QlMyIv0ogtE%3D",
+      "count": 38
+    }
+  ],
+  "totalCount": 486,
+  "crossTeamSameNameCandidates": [],
+  "eventPlayerAudit": {
+    "occurrences": [],
+    "players": []
+  }
+}

@@ -34,15 +34,20 @@ const TEAM_RANKINGS = [
   ["averageStartingAge", "平均先発年齢", "歳"],
 ];
 
-export function renderRankingsPage({ matches, playerStatistics, teamStats, leagueStats, teamDirectory, seasonPeriod, teams, leagueDivision = 1, selectedSeason = 2026 }) {
+export function renderRankingsPage({ matches, playerStatistics, teamStats, leagueStats, teamDirectory, seasonPeriod, teams, leagueTeams = teams, leagueDivision = 1, selectedSeason = 2026, selectedCompetitionId = null, competitionDefinitions = [] }) {
   let activeMetric = "goals";
   let teamFilter = "";
   let gradeFilter = "";
   const periodStatistics = selectPlayerStatisticsPeriod(playerStatistics, seasonPeriod);
-  const divisionMatches = matches.filter((match) => match.season === selectedSeason && match.division === leagueDivision);
+  const availableCompetitions = competitionDefinitions.filter((competition) => competition.season === selectedSeason && competition.matches && ["league", "i-league"].includes(competition.competitionType));
+  const activeCompetition = availableCompetitions.find((competition) => competition.id === selectedCompetitionId)
+    ?? availableCompetitions.find((competition) => competition.competitionType === "league" && competition.division === leagueDivision)
+    ?? availableCompetitions[0];
+  const divisionMatches = matches.filter((match) => match.season === selectedSeason && match.competitionId === activeCompetition?.id);
   const divisionTeamIds = new Set(divisionMatches.flatMap((match) => [match.homeTeam.teamId, match.awayTeam.teamId]).filter(Boolean));
   const reflectedMatches = filterMatchesByPeriod(divisionMatches, seasonPeriod);
-  const activeTeamStats = leagueStats?.[selectedSeason]?.[leagueDivision] ?? teamStats;
+  const activeTeamStats = leagueStats?.[selectedSeason]?.byCompetition?.[activeCompetition?.id]
+    ?? leagueStats?.[selectedSeason]?.[leagueDivision] ?? teamStats;
   const chips = element("div", { className: "chip-row ranking-tabs", attributes: { role: "tablist" } });
   const content = element("div");
 
@@ -102,7 +107,7 @@ export function renderRankingsPage({ matches, playerStatistics, teamStats, leagu
 
   const teamSelect = element("select", { className: "filter-select", attributes: { "aria-label": "ランキングのチーム" } }, [
     element("option", { text: "全チーム", attributes: { value: "" } }),
-    ...teams.filter((team) => divisionTeamIds.has(team.id)).map((team) => element("option", { text: team.name, attributes: { value: team.id } })),
+    ...leagueTeams.filter((team) => divisionTeamIds.has(team.id)).map((team) => element("option", { text: team.name, attributes: { value: team.id } })),
   ]);
   const gradeSelect = element("select", { className: "filter-select", attributes: { "aria-label": "ランキングの推定学年" } }, [
     element("option", { text: "全学年", attributes: { value: "" } }),
@@ -117,9 +122,11 @@ export function renderRankingsPage({ matches, playerStatistics, teamStats, leagu
       title: "ランキング",
       description: "試合の出場・得点・アシスト・警告退場記録を自動集計しています。",
     }),
-    element("div", { className: "league-division-tabs", attributes: { role: "tablist", "aria-label": "ランキングの大会" } }, [1, 2].map((division) => {
-      const button = element("button", { className: `league-division-tab${division === leagueDivision ? " is-active" : ""}`, text: `${division}部`, attributes: { type: "button", role: "tab", "aria-selected": String(division === leagueDivision) } });
-      button.addEventListener("click", () => setState({ leagueDivision: division }));
+    element("div", { className: "league-division-tabs", attributes: { role: "tablist", "aria-label": "ランキングの大会" } }, availableCompetitions.map((competition) => {
+      const selected = competition.id === activeCompetition?.id;
+      const label = competition.competitionType === "i-league" ? `Iリーグ${competition.division === 1 ? "一部" : "二部"}` : `${competition.division}部`;
+      const button = element("button", { className: `league-division-tab${selected ? " is-active" : ""}`, text: label, attributes: { type: "button", role: "tab", "aria-selected": String(selected), "aria-label": label, title: competition.leagueName ?? competition.name, "data-competition-id": competition.id } });
+      button.addEventListener("click", () => setState({ selectedCompetitionId: competition.id, leagueDivision: competition.division ?? leagueDivision }));
       return button;
     })),
     createSeasonPeriodTabs(seasonPeriod),

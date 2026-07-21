@@ -17,6 +17,7 @@
     "sync:2025:relegation": "node scripts/sync/sync-results.mjs --target=2025-promotion-relegation",
     "sync:teams": "node scripts/sync/sync-teams.mjs",
     "sync:players:div2": "node scripts/sync/sync-div2-players.mjs",
+    "sync:players:ileague": "node scripts/sync/sync-i-league-players.mjs",
     "sync:ileague:div1": "node scripts/sync/sync-i-league.mjs --division=1",
     "sync:ileague:div2": "node scripts/sync/sync-i-league.mjs --division=2",
     "build:stats": "node scripts/build/build-team-stats.mjs",
@@ -32,7 +33,8 @@
     "test:e2e": "playwright test",
     "apply:overrides": "node scripts/apply-manual-overrides.mjs",
     "update:data": "node scripts/update-data.mjs",
-    "update:data:full": "node scripts/update-data-full.mjs"
+    "update:data:full": "node scripts/update-data-full.mjs",
+    "update:data:ileague": "node scripts/update-i-league-data.mjs"
   },
   "dependencies": {
     "cheerio": ">=1.0.0 <2"

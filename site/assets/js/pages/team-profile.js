@@ -104,9 +104,7 @@ export function renderTeamProfilePage({
         createPanel("チームスタッツ", createTeamStatGrid(analytics?.stats), "シーズン分析"),
         createPanel("順位推移", createRankChart(analytics?.rankProgression, seasonPeriod), "各節終了時"),
         createPanel("Head to Head", createHeadToHead(opponents, teamDirectory, seasonPeriod), "対戦成績"),
-        team.competitionId
-          ? createNotice("Iリーグの選手名簿・選手ランキングはまだ登録されていません。公式試合記録の氏名は試合詳細に表示します。")
-          : createPanel("チーム内ランキング", createInternalRankings(periodPlayerStats, team), "TOP 5"),
+        createPanel("チーム内ランキング", createInternalRankings(periodPlayerStats, team), "TOP 5"),
         createPanel(
           "ユニフォーム",
           element("div", { className: "team-kits" }, [
@@ -127,8 +125,10 @@ export function renderTeamProfilePage({
         ),
         createPanel("スタッフ", createStaffList(staff), `${staff.length}名`),
         createPanel("SNS・Webサイト", createSocialLinks(team), "外部リンク"),
-        team.competitionId ? null : createPanel("登録選手", createRoster(roster, team), `${roster.length}選手`),
-        team.competitionId ? null : createNotice("スタッフ・登録選手は2026年度のチーム登録を表示しています。"),
+        createPanel("登録選手", createRoster(roster, team), `${roster.length}選手`),
+        createNotice(team.competitionId
+          ? "Iリーグの大会別公式登録を表示しています。トップチームや別チームの登録とは統合していません。"
+          : "スタッフ・登録選手は2026年度のチーム登録を表示しています。"),
       ]),
     ],
   );

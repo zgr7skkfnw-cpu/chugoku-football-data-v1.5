@@ -1,5 +1,6 @@
 const TEAMS_URL = new URL("../../../data/teams.json", import.meta.url);
 const PLAYERS_URL = new URL("../../../data/players.json", import.meta.url);
+const I_LEAGUE_PLAYERS_URL = new URL("../../../data/seasons/2026/i-league/players.json", import.meta.url);
 const TEAM_CATALOG_URL = new URL("../../../data/team-catalog.json", import.meta.url);
 let teamsPromise;
 let playersPromise;
@@ -29,11 +30,21 @@ export function loadTeams() {
 }
 
 export function loadPlayers() {
-  playersPromise ??= fetchJson(PLAYERS_URL, "選手データ").then((data) => {
+  playersPromise ??= Promise.all([
+    fetchJson(PLAYERS_URL, "選手データ"),
+    fetchJson(I_LEAGUE_PLAYERS_URL, "Iリーグ選手データ"),
+  ]).then(([data, iLeagueData]) => {
     if (data.schemaVersion !== 3 || !Array.isArray(data.items)) {
       throw new Error("選手データの形式が対応していません");
     }
-    return { players: data.items, updatedAt: data.updatedAt };
+    if (iLeagueData.schemaVersion !== 1 || !Array.isArray(iLeagueData.items)) {
+      throw new Error("Iリーグ選手データの形式が対応していません");
+    }
+    return {
+      players: [...data.items, ...iLeagueData.items],
+      updatedAt: [data.updatedAt, iLeagueData.updatedAt].filter(Boolean).sort().at(-1),
+      playerCounts: { regular: data.items.length, iLeague: iLeagueData.items.length },
+    };
   });
   return playersPromise;
 }

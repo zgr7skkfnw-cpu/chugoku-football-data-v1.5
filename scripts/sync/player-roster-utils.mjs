@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 
 export function normalizePlayerName(value) {
-  return String(value ?? "").normalize("NFKC").replace(/\s*\[Cap\]\s*$/i, "").replace(/[\s　]+/g, "");
+  return String(value ?? "").normalize("NFKC").replace(/\s*\[Cap\]\s*$/i, "").replace(/[\s　]+/g, "").replaceAll("遙", "遥");
 }
 
 export function createPlayerId(teamId, name) {
