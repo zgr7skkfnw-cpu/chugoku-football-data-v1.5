@@ -3,12 +3,12 @@
   "seasonId": "jufa-chugoku-2026-division-1",
   "stage": "regular",
   "competitionName": "2026年度 中国大学サッカーリーグ 1部",
-  "updatedAt": "2026-07-20T05:02:37.583Z",
+  "updatedAt": "2026-07-21T14:31:58.341Z",
   "source": {
     "pageUrl": "https://jufa-chugoku.jp/result/2026/tid_558/",
     "iframeUrl": "https://football-system.jp/fss/pub_taikaigamelist.php?lid=UTPVepwV6sw=",
     "detailPostUrl": "https://football-system.jp/fss/pubGameResultConf.php",
-    "retrievedAt": "2026-07-20T05:02:37.583Z"
+    "retrievedAt": "2026-07-21T14:31:58.341Z"
   },
   "scheduleCount": 90,
   "matchCount": 90,
@@ -19,6 +19,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 1,
       "kickoffAt": "2026-04-25T11:00:00+09:00",
       "venue": "IPU・環太平洋大学 赤坂グラウンド",
@@ -296,6 +297,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "HT [out]島袋 滉大 [in]久保 公斗",
@@ -534,6 +536,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 1,
       "kickoffAt": "2026-04-25T11:00:00+09:00",
       "venue": "広島文化学園大学",
@@ -831,6 +834,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "42 分 [out]石田 怜桜 [in]松本 大雅",
@@ -914,6 +918,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 1,
       "kickoffAt": "2026-04-25T13:00:00+09:00",
       "venue": "川崎医療福祉大学グラウンド",
@@ -1186,6 +1191,7 @@
           "away": 5
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "61 分 [out]赤木 柾斗 [in]吉田 蒼威",
@@ -1345,6 +1351,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 1,
       "kickoffAt": "2026-04-25T13:00:00+09:00",
       "venue": "福山大学",
@@ -1622,6 +1629,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "63 分 [out]灘 遥希 [in]石川 晄",
@@ -1723,6 +1731,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 1,
       "kickoffAt": "2026-04-25T14:00:00+09:00",
       "venue": "広島大学",
@@ -1995,6 +2004,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "59 分 [out]佐伯 航汰 [in]松場 次元",
@@ -2095,6 +2105,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 2,
       "kickoffAt": "2026-04-29T11:00:00+09:00",
       "venue": "広島文化学園大学",
@@ -2366,6 +2377,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "HT [out]北舛 粋生 [in]露口 創一朗",
@@ -2420,6 +2432,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 2,
       "kickoffAt": "2026-04-29T13:00:00+09:00",
       "venue": "川崎医療福祉大学グラウンド",
@@ -2697,6 +2710,7 @@
           "away": 10
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "HT [out]清水 湊太 [in]冨山 巧登",
@@ -3044,6 +3058,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 2,
       "kickoffAt": "2026-04-29T13:00:00+09:00",
       "venue": "福山平成大学",
@@ -3321,6 +3336,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "32 分 [out]水津 陽音 [in]西尾 太樹",
@@ -3402,6 +3418,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 2,
       "kickoffAt": "2026-04-29T13:00:00+09:00",
       "venue": "周南公立大学",
@@ -3679,6 +3696,7 @@
           "away": 3
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "70 分 [out]成合 侑生 [in]小谷 颯",
@@ -3792,6 +3810,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 3,
       "kickoffAt": "2026-05-03T13:00:00+09:00",
       "venue": "IPU・環太平洋大学 赤坂グラウンド",
@@ -4069,6 +4088,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "63 分 [out]児島 亜流 [in]下西 瑛太",
@@ -4186,6 +4206,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 3,
       "kickoffAt": "2026-05-03T13:00:00+09:00",
       "venue": "川崎医療福祉大学グラウンド",
@@ -4463,6 +4484,7 @@
           "away": 5
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "56 分 [out]福田 依央 [in]中桐 文太",
@@ -4636,6 +4658,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 3,
       "kickoffAt": "2026-05-03T13:00:00+09:00",
       "venue": "周南公立大学",
@@ -4917,6 +4940,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "60 分 [out]魚谷 匠吾 [in]大塚 唯泰",
@@ -4974,6 +4998,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 3,
       "kickoffAt": "2026-05-03T13:00:00+09:00",
       "venue": "広島経済大学 陸上競技場",
@@ -5251,6 +5276,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "60 分 [out]河野 瑛太 [in]最上 尚哉"
@@ -5343,6 +5369,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 3,
       "kickoffAt": "2026-05-03T13:00:00+09:00",
       "venue": "福山大学",
@@ -5620,6 +5647,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "32 分 [out]児玉 晴 [in]大塚 八寛",
@@ -5716,6 +5744,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 4,
       "kickoffAt": "2026-05-10T13:00:00+09:00",
       "venue": "広島修道大学",
@@ -5993,6 +6022,7 @@
           "away": 3
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "55 分 [out]近本 結平 [in]佐々木 吹",
@@ -6115,6 +6145,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 4,
       "kickoffAt": "2026-05-10T13:00:00+09:00",
       "venue": "広島文化学園大学",
@@ -6392,6 +6423,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "59 分 [out]宮﨑 修平 [in]石井 勇琉",
@@ -6467,6 +6499,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 4,
       "kickoffAt": "2026-05-10T13:00:00+09:00",
       "venue": "福山大学",
@@ -6744,6 +6777,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "63 分 [out]福田 虹斗 [in]丸山 諒大",
@@ -6818,6 +6852,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 4,
       "kickoffAt": "2026-05-10T14:00:00+09:00",
       "venue": "広島大学",
@@ -7095,6 +7130,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "66 分 [out]大渡 祐希 [in]田中 陽大",
@@ -7227,6 +7263,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 4,
       "kickoffAt": "2026-05-10T18:00:00+09:00",
       "venue": "周南公立大学",
@@ -7494,6 +7531,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "19 分 [out]四元 龍馬 [in]杉浦 我成",
@@ -7577,6 +7615,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 5,
       "kickoffAt": "2026-05-17T13:00:00+09:00",
       "venue": "IPU・環太平洋大学 赤坂グラウンド",
@@ -7854,6 +7893,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "61 分 [out]児島 亜流 [in]笠原 颯太",
@@ -7960,6 +8000,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 5,
       "kickoffAt": "2026-05-17T13:00:00+09:00",
       "venue": "広島修道大学",
@@ -8237,6 +8278,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "14 分 [out]越智 捷太郎 [in]井上 陽登",
@@ -8292,6 +8334,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 5,
       "kickoffAt": "2026-05-17T13:00:00+09:00",
       "venue": "福山平成大学",
@@ -8569,6 +8612,7 @@
           "away": 3
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "60 分 [out]京泉 公太 [in]橋岡 倫太郎",
@@ -8640,6 +8684,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 5,
       "kickoffAt": "2026-05-17T13:00:00+09:00",
       "venue": "川崎医療福祉大学グラウンド",
@@ -8912,6 +8957,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "61 分 [out]中桐 文太 [in]政安 大輝",
@@ -8995,6 +9041,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 5,
       "kickoffAt": "2026-05-17T13:00:00+09:00",
       "venue": "広島経済大学 陸上競技場",
@@ -9272,6 +9319,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "58 分 [out]尾崎 斗惟 [in]尺野 響太郎",
@@ -9361,6 +9409,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 6,
       "kickoffAt": "2026-05-24T13:00:00+09:00",
       "venue": "広島文化学園大学",
@@ -9638,6 +9687,7 @@
           "away": 2
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "56 分 [out]石田 怜汰 [in]黒川 泰輝",
@@ -9790,6 +9840,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 6,
       "kickoffAt": "2026-05-24T13:00:00+09:00",
       "venue": "福山大学",
@@ -10067,6 +10118,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "56 分 [out]児玉 晴 [in]大塚 八寛",
@@ -10160,6 +10212,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 6,
       "kickoffAt": "2026-05-24T13:00:00+09:00",
       "venue": "広島経済大学 陸上競技場",
@@ -10427,6 +10480,7 @@
           "away": 2
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "66 分 [out]橋本 亮太 [in]今岡 煌星",
@@ -10520,6 +10574,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 6,
       "kickoffAt": "2026-05-24T14:00:00+09:00",
       "venue": "広島大学",
@@ -10797,6 +10852,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "45 ＋1 分 [out]廣畑 俊汰 [in]柴田 陽太郎",
@@ -10905,6 +10961,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 6,
       "kickoffAt": "2026-05-24T14:15:00+09:00",
       "venue": "やまぐちサッカー交流広場",
@@ -11186,6 +11243,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "HT [out]尾崎 斗惟 [in]尺野 響太郎",
@@ -11271,6 +11329,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 7,
       "kickoffAt": "2026-05-31T13:00:00+09:00",
       "venue": "IPU・環太平洋大学 赤坂グラウンド",
@@ -11548,6 +11607,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "61 分 [out]島田 承馬 [in]田代 聡太",
@@ -11672,6 +11732,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 7,
       "kickoffAt": "2026-05-31T13:00:00+09:00",
       "venue": "広島文化学園大学",
@@ -11949,6 +12010,7 @@
           "away": 3
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "HT [out]北舛 粋生 [in]室賀 優龍",
@@ -12067,6 +12129,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 7,
       "kickoffAt": "2026-05-31T13:00:00+09:00",
       "venue": "周南公立大学",
@@ -12344,6 +12407,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "39 分 [out]永野 康生 [in]井出口 舜人",
@@ -12433,6 +12497,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 7,
       "kickoffAt": "2026-05-31T13:00:00+09:00",
       "venue": "広島修道大学",
@@ -12710,6 +12775,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "60 分 [out]西本 竣亮 [in]中川 祐紀",
@@ -12797,6 +12863,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 7,
       "kickoffAt": "2026-05-31T13:00:00+09:00",
       "venue": "福山平成大学",
@@ -13074,6 +13141,7 @@
           "away": 2
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "52 分 [out]田川 蓮之介 [in]倉本 大耀",
@@ -13184,6 +13252,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 8,
       "kickoffAt": "2026-06-07T13:00:00+09:00",
       "venue": "福山大学",
@@ -13461,6 +13530,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "HT [out]小林 俊雅 [in]宮崎 圭伸",
@@ -13541,6 +13611,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 8,
       "kickoffAt": "2026-06-07T13:00:00+09:00",
       "venue": "広島経済大学 陸上競技場",
@@ -13818,6 +13889,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "90 ＋7 分 [out]熊谷 弾 [in]島田 涼太"
@@ -13887,6 +13959,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 8,
       "kickoffAt": "2026-06-07T13:00:00+09:00",
       "venue": "広島文化学園大学",
@@ -14159,6 +14232,7 @@
           "away": 2
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "62 分 [out]長浜 大和 [in]伊東 怜真",
@@ -14258,6 +14332,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 8,
       "kickoffAt": "2026-06-07T13:00:00+09:00",
       "venue": "川崎医療福祉大学グラウンド",
@@ -14535,6 +14610,7 @@
           "away": 2
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "59 分 [out]三宅 朝陽 [in]中桐 文太",
@@ -14667,6 +14743,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 8,
       "kickoffAt": "2026-06-07T13:00:00+09:00",
       "venue": "福山平成大学",
@@ -14934,6 +15011,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "HT [out]田川 蓮之介 [in]田村 蒼",
@@ -15030,6 +15108,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 9,
       "kickoffAt": "2026-06-14T13:00:00+09:00",
       "venue": "IPU・環太平洋大学 赤坂グラウンド",
@@ -15307,6 +15386,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "17 分 [out]久保 公斗 [in]若尾 以心",
@@ -15415,6 +15495,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 9,
       "kickoffAt": "2026-06-14T13:00:00+09:00",
       "venue": "福山大学",
@@ -15692,6 +15773,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "HT [out]福田 虹斗 [in]川本 時生",
@@ -15793,6 +15875,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 9,
       "kickoffAt": "2026-06-14T13:00:00+09:00",
       "venue": "川崎医療福祉大学グラウンド",
@@ -16070,6 +16153,7 @@
           "away": 3
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "67 分 [out]深田 康介 [in]三宅 朝陽",
@@ -16229,6 +16313,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 9,
       "kickoffAt": "2026-06-14T13:00:00+09:00",
       "venue": "福山平成大学",
@@ -16496,6 +16581,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "68 分 [out]曽我 颯馬 [in]寺岡 隆希",
@@ -16545,6 +16631,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 9,
       "kickoffAt": "2026-06-14T13:00:00+09:00",
       "venue": "周南公立大学",
@@ -16822,6 +16909,7 @@
           "away": 0
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "HT [out]重原 唯人 [in]谷口 颯汰",
@@ -16884,6 +16972,7 @@
       "fedId": 15,
       "taikaiHoldId": 558,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
       "round": 2,
       "kickoffAt": "2026-07-12T17:00:00+09:00",
       "venue": "広島修道大学",
@@ -17161,6 +17250,7 @@
           "away": 1
         }
       ],
+      "penaltyShootout": null,
       "substitutions": {
         "home": [
           "HT [out]越智 捷太郎 [in]川原 颯斗",
@@ -17275,6 +17365,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 10,
       "kickoffAt": "2026-08-30T17:00:00+09:00",
       "venue": "やまぐちサッカー交流広場",
@@ -17286,7 +17378,8 @@
       "awayTeam": {
         "name": "IPU・環太平洋大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-0f5e1f549615",
@@ -17294,6 +17387,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 10,
       "kickoffAt": "2026-08-30T17:00:00+09:00",
       "venue": "広島経済大学フットボールパーク",
@@ -17305,7 +17400,8 @@
       "awayTeam": {
         "name": "川崎医療福祉大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-b461812b89b0",
@@ -17313,6 +17409,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 10,
       "kickoffAt": "2026-08-30T17:00:00+09:00",
       "venue": "福山平成大学",
@@ -17324,7 +17422,8 @@
       "awayTeam": {
         "name": "福山大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-94cad2db6d6e",
@@ -17332,6 +17431,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 10,
       "kickoffAt": "2026-08-30T17:00:00+09:00",
       "venue": "広島修道大学",
@@ -17343,7 +17444,8 @@
       "awayTeam": {
         "name": "広島大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-8b9ea049ddae",
@@ -17351,6 +17453,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 10,
       "kickoffAt": "2026-08-30T17:00:00+09:00",
       "venue": "周南公立大学",
@@ -17362,7 +17466,8 @@
       "awayTeam": {
         "name": "広島文化学園大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-9d23a39068ce",
@@ -17370,6 +17475,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 11,
       "kickoffAt": "2026-09-06T17:00:00+09:00",
       "venue": "IPU・環太平洋大学 赤坂グラウンド",
@@ -17381,7 +17488,8 @@
       "awayTeam": {
         "name": "川崎医療福祉大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-890ff1a23873",
@@ -17389,6 +17497,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 11,
       "kickoffAt": "2026-09-06T17:00:00+09:00",
       "venue": null,
@@ -17400,7 +17510,8 @@
       "awayTeam": {
         "name": "福山平成大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-a0f65b907df0",
@@ -17408,6 +17519,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 11,
       "kickoffAt": "2026-09-06T17:00:00+09:00",
       "venue": "広島経済大学 陸上競技場",
@@ -17419,7 +17532,8 @@
       "awayTeam": {
         "name": "広島修道大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-88b422ff1ca7",
@@ -17427,6 +17541,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 11,
       "kickoffAt": "2026-09-06T17:00:00+09:00",
       "venue": "福山大学",
@@ -17438,7 +17554,8 @@
       "awayTeam": {
         "name": "周南公立大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-a51504b51985",
@@ -17446,6 +17563,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 11,
       "kickoffAt": "2026-09-06T17:00:00+09:00",
       "venue": "広島大学",
@@ -17457,7 +17576,8 @@
       "awayTeam": {
         "name": "広島文化学園大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-74506eac0f96",
@@ -17465,6 +17585,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 12,
       "kickoffAt": "2026-09-13T17:00:00+09:00",
       "venue": "福山平成大学",
@@ -17476,7 +17598,8 @@
       "awayTeam": {
         "name": "IPU・環太平洋大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-9a6b3a4c0ef6",
@@ -17484,6 +17607,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 12,
       "kickoffAt": "2026-09-13T17:00:00+09:00",
       "venue": "広島修道大学",
@@ -17495,7 +17620,8 @@
       "awayTeam": {
         "name": "川崎医療福祉大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-dacc6756b15b",
@@ -17503,6 +17629,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 12,
       "kickoffAt": "2026-09-13T17:00:00+09:00",
       "venue": "周南公立大学",
@@ -17514,7 +17642,8 @@
       "awayTeam": {
         "name": "山口大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-717f6763d8d9",
@@ -17522,6 +17651,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 12,
       "kickoffAt": "2026-09-13T17:00:00+09:00",
       "venue": "広島文化学園大学",
@@ -17533,7 +17664,8 @@
       "awayTeam": {
         "name": "広島経済大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-01c4fc3136fb",
@@ -17541,6 +17673,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 12,
       "kickoffAt": "2026-09-13T17:00:00+09:00",
       "venue": "広島大学",
@@ -17552,7 +17686,8 @@
       "awayTeam": {
         "name": "福山大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-1969f3199c89",
@@ -17560,6 +17695,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 13,
       "kickoffAt": "2026-09-19T13:00:00+09:00",
       "venue": "IPU・環太平洋大学 赤坂グラウンド",
@@ -17571,7 +17708,8 @@
       "awayTeam": {
         "name": "広島修道大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-5f56bd21f3e5",
@@ -17579,6 +17717,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 13,
       "kickoffAt": "2026-09-19T13:00:00+09:00",
       "venue": "福山平成大学",
@@ -17590,7 +17730,8 @@
       "awayTeam": {
         "name": "周南公立大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-b9d9305c6997",
@@ -17598,6 +17739,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 13,
       "kickoffAt": "2026-09-19T13:00:00+09:00",
       "venue": "川崎医療福祉大学グラウンド",
@@ -17609,7 +17752,8 @@
       "awayTeam": {
         "name": "広島文化学園大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-de32b639aaf7",
@@ -17617,6 +17761,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 13,
       "kickoffAt": "2026-09-19T13:00:00+09:00",
       "venue": "やまぐちサッカー交流広場",
@@ -17628,7 +17774,8 @@
       "awayTeam": {
         "name": "広島大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-eef74d42f00e",
@@ -17636,6 +17783,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 13,
       "kickoffAt": "2026-09-19T13:00:00+09:00",
       "venue": "広島経済大学 陸上競技場",
@@ -17647,7 +17796,8 @@
       "awayTeam": {
         "name": "福山大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-c94fbf55d0c2",
@@ -17655,6 +17805,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 14,
       "kickoffAt": "2026-09-23T11:00:00+09:00",
       "venue": "広島文化学園大学",
@@ -17666,7 +17818,8 @@
       "awayTeam": {
         "name": "広島修道大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-4ac4bca9a8ed",
@@ -17674,6 +17827,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 14,
       "kickoffAt": "2026-09-23T13:00:00+09:00",
       "venue": "周南公立大学",
@@ -17685,7 +17840,8 @@
       "awayTeam": {
         "name": "IPU・環太平洋大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-0a050f889c24",
@@ -17693,6 +17849,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 14,
       "kickoffAt": "2026-09-23T13:00:00+09:00",
       "venue": "福山大学",
@@ -17704,7 +17862,8 @@
       "awayTeam": {
         "name": "川崎医療福祉大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-44886142f49b",
@@ -17712,6 +17871,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 14,
       "kickoffAt": "2026-09-23T13:00:00+09:00",
       "venue": "広島経済大学 陸上競技場",
@@ -17723,7 +17884,8 @@
       "awayTeam": {
         "name": "山口大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-292a5ece371b",
@@ -17731,6 +17893,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 14,
       "kickoffAt": "2026-09-23T14:00:00+09:00",
       "venue": "広島大学",
@@ -17742,7 +17906,8 @@
       "awayTeam": {
         "name": "福山平成大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-0a377fb50741",
@@ -17750,6 +17915,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 15,
       "kickoffAt": "2026-09-27T13:00:00+09:00",
       "venue": "IPU・環太平洋大学 赤坂グラウンド",
@@ -17761,7 +17928,8 @@
       "awayTeam": {
         "name": "広島文化学園大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-fa2d755f6683",
@@ -17769,6 +17937,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 15,
       "kickoffAt": "2026-09-27T13:00:00+09:00",
       "venue": "周南公立大学",
@@ -17780,7 +17950,8 @@
       "awayTeam": {
         "name": "広島大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-996c28c0a651",
@@ -17788,6 +17959,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 15,
       "kickoffAt": "2026-09-27T13:00:00+09:00",
       "venue": "広島修道大学",
@@ -17799,7 +17972,8 @@
       "awayTeam": {
         "name": "福山大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-d35477982730",
@@ -17807,6 +17981,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 15,
       "kickoffAt": "2026-09-27T13:00:00+09:00",
       "venue": "福山平成大学",
@@ -17818,7 +17994,8 @@
       "awayTeam": {
         "name": "広島経済大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-49cfca17683f",
@@ -17826,6 +18003,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 15,
       "kickoffAt": "2026-09-27T13:00:00+09:00",
       "venue": "川崎医療福祉大学グラウンド",
@@ -17837,7 +18016,8 @@
       "awayTeam": {
         "name": "山口大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-3ad969ef7947",
@@ -17845,6 +18025,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 16,
       "kickoffAt": "2026-10-11T13:00:00+09:00",
       "venue": "福山大学",
@@ -17856,7 +18038,8 @@
       "awayTeam": {
         "name": "広島文化学園大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-2c7d132c2fad",
@@ -17864,6 +18047,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 16,
       "kickoffAt": "2026-10-11T13:00:00+09:00",
       "venue": "広島経済大学 陸上競技場",
@@ -17875,7 +18060,8 @@
       "awayTeam": {
         "name": "周南公立大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-68aee9cd632d",
@@ -17883,6 +18069,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 16,
       "kickoffAt": "2026-10-11T13:00:00+09:00",
       "venue": null,
@@ -17894,7 +18082,8 @@
       "awayTeam": {
         "name": "広島修道大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-9fdb84998ed3",
@@ -17902,6 +18091,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 16,
       "kickoffAt": "2026-10-11T13:00:00+09:00",
       "venue": "川崎医療福祉大学グラウンド",
@@ -17913,7 +18104,8 @@
       "awayTeam": {
         "name": "福山平成大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-5100a64a32a5",
@@ -17921,6 +18113,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 16,
       "kickoffAt": "2026-10-11T14:00:00+09:00",
       "venue": "広島大学",
@@ -17932,7 +18126,8 @@
       "awayTeam": {
         "name": "IPU・環太平洋大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-67b8c830dd9a",
@@ -17940,6 +18135,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 17,
       "kickoffAt": "2026-10-18T11:00:00+09:00",
       "venue": "IPU・環太平洋大学 赤坂グラウンド",
@@ -17951,7 +18148,8 @@
       "awayTeam": {
         "name": "福山大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-ad4d10e26062",
@@ -17959,6 +18157,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 17,
       "kickoffAt": "2026-10-18T13:00:00+09:00",
       "venue": "広島文化学園大学",
@@ -17970,7 +18170,8 @@
       "awayTeam": {
         "name": "山口大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-a60905ce452f",
@@ -17978,6 +18179,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 17,
       "kickoffAt": "2026-10-18T13:00:00+09:00",
       "venue": "周南公立大学",
@@ -17989,7 +18192,8 @@
       "awayTeam": {
         "name": "川崎医療福祉大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-dc21ba848f97",
@@ -17997,6 +18201,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 17,
       "kickoffAt": "2026-10-18T13:00:00+09:00",
       "venue": "広島修道大学",
@@ -18008,7 +18214,8 @@
       "awayTeam": {
         "name": "福山平成大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-ca0b9b3eb007",
@@ -18016,6 +18223,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 17,
       "kickoffAt": "2026-10-18T14:00:00+09:00",
       "venue": "広島大学",
@@ -18027,7 +18236,8 @@
       "awayTeam": {
         "name": "広島経済大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-b5bc8a59054d",
@@ -18035,6 +18245,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 18,
       "kickoffAt": "2026-10-25T13:00:00+09:00",
       "venue": "広島経済大学フットボールパーク",
@@ -18046,7 +18258,8 @@
       "awayTeam": {
         "name": "IPU・環太平洋大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-25b0e9f7e814",
@@ -18054,6 +18267,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 18,
       "kickoffAt": "2026-10-25T13:00:00+09:00",
       "venue": null,
@@ -18065,7 +18280,8 @@
       "awayTeam": {
         "name": "福山大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-37da8f2b2690",
@@ -18073,6 +18289,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 18,
       "kickoffAt": "2026-10-25T13:00:00+09:00",
       "venue": "広島大学",
@@ -18084,7 +18302,8 @@
       "awayTeam": {
         "name": "川崎医療福祉大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-e79c6b13e327",
@@ -18092,6 +18311,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 18,
       "kickoffAt": "2026-10-25T13:00:00+09:00",
       "venue": "広島文化学園大学",
@@ -18103,7 +18324,8 @@
       "awayTeam": {
         "name": "福山平成大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     },
     {
       "id": "football-system-schedule-530b1dfcb525",
@@ -18111,6 +18333,8 @@
       "fedId": null,
       "taikaiHoldId": null,
       "competitionName": "2026年度 中国大学サッカーリーグ 1部",
+      "groupName": null,
+      "roundLabel": null,
       "round": 18,
       "kickoffAt": "2026-10-25T13:00:00+09:00",
       "venue": "広島修道大学",
@@ -18122,7 +18346,8 @@
       "awayTeam": {
         "name": "周南公立大学",
         "score": null
-      }
+      },
+      "penaltyShootout": null
     }
   ]
 }

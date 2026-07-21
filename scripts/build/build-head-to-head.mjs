@@ -56,7 +56,7 @@ export async function buildHeadToHead() {
     }
   }
 
-  const output = {
+  let output = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
     sourceSeasons: [...new Set(sources.map((source) => source.season))],
@@ -64,6 +64,16 @@ export async function buildHeadToHead() {
     matchCount: games.length,
     items: aggregateGames(games, catalog.items ?? []),
   };
+  try {
+    const previous = await readJson(OUTPUT_PATH);
+    const { generatedAt: previousGeneratedAt, ...previousContent } = previous;
+    const { generatedAt: _nextGeneratedAt, ...nextContent } = output;
+    if (JSON.stringify(previousContent) === JSON.stringify(nextContent)) {
+      output = { ...output, generatedAt: previousGeneratedAt };
+    }
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
   await writeJsonAtomic(OUTPUT_PATH, output);
   console.log(`対戦成績JSON保存: ${OUTPUT_PATH}`);
   console.log(`対象: ${sources.length}大会 / ${games.length}試合`);

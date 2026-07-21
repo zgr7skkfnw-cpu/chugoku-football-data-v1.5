@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { isDeepStrictEqual } from "node:util";
 
 import { request } from "@playwright/test";
 import * as cheerio from "cheerio";
@@ -365,6 +366,7 @@ function parseListHtml(listHtml) {
         competitionName: groupName,
         groupName: groupNames.length > 1 ? groupName.replace(/^.*新人戦\s*/, "") : null,
         roundLabel: groupNames.length > 1 ? `${groupName.replace(/^.*新人戦\s*/, "")} 第${round}節` : null,
+        penaltyShootout: null,
         round,
         kickoffAt,
         venue,
@@ -713,12 +715,12 @@ async function readPreviousOutput() {
 }
 
 function countChanges(previousItems = [], nextItems = []) {
-  const previous = new Map(previousItems.map((item) => [item.id, JSON.stringify(item)]));
-  const next = new Map(nextItems.map((item) => [item.id, JSON.stringify(item)]));
+  const previous = new Map(previousItems.map((item) => [item.id, item]));
+  const next = new Map(nextItems.map((item) => [item.id, item]));
   let changes = 0;
 
-  for (const [id, serialized] of next) {
-    if (previous.get(id) !== serialized) {
+  for (const [id, item] of next) {
+    if (!isDeepStrictEqual(previous.get(id), item)) {
       changes += 1;
     }
   }

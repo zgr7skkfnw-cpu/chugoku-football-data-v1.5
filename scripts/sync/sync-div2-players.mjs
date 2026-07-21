@@ -23,6 +23,10 @@ const SPECS = [
 ].map(([id, name, pageId]) => ({ id, name, pageId }));
 
 function cleanText(value) { return String(value ?? "").replace(/[\s　]+/g, " ").trim(); }
+function sameExcept(left, right, ignoredKeys) {
+  const omit = (value) => Object.fromEntries(Object.entries(value).filter(([key]) => !ignoredKeys.includes(key)));
+  return JSON.stringify(omit(left)) === JSON.stringify(omit(right));
+}
 function cell($, row, selector) { const value = $(row).find(selector).first().clone(); value.find(".sp").remove(); return cleanText(value.text()); }
 function number(value) { const parsed = Number.parseInt(cleanText(value).replace(/[^0-9]/g, ""), 10); return Number.isInteger(parsed) ? parsed : null; }
 function gradeFromBirth(birth) { if (!birth) return null; const [year, month, day] = birth.split("-").map(Number); if (![year, month, day].every(Number.isInteger)) return null; const cohort = month < 4 || (month === 4 && day === 1) ? year - 1 : year; const grade = 2026 - (cohort + 19) + 1; return grade >= 1 && grade <= 4 ? grade : null; }
@@ -79,6 +83,7 @@ const api = await request.newContext({ timeout: 30000, extraHTTPHeaders: { Accep
 let pendingSnapshotTemporaryPath = null;
 try {
   const existing = JSON.parse(await readFile(PLAYERS_PATH, "utf8"));
+  const existingAudit = JSON.parse(await readFile(AUDIT_PATH, "utf8"));
   const matches = JSON.parse(await readFile(MATCHES_PATH, "utf8"));
   const fetchedByTeam = new Map();
   const sources = [];
@@ -110,8 +115,11 @@ try {
   pendingSnapshotTemporaryPath = snapshotTemporaryPath;
   const teamNameById = new Map(SPECS.map((spec) => [spec.id, spec.name]));
   const removedCandidates = summarizeRemovedPlayers(snapshot.changes.removed, matches.items, teamNameById);
-  const audit = { ...auditRoster(matches.items, merged.players, targetTeamIds, teamIdByName), sources, merge: { added: merged.added, updated: merged.updated, deleted: merged.deleted, preserved: merged.preserved }, divisionPlayerCount: divisionCount, removedCandidates, snapshot: { previous: previousSnapshot?.syncedAt ?? null, saved: shouldSaveSnapshot, path: shouldSaveSnapshot ? `reports/roster-snapshots/2026/div2/${snapshotFileName(updatedAt)}` : null, changes: snapshot.changes } };
-  await writeFile(PLAYER_TEMPORARY_PATH, `${JSON.stringify({ ...existing, updatedAt: updatedAt.toISOString(), count: merged.players.length, items: merged.players }, null, 2)}\n`);
+  let audit = { ...auditRoster(matches.items, merged.players, targetTeamIds, teamIdByName), sources, merge: { added: merged.added, updated: merged.updated, deleted: merged.deleted, preserved: merged.preserved }, divisionPlayerCount: divisionCount, removedCandidates, snapshot: { previous: previousSnapshot?.syncedAt ?? null, saved: shouldSaveSnapshot, path: shouldSaveSnapshot ? `reports/roster-snapshots/2026/div2/${snapshotFileName(updatedAt)}` : null, changes: snapshot.changes } };
+  let playersOutput = { ...existing, updatedAt: updatedAt.toISOString(), count: merged.players.length, items: merged.players };
+  if (sameExcept(existing, playersOutput, ["updatedAt"])) playersOutput = { ...playersOutput, updatedAt: existing.updatedAt };
+  if (sameExcept(existingAudit, audit, ["checkedAt"])) audit = { ...audit, checkedAt: existingAudit.checkedAt };
+  await writeFile(PLAYER_TEMPORARY_PATH, `${JSON.stringify(playersOutput, null, 2)}\n`);
   await writeFile(AUDIT_TEMPORARY_PATH, `${JSON.stringify(audit, null, 2)}\n`);
   if (shouldSaveSnapshot) await writeFile(snapshotTemporaryPath, `${JSON.stringify(snapshot, null, 2)}\n`);
   JSON.parse(await readFile(PLAYER_TEMPORARY_PATH, "utf8"));

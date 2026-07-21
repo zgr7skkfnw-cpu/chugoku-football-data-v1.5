@@ -60,6 +60,24 @@ const competitionTeamNames = new Map();
 const division2TeamIds = new Set(seasonData.competitions.find((competition) => competition.division === 2 && competition.stage === "regular")?.teamIds ?? []);
 const expectedDivision2Emblems = new Set([...division2TeamIds].filter((teamId) => teamId !== "university-of-shimane"));
 
+for (const [label, data] of [["division 1", matchesData], ["division 2", division2MatchesData]]) {
+  for (const match of data.items ?? []) {
+    if (!("groupName" in match) || (match.groupName !== null && typeof match.groupName !== "string")) {
+      errors.push(`${label} ${match.id}: groupName must be null or a string`);
+    }
+    if (!("roundLabel" in match) || (match.roundLabel !== null && typeof match.roundLabel !== "string")) {
+      errors.push(`${label} ${match.id}: roundLabel must be null or a string`);
+    }
+    if (!("penaltyShootout" in match)) {
+      errors.push(`${label} ${match.id}: penaltyShootout must be present`);
+    } else if (match.penaltyShootout !== null && (
+      !Number.isFinite(match.penaltyShootout.home) || !Number.isFinite(match.penaltyShootout.away)
+    )) {
+      errors.push(`${label} ${match.id}: penaltyShootout must be null or contain official scores`);
+    }
+  }
+}
+
 for (const team of teamCatalog) {
   if (team.competitionId) {
     const key = `${team.competitionId}\0${team.name}`;

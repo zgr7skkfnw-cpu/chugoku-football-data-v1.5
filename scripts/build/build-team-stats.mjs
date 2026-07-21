@@ -59,7 +59,7 @@ export async function buildTeamStats({ season = 2026, division = 1, competitionI
     }),
   );
 
-  const output = {
+  let output = {
     schemaVersion: 1,
     seasonId: matchesData.seasonId,
     updatedAt: matchesData.updatedAt,
@@ -68,6 +68,16 @@ export async function buildTeamStats({ season = 2026, division = 1, competitionI
     periodRules: competition.periodRules,
     periods,
   };
+  try {
+    const previous = await readJson(outputPath);
+    const { updatedAt: previousUpdatedAt, ...previousContent } = previous;
+    const { updatedAt: _nextUpdatedAt, ...nextContent } = output;
+    if (JSON.stringify(previousContent) === JSON.stringify(nextContent)) {
+      output = { ...output, updatedAt: previousUpdatedAt };
+    }
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
   await writeJsonAtomic(outputPath, output);
   console.log(`チーム分析JSON保存: ${outputPath}`);
   console.log(`対象: ${season}年度 ${competition.name} / ${teams.length}チーム / ${finishedMatches.length}試合`);
