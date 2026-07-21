@@ -25,10 +25,12 @@ function readRouteFromUrl() {
     matchId: view === "match" ? url.searchParams.get("id") : null,
     teamId: view === "team" ? url.searchParams.get("id") : null,
     playerId: view === "player" ? url.searchParams.get("id") : null,
+    competitionId: url.searchParams.get("competition") || null,
+    season: Number.parseInt(url.searchParams.get("season"), 10) || null,
   };
 }
 
-export function routeHref(view, { matchId = null, teamId = null, playerId = null } = {}) {
+export function routeHref(view, { matchId = null, teamId = null, playerId = null, competitionId = null, season = null } = {}) {
   const url = new URL(window.location.href);
   url.search = "";
 
@@ -47,23 +49,27 @@ export function routeHref(view, { matchId = null, teamId = null, playerId = null
   if (view === "player" && playerId) {
     url.searchParams.set("id", playerId);
   }
+  if (competitionId) url.searchParams.set("competition", competitionId);
+  if (season) url.searchParams.set("season", String(season));
 
   return `${url.pathname}${url.search}`;
 }
 
-export function navigate(view, { replace = false, matchId = null, teamId = null, playerId = null } = {}) {
+export function navigate(view, { replace = false, matchId = null, teamId = null, playerId = null, competitionId = null, season = null } = {}) {
   const nextView = Object.hasOwn(routes, view) ? view : "home";
   const method = replace ? "replaceState" : "pushState";
   window.history[method](
-    { view: nextView, matchId, teamId, playerId },
+    { view: nextView, matchId, teamId, playerId, competitionId, season },
     "",
-    routeHref(nextView, { matchId, teamId, playerId }),
+    routeHref(nextView, { matchId, teamId, playerId, competitionId, season }),
   );
   setState({
     currentView: nextView,
     currentMatchId: nextView === "match" ? matchId : null,
     currentTeamId: nextView === "team" ? teamId : null,
     currentPlayerId: nextView === "player" ? playerId : null,
+    ...(competitionId ? { selectedCompetitionId: competitionId } : {}),
+    ...(season ? { selectedSeason: season } : {}),
   });
 }
 
@@ -74,6 +80,8 @@ export function initializeRouter() {
     matchId: initialRoute.matchId,
     teamId: initialRoute.teamId,
     playerId: initialRoute.playerId,
+    competitionId: initialRoute.competitionId,
+    season: initialRoute.season,
   });
 
   window.addEventListener("popstate", () => {
@@ -83,6 +91,8 @@ export function initializeRouter() {
       currentMatchId: route.matchId,
       currentTeamId: route.teamId,
       currentPlayerId: route.playerId,
+      ...(route.competitionId ? { selectedCompetitionId: route.competitionId } : {}),
+      ...(route.season ? { selectedSeason: route.season } : {}),
     });
   });
 
@@ -102,6 +112,8 @@ export function initializeRouter() {
       matchId: routeLink.dataset.matchId ?? null,
       teamId: routeLink.dataset.teamId ?? null,
       playerId: routeLink.dataset.playerId ?? null,
+      competitionId: routeLink.dataset.competitionId ?? null,
+      season: Number.parseInt(routeLink.dataset.season, 10) || null,
     });
   });
 }

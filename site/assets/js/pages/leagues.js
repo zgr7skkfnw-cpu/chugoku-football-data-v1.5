@@ -1,16 +1,17 @@
 import { routeHref } from "../router.js";
-import { setState } from "../state.js";
 import { createNotice, createPageHeader, element } from "../ui/elements.js";
 
 const LEAGUES = [
   {
     division: 1,
+    competitionId: "jufa-chugoku-2026-division-1",
     name: "中国大学サッカーリーグ1部",
     shortName: "1部",
     description: "中国地区の大学サッカー最上位リーグ",
   },
   {
     division: 2,
+    competitionId: "jufa-chugoku-2026-division-2",
     name: "中国大学サッカーリーグ2部",
     shortName: "2部",
     description: "中国地区の大学サッカー2部リーグ",
@@ -61,8 +62,10 @@ function createLeagueCard(league) {
     {
       className: "league-card",
       attributes: {
-        href: routeHref("league"),
+        href: routeHref("league", { competitionId: league.competitionId, season: 2026 }),
         "data-route": "league",
+        "data-competition-id": league.competitionId,
+        "data-season": "2026",
         "aria-label": `${league.name}の詳細を表示`,
       },
     },
@@ -82,13 +85,6 @@ function createLeagueCard(league) {
       }),
     ],
   );
-
-  link.addEventListener("click", () => {
-    setState({
-      leagueDivision: league.division,
-      selectedCompetitionId: league.competitionId ?? null,
-    });
-  });
 
   return link;
 }

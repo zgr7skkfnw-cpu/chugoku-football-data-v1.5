@@ -15,6 +15,10 @@ const BASE_URL = "http://127.0.0.1:4173/";
 const I1 = "jufa-chugoku-2026-i-league-division-1";
 const I2 = "jufa-chugoku-2026-i-league-division-2";
 
+function competitionTeamId(competitionId, name) {
+  return catalog.items.find((team) => team.competitionId === competitionId && team.name === name)?.id;
+}
+
 test("Iリーグ1部28試合・2部15試合と大会別順位を保持する", () => {
   expect(div1.items).toHaveLength(28);
   expect(div2.items).toHaveLength(15);
@@ -112,6 +116,101 @@ test("Iリーグ1部・2部の順位表と参加チームを表示する", async
   await page.getByRole("tab", { name: "I 2部" }).click();
   await expect(page.locator(".standing-table")).toHaveAttribute("data-standing-count", "6");
   await expect(page.getByRole("link", { name: "IPU・環太平洋大学B" }).first()).toBeVisible();
+});
+
+test("リーグ一覧のIリーグカードはcompetitionIdと2026年度をURLへ保持する", async ({ page }) => {
+  await page.goto(`${BASE_URL}?view=standings`);
+  await page.getByRole("link", { name: "Iリーグ中国 1部の詳細を表示" }).click();
+  await expect(page).toHaveURL(new RegExp(`competition=${I1}.*season=2026`));
+  await expect(page.locator(".standing-table")).toHaveAttribute("data-standing-count", "8");
+  await page.reload();
+  await expect(page.getByRole("heading", { name: "Iリーグ 中国2026 1部", exact: true })).toBeVisible();
+  await expect(page.locator(".standing-table")).toHaveAttribute("data-standing-count", "8");
+
+  await page.goto(`${BASE_URL}?view=standings`);
+  await page.getByRole("link", { name: "Iリーグ中国 2部の詳細を表示" }).click();
+  await expect(page).toHaveURL(new RegExp(`competition=${I2}.*season=2026`));
+  await expect(page.locator(".standing-table")).toHaveAttribute("data-standing-count", "6");
+  await expect(page.getByRole("heading", { name: "Iリーグ 中国2026 2部", exact: true })).toBeVisible();
+});
+
+test("Iリーグページに9月5日の公式予定7試合を表示し詳細を開ける", async ({ page }) => {
+  const september5Div1 = div1.items.filter((match) => match.kickoffAt.startsWith("2026-09-05"));
+  const september5Div2 = div2.items.filter((match) => match.kickoffAt.startsWith("2026-09-05"));
+  expect(september5Div1).toHaveLength(4);
+  expect(september5Div2).toHaveLength(3);
+  expect([...september5Div1, ...september5Div2].every((match) => match.gameId === null && match.status === "scheduled")).toBeTruthy();
+
+  for (const [competitionId, expected, excluded] of [[I1, september5Div1, september5Div2], [I2, september5Div2, september5Div1]]) {
+    await page.goto(`${BASE_URL}?view=league&competition=${competitionId}&season=2026`);
+    await page.getByRole("tab", { name: "試合", exact: true }).click();
+    for (const match of expected) await expect(page.locator(`[data-match-id="${match.id}"]`)).toBeVisible();
+    for (const match of excluded) await expect(page.locator(`[data-match-id="${match.id}"]`)).toHaveCount(0);
+  }
+
+  const match = september5Div1[0];
+  await page.goto(`${BASE_URL}?view=match&id=${match.id}`);
+  await expect(page.locator('[data-page="match"]')).toContainText("2026年9月5日(土)");
+  await expect(page.locator('[data-page="match"]')).toContainText("キックオフ16:00");
+  await expect(page.locator(".match-scoreboard")).toContainText(match.homeTeam.name);
+  await expect(page.locator(".match-scoreboard")).toContainText(match.awayTeam.name);
+  await expect(page.locator('[data-page="match"]')).toContainText(match.venue);
+  await expect(page.locator('[data-page="match"]')).not.toContainText("undefined");
+});
+
+test("Iリーグ全43試合の大会・節・状態・識別情報を保持する", () => {
+  for (const [competitionId, data, expectedRounds, expectedFinished, expectedScheduled] of [
+    [I1, div1, [1, 2, 3, 4, 5, 6, 7], 16, 12],
+    [I2, div2, [1, 2, 3, 4, 5], 9, 6],
+  ]) {
+    expect(new Set(data.items.map((match) => match.competitionId))).toEqual(new Set([competitionId]));
+    expect([...new Set(data.items.map((match) => Number(match.round)))].sort((a, b) => a - b)).toEqual(expectedRounds);
+    expect(data.items.filter((match) => match.status === "finished")).toHaveLength(expectedFinished);
+    expect(data.items.filter((match) => match.status === "scheduled")).toHaveLength(expectedScheduled);
+    expect(data.items.every((match) => (
+      match.id
+      && match.kickoffAt
+      && competitionTeamId(competitionId, match.homeTeam?.name)
+      && competitionTeamId(competitionId, match.awayTeam?.name)
+      && match.venue
+      && ["finished", "scheduled"].includes(match.status)
+      && (match.gameId == null || Number.isInteger(match.gameId))
+    ))).toBeTruthy();
+    expect(new Set(data.items.map((match) => match.id)).size).toBe(data.items.length);
+  }
+});
+
+test("Iリーグ全43試合を大会・チーム・詳細画面で欠落なく表示する", async ({ page }) => {
+  for (const [competitionId, data, excluded] of [[I1, div1, div2], [I2, div2, div1]]) {
+    const directUrl = `${BASE_URL}?view=league&competition=${competitionId}&season=2026`;
+    await page.goto(directUrl);
+    await page.getByRole("tab", { name: "試合", exact: true }).click();
+    await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", String(data.items.length));
+    await expect(page.locator(".match-row--finished")).toHaveCount(data.items.filter((match) => match.status === "finished").length);
+    await expect(page.locator(".match-row--scheduled")).toHaveCount(data.items.filter((match) => match.status === "scheduled").length);
+    for (const match of data.items) await expect(page.locator(`[data-match-id="${match.id}"]`)).toBeVisible();
+    for (const match of excluded.items) await expect(page.locator(`[data-match-id="${match.id}"]`)).toHaveCount(0);
+
+    await page.reload();
+    await expect(page).toHaveURL(new RegExp(`competition=${competitionId}.*season=2026`));
+    await page.getByRole("tab", { name: "試合", exact: true }).click();
+    await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", String(data.items.length));
+
+    for (const match of data.items) {
+      for (const teamId of [
+        competitionTeamId(competitionId, match.homeTeam.name),
+        competitionTeamId(competitionId, match.awayTeam.name),
+      ]) {
+        await page.goto(`${BASE_URL}?view=team&id=${teamId}`);
+        await expect(page.locator(`.match-row[data-match-id="${match.id}"]`)).toBeVisible();
+      }
+      await page.goto(`${BASE_URL}?view=match&id=${match.id}`);
+      await expect(page.locator('[data-page="match"]')).toHaveAttribute("data-match-id", match.id);
+      await expect(page.locator(".match-scoreboard")).toContainText(match.homeTeam.name);
+      await expect(page.locator(".match-scoreboard")).toContainText(match.awayTeam.name);
+      await expect(page.locator('[data-page="match"]')).toContainText(match.venue);
+    }
+  }
 });
 
 test("Iリーグ試合詳細・チームページ・管理画面を安全に表示する", async ({ page }) => {
