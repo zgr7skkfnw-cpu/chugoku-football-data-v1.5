@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 1,
+  "seasonId": "jufa-chugoku-2026-rookie-tournament",
+  "stage": "rookie-tournament",
+  "competitionName": "2026年度 第10回中国大学サッカー新人戦 Aグループ",
+  "updatedAt": "2026-07-21T08:20:32.277Z",
+  "source": {
+    "pageUrl": "https://jufa-chugoku.jp/result/2026/tid_575/",
+    "iframeUrl": "https://football-system.jp/fss/pub_taikaigamelist.php?lid=XYluQ9Tdb56P3o7xAutU620jHdjQm2lu",
+    "detailPostUrl": "https://football-system.jp/fss/pubGameResultConf.php",
+    "retrievedAt": "2026-07-21T08:20:32.277Z"
+  },
+  "scheduleCount": 21,
+  "matchCount": 21,
+  "items": [
+    {
+      "id": "football-system-schedule-25f7fddaf184",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Aグループ",
+      "groupName": "Aグループ",
+      "roundLabel": "Aグループ 第1節",
+      "round": 1,
+      "kickoffAt": "2026-07-26T17:00:00+09:00",
+      "venue": "広島文化学園大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "岡山大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "広島文化学園大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-d54dea1d6857",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Bグループ",
+      "groupName": "Bグループ",
+      "roundLabel": "Bグループ 第1節",
+      "round": 1,
+      "kickoffAt": "2026-07-26T17:00:00+09:00",
+      "venue": "就実学園祇園グラウンド",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "就実大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "IPU・環太平洋大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-3a31bff94cb8",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Bグループ",
+      "groupName": "Bグループ",
+      "roundLabel": "Bグループ 第1節",
+      "round": 1,
+      "kickoffAt": "2026-07-26T17:00:00+09:00",
+      "venue": "岡山理科大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "福山平成大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "岡山理科大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-d20aafa3a230",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Cグループ",
+      "groupName": "Cグループ",
+      "roundLabel": "Cグループ 第1節",
+      "round": 1,
+      "kickoffAt": "2026-07-26T17:00:00+09:00",
+      "venue": "中海スポーツパーク多目的グラウンド",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "島根大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "広島修道大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-e011c284c333",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Cグループ",
+      "groupName": "Cグループ",
+      "roundLabel": "Cグループ 第1節",
+      "round": 1,
+      "kickoffAt": "2026-07-26T17:00:00+09:00",
+      "venue": "周南公立大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "周南公立大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "川崎医療福祉大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-5b1308d7cc1d",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Dグループ",
+      "groupName": "Dグループ",
+      "roundLabel": "Dグループ 第1節",
+      "round": 1,
+      "kickoffAt": "2026-07-26T17:00:00+09:00",
+      "venue": "広島大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "山口大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "広島大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-bf611c8c6583",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Dグループ",
+      "groupName": "Dグループ",
+      "roundLabel": "Dグループ 第1節",
+      "round": 1,
+      "kickoffAt": "2026-07-26T17:00:00+09:00",
+      "venue": "広島経済大学 陸上競技場",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "広島経済大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "広島国際大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-3aaadf953aee",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Aグループ",
+      "groupName": "Aグループ",
+      "roundLabel": "Aグループ 第2節",
+      "round": 2,
+      "kickoffAt": "2026-08-02T17:00:00+09:00",
+      "venue": "広島文化学園大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "広島文化学園大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "福山大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-f654b4871fe4",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Bグループ",
+      "groupName": "Bグループ",
+      "roundLabel": "Bグループ 第2節",
+      "round": 2,
+      "kickoffAt": "2026-08-02T17:00:00+09:00",
+      "venue": "IPU・環太平洋大学 赤坂グラウンド",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "IPU・環太平洋大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "岡山理科大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-f987b4da98c1",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Bグループ",
+      "groupName": "Bグループ",
+      "roundLabel": "Bグループ 第2節",
+      "round": 2,
+      "kickoffAt": "2026-08-02T17:00:00+09:00",
+      "venue": "福山平成大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "福山平成大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "就実大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-fb036b4b8c1e",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Cグループ",
+      "groupName": "Cグループ",
+      "roundLabel": "Cグループ 第2節",
+      "round": 2,
+      "kickoffAt": "2026-08-02T17:00:00+09:00",
+      "venue": "広島修道大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "広島修道大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "川崎医療福祉大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-729244496ba1",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Cグループ",
+      "groupName": "Cグループ",
+      "roundLabel": "Cグループ 第2節",
+      "round": 2,
+      "kickoffAt": "2026-08-02T17:00:00+09:00",
+      "venue": "周南公立大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "周南公立大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "島根大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-47abdb32aa01",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Dグループ",
+      "groupName": "Dグループ",
+      "roundLabel": "Dグループ 第2節",
+      "round": 2,
+      "kickoffAt": "2026-08-02T17:00:00+09:00",
+      "venue": "広島大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "広島大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "広島国際大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-4d170850c540",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Dグループ",
+      "groupName": "Dグループ",
+      "roundLabel": "Dグループ 第2節",
+      "round": 2,
+      "kickoffAt": "2026-08-02T17:00:00+09:00",
+      "venue": "広島経済大学 陸上競技場",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "広島経済大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "山口大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-2e33e8233ee0",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Cグループ",
+      "groupName": "Cグループ",
+      "roundLabel": "Cグループ 第3節",
+      "round": 3,
+      "kickoffAt": "2026-08-22T16:30:00+09:00",
+      "venue": "川崎医療福祉大学グラウンド",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "川崎医療福祉大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "島根大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-679a94b10a68",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Aグループ",
+      "groupName": "Aグループ",
+      "roundLabel": "Aグループ 第3節",
+      "round": 3,
+      "kickoffAt": "2026-08-22T17:00:00+09:00",
+      "venue": "福山大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "福山大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "岡山大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-b52e59f8d739",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Bグループ",
+      "groupName": "Bグループ",
+      "roundLabel": "Bグループ 第3節",
+      "round": 3,
+      "kickoffAt": "2026-08-22T17:00:00+09:00",
+      "venue": "IPU・環太平洋大学 赤坂グラウンド",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "IPU・環太平洋大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "福山平成大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-0e7a5f1fcd7f",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Bグループ",
+      "groupName": "Bグループ",
+      "roundLabel": "Bグループ 第3節",
+      "round": 3,
+      "kickoffAt": "2026-08-22T17:00:00+09:00",
+      "venue": "岡山理科大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "岡山理科大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "就実大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-28e8bb10ab48",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Cグループ",
+      "groupName": "Cグループ",
+      "roundLabel": "Cグループ 第3節",
+      "round": 3,
+      "kickoffAt": "2026-08-22T17:00:00+09:00",
+      "venue": "広島修道大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "広島修道大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "周南公立大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-c5ab653173cd",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Dグループ",
+      "groupName": "Dグループ",
+      "roundLabel": "Dグループ 第3節",
+      "round": 3,
+      "kickoffAt": "2026-08-22T17:00:00+09:00",
+      "venue": "広島大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "広島大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "広島経済大学",
+        "score": null
+      }
+    },
+    {
+      "id": "football-system-schedule-7a443ba60e00",
+      "gameId": null,
+      "fedId": null,
+      "taikaiHoldId": null,
+      "competitionName": "2026年度 第10回中国大学サッカー新人戦 Dグループ",
+      "groupName": "Dグループ",
+      "roundLabel": "Dグループ 第3節",
+      "round": 3,
+      "kickoffAt": "2026-08-22T17:00:00+09:00",
+      "venue": "広島国際大学",
+      "status": "scheduled",
+      "homeTeam": {
+        "name": "広島国際大学",
+        "score": null
+      },
+      "awayTeam": {
+        "name": "山口大学",
+        "score": null
+      }
+    }
+  ]
+}

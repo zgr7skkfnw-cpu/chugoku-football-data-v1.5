@@ -155,6 +155,18 @@ const TARGETS = {
     allowIncompleteLineups: true,
     buildStats: false,
   },
+  "2026-rookie": {
+    season: 2026,
+    division: null,
+    competitionId: "jufa-chugoku-2026-rookie-tournament",
+    stage: "rookie-tournament",
+    sourcePageUrl: "https://jufa-chugoku.jp/result/2026/tid_575/",
+    outputPath: "../../site/data/seasons/2026/rookie/matches.json",
+    minimumScheduleCount: 1,
+    minimumDetailCount: 0,
+    allowIncompleteLineups: true,
+    buildStats: false,
+  },
 };
 const targetKey = process.argv.find((argument) => argument.startsWith("--target="))?.split("=")[1] ?? "2026-1";
 const target = TARGETS[targetKey];
@@ -271,21 +283,27 @@ function parseKickoffAt(dateText, timeText) {
 
 function parseListHtml(listHtml) {
   const $ = cheerio.load(listHtml);
-  const table = $("table.game_schedule").first();
+  const tables = $("table.game_schedule");
 
-  if (!table.length) {
+  if (!tables.length) {
     throw new Error("football-system一覧にtable.game_scheduleが見つかりません");
   }
 
   const competitionName = cleanText($("table.head td.name").first().text());
-  const allScheduleRows = table.find("tr").filter((_, row) => {
-    const $row = $(row);
-    return cleanText($row.find("td.team_home").text()) && cleanText($row.find("td.team_away").text());
+  const groupNames = $("table.head td.name").map((_, cell) => cleanText($(cell).text())).get();
+  const allScheduleRows = [];
+  tables.each((tableIndex, table) => {
+    $(table).find("tr").each((_, row) => {
+      const $row = $(row);
+      if (cleanText($row.find("td.team_home").text()) && cleanText($row.find("td.team_away").text())) {
+        allScheduleRows.push({ row, groupName: groupNames[tableIndex] || competitionName });
+      }
+    });
   });
   const matches = [];
   const scheduledMatches = [];
 
-  allScheduleRows.each((sourceOrder, row) => {
+  allScheduleRows.forEach(({ row, groupName }, sourceOrder) => {
     const $row = $(row);
     const detailLink = $row.find("[onclick*='gamedetail']").first();
     const onclick = detailLink.attr("onclick") ?? "";
@@ -312,7 +330,7 @@ function parseListHtml(listHtml) {
 
     // football-systemは結果詳細が公開された試合にだけgamedetailを付与する。
     if (!identifiers) {
-      const stableKey = `${round}|${kickoffAt}|${homeName}|${awayName}`;
+      const stableKey = `${groupName}|${round}|${kickoffAt}|${homeName}|${awayName}`;
       const digest = createHash("sha1").update(stableKey).digest("hex").slice(0, 12);
       scheduledMatches.push({
         id: `football-system-schedule-${digest}`,
@@ -320,7 +338,9 @@ function parseListHtml(listHtml) {
         fedId: null,
         taikaiHoldId: null,
         sourceOrder,
-        competitionName,
+        competitionName: groupName,
+        groupName: groupNames.length > 1 ? groupName.replace(/^.*新人戦\s*/, "") : null,
+        roundLabel: groupNames.length > 1 ? `${groupName.replace(/^.*新人戦\s*/, "")} 第${round}節` : null,
         round,
         kickoffAt,
         venue,
@@ -344,7 +364,8 @@ function parseListHtml(listHtml) {
       fedId: Number.parseInt(fedId, 10),
       taikaiHoldId: Number.parseInt(taikaiHoldId, 10),
       sourceOrder,
-      competitionName,
+      competitionName: groupName,
+      groupName: groupNames.length > 1 ? groupName.replace(/^.*新人戦\s*/, "") : null,
       round,
       kickoffAt,
       venue,
@@ -689,12 +710,12 @@ function countChanges(previousItems = [], nextItems = []) {
 
 function preserveScheduledMatchIds(previousItems = [], nextItems = []) {
   const previousByFixture = new Map(previousItems.map((match) => [
-    `${match.round}\0${match.homeTeam?.name}\0${match.awayTeam?.name}`,
+    `${match.groupName ?? ""}\0${match.round}\0${match.homeTeam?.name}\0${match.awayTeam?.name}`,
     match,
   ]));
 
   return nextItems.map((match) => {
-    const fixture = `${match.round}\0${match.homeTeam?.name}\0${match.awayTeam?.name}`;
+    const fixture = `${match.groupName ?? ""}\0${match.round}\0${match.homeTeam?.name}\0${match.awayTeam?.name}`;
     const previous = previousByFixture.get(fixture);
     if (
       previous?.id?.startsWith("football-system-schedule-")
@@ -792,6 +813,9 @@ async function main() {
         left.kickoffAt.localeCompare(right.kickoffAt) || (left.gameId ?? 0) - (right.gameId ?? 0),
       );
     const previous = await readPreviousOutput();
+    if (previous?.items?.length && fetchedItems.length < Math.ceil(previous.items.length * 0.6)) {
+      throw new Error(`取得試合数が既存データから急減しました: ${previous.items.length}件 → ${fetchedItems.length}件`);
+    }
     const items = preserveScheduledMatchIds(previous?.items, fetchedItems);
     changeCount = countChanges(previous?.items, items);
 

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "season": 2026,
+  "competitionId": "jufa-chugoku-2026-rookie-tournament",
+  "items": [
+    { "id": "okayama", "name": "岡山大学" }, { "id": "okayama-science", "name": "岡山理科大学" },
+    { "id": "kawasaki-medical-welfare", "name": "川崎医療福祉大学" }, { "id": "ipu", "name": "IPU・環太平洋大学" },
+    { "id": "shimane", "name": "島根大学" }, { "id": "shujitsu", "name": "就実大学" },
+    { "id": "shunan-public", "name": "周南公立大学" }, { "id": "hiroshima", "name": "広島大学" },
+    { "id": "hiroshima-international", "name": "広島国際大学" }, { "id": "hiroshima-keizai", "name": "広島経済大学" },
+    { "id": "hiroshima-shudo", "name": "広島修道大学" }, { "id": "hiroshima-bunka-gakuen", "name": "広島文化学園大学" },
+    { "id": "fukuyama", "name": "福山大学" }, { "id": "fukuyama-heisei", "name": "福山平成大学" },
+    { "id": "yamaguchi", "name": "山口大学" }
+  ]
+}

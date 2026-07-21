@@ -24,6 +24,7 @@
     "sync:ileague:div1": "node scripts/sync/sync-i-league.mjs --division=1",
     "sync:ileague:div2": "node scripts/sync/sync-i-league.mjs --division=2",
     "sync:2026:championship": "node scripts/sync/sync-results.mjs --target=2026-championship",
+    "sync:2026:rookie": "node scripts/sync/sync-results.mjs --target=2026-rookie",
     "build:stats": "node scripts/build/build-team-stats.mjs",
     "build:stats:div2": "node scripts/build/build-team-stats.mjs --division=2",
     "build:stats:ileague:div1": "node scripts/build/build-team-stats.mjs --competition=jufa-chugoku-2026-i-league-division-1",

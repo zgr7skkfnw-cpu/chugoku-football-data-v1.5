@@ -37,6 +37,13 @@ const LEAGUES = [
     shortName: "選手権",
     description: "2026年度 第50回中国大学サッカー選手権",
   },
+  {
+    division: 0,
+    competitionId: "jufa-chugoku-2026-rookie-tournament",
+    name: "中国大学サッカー新人戦",
+    shortName: "新人戦",
+    description: "2026年度 第10回中国大学サッカー新人戦",
+  },
 ];
 
 export function renderLeaguesPage() {
@@ -57,7 +64,7 @@ export function renderLeaguesPage() {
       }),
       element("div", { className: "section-stack" }, [
         element("div", { className: "league-card-list" }, cards),
-        createNotice("リーグ戦、Iリーグ、選手権を大会別に掲載しています。"),
+        createNotice("リーグ戦、Iリーグ、選手権、新人戦を大会別に掲載しています。"),
       ]),
     ],
   );

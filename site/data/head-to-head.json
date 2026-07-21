@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-21T09:04:43.823Z",
+  "generatedAt": "2026-07-21T09:05:28.167Z",
   "sourceSeasons": [
     2024,
     2025,
@@ -86,6 +86,14 @@
       "stageId": "championship",
       "stageName": "中国大学サッカー選手権",
       "matchCount": 22
+    },
+    {
+      "season": 2026,
+      "competitionId": "jufa-chugoku-2026-rookie-tournament",
+      "leagueName": "中国大学サッカー新人戦",
+      "stageId": "rookie-tournament",
+      "stageName": "中国大学サッカー新人戦",
+      "matchCount": 0
     },
     {
       "season": 2026,

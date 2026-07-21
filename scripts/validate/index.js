@@ -17,7 +17,7 @@ const PLAYER_KEYS = [
   "previousTeam",
 ];
 
-const [teamsData, playersData, iLeaguePlayersData, matchesData, teamStatsData, teamCatalogData, venueCatalogData, seasonData, division2MatchesData, division2TeamStatsData, iLeague1MatchesData, iLeague2MatchesData, iLeague1StatsData, iLeague2StatsData, headToHeadData, seasonIndexData, season2025Data, matches2025Division1, matches2025Division2, matches2025Playoff, matches2025Relegation, stats2025Division1, stats2025Division2] = await Promise.all([
+const [teamsData, playersData, iLeaguePlayersData, matchesData, teamStatsData, teamCatalogData, venueCatalogData, seasonData, division2MatchesData, division2TeamStatsData, iLeague1MatchesData, iLeague2MatchesData, iLeague1StatsData, iLeague2StatsData, championshipMatchesData, rookieMatchesData, headToHeadData, seasonIndexData, season2025Data, matches2025Division1, matches2025Division2, matches2025Playoff, matches2025Relegation, stats2025Division1, stats2025Division2] = await Promise.all([
   readJson("site/data/teams.json"),
   readJson("site/data/players.json"),
   readJson("site/data/seasons/2026/i-league/players.json"),
@@ -32,6 +32,8 @@ const [teamsData, playersData, iLeaguePlayersData, matchesData, teamStatsData, t
   readJson("site/data/seasons/2026/i-league/div2/matches.json"),
   readJson("site/data/seasons/2026/i-league/div1/team-stats.json"),
   readJson("site/data/seasons/2026/i-league/div2/team-stats.json"),
+  readJson("site/data/seasons/2026/championship/matches.json"),
+  readJson("site/data/seasons/2026/rookie/matches.json"),
   readJson("site/data/head-to-head.json"),
   readJson("site/data/seasons/index.json"),
   readJson("site/data/seasons/2025/season.json"),
@@ -110,6 +112,29 @@ if (seasonData.regulations?.division1?.teamCount !== 10) {
 }
 if (seasonData.regulations?.division2?.teamCount !== 11) {
   errors.push("season.json division 2 team count must be 11");
+}
+for (const [label, data, competitionId, expectedCount, expectedTeamCount] of [
+  ["championship", championshipMatchesData, "jufa-chugoku-2026-championship", 22, 22],
+  ["rookie tournament", rookieMatchesData, "jufa-chugoku-2026-rookie-tournament", 21, 15],
+]) {
+  const competition = seasonData.competitions.find((entry) => entry.id === competitionId);
+  if (!competition || competition.teamIds.length !== expectedTeamCount) errors.push(`${label}: competition definition mismatch`);
+  const countIsValid = competitionId.endsWith("rookie-tournament")
+    ? data.items?.length >= expectedCount
+    : data.items?.length === expectedCount;
+  if (data.seasonId !== competitionId || !countIsValid) errors.push(`${label}: expected ${competitionId.endsWith("rookie-tournament") ? "at least " : ""}${expectedCount} matches`);
+  for (const match of data.items ?? []) {
+    if (match.status === "finished" && (!Number.isFinite(match.homeTeam?.score) || !Number.isFinite(match.awayTeam?.score))) errors.push(`${match.id}: finished cup match has no score`);
+    if (match.status !== "finished" && (match.lineups || match.goals?.length)) errors.push(`${match.id}: scheduled cup match must not require details`);
+    for (const name of [match.homeTeam?.name, match.awayTeam?.name]) if (!catalogNames.has(name)) errors.push(`${match.id}: unresolved cup team ${name}`);
+  }
+}
+const championshipRounds = new Set((championshipMatchesData.items ?? []).map((match) => match.roundLabel));
+for (const round of ["第1回戦", "第2回戦", "第3回戦", "準決勝戦", "３位決定戦", "決勝戦"]) {
+  if (!championshipRounds.has(round)) errors.push(`championship: missing ${round}`);
+}
+if ((rookieMatchesData.items ?? []).some((match) => !["Aグループ", "Bグループ", "Cグループ", "Dグループ"].includes(match.groupName))) {
+  errors.push("rookie tournament: group assignment is missing or invalid");
 }
 
 if (seasonIndexData.schemaVersion !== 1 || seasonIndexData.defaultSeason !== 2026) {
@@ -418,6 +443,8 @@ if (errors.length) {
   console.log(`Division 2 matches: ${(division2MatchesData.items ?? []).length}`);
   console.log(`I-League division 1 matches: ${(iLeague1MatchesData.items ?? []).length}`);
   console.log(`I-League division 2 matches: ${(iLeague2MatchesData.items ?? []).length}`);
+  console.log(`Championship matches: ${(championshipMatchesData.items ?? []).length}`);
+  console.log(`Rookie tournament matches: ${(rookieMatchesData.items ?? []).length}`);
   console.log(`Division 2 emblems: ${expectedDivision2Emblems.size}/${division2TeamIds.size}`);
   console.log(`Historical competitions: ${historicalCompetitionData.length}`);
   console.log(`Historical matches (2024-2025): ${historicalCompetitionData.reduce((sum, entry) => sum + entry.matches.items.length, 0)}`);
