@@ -1,0 +1,1638 @@
+{
+  "checkedAt": "2026-07-21T03:32:39.167Z",
+  "source": "JUFA中国 2026年度2部チーム登録",
+  "checkedLineupEntries": 1949,
+  "missing": [
+    {
+      "matchId": "football-system-15-559-25716",
+      "teamId": "shimonoseki-city",
+      "name": "加藤 晴太",
+      "number": 14,
+      "position": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25727",
+      "teamId": "shimonoseki-city",
+      "name": "加藤 晴太",
+      "number": 14,
+      "position": "MF"
+    }
+  ],
+  "numberMismatches": [
+    {
+      "matchId": "football-system-15-559-25713",
+      "teamId": "university-of-shimane",
+      "name": "内藤 颯吾",
+      "matchNumber": 66,
+      "rosterNumber": 23
+    },
+    {
+      "matchId": "football-system-15-559-25718",
+      "teamId": "university-of-shimane",
+      "name": "内藤 颯吾",
+      "matchNumber": 66,
+      "rosterNumber": 23
+    },
+    {
+      "matchId": "football-system-15-559-25730",
+      "teamId": "university-of-shimane",
+      "name": "内藤 颯吾",
+      "matchNumber": 66,
+      "rosterNumber": 23
+    }
+  ],
+  "positionMismatches": [
+    {
+      "matchId": "football-system-15-559-25715",
+      "teamId": "tottori",
+      "name": "土橋 咲友",
+      "matchPosition": "GK",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25715",
+      "teamId": "shujitsu",
+      "name": "高月 愛輝",
+      "matchPosition": "GK",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25716",
+      "teamId": "shimonoseki-city",
+      "name": "綱島 悠介",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25717",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高橋 洸星",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25717",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高木 蒼志",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25717",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "山中 大樹",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25713",
+      "teamId": "okayama",
+      "name": "安原 成一郎",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25713",
+      "teamId": "okayama",
+      "name": "江見 洋平",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25713",
+      "teamId": "okayama",
+      "name": "清水 海音",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25713",
+      "teamId": "okayama",
+      "name": "河合 隆真",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25713",
+      "teamId": "okayama",
+      "name": "坂本 崇真",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25719",
+      "teamId": "okayama",
+      "name": "江見 洋平",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25719",
+      "teamId": "okayama",
+      "name": "清水 海音",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25719",
+      "teamId": "okayama",
+      "name": "河合 隆真",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25719",
+      "teamId": "okayama",
+      "name": "坂本 崇真",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25718",
+      "teamId": "university-of-shimane",
+      "name": "山口 優樹",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25718",
+      "teamId": "university-of-shimane",
+      "name": "井谷 魁",
+      "matchPosition": "DF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25718",
+      "teamId": "university-of-shimane",
+      "name": "前田 颯人",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25718",
+      "teamId": "university-of-shimane",
+      "name": "秋野 蒼空",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25724",
+      "teamId": "university-of-shimane",
+      "name": "山口 優樹",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25724",
+      "teamId": "university-of-shimane",
+      "name": "井谷 魁",
+      "matchPosition": "DF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25724",
+      "teamId": "university-of-shimane",
+      "name": "秋野 蒼空",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25724",
+      "teamId": "university-of-shimane",
+      "name": "前田 颯人",
+      "matchPosition": "FW",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25727",
+      "teamId": "shimonoseki-city",
+      "name": "阿瀬 瑛人",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25725",
+      "teamId": "okayama",
+      "name": "清水 海音",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25725",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高木 蒼志",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25725",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "山中 大樹",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25730",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "松井 星",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25730",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高木 蒼志",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25730",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "山中 大樹",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25730",
+      "teamId": "university-of-shimane",
+      "name": "井谷 魁",
+      "matchPosition": "DF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25730",
+      "teamId": "university-of-shimane",
+      "name": "秋野 蒼空",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25730",
+      "teamId": "university-of-shimane",
+      "name": "前田 颯人",
+      "matchPosition": "FW",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25730",
+      "teamId": "university-of-shimane",
+      "name": "山口 優樹",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25731",
+      "teamId": "shimonoseki-city",
+      "name": "阿瀬 瑛人",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25736",
+      "teamId": "shimonoseki-city",
+      "name": "阿瀬 瑛人",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25734",
+      "teamId": "shujitsu",
+      "name": "高月 愛輝",
+      "matchPosition": "GK",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25734",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高木 蒼志",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25737",
+      "teamId": "okayama",
+      "name": "河合 隆真",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25737",
+      "teamId": "okayama",
+      "name": "清水 海音",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25737",
+      "teamId": "okayama",
+      "name": "坂本 崇真",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25740",
+      "teamId": "shimonoseki-city",
+      "name": "綱島 悠介",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25740",
+      "teamId": "shimonoseki-city",
+      "name": "野田 和志",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25744",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "岩政 侑來",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25744",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高木 蒼志",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25745",
+      "teamId": "tottori",
+      "name": "花光 海大",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25745",
+      "teamId": "tottori",
+      "name": "安達 聖仁",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25745",
+      "teamId": "tottori",
+      "name": "村石 旺太郎",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25745",
+      "teamId": "tottori",
+      "name": "日和佐 龍",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25745",
+      "teamId": "tottori",
+      "name": "倉田 琉生",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25745",
+      "teamId": "tottori",
+      "name": "水谷 圭佑",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25745",
+      "teamId": "tottori",
+      "name": "竹本 舜",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25746",
+      "teamId": "hiroshima-international",
+      "name": "井戸 一総",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25748",
+      "teamId": "shimonoseki-city",
+      "name": "脇田 大馳",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25750",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高木 蒼志",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25750",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "山中 大樹",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25750",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "松井 星",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25750",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高橋 洸星",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25752",
+      "teamId": "university-of-shimane",
+      "name": "秋野 蒼空",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25752",
+      "teamId": "onomichi-city",
+      "name": "新本 啓太",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25752",
+      "teamId": "onomichi-city",
+      "name": "道端 享介",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25752",
+      "teamId": "onomichi-city",
+      "name": "須藤 秀彩",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25752",
+      "teamId": "onomichi-city",
+      "name": "田中 遥也",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25753",
+      "teamId": "tottori",
+      "name": "安達 聖仁",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25753",
+      "teamId": "tottori",
+      "name": "日和佐 龍",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25753",
+      "teamId": "tottori",
+      "name": "京井 亜樹",
+      "matchPosition": "FW",
+      "rosterPosition": "GK"
+    },
+    {
+      "matchId": "football-system-15-559-25753",
+      "teamId": "tottori",
+      "name": "横内 優樹",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25753",
+      "teamId": "tottori",
+      "name": "水谷 圭佑",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25755",
+      "teamId": "okayama",
+      "name": "清水 海音",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25755",
+      "teamId": "okayama",
+      "name": "河合 隆真",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25755",
+      "teamId": "okayama",
+      "name": "坂本 崇真",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25760",
+      "teamId": "university-of-shimane",
+      "name": "井谷 魁",
+      "matchPosition": "DF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25760",
+      "teamId": "university-of-shimane",
+      "name": "秋野 蒼空",
+      "matchPosition": "MF",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25760",
+      "teamId": "university-of-shimane",
+      "name": "前田 颯人",
+      "matchPosition": "FW",
+      "rosterPosition": "DF"
+    },
+    {
+      "matchId": "football-system-15-559-25767",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "松井 星",
+      "matchPosition": "DF",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25767",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高木 蒼志",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    },
+    {
+      "matchId": "football-system-15-559-25767",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "山中 大樹",
+      "matchPosition": "FW",
+      "rosterPosition": "MF"
+    },
+    {
+      "matchId": "football-system-15-559-25767",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高橋 洸星",
+      "matchPosition": "MF",
+      "rosterPosition": "FW"
+    }
+  ],
+  "normalizedNameMatches": [
+    {
+      "matchId": "football-system-15-559-25715",
+      "teamId": "tottori",
+      "matchName": "伊地知 陽太 [Cap]",
+      "rosterName": "伊地知 陽太"
+    },
+    {
+      "matchId": "football-system-15-559-25715",
+      "teamId": "shujitsu",
+      "matchName": "浦 昌吾 [Cap]",
+      "rosterName": "浦 昌吾"
+    },
+    {
+      "matchId": "football-system-15-559-25716",
+      "teamId": "shimonoseki-city",
+      "matchName": "阿瀬 瑛人 [Cap]",
+      "rosterName": "阿瀬 瑛人"
+    },
+    {
+      "matchId": "football-system-15-559-25716",
+      "teamId": "kibi-international",
+      "matchName": "目次 啓悟 [Cap]",
+      "rosterName": "目次 啓悟"
+    },
+    {
+      "matchId": "football-system-15-559-25717",
+      "teamId": "shimane",
+      "matchName": "井上 海音人 [Cap]",
+      "rosterName": "井上 海音人"
+    },
+    {
+      "matchId": "football-system-15-559-25717",
+      "teamId": "hiroshima-institute-of-technology",
+      "matchName": "伊藤 大司 [Cap]",
+      "rosterName": "伊藤 大司"
+    },
+    {
+      "matchId": "football-system-15-559-25713",
+      "teamId": "okayama",
+      "matchName": "原田 大成 [Cap]",
+      "rosterName": "原田 大成"
+    },
+    {
+      "matchId": "football-system-15-559-25713",
+      "teamId": "university-of-shimane",
+      "matchName": "井谷 魁 [Cap]",
+      "rosterName": "井谷 魁"
+    },
+    {
+      "matchId": "football-system-15-559-25714",
+      "teamId": "hiroshima-international",
+      "matchName": "隅野 翼 [Cap]",
+      "rosterName": "隅野 翼"
+    },
+    {
+      "matchId": "football-system-15-559-25714",
+      "teamId": "onomichi-city",
+      "matchName": "新本 啓太 [Cap]",
+      "rosterName": "新本 啓太"
+    },
+    {
+      "matchId": "football-system-15-559-25719",
+      "teamId": "shujitsu",
+      "matchName": "浦 昌吾 [Cap]",
+      "rosterName": "浦 昌吾"
+    },
+    {
+      "matchId": "football-system-15-559-25719",
+      "teamId": "okayama",
+      "matchName": "田村 隼人 [Cap]",
+      "rosterName": "田村 隼人"
+    },
+    {
+      "matchId": "football-system-15-559-25718",
+      "teamId": "okayama-science",
+      "matchName": "綾田 匠眞 [Cap]",
+      "rosterName": "綾田 匠眞"
+    },
+    {
+      "matchId": "football-system-15-559-25718",
+      "teamId": "university-of-shimane",
+      "matchName": "井谷 魁 [Cap]",
+      "rosterName": "井谷 魁"
+    },
+    {
+      "matchId": "football-system-15-559-25720",
+      "teamId": "kibi-international",
+      "matchName": "目次 啓悟 [Cap]",
+      "rosterName": "目次 啓悟"
+    },
+    {
+      "matchId": "football-system-15-559-25720",
+      "teamId": "hiroshima-international",
+      "matchName": "隅野 翼 [Cap]",
+      "rosterName": "隅野 翼"
+    },
+    {
+      "matchId": "football-system-15-559-25721",
+      "teamId": "tottori",
+      "matchName": "伊地知 陽太 [Cap]",
+      "rosterName": "伊地知 陽太"
+    },
+    {
+      "matchId": "football-system-15-559-25721",
+      "teamId": "hiroshima-institute-of-technology",
+      "matchName": "伊藤 大司 [Cap]",
+      "rosterName": "伊藤 大司"
+    },
+    {
+      "matchId": "football-system-15-559-25723",
+      "teamId": "okayama-science",
+      "matchName": "柴田 大和 [Cap]",
+      "rosterName": "柴田 大和"
+    },
+    {
+      "matchId": "football-system-15-559-25723",
+      "teamId": "onomichi-city",
+      "matchName": "新本 啓太 [Cap]",
+      "rosterName": "新本 啓太"
+    },
+    {
+      "matchId": "football-system-15-559-25724",
+      "teamId": "university-of-shimane",
+      "matchName": "井谷 魁 [Cap]",
+      "rosterName": "井谷 魁"
+    },
+    {
+      "matchId": "football-system-15-559-25724",
+      "teamId": "shujitsu",
+      "matchName": "浦 昌吾 [Cap]",
+      "rosterName": "浦 昌吾"
+    },
+    {
+      "matchId": "football-system-15-559-25726",
+      "teamId": "hiroshima-international",
+      "matchName": "三島 康志 [Cap]",
+      "rosterName": "三島 康志"
+    },
+    {
+      "matchId": "football-system-15-559-25726",
+      "teamId": "shimane",
+      "matchName": "井上 海音人 [Cap]",
+      "rosterName": "井上 海音人"
+    },
+    {
+      "matchId": "football-system-15-559-25727",
+      "teamId": "shimonoseki-city",
+      "matchName": "阿瀬 瑛人 [Cap]",
+      "rosterName": "阿瀬 瑛人"
+    },
+    {
+      "matchId": "football-system-15-559-25725",
+      "teamId": "okayama",
+      "matchName": "原田 大成 [Cap]",
+      "rosterName": "原田 大成"
+    },
+    {
+      "matchId": "football-system-15-559-25725",
+      "teamId": "hiroshima-institute-of-technology",
+      "matchName": "伊藤 大司 [Cap]",
+      "rosterName": "伊藤 大司"
+    },
+    {
+      "matchId": "football-system-15-559-25728",
+      "teamId": "shujitsu",
+      "matchName": "浦 昌吾 [Cap]",
+      "rosterName": "浦 昌吾"
+    },
+    {
+      "matchId": "football-system-15-559-25728",
+      "teamId": "okayama-science",
+      "matchName": "柴田 大和 [Cap]",
+      "rosterName": "柴田 大和"
+    },
+    {
+      "matchId": "football-system-15-559-25729",
+      "teamId": "kibi-international",
+      "matchName": "目次 啓悟 [Cap]",
+      "rosterName": "目次 啓悟"
+    },
+    {
+      "matchId": "football-system-15-559-25729",
+      "teamId": "onomichi-city",
+      "matchName": "新本 啓太 [Cap]",
+      "rosterName": "新本 啓太"
+    },
+    {
+      "matchId": "football-system-15-559-25730",
+      "teamId": "hiroshima-institute-of-technology",
+      "matchName": "伊藤 大司 [Cap]",
+      "rosterName": "伊藤 大司"
+    },
+    {
+      "matchId": "football-system-15-559-25730",
+      "teamId": "university-of-shimane",
+      "matchName": "井谷 魁 [Cap]",
+      "rosterName": "井谷 魁"
+    },
+    {
+      "matchId": "football-system-15-559-25731",
+      "teamId": "shimonoseki-city",
+      "matchName": "阿瀬 瑛人 [Cap]",
+      "rosterName": "阿瀬 瑛人"
+    },
+    {
+      "matchId": "football-system-15-559-25731",
+      "teamId": "okayama",
+      "matchName": "原田 大成 [Cap]",
+      "rosterName": "原田 大成"
+    },
+    {
+      "matchId": "football-system-15-559-25732",
+      "teamId": "tottori",
+      "matchName": "伊地知 陽太 [Cap]",
+      "rosterName": "伊地知 陽太"
+    },
+    {
+      "matchId": "football-system-15-559-25732",
+      "teamId": "hiroshima-international",
+      "matchName": "三島 康志 [Cap]",
+      "rosterName": "三島 康志"
+    },
+    {
+      "matchId": "football-system-15-559-25733",
+      "teamId": "okayama-science",
+      "matchName": "綾田 匠眞 [Cap]",
+      "rosterName": "綾田 匠眞"
+    },
+    {
+      "matchId": "football-system-15-559-25733",
+      "teamId": "kibi-international",
+      "matchName": "目次 啓悟 [Cap]",
+      "rosterName": "目次 啓悟"
+    },
+    {
+      "matchId": "football-system-15-559-25735",
+      "teamId": "onomichi-city",
+      "matchName": "新本 啓太 [Cap]",
+      "rosterName": "新本 啓太"
+    },
+    {
+      "matchId": "football-system-15-559-25735",
+      "teamId": "shimane",
+      "matchName": "井上 海音人 [Cap]",
+      "rosterName": "井上 海音人"
+    },
+    {
+      "matchId": "football-system-15-559-25736",
+      "teamId": "university-of-shimane",
+      "matchName": "井谷 魁 [Cap]",
+      "rosterName": "井谷 魁"
+    },
+    {
+      "matchId": "football-system-15-559-25736",
+      "teamId": "shimonoseki-city",
+      "matchName": "阿瀬 瑛人 [Cap]",
+      "rosterName": "阿瀬 瑛人"
+    },
+    {
+      "matchId": "football-system-15-559-25734",
+      "teamId": "shujitsu",
+      "matchName": "石原 拓歩 [Cap]",
+      "rosterName": "石原 拓歩"
+    },
+    {
+      "matchId": "football-system-15-559-25734",
+      "teamId": "hiroshima-institute-of-technology",
+      "matchName": "伊藤 大司 [Cap]",
+      "rosterName": "伊藤 大司"
+    },
+    {
+      "matchId": "football-system-15-559-25737",
+      "teamId": "okayama",
+      "matchName": "田村 隼人 [Cap]",
+      "rosterName": "田村 隼人"
+    },
+    {
+      "matchId": "football-system-15-559-25737",
+      "teamId": "hiroshima-international",
+      "matchName": "三島 康志 [Cap]",
+      "rosterName": "三島 康志"
+    },
+    {
+      "matchId": "football-system-15-559-25741",
+      "teamId": "tottori",
+      "matchName": "伊地知 陽太 [Cap]",
+      "rosterName": "伊地知 陽太"
+    },
+    {
+      "matchId": "football-system-15-559-25741",
+      "teamId": "onomichi-city",
+      "matchName": "新本 啓太 [Cap]",
+      "rosterName": "新本 啓太"
+    },
+    {
+      "matchId": "football-system-15-559-25738",
+      "teamId": "hiroshima-institute-of-technology",
+      "matchName": "伊藤 大司 [Cap]",
+      "rosterName": "伊藤 大司"
+    },
+    {
+      "matchId": "football-system-15-559-25738",
+      "teamId": "okayama-science",
+      "matchName": "柴田 大和 [Cap]",
+      "rosterName": "柴田 大和"
+    },
+    {
+      "matchId": "football-system-15-559-25739",
+      "teamId": "shimane",
+      "matchName": "井上 海音人 [Cap]",
+      "rosterName": "井上 海音人"
+    },
+    {
+      "matchId": "football-system-15-559-25739",
+      "teamId": "kibi-international",
+      "matchName": "目次 啓悟 [Cap]",
+      "rosterName": "目次 啓悟"
+    },
+    {
+      "matchId": "football-system-15-559-25742",
+      "teamId": "hiroshima-international",
+      "matchName": "三島 康志 [Cap]",
+      "rosterName": "三島 康志"
+    },
+    {
+      "matchId": "football-system-15-559-25742",
+      "teamId": "university-of-shimane",
+      "matchName": "日野 遼生 [Cap]",
+      "rosterName": "日野 遼生"
+    },
+    {
+      "matchId": "football-system-15-559-25740",
+      "teamId": "shimonoseki-city",
+      "matchName": "阿瀬 瑛人 [Cap]",
+      "rosterName": "阿瀬 瑛人"
+    },
+    {
+      "matchId": "football-system-15-559-25740",
+      "teamId": "shujitsu",
+      "matchName": "浦 昌吾 [Cap]",
+      "rosterName": "浦 昌吾"
+    },
+    {
+      "matchId": "football-system-15-559-25743",
+      "teamId": "okayama-science",
+      "matchName": "柴田 大和 [Cap]",
+      "rosterName": "柴田 大和"
+    },
+    {
+      "matchId": "football-system-15-559-25743",
+      "teamId": "shimane",
+      "matchName": "井上 海音人 [Cap]",
+      "rosterName": "井上 海音人"
+    },
+    {
+      "matchId": "football-system-15-559-25744",
+      "teamId": "hiroshima-institute-of-technology",
+      "matchName": "伊藤 大司 [Cap]",
+      "rosterName": "伊藤 大司"
+    },
+    {
+      "matchId": "football-system-15-559-25744",
+      "teamId": "shimonoseki-city",
+      "matchName": "阿瀬 瑛人 [Cap]",
+      "rosterName": "阿瀬 瑛人"
+    },
+    {
+      "matchId": "football-system-15-559-25745",
+      "teamId": "kibi-international",
+      "matchName": "目次 啓悟 [Cap]",
+      "rosterName": "目次 啓悟"
+    },
+    {
+      "matchId": "football-system-15-559-25746",
+      "teamId": "shujitsu",
+      "matchName": "浦 昌吾 [Cap]",
+      "rosterName": "浦 昌吾"
+    },
+    {
+      "matchId": "football-system-15-559-25746",
+      "teamId": "hiroshima-international",
+      "matchName": "三島 康志 [Cap]",
+      "rosterName": "三島 康志"
+    },
+    {
+      "matchId": "football-system-15-559-25747",
+      "teamId": "onomichi-city",
+      "matchName": "新本 啓太 [Cap]",
+      "rosterName": "新本 啓太"
+    },
+    {
+      "matchId": "football-system-15-559-25747",
+      "teamId": "okayama",
+      "matchName": "原田 大成 [Cap]",
+      "rosterName": "原田 大成"
+    },
+    {
+      "matchId": "football-system-15-559-25751",
+      "teamId": "okayama",
+      "matchName": "原田 大成 [Cap]",
+      "rosterName": "原田 大成"
+    },
+    {
+      "matchId": "football-system-15-559-25751",
+      "teamId": "kibi-international",
+      "matchName": "目次 啓悟 [Cap]",
+      "rosterName": "目次 啓悟"
+    },
+    {
+      "matchId": "football-system-15-559-25748",
+      "teamId": "shimonoseki-city",
+      "matchName": "阿瀬 瑛人 [Cap]",
+      "rosterName": "阿瀬 瑛人"
+    },
+    {
+      "matchId": "football-system-15-559-25748",
+      "teamId": "okayama-science",
+      "matchName": "柴田 大和 [Cap]",
+      "rosterName": "柴田 大和"
+    },
+    {
+      "matchId": "football-system-15-559-25749",
+      "teamId": "tottori",
+      "matchName": "村石 旺太郎 [Cap]",
+      "rosterName": "村石 旺太郎"
+    },
+    {
+      "matchId": "football-system-15-559-25749",
+      "teamId": "shimane",
+      "matchName": "村上 竣平 [Cap]",
+      "rosterName": "村上 竣平"
+    },
+    {
+      "matchId": "football-system-15-559-25750",
+      "teamId": "hiroshima-international",
+      "matchName": "隅野 翼 [Cap]",
+      "rosterName": "隅野 翼"
+    },
+    {
+      "matchId": "football-system-15-559-25750",
+      "teamId": "hiroshima-institute-of-technology",
+      "matchName": "伊藤 大司 [Cap]",
+      "rosterName": "伊藤 大司"
+    },
+    {
+      "matchId": "football-system-15-559-25753",
+      "teamId": "okayama-science",
+      "matchName": "柴田 大和 [Cap]",
+      "rosterName": "柴田 大和"
+    },
+    {
+      "matchId": "football-system-15-559-25753",
+      "teamId": "tottori",
+      "matchName": "安達 聖仁 [Cap]",
+      "rosterName": "安達 聖仁"
+    },
+    {
+      "matchId": "football-system-15-559-25754",
+      "teamId": "shimonoseki-city",
+      "matchName": "阿瀬 瑛人 [Cap]",
+      "rosterName": "阿瀬 瑛人"
+    },
+    {
+      "matchId": "football-system-15-559-25754",
+      "teamId": "hiroshima-international",
+      "matchName": "隅野 翼 [Cap]",
+      "rosterName": "隅野 翼"
+    },
+    {
+      "matchId": "football-system-15-559-25755",
+      "teamId": "shimane",
+      "matchName": "妹尾 和弥 [Cap]",
+      "rosterName": "妹尾 和弥"
+    },
+    {
+      "matchId": "football-system-15-559-25755",
+      "teamId": "okayama",
+      "matchName": "原田 大成 [Cap]",
+      "rosterName": "原田 大成"
+    },
+    {
+      "matchId": "football-system-15-559-25756",
+      "teamId": "kibi-international",
+      "matchName": "目次 啓悟 [Cap]",
+      "rosterName": "目次 啓悟"
+    },
+    {
+      "matchId": "football-system-15-559-25756",
+      "teamId": "university-of-shimane",
+      "matchName": "前田 颯人 [Cap]",
+      "rosterName": "前田 颯人"
+    },
+    {
+      "matchId": "football-system-15-559-25757",
+      "teamId": "shujitsu",
+      "matchName": "浦 昌吾 [Cap]",
+      "rosterName": "浦 昌吾"
+    },
+    {
+      "matchId": "football-system-15-559-25757",
+      "teamId": "onomichi-city",
+      "matchName": "新本 啓太 [Cap]",
+      "rosterName": "新本 啓太"
+    },
+    {
+      "matchId": "football-system-15-559-25758",
+      "teamId": "hiroshima-international",
+      "matchName": "三島 康志 [Cap]",
+      "rosterName": "三島 康志"
+    },
+    {
+      "matchId": "football-system-15-559-25758",
+      "teamId": "okayama-science",
+      "matchName": "柴田 大和 [Cap]",
+      "rosterName": "柴田 大和"
+    },
+    {
+      "matchId": "football-system-15-559-25760",
+      "teamId": "university-of-shimane",
+      "matchName": "井谷 魁 [Cap]",
+      "rosterName": "井谷 魁"
+    },
+    {
+      "matchId": "football-system-15-559-25760",
+      "teamId": "shimane",
+      "matchName": "村上 竣平 [Cap]",
+      "rosterName": "村上 竣平"
+    },
+    {
+      "matchId": "football-system-15-559-25761",
+      "teamId": "onomichi-city",
+      "matchName": "加藤 航 [Cap]",
+      "rosterName": "加藤 航"
+    },
+    {
+      "matchId": "football-system-15-559-25761",
+      "teamId": "hiroshima-institute-of-technology",
+      "matchName": "伊藤 大司 [Cap]",
+      "rosterName": "伊藤 大司"
+    },
+    {
+      "matchId": "football-system-15-559-25762",
+      "teamId": "shujitsu",
+      "matchName": "浦 昌吾 [Cap]",
+      "rosterName": "浦 昌吾"
+    },
+    {
+      "matchId": "football-system-15-559-25762",
+      "teamId": "kibi-international",
+      "matchName": "目次 啓悟 [Cap]",
+      "rosterName": "目次 啓悟"
+    },
+    {
+      "matchId": "football-system-15-559-25763",
+      "teamId": "okayama-science",
+      "matchName": "柴田 大和 [Cap]",
+      "rosterName": "柴田 大和"
+    },
+    {
+      "matchId": "football-system-15-559-25763",
+      "teamId": "okayama",
+      "matchName": "原田 大成 [Cap]",
+      "rosterName": "原田 大成"
+    },
+    {
+      "matchId": "football-system-15-559-25764",
+      "teamId": "tottori",
+      "matchName": "村石 旺太郎 [Cap]",
+      "rosterName": "村石 旺太郎"
+    },
+    {
+      "matchId": "football-system-15-559-25764",
+      "teamId": "university-of-shimane",
+      "matchName": "川本 康生 [Cap]",
+      "rosterName": "川本 康生"
+    },
+    {
+      "matchId": "football-system-15-559-25765",
+      "teamId": "shimonoseki-city",
+      "matchName": "阿瀬 瑛人 [Cap]",
+      "rosterName": "阿瀬 瑛人"
+    },
+    {
+      "matchId": "football-system-15-559-25765",
+      "teamId": "onomichi-city",
+      "matchName": "加藤 航 [Cap]",
+      "rosterName": "加藤 航"
+    },
+    {
+      "matchId": "football-system-15-559-25766",
+      "teamId": "shimane",
+      "matchName": "村上 竣平 [Cap]",
+      "rosterName": "村上 竣平"
+    },
+    {
+      "matchId": "football-system-15-559-25766",
+      "teamId": "shujitsu",
+      "matchName": "浦 昌吾 [Cap]",
+      "rosterName": "浦 昌吾"
+    },
+    {
+      "matchId": "football-system-15-559-25767",
+      "teamId": "hiroshima-institute-of-technology",
+      "matchName": "伊藤 大司 [Cap]",
+      "rosterName": "伊藤 大司"
+    },
+    {
+      "matchId": "football-system-15-559-25767",
+      "teamId": "kibi-international",
+      "matchName": "目次 啓悟 [Cap]",
+      "rosterName": "目次 啓悟"
+    },
+    {
+      "matchId": "football-system-15-559-25759",
+      "teamId": "tottori",
+      "matchName": "村石 旺太郎 [Cap]",
+      "rosterName": "村石 旺太郎"
+    },
+    {
+      "matchId": "football-system-15-559-25759",
+      "teamId": "okayama",
+      "matchName": "原田 大成 [Cap]",
+      "rosterName": "原田 大成"
+    },
+    {
+      "matchId": "football-system-15-559-25722",
+      "teamId": "shimane",
+      "matchName": "岡田 陽人 [Cap]",
+      "rosterName": "岡田 陽人"
+    },
+    {
+      "matchId": "football-system-15-559-25722",
+      "teamId": "shimonoseki-city",
+      "matchName": "國枝 快永 [Cap]",
+      "rosterName": "國枝 快永"
+    }
+  ],
+  "rosterNeverAppeared": [
+    {
+      "id": "okayama-science-dfa54f7343c3",
+      "teamId": "okayama-science",
+      "name": "綱島 翠星"
+    },
+    {
+      "id": "okayama-science-a7032e288514",
+      "teamId": "okayama-science",
+      "name": "眞鍋 悠"
+    },
+    {
+      "id": "okayama-science-dcb379a99761",
+      "teamId": "okayama-science",
+      "name": "浦川 明日"
+    },
+    {
+      "id": "okayama-science-86d49443b87b",
+      "teamId": "okayama-science",
+      "name": "植本 陽斗"
+    },
+    {
+      "id": "okayama-science-3b79980eeb72",
+      "teamId": "okayama-science",
+      "name": "廣瀬 智希"
+    },
+    {
+      "id": "okayama-science-3b91b3a33e57",
+      "teamId": "okayama-science",
+      "name": "市之瀬 巧真"
+    },
+    {
+      "id": "okayama-science-ab95052990d2",
+      "teamId": "okayama-science",
+      "name": "中廻 遥"
+    },
+    {
+      "id": "okayama-science-f38303655165",
+      "teamId": "okayama-science",
+      "name": "馬場 和也"
+    },
+    {
+      "id": "okayama-science-f58affefba5b",
+      "teamId": "okayama-science",
+      "name": "水上 凉太朗"
+    },
+    {
+      "id": "okayama-science-5c8b0dca984a",
+      "teamId": "okayama-science",
+      "name": "冨家 未来"
+    },
+    {
+      "id": "okayama-science-fa04f8dcdb61",
+      "teamId": "okayama-science",
+      "name": "吉田 基幹"
+    },
+    {
+      "id": "okayama-science-ab794854591b",
+      "teamId": "okayama-science",
+      "name": "橋本 哲弥"
+    },
+    {
+      "id": "okayama-science-ed16a3b7c275",
+      "teamId": "okayama-science",
+      "name": "高畑 星耶"
+    },
+    {
+      "id": "okayama-science-99a1caf6baf2",
+      "teamId": "okayama-science",
+      "name": "服部 龍之介"
+    },
+    {
+      "id": "okayama-science-5d955f9ceb4d",
+      "teamId": "okayama-science",
+      "name": "岡崎 蒼汰"
+    },
+    {
+      "id": "okayama-science-2ccaa0d69b69",
+      "teamId": "okayama-science",
+      "name": "近藤 悠翔"
+    },
+    {
+      "id": "okayama-science-ee04933a8282",
+      "teamId": "okayama-science",
+      "name": "美仙 夕月"
+    },
+    {
+      "id": "okayama-science-39383023d606",
+      "teamId": "okayama-science",
+      "name": "小林 優太"
+    },
+    {
+      "id": "okayama-science-e83297b6c1bd",
+      "teamId": "okayama-science",
+      "name": "上平 遼"
+    },
+    {
+      "id": "okayama-science-1152080d18cb",
+      "teamId": "okayama-science",
+      "name": "久城 直樹"
+    },
+    {
+      "id": "okayama-science-eb3a4ad689f5",
+      "teamId": "okayama-science",
+      "name": "沖田 流矢"
+    },
+    {
+      "id": "okayama-science-a31fcdd855b1",
+      "teamId": "okayama-science",
+      "name": "末次 櫂"
+    },
+    {
+      "id": "okayama-science-27ff22e3ba9b",
+      "teamId": "okayama-science",
+      "name": "神所 朱海"
+    },
+    {
+      "id": "okayama-science-4e0a47a97c52",
+      "teamId": "okayama-science",
+      "name": "小谷 梢太"
+    },
+    {
+      "id": "okayama-1b6d44bae966",
+      "teamId": "okayama",
+      "name": "石川 悠生"
+    },
+    {
+      "id": "okayama-5c19c712e27c",
+      "teamId": "okayama",
+      "name": "濵田 秀哉"
+    },
+    {
+      "id": "okayama-a1f541351cb7",
+      "teamId": "okayama",
+      "name": "浅田 友成"
+    },
+    {
+      "id": "okayama-6f6f482e2710",
+      "teamId": "okayama",
+      "name": "宮山 佳那太"
+    },
+    {
+      "id": "okayama-82394c85f833",
+      "teamId": "okayama",
+      "name": "内田 大洋"
+    },
+    {
+      "id": "okayama-48bc30051146",
+      "teamId": "okayama",
+      "name": "酒井 大輔"
+    },
+    {
+      "id": "okayama-648cb8c8823e",
+      "teamId": "okayama",
+      "name": "金平 侑真"
+    },
+    {
+      "id": "okayama-5afe6d46866b",
+      "teamId": "okayama",
+      "name": "若林 廉"
+    },
+    {
+      "id": "okayama-8338d692900a",
+      "teamId": "okayama",
+      "name": "小高 彪瑠"
+    },
+    {
+      "id": "okayama-1b18b18998d2",
+      "teamId": "okayama",
+      "name": "畠山 晃弥"
+    },
+    {
+      "id": "okayama-2bdc15a1da93",
+      "teamId": "okayama",
+      "name": "中川 大翔"
+    },
+    {
+      "id": "okayama-19b2068afe82",
+      "teamId": "okayama",
+      "name": "箕浦 稜"
+    },
+    {
+      "id": "okayama-5e899327cbcb",
+      "teamId": "okayama",
+      "name": "三河内 結矢"
+    },
+    {
+      "id": "okayama-1c37f926b093",
+      "teamId": "okayama",
+      "name": "井上 遥太"
+    },
+    {
+      "id": "okayama-4f3ace51e87d",
+      "teamId": "okayama",
+      "name": "中条 勇貴"
+    },
+    {
+      "id": "okayama-778a3e6ec57e",
+      "teamId": "okayama",
+      "name": "武田 征大"
+    },
+    {
+      "id": "okayama-427047b48561",
+      "teamId": "okayama",
+      "name": "仲 悠冴"
+    },
+    {
+      "id": "okayama-4bb96e48bf41",
+      "teamId": "okayama",
+      "name": "吉田 晴紀"
+    },
+    {
+      "id": "hiroshima-international-df5e251cacc1",
+      "teamId": "hiroshima-international",
+      "name": "大崎 樹"
+    },
+    {
+      "id": "hiroshima-international-431584e54019",
+      "teamId": "hiroshima-international",
+      "name": "島内 大輔"
+    },
+    {
+      "id": "hiroshima-international-e2958566e678",
+      "teamId": "hiroshima-international",
+      "name": "立川 桂次"
+    },
+    {
+      "id": "hiroshima-international-814b6c56916b",
+      "teamId": "hiroshima-international",
+      "name": "小川 達也"
+    },
+    {
+      "id": "hiroshima-international-3cd4763e713c",
+      "teamId": "hiroshima-international",
+      "name": "鎌谷 篤志"
+    },
+    {
+      "id": "hiroshima-international-383c4773df62",
+      "teamId": "hiroshima-international",
+      "name": "楢原 翔太郎"
+    },
+    {
+      "id": "hiroshima-international-af94668216b5",
+      "teamId": "hiroshima-international",
+      "name": "秋積 真"
+    },
+    {
+      "id": "tottori-59fd1e910e37",
+      "teamId": "tottori",
+      "name": "大中 奏太朗"
+    },
+    {
+      "id": "shimonoseki-city-85d2040a14ff",
+      "teamId": "shimonoseki-city",
+      "name": "石原 空悟"
+    },
+    {
+      "id": "shimonoseki-city-f97a7f2d9b03",
+      "teamId": "shimonoseki-city",
+      "name": "馬屋原 日向"
+    },
+    {
+      "id": "shimonoseki-city-8419b2fba469",
+      "teamId": "shimonoseki-city",
+      "name": "大嶋 悠雅"
+    },
+    {
+      "id": "shimonoseki-city-747d6df1c822",
+      "teamId": "shimonoseki-city",
+      "name": "泉福 修平"
+    },
+    {
+      "id": "shimane-ac4ae327d551",
+      "teamId": "shimane",
+      "name": "青柳 和希"
+    },
+    {
+      "id": "shimane-de4fcd4e1150",
+      "teamId": "shimane",
+      "name": "小野 大和"
+    },
+    {
+      "id": "shimane-4f0aa66ddef4",
+      "teamId": "shimane",
+      "name": "谷口 藍都"
+    },
+    {
+      "id": "shimane-7647a84a8b60",
+      "teamId": "shimane",
+      "name": "米田 速基"
+    },
+    {
+      "id": "shimane-92813a001f7c",
+      "teamId": "shimane",
+      "name": "岩成 隼和"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-1869c061346a",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "天道 朝皐"
+    },
+    {
+      "id": "shujitsu-4b4cc7e085a3",
+      "teamId": "shujitsu",
+      "name": "三宅 諒和"
+    },
+    {
+      "id": "shujitsu-ae4b6835721b",
+      "teamId": "shujitsu",
+      "name": "正金 結海"
+    },
+    {
+      "id": "shujitsu-7b8d09ede607",
+      "teamId": "shujitsu",
+      "name": "白川 涼太"
+    },
+    {
+      "id": "university-of-shimane-e2d55a1dbbdf",
+      "teamId": "university-of-shimane",
+      "name": "松井 遥歩"
+    }
+  ],
+  "duplicateCandidates": [],
+  "sources": [
+    {
+      "teamId": "okayama-science",
+      "teamName": "岡山理科大学",
+      "pageId": 594,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=gG8OL7%2F89Kg%3D",
+      "count": 50
+    },
+    {
+      "teamId": "okayama",
+      "teamName": "岡山大学",
+      "pageId": 593,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=Mr5AcdF5KcM%3D",
+      "count": 49
+    },
+    {
+      "teamId": "hiroshima-international",
+      "teamName": "広島国際大学",
+      "pageId": 607,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=yFvc3FfHDJ4%3D",
+      "count": 34
+    },
+    {
+      "teamId": "tottori",
+      "teamName": "鳥取大学",
+      "pageId": 591,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=ygdwKaj%2F2eI%3D",
+      "count": 22
+    },
+    {
+      "teamId": "shimonoseki-city",
+      "teamName": "下関市立大学",
+      "pageId": 608,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=InoboPxTbK4%3D",
+      "count": 29
+    },
+    {
+      "teamId": "shimane",
+      "teamName": "島根大学",
+      "pageId": 592,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=NLPK6hdkyBc%3D",
+      "count": 29
+    },
+    {
+      "teamId": "hiroshima-institute-of-technology",
+      "teamName": "広島工業大学",
+      "pageId": 600,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=uxaJWQpBxsk%3D",
+      "count": 17
+    },
+    {
+      "teamId": "kibi-international",
+      "teamName": "吉備国際大学",
+      "pageId": 597,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=UASoxzNsFqA%3D",
+      "count": 16
+    },
+    {
+      "teamId": "shujitsu",
+      "teamName": "就実大学",
+      "pageId": 771,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=KCAX%2FSq8Umo%3D",
+      "count": 30
+    },
+    {
+      "teamId": "onomichi-city",
+      "teamName": "尾道市立大学",
+      "pageId": 602,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=wwI0Hs8y5W0%3D",
+      "count": 22
+    },
+    {
+      "teamId": "university-of-shimane",
+      "teamName": "島根県立大学",
+      "pageId": 831,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=eDcnsECM8mQ%3D",
+      "count": 24
+    }
+  ],
+  "merge": {
+    "added": 0,
+    "updated": 322,
+    "deleted": 0
+  },
+  "divisionPlayerCount": 322
+}

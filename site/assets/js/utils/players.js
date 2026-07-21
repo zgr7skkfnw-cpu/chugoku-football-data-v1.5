@@ -147,6 +147,7 @@ function aggregateMatchSide({ match, side, directory, statistics }) {
     incrementStat(stats, period, "substitutionsOn", onEvent ? 1 : 0);
     incrementStat(stats, period, "substitutionsOff", offEvent ? 1 : 0);
     incrementStat(stats, period, "fullAppearances", entry.fullAppearance ? 1 : 0);
+    incrementStat(stats, period, "cleanSheets", stats.player.position === "GK" && Number(otherTeam?.score) === 0 ? 1 : 0);
   }
 
   for (const goal of (match.goals ?? []).filter((event) => event.teamName === lineup.teamName)) {
@@ -195,6 +196,7 @@ function createStatTotals() {
     fullAppearances: 0,
     substitutionsOn: 0,
     substitutionsOff: 0,
+    cleanSheets: 0,
   };
 }
 

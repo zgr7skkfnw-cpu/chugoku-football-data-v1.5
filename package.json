@@ -16,6 +16,7 @@
     "sync:2025:playoff": "node scripts/sync/sync-results.mjs --target=2025-2-playoff",
     "sync:2025:relegation": "node scripts/sync/sync-results.mjs --target=2025-promotion-relegation",
     "sync:teams": "node scripts/sync/sync-teams.mjs",
+    "sync:players:div2": "node scripts/sync/sync-div2-players.mjs",
     "build:stats": "node scripts/build/build-team-stats.mjs",
     "build:stats:div2": "node scripts/build/build-team-stats.mjs --division=2",
     "build:stats:2025:div1": "node scripts/build/build-team-stats.mjs --season=2025 --division=1",

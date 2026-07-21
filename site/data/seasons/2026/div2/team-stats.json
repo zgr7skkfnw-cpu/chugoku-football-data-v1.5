@@ -534,7 +534,7 @@
             "redCards": 1,
             "benchSelections": 77,
             "averageBench": 7.7,
-            "averageStartingAge": null
+            "averageStartingAge": 20.13
           },
           "rankProgression": [
             {
@@ -687,7 +687,7 @@
             "redCards": 0,
             "benchSelections": 48,
             "averageBench": 4.8,
-            "averageStartingAge": null
+            "averageStartingAge": 20.14
           },
           "rankProgression": [
             {
@@ -840,7 +840,7 @@
             "redCards": 0,
             "benchSelections": 78,
             "averageBench": 7.8,
-            "averageStartingAge": null
+            "averageStartingAge": 19.61
           },
           "rankProgression": [
             {
@@ -993,7 +993,7 @@
             "redCards": 0,
             "benchSelections": 77,
             "averageBench": 7.7,
-            "averageStartingAge": null
+            "averageStartingAge": 20.79
           },
           "rankProgression": [
             {
@@ -1146,7 +1146,7 @@
             "redCards": 2,
             "benchSelections": 87,
             "averageBench": 8.7,
-            "averageStartingAge": null
+            "averageStartingAge": 20.56
           },
           "rankProgression": [
             {
@@ -1299,7 +1299,7 @@
             "redCards": 1,
             "benchSelections": 89,
             "averageBench": 8.9,
-            "averageStartingAge": null
+            "averageStartingAge": 20.88
           },
           "rankProgression": [
             {
@@ -1448,7 +1448,7 @@
             "redCards": 0,
             "benchSelections": 63,
             "averageBench": 6.3,
-            "averageStartingAge": null
+            "averageStartingAge": 19.65
           },
           "rankProgression": [
             {
@@ -1601,7 +1601,7 @@
             "redCards": 0,
             "benchSelections": 72,
             "averageBench": 7.2,
-            "averageStartingAge": null
+            "averageStartingAge": 19.82
           },
           "rankProgression": [
             {
@@ -1754,7 +1754,7 @@
             "redCards": 0,
             "benchSelections": 78,
             "averageBench": 7.8,
-            "averageStartingAge": null
+            "averageStartingAge": 19.42
           },
           "rankProgression": [
             {
@@ -1907,7 +1907,7 @@
             "redCards": 0,
             "benchSelections": 15,
             "averageBench": 1.5,
-            "averageStartingAge": null
+            "averageStartingAge": 20.23
           },
           "rankProgression": [
             {
@@ -2060,7 +2060,7 @@
             "redCards": 0,
             "benchSelections": 56,
             "averageBench": 5.6,
-            "averageStartingAge": null
+            "averageStartingAge": 20.18
           },
           "rankProgression": [
             {
@@ -2567,7 +2567,63 @@
             "value": 1.5
           }
         ],
-        "averageStartingAge": []
+        "averageStartingAge": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 20.88
+          },
+          {
+            "rank": 2,
+            "teamId": "onomichi-city",
+            "value": 20.79
+          },
+          {
+            "rank": 3,
+            "teamId": "okayama",
+            "value": 20.56
+          },
+          {
+            "rank": 4,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 20.23
+          },
+          {
+            "rank": 5,
+            "teamId": "tottori",
+            "value": 20.18
+          },
+          {
+            "rank": 6,
+            "teamId": "kibi-international",
+            "value": 20.14
+          },
+          {
+            "rank": 7,
+            "teamId": "shimonoseki-city",
+            "value": 20.13
+          },
+          {
+            "rank": 8,
+            "teamId": "university-of-shimane",
+            "value": 19.82
+          },
+          {
+            "rank": 9,
+            "teamId": "shimane",
+            "value": 19.65
+          },
+          {
+            "rank": 10,
+            "teamId": "shujitsu",
+            "value": 19.61
+          },
+          {
+            "rank": 11,
+            "teamId": "hiroshima-international",
+            "value": 19.42
+          }
+        ]
       }
     },
     "first": {
@@ -3089,7 +3145,7 @@
             "redCards": 1,
             "benchSelections": 77,
             "averageBench": 7.7,
-            "averageStartingAge": null
+            "averageStartingAge": 20.13
           },
           "rankProgression": [
             {
@@ -3242,7 +3298,7 @@
             "redCards": 0,
             "benchSelections": 48,
             "averageBench": 4.8,
-            "averageStartingAge": null
+            "averageStartingAge": 20.14
           },
           "rankProgression": [
             {
@@ -3395,7 +3451,7 @@
             "redCards": 0,
             "benchSelections": 78,
             "averageBench": 7.8,
-            "averageStartingAge": null
+            "averageStartingAge": 19.61
           },
           "rankProgression": [
             {
@@ -3548,7 +3604,7 @@
             "redCards": 0,
             "benchSelections": 77,
             "averageBench": 7.7,
-            "averageStartingAge": null
+            "averageStartingAge": 20.79
           },
           "rankProgression": [
             {
@@ -3701,7 +3757,7 @@
             "redCards": 2,
             "benchSelections": 87,
             "averageBench": 8.7,
-            "averageStartingAge": null
+            "averageStartingAge": 20.56
           },
           "rankProgression": [
             {
@@ -3854,7 +3910,7 @@
             "redCards": 1,
             "benchSelections": 89,
             "averageBench": 8.9,
-            "averageStartingAge": null
+            "averageStartingAge": 20.88
           },
           "rankProgression": [
             {
@@ -4003,7 +4059,7 @@
             "redCards": 0,
             "benchSelections": 63,
             "averageBench": 6.3,
-            "averageStartingAge": null
+            "averageStartingAge": 19.65
           },
           "rankProgression": [
             {
@@ -4156,7 +4212,7 @@
             "redCards": 0,
             "benchSelections": 72,
             "averageBench": 7.2,
-            "averageStartingAge": null
+            "averageStartingAge": 19.82
           },
           "rankProgression": [
             {
@@ -4309,7 +4365,7 @@
             "redCards": 0,
             "benchSelections": 78,
             "averageBench": 7.8,
-            "averageStartingAge": null
+            "averageStartingAge": 19.42
           },
           "rankProgression": [
             {
@@ -4462,7 +4518,7 @@
             "redCards": 0,
             "benchSelections": 15,
             "averageBench": 1.5,
-            "averageStartingAge": null
+            "averageStartingAge": 20.23
           },
           "rankProgression": [
             {
@@ -4615,7 +4671,7 @@
             "redCards": 0,
             "benchSelections": 56,
             "averageBench": 5.6,
-            "averageStartingAge": null
+            "averageStartingAge": 20.18
           },
           "rankProgression": [
             {
@@ -5122,7 +5178,63 @@
             "value": 1.5
           }
         ],
-        "averageStartingAge": []
+        "averageStartingAge": [
+          {
+            "rank": 1,
+            "teamId": "okayama-science",
+            "value": 20.88
+          },
+          {
+            "rank": 2,
+            "teamId": "onomichi-city",
+            "value": 20.79
+          },
+          {
+            "rank": 3,
+            "teamId": "okayama",
+            "value": 20.56
+          },
+          {
+            "rank": 4,
+            "teamId": "hiroshima-institute-of-technology",
+            "value": 20.23
+          },
+          {
+            "rank": 5,
+            "teamId": "tottori",
+            "value": 20.18
+          },
+          {
+            "rank": 6,
+            "teamId": "kibi-international",
+            "value": 20.14
+          },
+          {
+            "rank": 7,
+            "teamId": "shimonoseki-city",
+            "value": 20.13
+          },
+          {
+            "rank": 8,
+            "teamId": "university-of-shimane",
+            "value": 19.82
+          },
+          {
+            "rank": 9,
+            "teamId": "shimane",
+            "value": 19.65
+          },
+          {
+            "rank": 10,
+            "teamId": "shujitsu",
+            "value": 19.61
+          },
+          {
+            "rank": 11,
+            "teamId": "hiroshima-international",
+            "value": 19.42
+          }
+        ]
       }
     },
     "second": {

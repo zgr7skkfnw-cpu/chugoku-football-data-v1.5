@@ -43,7 +43,7 @@ test("ホーム・アウェイ順位と勝率・順位変動を表示する", as
 test("先発・ベンチ・フル出場・途中出場ランキングと推定学年フィルターが動く", async ({ page }) => {
   const errors = collectErrors(page);
   await page.goto(`${BASE_URL}?view=rankings`);
-  await expect(page.locator(".ranking-tabs button")).toHaveCount(11);
+  await expect(page.locator(".ranking-tabs button")).toHaveCount(13);
   await page.getByRole("tab", { name: "フル出場", exact: true }).click();
   await expect(page.getByRole("heading", { name: "フル出場ランキング" })).toBeVisible();
   await expect(page.locator(".ranking-entry").first()).toBeVisible();

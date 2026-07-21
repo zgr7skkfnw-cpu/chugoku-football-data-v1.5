@@ -41,10 +41,11 @@ const [teamsData, playersData, matchesData, teamStatsData, teamCatalogData, venu
 const errors = [];
 const teams = teamsData.items ?? [];
 const players = playersData.items ?? [];
-const teamDirectory = createTeamDirectory(teams);
+const teamCatalog = teamCatalogData.items ?? [];
+const profilesById = new Map(teams.map((team) => [team.id, team]));
+const teamDirectory = createTeamDirectory(teamCatalog.map((team) => ({ ...team, ...(profilesById.get(team.id) ?? {}) })));
 const playerDirectory = createPlayerDirectory(players);
 const matches = linkMatchesToTeams(matchesData.items ?? [], teamDirectory);
-const teamCatalog = teamCatalogData.items ?? [];
 const catalogIds = new Set(teamCatalog.map((team) => team.id));
 const catalogNames = new Map();
 const division2TeamIds = new Set(seasonData.competitions.find((competition) => competition.division === 2 && competition.stage === "regular")?.teamIds ?? []);
@@ -244,6 +245,7 @@ const statKeys = [
   "substitutionsOn",
   "substitutionsOff",
   "fullAppearances",
+  "cleanSheets",
 ];
 for (const stats of statistics.values()) {
   if (stats.minutes < 0 || !Number.isInteger(stats.minutes)) {

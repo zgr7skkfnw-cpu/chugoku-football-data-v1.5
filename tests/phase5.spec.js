@@ -46,7 +46,7 @@ test("順位・選手ランキング・チームランキングを期間切替�
   await expect(page.locator('[data-standing-team="IPU・環太平洋大学"] .rank-number')).toHaveText("–");
 
   await page.goto(`${BASE_URL}?view=rankings`);
-  await expect(page.locator(".ranking-tabs button")).toHaveCount(11);
+  await expect(page.locator(".ranking-tabs button")).toHaveCount(13);
   await expect(page.locator(".team-ranking-tabs button")).toHaveCount(9);
   await expect(page.locator('[data-team-ranking="averageGoals"] .team-ranking-row').first()).toContainText("IPU・環太平洋大学");
   await page.getByRole("tab", { name: "アシスト", exact: true }).click();

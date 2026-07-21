@@ -11,7 +11,7 @@ test("Phase 4 選手検索・詳細・ランキング・相互リンク", async 
 
   await page.goto(`${BASE_URL}?view=players`);
   await expect(page.locator('[data-page="players"]')).toBeVisible();
-  await expect(page.locator(".player-list")).toHaveAttribute("data-player-count", "507");
+  await expect(page.locator(".player-list")).toHaveAttribute("data-player-count", "829");
   await page.locator('.search-input').fill("小宮 一馬");
   await expect(page.locator(".player-list")).toHaveAttribute("data-player-count", "1");
   await page.locator(".player-list .player-row--link").click();
@@ -34,7 +34,7 @@ test("Phase 4 選手検索・詳細・ランキング・相互リンク", async 
   await expect(page.locator(".roster-list .player-row--link").first()).toBeVisible();
 
   await page.goto(`${BASE_URL}?view=rankings`);
-  await expect(page.locator(".ranking-tabs button")).toHaveCount(11);
+  await expect(page.locator(".ranking-tabs button")).toHaveCount(13);
   await expect(page.locator(".ranking-entry").first()).toBeVisible();
   await page.getByRole("tab", { name: "アシスト", exact: true }).click();
   await expect(page.getByRole("heading", { name: "アシストランキング" })).toBeVisible();

@@ -172,6 +172,7 @@ function createSeasonStats(stats) {
     ["レッド", stats.redCards],
     ["交代出場数", stats.substitutionsOn + stats.substitutionsOff],
     ["途中交代数", stats.substitutionsOff],
+    ["クリーンシート", stats.cleanSheets],
     ["途中出場数", stats.substitutionsOn],
     ["フル出場", stats.fullAppearances],
   ];

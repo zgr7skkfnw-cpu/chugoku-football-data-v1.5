@@ -4,6 +4,7 @@ import { getMetric, selectPlayerStatisticsPeriod, sortPlayerStatistics } from ".
 import { createPlayerLinkRow } from "./shared.js";
 import { filterMatchesByPeriod } from "../utils/football.js";
 import { routeHref } from "../router.js";
+import { setState } from "../state.js";
 
 const RANKINGS = [
   ["goals", "得点", "ゴール"],
@@ -15,6 +16,8 @@ const RANKINGS = [
   ["benchSelections", "ベンチ入り", "試合"],
   ["fullAppearances", "フル出場", "試合"],
   ["substitutionsOn", "途中出場", "試合"],
+  ["substitutionsOff", "途中交代", "試合"],
+  ["cleanSheets", "クリーンシート", "試合"],
   ["yellowCards", "イエロー", "枚"],
   ["redCards", "レッド", "枚"],
 ];
@@ -31,12 +34,15 @@ const TEAM_RANKINGS = [
   ["averageStartingAge", "平均先発年齢", "歳"],
 ];
 
-export function renderRankingsPage({ matches, playerStatistics, teamStats, teamDirectory, seasonPeriod, teams }) {
+export function renderRankingsPage({ matches, playerStatistics, teamStats, leagueStats, teamDirectory, seasonPeriod, teams, leagueDivision = 1, selectedSeason = 2026 }) {
   let activeMetric = "goals";
   let teamFilter = "";
   let gradeFilter = "";
   const periodStatistics = selectPlayerStatisticsPeriod(playerStatistics, seasonPeriod);
-  const reflectedMatches = filterMatchesByPeriod(matches, seasonPeriod);
+  const divisionMatches = matches.filter((match) => match.season === selectedSeason && match.division === leagueDivision);
+  const divisionTeamIds = new Set(divisionMatches.flatMap((match) => [match.homeTeam.teamId, match.awayTeam.teamId]).filter(Boolean));
+  const reflectedMatches = filterMatchesByPeriod(divisionMatches, seasonPeriod);
+  const activeTeamStats = leagueStats?.[selectedSeason]?.[leagueDivision] ?? teamStats;
   const chips = element("div", { className: "chip-row ranking-tabs", attributes: { role: "tablist" } });
   const content = element("div");
 
@@ -44,6 +50,7 @@ export function renderRankingsPage({ matches, playerStatistics, teamStats, teamD
     const [, label, unit] = RANKINGS.find(([metric]) => metric === activeMetric);
     const rows = sortPlayerStatistics(periodStatistics, activeMetric).filter((stats) =>
       getMetric(stats, activeMetric) > 0 &&
+      divisionTeamIds.has(stats.player.teamId) &&
       (!teamFilter || stats.player.teamId === teamFilter) &&
       (!gradeFilter || String(stats.player.grade) === gradeFilter),
     );
@@ -95,7 +102,7 @@ export function renderRankingsPage({ matches, playerStatistics, teamStats, teamD
 
   const teamSelect = element("select", { className: "filter-select", attributes: { "aria-label": "ランキングのチーム" } }, [
     element("option", { text: "全チーム", attributes: { value: "" } }),
-    ...teams.map((team) => element("option", { text: team.name, attributes: { value: team.id } })),
+    ...teams.filter((team) => divisionTeamIds.has(team.id)).map((team) => element("option", { text: team.name, attributes: { value: team.id } })),
   ]);
   const gradeSelect = element("select", { className: "filter-select", attributes: { "aria-label": "ランキングの推定学年" } }, [
     element("option", { text: "全学年", attributes: { value: "" } }),
@@ -110,12 +117,17 @@ export function renderRankingsPage({ matches, playerStatistics, teamStats, teamD
       title: "ランキング",
       description: "試合の出場・得点・アシスト・警告退場記録を自動集計しています。",
     }),
+    element("div", { className: "league-division-tabs", attributes: { role: "tablist", "aria-label": "ランキングの大会" } }, [1, 2].map((division) => {
+      const button = element("button", { className: `league-division-tab${division === leagueDivision ? " is-active" : ""}`, text: `${division}部`, attributes: { type: "button", role: "tab", "aria-selected": String(division === leagueDivision) } });
+      button.addEventListener("click", () => setState({ leagueDivision: division }));
+      return button;
+    })),
     createSeasonPeriodTabs(seasonPeriod),
     element("div", { className: "filter-grid ranking-filter-grid" }, [teamSelect, gradeSelect]),
     chips,
     element("div", { className: "section-stack" }, [
       content,
-      createTeamRankings(teamStats?.periods?.[seasonPeriod]?.rankings, teamDirectory),
+      createTeamRankings(activeTeamStats?.periods?.[seasonPeriod]?.rankings, teamDirectory),
       createNotice(`${reflectedMatches.length}試合の記録から集計しています。`),
     ]),
   ]);
