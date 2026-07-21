@@ -143,6 +143,18 @@ const TARGETS = {
     allowIncompleteLineups: true,
     buildStats: false,
   },
+  "2026-championship": {
+    season: 2026,
+    division: null,
+    competitionId: "jufa-chugoku-2026-championship",
+    stage: "championship",
+    sourcePageUrl: "https://jufa-chugoku.jp/result/2026/tid_563/",
+    outputPath: "../../site/data/seasons/2026/championship/matches.json",
+    minimumScheduleCount: 22,
+    minimumDetailCount: 22,
+    allowIncompleteLineups: true,
+    buildStats: false,
+  },
 };
 const targetKey = process.argv.find((argument) => argument.startsWith("--target="))?.split("=")[1] ?? "2026-1";
 const target = TARGETS[targetKey];
@@ -391,6 +403,15 @@ function parsePeriodScores($) {
   return periods;
 }
 
+function parsePenaltyShootout($) {
+  const row = $("table.result_02_score_pk tr").first();
+  if (!row.length) return null;
+  const label = cleanText(row.find("th").text());
+  const home = toInteger(row.find("th").prev("td").text());
+  const away = toInteger(row.find("th").next("td").text());
+  return label === "PK" && home !== null && away !== null ? { home, away } : null;
+}
+
 function parseOfficials($) {
   const labels = new Set(["主審", "副審", "第４審判", "マッチコミッショナー", "会場責任者", "記録員"]);
   const officials = [];
@@ -581,6 +602,7 @@ function parseDetailHtml(detailHtml, listMatch) {
     officials: parseOfficials($),
     lineups: parseLineups($, listMatch),
     scoreByPeriod: parsePeriodScores($),
+    penaltyShootout: parsePenaltyShootout($),
     substitutions: resultSections.substitutions,
     disciplinary: resultSections.disciplinary,
     goalSummary: resultSections.goalSummary,

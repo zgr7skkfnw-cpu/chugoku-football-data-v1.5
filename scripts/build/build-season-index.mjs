@@ -26,6 +26,9 @@ export async function buildSeasonIndex() {
         competitionType: competition.competitionType ?? "league",
         stage: competition.stage,
         stageName: competition.stageName,
+        dateFrom: competition.dateFrom ?? null,
+        dateTo: competition.dateTo ?? null,
+        results: competition.results ?? null,
         matches: competition.matches ? dataRelativePath(resolve(seasonDirectory, competition.matches)) : null,
         teams: competition.teams ? dataRelativePath(resolve(seasonDirectory, competition.teams)) : null,
         manualOverrides: competition.manualOverrides

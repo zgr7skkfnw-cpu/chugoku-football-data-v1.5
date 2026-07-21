@@ -46,12 +46,15 @@ export function renderStandingsPage({
   selectedCompetitionId = null,
 }) {
   const seasonCompetitions = competitionDefinitions.filter((entry) =>
-    entry.season === selectedSeason && entry.teamStats,
+    entry.season === selectedSeason
+    && entry.matches
+    && (entry.teamStats || ["tournament", "rookie-tournament"].includes(entry.competitionType)),
   );
   const activeCompetition = seasonCompetitions.find((entry) => entry.id === selectedCompetitionId)
     ?? seasonCompetitions.find((entry) => entry.stage === "regular" && entry.division === leagueDivision)
     ?? seasonCompetitions[0];
   const competitionId = activeCompetition?.id;
+  const isTournament = ["tournament", "rookie-tournament"].includes(activeCompetition?.competitionType);
   const activeStats = leagueStats?.[selectedSeason]?.byCompetition?.[competitionId]
     ?? leagueStats?.[selectedSeason]?.[leagueDivision];
   const metadata = competitionMetadata?.[selectedSeason]?.[leagueDivision];
@@ -72,7 +75,7 @@ export function renderStandingsPage({
   );
 
   let activeMode = "overall";
-  let activeLeagueTab = "standings";
+  let activeLeagueTab = isTournament ? "matches" : "standings";
 
   const modeTabs = element("div", {
     className: "chip-row standing-mode-tabs",
@@ -227,11 +230,22 @@ export function renderStandingsPage({
       scheduledButton,
     ]),
     element("div", { className: "section-stack" }, [
+      activeCompetition?.results ? createPanel("大会結果", element("div", { className: "detail-list" }, [
+        element("div", { className: "detail-row" }, [element("span", { text: "優勝" }), element("strong", { text: activeCompetition.results.winner })]),
+        element("div", { className: "detail-row" }, [element("span", { text: "準優勝" }), element("strong", { text: activeCompetition.results.runnerUp })]),
+        element("div", { className: "detail-row" }, [element("span", { text: "3位" }), element("strong", { text: activeCompetition.results.third })]),
+      ]), `${activeCompetition.dateFrom?.replaceAll("-", "/")}〜${activeCompetition.dateTo?.replaceAll("-", "/")}`) : null,
+      activeCompetition?.competitionType === "rookie-tournament"
+        ? createRookieGroupStandings(leagueMatches)
+        : null,
       createPanel(
         activeCompetition?.name ?? `${selectedSeason}年度 中国大学サッカーリーグ${leagueDivision}部`,
         matchList,
         matchCount,
       ),
+      isTournament && leagueMatches.some((match) => match.goals?.length)
+        ? createTournamentRankings(leagueMatches)
+        : null,
       createNotice("終了した試合と未開催の試合を切り替えられます。"),
     ]),
   ]);
@@ -273,7 +287,7 @@ export function renderStandingsPage({
   };
 
   leagueTabs.append(
-    ...LEAGUE_TABS.map(([tabId, label]) => {
+    ...LEAGUE_TABS.filter(([tabId]) => !isTournament || tabId !== "standings").map(([tabId, label]) => {
       const button = element("button", {
         className: "league-detail-tab",
         text: label,
@@ -307,7 +321,13 @@ export function renderStandingsPage({
     const selected = competition.id === competitionId;
     const button = element("button", {
       className: `league-division-tab${selected ? " is-active" : ""}`,
-      text: competition.competitionType === "i-league" ? `I ${competition.division}部` : `${competition.division}部`,
+      text: competition.competitionType === "i-league"
+        ? `I ${competition.division}部`
+        : competition.competitionType === "tournament"
+          ? "選手権"
+          : competition.competitionType === "rookie-tournament"
+            ? "新人戦"
+            : `${competition.division}部`,
       attributes: {
         type: "button",
         role: "tab",
@@ -332,9 +352,9 @@ export function renderStandingsPage({
     },
     [
       createPageHeader({
-        eyebrow: "League",
+        eyebrow: isTournament ? "Cup Competition" : "League",
         title: leagueName,
-        description: "順位表、試合、過去シーズンの情報を確認できます。",
+        description: isTournament ? "ラウンド別の日程・結果を確認できます。" : "順位表、試合、過去シーズンの情報を確認できます。",
         badge: String(selectedSeason),
       }),
       divisionTabs,
@@ -342,6 +362,66 @@ export function renderStandingsPage({
       leagueContent,
     ],
   );
+}
+
+function createTournamentRankings(matches) {
+  const goals = new Map();
+  const assists = new Map();
+  for (const match of matches) {
+    for (const goal of match.goals ?? []) {
+      const scorerKey = `${goal.teamName}\0${goal.scorerName}`;
+      goals.set(scorerKey, { name: goal.scorerName, team: goal.teamName, count: (goals.get(scorerKey)?.count ?? 0) + 1 });
+      for (const name of goal.assistNames ?? []) {
+        const assistKey = `${goal.teamName}\0${name}`;
+        assists.set(assistKey, { name, team: goal.teamName, count: (assists.get(assistKey)?.count ?? 0) + 1 });
+      }
+    }
+  }
+  const ranking = (entries) => element("div", { className: "detail-list" }, [...entries.values()]
+    .sort((left, right) => right.count - left.count || left.name.localeCompare(right.name, "ja"))
+    .slice(0, 10)
+    .map((entry) => element("div", { className: "detail-row" }, [
+      element("span", { text: `${entry.name}（${entry.team}）` }),
+      element("strong", { text: String(entry.count) }),
+    ])));
+  return element("div", { className: "section-stack tournament-rankings" }, [
+    createPanel("得点ランキング", ranking(goals), "試合記録集計"),
+    createPanel("アシストランキング", ranking(assists), "試合記録集計"),
+  ]);
+}
+
+function createRookieGroupStandings(matches) {
+  const groups = new Map();
+  for (const match of matches) {
+    if (!match.groupName) continue;
+    if (!groups.has(match.groupName)) groups.set(match.groupName, []);
+    groups.get(match.groupName).push(match);
+  }
+  return element("div", { className: "section-stack rookie-group-standings" }, [...groups.entries()].map(([groupName, groupMatches]) => {
+    const teamNames = [...new Set(groupMatches.flatMap((match) => [match.homeTeam.name, match.awayTeam.name]))];
+    const rows = teamNames.map((name) => {
+      const record = { name, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, points: 0 };
+      for (const match of groupMatches.filter((entry) => entry.status === "finished" && (entry.homeTeam.name === name || entry.awayTeam.name === name))) {
+        const home = match.homeTeam.name === name;
+        const own = home ? match.homeTeam.score : match.awayTeam.score;
+        const against = home ? match.awayTeam.score : match.homeTeam.score;
+        record.played += 1; record.goalsFor += own; record.goalsAgainst += against;
+        if (own > against) { record.won += 1; record.points += 3; }
+        else if (own < against) record.lost += 1;
+        else { record.drawn += 1; record.points += 1; }
+      }
+      return record;
+    }).sort((left, right) => right.points - left.points || (right.goalsFor - right.goalsAgainst) - (left.goalsFor - left.goalsAgainst) || right.goalsFor - left.goalsFor);
+    const table = element("table", { className: "standing-table rookie-standing-table" });
+    table.append(
+      element("thead", {}, [element("tr", {}, ["順位", "チーム", "試合", "勝点"].map((label) => element("th", { text: label })))]),
+      element("tbody", {}, rows.map((row, index) => element("tr", {}, [
+        element("td", { text: row.played ? String(index + 1) : "–" }), element("td", { text: row.name }),
+        element("td", { text: String(row.played) }), element("td", { text: String(row.points) }),
+      ]))),
+    );
+    return createPanel(`${groupName} 順位表`, element("div", { className: "table-scroll" }, [table]), `${teamNames.length}チーム`);
+  }));
 }
 
 

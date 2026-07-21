@@ -24,6 +24,7 @@
     { "id": "hiroshima-institute-of-technology", "name": "広島工業大学", "shortName": "広工大", "aliases": [], "emblem": "/assets/images/teams/hiroshima-institute-of-technology/emblem.png", "profileStatus": "partial" },
     { "id": "tottori", "name": "鳥取大学", "shortName": "鳥取大", "aliases": [], "emblem": "/assets/images/teams/tottori/emblem.png", "profileStatus": "partial" },
     { "id": "toa", "name": "東亜大学", "shortName": "東亜大", "aliases": [], "profileStatus": "pending" },
+    { "id": "okayama-commerce", "name": "岡山商科大学", "shortName": "岡商大", "aliases": [], "profileStatus": "pending" },
     { "id": "i-league-2026-ipu-a", "parentClubId": "ipu", "competitionId": "jufa-chugoku-2026-i-league-division-1", "officialPageId": 624, "name": "IPU・環太平洋大学A", "shortName": "IPU A", "aliases": [], "profileStatus": "competition" },
     { "id": "i-league-2026-fukuyama-a", "parentClubId": "fukuyama", "competitionId": "jufa-chugoku-2026-i-league-division-1", "officialPageId": 621, "name": "福山大学A", "shortName": "福山大A", "aliases": [], "profileStatus": "competition" },
     { "id": "i-league-2026-hue-a", "parentClubId": "hiroshima-keizai", "competitionId": "jufa-chugoku-2026-i-league-division-1", "officialPageId": 635, "name": "広島経済大学A", "shortName": "広経大A", "aliases": [], "profileStatus": "competition" },

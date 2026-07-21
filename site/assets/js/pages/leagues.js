@@ -30,6 +30,13 @@ const LEAGUES = [
     shortName: "I 2部",
     description: "Iリーグ中国2026 2部",
   },
+  {
+    division: 0,
+    competitionId: "jufa-chugoku-2026-championship",
+    name: "中国大学サッカー選手権",
+    shortName: "選手権",
+    description: "2026年度 第50回中国大学サッカー選手権",
+  },
 ];
 
 export function renderLeaguesPage() {
@@ -45,12 +52,12 @@ export function renderLeaguesPage() {
       createPageHeader({
         eyebrow: "Competitions",
         title: "リーグ",
-        description: "リーグを選択して、順位表や試合、過去シーズンを確認できます。",
+        description: "大会を選択して、順位表や試合、過去シーズンを確認できます。",
         badge: "一覧",
       }),
       element("div", { className: "section-stack" }, [
         element("div", { className: "league-card-list" }, cards),
-        createNotice("中国大学サッカーリーグとIリーグ中国を大会別に掲載しています。"),
+        createNotice("リーグ戦、Iリーグ、選手権を大会別に掲載しています。"),
       ]),
     ],
   );

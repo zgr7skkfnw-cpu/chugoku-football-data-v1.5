@@ -232,7 +232,7 @@ test("公開HTMLの管理画面はseason indexからIリーグ補正先とダウ
   await page.goto(`${BASE_URL}?view=admin`);
   await page.getByLabel("補正する年度").selectOption("2026");
   const competition = page.getByLabel("補正する大会");
-  await expect(competition.locator("option")).toHaveCount(6);
+  await expect(competition.locator("option")).toHaveCount(7);
   await expect(competition.locator(`option[value="${I1}"]`)).toHaveText("Iリーグ 中国2026 1部");
   await expect(competition.locator(`option[value="${I2}"]`)).toHaveText("Iリーグ 中国2026 2部");
 

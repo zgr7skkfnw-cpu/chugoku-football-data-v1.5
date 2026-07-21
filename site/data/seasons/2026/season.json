@@ -107,6 +107,30 @@
       "teamIds": []
     },
     {
+      "id": "jufa-chugoku-2026-championship",
+      "name": "2026年度 第50回中国大学サッカー選手権",
+      "leagueName": "中国大学サッカー選手権",
+      "division": null,
+      "competitionType": "tournament",
+      "stage": "championship",
+      "stageName": "中国大学サッカー選手権",
+      "dateFrom": "2026-06-20",
+      "dateTo": "2026-07-05",
+      "matches": "./championship/matches.json",
+      "teams": "./championship/teams.json",
+      "manualOverrides": "./championship/manual-match-overrides.json",
+      "teamStats": null,
+      "dataAvailable": true,
+      "results": { "winner": "IPU・環太平洋大学", "runnerUp": "広島経済大学", "third": "福山大学" },
+      "teamIds": [
+        "ipu", "shimonoseki-city", "kibi-international", "shunan-public", "shujitsu", "onomichi-city",
+        "yamaguchi", "okayama-commerce", "okayama", "okayama-science", "shimane", "university-of-shimane",
+        "kawasaki-medical-welfare", "hiroshima-shudo", "hiroshima-international", "hiroshima",
+        "hiroshima-institute-of-technology", "hiroshima-bunka-gakuen", "hiroshima-keizai", "fukuyama",
+        "fukuyama-heisei", "tottori"
+      ]
+    },
+    {
       "id": "jufa-chugoku-2026-i-league-division-1",
       "name": "Iリーグ 中国2026 1部",
       "leagueName": "Iリーグ中国 1部",

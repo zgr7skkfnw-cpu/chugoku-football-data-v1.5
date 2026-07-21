@@ -194,13 +194,7 @@ export function groupMatchesByRound(matches) {
 
   for (const match of sorted) {
 
-    const roundKey =
-
-      match?.round != null
-
-        ? String(match.round)
-
-        : String(match?.roundLabel ?? "unknown");
+    const roundKey = String(match?.roundLabel ?? match?.round ?? "unknown");
 
     if (!groupMap.has(roundKey)) {
 

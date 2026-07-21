@@ -82,14 +82,21 @@ export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, 
   const periods = element(
     "div",
     { className: "period-score-list" },
-    match.scoreByPeriod?.length
-      ? match.scoreByPeriod.map((period) =>
+    match.scoreByPeriod?.length || match.penaltyShootout
+      ? [
+          ...(match.scoreByPeriod ?? []).map((period) =>
           element("div", { className: "period-score-row" }, [
             element("strong", { text: String(period.home) }),
             element("span", { text: period.label }),
             element("strong", { text: String(period.away) }),
           ]),
-        )
+          ),
+          ...(match.penaltyShootout ? [element("div", { className: "period-score-row" }, [
+            element("strong", { text: String(match.penaltyShootout.home) }),
+            element("span", { text: "PK" }),
+            element("strong", { text: String(match.penaltyShootout.away) }),
+          ])] : []),
+        ]
       : [createNotice("前後半スコアは掲載されていません。")],
   );
   const goals = createEventList(
