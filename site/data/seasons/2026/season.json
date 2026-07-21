@@ -89,8 +89,13 @@
       "division": 2,
       "stage": "promotion-playoff",
       "stageName": "1部リーグ昇格プレーオフ",
-      "status": "pending",
-      "matches": null,
+      "competitionType": "playoff",
+      "parentCompetitionId": "jufa-chugoku-2026-division-2",
+      "competitionGroup": "division-2",
+      "displaySection": "playoff",
+      "dataStatus": "not-published",
+      "matches": "./div2/playoff/matches.json",
+      "manualOverrides": "./div2/playoff/manual-match-overrides.json",
       "teamStats": null,
       "teamIds": []
     },
@@ -101,8 +106,12 @@
       "division": null,
       "stage": "promotion-relegation",
       "stageName": "入替戦",
-      "status": "pending",
-      "matches": null,
+      "competitionType": "promotion-relegation",
+      "competitionGroup": "promotion-relegation",
+      "displaySection": "standalone",
+      "dataStatus": "not-held",
+      "matches": "./promotion-relegation/matches.json",
+      "manualOverrides": "./promotion-relegation/manual-match-overrides.json",
       "teamStats": null,
       "teamIds": []
     },
@@ -191,6 +200,24 @@
         "i-league-2026-hue-b", "i-league-2026-fukuyama-b",
         "i-league-2026-ipu-c", "i-league-2026-hiroshima-b"
       ]
+    },
+    {
+      "id": "jufa-chugoku-2026-i-league-playoff",
+      "name": "Iリーグ 中国2026 順位決定プレーオフ",
+      "leagueName": "Iリーグ中国",
+      "division": null,
+      "competitionType": "i-league-playoff",
+      "stage": "i-league-playoff",
+      "stageName": "順位決定プレーオフ",
+      "parentCompetitionId": "jufa-chugoku-2026-i-league",
+      "competitionGroup": "i-league",
+      "displaySection": "playoff",
+      "dataStatus": "not-published",
+      "matches": "./i-league/playoff/matches.json",
+      "teams": null,
+      "manualOverrides": "./i-league/playoff/manual-match-overrides.json",
+      "teamStats": null,
+      "teamIds": []
     }
   ]
 }

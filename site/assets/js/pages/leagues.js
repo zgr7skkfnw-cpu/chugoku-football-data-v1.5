@@ -19,16 +19,9 @@ const LEAGUES = [
   {
     division: 1,
     competitionId: "jufa-chugoku-2026-i-league-division-1",
-    name: "Iリーグ中国 1部",
-    shortName: "I 1部",
-    description: "Iリーグ中国2026 1部",
-  },
-  {
-    division: 2,
-    competitionId: "jufa-chugoku-2026-i-league-division-2",
-    name: "Iリーグ中国 2部",
-    shortName: "I 2部",
-    description: "Iリーグ中国2026 2部",
+    name: "Iリーグ中国",
+    shortName: "Iリーグ",
+    description: "1部・2部・順位決定プレーオフ",
   },
   {
     division: 0,
@@ -43,6 +36,13 @@ const LEAGUES = [
     name: "中国大学サッカー新人戦",
     shortName: "新人戦",
     description: "2026年度 第10回中国大学サッカー新人戦",
+  },
+  {
+    division: 0,
+    competitionId: "jufa-chugoku-2026-promotion-relegation",
+    name: "1部・2部入替戦",
+    shortName: "入替戦",
+    description: "中国大学サッカーリーグの昇降格決定戦",
   },
 ];
 
@@ -64,7 +64,7 @@ export function renderLeaguesPage() {
       }),
       element("div", { className: "section-stack" }, [
         element("div", { className: "league-card-list" }, cards),
-        createNotice("リーグ戦、Iリーグ、選手権、新人戦を大会別に掲載しています。"),
+        createNotice("リーグ戦、Iリーグ、カップ戦、入替戦を大会別に掲載しています。"),
       ]),
     ],
   );

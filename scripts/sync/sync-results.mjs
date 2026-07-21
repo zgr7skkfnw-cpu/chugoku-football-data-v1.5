@@ -744,9 +744,9 @@ function preserveScheduledMatchIds(previousItems = [], nextItems = []) {
     if (
       previous?.id?.startsWith("football-system-schedule-")
       && match.id !== previous.id
-      && match.gameId != null
     ) {
-      console.log(`既存試合IDを維持: ${previous.id} (game_id=${match.gameId})`);
+      const officialId = match.gameId == null ? "未公開" : match.gameId;
+      console.log(`既存試合IDを維持: ${previous.id} (game_id=${officialId})`);
       return { ...match, id: previous.id };
     }
     return match;

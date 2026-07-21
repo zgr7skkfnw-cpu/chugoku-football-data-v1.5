@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-21T09:05:28.167Z",
+  "generatedAt": "2026-07-21T14:03:04.278Z",
   "sourceSeasons": [
     2024,
     2025,
@@ -64,6 +64,22 @@
       "matchCount": 2
     },
     {
+      "season": 2025,
+      "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+      "leagueName": "Iリーグ中国",
+      "stageId": "i-league-playoff-upper",
+      "stageName": "上位プレーオフ",
+      "matchCount": 6
+    },
+    {
+      "season": 2025,
+      "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+      "leagueName": "Iリーグ中国",
+      "stageId": "i-league-playoff-lower",
+      "stageName": "下位プレーオフ",
+      "matchCount": 9
+    },
+    {
       "season": 2026,
       "competitionId": "jufa-chugoku-2026-division-1",
       "leagueName": "中国大学サッカーリーグ 1部",
@@ -78,6 +94,22 @@
       "stageId": "regular",
       "stageName": "リーグ戦",
       "matchCount": 55
+    },
+    {
+      "season": 2026,
+      "competitionId": "jufa-chugoku-2026-division-1-promotion-playoff",
+      "leagueName": "中国大学サッカーリーグ",
+      "stageId": "promotion-playoff",
+      "stageName": "1部リーグ昇格プレーオフ",
+      "matchCount": 0
+    },
+    {
+      "season": 2026,
+      "competitionId": "jufa-chugoku-2026-promotion-relegation",
+      "leagueName": "中国大学サッカーリーグ",
+      "stageId": "promotion-relegation",
+      "stageName": "入替戦",
+      "matchCount": 0
     },
     {
       "season": 2026,
@@ -110,9 +142,17 @@
       "stageId": "i-league-regular",
       "stageName": "Iリーグ2部",
       "matchCount": 9
+    },
+    {
+      "season": 2026,
+      "competitionId": "jufa-chugoku-2026-i-league-playoff",
+      "leagueName": "Iリーグ中国",
+      "stageId": "i-league-playoff",
+      "stageName": "順位決定プレーオフ",
+      "matchCount": 0
     }
   ],
-  "matchCount": 514,
+  "matchCount": 529,
   "items": [
     {
       "teamId": "ipu",
@@ -19385,6 +19425,861 @@
               "period": "first",
               "side": "home",
               "goalsFor": 3,
+              "goalsAgainst": 2,
+              "result": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-ipu-a",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-fukuyama-a",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 5,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23906",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-25T14:30:00+09:00",
+              "round": null,
+              "period": null,
+              "side": "home",
+              "goalsFor": 5,
+              "goalsAgainst": 2,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-ipu-b",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23903",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-18T11:00:00+09:00",
+              "round": null,
+              "period": null,
+              "side": "home",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-ipu-b",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-hiroshima-a",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23901",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-11T12:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-ipu-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23903",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-18T11:00:00+09:00",
+              "round": null,
+              "period": null,
+              "side": "away",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-ipu-d",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23905",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-25T12:00:00+09:00",
+              "round": 3,
+              "period": null,
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-ipu-d",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-fukuyama-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 2,
+          "goalsAgainst": 4,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23904",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-18T13:30:00+09:00",
+              "round": null,
+              "period": null,
+              "side": "home",
+              "goalsFor": 2,
+              "goalsAgainst": 4,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-hue-a",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 4,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23902",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-11T14:30:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 4,
+              "goalsAgainst": 2,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-ipu-b",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23905",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-25T12:00:00+09:00",
+              "round": 3,
+              "period": null,
+              "side": "away",
+              "goalsFor": 2,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-fukuyama-a",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-ipu-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 2,
+          "goalsAgainst": 5,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23906",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-25T14:30:00+09:00",
+              "round": null,
+              "period": null,
+              "side": "away",
+              "goalsFor": 2,
+              "goalsAgainst": 5,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-ipu-d",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 4,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23904",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-18T13:30:00+09:00",
+              "round": null,
+              "period": null,
+              "side": "away",
+              "goalsFor": 4,
+              "goalsAgainst": 2,
+              "result": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-hue-a",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-ipu-d",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 2,
+          "goalsAgainst": 4,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23902",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-11T14:30:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 2,
+              "goalsAgainst": 4,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-hiroshima-a",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-ipu-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-538-23901",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-upper-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-upper",
+              "stageName": "上位プレーオフ",
+              "kickoffAt": "2025-10-11T12:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-ipu-c",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-fukuyama-b",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 4,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-540-23911",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-19T09:00:00+09:00",
+              "round": 2,
+              "period": null,
+              "side": "away",
+              "goalsFor": 4,
+              "goalsAgainst": 1,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-heisei",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 2,
+          "goalsAgainst": 6,
+          "matches": [
+            {
+              "matchId": "football-system-17-540-23910",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-11T14:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 2,
+              "goalsAgainst": 6,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-fukuyama-b",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-heisei",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 3,
+          "goalsAgainst": 4,
+          "matches": [
+            {
+              "matchId": "football-system-17-540-23912",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-25T10:00:00+09:00",
+              "round": 3,
+              "period": null,
+              "side": "away",
+              "goalsFor": 3,
+              "goalsAgainst": 4,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-ipu-c",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 4,
+          "matches": [
+            {
+              "matchId": "football-system-17-540-23911",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-19T09:00:00+09:00",
+              "round": 2,
+              "period": null,
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 4,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-hue-b",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-hbg-a",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-539-23908",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-18T13:00:00+09:00",
+              "round": 2,
+              "period": null,
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-shudo",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 4,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-539-23907",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-04T11:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 4,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-hiroshima-b",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-hbg-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-541-23914",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-18T13:00:00+09:00",
+              "round": 2,
+              "period": null,
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-ous",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-541-23915",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-25T13:00:00+09:00",
+              "round": 3,
+              "period": null,
+              "side": "away",
+              "goalsFor": 2,
+              "goalsAgainst": 2,
+              "result": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-hbg-a",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-hue-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-539-23908",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-18T13:00:00+09:00",
+              "round": 2,
+              "period": null,
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-shudo",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-539-23909",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-25T13:00:00+09:00",
+              "round": 3,
+              "period": null,
+              "side": "away",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-hbg-b",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-hiroshima-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "matches": [
+            {
+              "matchId": "football-system-17-541-23914",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-18T13:00:00+09:00",
+              "round": 2,
+              "period": null,
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-ous",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-541-23913",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-11T13:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-shudo",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-hbg-a",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 1,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-17-539-23909",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-25T13:00:00+09:00",
+              "round": 3,
+              "period": null,
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-hue-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 4,
+          "matches": [
+            {
+              "matchId": "football-system-17-539-23907",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-04T11:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 0,
+              "goalsAgainst": 4,
+              "result": "L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-ous",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-hbg-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-541-23913",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-11T13:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-hiroshima-b",
+          "played": 1,
+          "won": 0,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-541-23915",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-25T13:00:00+09:00",
+              "round": 3,
+              "period": null,
+              "side": "home",
+              "goalsFor": 2,
+              "goalsAgainst": 2,
+              "result": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamId": "i-league-2025-heisei",
+      "opponents": [
+        {
+          "opponentTeamId": "i-league-2025-fukuyama-b",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 4,
+          "goalsAgainst": 3,
+          "matches": [
+            {
+              "matchId": "football-system-17-540-23912",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-25T10:00:00+09:00",
+              "round": 3,
+              "period": null,
+              "side": "home",
+              "goalsFor": 4,
+              "goalsAgainst": 3,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "i-league-2025-ipu-c",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 6,
+          "goalsAgainst": 2,
+          "matches": [
+            {
+              "matchId": "football-system-17-540-23910",
+              "season": 2025,
+              "competitionId": "jufa-chugoku-2025-i-league-lower-playoff",
+              "leagueName": "Iリーグ中国",
+              "stageId": "i-league-playoff-lower",
+              "stageName": "下位プレーオフ",
+              "kickoffAt": "2025-10-11T14:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 6,
               "goalsAgainst": 2,
               "result": "W"
             }

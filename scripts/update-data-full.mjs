@@ -61,6 +61,13 @@ async function main() {
   assertCleanWorktree();
   console.log("\n[update:data:full] 通常の試合・集計更新");
   run("npm", ["run", "update:data"]);
+  for (const command of [
+    "sync:2026:division-2-playoff",
+    "sync:2026:i-league-playoff",
+    "sync:2026:promotion-relegation",
+  ]) {
+    run("npm", ["run", command]);
+  }
 
   const backupDirectory = await mkdtemp(join(tmpdir(), "chugoku-roster-update-"));
   await backupRosterData(backupDirectory);

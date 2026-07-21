@@ -108,11 +108,11 @@ test("管理画面で年度・大会を分離しデータ未設定大会を安�
   await expect(matches.locator('option[value="football-system-schedule-8e61b1e5d3d5"]')).toHaveCount(0);
 
   await competition.selectOption("jufa-chugoku-2026-division-1-promotion-playoff");
-  await expect(page.getByText("この大会の試合データはまだありません。")).toBeVisible();
+  await expect(page.getByText("この大会の公式試合データはまだ公開されていません。")).toBeVisible();
   await expect(matches).toBeDisabled();
 
   await competition.selectOption("jufa-chugoku-2026-promotion-relegation");
-  await expect(page.getByText("この大会の試合データはまだありません。")).toBeVisible();
+  await expect(page.getByText("2026年度は大会要項上、1部・2部入替戦を実施しません。")).toBeVisible();
 
   await season.selectOption("2025");
   await competition.selectOption("jufa-chugoku-2025-promotion-relegation");

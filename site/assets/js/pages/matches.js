@@ -215,7 +215,7 @@ function createCompetitionOptions(matches, definitions) {
       label: competition.stage === "regular"
         ? `${competition.division}部`
         : competition.stageName ?? competition.name,
-      hasData: Boolean(competition.matches),
+      hasData: Boolean(competition.matches) && !["not-published", "not-held"].includes(competition.dataStatus),
     });
   }
   for (const match of matches) {

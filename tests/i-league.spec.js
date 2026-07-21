@@ -110,7 +110,7 @@ test("試合一覧で通常リーグとIリーグ1部・2部を混在させな�
 
 test("Iリーグ1部・2部の順位表と参加チームを表示する", async ({ page }) => {
   await page.goto(`${BASE_URL}?view=standings`);
-  await page.getByRole("link", { name: "Iリーグ中国 1部の詳細を表示" }).click();
+  await page.getByRole("link", { name: "Iリーグ中国の詳細を表示" }).click();
   await expect(page.locator(".standing-table")).toHaveAttribute("data-standing-count", "8");
   await expect(page.getByRole("link", { name: "IPU・環太平洋大学A" }).first()).toBeVisible();
 
@@ -121,15 +121,14 @@ test("Iリーグ1部・2部の順位表と参加チームを表示する", async
 
 test("リーグ一覧のIリーグカードはcompetitionIdと2026年度をURLへ保持する", async ({ page }) => {
   await page.goto(`${BASE_URL}?view=standings`);
-  await page.getByRole("link", { name: "Iリーグ中国 1部の詳細を表示" }).click();
+  await page.getByRole("link", { name: "Iリーグ中国の詳細を表示" }).click();
   await expect(page).toHaveURL(new RegExp(`competition=${I1}.*season=2026`));
   await expect(page.locator(".standing-table")).toHaveAttribute("data-standing-count", "8");
   await page.reload();
   await expect(page.getByRole("heading", { name: "Iリーグ 中国2026 1部", exact: true })).toBeVisible();
   await expect(page.locator(".standing-table")).toHaveAttribute("data-standing-count", "8");
 
-  await page.goto(`${BASE_URL}?view=standings`);
-  await page.getByRole("link", { name: "Iリーグ中国 2部の詳細を表示" }).click();
+  await page.getByRole("tab", { name: "I 2部" }).click();
   await expect(page).toHaveURL(new RegExp(`competition=${I2}.*season=2026`));
   await expect(page.locator(".standing-table")).toHaveAttribute("data-standing-count", "6");
   await expect(page.getByRole("heading", { name: "Iリーグ 中国2026 2部", exact: true })).toBeVisible();
@@ -232,7 +231,7 @@ test("公開HTMLの管理画面はseason indexからIリーグ補正先とダウ
   await page.goto(`${BASE_URL}?view=admin`);
   await page.getByLabel("補正する年度").selectOption("2026");
   const competition = page.getByLabel("補正する大会");
-  await expect(competition.locator("option")).toHaveCount(8);
+  await expect(competition.locator("option")).toHaveCount(9);
   await expect(competition.locator(`option[value="${I1}"]`)).toHaveText("Iリーグ 中国2026 1部");
   await expect(competition.locator(`option[value="${I2}"]`)).toHaveText("Iリーグ 中国2026 2部");
 
