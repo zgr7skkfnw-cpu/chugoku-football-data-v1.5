@@ -1,0 +1,5948 @@
+{
+  "schemaVersion": 1,
+  "syncedAt": "2026-07-21T03:53:57.037Z",
+  "season": 2026,
+  "competitionId": "jufa-chugoku-2026-division-2",
+  "sources": [
+    {
+      "teamId": "okayama-science",
+      "pageId": 594,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=gG8OL7%2F89Kg%3D"
+    },
+    {
+      "teamId": "okayama",
+      "pageId": 593,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=Mr5AcdF5KcM%3D"
+    },
+    {
+      "teamId": "hiroshima-international",
+      "pageId": 607,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=yFvc3FfHDJ4%3D"
+    },
+    {
+      "teamId": "tottori",
+      "pageId": 591,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=ygdwKaj%2F2eI%3D"
+    },
+    {
+      "teamId": "shimonoseki-city",
+      "pageId": 608,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=InoboPxTbK4%3D"
+    },
+    {
+      "teamId": "shimane",
+      "pageId": 592,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=NLPK6hdkyBc%3D"
+    },
+    {
+      "teamId": "hiroshima-institute-of-technology",
+      "pageId": 600,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=uxaJWQpBxsk%3D"
+    },
+    {
+      "teamId": "kibi-international",
+      "pageId": 597,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=UASoxzNsFqA%3D"
+    },
+    {
+      "teamId": "shujitsu",
+      "pageId": 771,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=KCAX%2FSq8Umo%3D"
+    },
+    {
+      "teamId": "onomichi-city",
+      "pageId": 602,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=wwI0Hs8y5W0%3D"
+    },
+    {
+      "teamId": "university-of-shimane",
+      "pageId": 831,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=eDcnsECM8mQ%3D"
+    }
+  ],
+  "teams": [
+    {
+      "teamId": "okayama-science",
+      "teamName": "岡山理科大学",
+      "pageId": 594,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=gG8OL7%2F89Kg%3D",
+      "count": 50
+    },
+    {
+      "teamId": "okayama",
+      "teamName": "岡山大学",
+      "pageId": 593,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=Mr5AcdF5KcM%3D",
+      "count": 49
+    },
+    {
+      "teamId": "hiroshima-international",
+      "teamName": "広島国際大学",
+      "pageId": 607,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=yFvc3FfHDJ4%3D",
+      "count": 34
+    },
+    {
+      "teamId": "tottori",
+      "teamName": "鳥取大学",
+      "pageId": 591,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=ygdwKaj%2F2eI%3D",
+      "count": 22
+    },
+    {
+      "teamId": "shimonoseki-city",
+      "teamName": "下関市立大学",
+      "pageId": 608,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=InoboPxTbK4%3D",
+      "count": 29
+    },
+    {
+      "teamId": "shimane",
+      "teamName": "島根大学",
+      "pageId": 592,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=NLPK6hdkyBc%3D",
+      "count": 29
+    },
+    {
+      "teamId": "hiroshima-institute-of-technology",
+      "teamName": "広島工業大学",
+      "pageId": 600,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=uxaJWQpBxsk%3D",
+      "count": 17
+    },
+    {
+      "teamId": "kibi-international",
+      "teamName": "吉備国際大学",
+      "pageId": 597,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=UASoxzNsFqA%3D",
+      "count": 16
+    },
+    {
+      "teamId": "shujitsu",
+      "teamName": "就実大学",
+      "pageId": 771,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=KCAX%2FSq8Umo%3D",
+      "count": 30
+    },
+    {
+      "teamId": "onomichi-city",
+      "teamName": "尾道市立大学",
+      "pageId": 602,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=wwI0Hs8y5W0%3D",
+      "count": 22
+    },
+    {
+      "teamId": "university-of-shimane",
+      "teamName": "島根県立大学",
+      "pageId": 831,
+      "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=eDcnsECM8mQ%3D",
+      "count": 24
+    }
+  ],
+  "totalCount": 322,
+  "players": [
+    {
+      "id": "okayama-science-dfa54f7343c3",
+      "teamId": "okayama-science",
+      "name": "綱島 翠星",
+      "normalizedName": "綱島翠星",
+      "englishName": "TSUNASHIMA Suisei",
+      "number": 2,
+      "position": "FW",
+      "birth": "2007-01-05",
+      "height": 176,
+      "weight": 55,
+      "previousTeam": "倉敷青陵高校"
+    },
+    {
+      "id": "okayama-science-a7032e288514",
+      "teamId": "okayama-science",
+      "name": "眞鍋 悠",
+      "normalizedName": "眞鍋悠",
+      "englishName": "MANABE Yu",
+      "number": 3,
+      "position": "DF",
+      "birth": "2005-09-26",
+      "height": 173,
+      "weight": 65,
+      "previousTeam": "新居浜東高校"
+    },
+    {
+      "id": "okayama-science-0e930d2c6ab9",
+      "teamId": "okayama-science",
+      "name": "村岡 凜太郎",
+      "normalizedName": "村岡凜太郎",
+      "englishName": "MURAOKA Rintaro",
+      "number": 4,
+      "position": "FW",
+      "birth": "2007-08-24",
+      "height": 172,
+      "weight": 65,
+      "previousTeam": "おかやま山陽高校"
+    },
+    {
+      "id": "okayama-science-dcb379a99761",
+      "teamId": "okayama-science",
+      "name": "浦川 明日",
+      "normalizedName": "浦川明日",
+      "englishName": "URAKAWA Asu",
+      "number": 6,
+      "position": "MF",
+      "birth": "2006-07-17",
+      "height": 168,
+      "weight": 64,
+      "previousTeam": "松山学院高校"
+    },
+    {
+      "id": "okayama-science-b1877cc07d48",
+      "teamId": "okayama-science",
+      "name": "久本 育夢",
+      "normalizedName": "久本育夢",
+      "englishName": "HISAMOTO Ikumu",
+      "number": 7,
+      "position": "DF",
+      "birth": "2006-07-14",
+      "height": 175,
+      "weight": 65,
+      "previousTeam": "岡山理科大学附属高校"
+    },
+    {
+      "id": "okayama-science-ee7ff2926f8d",
+      "teamId": "okayama-science",
+      "name": "長谷原 雄介",
+      "normalizedName": "長谷原雄介",
+      "englishName": "HASEHARA Yusuke",
+      "number": 9,
+      "position": "DF",
+      "birth": "2004-07-01",
+      "height": 175,
+      "weight": 65,
+      "previousTeam": "徳島科学技術高校"
+    },
+    {
+      "id": "okayama-science-2105397eee96",
+      "teamId": "okayama-science",
+      "name": "池口 十来",
+      "normalizedName": "池口十来",
+      "englishName": "IKEGUCHI Tora",
+      "number": 10,
+      "position": "FW",
+      "birth": "2007-01-11",
+      "height": 182,
+      "weight": 80,
+      "previousTeam": "西南FC"
+    },
+    {
+      "id": "okayama-science-27c3e6ad8b6e",
+      "teamId": "okayama-science",
+      "name": "楠木 凰辰",
+      "normalizedName": "楠木凰辰",
+      "englishName": "KUSUNOKI Koshin",
+      "number": 11,
+      "position": "MF",
+      "birth": "2007-04-30",
+      "height": 167,
+      "weight": 55,
+      "previousTeam": "倉敷高校"
+    },
+    {
+      "id": "okayama-science-e6d15f8fda17",
+      "teamId": "okayama-science",
+      "name": "遠野 真介",
+      "normalizedName": "遠野真介",
+      "englishName": "TONO Shinsuke",
+      "number": 12,
+      "position": "MF",
+      "birth": "2007-05-11",
+      "height": 164,
+      "weight": 61,
+      "previousTeam": "高川学園高校"
+    },
+    {
+      "id": "okayama-science-77b0467fca38",
+      "teamId": "okayama-science",
+      "name": "松村 蒼太郎",
+      "normalizedName": "松村蒼太郎",
+      "englishName": "MATSUMURA Sotaro",
+      "number": 13,
+      "position": "MF",
+      "birth": "2008-02-18",
+      "height": 170,
+      "weight": 65,
+      "previousTeam": "西南FC"
+    },
+    {
+      "id": "okayama-science-9e21f889827a",
+      "teamId": "okayama-science",
+      "name": "松原 虹太",
+      "normalizedName": "松原虹太",
+      "englishName": "MATSUBARA Kota",
+      "number": 14,
+      "position": "MF",
+      "birth": "2007-09-03",
+      "height": 171,
+      "weight": 65,
+      "previousTeam": "松山学院高校"
+    },
+    {
+      "id": "okayama-science-86d49443b87b",
+      "teamId": "okayama-science",
+      "name": "植本 陽斗",
+      "normalizedName": "植本陽斗",
+      "englishName": "UEMOTO Haruto",
+      "number": 15,
+      "position": "MF",
+      "birth": "2007-11-06",
+      "height": 176,
+      "weight": 63,
+      "previousTeam": "西南FC"
+    },
+    {
+      "id": "okayama-science-3b79980eeb72",
+      "teamId": "okayama-science",
+      "name": "廣瀬 智希",
+      "normalizedName": "廣瀬智希",
+      "englishName": "HIROSE Tomoki",
+      "number": 17,
+      "position": "DF",
+      "birth": "2007-01-17",
+      "height": 173,
+      "weight": 62,
+      "previousTeam": "山陽学園高校"
+    },
+    {
+      "id": "okayama-science-3b91b3a33e57",
+      "teamId": "okayama-science",
+      "name": "市之瀬 巧真",
+      "normalizedName": "市之瀬巧真",
+      "englishName": "ICHINOSE Takuma",
+      "number": 18,
+      "position": "MF",
+      "birth": "2006-10-03",
+      "height": 175,
+      "weight": 70,
+      "previousTeam": "ONE SOUL．C 福岡"
+    },
+    {
+      "id": "okayama-science-ab95052990d2",
+      "teamId": "okayama-science",
+      "name": "中廻 遥",
+      "normalizedName": "中廻遥",
+      "englishName": "NAKAMAWARI Haruka",
+      "number": 20,
+      "position": "DF",
+      "birth": "2008-01-15",
+      "height": 165,
+      "weight": 56,
+      "previousTeam": "和気閑谷高校"
+    },
+    {
+      "id": "okayama-science-f38303655165",
+      "teamId": "okayama-science",
+      "name": "馬場 和也",
+      "normalizedName": "馬場和也",
+      "englishName": "BABA Kazuya",
+      "number": 22,
+      "position": "GK",
+      "birth": "2005-07-04",
+      "height": 169,
+      "weight": 60,
+      "previousTeam": "佐賀北高校"
+    },
+    {
+      "id": "okayama-science-5cf456e63178",
+      "teamId": "okayama-science",
+      "name": "平山 蓮",
+      "normalizedName": "平山蓮",
+      "englishName": "HIRAYAMA Ren",
+      "number": 23,
+      "position": "DF",
+      "birth": "2007-06-04",
+      "height": 177,
+      "weight": 72,
+      "previousTeam": "玉野光南高校"
+    },
+    {
+      "id": "okayama-science-c1c9be3d15fe",
+      "teamId": "okayama-science",
+      "name": "薄井 佑太郎",
+      "normalizedName": "薄井佑太郎",
+      "englishName": "USUI Yutaro",
+      "number": 24,
+      "position": "GK",
+      "birth": "2005-11-11",
+      "height": 174,
+      "weight": 65,
+      "previousTeam": "筑陽学園高校"
+    },
+    {
+      "id": "okayama-science-f58affefba5b",
+      "teamId": "okayama-science",
+      "name": "水上 凉太朗",
+      "normalizedName": "水上凉太朗",
+      "englishName": "MIZUKAMI Ryotaro",
+      "number": 25,
+      "position": "MF",
+      "birth": "2007-11-07",
+      "height": 174,
+      "weight": 62,
+      "previousTeam": "西南FC"
+    },
+    {
+      "id": "okayama-science-5c8b0dca984a",
+      "teamId": "okayama-science",
+      "name": "冨家 未来",
+      "normalizedName": "冨家未来",
+      "englishName": "TOMIIE Mirai",
+      "number": 26,
+      "position": "MF",
+      "birth": "2007-05-23",
+      "height": 168,
+      "weight": 65,
+      "previousTeam": "丸亀城西高校"
+    },
+    {
+      "id": "okayama-science-796981925833",
+      "teamId": "okayama-science",
+      "name": "高塚 叶大",
+      "normalizedName": "高塚叶大",
+      "englishName": "TAKATSUKA Kanata",
+      "number": 30,
+      "position": "DF",
+      "birth": "2007-06-13",
+      "height": 178,
+      "weight": 73,
+      "previousTeam": "松山学院高校"
+    },
+    {
+      "id": "okayama-science-7d7c4de6ac5e",
+      "teamId": "okayama-science",
+      "name": "東 煌",
+      "normalizedName": "東煌",
+      "englishName": "AZUMA Kira",
+      "number": 31,
+      "position": "GK",
+      "birth": "2006-12-14",
+      "height": 173,
+      "weight": 61,
+      "previousTeam": "早鞆高校"
+    },
+    {
+      "id": "okayama-science-4e330343b0a5",
+      "teamId": "okayama-science",
+      "name": "濵崎 隼太",
+      "normalizedName": "濵崎隼太",
+      "englishName": "HAMASAKI Hayata",
+      "number": 32,
+      "position": "MF",
+      "birth": "2004-06-16",
+      "height": 160,
+      "weight": 53,
+      "previousTeam": "佐世保南高校"
+    },
+    {
+      "id": "okayama-science-fa04f8dcdb61",
+      "teamId": "okayama-science",
+      "name": "吉田 基幹",
+      "normalizedName": "吉田基幹",
+      "englishName": "YOSHIDA Motoki",
+      "number": 33,
+      "position": "DF",
+      "birth": "2006-11-03",
+      "height": 177,
+      "weight": 75,
+      "previousTeam": "小城高校"
+    },
+    {
+      "id": "okayama-science-ab794854591b",
+      "teamId": "okayama-science",
+      "name": "橋本 哲弥",
+      "normalizedName": "橋本哲弥",
+      "englishName": "HASHIMOTO Satoya",
+      "number": 38,
+      "position": "GK",
+      "birth": "2005-09-23",
+      "height": 173,
+      "weight": 64,
+      "previousTeam": "内子高校"
+    },
+    {
+      "id": "okayama-science-89d2f863b853",
+      "teamId": "okayama-science",
+      "name": "小谷 仁",
+      "normalizedName": "小谷仁",
+      "englishName": "KOTANI Jin",
+      "number": 39,
+      "position": "MF",
+      "birth": "2006-01-23",
+      "height": 165,
+      "weight": 55,
+      "previousTeam": "岡山学芸館高校"
+    },
+    {
+      "id": "okayama-science-ed16a3b7c275",
+      "teamId": "okayama-science",
+      "name": "高畑 星耶",
+      "normalizedName": "高畑星耶",
+      "englishName": "TAKAHATA Seiya",
+      "number": 43,
+      "position": "MF",
+      "birth": "2007-06-15",
+      "height": 164,
+      "weight": 61,
+      "previousTeam": "松山学院高校"
+    },
+    {
+      "id": "okayama-science-99a1caf6baf2",
+      "teamId": "okayama-science",
+      "name": "服部 龍之介",
+      "normalizedName": "服部龍之介",
+      "englishName": "HATTORI Ryunosuke",
+      "number": 44,
+      "position": "MF",
+      "birth": "2008-03-25",
+      "height": 165,
+      "weight": 56,
+      "previousTeam": "玉野光南高校"
+    },
+    {
+      "id": "okayama-science-5d955f9ceb4d",
+      "teamId": "okayama-science",
+      "name": "岡崎 蒼汰",
+      "normalizedName": "岡崎蒼汰",
+      "englishName": "OKAZAKI Sota",
+      "number": 47,
+      "position": "MF",
+      "birth": "2004-11-02",
+      "height": 158,
+      "weight": 51,
+      "previousTeam": "飯塚高校"
+    },
+    {
+      "id": "okayama-science-637436b6f98d",
+      "teamId": "okayama-science",
+      "name": "柴田 大和",
+      "normalizedName": "柴田大和",
+      "englishName": "SHIBATA Yamato",
+      "number": 48,
+      "position": "MF",
+      "birth": "2004-04-08",
+      "height": 164,
+      "weight": 60,
+      "previousTeam": "福翔高校"
+    },
+    {
+      "id": "okayama-science-d51117865c83",
+      "teamId": "okayama-science",
+      "name": "井上 泰雅",
+      "normalizedName": "井上泰雅",
+      "englishName": "INOUE Taiga",
+      "number": 53,
+      "position": "MF",
+      "birth": "2005-07-03",
+      "height": 166,
+      "weight": 59,
+      "previousTeam": "東海大学付属福岡高校"
+    },
+    {
+      "id": "okayama-science-6d2c9e043d60",
+      "teamId": "okayama-science",
+      "name": "杉野 涼",
+      "normalizedName": "杉野涼",
+      "englishName": "SUGINO Ryo",
+      "number": 54,
+      "position": "GK",
+      "birth": "2006-09-26",
+      "height": 176,
+      "weight": 71,
+      "previousTeam": "就実高校"
+    },
+    {
+      "id": "okayama-science-b8db05b03c0d",
+      "teamId": "okayama-science",
+      "name": "丸岡 莉空",
+      "normalizedName": "丸岡莉空",
+      "englishName": "MARUOKA Riku",
+      "number": 63,
+      "position": "MF",
+      "birth": "2006-06-30",
+      "height": 176,
+      "weight": 67,
+      "previousTeam": "広島国際学院高校"
+    },
+    {
+      "id": "okayama-science-2ccaa0d69b69",
+      "teamId": "okayama-science",
+      "name": "近藤 悠翔",
+      "normalizedName": "近藤悠翔",
+      "englishName": "KONDO Yuto",
+      "number": 66,
+      "position": "MF",
+      "birth": "2007-06-28",
+      "height": 160,
+      "weight": 50,
+      "previousTeam": "延岡学園高校"
+    },
+    {
+      "id": "okayama-science-234d54316966",
+      "teamId": "okayama-science",
+      "name": "川上 慎吾",
+      "normalizedName": "川上慎吾",
+      "englishName": "KAWAKAMI Shingo",
+      "number": 70,
+      "position": "MF",
+      "birth": "2006-02-26",
+      "height": 172,
+      "weight": 63,
+      "previousTeam": "総社南高校"
+    },
+    {
+      "id": "okayama-science-ee04933a8282",
+      "teamId": "okayama-science",
+      "name": "美仙 夕月",
+      "normalizedName": "美仙夕月",
+      "englishName": "MISEN Yuzuki",
+      "number": 71,
+      "position": "MF",
+      "birth": "2007-10-29",
+      "height": 162,
+      "weight": 54,
+      "previousTeam": "岡山理科大学附属高校"
+    },
+    {
+      "id": "okayama-science-505003c8f523",
+      "teamId": "okayama-science",
+      "name": "照本 虹大",
+      "normalizedName": "照本虹大",
+      "englishName": "TERUMOTO Kodai",
+      "number": 74,
+      "position": "FW",
+      "birth": "2005-10-16",
+      "height": 175,
+      "weight": 68,
+      "previousTeam": "岡山理科大学附属高校"
+    },
+    {
+      "id": "okayama-science-39383023d606",
+      "teamId": "okayama-science",
+      "name": "小林 優太",
+      "normalizedName": "小林優太",
+      "englishName": "KOBAYASHI Yuta",
+      "number": 77,
+      "position": "MF",
+      "birth": "2005-04-30",
+      "height": 167,
+      "weight": 60,
+      "previousTeam": "東岡山工業高校"
+    },
+    {
+      "id": "okayama-science-e83297b6c1bd",
+      "teamId": "okayama-science",
+      "name": "上平 遼",
+      "normalizedName": "上平遼",
+      "englishName": "UEHIRA Kanata",
+      "number": 78,
+      "position": "MF",
+      "birth": "2005-10-31",
+      "height": 167,
+      "weight": 67,
+      "previousTeam": "鎮西学院高校"
+    },
+    {
+      "id": "okayama-science-1152080d18cb",
+      "teamId": "okayama-science",
+      "name": "久城 直樹",
+      "normalizedName": "久城直樹",
+      "englishName": "KUSHIRO Naoki",
+      "number": 79,
+      "position": "GK",
+      "birth": "2005-12-09",
+      "height": 170,
+      "weight": 58,
+      "previousTeam": "倉敷翠松高校"
+    },
+    {
+      "id": "okayama-science-260e36547e7e",
+      "teamId": "okayama-science",
+      "name": "藤井 啓斗",
+      "normalizedName": "藤井啓斗",
+      "englishName": "FUJII Keito",
+      "number": 80,
+      "position": "MF",
+      "birth": "2005-05-26",
+      "height": 169,
+      "weight": 55,
+      "previousTeam": "岡山理科大学附属高校"
+    },
+    {
+      "id": "okayama-science-eb3a4ad689f5",
+      "teamId": "okayama-science",
+      "name": "沖田 流矢",
+      "normalizedName": "沖田流矢",
+      "englishName": "OKITA Ryuya",
+      "number": 81,
+      "position": "MF",
+      "birth": "2006-08-19",
+      "height": 166,
+      "weight": 53,
+      "previousTeam": "東温高校"
+    },
+    {
+      "id": "okayama-science-3f3a4f7ce52f",
+      "teamId": "okayama-science",
+      "name": "片岡 樹希也",
+      "normalizedName": "片岡樹希也",
+      "englishName": "KATAOKA Jukiya",
+      "number": 82,
+      "position": "MF",
+      "birth": "2005-05-25",
+      "height": 158,
+      "weight": 57,
+      "previousTeam": "勝間田高校"
+    },
+    {
+      "id": "okayama-science-8ac2af5f87d9",
+      "teamId": "okayama-science",
+      "name": "三宅 悠我",
+      "normalizedName": "三宅悠我",
+      "englishName": "MIYAKE Yuga",
+      "number": 84,
+      "position": "FW",
+      "birth": "2005-01-02",
+      "height": 163,
+      "weight": 58,
+      "previousTeam": "神戸国際大学附属高校"
+    },
+    {
+      "id": "okayama-science-a31fcdd855b1",
+      "teamId": "okayama-science",
+      "name": "末次 櫂",
+      "normalizedName": "末次櫂",
+      "englishName": "SUETSUGU Kai",
+      "number": 86,
+      "position": "DF",
+      "birth": "2005-04-11",
+      "height": 167,
+      "weight": 63,
+      "previousTeam": "米子工業高校"
+    },
+    {
+      "id": "okayama-science-7d0621e048e3",
+      "teamId": "okayama-science",
+      "name": "綾田 匠眞",
+      "normalizedName": "綾田匠眞",
+      "englishName": "AYATA Shoma",
+      "number": 88,
+      "position": "DF",
+      "birth": "2005-03-08",
+      "height": 174,
+      "weight": 68,
+      "previousTeam": "岡山理科大学附属高校"
+    },
+    {
+      "id": "okayama-science-27ff22e3ba9b",
+      "teamId": "okayama-science",
+      "name": "神所 朱海",
+      "normalizedName": "神所朱海",
+      "englishName": "JINJO Sukai",
+      "number": 89,
+      "position": "DF",
+      "birth": "2007-08-24",
+      "height": 167,
+      "weight": 63,
+      "previousTeam": "高川学園高校"
+    },
+    {
+      "id": "okayama-science-4e0a47a97c52",
+      "teamId": "okayama-science",
+      "name": "小谷 梢太",
+      "normalizedName": "小谷梢太",
+      "englishName": "KOTANI Shota",
+      "number": 90,
+      "position": "MF",
+      "birth": "2007-01-24",
+      "height": 174,
+      "weight": 65,
+      "previousTeam": "岡山理科大学附属高校"
+    },
+    {
+      "id": "okayama-science-38e99e1a6c69",
+      "teamId": "okayama-science",
+      "name": "高橋 叶人",
+      "normalizedName": "高橋叶人",
+      "englishName": "TAKAHASHI Kanato",
+      "number": 97,
+      "position": "DF",
+      "birth": "2005-10-18",
+      "height": 177,
+      "weight": 73,
+      "previousTeam": "倉敷翠松高校"
+    },
+    {
+      "id": "okayama-science-5de7cf5fb414",
+      "teamId": "okayama-science",
+      "name": "加賀野 心二郎",
+      "normalizedName": "加賀野心二郎",
+      "englishName": "KAGANO Shinjiro",
+      "number": 99,
+      "position": "MF",
+      "birth": "2004-07-01",
+      "height": 155,
+      "weight": 49,
+      "previousTeam": "神戸国際大学附属高校"
+    },
+    {
+      "id": "okayama-1b6d44bae966",
+      "teamId": "okayama",
+      "name": "石川 悠生",
+      "normalizedName": "石川悠生",
+      "englishName": "ISHIKAWA Yuki",
+      "number": 1,
+      "position": "GK",
+      "birth": "2004-09-21",
+      "height": 170,
+      "weight": 80,
+      "previousTeam": "府中高校"
+    },
+    {
+      "id": "okayama-5c19c712e27c",
+      "teamId": "okayama",
+      "name": "濵田 秀哉",
+      "normalizedName": "濵田秀哉",
+      "englishName": "HAMADA Shuya",
+      "number": 2,
+      "position": "DF",
+      "birth": "2005-04-24",
+      "height": 170,
+      "weight": 65,
+      "previousTeam": "高知小津高校"
+    },
+    {
+      "id": "okayama-a1f541351cb7",
+      "teamId": "okayama",
+      "name": "浅田 友成",
+      "normalizedName": "浅田友成",
+      "englishName": "ASADA Tomonari",
+      "number": 3,
+      "position": "MF",
+      "birth": "2007-02-06",
+      "height": 175,
+      "weight": 76,
+      "previousTeam": "倉敷天城高校"
+    },
+    {
+      "id": "okayama-b8a00c043674",
+      "teamId": "okayama",
+      "name": "春名 育夢",
+      "normalizedName": "春名育夢",
+      "englishName": "HARUNA Ikumu",
+      "number": 4,
+      "position": "DF",
+      "birth": "2004-12-31",
+      "height": 170,
+      "weight": 63,
+      "previousTeam": "岡山芳泉高校"
+    },
+    {
+      "id": "okayama-1af62c4e7763",
+      "teamId": "okayama",
+      "name": "橋本 正樹",
+      "normalizedName": "橋本正樹",
+      "englishName": "HASHIMOTO Masaki",
+      "number": 5,
+      "position": "DF",
+      "birth": "2006-09-21",
+      "height": 168,
+      "weight": 62,
+      "previousTeam": "徳島市立高校"
+    },
+    {
+      "id": "okayama-139bbf819508",
+      "teamId": "okayama",
+      "name": "江見 洋平",
+      "normalizedName": "江見洋平",
+      "englishName": "EMI Yohei",
+      "number": 6,
+      "position": "MF",
+      "birth": "2005-06-12",
+      "height": 174,
+      "weight": 73,
+      "previousTeam": "津山高校"
+    },
+    {
+      "id": "okayama-481858105b5d",
+      "teamId": "okayama",
+      "name": "河合 隆真",
+      "normalizedName": "河合隆真",
+      "englishName": "KAWAI Ryuma",
+      "number": 7,
+      "position": "FW",
+      "birth": "2006-09-15",
+      "height": 165,
+      "weight": 59,
+      "previousTeam": "岡山城東高校"
+    },
+    {
+      "id": "okayama-b485c40852e0",
+      "teamId": "okayama",
+      "name": "寺坂 遥希",
+      "normalizedName": "寺坂遥希",
+      "englishName": "TERASAKA Haruki",
+      "number": 8,
+      "position": "MF",
+      "birth": "2006-04-21",
+      "height": 163,
+      "weight": 55,
+      "previousTeam": "豊岡高校"
+    },
+    {
+      "id": "okayama-918ce0904ad9",
+      "teamId": "okayama",
+      "name": "佐藤 佑哉",
+      "normalizedName": "佐藤佑哉",
+      "englishName": "SATO Yuya",
+      "number": 9,
+      "position": "FW",
+      "birth": "2004-06-30",
+      "height": 178,
+      "weight": 67,
+      "previousTeam": "松蔭高校"
+    },
+    {
+      "id": "okayama-fdeb14ec8446",
+      "teamId": "okayama",
+      "name": "亀高 真聡",
+      "normalizedName": "亀高真聡",
+      "englishName": "KAMETAKA Masato",
+      "number": 10,
+      "position": "MF",
+      "birth": "2005-08-01",
+      "height": 164,
+      "weight": 54,
+      "previousTeam": "倉敷天城高校"
+    },
+    {
+      "id": "okayama-5f59f47709b0",
+      "teamId": "okayama",
+      "name": "宮地 優成",
+      "normalizedName": "宮地優成",
+      "englishName": "MIYACHI Yusei",
+      "number": 11,
+      "position": "FW",
+      "birth": "2006-02-21",
+      "height": 168,
+      "weight": 70,
+      "previousTeam": "和歌山県立桐蔭高校"
+    },
+    {
+      "id": "okayama-5c428e75d4dc",
+      "teamId": "okayama",
+      "name": "吉野 温己",
+      "normalizedName": "吉野温己",
+      "englishName": "YOSHINO Haruki",
+      "number": 13,
+      "position": "MF",
+      "birth": "2007-01-13",
+      "height": 173,
+      "weight": 59,
+      "previousTeam": "高松桜井高校"
+    },
+    {
+      "id": "okayama-5e1a895ca72a",
+      "teamId": "okayama",
+      "name": "田村 隼人",
+      "normalizedName": "田村隼人",
+      "englishName": "TAMURA Hayato",
+      "number": 14,
+      "position": "MF",
+      "birth": "2005-10-05",
+      "height": 175,
+      "weight": 68,
+      "previousTeam": "御影高校"
+    },
+    {
+      "id": "okayama-60114c94a502",
+      "teamId": "okayama",
+      "name": "水畑 柊志",
+      "normalizedName": "水畑柊志",
+      "englishName": "MIZUHATA Shuji",
+      "number": 16,
+      "position": "MF",
+      "birth": "2006-11-08",
+      "height": 182,
+      "weight": 64,
+      "previousTeam": "北摂三田高校"
+    },
+    {
+      "id": "okayama-4d7b8351139f",
+      "teamId": "okayama",
+      "name": "川上 航大",
+      "normalizedName": "川上航大",
+      "englishName": "KAWAKAMI Kodai",
+      "number": 17,
+      "position": "FW",
+      "birth": "2007-01-16",
+      "height": 172,
+      "weight": 67,
+      "previousTeam": "岡山芳泉高校"
+    },
+    {
+      "id": "okayama-6f6f482e2710",
+      "teamId": "okayama",
+      "name": "宮山 佳那太",
+      "normalizedName": "宮山佳那太",
+      "englishName": "MIYAYAMA Kanata",
+      "number": 18,
+      "position": "FW",
+      "birth": "2005-08-27",
+      "height": 165,
+      "weight": 68,
+      "previousTeam": "小山工業高等専門学校"
+    },
+    {
+      "id": "okayama-5d594163674f",
+      "teamId": "okayama",
+      "name": "立山 敢一",
+      "normalizedName": "立山敢一",
+      "englishName": "TATEYAMA Kanichi",
+      "number": 19,
+      "position": "DF",
+      "birth": "2006-09-04",
+      "height": 175,
+      "weight": 62,
+      "previousTeam": "北筑高校"
+    },
+    {
+      "id": "okayama-0df4173868e9",
+      "teamId": "okayama",
+      "name": "岸本 健伸",
+      "normalizedName": "岸本健伸",
+      "englishName": "KISHIMOTO Kenshin",
+      "number": 20,
+      "position": "DF",
+      "birth": "2005-09-10",
+      "height": 176,
+      "weight": 60,
+      "previousTeam": "兵庫高校"
+    },
+    {
+      "id": "okayama-14e57af38b78",
+      "teamId": "okayama",
+      "name": "島田 凌",
+      "normalizedName": "島田凌",
+      "englishName": "SHIMADA Ryo",
+      "number": 21,
+      "position": "DF",
+      "birth": "2005-07-23",
+      "height": 176,
+      "weight": 65,
+      "previousTeam": "守山高校"
+    },
+    {
+      "id": "okayama-4b00f3794524",
+      "teamId": "okayama",
+      "name": "鍋島 汰一",
+      "normalizedName": "鍋島汰一",
+      "englishName": "NABESHIMA Taichi",
+      "number": 28,
+      "position": "MF",
+      "birth": "2006-11-01",
+      "height": 169,
+      "weight": 58,
+      "previousTeam": "高松商業高校"
+    },
+    {
+      "id": "okayama-44db65e7e1da",
+      "teamId": "okayama",
+      "name": "安原 成一郎",
+      "normalizedName": "安原成一郎",
+      "englishName": "YASUHARA Seiichiro",
+      "number": 29,
+      "position": "MF",
+      "birth": "2005-07-25",
+      "height": 169,
+      "weight": 55,
+      "previousTeam": "玉島高校"
+    },
+    {
+      "id": "okayama-82394c85f833",
+      "teamId": "okayama",
+      "name": "内田 大洋",
+      "normalizedName": "内田大洋",
+      "englishName": "UCHIDA Taiyo",
+      "number": 30,
+      "position": "GK",
+      "birth": "2004-10-09",
+      "height": 175,
+      "weight": 75,
+      "previousTeam": "高松第一高校"
+    },
+    {
+      "id": "okayama-fd8ee03abcf8",
+      "teamId": "okayama",
+      "name": "坂本 崇真",
+      "normalizedName": "坂本崇真",
+      "englishName": "SAKAMOTO Soma",
+      "number": 31,
+      "position": "MF",
+      "birth": "2007-01-07",
+      "height": 173,
+      "weight": 58,
+      "previousTeam": "高松桜井高校"
+    },
+    {
+      "id": "okayama-48bc30051146",
+      "teamId": "okayama",
+      "name": "酒井 大輔",
+      "normalizedName": "酒井大輔",
+      "englishName": "SAKAI Daisuke",
+      "number": 32,
+      "position": "MF",
+      "birth": "2006-05-11",
+      "height": 168,
+      "weight": 68,
+      "previousTeam": "宇部高校"
+    },
+    {
+      "id": "okayama-648cb8c8823e",
+      "teamId": "okayama",
+      "name": "金平 侑真",
+      "normalizedName": "金平侑真",
+      "englishName": "KANEHIRA Yuma",
+      "number": 34,
+      "position": "MF",
+      "birth": "2007-06-28",
+      "height": 167,
+      "weight": 70,
+      "previousTeam": "津山高校"
+    },
+    {
+      "id": "okayama-c42ad9abdc87",
+      "teamId": "okayama",
+      "name": "清水 海音",
+      "normalizedName": "清水海音",
+      "englishName": "SHIMIZU Kaito",
+      "number": 36,
+      "position": "MF",
+      "birth": "2006-02-17",
+      "height": 182,
+      "weight": 65,
+      "previousTeam": "福山誠之館高校"
+    },
+    {
+      "id": "okayama-e89514955342",
+      "teamId": "okayama",
+      "name": "辻村 空翔",
+      "normalizedName": "辻村空翔",
+      "englishName": "TSUJIMURA Sorato",
+      "number": 37,
+      "position": "DF",
+      "birth": "2007-11-30",
+      "height": 170,
+      "weight": 68,
+      "previousTeam": "和歌山桐蔭高校"
+    },
+    {
+      "id": "okayama-5afe6d46866b",
+      "teamId": "okayama",
+      "name": "若林 廉",
+      "normalizedName": "若林廉",
+      "englishName": "WAKABAYASHI Ren",
+      "number": 39,
+      "position": "FW",
+      "birth": "2006-09-07",
+      "height": 172,
+      "weight": 67,
+      "previousTeam": "岡山一宮高校"
+    },
+    {
+      "id": "okayama-8338d692900a",
+      "teamId": "okayama",
+      "name": "小高 彪瑠",
+      "normalizedName": "小高彪瑠",
+      "englishName": "ODAKA Takeru",
+      "number": 40,
+      "position": "MF",
+      "birth": "2007-02-22",
+      "height": 176,
+      "weight": 65,
+      "previousTeam": "岡山操山高校"
+    },
+    {
+      "id": "okayama-412dfec50061",
+      "teamId": "okayama",
+      "name": "田村 遥人",
+      "normalizedName": "田村遥人",
+      "englishName": "TAMURA Haruto",
+      "number": 42,
+      "position": "MF",
+      "birth": "2006-10-13",
+      "height": 173,
+      "weight": 66,
+      "previousTeam": "姫路高校"
+    },
+    {
+      "id": "okayama-62ab07d48412",
+      "teamId": "okayama",
+      "name": "二木 佑心",
+      "normalizedName": "二木佑心",
+      "englishName": "FUTAKI Yushin",
+      "number": 50,
+      "position": "GK",
+      "birth": "2007-10-25",
+      "height": 174,
+      "weight": 72,
+      "previousTeam": "徳島県立城南高校"
+    },
+    {
+      "id": "okayama-6de2ec961387",
+      "teamId": "okayama",
+      "name": "永井 陸渡",
+      "normalizedName": "永井陸渡",
+      "englishName": "NAGAI Rikuto",
+      "number": 55,
+      "position": "DF",
+      "birth": "2006-01-20",
+      "height": 178,
+      "weight": 74,
+      "previousTeam": "松山南高校"
+    },
+    {
+      "id": "okayama-1b18b18998d2",
+      "teamId": "okayama",
+      "name": "畠山 晃弥",
+      "normalizedName": "畠山晃弥",
+      "englishName": "HATAKEYAMA Koya",
+      "number": 58,
+      "position": "DF",
+      "birth": "2007-05-04",
+      "height": 171,
+      "weight": 68,
+      "previousTeam": "高知学芸高校"
+    },
+    {
+      "id": "okayama-bd23005b3a85",
+      "teamId": "okayama",
+      "name": "古賀 悠聖",
+      "normalizedName": "古賀悠聖",
+      "englishName": "KOGA Yusei",
+      "number": 63,
+      "position": "DF",
+      "birth": "2005-12-20",
+      "height": 168,
+      "weight": 65,
+      "previousTeam": "福山誠之館高校"
+    },
+    {
+      "id": "okayama-003428dbe9d6",
+      "teamId": "okayama",
+      "name": "安野 希男",
+      "normalizedName": "安野希男",
+      "englishName": "YASUNO Kio",
+      "number": 64,
+      "position": "GK",
+      "birth": "2006-05-02",
+      "height": 178,
+      "weight": 78,
+      "previousTeam": "萩高校"
+    },
+    {
+      "id": "okayama-2bdc15a1da93",
+      "teamId": "okayama",
+      "name": "中川 大翔",
+      "normalizedName": "中川大翔",
+      "englishName": "NAKAGAWA Hiroto",
+      "number": 65,
+      "position": "MF",
+      "birth": "2007-06-05",
+      "height": 165,
+      "weight": 62,
+      "previousTeam": "宇和島南中等教育学校"
+    },
+    {
+      "id": "okayama-19b2068afe82",
+      "teamId": "okayama",
+      "name": "箕浦 稜",
+      "normalizedName": "箕浦稜",
+      "englishName": "MINOURA Ryo",
+      "number": 66,
+      "position": "DF",
+      "birth": "2007-05-05",
+      "height": 168,
+      "weight": 68,
+      "previousTeam": "広島工業大学高校"
+    },
+    {
+      "id": "okayama-7f5842ce9112",
+      "teamId": "okayama",
+      "name": "岡村 圭修",
+      "normalizedName": "岡村圭修",
+      "englishName": "OKAMURA Keisuke",
+      "number": 70,
+      "position": "MF",
+      "birth": "2006-01-27",
+      "height": 173,
+      "weight": 66,
+      "previousTeam": "岡山一宮高校"
+    },
+    {
+      "id": "okayama-1e6d4b2306cc",
+      "teamId": "okayama",
+      "name": "小川 聖斗",
+      "normalizedName": "小川聖斗",
+      "englishName": "OGAWA Masato",
+      "number": 74,
+      "position": "GK",
+      "birth": "2003-09-16",
+      "height": 176,
+      "weight": 69,
+      "previousTeam": "米子東高校"
+    },
+    {
+      "id": "okayama-5e899327cbcb",
+      "teamId": "okayama",
+      "name": "三河内 結矢",
+      "normalizedName": "三河内結矢",
+      "englishName": "MITSUGOCHI Yuya",
+      "number": 77,
+      "position": "DF",
+      "birth": "2006-02-03",
+      "height": 171,
+      "weight": 63,
+      "previousTeam": "松江工業高等専門学校"
+    },
+    {
+      "id": "okayama-1c37f926b093",
+      "teamId": "okayama",
+      "name": "井上 遥太",
+      "normalizedName": "井上遥太",
+      "englishName": "INOUE Haruta",
+      "number": 78,
+      "position": "DF",
+      "birth": "2005-06-09",
+      "height": 169,
+      "weight": 65,
+      "previousTeam": "玉島高校"
+    },
+    {
+      "id": "okayama-4f3ace51e87d",
+      "teamId": "okayama",
+      "name": "中条 勇貴",
+      "normalizedName": "中条勇貴",
+      "englishName": "NAKAJO Yuki",
+      "number": 79,
+      "position": "FW",
+      "birth": "2005-10-29",
+      "height": 175,
+      "weight": 67,
+      "previousTeam": "神戸市立工業高等専門学校"
+    },
+    {
+      "id": "okayama-778a3e6ec57e",
+      "teamId": "okayama",
+      "name": "武田 征大",
+      "normalizedName": "武田征大",
+      "englishName": "TAKEDA Seita",
+      "number": 80,
+      "position": "MF",
+      "birth": "2006-09-16",
+      "height": 166,
+      "weight": 58,
+      "previousTeam": "就実高校"
+    },
+    {
+      "id": "okayama-4256259e1f0e",
+      "teamId": "okayama",
+      "name": "中ノ瀬 健充",
+      "normalizedName": "中ノ瀬健充",
+      "englishName": "NAKANOSE Katsumi",
+      "number": 86,
+      "position": "MF",
+      "birth": "2007-09-17",
+      "height": 169,
+      "weight": 63,
+      "previousTeam": "広島国際学院高校"
+    },
+    {
+      "id": "okayama-4ff932944239",
+      "teamId": "okayama",
+      "name": "手塚 佑介",
+      "normalizedName": "手塚佑介",
+      "englishName": "TEZUKA Yusuke",
+      "number": 88,
+      "position": "MF",
+      "birth": "2007-08-03",
+      "height": 168,
+      "weight": 60,
+      "previousTeam": "松山北高校"
+    },
+    {
+      "id": "okayama-6e5a88ac5612",
+      "teamId": "okayama",
+      "name": "秋田 詩音",
+      "normalizedName": "秋田詩音",
+      "englishName": "AKITA Shion",
+      "number": 94,
+      "position": "FW",
+      "birth": "2007-07-08",
+      "height": 179,
+      "weight": 70,
+      "previousTeam": "松山東高校"
+    },
+    {
+      "id": "okayama-427047b48561",
+      "teamId": "okayama",
+      "name": "仲 悠冴",
+      "normalizedName": "仲悠冴",
+      "englishName": "NAKA Yugo",
+      "number": 95,
+      "position": "MF",
+      "birth": "2007-08-06",
+      "height": 159,
+      "weight": 58,
+      "previousTeam": "高松桜井高校"
+    },
+    {
+      "id": "okayama-4bb96e48bf41",
+      "teamId": "okayama",
+      "name": "吉田 晴紀",
+      "normalizedName": "吉田晴紀",
+      "englishName": "YOSHIDA Haruki",
+      "number": 98,
+      "position": "DF",
+      "birth": "2008-03-22",
+      "height": 166,
+      "weight": 60,
+      "previousTeam": "松山北高校"
+    },
+    {
+      "id": "okayama-5e95817d9ef8",
+      "teamId": "okayama",
+      "name": "原田 大成",
+      "normalizedName": "原田大成",
+      "englishName": "HARADA Taisei",
+      "number": 99,
+      "position": "FW",
+      "birth": "2005-12-12",
+      "height": 181,
+      "weight": 75,
+      "previousTeam": "徳島北高校"
+    },
+    {
+      "id": "hiroshima-international-b6a697865fdc",
+      "teamId": "hiroshima-international",
+      "name": "菅田 大介",
+      "normalizedName": "菅田大介",
+      "englishName": "SUGATA Daisuke",
+      "number": 1,
+      "position": "GK",
+      "birth": "2007-12-12",
+      "height": 177,
+      "weight": 73,
+      "previousTeam": "銀河学院高校"
+    },
+    {
+      "id": "hiroshima-international-df5e251cacc1",
+      "teamId": "hiroshima-international",
+      "name": "大崎 樹",
+      "normalizedName": "大崎樹",
+      "englishName": "OSAKI Itsuki",
+      "number": 2,
+      "position": "DF",
+      "birth": "2004-11-06",
+      "height": 168,
+      "weight": 67,
+      "previousTeam": "沼田高校"
+    },
+    {
+      "id": "hiroshima-international-431584e54019",
+      "teamId": "hiroshima-international",
+      "name": "島内 大輔",
+      "normalizedName": "島内大輔",
+      "englishName": "SHIMAUCHI Daisuke",
+      "number": 3,
+      "position": "FW",
+      "birth": "2007-06-26",
+      "height": 166,
+      "weight": 57,
+      "previousTeam": "安芸府中高校"
+    },
+    {
+      "id": "hiroshima-international-da403bd48d27",
+      "teamId": "hiroshima-international",
+      "name": "沖野 凌空",
+      "normalizedName": "沖野凌空",
+      "englishName": "OKINO Riku",
+      "number": 5,
+      "position": "DF",
+      "birth": "2007-04-19",
+      "height": 175,
+      "weight": 75,
+      "previousTeam": "宮古高校"
+    },
+    {
+      "id": "hiroshima-international-0c905ea8e029",
+      "teamId": "hiroshima-international",
+      "name": "大津 茜太郎",
+      "normalizedName": "大津茜太郎",
+      "englishName": "OTSU Sentaro",
+      "number": 6,
+      "position": "MF",
+      "birth": "2007-08-07",
+      "height": 169,
+      "weight": 68,
+      "previousTeam": "大津高校"
+    },
+    {
+      "id": "hiroshima-international-04815ba2f707",
+      "teamId": "hiroshima-international",
+      "name": "三島 康志",
+      "normalizedName": "三島康志",
+      "englishName": "MISHIMA Koji",
+      "number": 7,
+      "position": "FW",
+      "birth": "2004-11-03",
+      "height": 174,
+      "weight": 62,
+      "previousTeam": "高陽高校"
+    },
+    {
+      "id": "hiroshima-international-edd3d4282fd3",
+      "teamId": "hiroshima-international",
+      "name": "井戸 一総",
+      "normalizedName": "井戸一総",
+      "englishName": "IDO Kazusa",
+      "number": 8,
+      "position": "MF",
+      "birth": "2007-04-30",
+      "height": 169,
+      "weight": 63,
+      "previousTeam": "常翔学園高校"
+    },
+    {
+      "id": "hiroshima-international-44f7b35018a1",
+      "teamId": "hiroshima-international",
+      "name": "城山 大直",
+      "normalizedName": "城山大直",
+      "englishName": "JOYAMA Taichi",
+      "number": 9,
+      "position": "FW",
+      "birth": "2007-05-06",
+      "height": 176,
+      "weight": 68,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "hiroshima-international-54d3cb6969a1",
+      "teamId": "hiroshima-international",
+      "name": "遠藤 羚央",
+      "normalizedName": "遠藤羚央",
+      "englishName": "ENDO Reo",
+      "number": 10,
+      "position": "FW",
+      "birth": "2008-03-05",
+      "height": 177,
+      "weight": 70,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "hiroshima-international-924044f91ea5",
+      "teamId": "hiroshima-international",
+      "name": "別府 佑哉",
+      "normalizedName": "別府佑哉",
+      "englishName": "BEPPU Yuya",
+      "number": 12,
+      "position": "MF",
+      "birth": "2006-01-11",
+      "height": 164,
+      "weight": 54,
+      "previousTeam": "五日市高校"
+    },
+    {
+      "id": "hiroshima-international-d37bc6f62c7e",
+      "teamId": "hiroshima-international",
+      "name": "山田 圭悟",
+      "normalizedName": "山田圭悟",
+      "englishName": "YAMADA Keigo",
+      "number": 13,
+      "position": "DF",
+      "birth": "2007-07-07",
+      "height": 174,
+      "weight": 71,
+      "previousTeam": "呉港高校"
+    },
+    {
+      "id": "hiroshima-international-bec214c182a1",
+      "teamId": "hiroshima-international",
+      "name": "梅原 昊大",
+      "normalizedName": "梅原昊大",
+      "englishName": "UMEHARA Koma",
+      "number": 14,
+      "position": "DF",
+      "birth": "2007-06-26",
+      "height": 163,
+      "weight": 60,
+      "previousTeam": "大津高校"
+    },
+    {
+      "id": "hiroshima-international-3797724972d4",
+      "teamId": "hiroshima-international",
+      "name": "高村 悠悟",
+      "normalizedName": "高村悠悟",
+      "englishName": "TAKAMURA Yugo",
+      "number": 15,
+      "position": "FW",
+      "birth": "2007-07-23",
+      "height": 171,
+      "weight": 71,
+      "previousTeam": "龍谷高校"
+    },
+    {
+      "id": "hiroshima-international-b6c97e7bc1fd",
+      "teamId": "hiroshima-international",
+      "name": "藤本 龍太",
+      "normalizedName": "藤本龍太",
+      "englishName": "FUJIMOTO Ryota",
+      "number": 17,
+      "position": "MF",
+      "birth": "2007-05-20",
+      "height": 160,
+      "weight": 63,
+      "previousTeam": "呉港高校"
+    },
+    {
+      "id": "hiroshima-international-5a24c4b6553c",
+      "teamId": "hiroshima-international",
+      "name": "隅野 翼",
+      "normalizedName": "隅野翼",
+      "englishName": "SUMINO Tsubasa",
+      "number": 18,
+      "position": "DF",
+      "birth": "2006-01-14",
+      "height": 163,
+      "weight": 61,
+      "previousTeam": "広陵高校"
+    },
+    {
+      "id": "hiroshima-international-a2fece7d676a",
+      "teamId": "hiroshima-international",
+      "name": "玉井 悠斗",
+      "normalizedName": "玉井悠斗",
+      "englishName": "TAMAI Yuto",
+      "number": 19,
+      "position": "MF",
+      "birth": "2006-10-16",
+      "height": 172,
+      "weight": 65,
+      "previousTeam": "広島県瀬戸内高校"
+    },
+    {
+      "id": "hiroshima-international-be325c45ec9a",
+      "teamId": "hiroshima-international",
+      "name": "大山 俐空",
+      "normalizedName": "大山俐空",
+      "englishName": "OOYAMA Riku",
+      "number": 20,
+      "position": "MF",
+      "birth": "2006-03-20",
+      "height": 166,
+      "weight": 61,
+      "previousTeam": "常翔学園高校"
+    },
+    {
+      "id": "hiroshima-international-84a372262dc8",
+      "teamId": "hiroshima-international",
+      "name": "大原 千尋",
+      "normalizedName": "大原千尋",
+      "englishName": "OHARA Chihiro",
+      "number": 21,
+      "position": "DF",
+      "birth": "2007-05-08",
+      "height": 160,
+      "weight": 55,
+      "previousTeam": "広島皆実高校"
+    },
+    {
+      "id": "hiroshima-international-e2958566e678",
+      "teamId": "hiroshima-international",
+      "name": "立川 桂次",
+      "normalizedName": "立川桂次",
+      "englishName": "TATSUGAWA Keiji",
+      "number": 23,
+      "position": "FW",
+      "birth": "2005-01-13",
+      "height": 175,
+      "weight": 65,
+      "previousTeam": "広島新庄高校"
+    },
+    {
+      "id": "hiroshima-international-821f2de71fa7",
+      "teamId": "hiroshima-international",
+      "name": "宮原 琉輝",
+      "normalizedName": "宮原琉輝",
+      "englishName": "MIYAHARA Ryuki",
+      "number": 24,
+      "position": "DF",
+      "birth": "2007-08-21",
+      "height": 175,
+      "weight": 75,
+      "previousTeam": "呉港高校"
+    },
+    {
+      "id": "hiroshima-international-cf1c59910084",
+      "teamId": "hiroshima-international",
+      "name": "川本 剛瑠",
+      "normalizedName": "川本剛瑠",
+      "englishName": "KAWAMOTO Takeru",
+      "number": 25,
+      "position": "MF",
+      "birth": "2005-03-02",
+      "height": 180,
+      "weight": 70,
+      "previousTeam": "呉港高校"
+    },
+    {
+      "id": "hiroshima-international-814b6c56916b",
+      "teamId": "hiroshima-international",
+      "name": "小川 達也",
+      "normalizedName": "小川達也",
+      "englishName": "OGAWA Tatsuya",
+      "number": 43,
+      "position": "MF",
+      "birth": "2006-04-26",
+      "height": 164,
+      "weight": 54,
+      "previousTeam": "興國高校"
+    },
+    {
+      "id": "hiroshima-international-2435c7635474",
+      "teamId": "hiroshima-international",
+      "name": "村橋 朗",
+      "normalizedName": "村橋朗",
+      "englishName": "MURAHASHI Akira",
+      "number": 44,
+      "position": "MF",
+      "birth": "2007-06-01",
+      "height": 166,
+      "weight": 63,
+      "previousTeam": "呉港高校"
+    },
+    {
+      "id": "hiroshima-international-8edac5fbee41",
+      "teamId": "hiroshima-international",
+      "name": "野原 優斗",
+      "normalizedName": "野原優斗",
+      "englishName": "NOHARA Yuto",
+      "number": 46,
+      "position": "DF",
+      "birth": "2004-10-06",
+      "height": 171,
+      "weight": 70,
+      "previousTeam": "西京高校"
+    },
+    {
+      "id": "hiroshima-international-757d399836c9",
+      "teamId": "hiroshima-international",
+      "name": "中島 凌太",
+      "normalizedName": "中島凌太",
+      "englishName": "NAKASHIMA Ryota",
+      "number": 50,
+      "position": "MF",
+      "birth": "2007-02-19",
+      "height": 170,
+      "weight": 62,
+      "previousTeam": "清水ヶ丘高校"
+    },
+    {
+      "id": "hiroshima-international-05799f90b86e",
+      "teamId": "hiroshima-international",
+      "name": "船倉 脩平",
+      "normalizedName": "船倉脩平",
+      "englishName": "FUNAKURA Shuhei",
+      "number": 51,
+      "position": "FW",
+      "birth": "2006-12-10",
+      "height": 169,
+      "weight": 63,
+      "previousTeam": ""
+    },
+    {
+      "id": "hiroshima-international-3cd4763e713c",
+      "teamId": "hiroshima-international",
+      "name": "鎌谷 篤志",
+      "normalizedName": "鎌谷篤志",
+      "englishName": "KAMATANI Atsushi",
+      "number": 58,
+      "position": "MF",
+      "birth": "2004-09-12",
+      "height": 175,
+      "weight": 58,
+      "previousTeam": "姫路工業高校"
+    },
+    {
+      "id": "hiroshima-international-383c4773df62",
+      "teamId": "hiroshima-international",
+      "name": "楢原 翔太郎",
+      "normalizedName": "楢原翔太郎",
+      "englishName": "NARAHARA Shotaro",
+      "number": 67,
+      "position": "MF",
+      "birth": "2005-08-14",
+      "height": 169,
+      "weight": 65,
+      "previousTeam": "宮崎日本大学高校"
+    },
+    {
+      "id": "hiroshima-international-8096dd1ea7d7",
+      "teamId": "hiroshima-international",
+      "name": "秦野 徠臥",
+      "normalizedName": "秦野徠臥",
+      "englishName": "HATANO Raiga",
+      "number": 80,
+      "position": "DF",
+      "birth": "2008-01-19",
+      "height": 178,
+      "weight": 72,
+      "previousTeam": "米子北高校"
+    },
+    {
+      "id": "hiroshima-international-d787e64e946f",
+      "teamId": "hiroshima-international",
+      "name": "岡崎 啓太郎",
+      "normalizedName": "岡崎啓太郎",
+      "englishName": "OKAZAKI Keitaro",
+      "number": 86,
+      "position": "FW",
+      "birth": "2006-04-07",
+      "height": 162,
+      "weight": 58,
+      "previousTeam": "東城高校"
+    },
+    {
+      "id": "hiroshima-international-3d3e597fa523",
+      "teamId": "hiroshima-international",
+      "name": "北山 泰地",
+      "normalizedName": "北山泰地",
+      "englishName": "KITAYAMA Taichi",
+      "number": 88,
+      "position": "MF",
+      "birth": "2005-09-21",
+      "height": 169,
+      "weight": 60,
+      "previousTeam": "呉港高校"
+    },
+    {
+      "id": "hiroshima-international-af94668216b5",
+      "teamId": "hiroshima-international",
+      "name": "秋積 真",
+      "normalizedName": "秋積真",
+      "englishName": "AKIZUMI Shin",
+      "number": 90,
+      "position": "FW",
+      "birth": "2004-09-10",
+      "height": 176,
+      "weight": 76,
+      "previousTeam": "常翔学園高校"
+    },
+    {
+      "id": "hiroshima-international-733c3bd1fa34",
+      "teamId": "hiroshima-international",
+      "name": "守田 舜",
+      "normalizedName": "守田舜",
+      "englishName": "MORITA Shun",
+      "number": 91,
+      "position": "GK",
+      "birth": "2005-10-06",
+      "height": 169,
+      "weight": 56,
+      "previousTeam": "広島県瀬戸内高校"
+    },
+    {
+      "id": "hiroshima-international-b47111447338",
+      "teamId": "hiroshima-international",
+      "name": "浅野 神陸",
+      "normalizedName": "浅野神陸",
+      "englishName": "ASANO Tenku",
+      "number": 99,
+      "position": "MF",
+      "birth": "2005-10-12",
+      "height": 169,
+      "weight": 64,
+      "previousTeam": "広島ユナイテッドFC尾道"
+    },
+    {
+      "id": "tottori-8346e5dfb1bd",
+      "teamId": "tottori",
+      "name": "井上 竣介",
+      "normalizedName": "井上竣介",
+      "englishName": "INOUE Shunsuke",
+      "number": 2,
+      "position": "MF",
+      "birth": "2005-11-19",
+      "height": 171,
+      "weight": 60,
+      "previousTeam": "高松桜井高校"
+    },
+    {
+      "id": "tottori-961d1ec6999e",
+      "teamId": "tottori",
+      "name": "川合 梗士朗",
+      "normalizedName": "川合梗士朗",
+      "englishName": "KAWAI Koshiro",
+      "number": 3,
+      "position": "MF",
+      "birth": "2007-07-26",
+      "height": 168,
+      "weight": 63,
+      "previousTeam": "相生高校"
+    },
+    {
+      "id": "tottori-5780133ca5c5",
+      "teamId": "tottori",
+      "name": "松田 光平",
+      "normalizedName": "松田光平",
+      "englishName": "MATSUDA Kohei",
+      "number": 4,
+      "position": "DF",
+      "birth": "2004-06-23",
+      "height": 177,
+      "weight": 67,
+      "previousTeam": "明石城西高校"
+    },
+    {
+      "id": "tottori-2148b1dcf5eb",
+      "teamId": "tottori",
+      "name": "内藤 綾士",
+      "normalizedName": "内藤綾士",
+      "englishName": "NAITO Ryoji",
+      "number": 5,
+      "position": "DF",
+      "birth": "2007-04-25",
+      "height": 173,
+      "weight": 58,
+      "previousTeam": "竹早高校"
+    },
+    {
+      "id": "tottori-b686235bc5cc",
+      "teamId": "tottori",
+      "name": "土橋 咲友",
+      "normalizedName": "土橋咲友",
+      "englishName": "DOBASHI Sakuto",
+      "number": 6,
+      "position": "DF",
+      "birth": "2006-06-08",
+      "height": 172,
+      "weight": 65,
+      "previousTeam": "清風高校"
+    },
+    {
+      "id": "tottori-2059601b8e72",
+      "teamId": "tottori",
+      "name": "安達 聖仁",
+      "normalizedName": "安達聖仁",
+      "englishName": "ADACHI Kiyohito",
+      "number": 7,
+      "position": "FW",
+      "birth": "2005-12-31",
+      "height": 173,
+      "weight": 65,
+      "previousTeam": "松江東高校"
+    },
+    {
+      "id": "tottori-255ef18be7ee",
+      "teamId": "tottori",
+      "name": "花光 海大",
+      "normalizedName": "花光海大",
+      "englishName": "HAMAMITSU Mihiro",
+      "number": 8,
+      "position": "MF",
+      "birth": "2004-07-07",
+      "height": 166,
+      "weight": 65,
+      "previousTeam": "田辺高校"
+    },
+    {
+      "id": "tottori-6999d12f9c98",
+      "teamId": "tottori",
+      "name": "村石 旺太郎",
+      "normalizedName": "村石旺太郎",
+      "englishName": "MURAISHI Otaro",
+      "number": 10,
+      "position": "FW",
+      "birth": "2005-07-30",
+      "height": 169,
+      "weight": 71,
+      "previousTeam": "祇園北高校"
+    },
+    {
+      "id": "tottori-b811e46d9f58",
+      "teamId": "tottori",
+      "name": "田中 陽介",
+      "normalizedName": "田中陽介",
+      "englishName": "TANAKA Yosuke",
+      "number": 11,
+      "position": "MF",
+      "birth": "2008-03-12",
+      "height": 168,
+      "weight": 65,
+      "previousTeam": "市立姫路高校"
+    },
+    {
+      "id": "tottori-59af0837e4ec",
+      "teamId": "tottori",
+      "name": "伊地知 陽太",
+      "normalizedName": "伊地知陽太",
+      "englishName": "IJICHI Hinato",
+      "number": 14,
+      "position": "DF",
+      "birth": "2005-04-23",
+      "height": 173,
+      "weight": 66,
+      "previousTeam": "沖永良部高校"
+    },
+    {
+      "id": "tottori-5bfbd5c72410",
+      "teamId": "tottori",
+      "name": "高田 翔太",
+      "normalizedName": "高田翔太",
+      "englishName": "TAKADA Shota",
+      "number": 17,
+      "position": "MF",
+      "birth": "2006-10-05",
+      "height": 157,
+      "weight": 65,
+      "previousTeam": "境高校"
+    },
+    {
+      "id": "tottori-85dab92899c0",
+      "teamId": "tottori",
+      "name": "竹本 舜",
+      "normalizedName": "竹本舜",
+      "englishName": "TAKEMOTO Shun",
+      "number": 18,
+      "position": "MF",
+      "birth": "2005-12-22",
+      "height": 168,
+      "weight": 62,
+      "previousTeam": "田辺高校"
+    },
+    {
+      "id": "tottori-80cb9d8d9c11",
+      "teamId": "tottori",
+      "name": "溝口 陽太",
+      "normalizedName": "溝口陽太",
+      "englishName": "MIZOGUCHI Yota",
+      "number": 19,
+      "position": "DF",
+      "birth": "2006-08-07",
+      "height": 167,
+      "weight": 65,
+      "previousTeam": "御影高校"
+    },
+    {
+      "id": "tottori-0738ecce5c2a",
+      "teamId": "tottori",
+      "name": "日和佐 龍",
+      "normalizedName": "日和佐龍",
+      "englishName": "HISAWA Ryu",
+      "number": 21,
+      "position": "DF",
+      "birth": "2006-11-01",
+      "height": 173,
+      "weight": 67,
+      "previousTeam": "丹原高校"
+    },
+    {
+      "id": "tottori-9e42411288b6",
+      "teamId": "tottori",
+      "name": "京井 亜樹",
+      "normalizedName": "京井亜樹",
+      "englishName": "KYOI Aki",
+      "number": 22,
+      "position": "GK",
+      "birth": "2006-06-26",
+      "height": 180,
+      "weight": 71,
+      "previousTeam": "美鈴が丘高校"
+    },
+    {
+      "id": "tottori-ba4a5d4b4a1e",
+      "teamId": "tottori",
+      "name": "横内 優樹",
+      "normalizedName": "横内優樹",
+      "englishName": "YOKOUCHI Yuki",
+      "number": 23,
+      "position": "MF",
+      "birth": "2006-11-25",
+      "height": 167,
+      "weight": 62,
+      "previousTeam": "倉敷南高校"
+    },
+    {
+      "id": "tottori-7c533688a952",
+      "teamId": "tottori",
+      "name": "水谷 圭佑",
+      "normalizedName": "水谷圭佑",
+      "englishName": "MIZUTANI Keisuke",
+      "number": 26,
+      "position": "MF",
+      "birth": "2005-10-26",
+      "height": 168,
+      "weight": 55,
+      "previousTeam": "廿日市高校"
+    },
+    {
+      "id": "tottori-1803c4488ad9",
+      "teamId": "tottori",
+      "name": "清水 楽",
+      "normalizedName": "清水楽",
+      "englishName": "SHIMIZU Raku",
+      "number": 27,
+      "position": "DF",
+      "birth": "2007-10-23",
+      "height": 174,
+      "weight": 64,
+      "previousTeam": "鳥取東高校"
+    },
+    {
+      "id": "tottori-d9e427a66fa7",
+      "teamId": "tottori",
+      "name": "伊藤 優剛",
+      "normalizedName": "伊藤優剛",
+      "englishName": "ITO Yugo",
+      "number": 29,
+      "position": "MF",
+      "birth": "2006-06-21",
+      "height": 165,
+      "weight": 62,
+      "previousTeam": "神戸高校"
+    },
+    {
+      "id": "tottori-59fd1e910e37",
+      "teamId": "tottori",
+      "name": "大中 奏太朗",
+      "normalizedName": "大中奏太朗",
+      "englishName": "ONAKA Sotaro",
+      "number": 33,
+      "position": "MF",
+      "birth": "2007-11-09",
+      "height": 174,
+      "weight": 58,
+      "previousTeam": "市立姫路高校"
+    },
+    {
+      "id": "tottori-fa4cb5bbc5d9",
+      "teamId": "tottori",
+      "name": "廣瀬 斗紀",
+      "normalizedName": "廣瀬斗紀",
+      "englishName": "HIROSE Toki",
+      "number": 46,
+      "position": "GK",
+      "birth": "2007-06-01",
+      "height": 176,
+      "weight": 80,
+      "previousTeam": "相生高校"
+    },
+    {
+      "id": "tottori-ce24b99cd506",
+      "teamId": "tottori",
+      "name": "倉田 琉生",
+      "normalizedName": "倉田琉生",
+      "englishName": "KURATA Ryuki",
+      "number": 55,
+      "position": "DF",
+      "birth": "2007-09-04",
+      "height": 175,
+      "weight": 65,
+      "previousTeam": "徳山高校"
+    },
+    {
+      "id": "shimonoseki-city-82a5d57eac59",
+      "teamId": "shimonoseki-city",
+      "name": "河野 弦太",
+      "normalizedName": "河野弦太",
+      "englishName": "KAWANO Genta",
+      "number": 2,
+      "position": "MF",
+      "birth": "2007-05-24",
+      "height": 171,
+      "weight": 56,
+      "previousTeam": "早鞆高校"
+    },
+    {
+      "id": "shimonoseki-city-7f7b3d04b28f",
+      "teamId": "shimonoseki-city",
+      "name": "延原 義基",
+      "normalizedName": "延原義基",
+      "englishName": "NOBUHARA Yoshiki",
+      "number": 4,
+      "position": "DF",
+      "birth": "2005-10-25",
+      "height": 167,
+      "weight": 65,
+      "previousTeam": "エストレラ姫路U-18"
+    },
+    {
+      "id": "shimonoseki-city-b7a3aceb3f90",
+      "teamId": "shimonoseki-city",
+      "name": "脇田 大馳",
+      "normalizedName": "脇田大馳",
+      "englishName": "WAKITA Daichi",
+      "number": 5,
+      "position": "DF",
+      "birth": "2007-05-10",
+      "height": 167,
+      "weight": 61,
+      "previousTeam": "神戸星城高校"
+    },
+    {
+      "id": "shimonoseki-city-401ee3a8b34f",
+      "teamId": "shimonoseki-city",
+      "name": "満武 竜之介",
+      "normalizedName": "満武竜之介",
+      "englishName": "MITSUTAKE Ryunosuke",
+      "number": 6,
+      "position": "MF",
+      "birth": "2006-10-25",
+      "height": 170,
+      "weight": 62,
+      "previousTeam": "佐世保西高校"
+    },
+    {
+      "id": "shimonoseki-city-a0bd2ed6c990",
+      "teamId": "shimonoseki-city",
+      "name": "浜田 和眞",
+      "normalizedName": "浜田和眞",
+      "englishName": "HAMADA Kazuma",
+      "number": 7,
+      "position": "GK",
+      "birth": "2006-11-01",
+      "height": 174,
+      "weight": 75,
+      "previousTeam": "安古市高校"
+    },
+    {
+      "id": "shimonoseki-city-cc0a50741575",
+      "teamId": "shimonoseki-city",
+      "name": "中野 頼人",
+      "normalizedName": "中野頼人",
+      "englishName": "NAKANO Raito",
+      "number": 8,
+      "position": "MF",
+      "birth": "2005-11-26",
+      "height": 176,
+      "weight": 65,
+      "previousTeam": "佐賀北高校"
+    },
+    {
+      "id": "shimonoseki-city-bda77187eb7c",
+      "teamId": "shimonoseki-city",
+      "name": "山口 詩月",
+      "normalizedName": "山口詩月",
+      "englishName": "YAMAGUCHI Shizuki",
+      "number": 9,
+      "position": "FW",
+      "birth": "2007-05-27",
+      "height": 170,
+      "weight": 62,
+      "previousTeam": "新居浜西高校"
+    },
+    {
+      "id": "shimonoseki-city-efb0f4988605",
+      "teamId": "shimonoseki-city",
+      "name": "安倍 春一",
+      "normalizedName": "安倍春一",
+      "englishName": "ABE Haruichi",
+      "number": 10,
+      "position": "MF",
+      "birth": "2005-08-15",
+      "height": 176,
+      "weight": 72,
+      "previousTeam": "中津南高校"
+    },
+    {
+      "id": "shimonoseki-city-547fb16a87de",
+      "teamId": "shimonoseki-city",
+      "name": "中村 迅",
+      "normalizedName": "中村迅",
+      "englishName": "NAKAMURA Jin",
+      "number": 11,
+      "position": "MF",
+      "birth": "2006-07-29",
+      "height": 170,
+      "weight": 64,
+      "previousTeam": "興國高校"
+    },
+    {
+      "id": "shimonoseki-city-bf5ad645bf6d",
+      "teamId": "shimonoseki-city",
+      "name": "前川 康平",
+      "normalizedName": "前川康平",
+      "englishName": "MAEKAWA Kohei",
+      "number": 12,
+      "position": "MF",
+      "birth": "2004-07-20",
+      "height": 171,
+      "weight": 68,
+      "previousTeam": "佐世保西高校"
+    },
+    {
+      "id": "shimonoseki-city-fa2d1cbbd4ed",
+      "teamId": "shimonoseki-city",
+      "name": "加藤 晴大",
+      "normalizedName": "加藤晴大",
+      "englishName": "KATO Haruta",
+      "number": 14,
+      "position": "MF",
+      "birth": "2006-04-23",
+      "height": 161,
+      "weight": 51,
+      "previousTeam": "如水館高校"
+    },
+    {
+      "id": "shimonoseki-city-1903a0d13c0d",
+      "teamId": "shimonoseki-city",
+      "name": "小益 魁二",
+      "normalizedName": "小益魁二",
+      "englishName": "KOMASU Kaiji",
+      "number": 15,
+      "position": "FW",
+      "birth": "2005-08-21",
+      "height": 163,
+      "weight": 58,
+      "previousTeam": "下松高校"
+    },
+    {
+      "id": "shimonoseki-city-cacd54bd0959",
+      "teamId": "shimonoseki-city",
+      "name": "福田 尊",
+      "normalizedName": "福田尊",
+      "englishName": "FUKUDA Takeru",
+      "number": 16,
+      "position": "MF",
+      "birth": "2006-04-04",
+      "height": 161,
+      "weight": 60,
+      "previousTeam": "北筑高校"
+    },
+    {
+      "id": "shimonoseki-city-d38a4d7310c6",
+      "teamId": "shimonoseki-city",
+      "name": "倉ヶ市 拓真",
+      "normalizedName": "倉ヶ市拓真",
+      "englishName": "KURAGAICHI Takuma",
+      "number": 17,
+      "position": "MF",
+      "birth": "2004-11-11",
+      "height": 162,
+      "weight": 53,
+      "previousTeam": "岡山芳泉高校"
+    },
+    {
+      "id": "shimonoseki-city-bfd39301b675",
+      "teamId": "shimonoseki-city",
+      "name": "阿瀬 瑛人",
+      "normalizedName": "阿瀬瑛人",
+      "englishName": "ASE Eito",
+      "number": 18,
+      "position": "DF",
+      "birth": "2005-12-13",
+      "height": 172,
+      "weight": 77,
+      "previousTeam": "帝塚山学院泉ヶ丘高校"
+    },
+    {
+      "id": "shimonoseki-city-37888e5a792b",
+      "teamId": "shimonoseki-city",
+      "name": "國枝 快永",
+      "normalizedName": "國枝快永",
+      "englishName": "KUNIEDA Kaito",
+      "number": 20,
+      "position": "MF",
+      "birth": "2005-04-25",
+      "height": 171,
+      "weight": 70,
+      "previousTeam": "安古市高校"
+    },
+    {
+      "id": "shimonoseki-city-3fb52fcc6191",
+      "teamId": "shimonoseki-city",
+      "name": "上田 優太",
+      "normalizedName": "上田優太",
+      "englishName": "UEDA Yuta",
+      "number": 21,
+      "position": "FW",
+      "birth": "2004-04-30",
+      "height": 178,
+      "weight": 80,
+      "previousTeam": "下松高校"
+    },
+    {
+      "id": "shimonoseki-city-900870ce87ba",
+      "teamId": "shimonoseki-city",
+      "name": "野田 和志",
+      "normalizedName": "野田和志",
+      "englishName": "NODA Kazushi",
+      "number": 23,
+      "position": "DF",
+      "birth": "2006-04-25",
+      "height": 171,
+      "weight": 60,
+      "previousTeam": "佐賀東高校"
+    },
+    {
+      "id": "shimonoseki-city-85d2040a14ff",
+      "teamId": "shimonoseki-city",
+      "name": "石原 空悟",
+      "normalizedName": "石原空悟",
+      "englishName": "ISHIHARA Kugo",
+      "number": 26,
+      "position": "DF",
+      "birth": "2004-07-06",
+      "height": 179,
+      "weight": 73,
+      "previousTeam": "北筑高校"
+    },
+    {
+      "id": "shimonoseki-city-a75bd671a907",
+      "teamId": "shimonoseki-city",
+      "name": "小川 蓮",
+      "normalizedName": "小川蓮",
+      "englishName": "OGAWA Ren",
+      "number": 27,
+      "position": "MF",
+      "birth": "2008-01-08",
+      "height": 174,
+      "weight": 60,
+      "previousTeam": "諫早高校"
+    },
+    {
+      "id": "shimonoseki-city-f8a9ab37e399",
+      "teamId": "shimonoseki-city",
+      "name": "小山 拓夢",
+      "normalizedName": "小山拓夢",
+      "englishName": "OYAMA Takumu",
+      "number": 28,
+      "position": "MF",
+      "birth": "2007-07-29",
+      "height": 168,
+      "weight": 60,
+      "previousTeam": "呉三津田高校"
+    },
+    {
+      "id": "shimonoseki-city-e5f580201b04",
+      "teamId": "shimonoseki-city",
+      "name": "綱島 悠介",
+      "normalizedName": "綱島悠介",
+      "englishName": "TSUNASHIMA Yusuke",
+      "number": 29,
+      "position": "MF",
+      "birth": "2006-12-12",
+      "height": 169,
+      "weight": 59,
+      "previousTeam": "天城高校"
+    },
+    {
+      "id": "shimonoseki-city-27ff16c76ed4",
+      "teamId": "shimonoseki-city",
+      "name": "吉岡 想空",
+      "normalizedName": "吉岡想空",
+      "englishName": "YOSHIOKA Sora",
+      "number": 30,
+      "position": "MF",
+      "birth": "2008-01-29",
+      "height": 170,
+      "weight": 60,
+      "previousTeam": "小倉東高校"
+    },
+    {
+      "id": "shimonoseki-city-fa1b2edbd85e",
+      "teamId": "shimonoseki-city",
+      "name": "上杉 新汰",
+      "normalizedName": "上杉新汰",
+      "englishName": "UESUGI Arata",
+      "number": 31,
+      "position": "DF",
+      "birth": "2006-09-13",
+      "height": 164,
+      "weight": 50,
+      "previousTeam": "花園高校"
+    },
+    {
+      "id": "shimonoseki-city-92471058b659",
+      "teamId": "shimonoseki-city",
+      "name": "千早 拓海",
+      "normalizedName": "千早拓海",
+      "englishName": "CHIHAYA Takumi",
+      "number": 32,
+      "position": "MF",
+      "birth": "2006-12-14",
+      "height": 162,
+      "weight": 50,
+      "previousTeam": "草津東高校"
+    },
+    {
+      "id": "shimonoseki-city-64ff4260bd82",
+      "teamId": "shimonoseki-city",
+      "name": "倉田 悠ノ介",
+      "normalizedName": "倉田悠ノ介",
+      "englishName": "KURATA Yunosuke",
+      "number": 39,
+      "position": "MF",
+      "birth": "2005-06-04",
+      "height": 173,
+      "weight": 65,
+      "previousTeam": "自由ケ丘高校"
+    },
+    {
+      "id": "shimonoseki-city-f97a7f2d9b03",
+      "teamId": "shimonoseki-city",
+      "name": "馬屋原 日向",
+      "normalizedName": "馬屋原日向",
+      "englishName": "UMAYAHARA Hinata",
+      "number": 40,
+      "position": "MF",
+      "birth": "2004-06-12",
+      "height": 163,
+      "weight": 61,
+      "previousTeam": "如水館高校"
+    },
+    {
+      "id": "shimonoseki-city-8419b2fba469",
+      "teamId": "shimonoseki-city",
+      "name": "大嶋 悠雅",
+      "normalizedName": "大嶋悠雅",
+      "englishName": "OSHIMA Yuma",
+      "number": 41,
+      "position": "MF",
+      "birth": "2004-04-06",
+      "height": 162,
+      "weight": 57,
+      "previousTeam": "神戸星城高校"
+    },
+    {
+      "id": "shimonoseki-city-747d6df1c822",
+      "teamId": "shimonoseki-city",
+      "name": "泉福 修平",
+      "normalizedName": "泉福修平",
+      "englishName": "SENPUKU Shuhei",
+      "number": 42,
+      "position": "MF",
+      "birth": "2004-10-13",
+      "height": 168,
+      "weight": 58,
+      "previousTeam": "小城高校"
+    },
+    {
+      "id": "shimane-3685a65d458f",
+      "teamId": "shimane",
+      "name": "原田 悠生",
+      "normalizedName": "原田悠生",
+      "englishName": "HARADA Yuki",
+      "number": 1,
+      "position": "GK",
+      "birth": "2007-12-10",
+      "height": 170,
+      "weight": 56,
+      "previousTeam": "総社高校"
+    },
+    {
+      "id": "shimane-38e5b6bb9be7",
+      "teamId": "shimane",
+      "name": "上野 八雲",
+      "normalizedName": "上野八雲",
+      "englishName": "UENO Yakumo",
+      "number": 4,
+      "position": "DF",
+      "birth": "2007-07-15",
+      "height": 176,
+      "weight": 65,
+      "previousTeam": "松江北高校"
+    },
+    {
+      "id": "shimane-990d882420e7",
+      "teamId": "shimane",
+      "name": "松本 理玖",
+      "normalizedName": "松本理玖",
+      "englishName": "MATSUMOTO Riku",
+      "number": 5,
+      "position": "MF",
+      "birth": "2008-02-09",
+      "height": 168,
+      "weight": 64,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "shimane-ac4ae327d551",
+      "teamId": "shimane",
+      "name": "青柳 和希",
+      "normalizedName": "青柳和希",
+      "englishName": "AOYAGI Kazuki",
+      "number": 6,
+      "position": "DF",
+      "birth": "2005-11-08",
+      "height": 170,
+      "weight": 63,
+      "previousTeam": "福山市立福山高校"
+    },
+    {
+      "id": "shimane-69ee098b0084",
+      "teamId": "shimane",
+      "name": "田澤 温大",
+      "normalizedName": "田澤温大",
+      "englishName": "TAZAWA Haruto",
+      "number": 7,
+      "position": "MF",
+      "birth": "2006-10-26",
+      "height": 171,
+      "weight": 51,
+      "previousTeam": "就実高校"
+    },
+    {
+      "id": "shimane-3ffd9a4c40c3",
+      "teamId": "shimane",
+      "name": "村上 竣平",
+      "normalizedName": "村上竣平",
+      "englishName": "MURAKAMI Shunpei",
+      "number": 8,
+      "position": "FW",
+      "birth": "2006-03-25",
+      "height": 180,
+      "weight": 68,
+      "previousTeam": "呉宮原高校"
+    },
+    {
+      "id": "shimane-c9eca2de27d1",
+      "teamId": "shimane",
+      "name": "丸山 白翔",
+      "normalizedName": "丸山白翔",
+      "englishName": "MARUYAMA Hakuto",
+      "number": 9,
+      "position": "FW",
+      "birth": "2008-03-28",
+      "height": 161,
+      "weight": 56,
+      "previousTeam": "倉敷古城池高校"
+    },
+    {
+      "id": "shimane-bf9cfae567fd",
+      "teamId": "shimane",
+      "name": "原田 邦志",
+      "normalizedName": "原田邦志",
+      "englishName": "HARADA Kuniyuki",
+      "number": 11,
+      "position": "DF",
+      "birth": "2004-08-03",
+      "height": 166,
+      "weight": 62,
+      "previousTeam": "福山誠之館高校"
+    },
+    {
+      "id": "shimane-8f577b634f78",
+      "teamId": "shimane",
+      "name": "岡田 陽人",
+      "normalizedName": "岡田陽人",
+      "englishName": "OKADA Haruto",
+      "number": 13,
+      "position": "GK",
+      "birth": "2007-03-23",
+      "height": 166,
+      "weight": 62,
+      "previousTeam": "尾道東高校"
+    },
+    {
+      "id": "shimane-a616ec6900af",
+      "teamId": "shimane",
+      "name": "佐藤 公紀",
+      "normalizedName": "佐藤公紀",
+      "englishName": "SATO Kiminori",
+      "number": 14,
+      "position": "DF",
+      "birth": "2006-06-12",
+      "height": 173,
+      "weight": 65,
+      "previousTeam": "三刀屋高校"
+    },
+    {
+      "id": "shimane-b86cb0e07f1c",
+      "teamId": "shimane",
+      "name": "野口 颯也",
+      "normalizedName": "野口颯也",
+      "englishName": "NOGUCHI Soya",
+      "number": 15,
+      "position": "DF",
+      "birth": "2007-01-26",
+      "height": 168,
+      "weight": 57,
+      "previousTeam": "総社南高校"
+    },
+    {
+      "id": "shimane-469231f2f9bb",
+      "teamId": "shimane",
+      "name": "安達 惺成",
+      "normalizedName": "安達惺成",
+      "englishName": "ADACHI Sena",
+      "number": 17,
+      "position": "DF",
+      "birth": "2007-10-08",
+      "height": 170,
+      "weight": 70,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "shimane-03f5a60b681a",
+      "teamId": "shimane",
+      "name": "山本 暖弥",
+      "normalizedName": "山本暖弥",
+      "englishName": "YAMAMOTO Haruya",
+      "number": 19,
+      "position": "MF",
+      "birth": "2007-12-23",
+      "height": 178,
+      "weight": 65,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "shimane-110569fbc685",
+      "teamId": "shimane",
+      "name": "福島 優仁",
+      "normalizedName": "福島優仁",
+      "englishName": "FUKUSHIMA Yuto",
+      "number": 21,
+      "position": "MF",
+      "birth": "2006-04-11",
+      "height": 171,
+      "weight": 58,
+      "previousTeam": "松江南高校"
+    },
+    {
+      "id": "shimane-de4fcd4e1150",
+      "teamId": "shimane",
+      "name": "小野 大和",
+      "normalizedName": "小野大和",
+      "englishName": "ONO Yamato",
+      "number": 22,
+      "position": "DF",
+      "birth": "2004-12-01",
+      "height": 175,
+      "weight": 58,
+      "previousTeam": ""
+    },
+    {
+      "id": "shimane-6b54ca30c282",
+      "teamId": "shimane",
+      "name": "妹尾 和弥",
+      "normalizedName": "妹尾和弥",
+      "englishName": "SEO Kazuya",
+      "number": 24,
+      "position": "MF",
+      "birth": "2006-07-29",
+      "height": 171,
+      "weight": 60,
+      "previousTeam": "福山葦陽高校"
+    },
+    {
+      "id": "shimane-280aff9b7202",
+      "teamId": "shimane",
+      "name": "丸谷 彩斗",
+      "normalizedName": "丸谷彩斗",
+      "englishName": "MARUTANI Ayato",
+      "number": 25,
+      "position": "GK",
+      "birth": "2007-01-12",
+      "height": 175,
+      "weight": 64,
+      "previousTeam": "笠岡高校"
+    },
+    {
+      "id": "shimane-53688989871c",
+      "teamId": "shimane",
+      "name": "武政 祐輝",
+      "normalizedName": "武政祐輝",
+      "englishName": "TAKEMASA Yuki",
+      "number": 35,
+      "position": "FW",
+      "birth": "2006-04-26",
+      "height": 165,
+      "weight": 60,
+      "previousTeam": "倉敷青陵高校"
+    },
+    {
+      "id": "shimane-3574c37137dd",
+      "teamId": "shimane",
+      "name": "丸山 心路",
+      "normalizedName": "丸山心路",
+      "englishName": "MARUYAMA Kokoro",
+      "number": 36,
+      "position": "DF",
+      "birth": "2005-07-29",
+      "height": 178,
+      "weight": 64,
+      "previousTeam": "浜松開誠館高校"
+    },
+    {
+      "id": "shimane-66d582b0a20a",
+      "teamId": "shimane",
+      "name": "井上 海音人",
+      "normalizedName": "井上海音人",
+      "englishName": "INOUE Minato",
+      "number": 37,
+      "position": "FW",
+      "birth": "2005-07-04",
+      "height": 164,
+      "weight": 55,
+      "previousTeam": "尾道東高校"
+    },
+    {
+      "id": "shimane-4f0aa66ddef4",
+      "teamId": "shimane",
+      "name": "谷口 藍都",
+      "normalizedName": "谷口藍都",
+      "englishName": "TANIGUCHI Aito",
+      "number": 40,
+      "position": "MF",
+      "birth": "2006-05-13",
+      "height": 168,
+      "weight": 58,
+      "previousTeam": "田辺高校"
+    },
+    {
+      "id": "shimane-7647a84a8b60",
+      "teamId": "shimane",
+      "name": "米田 速基",
+      "normalizedName": "米田速基",
+      "englishName": "KOMEDA Hayaki",
+      "number": 62,
+      "position": "MF",
+      "birth": "2007-07-30",
+      "height": 161,
+      "weight": 58,
+      "previousTeam": "大津高校"
+    },
+    {
+      "id": "shimane-a21b4535398a",
+      "teamId": "shimane",
+      "name": "岡田 凌",
+      "normalizedName": "岡田凌",
+      "englishName": "OKADA Ryo",
+      "number": 67,
+      "position": "MF",
+      "birth": "2007-03-27",
+      "height": 168,
+      "weight": 51,
+      "previousTeam": "神辺旭高校"
+    },
+    {
+      "id": "shimane-289030110c24",
+      "teamId": "shimane",
+      "name": "淀金 一希",
+      "normalizedName": "淀金一希",
+      "englishName": "YODOKANE Itsuki",
+      "number": 77,
+      "position": "MF",
+      "birth": "2006-02-13",
+      "height": 168,
+      "weight": 55,
+      "previousTeam": "総社南高校"
+    },
+    {
+      "id": "shimane-d7ed5b793c5c",
+      "teamId": "shimane",
+      "name": "木村 一貴",
+      "normalizedName": "木村一貴",
+      "englishName": "KIMURA Kazuki",
+      "number": 85,
+      "position": "MF",
+      "birth": "2007-11-29",
+      "height": 174,
+      "weight": 63,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "shimane-03f057f18a90",
+      "teamId": "shimane",
+      "name": "淀金 七翔",
+      "normalizedName": "淀金七翔",
+      "englishName": "YODOKANE Nanato",
+      "number": 87,
+      "position": "DF",
+      "birth": "2008-01-31",
+      "height": 165,
+      "weight": 55,
+      "previousTeam": "総社南高校"
+    },
+    {
+      "id": "shimane-92813a001f7c",
+      "teamId": "shimane",
+      "name": "岩成 隼和",
+      "normalizedName": "岩成隼和",
+      "englishName": "IWANARI Hayato",
+      "number": 88,
+      "position": "DF",
+      "birth": "2007-04-17",
+      "height": 171,
+      "weight": 62,
+      "previousTeam": "広島皆実高校"
+    },
+    {
+      "id": "shimane-f1b9c6903fb8",
+      "teamId": "shimane",
+      "name": "小西 純也",
+      "normalizedName": "小西純也",
+      "englishName": "KONISHI Junya",
+      "number": 91,
+      "position": "FW",
+      "birth": "2003-10-03",
+      "height": 185,
+      "weight": 82,
+      "previousTeam": "刀根山高校"
+    },
+    {
+      "id": "shimane-8d23b141de4f",
+      "teamId": "shimane",
+      "name": "川上 大翔",
+      "normalizedName": "川上大翔",
+      "englishName": "KAWAKAMI Hiroto",
+      "number": 96,
+      "position": "FW",
+      "birth": "2007-09-11",
+      "height": 172,
+      "weight": 64,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-bbdf2b4474fe",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "貞近 晴飛",
+      "normalizedName": "貞近晴飛",
+      "englishName": "SADACHIKA Haruto",
+      "number": 1,
+      "position": "GK",
+      "birth": "2006-04-30",
+      "height": 169,
+      "weight": 64,
+      "previousTeam": "吉田高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-240295e005e8",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "伊藤 大司",
+      "normalizedName": "伊藤大司",
+      "englishName": "ITO Taiji",
+      "number": 2,
+      "position": "DF",
+      "birth": "2005-04-06",
+      "height": 170,
+      "weight": 62,
+      "previousTeam": "出雲工業高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-feba77afc814",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "坂田 憲治",
+      "normalizedName": "坂田憲治",
+      "englishName": "SAKATA Kenji",
+      "number": 4,
+      "position": "DF",
+      "birth": "2005-10-03",
+      "height": 175,
+      "weight": 68,
+      "previousTeam": "広島皆実高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-1408dd1a9122",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "岩政 侑來",
+      "normalizedName": "岩政侑來",
+      "englishName": "IWAMASA Yura",
+      "number": 5,
+      "position": "DF",
+      "birth": "2005-11-17",
+      "height": 174,
+      "weight": 64,
+      "previousTeam": "高川学園高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-c203019f5427",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "山中 大樹",
+      "normalizedName": "山中大樹",
+      "englishName": "YAMANAKA Hiroki",
+      "number": 10,
+      "position": "MF",
+      "birth": "2005-05-07",
+      "height": 166,
+      "weight": 58,
+      "previousTeam": "高川学園高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-767ab050bb19",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "松井 星",
+      "normalizedName": "松井星",
+      "englishName": "MATSUI Sei",
+      "number": 12,
+      "position": "MF",
+      "birth": "2005-12-31",
+      "height": 177,
+      "weight": 65,
+      "previousTeam": "広島工業高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-09178b2173d2",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "岡田 拓磨",
+      "normalizedName": "岡田拓磨",
+      "englishName": "OKADA Takuma",
+      "number": 15,
+      "position": "MF",
+      "birth": "2007-09-19",
+      "height": 161,
+      "weight": 56,
+      "previousTeam": "広島観音高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-363db3d7356a",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "友川 励",
+      "normalizedName": "友川励",
+      "englishName": "TOMOKAWA Rei",
+      "number": 16,
+      "position": "MF",
+      "birth": "2007-07-05",
+      "height": 170,
+      "weight": 63,
+      "previousTeam": "沼田高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-ffe42f87b843",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "中西 奏太",
+      "normalizedName": "中西奏太",
+      "englishName": "NAKANISHI Sota",
+      "number": 18,
+      "position": "MF",
+      "birth": "2007-06-02",
+      "height": 174,
+      "weight": 64,
+      "previousTeam": "広島観音高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-2ad3ef55eb59",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高橋 洸星",
+      "normalizedName": "高橋洸星",
+      "englishName": "TAKAHASHI Kosei",
+      "number": 20,
+      "position": "FW",
+      "birth": "2005-06-02",
+      "height": 172,
+      "weight": 57,
+      "previousTeam": "福山葦陽高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-e57fd2d730df",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "梅本 達也",
+      "normalizedName": "梅本達也",
+      "englishName": "UMEMOTO Tatsuya",
+      "number": 22,
+      "position": "MF",
+      "birth": "2005-03-07",
+      "height": 172,
+      "weight": 65,
+      "previousTeam": "広島国際学院高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-0d92744f4a5a",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "高木 蒼志",
+      "normalizedName": "高木蒼志",
+      "englishName": "TAKAKI Soshi",
+      "number": 24,
+      "position": "FW",
+      "birth": "2006-05-09",
+      "height": 166,
+      "weight": 55,
+      "previousTeam": "出雲工業高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-1869c061346a",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "天道 朝皐",
+      "normalizedName": "天道朝皐",
+      "englishName": "TENDO Asataka",
+      "number": 26,
+      "position": "DF",
+      "birth": "2007-04-04",
+      "height": 172,
+      "weight": 68,
+      "previousTeam": "広島観音高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-241101047b80",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "三宅 優輝",
+      "normalizedName": "三宅優輝",
+      "englishName": "MIYAKE Yuki",
+      "number": 28,
+      "position": "DF",
+      "birth": "2004-06-25",
+      "height": 172,
+      "weight": 59,
+      "previousTeam": "広島工業大学高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-aeaa71ff7ede",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "山本 晃大",
+      "normalizedName": "山本晃大",
+      "englishName": "YAMAMOTO Kota",
+      "number": 29,
+      "position": "MF",
+      "birth": "2005-06-11",
+      "height": 171,
+      "weight": 62,
+      "previousTeam": "玉野光南高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-27e7f3206801",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "田中 翔哉",
+      "normalizedName": "田中翔哉",
+      "englishName": "TANAKA Shoya",
+      "number": 33,
+      "position": "DF",
+      "birth": "2007-09-10",
+      "height": 163,
+      "weight": 59,
+      "previousTeam": "広陵高校"
+    },
+    {
+      "id": "hiroshima-institute-of-technology-4a4d10729fd8",
+      "teamId": "hiroshima-institute-of-technology",
+      "name": "三戸 翼",
+      "normalizedName": "三戸翼",
+      "englishName": "MITO Tsubasa",
+      "number": 38,
+      "position": "FW",
+      "birth": "2007-06-10",
+      "height": 176,
+      "weight": 69,
+      "previousTeam": "小野田工業高校"
+    },
+    {
+      "id": "kibi-international-89928d189528",
+      "teamId": "kibi-international",
+      "name": "田中 瑛一",
+      "normalizedName": "田中瑛一",
+      "englishName": "TANAKA Eiichi",
+      "number": 1,
+      "position": "GK",
+      "birth": "2004-10-31",
+      "height": 177,
+      "weight": 72,
+      "previousTeam": "玉野光南高校"
+    },
+    {
+      "id": "kibi-international-3d05510379bf",
+      "teamId": "kibi-international",
+      "name": "桑原 飛比希",
+      "normalizedName": "桑原飛比希",
+      "englishName": "KUWAHARA Hibiki",
+      "number": 3,
+      "position": "DF",
+      "birth": "2007-07-27",
+      "height": 176,
+      "weight": 70,
+      "previousTeam": "倉敷高校"
+    },
+    {
+      "id": "kibi-international-59997189659b",
+      "teamId": "kibi-international",
+      "name": "杉原 悠太",
+      "normalizedName": "杉原悠太",
+      "englishName": "SUGIHARA Yuta",
+      "number": 4,
+      "position": "DF",
+      "birth": "2004-10-13",
+      "height": 158,
+      "weight": 55,
+      "previousTeam": "高松南高校"
+    },
+    {
+      "id": "kibi-international-3972485bc32d",
+      "teamId": "kibi-international",
+      "name": "藤原 拓斗",
+      "normalizedName": "藤原拓斗",
+      "englishName": "FUJIWARA Takuto",
+      "number": 5,
+      "position": "MF",
+      "birth": "2008-01-31",
+      "height": 166,
+      "weight": 63,
+      "previousTeam": "倉敷工業高校"
+    },
+    {
+      "id": "kibi-international-bf715a46932f",
+      "teamId": "kibi-international",
+      "name": "神﨑 陽大",
+      "normalizedName": "神﨑陽大",
+      "englishName": "KANZAKI Hinata",
+      "number": 6,
+      "position": "MF",
+      "birth": "2006-01-30",
+      "height": 165,
+      "weight": 60,
+      "previousTeam": "清水ヶ丘高校"
+    },
+    {
+      "id": "kibi-international-de0bfd3c768a",
+      "teamId": "kibi-international",
+      "name": "滝口 央輔",
+      "normalizedName": "滝口央輔",
+      "englishName": "TAKIGUCHI Osuke",
+      "number": 7,
+      "position": "MF",
+      "birth": "2006-03-09",
+      "height": 168,
+      "weight": 60,
+      "previousTeam": "広島新庄高校"
+    },
+    {
+      "id": "kibi-international-a46311551388",
+      "teamId": "kibi-international",
+      "name": "目次 啓悟",
+      "normalizedName": "目次啓悟",
+      "englishName": "METSUGI Keigo",
+      "number": 8,
+      "position": "MF",
+      "birth": "2004-11-18",
+      "height": 163,
+      "weight": 59,
+      "previousTeam": "鳥取U-18"
+    },
+    {
+      "id": "kibi-international-77dde6e3eb9a",
+      "teamId": "kibi-international",
+      "name": "藤原 太陽",
+      "normalizedName": "藤原太陽",
+      "englishName": "FUJIWARA Taiyo",
+      "number": 9,
+      "position": "FW",
+      "birth": "2006-02-06",
+      "height": 176,
+      "weight": 66,
+      "previousTeam": "米子北高校"
+    },
+    {
+      "id": "kibi-international-3d5a34eddb79",
+      "teamId": "kibi-international",
+      "name": "葛籠 聖斗",
+      "normalizedName": "葛籠聖斗",
+      "englishName": "TSUZURA Masato",
+      "number": 10,
+      "position": "MF",
+      "birth": "2007-11-29",
+      "height": 161,
+      "weight": 55,
+      "previousTeam": "明徳義塾高校"
+    },
+    {
+      "id": "kibi-international-358be880668d",
+      "teamId": "kibi-international",
+      "name": "泉 日向",
+      "normalizedName": "泉日向",
+      "englishName": "IZUMI Hinata",
+      "number": 11,
+      "position": "FW",
+      "birth": "2004-05-21",
+      "height": 157,
+      "weight": 55,
+      "previousTeam": "高松南高校"
+    },
+    {
+      "id": "kibi-international-3b30f5a46215",
+      "teamId": "kibi-international",
+      "name": "村上 元蔵",
+      "normalizedName": "村上元蔵",
+      "englishName": "MURAKAMI Genzo",
+      "number": 12,
+      "position": "GK",
+      "birth": "2006-09-01",
+      "height": 181,
+      "weight": 75,
+      "previousTeam": "新田高校"
+    },
+    {
+      "id": "kibi-international-aeea3a052fa2",
+      "teamId": "kibi-international",
+      "name": "石原 快地",
+      "normalizedName": "石原快地",
+      "englishName": "ISHIHARA Kaichi",
+      "number": 14,
+      "position": "FW",
+      "birth": "2007-12-08",
+      "height": 173,
+      "weight": 72,
+      "previousTeam": "備前緑陽高校"
+    },
+    {
+      "id": "kibi-international-869158a62015",
+      "teamId": "kibi-international",
+      "name": "古庄 倭",
+      "normalizedName": "古庄倭",
+      "englishName": "FURUSHO Yamato",
+      "number": 15,
+      "position": "FW",
+      "birth": "2005-06-15",
+      "height": 170,
+      "weight": 60,
+      "previousTeam": "倉敷翠松高校"
+    },
+    {
+      "id": "kibi-international-b876443cdbb6",
+      "teamId": "kibi-international",
+      "name": "小林 春翔",
+      "normalizedName": "小林春翔",
+      "englishName": "KOBAYASHI Haruto",
+      "number": 16,
+      "position": "MF",
+      "birth": "2006-03-17",
+      "height": 167,
+      "weight": 63,
+      "previousTeam": "真庭高校"
+    },
+    {
+      "id": "kibi-international-c636fc19c4fa",
+      "teamId": "kibi-international",
+      "name": "藤井 千耀",
+      "normalizedName": "藤井千耀",
+      "englishName": "FUJII Chiaki",
+      "number": 19,
+      "position": "DF",
+      "birth": "2006-09-16",
+      "height": 177,
+      "weight": 66,
+      "previousTeam": "山口農業高校"
+    },
+    {
+      "id": "kibi-international-b1245740a2c6",
+      "teamId": "kibi-international",
+      "name": "岡田 晃成",
+      "normalizedName": "岡田晃成",
+      "englishName": "OKADA Kosei",
+      "number": 20,
+      "position": "DF",
+      "birth": "2006-05-23",
+      "height": 173,
+      "weight": 65,
+      "previousTeam": "浜田高校"
+    },
+    {
+      "id": "shujitsu-4b4cc7e085a3",
+      "teamId": "shujitsu",
+      "name": "三宅 諒和",
+      "normalizedName": "三宅諒和",
+      "englishName": "MIYAKE Ryowa",
+      "number": 1,
+      "position": "GK",
+      "birth": "2007-11-03",
+      "height": 182,
+      "weight": 68,
+      "previousTeam": "笠岡商業高校"
+    },
+    {
+      "id": "shujitsu-ad51b07e3366",
+      "teamId": "shujitsu",
+      "name": "深坂 柊真",
+      "normalizedName": "深坂柊真",
+      "englishName": "FUKASAKA Shuma",
+      "number": 3,
+      "position": "MF",
+      "birth": "2006-11-30",
+      "height": 166,
+      "weight": 60,
+      "previousTeam": "西大寺高校"
+    },
+    {
+      "id": "shujitsu-4f710db28c92",
+      "teamId": "shujitsu",
+      "name": "増岡 唯",
+      "normalizedName": "増岡唯",
+      "englishName": "MASUOKA Yui",
+      "number": 4,
+      "position": "DF",
+      "birth": "2006-05-24",
+      "height": 173,
+      "weight": 67,
+      "previousTeam": "笠岡商業高校"
+    },
+    {
+      "id": "shujitsu-93c1cd2b6ab6",
+      "teamId": "shujitsu",
+      "name": "浦 昌吾",
+      "normalizedName": "浦昌吾",
+      "englishName": "URA Shogo",
+      "number": 5,
+      "position": "DF",
+      "birth": "2006-07-27",
+      "height": 180,
+      "weight": 72,
+      "previousTeam": "創志学園高校"
+    },
+    {
+      "id": "shujitsu-3ebfbeba4abe",
+      "teamId": "shujitsu",
+      "name": "海士部 琉衣",
+      "normalizedName": "海士部琉衣",
+      "englishName": "AMABE Rui",
+      "number": 6,
+      "position": "DF",
+      "birth": "2007-03-03",
+      "height": 172,
+      "weight": 64,
+      "previousTeam": "関西高校"
+    },
+    {
+      "id": "shujitsu-06121db49f3f",
+      "teamId": "shujitsu",
+      "name": "末津 郁",
+      "normalizedName": "末津郁",
+      "englishName": "SUETSU Kaoru",
+      "number": 7,
+      "position": "DF",
+      "birth": "2005-06-02",
+      "height": 178,
+      "weight": 70,
+      "previousTeam": "玉野高校"
+    },
+    {
+      "id": "shujitsu-d1c8fdbc08c2",
+      "teamId": "shujitsu",
+      "name": "野上 晴矢",
+      "normalizedName": "野上晴矢",
+      "englishName": "NOGAMI Haruya",
+      "number": 8,
+      "position": "MF",
+      "birth": "2006-04-08",
+      "height": 166,
+      "weight": 60,
+      "previousTeam": "瀬戸高校"
+    },
+    {
+      "id": "shujitsu-b7b94966229f",
+      "teamId": "shujitsu",
+      "name": "石原 心",
+      "normalizedName": "石原心",
+      "englishName": "ISHIHARA Mune",
+      "number": 9,
+      "position": "MF",
+      "birth": "2007-11-25",
+      "height": 173,
+      "weight": 61,
+      "previousTeam": "倉敷古城池高校"
+    },
+    {
+      "id": "shujitsu-aaa4d35ad439",
+      "teamId": "shujitsu",
+      "name": "小田 颯汰",
+      "normalizedName": "小田颯汰",
+      "englishName": "ODA Sota",
+      "number": 10,
+      "position": "MF",
+      "birth": "2006-12-19",
+      "height": 172,
+      "weight": 70,
+      "previousTeam": "尽誠学園高校"
+    },
+    {
+      "id": "shujitsu-b0b3ca02d2c8",
+      "teamId": "shujitsu",
+      "name": "宮崎 琉生",
+      "normalizedName": "宮崎琉生",
+      "englishName": "MIYAZAKI Ryuki",
+      "number": 11,
+      "position": "FW",
+      "birth": "2007-02-10",
+      "height": 167,
+      "weight": 65,
+      "previousTeam": "玉野光南高校"
+    },
+    {
+      "id": "shujitsu-60d379f7056d",
+      "teamId": "shujitsu",
+      "name": "佐々木 典咲",
+      "normalizedName": "佐々木典咲",
+      "englishName": "SASAKI Tsukasa",
+      "number": 12,
+      "position": "MF",
+      "birth": "2005-04-02",
+      "height": 170,
+      "weight": 60,
+      "previousTeam": "倉敷古城池高校"
+    },
+    {
+      "id": "shujitsu-72c55d64e29e",
+      "teamId": "shujitsu",
+      "name": "石原 拓歩",
+      "normalizedName": "石原拓歩",
+      "englishName": "ISHIHARA Takumi",
+      "number": 13,
+      "position": "MF",
+      "birth": "2006-05-03",
+      "height": 159,
+      "weight": 55,
+      "previousTeam": "美作高校"
+    },
+    {
+      "id": "shujitsu-fdc588b88b25",
+      "teamId": "shujitsu",
+      "name": "古宮 蓮士",
+      "normalizedName": "古宮蓮士",
+      "englishName": "KOMIYA Renji",
+      "number": 14,
+      "position": "MF",
+      "birth": "2006-05-05",
+      "height": 176,
+      "weight": 66,
+      "previousTeam": "笠岡商業高校"
+    },
+    {
+      "id": "shujitsu-2e4f7b993d00",
+      "teamId": "shujitsu",
+      "name": "堀 稜佐",
+      "normalizedName": "堀稜佐",
+      "englishName": "HORI Issa",
+      "number": 15,
+      "position": "FW",
+      "birth": "2007-06-23",
+      "height": 177,
+      "weight": 63,
+      "previousTeam": "笠岡商業高校"
+    },
+    {
+      "id": "shujitsu-d85b9d404276",
+      "teamId": "shujitsu",
+      "name": "椎葉 颯太",
+      "normalizedName": "椎葉颯太",
+      "englishName": "SHIIBA Sota",
+      "number": 16,
+      "position": "GK",
+      "birth": "2007-11-18",
+      "height": 174,
+      "weight": 62,
+      "previousTeam": "岡山龍谷高校"
+    },
+    {
+      "id": "shujitsu-5559c5526a7f",
+      "teamId": "shujitsu",
+      "name": "高月 愛輝",
+      "normalizedName": "高月愛輝",
+      "englishName": "TAKATSUKI Aiki",
+      "number": 17,
+      "position": "FW",
+      "birth": "2006-06-30",
+      "height": 178,
+      "weight": 72,
+      "previousTeam": "富山中学校"
+    },
+    {
+      "id": "shujitsu-07ba437b3f99",
+      "teamId": "shujitsu",
+      "name": "友宗 聡士",
+      "normalizedName": "友宗聡士",
+      "englishName": "TOMOMUNE Satoshi",
+      "number": 18,
+      "position": "DF",
+      "birth": "2006-09-20",
+      "height": 172,
+      "weight": 69,
+      "previousTeam": "就実高校"
+    },
+    {
+      "id": "shujitsu-3bd4141aca4e",
+      "teamId": "shujitsu",
+      "name": "大谷 真輝",
+      "normalizedName": "大谷真輝",
+      "englishName": "OTANI Masateru",
+      "number": 19,
+      "position": "FW",
+      "birth": "2006-03-14",
+      "height": 166,
+      "weight": 58,
+      "previousTeam": ""
+    },
+    {
+      "id": "shujitsu-c5ca2f53d943",
+      "teamId": "shujitsu",
+      "name": "間野 稜汰",
+      "normalizedName": "間野稜汰",
+      "englishName": "MANO Ryota",
+      "number": 21,
+      "position": "MF",
+      "birth": "2008-03-25",
+      "height": 160,
+      "weight": 54,
+      "previousTeam": "総社高校"
+    },
+    {
+      "id": "shujitsu-2ce4cea263e9",
+      "teamId": "shujitsu",
+      "name": "土江 陸翔",
+      "normalizedName": "土江陸翔",
+      "englishName": "TSUCHIE Rikuto",
+      "number": 22,
+      "position": "DF",
+      "birth": "2006-08-26",
+      "height": 165,
+      "weight": 57,
+      "previousTeam": "新見高校"
+    },
+    {
+      "id": "shujitsu-ae4b6835721b",
+      "teamId": "shujitsu",
+      "name": "正金 結海",
+      "normalizedName": "正金結海",
+      "englishName": "MASAKANE Yu",
+      "number": 23,
+      "position": "MF",
+      "birth": "2007-08-05",
+      "height": 165,
+      "weight": 56,
+      "previousTeam": "長船中学校"
+    },
+    {
+      "id": "shujitsu-db9563364d6d",
+      "teamId": "shujitsu",
+      "name": "平元 珀愛",
+      "normalizedName": "平元珀愛",
+      "englishName": "HIRAMOTO Hakua",
+      "number": 24,
+      "position": "MF",
+      "birth": "2007-04-21",
+      "height": 170,
+      "weight": 65,
+      "previousTeam": "盈進高校"
+    },
+    {
+      "id": "shujitsu-d7a77701154a",
+      "teamId": "shujitsu",
+      "name": "倉貫 立夢",
+      "normalizedName": "倉貫立夢",
+      "englishName": "KURANUKI Rimu",
+      "number": 25,
+      "position": "MF",
+      "birth": "2007-09-17",
+      "height": 175,
+      "weight": 63,
+      "previousTeam": "琉球U-18"
+    },
+    {
+      "id": "shujitsu-32795f6b4764",
+      "teamId": "shujitsu",
+      "name": "庄盛 祐輝",
+      "normalizedName": "庄盛祐輝",
+      "englishName": "SHOMORI Yuki",
+      "number": 26,
+      "position": "DF",
+      "birth": "2008-02-20",
+      "height": 169,
+      "weight": 61,
+      "previousTeam": "倉敷古城池高校"
+    },
+    {
+      "id": "shujitsu-b88e3042c7f2",
+      "teamId": "shujitsu",
+      "name": "セビヤ トランクナー ビクトル ガブリエル",
+      "normalizedName": "セビヤトランクナービクトルガブリエル",
+      "englishName": "",
+      "number": 28,
+      "position": "MF",
+      "birth": "2005-09-25",
+      "height": 168,
+      "weight": 65,
+      "previousTeam": ""
+    },
+    {
+      "id": "shujitsu-931f7979a407",
+      "teamId": "shujitsu",
+      "name": "伊東 大樹",
+      "normalizedName": "伊東大樹",
+      "englishName": "ITO Daiki",
+      "number": 29,
+      "position": "MF",
+      "birth": "2005-06-25",
+      "height": 165,
+      "weight": 57,
+      "previousTeam": "明誠学院高校"
+    },
+    {
+      "id": "shujitsu-d6719ea174f7",
+      "teamId": "shujitsu",
+      "name": "小倉 真",
+      "normalizedName": "小倉真",
+      "englishName": "OGURA Shin",
+      "number": 30,
+      "position": "DF",
+      "birth": "2006-08-30",
+      "height": 160,
+      "weight": 48,
+      "previousTeam": "操山中学校"
+    },
+    {
+      "id": "shujitsu-7b8d09ede607",
+      "teamId": "shujitsu",
+      "name": "白川 涼太",
+      "normalizedName": "白川涼太",
+      "englishName": "SHIRAKAWA Ryota",
+      "number": 31,
+      "position": "FW",
+      "birth": "2007-06-17",
+      "height": 165,
+      "weight": 70,
+      "previousTeam": "明誠学院高校"
+    },
+    {
+      "id": "shujitsu-88aa6ae3c47a",
+      "teamId": "shujitsu",
+      "name": "塩瀬 敦士",
+      "normalizedName": "塩瀬敦士",
+      "englishName": "SHIOSE Atsushi",
+      "number": 32,
+      "position": "FW",
+      "birth": "2008-03-01",
+      "height": 167,
+      "weight": 58,
+      "previousTeam": "芳泉中学校"
+    },
+    {
+      "id": "shujitsu-87f7e8b494e6",
+      "teamId": "shujitsu",
+      "name": "森岡 璃竣",
+      "normalizedName": "森岡璃竣",
+      "englishName": "MORIOKA Rio",
+      "number": 34,
+      "position": "DF",
+      "birth": "2007-07-30",
+      "height": 164,
+      "weight": 61,
+      "previousTeam": "広島翔洋高校"
+    },
+    {
+      "id": "onomichi-city-bae2ea727f11",
+      "teamId": "onomichi-city",
+      "name": "瀬尾 颯",
+      "normalizedName": "瀬尾颯",
+      "englishName": "SEO Hayate",
+      "number": 1,
+      "position": "GK",
+      "birth": "2005-11-11",
+      "height": 171,
+      "weight": 65,
+      "previousTeam": "福山葦陽高校"
+    },
+    {
+      "id": "onomichi-city-4b0aca6b0f16",
+      "teamId": "onomichi-city",
+      "name": "山根 裕太",
+      "normalizedName": "山根裕太",
+      "englishName": "YAMANE Yuta",
+      "number": 2,
+      "position": "DF",
+      "birth": "2004-05-08",
+      "height": 170,
+      "weight": 75,
+      "previousTeam": "尾道高校"
+    },
+    {
+      "id": "onomichi-city-40d23272c4ac",
+      "teamId": "onomichi-city",
+      "name": "赤木 湊",
+      "normalizedName": "赤木湊",
+      "englishName": "AKAGI Minato",
+      "number": 3,
+      "position": "DF",
+      "birth": "2006-03-07",
+      "height": 165,
+      "weight": 56,
+      "previousTeam": "津東高校"
+    },
+    {
+      "id": "onomichi-city-dbe92553a28e",
+      "teamId": "onomichi-city",
+      "name": "関口 泉",
+      "normalizedName": "関口泉",
+      "englishName": "SEKIGUCHI Sen",
+      "number": 4,
+      "position": "DF",
+      "birth": "2004-04-25",
+      "height": 175,
+      "weight": 65,
+      "previousTeam": "自由の森学園高校"
+    },
+    {
+      "id": "onomichi-city-d677c0f4993c",
+      "teamId": "onomichi-city",
+      "name": "柏原 詢",
+      "normalizedName": "柏原詢",
+      "englishName": "KASHIHARA Shun",
+      "number": 5,
+      "position": "MF",
+      "birth": "2007-09-18",
+      "height": 171,
+      "weight": 68,
+      "previousTeam": "尾道東高校"
+    },
+    {
+      "id": "onomichi-city-22c899a4b8af",
+      "teamId": "onomichi-city",
+      "name": "新本 啓太",
+      "normalizedName": "新本啓太",
+      "englishName": "SHINMOTO Keita",
+      "number": 6,
+      "position": "MF",
+      "birth": "2005-11-28",
+      "height": 172,
+      "weight": 59,
+      "previousTeam": "賀茂高校"
+    },
+    {
+      "id": "onomichi-city-652ce272c3de",
+      "teamId": "onomichi-city",
+      "name": "飛田 稀海",
+      "normalizedName": "飛田稀海",
+      "englishName": "TOBITA Nozomi",
+      "number": 7,
+      "position": "FW",
+      "birth": "2004-04-19",
+      "height": 171,
+      "weight": 65,
+      "previousTeam": "如水館高校"
+    },
+    {
+      "id": "onomichi-city-1a746fc3e1b3",
+      "teamId": "onomichi-city",
+      "name": "道端 享介",
+      "normalizedName": "道端享介",
+      "englishName": "MICHIBATA Kyosuke",
+      "number": 8,
+      "position": "MF",
+      "birth": "2004-04-30",
+      "height": 171,
+      "weight": 68,
+      "previousTeam": "飯田高校"
+    },
+    {
+      "id": "onomichi-city-7ba682803c1b",
+      "teamId": "onomichi-city",
+      "name": "徳田 悠良",
+      "normalizedName": "徳田悠良",
+      "englishName": "TOKUDA Yura",
+      "number": 9,
+      "position": "FW",
+      "birth": "2006-01-11",
+      "height": 168,
+      "weight": 93,
+      "previousTeam": "高松桜井高校"
+    },
+    {
+      "id": "onomichi-city-40516bcc25fd",
+      "teamId": "onomichi-city",
+      "name": "須藤 秀彩",
+      "normalizedName": "須藤秀彩",
+      "englishName": "SUDO Hiiro",
+      "number": 10,
+      "position": "FW",
+      "birth": "2004-12-07",
+      "height": 173,
+      "weight": 62,
+      "previousTeam": "長良高校"
+    },
+    {
+      "id": "onomichi-city-1d588629efb3",
+      "teamId": "onomichi-city",
+      "name": "篠田 正樹",
+      "normalizedName": "篠田正樹",
+      "englishName": "SHINODA Masaki",
+      "number": 11,
+      "position": "FW",
+      "birth": "2006-06-05",
+      "height": 179,
+      "weight": 65,
+      "previousTeam": "西脇高校"
+    },
+    {
+      "id": "onomichi-city-54238cf689a4",
+      "teamId": "onomichi-city",
+      "name": "テッ ウー マン",
+      "normalizedName": "テッウーマン",
+      "englishName": "THET Oo Mann",
+      "number": 13,
+      "position": "FW",
+      "birth": "2001-10-21",
+      "height": 171,
+      "weight": 61,
+      "previousTeam": "モンユワ工科大学"
+    },
+    {
+      "id": "onomichi-city-8687527be3b6",
+      "teamId": "onomichi-city",
+      "name": "弘中 佳太",
+      "normalizedName": "弘中佳太",
+      "englishName": "HIRONAKA Keita",
+      "number": 14,
+      "position": "MF",
+      "birth": "2006-02-27",
+      "height": 165,
+      "weight": 55,
+      "previousTeam": "宇部高校"
+    },
+    {
+      "id": "onomichi-city-6a36fb7c18b4",
+      "teamId": "onomichi-city",
+      "name": "蘆尾 悠太",
+      "normalizedName": "蘆尾悠太",
+      "englishName": "ASHIO Yuta",
+      "number": 15,
+      "position": "MF",
+      "birth": "2005-10-28",
+      "height": 171,
+      "weight": 58,
+      "previousTeam": "ブリロ東広島FC"
+    },
+    {
+      "id": "onomichi-city-9885d3389491",
+      "teamId": "onomichi-city",
+      "name": "加藤 航",
+      "normalizedName": "加藤航",
+      "englishName": "KATO Ko",
+      "number": 16,
+      "position": "FW",
+      "birth": "2005-04-08",
+      "height": 170,
+      "weight": 58,
+      "previousTeam": "高松商業高校"
+    },
+    {
+      "id": "onomichi-city-0b4b5f5db9d0",
+      "teamId": "onomichi-city",
+      "name": "樋口 和樹",
+      "normalizedName": "樋口和樹",
+      "englishName": "HIGUCHI Kazuki",
+      "number": 17,
+      "position": "DF",
+      "birth": "2008-02-03",
+      "height": 163,
+      "weight": 50,
+      "previousTeam": "玉野光南高校"
+    },
+    {
+      "id": "onomichi-city-6b4c94817884",
+      "teamId": "onomichi-city",
+      "name": "三輪 耕平",
+      "normalizedName": "三輪耕平",
+      "englishName": "MIWA Kohei",
+      "number": 18,
+      "position": "MF",
+      "birth": "2006-07-12",
+      "height": 170,
+      "weight": 60,
+      "previousTeam": "興國高校"
+    },
+    {
+      "id": "onomichi-city-ea835be50961",
+      "teamId": "onomichi-city",
+      "name": "田中 遥也",
+      "normalizedName": "田中遥也",
+      "englishName": "TANAKA Haruya",
+      "number": 19,
+      "position": "FW",
+      "birth": "2007-04-24",
+      "height": 164,
+      "weight": 56,
+      "previousTeam": "江津高校"
+    },
+    {
+      "id": "onomichi-city-8db1fbbd3146",
+      "teamId": "onomichi-city",
+      "name": "佐藤 旬一",
+      "normalizedName": "佐藤旬一",
+      "englishName": "SATO Shunichi",
+      "number": 20,
+      "position": "FW",
+      "birth": "2007-10-11",
+      "height": 178,
+      "weight": 68,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "onomichi-city-7fb13dfcf933",
+      "teamId": "onomichi-city",
+      "name": "丸山 悠太",
+      "normalizedName": "丸山悠太",
+      "englishName": "MARUYAMA Yuta",
+      "number": 21,
+      "position": "MF",
+      "birth": "2007-06-05",
+      "height": 172,
+      "weight": 75,
+      "previousTeam": "宇和高校"
+    },
+    {
+      "id": "onomichi-city-f770f900f0f7",
+      "teamId": "onomichi-city",
+      "name": "田邉 楓仁",
+      "normalizedName": "田邉楓仁",
+      "englishName": "TANABE Futo",
+      "number": 24,
+      "position": "FW",
+      "birth": "2007-11-25",
+      "height": 166,
+      "weight": 52,
+      "previousTeam": "玉島高校"
+    },
+    {
+      "id": "onomichi-city-d9436b09680d",
+      "teamId": "onomichi-city",
+      "name": "橘 智瑛",
+      "normalizedName": "橘智瑛",
+      "englishName": "TACHIBANA Chiaki",
+      "number": 25,
+      "position": "FW",
+      "birth": "2007-11-12",
+      "height": 173,
+      "weight": 68,
+      "previousTeam": "AS摩耶"
+    },
+    {
+      "id": "university-of-shimane-f6f19759f56f",
+      "teamId": "university-of-shimane",
+      "name": "川本 康生",
+      "normalizedName": "川本康生",
+      "englishName": "KAWAMOTO Kosei",
+      "number": 1,
+      "position": "GK",
+      "birth": "2005-04-20",
+      "height": 174,
+      "weight": 64,
+      "previousTeam": "松江農林高校"
+    },
+    {
+      "id": "university-of-shimane-4882cf7ba5cb",
+      "teamId": "university-of-shimane",
+      "name": "河野 斡大",
+      "normalizedName": "河野斡大",
+      "englishName": "KONO Kanta",
+      "number": 4,
+      "position": "DF",
+      "birth": "2005-08-25",
+      "height": 176,
+      "weight": 63,
+      "previousTeam": ""
+    },
+    {
+      "id": "university-of-shimane-e2d55a1dbbdf",
+      "teamId": "university-of-shimane",
+      "name": "松井 遥歩",
+      "normalizedName": "松井遥歩",
+      "englishName": "MATSUI Haruto",
+      "number": 5,
+      "position": "DF",
+      "birth": "2005-03-21",
+      "height": 177,
+      "weight": 75,
+      "previousTeam": "興國高校"
+    },
+    {
+      "id": "university-of-shimane-30c3d19ce751",
+      "teamId": "university-of-shimane",
+      "name": "佐藤 圭斗",
+      "normalizedName": "佐藤圭斗",
+      "englishName": "SATO Keito",
+      "number": 6,
+      "position": "MF",
+      "birth": "2005-10-30",
+      "height": 169,
+      "weight": 55,
+      "previousTeam": "松江南高校"
+    },
+    {
+      "id": "university-of-shimane-5697a524b93c",
+      "teamId": "university-of-shimane",
+      "name": "渡辺 大毅",
+      "normalizedName": "渡辺大毅",
+      "englishName": "WATANABE Daiki",
+      "number": 7,
+      "position": "MF",
+      "birth": "2006-06-05",
+      "height": 164,
+      "weight": 66,
+      "previousTeam": "瀬戸内高校"
+    },
+    {
+      "id": "university-of-shimane-4ca924654873",
+      "teamId": "university-of-shimane",
+      "name": "泉 楓",
+      "normalizedName": "泉楓",
+      "englishName": "IZUMI Kaede",
+      "number": 8,
+      "position": "MF",
+      "birth": "2007-11-12",
+      "height": 164,
+      "weight": 64,
+      "previousTeam": "センアーノ神戸U-１８"
+    },
+    {
+      "id": "university-of-shimane-c70551c5ef67",
+      "teamId": "university-of-shimane",
+      "name": "山口 優樹",
+      "normalizedName": "山口優樹",
+      "englishName": "YAMAGUCHI Yuki",
+      "number": 10,
+      "position": "MF",
+      "birth": "2006-07-20",
+      "height": 172,
+      "weight": 60,
+      "previousTeam": "玉野光南高校"
+    },
+    {
+      "id": "university-of-shimane-37c65b99a94b",
+      "teamId": "university-of-shimane",
+      "name": "津島 晴明",
+      "normalizedName": "津島晴明",
+      "englishName": "TSUSHIMA Haruaki",
+      "number": 12,
+      "position": "DF",
+      "birth": "2006-12-04",
+      "height": 173,
+      "weight": 66,
+      "previousTeam": "広島翔洋高校"
+    },
+    {
+      "id": "university-of-shimane-fa2a4f8d05ae",
+      "teamId": "university-of-shimane",
+      "name": "岩部 義樹",
+      "normalizedName": "岩部義樹",
+      "englishName": "IWABU Yoshiki",
+      "number": 14,
+      "position": "MF",
+      "birth": "2007-07-13",
+      "height": 167,
+      "weight": 62,
+      "previousTeam": ""
+    },
+    {
+      "id": "university-of-shimane-6923ffc70be4",
+      "teamId": "university-of-shimane",
+      "name": "柳楽 怜介",
+      "normalizedName": "柳楽怜介",
+      "englishName": "NAGIRA Reisuke",
+      "number": 17,
+      "position": "MF",
+      "birth": "2007-03-27",
+      "height": 164,
+      "weight": 60,
+      "previousTeam": "開星高校"
+    },
+    {
+      "id": "university-of-shimane-265073d8104d",
+      "teamId": "university-of-shimane",
+      "name": "井谷 魁",
+      "normalizedName": "井谷魁",
+      "englishName": "ITANI Kai",
+      "number": 18,
+      "position": "FW",
+      "birth": "2006-03-15",
+      "height": 178,
+      "weight": 67,
+      "previousTeam": "開星高校"
+    },
+    {
+      "id": "university-of-shimane-2045b9df474f",
+      "teamId": "university-of-shimane",
+      "name": "前田 颯人",
+      "normalizedName": "前田颯人",
+      "englishName": "MAETA Hayato",
+      "number": 22,
+      "position": "DF",
+      "birth": "2005-06-14",
+      "height": 175,
+      "weight": 59,
+      "previousTeam": "興國高校"
+    },
+    {
+      "id": "university-of-shimane-3d3fd84bef31",
+      "teamId": "university-of-shimane",
+      "name": "内藤 颯吾",
+      "normalizedName": "内藤颯吾",
+      "englishName": "NAITO Sogo",
+      "number": 23,
+      "position": "DF",
+      "birth": "2006-09-14",
+      "height": 166,
+      "weight": 62,
+      "previousTeam": "林野高校"
+    },
+    {
+      "id": "university-of-shimane-fb8f1469cbfe",
+      "teamId": "university-of-shimane",
+      "name": "武田 秀翔",
+      "normalizedName": "武田秀翔",
+      "englishName": "TAKEDA Shuto",
+      "number": 24,
+      "position": "DF",
+      "birth": "2007-08-08",
+      "height": 175,
+      "weight": 64,
+      "previousTeam": "社高校"
+    },
+    {
+      "id": "university-of-shimane-2c39481d39a6",
+      "teamId": "university-of-shimane",
+      "name": "池田 陽祐",
+      "normalizedName": "池田陽祐",
+      "englishName": "IKEDA Yosuke",
+      "number": 31,
+      "position": "DF",
+      "birth": "2007-02-01",
+      "height": 175,
+      "weight": 72,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "university-of-shimane-b7f99054dad3",
+      "teamId": "university-of-shimane",
+      "name": "﨑田 翔喜",
+      "normalizedName": "﨑田翔喜",
+      "englishName": "SAKITA Toki",
+      "number": 32,
+      "position": "GK",
+      "birth": "2005-12-19",
+      "height": 168,
+      "weight": 60,
+      "previousTeam": ""
+    },
+    {
+      "id": "university-of-shimane-51100a10a6fe",
+      "teamId": "university-of-shimane",
+      "name": "日野 遼生",
+      "normalizedName": "日野遼生",
+      "englishName": "HINO Ryosei",
+      "number": 34,
+      "position": "DF",
+      "birth": "2007-02-18",
+      "height": 168,
+      "weight": 67,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "university-of-shimane-32df0f94e549",
+      "teamId": "university-of-shimane",
+      "name": "一井 大地",
+      "normalizedName": "一井大地",
+      "englishName": "ICHII Riku",
+      "number": 37,
+      "position": "MF",
+      "birth": "2007-05-29",
+      "height": 168,
+      "weight": 70,
+      "previousTeam": "飯田高校"
+    },
+    {
+      "id": "university-of-shimane-faf3ce96194a",
+      "teamId": "university-of-shimane",
+      "name": "福間 琉晟",
+      "normalizedName": "福間琉晟",
+      "englishName": "FUKUMA Ryusei",
+      "number": 48,
+      "position": "MF",
+      "birth": "2005-04-03",
+      "height": 173,
+      "weight": 68,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "university-of-shimane-a7660ed77484",
+      "teamId": "university-of-shimane",
+      "name": "有富 達哉",
+      "normalizedName": "有富達哉",
+      "englishName": "ARITOMI Tatsuya",
+      "number": 66,
+      "position": "MF",
+      "birth": "2004-09-23",
+      "height": 171,
+      "weight": 66,
+      "previousTeam": "大社高校"
+    },
+    {
+      "id": "university-of-shimane-c46505927bd4",
+      "teamId": "university-of-shimane",
+      "name": "有木 想真",
+      "normalizedName": "有木想真",
+      "englishName": "ARIKI Soma",
+      "number": 74,
+      "position": "MF",
+      "birth": "2007-10-04",
+      "height": 170,
+      "weight": 55,
+      "previousTeam": ""
+    },
+    {
+      "id": "university-of-shimane-777ce42bccbb",
+      "teamId": "university-of-shimane",
+      "name": "秋野 蒼空",
+      "normalizedName": "秋野蒼空",
+      "englishName": "AKINO Sora",
+      "number": 77,
+      "position": "DF",
+      "birth": "2008-02-03",
+      "height": 170,
+      "weight": 61,
+      "previousTeam": "帯広北高校"
+    },
+    {
+      "id": "university-of-shimane-1400efb756d2",
+      "teamId": "university-of-shimane",
+      "name": "吉野 颯",
+      "normalizedName": "吉野颯",
+      "englishName": "YOSHINO So",
+      "number": 82,
+      "position": "DF",
+      "birth": "2004-12-29",
+      "height": 178,
+      "weight": 74,
+      "previousTeam": "広島高陽高校"
+    },
+    {
+      "id": "university-of-shimane-1f4242186eb6",
+      "teamId": "university-of-shimane",
+      "name": "藤本 創大",
+      "normalizedName": "藤本創大",
+      "englishName": "FUJIMOTO Sota",
+      "number": 99,
+      "position": "FW",
+      "birth": "2006-07-27",
+      "height": 177,
+      "weight": 74,
+      "previousTeam": "神戸星城高校"
+    }
+  ],
+  "changes": {
+    "added": [
+      {
+        "id": "okayama-science-dfa54f7343c3",
+        "teamId": "okayama-science",
+        "name": "綱島 翠星"
+      },
+      {
+        "id": "okayama-science-a7032e288514",
+        "teamId": "okayama-science",
+        "name": "眞鍋 悠"
+      },
+      {
+        "id": "okayama-science-0e930d2c6ab9",
+        "teamId": "okayama-science",
+        "name": "村岡 凜太郎"
+      },
+      {
+        "id": "okayama-science-dcb379a99761",
+        "teamId": "okayama-science",
+        "name": "浦川 明日"
+      },
+      {
+        "id": "okayama-science-b1877cc07d48",
+        "teamId": "okayama-science",
+        "name": "久本 育夢"
+      },
+      {
+        "id": "okayama-science-ee7ff2926f8d",
+        "teamId": "okayama-science",
+        "name": "長谷原 雄介"
+      },
+      {
+        "id": "okayama-science-2105397eee96",
+        "teamId": "okayama-science",
+        "name": "池口 十来"
+      },
+      {
+        "id": "okayama-science-27c3e6ad8b6e",
+        "teamId": "okayama-science",
+        "name": "楠木 凰辰"
+      },
+      {
+        "id": "okayama-science-e6d15f8fda17",
+        "teamId": "okayama-science",
+        "name": "遠野 真介"
+      },
+      {
+        "id": "okayama-science-77b0467fca38",
+        "teamId": "okayama-science",
+        "name": "松村 蒼太郎"
+      },
+      {
+        "id": "okayama-science-9e21f889827a",
+        "teamId": "okayama-science",
+        "name": "松原 虹太"
+      },
+      {
+        "id": "okayama-science-86d49443b87b",
+        "teamId": "okayama-science",
+        "name": "植本 陽斗"
+      },
+      {
+        "id": "okayama-science-3b79980eeb72",
+        "teamId": "okayama-science",
+        "name": "廣瀬 智希"
+      },
+      {
+        "id": "okayama-science-3b91b3a33e57",
+        "teamId": "okayama-science",
+        "name": "市之瀬 巧真"
+      },
+      {
+        "id": "okayama-science-ab95052990d2",
+        "teamId": "okayama-science",
+        "name": "中廻 遥"
+      },
+      {
+        "id": "okayama-science-f38303655165",
+        "teamId": "okayama-science",
+        "name": "馬場 和也"
+      },
+      {
+        "id": "okayama-science-5cf456e63178",
+        "teamId": "okayama-science",
+        "name": "平山 蓮"
+      },
+      {
+        "id": "okayama-science-c1c9be3d15fe",
+        "teamId": "okayama-science",
+        "name": "薄井 佑太郎"
+      },
+      {
+        "id": "okayama-science-f58affefba5b",
+        "teamId": "okayama-science",
+        "name": "水上 凉太朗"
+      },
+      {
+        "id": "okayama-science-5c8b0dca984a",
+        "teamId": "okayama-science",
+        "name": "冨家 未来"
+      },
+      {
+        "id": "okayama-science-796981925833",
+        "teamId": "okayama-science",
+        "name": "高塚 叶大"
+      },
+      {
+        "id": "okayama-science-7d7c4de6ac5e",
+        "teamId": "okayama-science",
+        "name": "東 煌"
+      },
+      {
+        "id": "okayama-science-4e330343b0a5",
+        "teamId": "okayama-science",
+        "name": "濵崎 隼太"
+      },
+      {
+        "id": "okayama-science-fa04f8dcdb61",
+        "teamId": "okayama-science",
+        "name": "吉田 基幹"
+      },
+      {
+        "id": "okayama-science-ab794854591b",
+        "teamId": "okayama-science",
+        "name": "橋本 哲弥"
+      },
+      {
+        "id": "okayama-science-89d2f863b853",
+        "teamId": "okayama-science",
+        "name": "小谷 仁"
+      },
+      {
+        "id": "okayama-science-ed16a3b7c275",
+        "teamId": "okayama-science",
+        "name": "高畑 星耶"
+      },
+      {
+        "id": "okayama-science-99a1caf6baf2",
+        "teamId": "okayama-science",
+        "name": "服部 龍之介"
+      },
+      {
+        "id": "okayama-science-5d955f9ceb4d",
+        "teamId": "okayama-science",
+        "name": "岡崎 蒼汰"
+      },
+      {
+        "id": "okayama-science-637436b6f98d",
+        "teamId": "okayama-science",
+        "name": "柴田 大和"
+      },
+      {
+        "id": "okayama-science-d51117865c83",
+        "teamId": "okayama-science",
+        "name": "井上 泰雅"
+      },
+      {
+        "id": "okayama-science-6d2c9e043d60",
+        "teamId": "okayama-science",
+        "name": "杉野 涼"
+      },
+      {
+        "id": "okayama-science-b8db05b03c0d",
+        "teamId": "okayama-science",
+        "name": "丸岡 莉空"
+      },
+      {
+        "id": "okayama-science-2ccaa0d69b69",
+        "teamId": "okayama-science",
+        "name": "近藤 悠翔"
+      },
+      {
+        "id": "okayama-science-234d54316966",
+        "teamId": "okayama-science",
+        "name": "川上 慎吾"
+      },
+      {
+        "id": "okayama-science-ee04933a8282",
+        "teamId": "okayama-science",
+        "name": "美仙 夕月"
+      },
+      {
+        "id": "okayama-science-505003c8f523",
+        "teamId": "okayama-science",
+        "name": "照本 虹大"
+      },
+      {
+        "id": "okayama-science-39383023d606",
+        "teamId": "okayama-science",
+        "name": "小林 優太"
+      },
+      {
+        "id": "okayama-science-e83297b6c1bd",
+        "teamId": "okayama-science",
+        "name": "上平 遼"
+      },
+      {
+        "id": "okayama-science-1152080d18cb",
+        "teamId": "okayama-science",
+        "name": "久城 直樹"
+      },
+      {
+        "id": "okayama-science-260e36547e7e",
+        "teamId": "okayama-science",
+        "name": "藤井 啓斗"
+      },
+      {
+        "id": "okayama-science-eb3a4ad689f5",
+        "teamId": "okayama-science",
+        "name": "沖田 流矢"
+      },
+      {
+        "id": "okayama-science-3f3a4f7ce52f",
+        "teamId": "okayama-science",
+        "name": "片岡 樹希也"
+      },
+      {
+        "id": "okayama-science-8ac2af5f87d9",
+        "teamId": "okayama-science",
+        "name": "三宅 悠我"
+      },
+      {
+        "id": "okayama-science-a31fcdd855b1",
+        "teamId": "okayama-science",
+        "name": "末次 櫂"
+      },
+      {
+        "id": "okayama-science-7d0621e048e3",
+        "teamId": "okayama-science",
+        "name": "綾田 匠眞"
+      },
+      {
+        "id": "okayama-science-27ff22e3ba9b",
+        "teamId": "okayama-science",
+        "name": "神所 朱海"
+      },
+      {
+        "id": "okayama-science-4e0a47a97c52",
+        "teamId": "okayama-science",
+        "name": "小谷 梢太"
+      },
+      {
+        "id": "okayama-science-38e99e1a6c69",
+        "teamId": "okayama-science",
+        "name": "高橋 叶人"
+      },
+      {
+        "id": "okayama-science-5de7cf5fb414",
+        "teamId": "okayama-science",
+        "name": "加賀野 心二郎"
+      },
+      {
+        "id": "okayama-1b6d44bae966",
+        "teamId": "okayama",
+        "name": "石川 悠生"
+      },
+      {
+        "id": "okayama-5c19c712e27c",
+        "teamId": "okayama",
+        "name": "濵田 秀哉"
+      },
+      {
+        "id": "okayama-a1f541351cb7",
+        "teamId": "okayama",
+        "name": "浅田 友成"
+      },
+      {
+        "id": "okayama-b8a00c043674",
+        "teamId": "okayama",
+        "name": "春名 育夢"
+      },
+      {
+        "id": "okayama-1af62c4e7763",
+        "teamId": "okayama",
+        "name": "橋本 正樹"
+      },
+      {
+        "id": "okayama-139bbf819508",
+        "teamId": "okayama",
+        "name": "江見 洋平"
+      },
+      {
+        "id": "okayama-481858105b5d",
+        "teamId": "okayama",
+        "name": "河合 隆真"
+      },
+      {
+        "id": "okayama-b485c40852e0",
+        "teamId": "okayama",
+        "name": "寺坂 遥希"
+      },
+      {
+        "id": "okayama-918ce0904ad9",
+        "teamId": "okayama",
+        "name": "佐藤 佑哉"
+      },
+      {
+        "id": "okayama-fdeb14ec8446",
+        "teamId": "okayama",
+        "name": "亀高 真聡"
+      },
+      {
+        "id": "okayama-5f59f47709b0",
+        "teamId": "okayama",
+        "name": "宮地 優成"
+      },
+      {
+        "id": "okayama-5c428e75d4dc",
+        "teamId": "okayama",
+        "name": "吉野 温己"
+      },
+      {
+        "id": "okayama-5e1a895ca72a",
+        "teamId": "okayama",
+        "name": "田村 隼人"
+      },
+      {
+        "id": "okayama-60114c94a502",
+        "teamId": "okayama",
+        "name": "水畑 柊志"
+      },
+      {
+        "id": "okayama-4d7b8351139f",
+        "teamId": "okayama",
+        "name": "川上 航大"
+      },
+      {
+        "id": "okayama-6f6f482e2710",
+        "teamId": "okayama",
+        "name": "宮山 佳那太"
+      },
+      {
+        "id": "okayama-5d594163674f",
+        "teamId": "okayama",
+        "name": "立山 敢一"
+      },
+      {
+        "id": "okayama-0df4173868e9",
+        "teamId": "okayama",
+        "name": "岸本 健伸"
+      },
+      {
+        "id": "okayama-14e57af38b78",
+        "teamId": "okayama",
+        "name": "島田 凌"
+      },
+      {
+        "id": "okayama-4b00f3794524",
+        "teamId": "okayama",
+        "name": "鍋島 汰一"
+      },
+      {
+        "id": "okayama-44db65e7e1da",
+        "teamId": "okayama",
+        "name": "安原 成一郎"
+      },
+      {
+        "id": "okayama-82394c85f833",
+        "teamId": "okayama",
+        "name": "内田 大洋"
+      },
+      {
+        "id": "okayama-fd8ee03abcf8",
+        "teamId": "okayama",
+        "name": "坂本 崇真"
+      },
+      {
+        "id": "okayama-48bc30051146",
+        "teamId": "okayama",
+        "name": "酒井 大輔"
+      },
+      {
+        "id": "okayama-648cb8c8823e",
+        "teamId": "okayama",
+        "name": "金平 侑真"
+      },
+      {
+        "id": "okayama-c42ad9abdc87",
+        "teamId": "okayama",
+        "name": "清水 海音"
+      },
+      {
+        "id": "okayama-e89514955342",
+        "teamId": "okayama",
+        "name": "辻村 空翔"
+      },
+      {
+        "id": "okayama-5afe6d46866b",
+        "teamId": "okayama",
+        "name": "若林 廉"
+      },
+      {
+        "id": "okayama-8338d692900a",
+        "teamId": "okayama",
+        "name": "小高 彪瑠"
+      },
+      {
+        "id": "okayama-412dfec50061",
+        "teamId": "okayama",
+        "name": "田村 遥人"
+      },
+      {
+        "id": "okayama-62ab07d48412",
+        "teamId": "okayama",
+        "name": "二木 佑心"
+      },
+      {
+        "id": "okayama-6de2ec961387",
+        "teamId": "okayama",
+        "name": "永井 陸渡"
+      },
+      {
+        "id": "okayama-1b18b18998d2",
+        "teamId": "okayama",
+        "name": "畠山 晃弥"
+      },
+      {
+        "id": "okayama-bd23005b3a85",
+        "teamId": "okayama",
+        "name": "古賀 悠聖"
+      },
+      {
+        "id": "okayama-003428dbe9d6",
+        "teamId": "okayama",
+        "name": "安野 希男"
+      },
+      {
+        "id": "okayama-2bdc15a1da93",
+        "teamId": "okayama",
+        "name": "中川 大翔"
+      },
+      {
+        "id": "okayama-19b2068afe82",
+        "teamId": "okayama",
+        "name": "箕浦 稜"
+      },
+      {
+        "id": "okayama-7f5842ce9112",
+        "teamId": "okayama",
+        "name": "岡村 圭修"
+      },
+      {
+        "id": "okayama-1e6d4b2306cc",
+        "teamId": "okayama",
+        "name": "小川 聖斗"
+      },
+      {
+        "id": "okayama-5e899327cbcb",
+        "teamId": "okayama",
+        "name": "三河内 結矢"
+      },
+      {
+        "id": "okayama-1c37f926b093",
+        "teamId": "okayama",
+        "name": "井上 遥太"
+      },
+      {
+        "id": "okayama-4f3ace51e87d",
+        "teamId": "okayama",
+        "name": "中条 勇貴"
+      },
+      {
+        "id": "okayama-778a3e6ec57e",
+        "teamId": "okayama",
+        "name": "武田 征大"
+      },
+      {
+        "id": "okayama-4256259e1f0e",
+        "teamId": "okayama",
+        "name": "中ノ瀬 健充"
+      },
+      {
+        "id": "okayama-4ff932944239",
+        "teamId": "okayama",
+        "name": "手塚 佑介"
+      },
+      {
+        "id": "okayama-6e5a88ac5612",
+        "teamId": "okayama",
+        "name": "秋田 詩音"
+      },
+      {
+        "id": "okayama-427047b48561",
+        "teamId": "okayama",
+        "name": "仲 悠冴"
+      },
+      {
+        "id": "okayama-4bb96e48bf41",
+        "teamId": "okayama",
+        "name": "吉田 晴紀"
+      },
+      {
+        "id": "okayama-5e95817d9ef8",
+        "teamId": "okayama",
+        "name": "原田 大成"
+      },
+      {
+        "id": "hiroshima-international-b6a697865fdc",
+        "teamId": "hiroshima-international",
+        "name": "菅田 大介"
+      },
+      {
+        "id": "hiroshima-international-df5e251cacc1",
+        "teamId": "hiroshima-international",
+        "name": "大崎 樹"
+      },
+      {
+        "id": "hiroshima-international-431584e54019",
+        "teamId": "hiroshima-international",
+        "name": "島内 大輔"
+      },
+      {
+        "id": "hiroshima-international-da403bd48d27",
+        "teamId": "hiroshima-international",
+        "name": "沖野 凌空"
+      },
+      {
+        "id": "hiroshima-international-0c905ea8e029",
+        "teamId": "hiroshima-international",
+        "name": "大津 茜太郎"
+      },
+      {
+        "id": "hiroshima-international-04815ba2f707",
+        "teamId": "hiroshima-international",
+        "name": "三島 康志"
+      },
+      {
+        "id": "hiroshima-international-edd3d4282fd3",
+        "teamId": "hiroshima-international",
+        "name": "井戸 一総"
+      },
+      {
+        "id": "hiroshima-international-44f7b35018a1",
+        "teamId": "hiroshima-international",
+        "name": "城山 大直"
+      },
+      {
+        "id": "hiroshima-international-54d3cb6969a1",
+        "teamId": "hiroshima-international",
+        "name": "遠藤 羚央"
+      },
+      {
+        "id": "hiroshima-international-924044f91ea5",
+        "teamId": "hiroshima-international",
+        "name": "別府 佑哉"
+      },
+      {
+        "id": "hiroshima-international-d37bc6f62c7e",
+        "teamId": "hiroshima-international",
+        "name": "山田 圭悟"
+      },
+      {
+        "id": "hiroshima-international-bec214c182a1",
+        "teamId": "hiroshima-international",
+        "name": "梅原 昊大"
+      },
+      {
+        "id": "hiroshima-international-3797724972d4",
+        "teamId": "hiroshima-international",
+        "name": "高村 悠悟"
+      },
+      {
+        "id": "hiroshima-international-b6c97e7bc1fd",
+        "teamId": "hiroshima-international",
+        "name": "藤本 龍太"
+      },
+      {
+        "id": "hiroshima-international-5a24c4b6553c",
+        "teamId": "hiroshima-international",
+        "name": "隅野 翼"
+      },
+      {
+        "id": "hiroshima-international-a2fece7d676a",
+        "teamId": "hiroshima-international",
+        "name": "玉井 悠斗"
+      },
+      {
+        "id": "hiroshima-international-be325c45ec9a",
+        "teamId": "hiroshima-international",
+        "name": "大山 俐空"
+      },
+      {
+        "id": "hiroshima-international-84a372262dc8",
+        "teamId": "hiroshima-international",
+        "name": "大原 千尋"
+      },
+      {
+        "id": "hiroshima-international-e2958566e678",
+        "teamId": "hiroshima-international",
+        "name": "立川 桂次"
+      },
+      {
+        "id": "hiroshima-international-821f2de71fa7",
+        "teamId": "hiroshima-international",
+        "name": "宮原 琉輝"
+      },
+      {
+        "id": "hiroshima-international-cf1c59910084",
+        "teamId": "hiroshima-international",
+        "name": "川本 剛瑠"
+      },
+      {
+        "id": "hiroshima-international-814b6c56916b",
+        "teamId": "hiroshima-international",
+        "name": "小川 達也"
+      },
+      {
+        "id": "hiroshima-international-2435c7635474",
+        "teamId": "hiroshima-international",
+        "name": "村橋 朗"
+      },
+      {
+        "id": "hiroshima-international-8edac5fbee41",
+        "teamId": "hiroshima-international",
+        "name": "野原 優斗"
+      },
+      {
+        "id": "hiroshima-international-757d399836c9",
+        "teamId": "hiroshima-international",
+        "name": "中島 凌太"
+      },
+      {
+        "id": "hiroshima-international-05799f90b86e",
+        "teamId": "hiroshima-international",
+        "name": "船倉 脩平"
+      },
+      {
+        "id": "hiroshima-international-3cd4763e713c",
+        "teamId": "hiroshima-international",
+        "name": "鎌谷 篤志"
+      },
+      {
+        "id": "hiroshima-international-383c4773df62",
+        "teamId": "hiroshima-international",
+        "name": "楢原 翔太郎"
+      },
+      {
+        "id": "hiroshima-international-8096dd1ea7d7",
+        "teamId": "hiroshima-international",
+        "name": "秦野 徠臥"
+      },
+      {
+        "id": "hiroshima-international-d787e64e946f",
+        "teamId": "hiroshima-international",
+        "name": "岡崎 啓太郎"
+      },
+      {
+        "id": "hiroshima-international-3d3e597fa523",
+        "teamId": "hiroshima-international",
+        "name": "北山 泰地"
+      },
+      {
+        "id": "hiroshima-international-af94668216b5",
+        "teamId": "hiroshima-international",
+        "name": "秋積 真"
+      },
+      {
+        "id": "hiroshima-international-733c3bd1fa34",
+        "teamId": "hiroshima-international",
+        "name": "守田 舜"
+      },
+      {
+        "id": "hiroshima-international-b47111447338",
+        "teamId": "hiroshima-international",
+        "name": "浅野 神陸"
+      },
+      {
+        "id": "tottori-8346e5dfb1bd",
+        "teamId": "tottori",
+        "name": "井上 竣介"
+      },
+      {
+        "id": "tottori-961d1ec6999e",
+        "teamId": "tottori",
+        "name": "川合 梗士朗"
+      },
+      {
+        "id": "tottori-5780133ca5c5",
+        "teamId": "tottori",
+        "name": "松田 光平"
+      },
+      {
+        "id": "tottori-2148b1dcf5eb",
+        "teamId": "tottori",
+        "name": "内藤 綾士"
+      },
+      {
+        "id": "tottori-b686235bc5cc",
+        "teamId": "tottori",
+        "name": "土橋 咲友"
+      },
+      {
+        "id": "tottori-2059601b8e72",
+        "teamId": "tottori",
+        "name": "安達 聖仁"
+      },
+      {
+        "id": "tottori-255ef18be7ee",
+        "teamId": "tottori",
+        "name": "花光 海大"
+      },
+      {
+        "id": "tottori-6999d12f9c98",
+        "teamId": "tottori",
+        "name": "村石 旺太郎"
+      },
+      {
+        "id": "tottori-b811e46d9f58",
+        "teamId": "tottori",
+        "name": "田中 陽介"
+      },
+      {
+        "id": "tottori-59af0837e4ec",
+        "teamId": "tottori",
+        "name": "伊地知 陽太"
+      },
+      {
+        "id": "tottori-5bfbd5c72410",
+        "teamId": "tottori",
+        "name": "高田 翔太"
+      },
+      {
+        "id": "tottori-85dab92899c0",
+        "teamId": "tottori",
+        "name": "竹本 舜"
+      },
+      {
+        "id": "tottori-80cb9d8d9c11",
+        "teamId": "tottori",
+        "name": "溝口 陽太"
+      },
+      {
+        "id": "tottori-0738ecce5c2a",
+        "teamId": "tottori",
+        "name": "日和佐 龍"
+      },
+      {
+        "id": "tottori-9e42411288b6",
+        "teamId": "tottori",
+        "name": "京井 亜樹"
+      },
+      {
+        "id": "tottori-ba4a5d4b4a1e",
+        "teamId": "tottori",
+        "name": "横内 優樹"
+      },
+      {
+        "id": "tottori-7c533688a952",
+        "teamId": "tottori",
+        "name": "水谷 圭佑"
+      },
+      {
+        "id": "tottori-1803c4488ad9",
+        "teamId": "tottori",
+        "name": "清水 楽"
+      },
+      {
+        "id": "tottori-d9e427a66fa7",
+        "teamId": "tottori",
+        "name": "伊藤 優剛"
+      },
+      {
+        "id": "tottori-59fd1e910e37",
+        "teamId": "tottori",
+        "name": "大中 奏太朗"
+      },
+      {
+        "id": "tottori-fa4cb5bbc5d9",
+        "teamId": "tottori",
+        "name": "廣瀬 斗紀"
+      },
+      {
+        "id": "tottori-ce24b99cd506",
+        "teamId": "tottori",
+        "name": "倉田 琉生"
+      },
+      {
+        "id": "shimonoseki-city-82a5d57eac59",
+        "teamId": "shimonoseki-city",
+        "name": "河野 弦太"
+      },
+      {
+        "id": "shimonoseki-city-7f7b3d04b28f",
+        "teamId": "shimonoseki-city",
+        "name": "延原 義基"
+      },
+      {
+        "id": "shimonoseki-city-b7a3aceb3f90",
+        "teamId": "shimonoseki-city",
+        "name": "脇田 大馳"
+      },
+      {
+        "id": "shimonoseki-city-401ee3a8b34f",
+        "teamId": "shimonoseki-city",
+        "name": "満武 竜之介"
+      },
+      {
+        "id": "shimonoseki-city-a0bd2ed6c990",
+        "teamId": "shimonoseki-city",
+        "name": "浜田 和眞"
+      },
+      {
+        "id": "shimonoseki-city-cc0a50741575",
+        "teamId": "shimonoseki-city",
+        "name": "中野 頼人"
+      },
+      {
+        "id": "shimonoseki-city-bda77187eb7c",
+        "teamId": "shimonoseki-city",
+        "name": "山口 詩月"
+      },
+      {
+        "id": "shimonoseki-city-efb0f4988605",
+        "teamId": "shimonoseki-city",
+        "name": "安倍 春一"
+      },
+      {
+        "id": "shimonoseki-city-547fb16a87de",
+        "teamId": "shimonoseki-city",
+        "name": "中村 迅"
+      },
+      {
+        "id": "shimonoseki-city-bf5ad645bf6d",
+        "teamId": "shimonoseki-city",
+        "name": "前川 康平"
+      },
+      {
+        "id": "shimonoseki-city-fa2d1cbbd4ed",
+        "teamId": "shimonoseki-city",
+        "name": "加藤 晴大"
+      },
+      {
+        "id": "shimonoseki-city-1903a0d13c0d",
+        "teamId": "shimonoseki-city",
+        "name": "小益 魁二"
+      },
+      {
+        "id": "shimonoseki-city-cacd54bd0959",
+        "teamId": "shimonoseki-city",
+        "name": "福田 尊"
+      },
+      {
+        "id": "shimonoseki-city-d38a4d7310c6",
+        "teamId": "shimonoseki-city",
+        "name": "倉ヶ市 拓真"
+      },
+      {
+        "id": "shimonoseki-city-bfd39301b675",
+        "teamId": "shimonoseki-city",
+        "name": "阿瀬 瑛人"
+      },
+      {
+        "id": "shimonoseki-city-37888e5a792b",
+        "teamId": "shimonoseki-city",
+        "name": "國枝 快永"
+      },
+      {
+        "id": "shimonoseki-city-3fb52fcc6191",
+        "teamId": "shimonoseki-city",
+        "name": "上田 優太"
+      },
+      {
+        "id": "shimonoseki-city-900870ce87ba",
+        "teamId": "shimonoseki-city",
+        "name": "野田 和志"
+      },
+      {
+        "id": "shimonoseki-city-85d2040a14ff",
+        "teamId": "shimonoseki-city",
+        "name": "石原 空悟"
+      },
+      {
+        "id": "shimonoseki-city-a75bd671a907",
+        "teamId": "shimonoseki-city",
+        "name": "小川 蓮"
+      },
+      {
+        "id": "shimonoseki-city-f8a9ab37e399",
+        "teamId": "shimonoseki-city",
+        "name": "小山 拓夢"
+      },
+      {
+        "id": "shimonoseki-city-e5f580201b04",
+        "teamId": "shimonoseki-city",
+        "name": "綱島 悠介"
+      },
+      {
+        "id": "shimonoseki-city-27ff16c76ed4",
+        "teamId": "shimonoseki-city",
+        "name": "吉岡 想空"
+      },
+      {
+        "id": "shimonoseki-city-fa1b2edbd85e",
+        "teamId": "shimonoseki-city",
+        "name": "上杉 新汰"
+      },
+      {
+        "id": "shimonoseki-city-92471058b659",
+        "teamId": "shimonoseki-city",
+        "name": "千早 拓海"
+      },
+      {
+        "id": "shimonoseki-city-64ff4260bd82",
+        "teamId": "shimonoseki-city",
+        "name": "倉田 悠ノ介"
+      },
+      {
+        "id": "shimonoseki-city-f97a7f2d9b03",
+        "teamId": "shimonoseki-city",
+        "name": "馬屋原 日向"
+      },
+      {
+        "id": "shimonoseki-city-8419b2fba469",
+        "teamId": "shimonoseki-city",
+        "name": "大嶋 悠雅"
+      },
+      {
+        "id": "shimonoseki-city-747d6df1c822",
+        "teamId": "shimonoseki-city",
+        "name": "泉福 修平"
+      },
+      {
+        "id": "shimane-3685a65d458f",
+        "teamId": "shimane",
+        "name": "原田 悠生"
+      },
+      {
+        "id": "shimane-38e5b6bb9be7",
+        "teamId": "shimane",
+        "name": "上野 八雲"
+      },
+      {
+        "id": "shimane-990d882420e7",
+        "teamId": "shimane",
+        "name": "松本 理玖"
+      },
+      {
+        "id": "shimane-ac4ae327d551",
+        "teamId": "shimane",
+        "name": "青柳 和希"
+      },
+      {
+        "id": "shimane-69ee098b0084",
+        "teamId": "shimane",
+        "name": "田澤 温大"
+      },
+      {
+        "id": "shimane-3ffd9a4c40c3",
+        "teamId": "shimane",
+        "name": "村上 竣平"
+      },
+      {
+        "id": "shimane-c9eca2de27d1",
+        "teamId": "shimane",
+        "name": "丸山 白翔"
+      },
+      {
+        "id": "shimane-bf9cfae567fd",
+        "teamId": "shimane",
+        "name": "原田 邦志"
+      },
+      {
+        "id": "shimane-8f577b634f78",
+        "teamId": "shimane",
+        "name": "岡田 陽人"
+      },
+      {
+        "id": "shimane-a616ec6900af",
+        "teamId": "shimane",
+        "name": "佐藤 公紀"
+      },
+      {
+        "id": "shimane-b86cb0e07f1c",
+        "teamId": "shimane",
+        "name": "野口 颯也"
+      },
+      {
+        "id": "shimane-469231f2f9bb",
+        "teamId": "shimane",
+        "name": "安達 惺成"
+      },
+      {
+        "id": "shimane-03f5a60b681a",
+        "teamId": "shimane",
+        "name": "山本 暖弥"
+      },
+      {
+        "id": "shimane-110569fbc685",
+        "teamId": "shimane",
+        "name": "福島 優仁"
+      },
+      {
+        "id": "shimane-de4fcd4e1150",
+        "teamId": "shimane",
+        "name": "小野 大和"
+      },
+      {
+        "id": "shimane-6b54ca30c282",
+        "teamId": "shimane",
+        "name": "妹尾 和弥"
+      },
+      {
+        "id": "shimane-280aff9b7202",
+        "teamId": "shimane",
+        "name": "丸谷 彩斗"
+      },
+      {
+        "id": "shimane-53688989871c",
+        "teamId": "shimane",
+        "name": "武政 祐輝"
+      },
+      {
+        "id": "shimane-3574c37137dd",
+        "teamId": "shimane",
+        "name": "丸山 心路"
+      },
+      {
+        "id": "shimane-66d582b0a20a",
+        "teamId": "shimane",
+        "name": "井上 海音人"
+      },
+      {
+        "id": "shimane-4f0aa66ddef4",
+        "teamId": "shimane",
+        "name": "谷口 藍都"
+      },
+      {
+        "id": "shimane-7647a84a8b60",
+        "teamId": "shimane",
+        "name": "米田 速基"
+      },
+      {
+        "id": "shimane-a21b4535398a",
+        "teamId": "shimane",
+        "name": "岡田 凌"
+      },
+      {
+        "id": "shimane-289030110c24",
+        "teamId": "shimane",
+        "name": "淀金 一希"
+      },
+      {
+        "id": "shimane-d7ed5b793c5c",
+        "teamId": "shimane",
+        "name": "木村 一貴"
+      },
+      {
+        "id": "shimane-03f057f18a90",
+        "teamId": "shimane",
+        "name": "淀金 七翔"
+      },
+      {
+        "id": "shimane-92813a001f7c",
+        "teamId": "shimane",
+        "name": "岩成 隼和"
+      },
+      {
+        "id": "shimane-f1b9c6903fb8",
+        "teamId": "shimane",
+        "name": "小西 純也"
+      },
+      {
+        "id": "shimane-8d23b141de4f",
+        "teamId": "shimane",
+        "name": "川上 大翔"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-bbdf2b4474fe",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "貞近 晴飛"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-240295e005e8",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "伊藤 大司"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-feba77afc814",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "坂田 憲治"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-1408dd1a9122",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "岩政 侑來"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-c203019f5427",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "山中 大樹"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-767ab050bb19",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "松井 星"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-09178b2173d2",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "岡田 拓磨"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-363db3d7356a",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "友川 励"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-ffe42f87b843",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "中西 奏太"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-2ad3ef55eb59",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "高橋 洸星"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-e57fd2d730df",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "梅本 達也"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-0d92744f4a5a",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "高木 蒼志"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-1869c061346a",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "天道 朝皐"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-241101047b80",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "三宅 優輝"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-aeaa71ff7ede",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "山本 晃大"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-27e7f3206801",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "田中 翔哉"
+      },
+      {
+        "id": "hiroshima-institute-of-technology-4a4d10729fd8",
+        "teamId": "hiroshima-institute-of-technology",
+        "name": "三戸 翼"
+      },
+      {
+        "id": "kibi-international-89928d189528",
+        "teamId": "kibi-international",
+        "name": "田中 瑛一"
+      },
+      {
+        "id": "kibi-international-3d05510379bf",
+        "teamId": "kibi-international",
+        "name": "桑原 飛比希"
+      },
+      {
+        "id": "kibi-international-59997189659b",
+        "teamId": "kibi-international",
+        "name": "杉原 悠太"
+      },
+      {
+        "id": "kibi-international-3972485bc32d",
+        "teamId": "kibi-international",
+        "name": "藤原 拓斗"
+      },
+      {
+        "id": "kibi-international-bf715a46932f",
+        "teamId": "kibi-international",
+        "name": "神﨑 陽大"
+      },
+      {
+        "id": "kibi-international-de0bfd3c768a",
+        "teamId": "kibi-international",
+        "name": "滝口 央輔"
+      },
+      {
+        "id": "kibi-international-a46311551388",
+        "teamId": "kibi-international",
+        "name": "目次 啓悟"
+      },
+      {
+        "id": "kibi-international-77dde6e3eb9a",
+        "teamId": "kibi-international",
+        "name": "藤原 太陽"
+      },
+      {
+        "id": "kibi-international-3d5a34eddb79",
+        "teamId": "kibi-international",
+        "name": "葛籠 聖斗"
+      },
+      {
+        "id": "kibi-international-358be880668d",
+        "teamId": "kibi-international",
+        "name": "泉 日向"
+      },
+      {
+        "id": "kibi-international-3b30f5a46215",
+        "teamId": "kibi-international",
+        "name": "村上 元蔵"
+      },
+      {
+        "id": "kibi-international-aeea3a052fa2",
+        "teamId": "kibi-international",
+        "name": "石原 快地"
+      },
+      {
+        "id": "kibi-international-869158a62015",
+        "teamId": "kibi-international",
+        "name": "古庄 倭"
+      },
+      {
+        "id": "kibi-international-b876443cdbb6",
+        "teamId": "kibi-international",
+        "name": "小林 春翔"
+      },
+      {
+        "id": "kibi-international-c636fc19c4fa",
+        "teamId": "kibi-international",
+        "name": "藤井 千耀"
+      },
+      {
+        "id": "kibi-international-b1245740a2c6",
+        "teamId": "kibi-international",
+        "name": "岡田 晃成"
+      },
+      {
+        "id": "shujitsu-4b4cc7e085a3",
+        "teamId": "shujitsu",
+        "name": "三宅 諒和"
+      },
+      {
+        "id": "shujitsu-ad51b07e3366",
+        "teamId": "shujitsu",
+        "name": "深坂 柊真"
+      },
+      {
+        "id": "shujitsu-4f710db28c92",
+        "teamId": "shujitsu",
+        "name": "増岡 唯"
+      },
+      {
+        "id": "shujitsu-93c1cd2b6ab6",
+        "teamId": "shujitsu",
+        "name": "浦 昌吾"
+      },
+      {
+        "id": "shujitsu-3ebfbeba4abe",
+        "teamId": "shujitsu",
+        "name": "海士部 琉衣"
+      },
+      {
+        "id": "shujitsu-06121db49f3f",
+        "teamId": "shujitsu",
+        "name": "末津 郁"
+      },
+      {
+        "id": "shujitsu-d1c8fdbc08c2",
+        "teamId": "shujitsu",
+        "name": "野上 晴矢"
+      },
+      {
+        "id": "shujitsu-b7b94966229f",
+        "teamId": "shujitsu",
+        "name": "石原 心"
+      },
+      {
+        "id": "shujitsu-aaa4d35ad439",
+        "teamId": "shujitsu",
+        "name": "小田 颯汰"
+      },
+      {
+        "id": "shujitsu-b0b3ca02d2c8",
+        "teamId": "shujitsu",
+        "name": "宮崎 琉生"
+      },
+      {
+        "id": "shujitsu-60d379f7056d",
+        "teamId": "shujitsu",
+        "name": "佐々木 典咲"
+      },
+      {
+        "id": "shujitsu-72c55d64e29e",
+        "teamId": "shujitsu",
+        "name": "石原 拓歩"
+      },
+      {
+        "id": "shujitsu-fdc588b88b25",
+        "teamId": "shujitsu",
+        "name": "古宮 蓮士"
+      },
+      {
+        "id": "shujitsu-2e4f7b993d00",
+        "teamId": "shujitsu",
+        "name": "堀 稜佐"
+      },
+      {
+        "id": "shujitsu-d85b9d404276",
+        "teamId": "shujitsu",
+        "name": "椎葉 颯太"
+      },
+      {
+        "id": "shujitsu-5559c5526a7f",
+        "teamId": "shujitsu",
+        "name": "高月 愛輝"
+      },
+      {
+        "id": "shujitsu-07ba437b3f99",
+        "teamId": "shujitsu",
+        "name": "友宗 聡士"
+      },
+      {
+        "id": "shujitsu-3bd4141aca4e",
+        "teamId": "shujitsu",
+        "name": "大谷 真輝"
+      },
+      {
+        "id": "shujitsu-c5ca2f53d943",
+        "teamId": "shujitsu",
+        "name": "間野 稜汰"
+      },
+      {
+        "id": "shujitsu-2ce4cea263e9",
+        "teamId": "shujitsu",
+        "name": "土江 陸翔"
+      },
+      {
+        "id": "shujitsu-ae4b6835721b",
+        "teamId": "shujitsu",
+        "name": "正金 結海"
+      },
+      {
+        "id": "shujitsu-db9563364d6d",
+        "teamId": "shujitsu",
+        "name": "平元 珀愛"
+      },
+      {
+        "id": "shujitsu-d7a77701154a",
+        "teamId": "shujitsu",
+        "name": "倉貫 立夢"
+      },
+      {
+        "id": "shujitsu-32795f6b4764",
+        "teamId": "shujitsu",
+        "name": "庄盛 祐輝"
+      },
+      {
+        "id": "shujitsu-b88e3042c7f2",
+        "teamId": "shujitsu",
+        "name": "セビヤ トランクナー ビクトル ガブリエル"
+      },
+      {
+        "id": "shujitsu-931f7979a407",
+        "teamId": "shujitsu",
+        "name": "伊東 大樹"
+      },
+      {
+        "id": "shujitsu-d6719ea174f7",
+        "teamId": "shujitsu",
+        "name": "小倉 真"
+      },
+      {
+        "id": "shujitsu-7b8d09ede607",
+        "teamId": "shujitsu",
+        "name": "白川 涼太"
+      },
+      {
+        "id": "shujitsu-88aa6ae3c47a",
+        "teamId": "shujitsu",
+        "name": "塩瀬 敦士"
+      },
+      {
+        "id": "shujitsu-87f7e8b494e6",
+        "teamId": "shujitsu",
+        "name": "森岡 璃竣"
+      },
+      {
+        "id": "onomichi-city-bae2ea727f11",
+        "teamId": "onomichi-city",
+        "name": "瀬尾 颯"
+      },
+      {
+        "id": "onomichi-city-4b0aca6b0f16",
+        "teamId": "onomichi-city",
+        "name": "山根 裕太"
+      },
+      {
+        "id": "onomichi-city-40d23272c4ac",
+        "teamId": "onomichi-city",
+        "name": "赤木 湊"
+      },
+      {
+        "id": "onomichi-city-dbe92553a28e",
+        "teamId": "onomichi-city",
+        "name": "関口 泉"
+      },
+      {
+        "id": "onomichi-city-d677c0f4993c",
+        "teamId": "onomichi-city",
+        "name": "柏原 詢"
+      },
+      {
+        "id": "onomichi-city-22c899a4b8af",
+        "teamId": "onomichi-city",
+        "name": "新本 啓太"
+      },
+      {
+        "id": "onomichi-city-652ce272c3de",
+        "teamId": "onomichi-city",
+        "name": "飛田 稀海"
+      },
+      {
+        "id": "onomichi-city-1a746fc3e1b3",
+        "teamId": "onomichi-city",
+        "name": "道端 享介"
+      },
+      {
+        "id": "onomichi-city-7ba682803c1b",
+        "teamId": "onomichi-city",
+        "name": "徳田 悠良"
+      },
+      {
+        "id": "onomichi-city-40516bcc25fd",
+        "teamId": "onomichi-city",
+        "name": "須藤 秀彩"
+      },
+      {
+        "id": "onomichi-city-1d588629efb3",
+        "teamId": "onomichi-city",
+        "name": "篠田 正樹"
+      },
+      {
+        "id": "onomichi-city-54238cf689a4",
+        "teamId": "onomichi-city",
+        "name": "テッ ウー マン"
+      },
+      {
+        "id": "onomichi-city-8687527be3b6",
+        "teamId": "onomichi-city",
+        "name": "弘中 佳太"
+      },
+      {
+        "id": "onomichi-city-6a36fb7c18b4",
+        "teamId": "onomichi-city",
+        "name": "蘆尾 悠太"
+      },
+      {
+        "id": "onomichi-city-9885d3389491",
+        "teamId": "onomichi-city",
+        "name": "加藤 航"
+      },
+      {
+        "id": "onomichi-city-0b4b5f5db9d0",
+        "teamId": "onomichi-city",
+        "name": "樋口 和樹"
+      },
+      {
+        "id": "onomichi-city-6b4c94817884",
+        "teamId": "onomichi-city",
+        "name": "三輪 耕平"
+      },
+      {
+        "id": "onomichi-city-ea835be50961",
+        "teamId": "onomichi-city",
+        "name": "田中 遥也"
+      },
+      {
+        "id": "onomichi-city-8db1fbbd3146",
+        "teamId": "onomichi-city",
+        "name": "佐藤 旬一"
+      },
+      {
+        "id": "onomichi-city-7fb13dfcf933",
+        "teamId": "onomichi-city",
+        "name": "丸山 悠太"
+      },
+      {
+        "id": "onomichi-city-f770f900f0f7",
+        "teamId": "onomichi-city",
+        "name": "田邉 楓仁"
+      },
+      {
+        "id": "onomichi-city-d9436b09680d",
+        "teamId": "onomichi-city",
+        "name": "橘 智瑛"
+      },
+      {
+        "id": "university-of-shimane-f6f19759f56f",
+        "teamId": "university-of-shimane",
+        "name": "川本 康生"
+      },
+      {
+        "id": "university-of-shimane-4882cf7ba5cb",
+        "teamId": "university-of-shimane",
+        "name": "河野 斡大"
+      },
+      {
+        "id": "university-of-shimane-e2d55a1dbbdf",
+        "teamId": "university-of-shimane",
+        "name": "松井 遥歩"
+      },
+      {
+        "id": "university-of-shimane-30c3d19ce751",
+        "teamId": "university-of-shimane",
+        "name": "佐藤 圭斗"
+      },
+      {
+        "id": "university-of-shimane-5697a524b93c",
+        "teamId": "university-of-shimane",
+        "name": "渡辺 大毅"
+      },
+      {
+        "id": "university-of-shimane-4ca924654873",
+        "teamId": "university-of-shimane",
+        "name": "泉 楓"
+      },
+      {
+        "id": "university-of-shimane-c70551c5ef67",
+        "teamId": "university-of-shimane",
+        "name": "山口 優樹"
+      },
+      {
+        "id": "university-of-shimane-37c65b99a94b",
+        "teamId": "university-of-shimane",
+        "name": "津島 晴明"
+      },
+      {
+        "id": "university-of-shimane-fa2a4f8d05ae",
+        "teamId": "university-of-shimane",
+        "name": "岩部 義樹"
+      },
+      {
+        "id": "university-of-shimane-6923ffc70be4",
+        "teamId": "university-of-shimane",
+        "name": "柳楽 怜介"
+      },
+      {
+        "id": "university-of-shimane-265073d8104d",
+        "teamId": "university-of-shimane",
+        "name": "井谷 魁"
+      },
+      {
+        "id": "university-of-shimane-2045b9df474f",
+        "teamId": "university-of-shimane",
+        "name": "前田 颯人"
+      },
+      {
+        "id": "university-of-shimane-3d3fd84bef31",
+        "teamId": "university-of-shimane",
+        "name": "内藤 颯吾"
+      },
+      {
+        "id": "university-of-shimane-fb8f1469cbfe",
+        "teamId": "university-of-shimane",
+        "name": "武田 秀翔"
+      },
+      {
+        "id": "university-of-shimane-2c39481d39a6",
+        "teamId": "university-of-shimane",
+        "name": "池田 陽祐"
+      },
+      {
+        "id": "university-of-shimane-b7f99054dad3",
+        "teamId": "university-of-shimane",
+        "name": "﨑田 翔喜"
+      },
+      {
+        "id": "university-of-shimane-51100a10a6fe",
+        "teamId": "university-of-shimane",
+        "name": "日野 遼生"
+      },
+      {
+        "id": "university-of-shimane-32df0f94e549",
+        "teamId": "university-of-shimane",
+        "name": "一井 大地"
+      },
+      {
+        "id": "university-of-shimane-faf3ce96194a",
+        "teamId": "university-of-shimane",
+        "name": "福間 琉晟"
+      },
+      {
+        "id": "university-of-shimane-a7660ed77484",
+        "teamId": "university-of-shimane",
+        "name": "有富 達哉"
+      },
+      {
+        "id": "university-of-shimane-c46505927bd4",
+        "teamId": "university-of-shimane",
+        "name": "有木 想真"
+      },
+      {
+        "id": "university-of-shimane-777ce42bccbb",
+        "teamId": "university-of-shimane",
+        "name": "秋野 蒼空"
+      },
+      {
+        "id": "university-of-shimane-1400efb756d2",
+        "teamId": "university-of-shimane",
+        "name": "吉野 颯"
+      },
+      {
+        "id": "university-of-shimane-1f4242186eb6",
+        "teamId": "university-of-shimane",
+        "name": "藤本 創大"
+      }
+    ],
+    "removed": [],
+    "changed": [],
+    "teamCounts": []
+  }
+}

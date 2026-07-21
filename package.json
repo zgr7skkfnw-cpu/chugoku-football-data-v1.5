@@ -27,7 +27,8 @@
     "validate:data": "node scripts/validate/index.js",
     "test:e2e": "playwright test",
     "apply:overrides": "node scripts/apply-manual-overrides.mjs",
-    "update:data": "node scripts/update-data.mjs"
+    "update:data": "node scripts/update-data.mjs",
+    "update:data:full": "node scripts/update-data-full.mjs"
   },
   "dependencies": {
     "cheerio": ">=1.0.0 <2"

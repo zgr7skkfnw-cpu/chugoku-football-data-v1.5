@@ -21,7 +21,7 @@ export function findRosterDuplicates(players) {
     .map(([key, entries]) => ({ key, entries: entries.map(({ name, englishName, birth, number, position }) => ({ name, englishName, birth, number, position })) }));
 }
 
-export function mergeDivisionPlayers(existingPlayers, fetchedByTeam, targetTeamIds) {
+export function mergeDivisionPlayers(existingPlayers, fetchedByTeam, targetTeamIds, preservePlayerIds = new Set()) {
   const retained = existingPlayers.filter((player) => !targetTeamIds.has(player.teamId));
   const previousTargets = existingPlayers.filter((player) => targetTeamIds.has(player.teamId));
   const fetched = [...fetchedByTeam.values()].flat();
@@ -31,24 +31,62 @@ export function mergeDivisionPlayers(existingPlayers, fetchedByTeam, targetTeamI
     const roster = fetchedByTeam.get(teamId) ?? [];
     if (!roster.length) throw new Error(`${teamId}の公式登録が0人のため更新を停止します`);
     const previousCount = previousTargets.filter((player) => player.teamId === teamId).length;
-    if (previousCount && roster.length < Math.max(5, Math.floor(previousCount * 0.6))) {
+    if (previousCount && roster.length < Math.floor(previousCount * 0.6)) {
       throw new Error(`${teamId}の登録人数が${previousCount}人から${roster.length}人へ急減したため更新を停止します`);
     }
   }
   const before = new Map(previousTargets.map((player) => [player.id, JSON.stringify(player)]));
   const after = new Map(fetched.map((player) => [player.id, JSON.stringify(player)]));
+  const preserved = previousTargets.filter((player) => !after.has(player.id) && preservePlayerIds.has(player.id));
   return {
-    players: [...retained, ...fetched],
+    players: [...retained, ...fetched, ...preserved],
     added: [...after.keys()].filter((id) => !before.has(id)).length,
     updated: [...after].filter(([id, value]) => before.has(id) && before.get(id) !== value).length,
-    deleted: [...before.keys()].filter((id) => !after.has(id)).length,
+    deleted: [...before.keys()].filter((id) => !after.has(id) && !preservePlayerIds.has(id)).length,
+    preserved: preserved.length,
   };
+}
+
+export function createRosterSnapshot({ syncedAt, sources, players, previous = null }) {
+  const rosterPlayers = players.map((player) => ({
+    id: player.id, teamId: player.teamId, name: player.name,
+    normalizedName: normalizePlayerName(player.name), englishName: player.englishName,
+    number: player.number, position: player.position, birth: player.birth,
+    height: player.height, weight: player.weight, previousTeam: player.previousTeam,
+  }));
+  const currentById = new Map(rosterPlayers.map((player) => [player.id, player]));
+  const previousById = new Map((previous?.players ?? []).map((player) => [player.id, player]));
+  const fields = ["name", "normalizedName", "englishName", "number", "position", "birth", "height", "weight", "previousTeam"];
+  const changed = [];
+  for (const [id, player] of currentById) {
+    const before = previousById.get(id);
+    if (!before) continue;
+    const changes = Object.fromEntries(fields.filter((field) => JSON.stringify(before[field]) !== JSON.stringify(player[field])).map((field) => [field, { before: before[field] ?? null, after: player[field] ?? null }]));
+    if (Object.keys(changes).length) changed.push({ id, teamId: player.teamId, changes });
+  }
+  const previousCounts = new Map((previous?.teams ?? []).map((team) => [team.teamId, team.count]));
+  const teams = sources.map(({ teamId, teamName, pageId, registrationUrl, count }) => ({ teamId, teamName, pageId, registrationUrl, count }));
+  return {
+    schemaVersion: 1, syncedAt, season: 2026, competitionId: "jufa-chugoku-2026-division-2",
+    sources: teams.map(({ teamId, pageId, registrationUrl }) => ({ teamId, pageId, registrationUrl })),
+    teams, totalCount: rosterPlayers.length, players: rosterPlayers,
+    changes: {
+      added: [...currentById.values()].filter((player) => !previousById.has(player.id)).map(({ id, teamId, name }) => ({ id, teamId, name })),
+      removed: [...previousById.values()].filter((player) => !currentById.has(player.id)).map(({ id, teamId, name }) => ({ id, teamId, name })),
+      changed,
+      teamCounts: teams.filter((team) => previousCounts.has(team.teamId) && previousCounts.get(team.teamId) !== team.count).map((team) => ({ teamId: team.teamId, before: previousCounts.get(team.teamId), after: team.count })),
+    },
+  };
+}
+
+export function rosterSnapshotChanged(snapshot) {
+  return snapshot.changes.added.length > 0 || snapshot.changes.removed.length > 0 || snapshot.changes.changed.length > 0 || snapshot.changes.teamCounts.length > 0;
 }
 
 export function auditRoster(matches, players, targetTeamIds, teamIdByName = new Map()) {
   const roster = new Map(players.filter((player) => targetTeamIds.has(player.teamId)).map((player) => [`${player.teamId}\0${normalizePlayerName(player.name)}`, player]));
   const appeared = new Set();
-  const missing = [];
+  const missingOccurrences = [];
   const numberMismatches = [];
   const positionMismatches = [];
   const normalizedNameMatches = [];
@@ -65,7 +103,7 @@ export function auditRoster(matches, players, targetTeamIds, teamIdByName = new 
         seen.add(occurrence);
         const player = roster.get(`${teamId}\0${normalizedName}`);
         if (!player) {
-          missing.push({ matchId: match.id, teamId, name: entry.name, number: entry.number, position: entry.position });
+          missingOccurrences.push({ matchId: match.id, teamId, name: entry.name, number: entry.number, position: entry.position });
           continue;
         }
         appeared.add(player.id);
@@ -79,7 +117,8 @@ export function auditRoster(matches, players, targetTeamIds, teamIdByName = new 
     checkedAt: new Date().toISOString(),
     source: "JUFA中国 2026年度2部チーム登録",
     checkedLineupEntries: seen.size,
-    missing,
+    missing: [...new Map(missingOccurrences.map((entry) => [`${entry.teamId}\0${normalizePlayerName(entry.name)}`, { teamId: entry.teamId, name: entry.name, number: entry.number, position: entry.position, matchIds: [] }])).values()].map((entry) => ({ ...entry, matchIds: missingOccurrences.filter((occurrence) => occurrence.teamId === entry.teamId && normalizePlayerName(occurrence.name) === normalizePlayerName(entry.name)).map((occurrence) => occurrence.matchId) })),
+    missingOccurrences,
     numberMismatches,
     positionMismatches,
     normalizedNameMatches,
