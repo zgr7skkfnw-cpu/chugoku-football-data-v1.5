@@ -4,7 +4,7 @@ let seasonsPromise;
 export function loadSeasonIndex() {
   seasonsPromise ??= fetch(SEASONS_URL, {
     headers: { Accept: "application/json" },
-    cache: "force-cache",
+    cache: "no-store",
   }).then(async (response) => {
     if (!response.ok) throw new Error(`年度一覧を取得できませんでした（HTTP ${response.status}）`);
     const data = await response.json();

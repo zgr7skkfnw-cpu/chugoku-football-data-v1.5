@@ -95,8 +95,9 @@
           "stageName": "Iリーグ1部",
           "matches": "seasons/2026/i-league/div1/matches.json",
           "teams": "seasons/2026/i-league/div1/teams.json",
-          "manualOverrides": null,
+          "manualOverrides": "seasons/2026/i-league/div1/manual-match-overrides.json",
           "teamStats": "seasons/2026/i-league/div1/team-stats.json",
+          "dataAvailable": true,
           "teamIds": [
             "i-league-2026-ipu-a",
             "i-league-2026-fukuyama-a",
@@ -118,8 +119,9 @@
           "stageName": "Iリーグ2部",
           "matches": "seasons/2026/i-league/div2/matches.json",
           "teams": "seasons/2026/i-league/div2/teams.json",
-          "manualOverrides": null,
+          "manualOverrides": "seasons/2026/i-league/div2/manual-match-overrides.json",
           "teamStats": "seasons/2026/i-league/div2/team-stats.json",
+          "dataAvailable": true,
           "teamIds": [
             "i-league-2026-ipu-b",
             "i-league-2026-ipu-d",

@@ -32,6 +32,7 @@ export async function buildSeasonIndex() {
           ? dataRelativePath(resolve(seasonDirectory, competition.manualOverrides))
           : null,
         teamStats: competition.teamStats ? dataRelativePath(resolve(seasonDirectory, competition.teamStats)) : null,
+        ...(competition.dataAvailable != null ? { dataAvailable: competition.dataAvailable } : {}),
         teamIds: competition.teamIds ?? [],
       })),
     });

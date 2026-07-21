@@ -7,6 +7,7 @@ import catalog from "../site/data/team-catalog.json" with { type: "json" };
 import regularPlayers from "../site/data/players.json" with { type: "json" };
 import iLeaguePlayers from "../site/data/seasons/2026/i-league/players.json" with { type: "json" };
 import audit from "../reports/player-audit-i-league.json" with { type: "json" };
+import seasonIndex from "../site/data/seasons/index.json" with { type: "json" };
 import { createPlayerId, findRosterDuplicates, normalizePlayerName } from "../scripts/sync/player-roster-utils.mjs";
 import { calculatePlayerStatistics } from "../site/assets/js/utils/players.js";
 import { createTeamDirectory, linkMatchesToTeams } from "../site/assets/js/utils/teams.js";
@@ -210,6 +211,45 @@ test("Iリーグ全43試合を大会・チーム・詳細画面で欠落なく�
       await expect(page.locator(".match-scoreboard")).toContainText(match.awayTeam.name);
       await expect(page.locator('[data-page="match"]')).toContainText(match.venue);
     }
+  }
+});
+
+test("公開HTMLの管理画面はseason indexからIリーグ補正先とダウンロード名を生成する", async ({ page }) => {
+  const definitions = seasonIndex.items.find((entry) => entry.season === 2026).competitions;
+  for (const [competitionId, expectedPath] of [
+    [I1, "seasons/2026/i-league/div1/manual-match-overrides.json"],
+    [I2, "seasons/2026/i-league/div2/manual-match-overrides.json"],
+  ]) {
+    expect(definitions.find((entry) => entry.id === competitionId)).toMatchObject({
+      matches: expect.stringContaining("matches.json"),
+      teams: expect.stringContaining("teams.json"),
+      teamStats: expect.stringContaining("team-stats.json"),
+      manualOverrides: expectedPath,
+      dataAvailable: true,
+    });
+  }
+
+  await page.goto(`${BASE_URL}?view=admin`);
+  await page.getByLabel("補正する年度").selectOption("2026");
+  const competition = page.getByLabel("補正する大会");
+  await expect(competition.locator("option")).toHaveCount(6);
+  await expect(competition.locator(`option[value="${I1}"]`)).toHaveText("Iリーグ 中国2026 1部");
+  await expect(competition.locator(`option[value="${I2}"]`)).toHaveText("Iリーグ 中国2026 2部");
+
+  page.on("dialog", (dialog) => dialog.accept());
+  for (const [competitionId, data, filename] of [
+    [I1, div1, "2026-i-league-division-1-manual-match-overrides.json"],
+    [I2, div2, "2026-i-league-division-2-manual-match-overrides.json"],
+  ]) {
+    await competition.selectOption(competitionId);
+    await expect(page.getByLabel("補正する試合").locator("option")).toHaveCount(data.items.length + 1);
+    const scheduled = data.items.find((match) => match.status === "scheduled");
+    await page.getByLabel("補正する試合").selectOption(scheduled.id);
+    const downloadPromise = page.waitForEvent("download");
+    await page.getByRole("button", { name: "統合済み補正JSONをダウンロード" }).click();
+    const download = await downloadPromise;
+    expect(download.suggestedFilename()).toBe(filename);
+    await download.delete();
   }
 });
 

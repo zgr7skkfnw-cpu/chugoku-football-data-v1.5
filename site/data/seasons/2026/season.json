@@ -117,7 +117,9 @@
       "periodRules": { "first": { "fromRound": 1, "toRound": 7 }, "second": { "fromRound": 8, "toRound": 99 } },
       "matches": "./i-league/div1/matches.json",
       "teams": "./i-league/div1/teams.json",
+      "manualOverrides": "./i-league/div1/manual-match-overrides.json",
       "teamStats": "./i-league/div1/team-stats.json",
+      "dataAvailable": true,
       "teamIds": [
         "i-league-2026-ipu-a", "i-league-2026-fukuyama-a",
         "i-league-2026-hue-a", "i-league-2026-hiroshima-a",
@@ -136,7 +138,9 @@
       "periodRules": { "first": { "fromRound": 1, "toRound": 5 }, "second": { "fromRound": 6, "toRound": 99 } },
       "matches": "./i-league/div2/matches.json",
       "teams": "./i-league/div2/teams.json",
+      "manualOverrides": "./i-league/div2/manual-match-overrides.json",
       "teamStats": "./i-league/div2/team-stats.json",
+      "dataAvailable": true,
       "teamIds": [
         "i-league-2026-ipu-b", "i-league-2026-ipu-d",
         "i-league-2026-hue-b", "i-league-2026-fukuyama-b",
