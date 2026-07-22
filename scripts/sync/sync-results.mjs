@@ -650,6 +650,7 @@ function parseDetailHtml(detailHtml, listMatch) {
     lineups: parseLineups($, listMatch),
     scoreByPeriod: parsePeriodScores($),
     penaltyShootout: parsePenaltyShootout($),
+    manualStatistics: parseMatchStatistics($),
     substitutions: resultSections.substitutions,
     disciplinary: resultSections.disciplinary,
     goalSummary: resultSections.goalSummary,
@@ -662,6 +663,33 @@ function parseDetailHtml(detailHtml, listMatch) {
       taikaiHoldId: listMatch.taikaiHoldId,
     },
   };
+}
+
+function parseMatchStatistics($) {
+  const keyByLabel = new Map([
+    ["コーナーキック", "cornerKicks"],
+    ["直接フリーキック", "directFreeKicks"],
+    ["間接フリーキック", "indirectFreeKicks"],
+    ["オフサイド", "offsides"],
+  ]);
+  const result = { home: {}, away: {} };
+  $("table.result_06 tr").each((_, row) => {
+    const label = cleanText($(row).find("th.category").text());
+    const key = keyByLabel.get(label);
+    if (!key) return;
+    const values = $(row).find("td").map((__, cell) => toInteger(cleanText($(cell).text()))).get();
+    if (values.length >= 4 && values.every(Number.isFinite)) {
+      result.home[key] = values[0] + values[1];
+      result.away[key] = values[2] + values[3];
+    }
+  });
+  const playerTables = $("table.result_07_player").toArray();
+  for (const [index, table] of playerTables.slice(0, 2).entries()) {
+    const cells = $(table).find("tr").filter((_, row) => cleanText($(row).find("th").text()) === "合計シュート数").find("td.shoot");
+    const values = cells.map((_, cell) => toInteger(cleanText($(cell).text()))).get().filter(Number.isFinite);
+    if (values.length) result[index === 0 ? "home" : "away"].shots = values.reduce((sum, value) => sum + value, 0);
+  }
+  return Object.keys(result.home).length || Object.keys(result.away).length ? result : null;
 }
 
 async function fetchDetails(context, detailUrl, listUrl, matches) {
