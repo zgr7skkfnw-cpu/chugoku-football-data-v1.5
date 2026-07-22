@@ -40,6 +40,9 @@ test("プレビューは試合前の全大会フォームと得点王を表示�
   await expect(page.locator(".prematch-form-result").filter({ hasText: "中国大学サッカー選手権" })).not.toHaveCount(0);
   await expect(page.locator(".prematch-scorer").first()).toContainText("シュート－");
   await expect(page.locator(".prematch-scorer").first()).toContainText("出場時間");
+  await expect(page.locator(".season-comparison__team")).toHaveCount(2);
+  await expect(page.locator(".season-comparison")).toContainText("最大の勝利");
+  await expect(page.locator(".season-comparison")).toContainText("無失点");
 });
 
 for (const [label, matchId, rowCount] of [["1部", DIV1, 10], ["2部", DIV2, 11], ["Iリーグ1部", I1, 8], ["Iリーグ2部", I2, 6]]) {
@@ -66,6 +69,19 @@ test("順位表横スクロールと縦操作ではタブスワイプしない",
   await content.dispatchEvent("pointerdown", { pointerId: 8, pointerType: "touch", clientX: 200, clientY: 200 });
   await content.dispatchEvent("pointerup", { pointerId: 8, pointerType: "touch", clientX: 205, clientY: 380 });
   await expect(page).toHaveURL(/tab=standings/);
+});
+
+test("対戦は全年度集計を開催区分・実在大会で絞り込み詳細へ移動できる", async ({ page }) => {
+  await page.goto(`${BASE_URL}?view=match&id=${DIV1}&tab=head-to-head`);
+  const total = Number(await page.locator(".prematch-h2h").getAttribute("data-h2h-total"));
+  expect(total).toBeGreaterThan(0);
+  await expect(page.locator(".h2h-history-row")).toHaveCount(total);
+  await page.getByLabel("開催区分").selectOption("home");
+  expect(await page.locator(".h2h-history-row").count()).toBeLessThanOrEqual(total);
+  const options = await page.getByLabel("大会").locator("option").allTextContents();
+  expect(options).toContain("中国大学サッカーリーグ");
+  await page.locator(".h2h-history-row").first().click();
+  await expect(page.locator('[data-page="match"]')).toBeVisible();
 });
 
 test("トーナメントをラウンド別表示して公式PKスコアを維持する", async ({ page }) => {
