@@ -2398,6 +2398,15 @@ a,
 .horizontal-scroll-hint { margin: 0; color: var(--text-muted); font-size: 10px; }
 .prematch-h2h-filters { display: flex; gap: 8px; overflow-x: auto; }
 .prematch-h2h-filters .filter-select { min-width: 160px; }
+.h2h-visual-summary { display: grid; gap: 14px; }
+.h2h-ratio { display: flex; min-height: 38px; overflow: hidden; border-radius: 999px; background: var(--surface-soft); }
+.h2h-ratio span { display: grid; min-width: 52px; place-items: center; padding: 0 7px; color: #fff; font-size: 9px; font-weight: 900; white-space: nowrap; }
+.h2h-ratio .is-home { background: var(--accent); }
+.h2h-ratio .is-draw { background: #667085; }
+.h2h-ratio .is-away { background: #4a82d8; }
+.h2h-extra-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.h2h-history-row.is-current { outline: 2px solid var(--accent); }
+.h2h-history-row em { color: var(--accent); font-size: 9px; font-style: normal; font-weight: 900; }
 
 @media (max-width: 520px) {
   .prematch-v2-scoreboard { gap: 8px; min-height: 160px; padding: 16px 8px; }
@@ -2406,6 +2415,9 @@ a,
   .prematch-scorer { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .prematch-scorer > strong, .prematch-scorer > span { grid-column: span 2; }
   .season-comparison, .suspension-grid { grid-template-columns: 1fr; }
+  .season-comparison-table > header, .season-comparison-row { grid-template-columns: minmax(0, 1fr) 94px minmax(0, 1fr); padding: 9px 7px; }
+  .season-comparison-row > strong { font-size: 10px; overflow-wrap: anywhere; }
+  .h2h-extra-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 .league-card-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
