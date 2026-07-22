@@ -64,6 +64,78 @@ test("フォロー中はチームカードと安定IDの選手フォローを保
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem("chugoku-football.favorite-players")))).toEqual(["ipu-032c11837e6d"]);
 });
 
+test("複数チームを保存・解除し次戦順と次戦なしを安定表示する", async ({ page }) => {
+  await page.goto(BASE_URL);
+  await page.evaluate(() => localStorage.clear());
+  for (const teamId of ["fukuyama", "ipu", "i-league-2025-ipu-a"]) {
+    await page.goto(`${BASE_URL}?view=team&id=${teamId}`);
+    await page.locator(".favorite-button").click();
+  }
+  await page.goto(`${BASE_URL}?view=following`);
+  const cards = page.locator(".following-team-card");
+  await expect(cards).toHaveCount(3);
+  await expect(cards.last()).toHaveAttribute("data-team-id", "i-league-2025-ipu-a");
+  const scheduledTimes = await cards.evaluateAll((items) => items.slice(0, 2).map((item) => Date.parse(item.dataset.nextKickoff)));
+  expect(scheduledTimes[0]).toBeLessThanOrEqual(scheduledTimes[1]);
+
+  await page.goto(`${BASE_URL}?view=team&id=ipu`);
+  await page.locator(".favorite-button").click();
+  await page.reload();
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem("chugoku-football.favorite-teams")))).toEqual({ teamIds: ["fukuyama", "i-league-2025-ipu-a"] });
+  await page.goto(`${BASE_URL}?view=following`);
+  await expect(page.locator(".following-team-card")).toHaveCount(2);
+});
+
+test("旧1チーム形式を配列へ移行し他のフォロー・並び順設定を維持する", async ({ page }) => {
+  await page.goto(BASE_URL);
+  await page.evaluate(() => {
+    localStorage.clear();
+    localStorage.setItem("chugoku-football.favorite-team", "ipu");
+    localStorage.setItem("chugoku-football.favorite-players", JSON.stringify(["ipu-032c11837e6d"]));
+    localStorage.setItem("chugoku-football.league-order", JSON.stringify(["jufa-chugoku-2026-division-2"]));
+  });
+  await page.reload();
+  await page.goto(`${BASE_URL}?view=following`);
+  await expect(page.locator(".following-team-card")).toHaveCount(1);
+  expect(await page.evaluate(() => ({
+    teams: JSON.parse(localStorage.getItem("chugoku-football.favorite-teams")),
+    legacy: localStorage.getItem("chugoku-football.favorite-team"),
+    players: JSON.parse(localStorage.getItem("chugoku-football.favorite-players")),
+    order: JSON.parse(localStorage.getItem("chugoku-football.league-order")),
+  }))).toEqual({
+    teams: { teamIds: ["ipu"] }, legacy: null,
+    players: ["ipu-032c11837e6d"], order: ["jufa-chugoku-2026-division-2"],
+  });
+});
+
+test("保存済みチームIDの重複を読み込み時に除去する", async ({ page }) => {
+  await page.goto(BASE_URL);
+  await page.evaluate(() => {
+    localStorage.clear();
+    localStorage.setItem("chugoku-football.favorite-teams", JSON.stringify({ teamIds: ["ipu", "ipu"] }));
+  });
+  await page.reload();
+  await page.goto(`${BASE_URL}?view=following`);
+  await expect(page.locator(".following-team-card")).toHaveCount(1);
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem("chugoku-football.favorite-teams")))).toEqual({ teamIds: ["ipu"] });
+});
+
+test("明日の複数フォロー試合を時刻順に重複なしで表示する", async ({ page }) => {
+  await page.clock.setFixedTime(new Date("2026-08-29T12:00:00+09:00"));
+  await page.goto(BASE_URL);
+  await page.evaluate(() => localStorage.setItem("chugoku-football.favorite-teams", JSON.stringify({
+    teamIds: ["ipu", "yamaguchi", "hiroshima-institute-of-technology", "shimane"],
+  })));
+  await page.reload();
+  await page.goto(`${BASE_URL}?date=2026-08-30`);
+  const cards = page.locator(".tomorrow-following__card");
+  await expect(cards).toHaveCount(2);
+  await expect(cards.first()).toContainText("16:00");
+  await expect(cards.nth(1)).toContainText("17:00");
+  const matchIds = await cards.evaluateAll((items) => items.map((item) => new URL(item.href).searchParams.get("id")));
+  expect(new Set(matchIds).size).toBe(2);
+});
+
 test("大会カード順を保存して初期順へ戻せる", async ({ page }) => {
   await page.goto(BASE_URL);
   await page.evaluate(() => localStorage.clear());

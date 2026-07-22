@@ -54,7 +54,7 @@ test("順位・選手ランキング・チームランキングを期間切替�
   expect(errors).toEqual([]);
 });
 
-test("試合複合フィルターとホームのお気に入り登録が動作する", async ({ page }) => {
+test("試合複合フィルターとチームフォロー登録が動作する", async ({ page }) => {
   const errors = collectErrors(page);
   const playerRequests = [];
   page.on("request", (request) => {
@@ -75,7 +75,7 @@ test("試合複合フィルターとホームのお気に入り登録が動作�
   await page.evaluate(() => localStorage.clear());
   await page.goto(`${BASE_URL}?view=team&id=ipu`);
   await page.locator(".favorite-button").click();
-  expect(await page.evaluate(() => localStorage.getItem("chugoku-football.favorite-team"))).toBe("ipu");
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem("chugoku-football.favorite-teams")))).toEqual({ teamIds: ["ipu"] });
   await page.goto(`${BASE_URL}?view=following`);
   await expect(page.locator(".following-team-card")).toContainText("IPU・環太平洋大学");
   await expect(page.getByRole("heading", { name: "チーム順位" })).toHaveCount(0);

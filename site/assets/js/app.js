@@ -6,7 +6,7 @@ import { loadLeagueStats } from "./api/team-stats.js";
 import { loadHeadToHead } from "./api/head-to-head.js";
 import { createTeamDirectory, linkMatchesToTeams } from "./utils/teams.js";
 import { calculatePlayerStatistics, createPlayerDirectory } from "./utils/players.js";
-import { loadFavoriteTeamId } from "./utils/favorites.js";
+import { loadFavoriteTeamIds } from "./utils/favorites.js";
 import { loadFavoritePlayerIds } from "./utils/player-favorites.js";
 import { renderBottomNavigation } from "./ui/bottom-nav.js";
 import { renderErrorState, renderLoadingState } from "./ui/data-status.js";
@@ -80,7 +80,7 @@ function render(state, previousState = {}) {
 document.documentElement.dataset.theme = "dark";
 subscribe(render);
 initializeRouter();
-setState({ favoriteTeamId: loadFavoriteTeamId(), favoritePlayerIds: loadFavoritePlayerIds() });
+setState({ favoriteTeamIds: loadFavoriteTeamIds(), favoritePlayerIds: loadFavoritePlayerIds() });
 
 Promise.all([loadMatches(), loadTeams(), loadTeamCatalog(), loadLeagueStats(), loadHeadToHead()])
   .then(([{ matches, metadata, competitionMetadata, competitionDefinitions, availableSeasons, defaultSeason }, { teams }, teamCatalog, leagueStats, headToHead]) => {

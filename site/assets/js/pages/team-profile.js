@@ -8,7 +8,7 @@ import {
   element,
 } from "../ui/elements.js";
 import { getTeam } from "../utils/teams.js";
-import { saveFavoriteTeamId } from "../utils/favorites.js";
+import { toggleFavoriteTeam } from "../utils/favorites.js";
 import { setState } from "../state.js";
 import { createMatchRow, createPlayerLinkRow, createTeamNameLink } from "./shared.js";
 import { createSeasonPeriodTabs } from "../ui/season-period.js";
@@ -18,7 +18,7 @@ export function renderTeamProfilePage({
   currentTeamId,
   teamDirectory,
   players,
-  favoriteTeamId,
+  favoriteTeamIds = [],
   teamStats,
   leagueStats,
   headToHead,
@@ -40,7 +40,7 @@ export function renderTeamProfilePage({
     .filter((player) => player.teamId === team.id)
     .sort((left, right) => (left.number ?? 999) - (right.number ?? 999));
   const staff = team.staff ?? [];
-  const isFavorite = favoriteTeamId === team.id;
+  const isFavorite = favoriteTeamIds.includes(team.id);
   const competitionStats = Object.values(leagueStats?.[selectedSeason]?.byCompetition ?? {});
   const activeTeamStats = competitionStats
     .find((stats) => stats?.periods?.all?.teams?.some((entry) => entry.teamId === team.id)) ?? teamStats;
@@ -58,13 +58,12 @@ export function renderTeamProfilePage({
     .sort((left, right) => new Date(left.kickoffAt) - new Date(right.kickoffAt));
   const favoriteButton = element("button", {
     className: `favorite-button${isFavorite ? " is-active" : ""}`,
-    text: isFavorite ? "♥ マイチーム登録済み" : "♡ マイチームに登録",
+    text: isFavorite ? "♥ フォロー中" : "♡ フォローする",
     attributes: { type: "button", "aria-pressed": String(isFavorite) },
   });
   favoriteButton.addEventListener("click", () => {
-    const nextTeamId = isFavorite ? null : team.id;
-    saveFavoriteTeamId(nextTeamId);
-    setState({ favoriteTeamId: nextTeamId });
+    const nextTeamIds = toggleFavoriteTeam(favoriteTeamIds, team.id);
+    setState({ favoriteTeamIds: nextTeamIds });
   });
 
   return element(

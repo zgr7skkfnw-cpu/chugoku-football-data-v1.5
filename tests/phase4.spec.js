@@ -49,7 +49,7 @@ test("Phase 4 選手検索・詳細・ランキング・相互リンク", async 
   expect(errors).toEqual([]);
 });
 
-test("マイチームが保存されホーム表示を優先する", async ({ page }) => {
+test("フォローチームが保存されフォロー中画面へ表示される", async ({ page }) => {
   const errors = [];
   page.on("console", (message) => {
     if (message.type() === "error") errors.push(message.text());
@@ -61,13 +61,13 @@ test("マイチームが保存されホーム表示を優先する", async ({ pa
   await page.reload();
   await page.locator(".favorite-button").click();
   await expect(page.locator(".favorite-button")).toHaveAttribute("aria-pressed", "true");
-  expect(await page.evaluate(() => localStorage.getItem("chugoku-football.favorite-team"))).toBe("ipu");
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem("chugoku-football.favorite-teams")))).toEqual({ teamIds: ["ipu"] });
 
   await page.goto(`${BASE_URL}?view=following`);
   await expect(page.locator(".following-team-card")).toContainText("IPU・環太平洋大学");
   await expect(page.locator(".following-team-card")).toContainText("次戦：");
   await page.reload();
-  expect(await page.evaluate(() => localStorage.getItem("chugoku-football.favorite-team"))).toBe("ipu");
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem("chugoku-football.favorite-teams")))).toEqual({ teamIds: ["ipu"] });
   expect(errors).toEqual([]);
 });
 

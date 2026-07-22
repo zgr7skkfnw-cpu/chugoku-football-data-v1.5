@@ -6,8 +6,7 @@ import { enableHorizontalSwipe } from "../ui/swipe.js";
 const JST_TIME_ZONE = "Asia/Tokyo";
 const collapsedByDate = new Map();
 
-export function renderHomePage({ matches, teamDirectory, favoriteTeamId, selectedDate }) {
-  const favoriteTeam = teamDirectory?.byId.get(favoriteTeamId) ?? null;
+export function renderHomePage({ matches, teamDirectory, favoriteTeamIds = [], selectedDate }) {
   const currentSeason = Number(todayKey().slice(0, 4));
   const seasonMatches = matches.filter((match) => match.season === currentSeason);
   const activeDate = selectedDate ?? todayKey();
@@ -22,7 +21,7 @@ export function renderHomePage({ matches, teamDirectory, favoriteTeamId, selecte
   const content = element("div", { className: "home-feed__content" }, [
     dateNavigation,
     activeDate === shiftDate(todayKey(), 1)
-      ? createTomorrowFavorite(selectedMatches, favoriteTeam, teamDirectory)
+      ? createTomorrowFavorite(selectedMatches, favoriteTeamIds, teamDirectory)
       : null,
     selectedMatches.length
       ? element("div", { className: "league-schedule-groups", attributes: { "data-date-matches": String(selectedMatches.length) } }, createScheduleGroups(selectedMatches, teamDirectory, activeDate))
@@ -57,8 +56,11 @@ function createScheduleGroups(matches, teamDirectory, selectedDate) {
   });
 }
 
-function createTomorrowFavorite(matches, favoriteTeam, teamDirectory) {
-  const followed = favoriteTeam ? matches.filter((match) => includesTeam(match, favoriteTeam.id)) : [];
+function createTomorrowFavorite(matches, favoriteTeamIds, teamDirectory) {
+  const followedIds = new Set(favoriteTeamIds);
+  const followed = matches
+    .filter((match) => followedIds.has(match.homeTeam.teamId) || followedIds.has(match.awayTeam.teamId))
+    .sort((left, right) => new Date(left.kickoffAt) - new Date(right.kickoffAt));
   return element("section", { className: "tomorrow-following" }, [
     element("h1", { text: "フォロー中のチームの試合" }),
     followed.length ? element("div", { className: "tomorrow-following__list" }, followed.map((match) => {
@@ -94,7 +96,6 @@ function createDateControls(selectedDate, onSelect) {
 
 function competitionLabel(match) { return match.stageId === "regular" ? match.leagueName : `${match.leagueName} / ${match.stageName}`; }
 function competitionOrder(match) { if (match.stageId === "regular" && match.division === 1) return 1; if (match.stageId === "regular" && match.division === 2) return 2; if (match.stageId === "i-league-regular") return 3 + (match.division ?? 0) / 10; if (match.stageId === "championship") return 4; if (match.stageId === "rookie") return 5; return 9; }
-function includesTeam(match, id) { return match.homeTeam.teamId === id || match.awayTeam.teamId === id; }
 function todayKey() { return new Intl.DateTimeFormat("sv-SE", { timeZone: JST_TIME_ZONE, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); }
 function dateKey(value) { return new Intl.DateTimeFormat("sv-SE", { timeZone: JST_TIME_ZONE, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(value)); }
 function shiftDate(date, amount) { const value = new Date(`${date}T12:00:00+09:00`); value.setDate(value.getDate() + amount); return dateKey(value); }
