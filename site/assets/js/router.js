@@ -62,8 +62,9 @@ export function routeHref(view, { matchId = null, matchTab = null, teamId = null
 export function navigate(view, { replace = false, matchId = null, matchTab = null, teamId = null, playerId = null, competitionId = null, season = null, date = null } = {}) {
   const nextView = Object.hasOwn(routes, view) ? view : "home";
   const method = replace ? "replaceState" : "pushState";
+  if (!replace) window.history.replaceState({ ...(window.history.state ?? {}), scrollY: window.scrollY }, "", window.location.href);
   window.history[method](
-    { view: nextView, matchId, matchTab, teamId, playerId, competitionId, season },
+    { view: nextView, matchId, matchTab, teamId, playerId, competitionId, season, scrollY: 0 },
     "",
     routeHref(nextView, { matchId, matchTab, teamId, playerId, competitionId, season, date }),
   );
@@ -92,7 +93,7 @@ export function initializeRouter() {
     date: initialRoute.date,
   });
 
-  window.addEventListener("popstate", () => {
+  window.addEventListener("popstate", (event) => {
     const route = readRouteFromUrl();
     setState({
       currentView: route.view,
@@ -104,6 +105,7 @@ export function initializeRouter() {
       ...(route.season ? { selectedSeason: route.season } : {}),
       ...(route.view === "home" ? { selectedDate: route.date } : {}),
     });
+    requestAnimationFrame(() => window.scrollTo({ top: Number(event.state?.scrollY) || 0, behavior: "auto" }));
   });
 
   document.addEventListener("click", (event) => {
