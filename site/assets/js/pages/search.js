@@ -9,11 +9,17 @@ export function renderSearchPage({ matches, teams, players, teamDirectory }) {
   const renderResults = () => {
     const query = normalize(input.value);
     const matchedTeams = teams.filter((team) => !query || normalize(`${team.name}${team.shortName}`).includes(query));
-    const matchedPlayers = players.filter((player) => !query || normalize(`${player.name}${player.englishName ?? ""}${player.number ?? ""}${getTeam(teamDirectory, player.teamId)?.name ?? ""}`).includes(query)).slice(0, query ? 50 : 12);
+    const playerGroups = groupPlayerRegistrations(players);
+    const matchedPlayers = playerGroups.filter((group) => !query || group.some((player) => normalize(`${player.name}${player.englishName ?? ""}${player.number ?? ""}${getTeam(teamDirectory, player.teamId)?.name ?? ""}`).includes(query))).slice(0, query ? 50 : 12);
     const matchedMatches = matches.filter((match) => query && normalize(`${match.homeTeam.name}${match.awayTeam.name}${match.venue ?? ""}${match.roundLabel ?? ""}`).includes(query)).slice(0, 30);
     results.replaceChildren(
       createPanel("チーム", matchedTeams.length ? element("div", { className: "search-team-list" }, matchedTeams.map((team) => element("a", { className: "search-team-row", attributes: { href: routeHref("team", { teamId: team.id }), "data-route": "team", "data-team-id": team.id } }, [createTeamEmblem(team), element("strong", { text: team.name })]))) : createNotice("一致するチームはありません。"), `${matchedTeams.length}件`),
-      createPanel("選手", matchedPlayers.length ? element("div", { className: "player-list" }, matchedPlayers.map((player) => createPlayerLinkRow({ player, team: getTeam(teamDirectory, player.teamId) }))) : createNotice("一致する選手はありません。"), query ? `${matchedPlayers.length}件` : "一部表示"),
+      createPanel("選手", matchedPlayers.length ? element("div", { className: "player-list" }, matchedPlayers.map((group) => {
+        const player = group[0];
+        const row = createPlayerLinkRow({ player, team: getTeam(teamDirectory, player.teamId) });
+        if (group.length > 1) row.append(element("small", { className: "search-player-registrations", text: `${group.length}登録（詳細で切替）` }));
+        return row;
+      })) : createNotice("一致する選手はありません。"), query ? `${matchedPlayers.length}人` : "一部表示"),
       query ? createPanel("試合", matchedMatches.length ? element("div", { className: "match-list" }, matchedMatches.map((match) => createMatchRow(match, teamDirectory))) : createNotice("一致する試合はありません。"), `${matchedMatches.length}件`) : null,
     );
   };
@@ -30,4 +36,17 @@ export function renderSearchPage({ matches, teams, players, teamDirectory }) {
   ]);
 }
 
-function normalize(value) { return String(value).normalize("NFKC").toLocaleLowerCase("ja").replace(/[\s　]+/g, ""); }
+function normalize(value) { return String(value).normalize("NFKC").toLocaleLowerCase("ja").replace(/[\s　]+/g, "").replaceAll("遙", "遥"); }
+
+function groupPlayerRegistrations(players) {
+  const groups = new Map();
+  for (const player of players) {
+    const clubId = player.parentClubId ?? (player.competitionId ? null : player.teamId);
+    const verifiedKey = player.personId
+      ? `person:${player.personId}`
+      : player.birth && clubId ? `registration:${normalize(player.name)}:${player.birth}:${clubId}` : `id:${player.id}`;
+    if (!groups.has(verifiedKey)) groups.set(verifiedKey, []);
+    groups.get(verifiedKey).push(player);
+  }
+  return [...groups.values()];
+}

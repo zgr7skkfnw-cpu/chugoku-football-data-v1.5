@@ -7,7 +7,7 @@ import {
   element,
 } from "../ui/elements.js";
 import { formatKickoff } from "../utils/football.js";
-import { formatGrade, getPlayer } from "../utils/players.js";
+import { formatGrade, getPlayer, normalizePlayerName } from "../utils/players.js";
 import { createTeamNameLink } from "./shared.js";
 import { setState } from "../state.js";
 import { toggleFavoritePlayer } from "../utils/player-favorites.js";
@@ -18,6 +18,7 @@ export function renderPlayerProfilePage({
   playerStatistics,
   teamDirectory,
   favoritePlayerIds = [],
+  players = [],
 }) {
   const player = getPlayer(playerDirectory, currentPlayerId);
   const stats = player ? playerStatistics?.get(player.id) : null;
@@ -81,6 +82,7 @@ export function renderPlayerProfilePage({
         ]),
       ]),
       element("div", { className: "section-stack" }, [
+        createRegistrationSwitch(player, players, teamDirectory),
         createPanel("基本情報", createBasicInformation(player, team, teamDirectory), "選手登録"),
         createSeasonStatistics(stats),
         createPanel(
@@ -92,6 +94,14 @@ export function renderPlayerProfilePage({
       ]),
     ],
   );
+}
+
+function createRegistrationSwitch(player, players, teamDirectory) {
+  const clubId = player.parentClubId ?? (player.competitionId ? null : player.teamId);
+  if (!player.birth || !clubId) return null;
+  const registrations = players.filter((candidate) => (candidate.parentClubId ?? (candidate.competitionId ? null : candidate.teamId)) === clubId && candidate.birth === player.birth && normalizePlayerName(candidate.name) === normalizePlayerName(player.name));
+  if (registrations.length < 2) return null;
+  return createPanel("登録区分", element("div", { className: "chip-row player-registration-switch" }, registrations.map((candidate) => element("a", { className: `filter-chip${candidate.id === player.id ? " is-active" : ""}`, text: candidate.competitionId ? `${teamDirectory.byId.get(candidate.teamId)?.name ?? candidate.teamId} / Iリーグ登録` : `${teamDirectory.byId.get(candidate.teamId)?.name ?? candidate.teamId} / 中国大学リーグ登録`, attributes: { href: routeHref("player", { playerId: candidate.id }), "data-route": "player", "aria-current": candidate.id === player.id ? "page" : "false" } }))), "公式登録レコードは分離して表示");
 }
 
 function createBasicInformation(player, team, teamDirectory) {
