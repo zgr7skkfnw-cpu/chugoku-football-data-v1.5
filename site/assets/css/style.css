@@ -2355,10 +2355,13 @@ a,
 .prematch-form-result.form-badge--d { border-left: 4px solid var(--text-muted); }
 .prematch-form-result.form-badge--l { border-left: 4px solid var(--danger); }
 .prematch-form-result small { overflow: hidden; color: var(--text-muted); font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
-.prematch-insights { display: grid; gap: 10px; margin: 0; padding-left: 20px; }
+.prematch-insights { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.prematch-insights li { display: grid; gap: 4px; padding: 12px 14px; border-left: 4px solid var(--accent); border-radius: 12px; background: var(--surface-soft); }
+.prematch-insights li small { color: var(--text-muted); font-size: 9px; }
 .prematch-scorer-list { display: grid; gap: 10px; }
-.prematch-scorer { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 12px; border-radius: 14px; background: var(--surface-soft); }
+.prematch-scorer { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 12px; border-radius: 14px; background: var(--surface-soft); color: var(--text); text-decoration: none; }
 .prematch-scorer > strong, .prematch-scorer > span { grid-column: span 3; }
+.prematch-scorer-more { margin: 0; color: var(--text-muted); font-size: 10px; text-align: center; }
 .prematch-metric { display: grid; gap: 3px; padding: 8px; border-radius: 10px; background: var(--surface-soft); }
 .prematch-metric span { color: var(--text-muted); font-size: 9px; }
 .prematch-metric strong { font-size: 12px; }

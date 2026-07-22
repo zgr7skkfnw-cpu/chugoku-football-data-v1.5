@@ -3,7 +3,7 @@ import { navigate, routeHref } from "../router.js";
 import { enableHorizontalSwipe } from "../ui/swipe.js";
 import { getPlayer, normalizePlayerName } from "../utils/players.js";
 import { createTeamNameLink } from "./shared.js";
-import { renderMatchCompetitionContext, renderMatchHeadToHead, renderTeamForms } from "./scheduled-match.js";
+import { renderMatchCompetitionContext, renderMatchHeadToHead, renderMatchInsightsForContext, renderTeamForms } from "./scheduled-match.js";
 
 const TABS = ["info", "lineup", "stats", "standings", "head-to-head"];
 
@@ -44,6 +44,7 @@ function informationTab({ match, home, away, matches, teamDirectory, playerDirec
     createPanel("タイムライン", timeline(match, home, away, playerDirectory), "公式掲載イベント"),
     createPanel("会場情報", element("div", { className: "detail-list" }, [detail("会場名", match.venue ?? "－"), detail("観客数", match.attendance == null ? "－" : `${match.attendance}人`)]), "公式記録掲載項目"),
     renderTeamForms(matches, match, [home, away], teamDirectory),
+    renderMatchInsightsForContext({ matches, match, home, away }),
     createPanel("審判・運営", match.officials?.length ? element("div", { className: "detail-list" }, match.officials.map((official) => detail(official.role, official.name))) : createNotice("審判・運営情報は公式記録未掲載です。"), `${match.officials?.length ?? 0}名`),
     sourceNotice(match),
   ]);

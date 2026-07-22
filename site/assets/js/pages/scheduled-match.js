@@ -46,7 +46,7 @@ function previewTab(context) {
   return element("div", { className: "section-stack prematch-preview" }, [
     createPanel("試合情報", element("div", { className: "detail-list" }, [detail("大会", match.competitionName ?? match.leagueName ?? "公式記録未掲載"), detail("節・ラウンド", match.roundLabel ?? (match.round != null ? `第${match.round}節` : "公式記録未掲載")), detail("日付", longDateLabel(match.kickoffAt)), detail("キックオフ", timeLabel(match.kickoffAt)), detail("会場", match.venue ?? "公式記録未掲載")]), "公式日程"),
     createForms(forms, teamDirectory),
-    insightsPanel(forms, home, away, matches, match),
+    renderMatchInsights(forms, home, away, matches, match),
     topScorerPanel(context),
     isLeagueLike(competition, match) ? seasonToDatePanel(match, home, away, previousCompetition, competitionScope, teamDirectory) : null,
     createNotice(match.gameId == null ? "公式詳細はまだ公開されていません。日時・対戦カード・会場のみ表示しています。" : "試合終了後、公式詳細が公開されると試合記録へ切り替わります。"),
@@ -123,23 +123,31 @@ export function renderTeamForms(matches, match, teams, teamDirectory) {
   return createForms(teams.map((team) => ({ team, items: teamForm(matches, match, team?.id) })), teamDirectory);
 }
 
+export function renderMatchInsightsForContext({ matches, match, home, away }) {
+  return renderMatchInsights([home, away].map((team) => ({ team, items: teamForm(matches, match, team?.id) })), home, away, matches, match);
+}
+
 function createForms(forms, teamDirectory) {
   return createPanel("全大会 直近5試合", element("div", { className: "prematch-form-grid" }, forms.map(({ team, items }) => element("section", { className: "prematch-form-team", attributes: { "data-form-team": team?.id ?? "" } }, [element("header", {}, [createTeamEmblem(team, "team-emblem team-emblem--standing"), createTeamNameLink(team, team?.name)]), items.length ? element("div", { className: "prematch-form-list" }, items.map((item) => element("a", { className: `prematch-form-result form-badge--${item.result.toLowerCase()}`, attributes: { href: routeHref("match", { matchId: item.match.id }), "data-route": "match", "data-match-id": item.match.id } }, [createTeamEmblem(getTeam(teamDirectory, item.opponentId), "team-emblem team-emblem--compact"), element("strong", { text: `${item.result === "W" ? "○" : item.result === "D" ? "△" : "●"} ${item.goalsFor}-${item.goalsAgainst}` }), element("small", { text: item.match.competitionName ?? item.match.leagueName ?? "大会名未掲載" })]))) : createNotice("過去の終了試合はありません。")]))), "試合日より前");
 }
 
-function insightsPanel(forms, home, away, matches, match) {
+export function renderMatchInsights(forms, home, away, matches, match) {
   const insights = [];
   for (const { team, items } of forms) {
     if (!items.length) continue;
     const wins = items.filter((item) => item.result === "W").length; const draws = items.filter((item) => item.result === "D").length; const losses = items.length - wins - draws;
-    insights.push(`${team?.shortName ?? team?.name}は直近${items.length}試合で${wins}勝${draws}分${losses}敗`);
+    if (wins >= 3) insights.push({ text: `${team?.shortName ?? team?.name}は直近${items.length}試合で${wins}勝`, basis: `直近${items.length}試合`, priority: 1 });
     const unbeaten = items.findIndex((item) => item.result === "L"); const unbeatenCount = unbeaten === -1 ? items.length : unbeaten;
-    if (unbeatenCount >= 3) insights.push(`${team?.shortName ?? team?.name}は直近${unbeatenCount}試合で無敗`);
-    if (items.length >= 3) insights.push(`${team?.shortName ?? team?.name}は直近${items.length}試合で平均${(items.reduce((sum, item) => sum + item.goalsFor, 0) / items.length).toFixed(1)}得点`);
+    if (unbeatenCount >= 3) insights.push({ text: `${team?.shortName ?? team?.name}は${unbeatenCount}試合連続無敗`, basis: `直近${unbeatenCount}試合`, priority: 0 });
+    const cleanSheets = items.filter((item) => item.goalsAgainst === 0).length;
+    if (cleanSheets >= 2) insights.push({ text: `${team?.shortName ?? team?.name}は${items.length}試合中${cleanSheets}試合で無失点`, basis: `直近${items.length}試合`, priority: 4 });
+    const concededRun = items.findIndex((item) => item.goalsAgainst === 0); const conceded = concededRun === -1 ? items.length : concededRun;
+    if (conceded >= 3) insights.push({ text: `${team?.shortName ?? team?.name}は${conceded}試合連続で失点`, basis: `直近${conceded}試合`, priority: 4 });
   }
   const direct = matches.filter((item) => item.id !== match.id && item.status === "finished" && [item.homeTeam.teamId, item.awayTeam.teamId].includes(home?.id) && [item.homeTeam.teamId, item.awayTeam.teamId].includes(away?.id)).sort((a, b) => new Date(b.kickoffAt) - new Date(a.kickoffAt)).slice(0, 3);
-  if (direct.length) { const homeWins = direct.filter((item) => goalsFor(item, home?.id) > goalsAgainst(item, home?.id)).length; insights.push(`直近対戦${direct.length}試合では${home?.shortName ?? home?.name}が${homeWins}勝`); }
-  return insights.length ? createPanel("インサイト", element("ul", { className: "prematch-insights", attributes: { "data-insight-count": Math.min(5, insights.length) } }, [...new Set(insights)].slice(0, 5).map((text) => element("li", { text }))), "登録済み試合から機械集計") : null;
+  if (direct.length) { const homeWins = direct.filter((item) => goalsFor(item, home?.id) > goalsAgainst(item, home?.id)).length; if (homeWins >= 2) insights.push({ text: `この対戦では${home?.shortName ?? home?.name}が直近${direct.length}試合で${homeWins}勝`, basis: "通算対戦", priority: 1 }); }
+  const unique = [...new Map(insights.sort((a, b) => a.priority - b.priority).map((item) => [item.text, item])).values()].slice(0, 5);
+  return unique.length ? createPanel("インサイト", element("ul", { className: "prematch-insights", attributes: { "data-insight-count": unique.length } }, unique.map((item) => element("li", {}, [element("strong", { text: item.text }), element("small", { text: item.basis })]))), "登録済み試合から機械集計") : null;
 }
 
 function topScorerPanel({ match, matches, playerDirectory, playerStatistics, teamDirectory }) {
@@ -148,7 +156,8 @@ function topScorerPanel({ match, matches, playerDirectory, playerStatistics, tea
   for (const item of eligible) for (const goal of item.goals ?? []) { const side = goal.teamName === item.homeTeam.name ? item.homeTeam : item.awayTeam; const key = `${side.teamId}:${normalizePlayerName(goal.scorerName)}`; const value = totals.get(key) ?? { name: goal.scorerName, teamId: side.teamId, goals: 0, assists: 0 }; value.goals += 1; totals.set(key, value); for (const assistName of goal.assistNames ?? []) { const assistKey = `${side.teamId}:${normalizePlayerName(assistName)}`; const assist = totals.get(assistKey) ?? { name: assistName, teamId: side.teamId, goals: 0, assists: 0 }; assist.assists += 1; totals.set(assistKey, assist); } }
   const leaders = [...totals.values()].sort((a, b) => b.goals - a.goals || b.assists - a.assists || a.name.localeCompare(b.name, "ja")).filter((item, _, all) => item.goals > 0 && item.goals === all[0]?.goals);
   if (!leaders.length) return createNotice("得点ランキングは公式記録公開後に表示します。");
-  return createPanel("得点王", element("div", { className: "prematch-scorer-list" }, leaders.map((leader) => { const player = getPlayer(playerDirectory, leader.name, leader.teamId); const stats = player ? playerStatistics?.get(player.id) : null; const appearances = stats?.matches?.filter((item) => matchIds.has(item.matchId) && item.minutes > 0) ?? []; return element("article", { className: "prematch-scorer", attributes: { "data-player-id": player?.id ?? "" } }, [element("strong", { text: leader.name }), element("span", { text: getTeam(teamDirectory, leader.teamId)?.name ?? leader.teamId }), metric("ゴール", leader.goals), metric("アシスト", leader.assists), metric("シュート", "－"), metric("出場", appearances.length || "－"), metric("出場時間", appearances.length ? `${appearances.reduce((sum, item) => sum + item.minutes, 0)}分` : "－")]); })), `${leaders[0].goals}得点`);
+  const visible = leaders.slice(0, 3);
+  return createPanel("得点王", element("div", { className: "prematch-scorer-list" }, [...visible.map((leader) => { const player = getPlayer(playerDirectory, leader.name, leader.teamId); const stats = player ? playerStatistics?.get(player.id) : null; const appearances = stats?.matches?.filter((item) => matchIds.has(item.matchId) && item.minutes > 0) ?? []; const minutes = appearances.length ? appearances.reduce((sum, item) => sum + item.minutes, 0) : null; const card = element(player ? "a" : "article", { className: "prematch-scorer", attributes: { ...(player ? { href: routeHref("player", { playerId: player.id }), "data-route": "player" } : {}), "data-player-id": player?.id ?? "" } }, [element("strong", { text: leader.name }), element("span", { text: getTeam(teamDirectory, leader.teamId)?.name ?? leader.teamId }), metric("背番号", player?.number ?? "－"), metric("ゴール", leader.goals), metric("アシスト", leader.assists), metric("シュート", "－"), metric("出場", appearances.length || "－"), metric("出場時間", minutes == null ? "－" : `${minutes}分`), metric("90分当たり", minutes > 0 ? (leader.goals * 90 / minutes).toFixed(2) : "－")]); return card; }), leaders.length > 3 ? element("p", { className: "prematch-scorer-more", text: `ほか${leaders.length - 3}名` }) : null]), `${leaders[0].goals}得点 / 同率${leaders.length}名`);
 }
 
 function seasonToDatePanel(match, home, away, relevant, scope, teamDirectory, includeCurrent = false) {
