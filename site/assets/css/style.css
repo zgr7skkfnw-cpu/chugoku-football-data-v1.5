@@ -3321,3 +3321,95 @@ input[type="submit"] {
 }
 
 @media (max-width: 350px) { .finished-lineup-grid { grid-template-columns: 1fr; } }
+
+/* Finished-match standings keep all ten result columns without horizontal scrolling. */
+.prematch-standing-table.is-full {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.prematch-standing-table.is-full th,
+.prematch-standing-table.is-full td {
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.prematch-standing-table.is-full th:first-child,
+.prematch-standing-table.is-full td:first-child { width: 26px; }
+.prematch-standing-table.is-full th:nth-child(n+3):nth-child(-n+6),
+.prematch-standing-table.is-full td:nth-child(n+3):nth-child(-n+6) { width: 28px; }
+.prematch-standing-table.is-full th:nth-child(n+7):nth-child(-n+9),
+.prematch-standing-table.is-full td:nth-child(n+7):nth-child(-n+9) { width: 30px; }
+.prematch-standing-table.is-full th:last-child,
+.prematch-standing-table.is-full td:last-child { width: 32px; }
+
+.prematch-standing-table.is-full th:nth-child(2),
+.prematch-standing-table.is-full td:nth-child(2) {
+  width: auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.prematch-standing-table.is-full td:nth-child(2) .team-name-link {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prematch-standing-table.is-full tr.is-highlighted {
+  box-shadow: inset 2px 0 var(--accent);
+}
+
+.prematch-standing-scroll.is-full {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 640px) {
+  .prematch-standing-table.is-full {
+    font-size: 11px;
+  }
+
+  .prematch-standing-table.is-full th {
+    font-size: 10px;
+  }
+
+  .prematch-standing-table.is-full th,
+  .prematch-standing-table.is-full td {
+    height: 38px;
+    padding: 7px 2px;
+  }
+
+  .prematch-standing-table.is-full th:first-child,
+  .prematch-standing-table.is-full td:first-child { width: 22px; }
+  .prematch-standing-table.is-full th:nth-child(n+3):nth-child(-n+6),
+  .prematch-standing-table.is-full td:nth-child(n+3):nth-child(-n+6) { width: 24px; }
+  .prematch-standing-table.is-full th:nth-child(n+7):nth-child(-n+9),
+  .prematch-standing-table.is-full td:nth-child(n+7):nth-child(-n+9) { width: 26px; }
+  .prematch-standing-table.is-full th:last-child,
+  .prematch-standing-table.is-full td:last-child { width: 28px; }
+}
+
+@media (max-width: 350px) {
+  .prematch-standing-table.is-full {
+    font-size: 10px;
+  }
+
+  .prematch-standing-table.is-full th,
+  .prematch-standing-table.is-full td {
+    padding-inline: 1px;
+  }
+
+  .prematch-standing-table.is-full th:first-child,
+  .prematch-standing-table.is-full td:first-child { width: 20px; }
+  .prematch-standing-table.is-full th:nth-child(n+3):nth-child(-n+6),
+  .prematch-standing-table.is-full td:nth-child(n+3):nth-child(-n+6) { width: 21px; }
+  .prematch-standing-table.is-full th:nth-child(n+7):nth-child(-n+9),
+  .prematch-standing-table.is-full td:nth-child(n+7):nth-child(-n+9) { width: 23px; }
+  .prematch-standing-table.is-full th:last-child,
+  .prematch-standing-table.is-full td:last-child { width: 25px; }
+}

@@ -71,8 +71,26 @@ test("未開催順位表は簡略列、終了後順位表は詳細列を表示�
   await expect(table.locator("thead")).toContainText("敗");
   await expect(table.locator("thead")).toContainText("得");
   await expect(table.locator("thead")).toContainText("失");
+  await expect(table.locator("thead th")).toHaveCount(10);
   await expect(table.locator("tr.is-highlighted")).toHaveCount(2);
   const scroll = page.locator(".prematch-standing-scroll");
-  expect(await scroll.evaluate((node) => node.scrollWidth > node.clientWidth)).toBe(true);
+  expect(await scroll.evaluate((node) => node.scrollWidth <= node.clientWidth)).toBe(true);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
 });
+
+for (const width of [320, 375, 390, 430, 768, 1440]) {
+  test(`終了済み順位表10列を${width}px幅へ収める`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto(`${BASE_URL}?view=match&id=${FINISHED}&tab=standings`);
+    const table = page.locator(".prematch-standing-table.is-full");
+    const scroll = page.locator(".prematch-standing-scroll");
+    await expect(table.locator("thead th")).toHaveText(["順", "チーム", "試", "勝", "分", "敗", "得", "失", "差", "点"]);
+    expect(await table.evaluate((node) => node.getBoundingClientRect().width)).toBeLessThanOrEqual(width);
+    expect(await scroll.evaluate((node) => node.scrollWidth <= node.clientWidth)).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
+    await expect(table.locator("tr.is-highlighted")).toHaveCount(2);
+    const rows = await table.locator("tbody tr").evaluateAll((nodes) => nodes.map((node) => Math.round(node.getBoundingClientRect().height)));
+    expect(new Set(rows).size).toBe(1);
+    if (width === 1440) expect(await table.evaluate((node) => Number.parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThanOrEqual(12);
+  });
+}

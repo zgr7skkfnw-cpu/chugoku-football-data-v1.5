@@ -192,11 +192,11 @@ function buildStandings(matches, seedTeamIds = []) {
 }
 
 function standingTable(rows, teamDirectory, highlighted, { compact = true } = {}) {
-  const columns = compact ? [["#", "rank"], ["チーム", "team"], ["試", "played"], ["差", "goalDifference"], ["点", "points"]] : [["#", "rank"], ["チーム", "team"], ["試", "played"], ["勝", "won"], ["分", "drawn"], ["敗", "lost"], ["得", "goalsFor"], ["失", "goalsAgainst"], ["差", "goalDifference"], ["点", "points"]];
+  const columns = compact ? [["順", "rank"], ["チーム", "team"], ["試", "played"], ["差", "goalDifference"], ["点", "points"]] : [["順", "rank"], ["チーム", "team"], ["試", "played"], ["勝", "won"], ["分", "drawn"], ["敗", "lost"], ["得", "goalsFor"], ["失", "goalsAgainst"], ["差", "goalDifference"], ["点", "points"]];
   const ids = new Set(highlighted.filter(Boolean));
   const cell = (row, key) => key === "team" ? element("td", {}, [createTeamNameLink(getTeam(teamDirectory, row.teamId), row.teamId)]) : element("td", { text: key === "goalDifference" && row[key] > 0 ? `+${row[key]}` : row[key] });
   const table = element("table", { className: `prematch-standing-table${compact ? " is-compact" : " is-full"}` }, [element("thead", {}, [element("tr", {}, columns.map(([label]) => element("th", { text: label })))]), element("tbody", {}, rows.map((row) => element("tr", { className: ids.has(row.teamId) ? "is-highlighted" : "", attributes: { "data-prematch-standing-team": row.teamId } }, columns.map(([, key]) => cell(row, key))))) ]);
-  return element("div", { className: "table-scroll prematch-standing-scroll", attributes: { "data-swipe-exclude": "true", tabindex: "0", role: "region", "aria-label": compact ? "試合直前の簡略順位表" : "試合終了後の詳細順位表。横方向にスクロールできます" } }, [table]);
+  return element("div", { className: `table-scroll prematch-standing-scroll${compact ? " is-compact" : " is-full"}`, attributes: { "data-swipe-exclude": "true", tabindex: "0", role: "region", "aria-label": compact ? "試合直前の簡略順位表" : "試合終了後の詳細順位表" } }, [table]);
 }
 
 function calculateAutomaticSuspensions(target, matches, home, away) {
