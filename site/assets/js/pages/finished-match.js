@@ -29,7 +29,7 @@ export function renderFinishedMatchPage({ match, home, away, matches, teamDirect
   const index = TABS.indexOf(activeTab);
   enableHorizontalSwipe(content, { onLeft: () => TABS[index + 1] && changeTab(TABS[index + 1]), onRight: () => TABS[index - 1] && changeTab(TABS[index - 1]) });
   const context = { match, home, away, matches, teamDirectory, playerDirectory, playerStatistics, competition };
-  content.append(activeTab === "lineup" ? lineupTab(context) : activeTab === "stats" ? statsTab(context) : activeTab === "standings" ? createNotice("順位・大会表示は準備中です。") : activeTab === "head-to-head" ? createNotice("対戦成績は準備中です。") : informationTab(context));
+  content.append(activeTab === "lineup" ? lineupTab(context) : activeTab === "stats" ? statsTab(context) : activeTab === "standings" ? renderMatchCompetitionContext(context, { includeCurrent: true }) : activeTab === "head-to-head" ? renderMatchHeadToHead(context, { includeCurrent: true }) : informationTab(context));
   page.append(
     element("header", { className: "finished-match-header" }, [element("span", { text: match.competitionName ?? match.leagueName ?? "大会名未掲載" }), element("h1", { text: "試合終了" }), element("p", { text: match.roundLabel ?? (match.round != null ? `第${match.round}節` : "節・ラウンド未掲載") })]),
     scoreboard, periodScores(match), tabs, content,

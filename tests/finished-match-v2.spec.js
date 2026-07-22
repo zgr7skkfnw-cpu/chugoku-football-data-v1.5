@@ -67,3 +67,25 @@ test("スタッツは合計と未掲載の前後半を分け0へ変換しない"
   await page.getByRole("button", { name: "すべて", exact: true }).click();
   await expect(page.getByText("選手別シュート数は公式記録未掲載です。")).toBeVisible();
 });
+
+test("終了後順位と選手権トーナメントを大会別に表示しPKを維持する", async ({ page }) => {
+  await page.goto(`${BASE_URL}?view=match&id=${DIV2}&tab=standings`);
+  await expect(page.locator(".prematch-standing-table tbody tr")).toHaveCount(11);
+  await expect(page.locator(".prematch-standing-table tr.is-highlighted")).toHaveCount(2);
+  await page.goto(`${BASE_URL}?view=match&id=${PK_MATCH}&tab=standings`);
+  await expect(page.getByRole("tab", { name: "トーナメント" })).toHaveAttribute("aria-selected", "true");
+  await expect(page.locator(".tournament-match-card.is-highlighted")).not.toHaveCount(0);
+  await expect(page.locator(".tournament-round-matches")).toContainText("PK 4-5");
+});
+
+test("終了試合を含む通算対戦を開催区分と大会で絞り込める", async ({ page }) => {
+  await page.goto(`${BASE_URL}?view=match&id=${LEAGUE}&tab=head-to-head`);
+  await expect(page.locator(".prematch-h2h")).toContainText("この試合を含む通算対戦成績");
+  const total = Number(await page.locator(".prematch-h2h").getAttribute("data-h2h-total"));
+  expect(total).toBeGreaterThan(0);
+  await page.getByLabel("開催区分").selectOption("home");
+  expect(await page.locator(".h2h-history-row").count()).toBeLessThanOrEqual(total);
+  await expect(page.getByLabel("大会").locator("option")).toContainText(["すべての大会", "中国大学サッカーリーグ"]);
+  await page.locator(".h2h-history-row").first().click();
+  await expect(page.locator('[data-page="match"]')).toBeVisible();
+});
