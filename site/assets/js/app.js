@@ -46,6 +46,10 @@ let hasRendered = false;
 let playerDataPromise = null;
 const PLAYER_DATA_VIEWS = new Set(["players", "rankings", "player", "match", "team", "search", "following"]);
 
+document.addEventListener("click", (event) => {
+  if (event.target.closest("[data-retry-load]")) window.location.reload();
+});
+
 function requiresPlayerData(state) {
   if (!PLAYER_DATA_VIEWS.has(state.currentView)) return false;
   return true;

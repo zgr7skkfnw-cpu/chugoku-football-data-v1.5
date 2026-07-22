@@ -21,11 +21,18 @@ export function renderFinishedMatchPage({ match, home, away, matches, teamDirect
   const changeTab = (tab) => navigate("match", { matchId: match.id, matchTab: tab });
   tabs.append(...definitions.map(([key, label]) => {
     const selected = key === activeTab;
-    const button = element("button", { className: `finished-match-tab${selected ? " is-active" : ""}`, text: label, attributes: { type: "button", role: "tab", "aria-selected": String(selected), "data-finished-tab": key } });
+    const button = element("button", { className: `finished-match-tab${selected ? " is-active" : ""}`, text: label, attributes: { id: `finished-tab-${key}`, type: "button", role: "tab", "aria-selected": String(selected), "aria-controls": `finished-panel-${key}`, tabindex: selected ? "0" : "-1", "data-finished-tab": key } });
     button.addEventListener("click", () => changeTab(key));
     return button;
   }));
-  const content = element("div", { className: "finished-match-content", attributes: { "data-finished-content": activeTab } });
+  tabs.addEventListener("keydown", (event) => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    const offset = event.key === 'ArrowRight' ? 1 : -1;
+    const next = TABS[(TABS.indexOf(activeTab) + offset + TABS.length) % TABS.length];
+    changeTab(next);
+  });
+  const content = element("div", { className: "finished-match-content", attributes: { id: `finished-panel-${activeTab}`, role: "tabpanel", "aria-labelledby": `finished-tab-${activeTab}`, "data-finished-content": activeTab } });
   const index = TABS.indexOf(activeTab);
   enableHorizontalSwipe(content, { onLeft: () => TABS[index + 1] && changeTab(TABS[index + 1]), onRight: () => TABS[index - 1] && changeTab(TABS[index - 1]) });
   const context = { match, home, away, matches, teamDirectory, playerDirectory, playerStatistics, competition };

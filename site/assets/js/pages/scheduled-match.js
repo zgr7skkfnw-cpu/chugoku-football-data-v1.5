@@ -22,11 +22,18 @@ export function renderScheduledMatchPage({ match, home, away, matches, teamDirec
   const changeTab = (tab) => navigate("match", { matchId: match.id, matchTab: tab });
   tabs.append(...definitions.map(([key, label]) => {
     const selected = activeTab === key;
-    const button = element("button", { className: `prematch-tab${selected ? " is-active" : ""}`, text: label, attributes: { type: "button", role: "tab", "aria-selected": String(selected), "data-prematch-tab": key } });
+    const button = element("button", { className: `prematch-tab${selected ? " is-active" : ""}`, text: label, attributes: { id: `prematch-tab-${key}`, type: "button", role: "tab", "aria-selected": String(selected), "aria-controls": `prematch-panel-${key}`, tabindex: selected ? "0" : "-1", "data-prematch-tab": key } });
     button.addEventListener("click", () => changeTab(key));
     return button;
   }));
-  const content = element("div", { className: "prematch-tab-content", attributes: { "data-prematch-content": activeTab } });
+  tabs.addEventListener("keydown", (event) => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    const offset = event.key === 'ArrowRight' ? 1 : -1;
+    const next = TABS[(TABS.indexOf(activeTab) + offset + TABS.length) % TABS.length];
+    changeTab(next);
+  });
+  const content = element("div", { className: "prematch-tab-content", attributes: { id: `prematch-panel-${activeTab}`, role: "tabpanel", "aria-labelledby": `prematch-tab-${activeTab}`, "data-prematch-content": activeTab } });
   const index = TABS.indexOf(activeTab);
   enableHorizontalSwipe(content, { onLeft: () => TABS[index + 1] && changeTab(TABS[index + 1]), onRight: () => TABS[index - 1] && changeTab(TABS[index - 1]) });
   const context = { match, home, away, matches, teamDirectory, playerDirectory, playerStatistics, competition };
