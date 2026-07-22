@@ -1,4 +1,4 @@
-const DEFAULT_EXCLUDE = ".table-scroll, [data-swipe-exclude], .horizontal-scroll, .tournament-bracket, input, select, textarea";
+const DEFAULT_EXCLUDE = ".table-scroll, [data-swipe-exclude], .horizontal-scroll, .tournament-bracket, input, select, textarea, button, a, [role='button'], [role='link']";
 
 export function enableHorizontalSwipe(node, { onLeft, onRight, threshold = 56, exclude = DEFAULT_EXCLUDE, edgeGuard = 24, cooldown = 0 } = {}) {
   let start = null;

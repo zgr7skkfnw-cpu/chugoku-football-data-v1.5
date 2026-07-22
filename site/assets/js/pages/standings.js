@@ -165,8 +165,6 @@ export function renderStandingsPage({
   });
   const matchCount = element("span", { text: "0試合" });
   let displayedLeagueMatches = [];
-  let dateFilter = "";
-  let roundFilter = "";
   let teamFilter = "";
   let timelinePositioned = false;
 
@@ -179,8 +177,6 @@ export function renderStandingsPage({
             : "scheduled";
 
           return matchStatuses.has(statusKey)
-            && (!dateFilter || match.kickoffAt.slice(0, 10) === dateFilter)
-            && (!roundFilter || String(match.roundLabel ?? match.round) === roundFilter)
             && (!teamFilter || match.homeTeam.teamId === teamFilter || match.awayTeam.teamId === teamFilter);
         }),
     );
@@ -224,25 +220,18 @@ export function renderStandingsPage({
 
   renderMatchList();
 
-  const dateSelect = element("input", { className: "filter-select", attributes: { type: "date", "aria-label": "日付で絞り込み" } });
-  const roundSelect = element("select", { className: "filter-select", attributes: { "aria-label": isTournament ? "ラウンドで絞り込み" : "節で絞り込み" } }, [
-    element("option", { text: isTournament ? "全ラウンド" : "全節", attributes: { value: "" } }),
-    ...[...new Set(leagueMatches.map((match) => String(match.roundLabel ?? match.round)))].map((value) => element("option", { text: value.match(/^\d+$/) ? `第${value}節` : value, attributes: { value } })),
-  ]);
   const teamSelect = element("select", { className: "filter-select", attributes: { "aria-label": "チームで絞り込み" } }, [
     element("option", { text: "全チーム", attributes: { value: "" } }),
     ...(activeCompetition?.teamIds ?? []).map((id) => { const team = getTeam(teamDirectory, id); return element("option", { text: team?.name ?? id, attributes: { value: id } }); }),
   ]);
-  dateSelect.addEventListener("change", () => { dateFilter = dateSelect.value; renderMatchList(); });
-  roundSelect.addEventListener("change", () => { roundFilter = roundSelect.value; renderMatchList(); });
   teamSelect.addEventListener("change", () => { teamFilter = teamSelect.value; renderMatchList(); });
 
   const matchesSection = element("div", {
     className: "league-detail-section",
   }, [
     createSeasonSelect(selectedSeason, availableSeasons),
-    createSeasonPeriodTabs(seasonPeriod),
-    element("div", { className: "league-match-filters" }, [dateSelect, roundSelect, teamSelect]),
+    isTournament ? null : createSeasonPeriodTabs(seasonPeriod),
+    element("div", { className: "league-match-filters league-match-filters--simple" }, [teamSelect]),
     element("div", {
       className: "chip-row",
       attributes: { "aria-label": "試合の開催状況" },

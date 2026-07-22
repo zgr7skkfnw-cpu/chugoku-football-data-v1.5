@@ -16,7 +16,12 @@ export function renderHomePage({ matches, teamDirectory, favoriteTeamIds = [], s
   const page = element("article", { className: "page home-feed", attributes: { "data-page": "home", "data-selected-date": activeDate } });
   const changeDate = (date) => navigate("home", { date, replace: true });
   const dateNavigation = createDateControls(activeDate, changeDate);
-  enableHorizontalSwipe(page, { onLeft: () => changeDate(shiftDate(activeDate, 1)), onRight: () => changeDate(shiftDate(activeDate, -1)) });
+  enableHorizontalSwipe(page, {
+    onLeft: () => changeDate(shiftDate(activeDate, 1)),
+    onRight: () => changeDate(shiftDate(activeDate, -1)),
+    exclude: ".bottom-nav, .collapsible-competition__toggle, .table-scroll, .horizontal-scroll, [data-swipe-exclude], button, a, input, select, textarea",
+    cooldown: 220,
+  });
 
   const content = element("div", { className: "home-feed__content" }, [
     dateNavigation,
@@ -90,7 +95,10 @@ function createDateControls(selectedDate, onSelect) {
   }));
   const today = element("button", { className: "today-button", text: "今日", attributes: { type: "button" } });
   today.addEventListener("click", () => onSelect(todayKey()));
-  controls.append(previous, strip, next, today);
+  const picker = element("input", { className: "home-date-picker", attributes: { type: "date", value: selectedDate, "aria-label": "カレンダーから試合日を選択", title: "カレンダー" } });
+  picker.addEventListener("change", () => { if (picker.value) onSelect(picker.value); });
+  const actions = element("div", { className: "match-date-navigation__actions" }, [today, picker]);
+  controls.append(previous, strip, next, actions);
   return controls;
 }
 
