@@ -2989,6 +2989,24 @@ input[type="submit"] {
 /* Phase 6: safe-area, narrow-screen and interaction consistency. */
 .finished-match-tabs { top: calc(64px + env(safe-area-inset-top)); }
 
+/* New match headers render emblems directly; the absolute rule above is only for the legacy kit overlay. */
+.prematch-v2-scoreboard__team > .team-emblem--scoreboard,
+.finished-scoreboard .match-scoreboard__team > .team-emblem--scoreboard,
+.prematch-v2-scoreboard__team > .crest.team-emblem--scoreboard,
+.finished-scoreboard .match-scoreboard__team > .crest.team-emblem--scoreboard {
+  position: static;
+  width: 52px;
+  height: 52px;
+  padding: 4px;
+  flex: 0 0 52px;
+  object-fit: contain;
+}
+
+.prematch-standing-table.is-full { min-width: 660px; }
+.prematch-standing-table.is-full th,
+.prematch-standing-table.is-full td { padding-inline: 7px; white-space: nowrap; }
+.prematch-standing-scroll { max-width: 100%; overflow-x: auto; }
+
 .match-date-navigation__actions { display:grid; gap:4px; justify-items:center; }
 .horizontal-scroll,
 .table-scroll,

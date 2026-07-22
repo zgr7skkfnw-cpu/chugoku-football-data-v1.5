@@ -79,7 +79,7 @@ export function renderMatchCompetitionContext(context, { includeCurrent = false 
   const scope = matches.filter((item) => item.competitionId === match.competitionId && sameGroup(item, match));
   const relevant = (includeCurrent ? matchesThrough(matches, match) : previousMatches(matches, match)).filter((item) => item.competitionId === match.competitionId && sameGroup(item, match));
   const rows = buildStandings(relevant, teamIdsFromMatches(scope));
-  return element("div", { className: "section-stack", attributes: { "data-context-type": "standings" } }, [createPanel(match.groupName ? `${match.groupName} 順位表` : "順位表", standingTable(rows, teamDirectory, [home?.id, away?.id]), includeCurrent ? "この試合終了後まで" : "この試合の直前まで"), createNotice(includeCurrent ? "当該試合終了後までの同一大会の試合から再構成しています。" : "当該試合より前に終了した同一大会の試合から再構成しています。"), seasonToDatePanel(match, home, away, relevant, scope, teamDirectory, includeCurrent)]);
+  return element("div", { className: "section-stack", attributes: { "data-context-type": "standings" } }, [createPanel(match.groupName ? `${match.groupName} 順位表` : "順位表", standingTable(rows, teamDirectory, [home?.id, away?.id], { compact: !includeCurrent }), includeCurrent ? "この試合終了後まで" : "この試合の直前まで"), createNotice(includeCurrent ? "当該試合終了後までの同一大会の試合から再構成しています。" : "当該試合より前に終了した同一大会の試合から再構成しています。"), seasonToDatePanel(match, home, away, relevant, scope, teamDirectory, includeCurrent)]);
 }
 
 function tournamentView({ match, matches, teamDirectory }) {
@@ -191,8 +191,12 @@ function buildStandings(matches, seedTeamIds = []) {
   return [...map.values()].map((row) => ({ ...row, goalDifference: row.goalsFor - row.goalsAgainst })).sort((a, b) => b.points - a.points || b.goalDifference - a.goalDifference || b.goalsFor - a.goalsFor || a.teamId.localeCompare(b.teamId)).map((row, index) => ({ ...row, rank: index + 1 }));
 }
 
-function standingTable(rows, teamDirectory, highlighted) {
-  const ids = new Set(highlighted.filter(Boolean)); const table = element("table", { className: "prematch-standing-table" }, [element("thead", {}, [element("tr", {}, ["#", "チーム", "試", "差", "点"].map((text) => element("th", { text })))]), element("tbody", {}, rows.map((row) => element("tr", { className: ids.has(row.teamId) ? "is-highlighted" : "", attributes: { "data-prematch-standing-team": row.teamId } }, [element("td", { text: row.rank }), element("td", {}, [createTeamNameLink(getTeam(teamDirectory, row.teamId), row.teamId)]), element("td", { text: row.played }), element("td", { text: row.goalDifference > 0 ? `+${row.goalDifference}` : row.goalDifference }), element("td", { text: row.points })]))) ]); return element("div", { className: "table-scroll", attributes: { "data-swipe-exclude": "true" } }, [table]);
+function standingTable(rows, teamDirectory, highlighted, { compact = true } = {}) {
+  const columns = compact ? [["#", "rank"], ["チーム", "team"], ["試", "played"], ["差", "goalDifference"], ["点", "points"]] : [["#", "rank"], ["チーム", "team"], ["試", "played"], ["勝", "won"], ["分", "drawn"], ["敗", "lost"], ["得", "goalsFor"], ["失", "goalsAgainst"], ["差", "goalDifference"], ["点", "points"]];
+  const ids = new Set(highlighted.filter(Boolean));
+  const cell = (row, key) => key === "team" ? element("td", {}, [createTeamNameLink(getTeam(teamDirectory, row.teamId), row.teamId)]) : element("td", { text: key === "goalDifference" && row[key] > 0 ? `+${row[key]}` : row[key] });
+  const table = element("table", { className: `prematch-standing-table${compact ? " is-compact" : " is-full"}` }, [element("thead", {}, [element("tr", {}, columns.map(([label]) => element("th", { text: label })))]), element("tbody", {}, rows.map((row) => element("tr", { className: ids.has(row.teamId) ? "is-highlighted" : "", attributes: { "data-prematch-standing-team": row.teamId } }, columns.map(([, key]) => cell(row, key))))) ]);
+  return element("div", { className: "table-scroll prematch-standing-scroll", attributes: { "data-swipe-exclude": "true", tabindex: "0", role: "region", "aria-label": compact ? "試合直前の簡略順位表" : "試合終了後の詳細順位表。横方向にスクロールできます" } }, [table]);
 }
 
 function calculateAutomaticSuspensions(target, matches, home, away) {

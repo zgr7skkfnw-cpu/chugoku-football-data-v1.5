@@ -30,8 +30,8 @@ export function renderMatchDetailPage({ matches, currentMatchId, selectedMatchTa
     ]);
   }
 
-  const home = getTeam(teamDirectory, match.homeTeam);
-  const away = getTeam(teamDirectory, match.awayTeam);
+  const home = getTeam(teamDirectory, match.homeTeam, match.competitionId);
+  const away = getTeam(teamDirectory, match.awayTeam, match.competitionId);
   const matchPlayerDirectory = match.season === 2026 ? playerDirectory : null;
   const competition = competitionDefinitions.find((entry) => entry.id === match.competitionId) ?? null;
   if (match.status !== "finished") {
