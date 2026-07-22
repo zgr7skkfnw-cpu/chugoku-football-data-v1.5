@@ -2988,6 +2988,8 @@ input[type="submit"] {
 
 /* Phase 6: safe-area, narrow-screen and interaction consistency. */
 .finished-match-tabs { top: calc(64px + env(safe-area-inset-top)); }
+
+.match-date-navigation__actions { display:grid; gap:4px; justify-items:center; }
 .horizontal-scroll,
 .table-scroll,
 .tournament-bracket { overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; }
@@ -3286,3 +3288,18 @@ input[type="submit"] {
 
 /* Keep the finished-match tab bar below the safe-area aware app header. */
 .finished-match-tabs { top: calc(64px + env(safe-area-inset-top)); }
+
+@media (max-width: 640px) {
+  .finished-lineup-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .finished-lineup-grid .panel { padding: 8px; }
+  .finished-lineup-grid .panel__title { font-size: .78rem; overflow-wrap: anywhere; }
+  .finished-lineup-player > a, .finished-lineup-player > span { grid-template-columns: 24px minmax(0, 1fr); padding: 7px 5px; font-size: .76rem; }
+  .finished-lineup-player .lineup-player__position, .finished-lineup-player .lineup-badge { display: none; }
+  .finished-lineup-player small, .lineup-season-stats { grid-column: 1 / -1; }
+  .prematch-form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .prematch-form-team { min-width: 0; padding: 8px; }
+  .prematch-standing-table { width: 100%; min-width: 0; }
+  .prematch-standing-table th, .prematch-standing-table td { padding: 7px 4px; }
+}
+
+@media (max-width: 350px) { .finished-lineup-grid { grid-template-columns: 1fr; } }
