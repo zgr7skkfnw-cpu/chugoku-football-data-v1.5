@@ -48,8 +48,7 @@ const PLAYER_DATA_VIEWS = new Set(["players", "rankings", "player", "match", "te
 
 function requiresPlayerData(state) {
   if (!PLAYER_DATA_VIEWS.has(state.currentView)) return false;
-  if (state.currentView !== "match") return true;
-  return state.matches.find((match) => match.id === state.currentMatchId)?.status === "finished";
+  return true;
 }
 
 function render(state, previousState = {}) {

@@ -3,6 +3,7 @@ const listeners = new Set();
 const state = {
   currentView: "home",
   currentMatchId: null,
+  selectedMatchTab: "preview",
   currentTeamId: null,
   currentPlayerId: null,
   theme: "dark",

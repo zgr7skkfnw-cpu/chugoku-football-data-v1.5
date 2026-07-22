@@ -2341,6 +2341,53 @@ a,
 .following-player-card span:last-child { color: var(--text-muted); font-size: 10px; }
 .player-follow-button { justify-self: start; margin: -4px 0 12px; }
 
+.prematch-v2-header { display: grid; gap: 4px; margin-bottom: 12px; text-align: center; }
+.prematch-v2-header span, .prematch-v2-header p { margin: 0; color: var(--text-muted); font-size: 11px; }
+.prematch-v2-header h1 { margin: 0; font-size: 22px; }
+.prematch-v2-scoreboard { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 16px; min-height: 180px; padding: 24px; border: 1px solid var(--border-soft); border-radius: 24px; background: var(--surface); }
+.prematch-v2-scoreboard__team { display: grid; justify-items: center; gap: 10px; text-align: center; }
+.prematch-v2-scoreboard__team small, .prematch-v2-scoreboard__center span, .prematch-v2-scoreboard__center small { color: var(--text-muted); font-size: 10px; }
+.prematch-v2-scoreboard__center { display: grid; justify-items: center; gap: 5px; }
+.prematch-v2-scoreboard__center strong { font-size: 26px; }
+.prematch-form-list { display: grid; gap: 7px; margin-top: 10px; }
+.prematch-form-result { display: grid; grid-template-columns: 28px auto minmax(0, 1fr); align-items: center; gap: 8px; padding: 9px; border: 1px solid var(--border-soft); border-radius: 12px; color: var(--text); text-decoration: none; }
+.prematch-form-result.form-badge--w { border-left: 4px solid var(--success); }
+.prematch-form-result.form-badge--d { border-left: 4px solid var(--text-muted); }
+.prematch-form-result.form-badge--l { border-left: 4px solid var(--danger); }
+.prematch-form-result small { overflow: hidden; color: var(--text-muted); font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.prematch-insights { display: grid; gap: 10px; margin: 0; padding-left: 20px; }
+.prematch-scorer-list { display: grid; gap: 10px; }
+.prematch-scorer { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 12px; border-radius: 14px; background: var(--surface-soft); }
+.prematch-scorer > strong, .prematch-scorer > span { grid-column: span 3; }
+.prematch-metric { display: grid; gap: 3px; padding: 8px; border-radius: 10px; background: var(--surface-soft); }
+.prematch-metric span { color: var(--text-muted); font-size: 9px; }
+.prematch-metric strong { font-size: 12px; }
+.season-comparison, .suspension-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.season-comparison__team { display: grid; gap: 7px; padding: 14px; border: 1px solid var(--border-soft); border-radius: 16px; }
+.season-comparison__team header { display: flex; align-items: center; gap: 8px; }
+.tournament-round-tabs { display: flex; gap: 8px; padding: 4px 0; overflow-x: auto; }
+.tournament-round-tab { flex: 0 0 auto; min-height: 38px; padding: 0 14px; border: 1px solid var(--border-soft); border-radius: 999px; background: var(--surface-soft); color: var(--text-muted); font: inherit; font-weight: 800; cursor: pointer; }
+.tournament-round-tab.is-active { background: var(--surface); color: var(--text); box-shadow: 0 5px 14px rgba(0,0,0,.14); }
+.tournament-round-matches { display: grid; gap: 10px; }
+.tournament-match-card { display: grid; gap: 7px; padding: 13px; border: 1px solid var(--border-soft); border-radius: 14px; background: var(--surface); color: var(--text); text-decoration: none; }
+.tournament-match-card.is-highlighted { outline: 2px solid var(--accent); }
+.tournament-match-card > strong { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 8px; }
+.tournament-match-card > strong > :last-child { text-align: right; }
+.tournament-match-card > span, .tournament-match-card > small { color: var(--text-muted); font-size: 9px; }
+.tournament-bracket { display: flex; gap: 14px; overflow-x: auto; padding: 4px; }
+.tournament-bracket__round { display: grid; flex: 0 0 260px; align-content: start; gap: 10px; }
+.prematch-h2h-filters { display: flex; gap: 8px; overflow-x: auto; }
+.prematch-h2h-filters .filter-select { min-width: 160px; }
+
+@media (max-width: 520px) {
+  .prematch-v2-scoreboard { gap: 8px; min-height: 160px; padding: 16px 8px; }
+  .prematch-v2-scoreboard__center strong { font-size: 20px; }
+  .prematch-v2-scoreboard__team a { font-size: 11px; }
+  .prematch-scorer { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .prematch-scorer > strong, .prematch-scorer > span { grid-column: span 2; }
+  .season-comparison, .suspension-grid { grid-template-columns: 1fr; }
+}
+
 .league-card-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
 .league-card-row .league-card { min-width: 0; }
 .league-order-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--text-muted); font-size: 11px; }

@@ -31,29 +31,17 @@ test("試合ハブの日付切替・4タブ・チームリンクが動作する"
   expect(errors).toEqual([]);
 });
 
-test("試合前のプレビュー・順位表・対戦を公開データで表示する", async ({ page }) => {
+test("試合前のプレビュー・順位表を公開データで表示する", async ({ page }) => {
   const errors = collectErrors(page);
   await page.goto(`${BASE_URL}?view=match&id=${SCHEDULED_MATCH_ID}`);
   await expect(page.getByRole("heading", { name: "試合予定" })).toBeVisible();
-  await expect(page.locator(".prematch-tabs .prematch-tab")).toHaveCount(3);
-  await expect(page.locator(".prematch-standing-table tbody tr")).toHaveCount(2);
-  await expect(page.getByText("予報期間外")).toBeVisible();
+  await expect(page.locator(".prematch-tabs .prematch-tab")).toHaveCount(4);
+  await expect(page.locator(".prematch-form-team")).toHaveCount(2);
 
   await page.getByRole("tab", { name: "順位表", exact: true }).click();
   await expect(page.locator(".prematch-standing-table tbody tr")).toHaveCount(10);
   await expect(page.locator(".prematch-standing-table tr.is-highlighted")).toHaveCount(2);
 
-  await page.getByRole("tab", { name: "対戦", exact: true }).click();
-  await expect(page.getByRole("heading", { name: "対戦成績" })).toBeVisible();
-  await expect(page.locator(".h2h-summary .h2h-team")).toHaveCount(2);
-  const currentSeasonH2h = page
-    .locator(".h2h-history-row")
-    .filter({ hasText: "2026年度 / 中国大学サッカーリーグ 1部 / リーグ戦" });
-
-  await expect(currentSeasonH2h).toHaveCount(1);
-  await expect(currentSeasonH2h).toContainText("2026年");
-  await expect(currentSeasonH2h).not.toContainText("前期");
-  await expect(currentSeasonH2h).not.toContainText("後期");
   expect(errors).toEqual([]);
 });
 

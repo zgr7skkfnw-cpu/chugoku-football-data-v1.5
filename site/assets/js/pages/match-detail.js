@@ -12,8 +12,9 @@ import { getPlayer } from "../utils/players.js";
 import { routeHref } from "../router.js";
 import { loadVenueWeather, weatherLabel } from "../api/weather.js";
 import { createTeamNameLink } from "./shared.js";
+import { renderScheduledMatchPage } from "./scheduled-match.js";
 
-export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, playerDirectory, teamStats, leagueStats, headToHead }) {
+export function renderMatchDetailPage({ matches, currentMatchId, selectedMatchTab = "preview", teamDirectory, playerDirectory, playerStatistics, teamStats, leagueStats, headToHead, competitionDefinitions = [] }) {
   const match = matches.find((candidate) => candidate.id === currentMatchId);
 
   if (!match) {
@@ -32,8 +33,10 @@ export function renderMatchDetailPage({ matches, currentMatchId, teamDirectory, 
   const away = getTeam(teamDirectory, match.awayTeam);
   const matchPlayerDirectory = match.season === 2026 ? playerDirectory : null;
   if (match.status !== "finished") {
-    const competitionStats = leagueStats?.[match.season]?.[match.division] ?? teamStats;
-    return createScheduledMatchPage(match, home, away, teamDirectory, competitionStats, headToHead);
+    const competition = competitionDefinitions.find((entry) => entry.id === match.competitionId) ?? null;
+    const competitionStats = leagueStats?.[match.season]?.byCompetition?.[match.competitionId]
+      ?? leagueStats?.[match.season]?.[match.division] ?? teamStats;
+    return renderScheduledMatchPage({ match, home, away, matches, teamDirectory, playerDirectory, playerStatistics, competitionStats, competition, selectedMatchTab });
   }
   const score = element("section", { className: "match-scoreboard" }, [
     createScoreTeam(home, match.homeTeam.name, "ホーム", "home"),
