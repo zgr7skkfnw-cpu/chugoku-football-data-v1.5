@@ -20,6 +20,7 @@ export function renderHomePage({ matches, teamDirectory, favoriteTeamIds = [], s
     onLeft: () => changeDate(shiftDate(activeDate, 1)),
     onRight: () => changeDate(shiftDate(activeDate, -1)),
     exclude: ".bottom-nav, .collapsible-competition__toggle, .table-scroll, .horizontal-scroll, [data-swipe-exclude], button, a, input, select, textarea",
+    threshold: 44,
     cooldown: 220,
   });
 

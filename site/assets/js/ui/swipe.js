@@ -13,14 +13,14 @@ export function enableHorizontalSwipe(node, { onLeft, onRight, threshold = 56, e
     if (!start || event.pointerId !== start.id) return;
     const dx = event.clientX - start.x;
     const dy = event.clientY - start.y;
-    if (Math.abs(dy) > Math.abs(dx) * 1.1 && Math.abs(dy) > 12) start = null;
+    if (Math.abs(dy) > Math.abs(dx) * 1.35 && Math.abs(dy) > 18) start = null;
   }, { passive: true });
   node.addEventListener("pointerup", (event) => {
     if (!start || event.pointerId !== start.id) return;
     const dx = event.clientX - start.x;
     const dy = event.clientY - start.y;
     start = null;
-    if (Math.abs(dx) < threshold || Math.abs(dx) <= Math.abs(dy) * 1.25) return;
+    if (Math.abs(dx) < threshold || Math.abs(dx) <= Math.abs(dy) * 1.1) return;
     lockedUntil = performance.now() + cooldown;
     if (dx < 0) onLeft?.();
     else onRight?.();
