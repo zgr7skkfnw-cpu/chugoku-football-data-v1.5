@@ -86,13 +86,17 @@ export function createTeamEmblem(team, className = "team-emblem") {
   if (!team?.emblem) {
     return createCrest(team?.shortName ?? "–", team?.colors?.primary, className);
   }
-  return createTeamImage({
+  const image = createTeamImage({
     src: team.emblem,
     alt: `${team.name} エンブレム`,
     className,
     width: 48,
     height: 48,
   });
+  image.addEventListener("error", () => {
+    image.replaceWith(createCrest(team?.shortName ?? team?.name?.slice(0, 2) ?? "–", team?.colors?.primary ?? team?.primaryColor, className));
+  }, { once: true });
+  return image;
 }
 
 export function createKitImage(team, type = "home", className = "kit-icon") {

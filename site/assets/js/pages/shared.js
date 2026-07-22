@@ -4,8 +4,8 @@ import { formatKickoff } from "../utils/football.js";
 import { getTeam } from "../utils/teams.js";
 
 export function createMatchRow(match, teamDirectory) {
-  const home = getTeam(teamDirectory, match.homeTeam);
-  const away = getTeam(teamDirectory, match.awayTeam);
+  const home = getTeam(teamDirectory, match.homeTeam, match.competitionId);
+  const away = getTeam(teamDirectory, match.awayTeam, match.competitionId);
 
   const row = element(
     "div",
