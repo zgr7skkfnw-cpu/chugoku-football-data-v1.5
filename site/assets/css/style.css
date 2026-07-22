@@ -3413,3 +3413,82 @@ input[type="submit"] {
   .prematch-standing-table.is-full th:last-child,
   .prematch-standing-table.is-full td:last-child { width: 25px; }
 }
+
+/* Scheduled-match standings use the same no-scroll sizing with five compact columns. */
+.prematch-standing-table.is-compact {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.prematch-standing-table.is-compact th,
+.prematch-standing-table.is-compact td {
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.prematch-standing-table.is-compact th:first-child,
+.prematch-standing-table.is-compact td:first-child { width: 32px; }
+.prematch-standing-table.is-compact th:nth-child(n+3),
+.prematch-standing-table.is-compact td:nth-child(n+3) { width: 44px; }
+.prematch-standing-table.is-compact th:nth-child(2),
+.prematch-standing-table.is-compact td:nth-child(2) {
+  width: auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.prematch-standing-table.is-compact td:nth-child(2) .team-name-link {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prematch-standing-table.is-compact tr.is-highlighted {
+  box-shadow: inset 2px 0 var(--accent);
+}
+
+.prematch-standing-scroll.is-compact {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 640px) {
+  .prematch-standing-table.is-compact {
+    font-size: 11px;
+  }
+
+  .prematch-standing-table.is-compact th {
+    font-size: 10px;
+  }
+
+  .prematch-standing-table.is-compact th,
+  .prematch-standing-table.is-compact td {
+    height: 38px;
+    padding: 7px 2px;
+  }
+
+  .prematch-standing-table.is-compact th:first-child,
+  .prematch-standing-table.is-compact td:first-child { width: 24px; }
+  .prematch-standing-table.is-compact th:nth-child(n+3),
+  .prematch-standing-table.is-compact td:nth-child(n+3) { width: 32px; }
+}
+
+@media (max-width: 350px) {
+  .prematch-standing-table.is-compact {
+    font-size: 10px;
+  }
+
+  .prematch-standing-table.is-compact th,
+  .prematch-standing-table.is-compact td {
+    padding-inline: 1px;
+  }
+
+  .prematch-standing-table.is-compact th:first-child,
+  .prematch-standing-table.is-compact td:first-child { width: 22px; }
+  .prematch-standing-table.is-compact th:nth-child(n+3),
+  .prematch-standing-table.is-compact td:nth-child(n+3) { width: 28px; }
+}
