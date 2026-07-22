@@ -30,7 +30,7 @@ export function renderScheduledMatchPage({ match, home, away, matches, teamDirec
   const index = TABS.indexOf(activeTab);
   enableHorizontalSwipe(content, { onLeft: () => TABS[index + 1] && changeTab(TABS[index + 1]), onRight: () => TABS[index - 1] && changeTab(TABS[index - 1]) });
   const context = { match, home, away, matches, teamDirectory, playerDirectory, playerStatistics, competition };
-  content.append(activeTab === "suspensions" ? suspensionsTab(context) : activeTab === "standings" ? competitionTab(context) : activeTab === "head-to-head" ? headToHeadTab(context) : previewTab(context));
+  content.append(activeTab === "suspensions" ? suspensionsTab(context) : activeTab === "standings" ? renderMatchCompetitionContext(context) : activeTab === "head-to-head" ? renderMatchHeadToHead(context) : previewTab(context));
   page.append(
     element("header", { className: "prematch-v2-header" }, [element("span", { text: match.competitionName ?? match.leagueName ?? "大会名未掲載" }), element("h1", { text: statusLabel }), element("p", { text: match.roundLabel ?? (match.round != null ? `第${match.round}節` : "節・ラウンド未掲載") })]),
     scoreboard, tabs, content,
@@ -59,14 +59,14 @@ function suspensionsTab({ match, home, away }) {
   return element("div", { className: "suspension-grid", attributes: { "data-suspensions": "official" } }, [[home, suspensions.home ?? []], [away, suspensions.away ?? []]].map(([team, items]) => createPanel(team?.name ?? "チーム", items.length ? element("div", { className: "detail-list" }, items.map((item) => element("div", { className: "suspension-row" }, [element("strong", { text: item.playerName ?? "選手名未掲載" }), element("span", { text: item.number == null ? "背番号 －" : `背番号 ${item.number}` }), element("span", { text: item.reason ?? "理由未掲載" }), element("small", { text: item.source ?? "公式根拠未掲載" })]))) : createNotice("公式記録未掲載"), "公式情報")));
 }
 
-function competitionTab(context) {
+export function renderMatchCompetitionContext(context, { includeCurrent = false } = {}) {
   const { match, home, away, matches, teamDirectory, competition } = context;
   if (competition?.dataStatus === "not-held") return createNotice(competition.message ?? "この大会は開催されません。");
   if (competition?.dataStatus === "not-published") return createNotice(competition.message ?? "大会情報はまだ公式発表されていません。");
   if (isTournament(competition, match)) return tournamentView(context);
   if (competition?.competitionType === "promotion-relegation") return promotionView(context);
   const scope = matches.filter((item) => item.competitionId === match.competitionId && sameGroup(item, match));
-  const relevant = previousMatches(matches, match).filter((item) => item.competitionId === match.competitionId && sameGroup(item, match));
+  const relevant = (includeCurrent ? matchesThrough(matches, match) : previousMatches(matches, match)).filter((item) => item.competitionId === match.competitionId && sameGroup(item, match));
   const rows = buildStandings(relevant, teamIdsFromMatches(scope));
   return element("div", { className: "section-stack", attributes: { "data-context-type": "standings" } }, [createPanel(match.groupName ? `${match.groupName} 順位表` : "順位表", standingTable(rows, teamDirectory, [home?.id, away?.id]), "当該試合より前"), createNotice("当該試合より前に終了した同一大会の試合から再構成しています。")]);
 }
@@ -92,8 +92,8 @@ function promotionView({ match, matches, teamDirectory, competition }) {
   return element("div", { className: "section-stack", attributes: { "data-context-type": "promotion" } }, [createPanel("対戦カード・大会情報", element("div", { className: "tournament-round-matches" }, items.map((item) => tournamentMatch(item, teamDirectory, item.id === match.id))), competition?.formatLabel ?? "公式大会情報"), competition?.notes ? createNotice(competition.notes) : createNotice("昇格・残留条件は公式要項に掲載された情報のみ表示します。")]);
 }
 
-function headToHeadTab({ match, home, away, matches, teamDirectory }) {
-  const history = matches.filter((item) => item.id !== match.id && item.status === "finished" && [item.homeTeam.teamId, item.awayTeam.teamId].includes(home?.id) && [item.homeTeam.teamId, item.awayTeam.teamId].includes(away?.id)).sort((a, b) => new Date(b.kickoffAt) - new Date(a.kickoffAt));
+export function renderMatchHeadToHead({ match, home, away, matches, teamDirectory }, { includeCurrent = false } = {}) {
+  const history = matches.filter((item) => (includeCurrent || item.id !== match.id) && item.status === "finished" && [item.homeTeam.teamId, item.awayTeam.teamId].includes(home?.id) && [item.homeTeam.teamId, item.awayTeam.teamId].includes(away?.id)).sort((a, b) => new Date(b.kickoffAt) - new Date(a.kickoffAt));
   let venueFilter = "all"; let competitionFilter = "all";
   const categories = [...new Set(history.map(competitionCategory))];
   const content = element("div");
@@ -103,7 +103,11 @@ function headToHeadTab({ match, home, away, matches, teamDirectory }) {
     content.replaceChildren(createPanel("対戦成績", element("div", { className: "h2h-summary" }, [createH2hTeam(home, summary.homeWins, "勝利"), element("div", { className: "h2h-draws" }, [element("strong", { text: String(summary.draws) }), element("span", { text: "引分" })]), createH2hTeam(away, summary.awayWins, "勝利")]), `${filtered.length}試合 / 得点 ${summary.homeGoals}-${summary.awayGoals}`), createPanel("直近対戦", filtered.length ? element("div", { className: "h2h-history" }, filtered.map((item) => h2hRow(item))) : createNotice("該当する対戦記録はありません。"), `${filtered.length}試合`));
   };
   const filters = element("div", { className: "prematch-h2h-filters horizontal-scroll", attributes: { "data-swipe-exclude": "true" } }, [selectControl("開催区分", [["all", "すべて"], ["home", "ホーム"], ["away", "アウェー"]], (value) => { venueFilter = value; render(); }), selectControl("大会", [["all", "すべての大会"], ...categories.map((value) => [value, value])], (value) => { competitionFilter = value; render(); })]);
-  render(); return element("div", { className: "section-stack prematch-h2h", attributes: { "data-h2h-total": history.length } }, [filters, content]);
+  render(); return element("div", { className: "section-stack prematch-h2h", attributes: { "data-h2h-total": history.length } }, [includeCurrent ? createNotice("この試合を含む通算対戦成績です。") : null, filters, content]);
+}
+
+export function renderTeamForms(matches, match, teams, teamDirectory) {
+  return createForms(teams.map((team) => ({ team, items: teamForm(matches, match, team?.id) })), teamDirectory);
 }
 
 function createForms(forms, teamDirectory) {
@@ -159,6 +163,7 @@ function h2hRow(match) { return element("a", { className: "h2h-history-row", att
 function summarizeH2h(matches, homeId, awayId) { const result = { homeWins: 0, draws: 0, awayWins: 0, homeGoals: 0, awayGoals: 0 }; for (const item of matches) { const homeGoals = goalsFor(item, homeId); const awayGoals = goalsFor(item, awayId); result.homeGoals += homeGoals; result.awayGoals += awayGoals; if (homeGoals > awayGoals) result.homeWins += 1; else if (homeGoals < awayGoals) result.awayWins += 1; else result.draws += 1; } return result; }
 function teamForm(matches, target, teamId) { return previousMatches(matches, target).filter((item) => [item.homeTeam.teamId, item.awayTeam.teamId].includes(teamId)).sort((a, b) => new Date(b.kickoffAt) - new Date(a.kickoffAt)).slice(0, 5).map((item) => { const forGoals = goalsFor(item, teamId); const against = goalsAgainst(item, teamId); return { match: item, opponentId: item.homeTeam.teamId === teamId ? item.awayTeam.teamId : item.homeTeam.teamId, goalsFor: forGoals, goalsAgainst: against, result: forGoals > against ? "W" : forGoals < against ? "L" : "D" }; }); }
 function previousMatches(matches, target) { const kickoff = new Date(target.kickoffAt).getTime(); return matches.filter((item) => item.status === "finished" && Number.isFinite(item.homeTeam.score) && Number.isFinite(item.awayTeam.score) && new Date(item.kickoffAt).getTime() < kickoff); }
+function matchesThrough(matches, target) { const kickoff = new Date(target.kickoffAt).getTime(); return matches.filter((item) => item.status === "finished" && Number.isFinite(item.homeTeam.score) && Number.isFinite(item.awayTeam.score) && new Date(item.kickoffAt).getTime() <= kickoff); }
 function goalsFor(match, teamId) { return match.homeTeam.teamId === teamId ? match.homeTeam.score : match.awayTeam.score; }
 function goalsAgainst(match, teamId) { return match.homeTeam.teamId === teamId ? match.awayTeam.score : match.homeTeam.score; }
 function sameGroup(left, right) { return !right.groupName || left.groupName === right.groupName; }

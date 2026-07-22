@@ -42,10 +42,11 @@ test("Phase 4 選手検索・詳細・ランキング・相互リンク", async 
   await expect(page.locator(".ranking-entry").first()).toContainText("分");
 
   await page.goto(`${BASE_URL}?view=match&id=football-system-15-558-25623`);
-  await expect(page.locator(".lineup-player__link[data-player-id]")).toHaveCount(40);
   await expect(page.locator(".player-inline-link")).toHaveCount(12);
   await page.locator(".player-inline-link").first().click();
   await expect(page.locator('[data-page="player"]')).toBeVisible();
+  await page.goto(`${BASE_URL}?view=match&id=football-system-15-558-25623&tab=lineup`);
+  await expect(page.locator(".lineup-player__link[data-player-id]")).toHaveCount(40);
   expect(errors).toEqual([]);
 });
 

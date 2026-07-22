@@ -13,6 +13,7 @@ import { routeHref } from "../router.js";
 import { loadVenueWeather, weatherLabel } from "../api/weather.js";
 import { createTeamNameLink } from "./shared.js";
 import { renderScheduledMatchPage } from "./scheduled-match.js";
+import { renderFinishedMatchPage } from "./finished-match.js";
 
 export function renderMatchDetailPage({ matches, currentMatchId, selectedMatchTab = "preview", teamDirectory, playerDirectory, playerStatistics, teamStats, leagueStats, headToHead, competitionDefinitions = [] }) {
   const match = matches.find((candidate) => candidate.id === currentMatchId);
@@ -32,12 +33,15 @@ export function renderMatchDetailPage({ matches, currentMatchId, selectedMatchTa
   const home = getTeam(teamDirectory, match.homeTeam);
   const away = getTeam(teamDirectory, match.awayTeam);
   const matchPlayerDirectory = match.season === 2026 ? playerDirectory : null;
+  const competition = competitionDefinitions.find((entry) => entry.id === match.competitionId) ?? null;
   if (match.status !== "finished") {
-    const competition = competitionDefinitions.find((entry) => entry.id === match.competitionId) ?? null;
     const competitionStats = leagueStats?.[match.season]?.byCompetition?.[match.competitionId]
       ?? leagueStats?.[match.season]?.[match.division] ?? teamStats;
     return renderScheduledMatchPage({ match, home, away, matches, teamDirectory, playerDirectory, playerStatistics, competitionStats, competition, selectedMatchTab });
   }
+  return renderFinishedMatchPage({ match, home, away, matches, teamDirectory, playerDirectory: matchPlayerDirectory, playerStatistics, competition, selectedMatchTab: selectedMatchTab === "preview" ? "info" : selectedMatchTab });
+  /* Legacy finished-match renderer retained temporarily below for reference while
+     the new tabbed renderer is validated against existing official records. */
   const score = element("section", { className: "match-scoreboard" }, [
     createScoreTeam(home, match.homeTeam.name, "ホーム", "home"),
     element("div", { className: "match-scoreboard__score" }, [

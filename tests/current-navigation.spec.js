@@ -187,5 +187,6 @@ test("欠損した試合記録を不自然な値なしで表示する", async ({
   await expect(page.getByRole("heading", { name: "チームスタッツ" })).toHaveCount(0);
 
   await page.goto(`${BASE_URL}?view=match&id=football-system-15-559-25717`);
-  await expect(page.getByText("控え選手は掲載されていません。")).toBeVisible();
+  await page.getByRole("tab", { name: "ラインナップ" }).click();
+  await expect(page.getByText("控え選手は公式記録未掲載です。")).toBeVisible();
 });

@@ -130,5 +130,5 @@ export function initializeRouter() {
 }
 
 function normalizeMatchTab(value) {
-  return ["preview", "suspensions", "standings", "head-to-head"].includes(value) ? value : "preview";
+  return ["preview", "suspensions", "info", "lineup", "stats", "standings", "head-to-head"].includes(value) ? value : "preview";
 }

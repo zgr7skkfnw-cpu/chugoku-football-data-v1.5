@@ -49,9 +49,11 @@ test("2部の公式結果数・順位・追加時間表記を整合させる", a
 
 test("先発10人の公式記録を注記付きでそのまま表示する", async ({ page }) => {
   await page.goto(`${BASE_URL}?view=match&id=football-system-15-559-25734`);
-  await expect(page.locator('[data-page="match"]')).toContainText("先発 11人 / 10人");
+  await page.getByRole("tab", { name: "ラインナップ" }).click();
+  await expect(page.locator('[data-page="match"]')).toContainText("先発 11名");
+  await expect(page.locator('[data-page="match"]')).toContainText("先発 10名");
   await expect(page.getByText(/広島工業大学 10名が公式記録の先発欄に掲載されています/)).toBeVisible();
-  await expect(page.locator(".lineup-team").nth(1).locator(".lineup-list:not(.lineup-list--bench) li")).toHaveCount(10);
+  await expect(page.locator(".finished-lineup-grid .panel").nth(1).locator(".finished-lineup-list:not(.finished-lineup-list--bench) li")).toHaveCount(10);
 });
 
 test("2部チームページと島根県立大学の文字クレストを表示する", async ({ page }) => {

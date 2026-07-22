@@ -29,7 +29,8 @@ test("2025年度の試合詳細に大会区分と日付を表示する", async (
   const errors = collectErrors(page);
   await page.goto(`${BASE_URL}?view=match&id=football-system-15-547-23950`);
   await expect(page.locator('[data-page="match"]')).toContainText("2025年度 中国大学サッカーリーグ 入替戦");
-  await expect(page.locator('[data-page="match"]')).toContainText("2025/11/16 14:00");
+  await expect(page.locator(".detail-row").filter({ hasText: "日付" })).toContainText("2025年11月16日");
+  await expect(page.locator(".detail-row").filter({ hasText: "キックオフ" })).toContainText("14:00");
   await expect(page.locator(".match-scoreboard")).toContainText("4 - 3");
   expect(errors).toEqual([]);
 });
