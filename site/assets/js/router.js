@@ -27,10 +27,11 @@ function readRouteFromUrl() {
     playerId: view === "player" ? url.searchParams.get("id") : null,
     competitionId: url.searchParams.get("competition") || null,
     season: Number.parseInt(url.searchParams.get("season"), 10) || null,
+    date: /^\d{4}-\d{2}-\d{2}$/.test(url.searchParams.get("date") ?? "") ? url.searchParams.get("date") : null,
   };
 }
 
-export function routeHref(view, { matchId = null, teamId = null, playerId = null, competitionId = null, season = null } = {}) {
+export function routeHref(view, { matchId = null, teamId = null, playerId = null, competitionId = null, season = null, date = null } = {}) {
   const url = new URL(window.location.href);
   url.search = "";
 
@@ -51,17 +52,18 @@ export function routeHref(view, { matchId = null, teamId = null, playerId = null
   }
   if (competitionId) url.searchParams.set("competition", competitionId);
   if (season) url.searchParams.set("season", String(season));
+  if (view === "home" && date) url.searchParams.set("date", date);
 
   return `${url.pathname}${url.search}`;
 }
 
-export function navigate(view, { replace = false, matchId = null, teamId = null, playerId = null, competitionId = null, season = null } = {}) {
+export function navigate(view, { replace = false, matchId = null, teamId = null, playerId = null, competitionId = null, season = null, date = null } = {}) {
   const nextView = Object.hasOwn(routes, view) ? view : "home";
   const method = replace ? "replaceState" : "pushState";
   window.history[method](
     { view: nextView, matchId, teamId, playerId, competitionId, season },
     "",
-    routeHref(nextView, { matchId, teamId, playerId, competitionId, season }),
+    routeHref(nextView, { matchId, teamId, playerId, competitionId, season, date }),
   );
   setState({
     currentView: nextView,
@@ -70,6 +72,7 @@ export function navigate(view, { replace = false, matchId = null, teamId = null,
     currentPlayerId: nextView === "player" ? playerId : null,
     ...(competitionId ? { selectedCompetitionId: competitionId } : {}),
     ...(season ? { selectedSeason: season } : {}),
+    ...(nextView === "home" ? { selectedDate: date } : {}),
   });
 }
 
@@ -82,6 +85,7 @@ export function initializeRouter() {
     playerId: initialRoute.playerId,
     competitionId: initialRoute.competitionId,
     season: initialRoute.season,
+    date: initialRoute.date,
   });
 
   window.addEventListener("popstate", () => {
@@ -93,6 +97,7 @@ export function initializeRouter() {
       currentPlayerId: route.playerId,
       ...(route.competitionId ? { selectedCompetitionId: route.competitionId } : {}),
       ...(route.season ? { selectedSeason: route.season } : {}),
+      ...(route.view === "home" ? { selectedDate: route.date } : {}),
     });
   });
 

@@ -45,9 +45,21 @@ const LEAGUES = [
     description: "中国大学サッカーリーグの昇降格決定戦",
   },
 ];
+const ORDER_KEY = "chugoku-football.league-order";
 
 export function renderLeaguesPage() {
-  const cards = LEAGUES.map(createLeagueCard);
+  let order = loadOrder();
+  const list = element("div", { className: "league-card-list", attributes: { "data-swipe-exclude": "true" } });
+  const renderCards = () => {
+    const ordered = order.map((id) => LEAGUES.find((league) => league.competitionId === id)).filter(Boolean);
+    list.replaceChildren(...ordered.map((league, index) => createLeagueCard(league, {
+      up: () => move(index, -1), down: () => move(index, 1), first: index === 0, last: index === ordered.length - 1,
+    })));
+  };
+  const move = (index, amount) => { const next = index + amount; if (next < 0 || next >= order.length) return; [order[index], order[next]] = [order[next], order[index]]; saveOrder(order); renderCards(); };
+  const reset = element("button", { className: "secondary-button league-order-reset", text: "初期順序へ戻す", attributes: { type: "button" } });
+  reset.addEventListener("click", () => { order = LEAGUES.map((league) => league.competitionId); saveOrder(order); renderCards(); });
+  renderCards();
 
   return element(
     "article",
@@ -63,14 +75,15 @@ export function renderLeaguesPage() {
         badge: "一覧",
       }),
       element("div", { className: "section-stack" }, [
-        element("div", { className: "league-card-list" }, cards),
+        element("div", { className: "league-order-toolbar" }, [element("span", { text: "大会の表示順" }), reset]),
+        list,
         createNotice("リーグ戦、Iリーグ、カップ戦、入替戦を大会別に掲載しています。"),
       ]),
     ],
   );
 }
 
-function createLeagueCard(league) {
+function createLeagueCard(league, controls) {
   const link = element(
     "a",
     {
@@ -100,5 +113,11 @@ function createLeagueCard(league) {
     ],
   );
 
-  return link;
+  const up = element("button", { className: "league-order-button", text: "↑", attributes: { type: "button", "aria-label": `${league.name}を上へ`, disabled: controls.first ? "" : null } });
+  const down = element("button", { className: "league-order-button", text: "↓", attributes: { type: "button", "aria-label": `${league.name}を下へ`, disabled: controls.last ? "" : null } });
+  up.disabled = controls.first; down.disabled = controls.last; up.addEventListener("click", controls.up); down.addEventListener("click", controls.down);
+  return element("div", { className: "league-card-row", attributes: { "data-competition-id": league.competitionId } }, [link, element("div", { className: "league-order-controls" }, [up, down])]);
 }
+
+function loadOrder() { try { const stored = JSON.parse(localStorage.getItem(ORDER_KEY) ?? "[]"); const valid = stored.filter((id) => LEAGUES.some((league) => league.competitionId === id)); return [...valid, ...LEAGUES.map((league) => league.competitionId).filter((id) => !valid.includes(id))]; } catch { return LEAGUES.map((league) => league.competitionId); } }
+function saveOrder(order) { localStorage.setItem(ORDER_KEY, JSON.stringify(order)); }

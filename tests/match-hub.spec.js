@@ -20,10 +20,10 @@ test("試合ハブの日付切替・4タブ・チームリンクが動作する"
   await expect(page.locator("#bottom-navigation")).toContainText("検索");
   await expect(page.getByText("今日の試合はありません")).toBeVisible();
 
-  await page.getByLabel("日付を指定").fill("2026-08-30");
+  await page.goto(`${BASE_URL}?date=2026-08-30`);
   await expect(page.locator('[data-date-matches="10"]')).toBeVisible();
-  await expect(page.locator(".league-schedule-groups .panel__title").nth(0)).toHaveText("中国大学サッカーリーグ 1部");
-  await expect(page.locator(".league-schedule-groups .panel__title").nth(1)).toHaveText("中国大学サッカーリーグ 2部");
+  await expect(page.locator(".collapsible-competition__name").nth(0)).toHaveText("中国大学サッカーリーグ 1部");
+  await expect(page.locator(".collapsible-competition__name").nth(1)).toHaveText("中国大学サッカーリーグ 2部");
   const card = page.locator(`[data-match-card="${SCHEDULED_MATCH_ID}"]`);
   await expect(card).toContainText("山口大学");
   await card.locator('.team-name-link').first().click();

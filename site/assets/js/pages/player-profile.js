@@ -9,12 +9,15 @@ import {
 import { formatKickoff } from "../utils/football.js";
 import { formatGrade, getPlayer } from "../utils/players.js";
 import { createTeamNameLink } from "./shared.js";
+import { setState } from "../state.js";
+import { toggleFavoritePlayer } from "../utils/player-favorites.js";
 
 export function renderPlayerProfilePage({
   currentPlayerId,
   playerDirectory,
   playerStatistics,
   teamDirectory,
+  favoritePlayerIds = [],
 }) {
   const player = getPlayer(playerDirectory, currentPlayerId);
   const stats = player ? playerStatistics?.get(player.id) : null;
@@ -26,6 +29,12 @@ export function renderPlayerProfilePage({
   }
 
   const team = stats.team;
+  const followButton = element("button", {
+    className: `favorite-button player-follow-button${favoritePlayerIds.includes(player.id) ? " is-active" : ""}`,
+    text: favoritePlayerIds.includes(player.id) ? "★ フォロー中" : "☆ 選手をフォロー",
+    attributes: { type: "button", "aria-pressed": String(favoritePlayerIds.includes(player.id)) },
+  });
+  followButton.addEventListener("click", () => setState({ favoritePlayerIds: toggleFavoritePlayer(player.id, favoritePlayerIds) }));
   return element(
     "article",
     {
@@ -46,7 +55,8 @@ export function renderPlayerProfilePage({
           className: "player-profile__initial",
           text: player.name.replace(/[\s　]+/g, "").slice(0, 1),
           attributes: { "aria-label": `${player.name} イニシャル` },
-        }),
+      }),
+      followButton,
         element("div", { className: "player-profile__copy" }, [
           element("p", { className: "page-eyebrow", text: "Player Profile" }),
           element("h1", { text: player.name }),

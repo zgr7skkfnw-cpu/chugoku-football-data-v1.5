@@ -8,6 +8,7 @@ import {
 import { createSeasonPeriodTabs } from "../ui/season-period.js";
 import { createSeasonSelect } from "../ui/season-select.js";
 import { navigate } from "../router.js";
+import { enableHorizontalSwipe } from "../ui/swipe.js";
 import {
   filterMatchesByPeriod,
   formatUpdatedAt,
@@ -147,16 +148,6 @@ export function renderStandingsPage({
     modeTabs,
     element("div", { className: "section-stack" }, [
       standingsContent,
-      createPanel(
-        "参加チーム",
-        element("div", { className: "detail-list" }, (activeCompetition?.teamIds ?? []).map((teamId) => {
-          const team = getTeam(teamDirectory, teamId);
-          return element("div", { className: "detail-row" }, [
-            createTeamNameLink(team, team?.name ?? teamId),
-          ]);
-        })),
-        `${activeCompetition?.teamIds?.length ?? 0}チーム`,
-      ),
       createNotice(
         `順位決定順: 勝点、得失点差、総得点。変動は直近2節の順位比較です。${formatUpdatedAt(metadata?.updatedAt)}`,
       ),
@@ -174,6 +165,10 @@ export function renderStandingsPage({
   });
   const matchCount = element("span", { text: "0試合" });
   let displayedLeagueMatches = [];
+  let dateFilter = "";
+  let roundFilter = "";
+  let teamFilter = "";
+  let timelinePositioned = false;
 
   const renderMatchList = () => {
     const filteredMatches = sortMatchesChronologically(
@@ -183,7 +178,10 @@ export function renderStandingsPage({
             ? "finished"
             : "scheduled";
 
-          return matchStatuses.has(statusKey);
+          return matchStatuses.has(statusKey)
+            && (!dateFilter || match.kickoffAt.slice(0, 10) === dateFilter)
+            && (!roundFilter || String(match.roundLabel ?? match.round) === roundFilter)
+            && (!teamFilter || match.homeTeam.teamId === teamFilter || match.awayTeam.teamId === teamFilter);
         }),
     );
 
@@ -201,7 +199,8 @@ export function renderStandingsPage({
     matchList.dataset.matchCount = String(filteredMatches.length);
     matchCount.textContent = `${filteredMatches.length}試合`;
 
-    if (matchList.isConnected) {
+    if (matchList.isConnected && !timelinePositioned) {
+      timelinePositioned = true;
       positionMatchTimeline(
         matchList,
         displayedLeagueMatches,
@@ -225,11 +224,25 @@ export function renderStandingsPage({
 
   renderMatchList();
 
+  const dateSelect = element("input", { className: "filter-select", attributes: { type: "date", "aria-label": "日付で絞り込み" } });
+  const roundSelect = element("select", { className: "filter-select", attributes: { "aria-label": isTournament ? "ラウンドで絞り込み" : "節で絞り込み" } }, [
+    element("option", { text: isTournament ? "全ラウンド" : "全節", attributes: { value: "" } }),
+    ...[...new Set(leagueMatches.map((match) => String(match.roundLabel ?? match.round)))].map((value) => element("option", { text: value.match(/^\d+$/) ? `第${value}節` : value, attributes: { value } })),
+  ]);
+  const teamSelect = element("select", { className: "filter-select", attributes: { "aria-label": "チームで絞り込み" } }, [
+    element("option", { text: "全チーム", attributes: { value: "" } }),
+    ...(activeCompetition?.teamIds ?? []).map((id) => { const team = getTeam(teamDirectory, id); return element("option", { text: team?.name ?? id, attributes: { value: id } }); }),
+  ]);
+  dateSelect.addEventListener("change", () => { dateFilter = dateSelect.value; renderMatchList(); });
+  roundSelect.addEventListener("change", () => { roundFilter = roundSelect.value; renderMatchList(); });
+  teamSelect.addEventListener("change", () => { teamFilter = teamSelect.value; renderMatchList(); });
+
   const matchesSection = element("div", {
     className: "league-detail-section",
   }, [
     createSeasonSelect(selectedSeason, availableSeasons),
     createSeasonPeriodTabs(seasonPeriod),
+    element("div", { className: "league-match-filters" }, [dateSelect, roundSelect, teamSelect]),
     element("div", {
       className: "chip-row",
       attributes: { "aria-label": "試合の開催状況" },
@@ -282,6 +295,10 @@ export function renderStandingsPage({
 
     if (activeLeagueTab === "matches") {
       leagueContent.replaceChildren(matchesSection);
+      if (!timelinePositioned) {
+        timelinePositioned = true;
+        positionMatchTimeline(matchList, displayedLeagueMatches);
+      }
 
       return;
     }
@@ -314,6 +331,14 @@ export function renderStandingsPage({
       return button;
     }),
   );
+
+  const availableLeagueTabs = [...leagueTabs.children].map((tab) => tab.dataset.leagueTab);
+  const moveLeagueTab = (amount) => {
+    const index = availableLeagueTabs.indexOf(activeLeagueTab);
+    const next = availableLeagueTabs[index + amount];
+    if (next) { activeLeagueTab = next; renderLeagueTab(); }
+  };
+  enableHorizontalSwipe(leagueContent, { onLeft: () => moveLeagueTab(1), onRight: () => moveLeagueTab(-1) });
 
   renderLeagueTab();
 
@@ -354,6 +379,12 @@ export function renderStandingsPage({
     }));
     return button;
   }));
+  const moveCompetition = (amount) => {
+    const index = seasonCompetitions.findIndex((competition) => competition.id === competitionId);
+    const next = seasonCompetitions[index + amount];
+    if (next) navigate("league", { competitionId: next.id, season: selectedSeason });
+  };
+  enableHorizontalSwipe(divisionTabs, { onLeft: () => moveCompetition(1), onRight: () => moveCompetition(-1) });
 
   return element(
     "article",
@@ -380,11 +411,11 @@ export function renderStandingsPage({
 
 function competitionGroup(competition) {
   if (!competition) return "unknown";
-  if (competition.competitionGroup === "division-2") return "regular-league";
+  if (competition.competitionGroup === "division-2") return "division-2";
   if (competition.competitionGroup) return competition.competitionGroup;
   if (competition.competitionType === "i-league") return "i-league";
-  if (competition.stage === "division-2-playoff" || competition.stage === "promotion-playoff") return "regular-league";
-  if (competition.stage === "regular") return "regular-league";
+  if (competition.stage === "division-2-playoff" || competition.stage === "promotion-playoff") return "division-2";
+  if (competition.stage === "regular") return `division-${competition.division}`;
   return competition.id;
 }
 
@@ -392,7 +423,8 @@ function competitionGroupFromId(competitionId) {
   if (!competitionId) return null;
   if (competitionId.includes("i-league")) return "i-league";
   if (competitionId.includes("promotion-relegation")) return "promotion-relegation";
-  if (competitionId.includes("division-1") || competitionId.includes("division-2") || competitionId.includes("promotion-playoff")) return "regular-league";
+  if (competitionId.includes("promotion-playoff") || competitionId.includes("division-2")) return "division-2";
+  if (competitionId.includes("division-1")) return "division-1";
   return competitionId;
 }
 

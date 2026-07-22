@@ -73,13 +73,11 @@ test("試合複合フィルターとホームのお気に入り登録が動作�
   await expect(page.getByRole("heading", { name: "試合予定" })).toBeVisible();
 
   await page.evaluate(() => localStorage.clear());
-  await page.goto(BASE_URL);
-  await page.getByLabel("お気に入りチーム").selectOption("ipu");
-  await page.getByRole("button", { name: "お気に入り登録" }).click();
+  await page.goto(`${BASE_URL}?view=team&id=ipu`);
+  await page.locator(".favorite-button").click();
   expect(await page.evaluate(() => localStorage.getItem("chugoku-football.favorite-team"))).toBe("ipu");
-  await page.getByLabel("日付を指定").fill("2026-09-06");
-  await expect(page.locator(".league-schedule-groups .panel__title").first()).toHaveText("フォロー中");
-  await expect(page.getByText("最新結果")).toHaveCount(0);
+  await page.goto(`${BASE_URL}?view=following`);
+  await expect(page.locator(".following-team-card")).toContainText("IPU・環太平洋大学");
   await expect(page.getByRole("heading", { name: "チーム順位" })).toHaveCount(0);
   expect(errors).toEqual([]);
 });

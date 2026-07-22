@@ -63,11 +63,9 @@ test("マイチームが保存されホーム表示を優先する", async ({ pa
   await expect(page.locator(".favorite-button")).toHaveAttribute("aria-pressed", "true");
   expect(await page.evaluate(() => localStorage.getItem("chugoku-football.favorite-team"))).toBe("ipu");
 
-  await page.goto(BASE_URL);
-  await page.getByLabel("日付を指定").fill("2026-09-06");
-  await expect(page.locator(".league-schedule-groups .panel__title").first()).toHaveText("フォロー中");
-  await expect(page.locator(".league-schedule-groups .panel").first()).toContainText("IPU・環太平洋大学");
-  await expect(page.getByText("最新結果")).toHaveCount(0);
+  await page.goto(`${BASE_URL}?view=following`);
+  await expect(page.locator(".following-team-card")).toContainText("IPU・環太平洋大学");
+  await expect(page.locator(".following-team-card")).toContainText("次戦：");
   await page.reload();
   expect(await page.evaluate(() => localStorage.getItem("chugoku-football.favorite-team"))).toBe("ipu");
   expect(errors).toEqual([]);

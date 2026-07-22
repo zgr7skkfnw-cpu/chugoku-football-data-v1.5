@@ -21,6 +21,8 @@ const state = {
   playerDirectory: null,
   playerStatistics: null,
   favoriteTeamId: null,
+  favoritePlayerIds: [],
+  selectedDate: null,
   seasonPeriod: "all",
   teamStats: null,
   leagueStats: null,

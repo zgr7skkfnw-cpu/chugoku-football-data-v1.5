@@ -29,10 +29,10 @@ test("ホーム・アウェイ順位と勝率・順位変動を表示する", as
   await expect(page.locator('table[data-standing-mode="overall"]')).toBeVisible();
   await expect(page.locator(".rank-change")).toHaveCount(10);
   await expect(page.locator(".standing-table tbody tr").first()).toContainText("%");
-  await page.getByRole("tab", { name: "2部", exact: true }).click();
+  await page.goto(`${BASE_URL}?view=league&competition=jufa-chugoku-2026-division-2&season=2026`);
   await expect(page.locator(".standing-table tbody tr")).toHaveCount(11);
   await expect(page.locator(".standing-table")).toContainText("下関市立大学");
-  await page.getByRole("tab", { name: "1部", exact: true }).click();
+  await page.goto(`${BASE_URL}?view=league&competition=jufa-chugoku-2026-division-1&season=2026`);
   await page.getByRole("tab", { name: "ホーム順位", exact: true }).click();
   await expect(page.locator('table[data-standing-mode="home"]')).toBeVisible();
   await page.getByRole("tab", { name: "アウェイ順位", exact: true }).click();

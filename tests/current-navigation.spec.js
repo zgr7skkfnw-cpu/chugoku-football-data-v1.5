@@ -35,7 +35,8 @@ test("リーグ選択から1部・2部と年度を移動できる", async ({ pag
   await expect(page.locator('[data-page="league"][data-league-division="1"]')).toBeVisible();
   await expect(page.locator(".standing-table tbody tr")).toHaveCount(10);
 
-  await page.getByRole("tab", { name: "2部", exact: true }).click();
+  await page.goto(`${BASE_URL}?view=standings`);
+  await page.getByRole("link", { name: /中国大学サッカーリーグ2部の詳細/ }).click();
   await expect(page.locator('[data-page="league"][data-league-division="2"]')).toBeVisible();
   await expect(page.locator(".standing-table tbody tr")).toHaveCount(11);
 

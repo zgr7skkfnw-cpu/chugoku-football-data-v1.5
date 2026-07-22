@@ -231,9 +231,18 @@ export function groupMatchesByRound(matches) {
 export function positionMatchTimeline(list, matches) {
   const sortedMatches = sortMatchesChronologically(matches);
   const nowTime = Date.now();
+  const todayKey = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
 
-  // まず現在以降の未終了試合を探す
-  let targetMatch = sortedMatches.find((match) => {
+  // 今日の試合があれば状態にかかわらず優先します。
+  let targetMatch = sortedMatches.find((match) => match?.kickoffAt?.slice(0, 10) === todayKey);
+
+  // 今日に試合がなければ、現在以降の未終了試合を探します。
+  if (!targetMatch) targetMatch = sortedMatches.find((match) => {
     const kickoffTime = new Date(match?.kickoffAt).getTime();
 
     return (
@@ -294,6 +303,9 @@ export function positionMatchTimeline(list, matches) {
       list.scrollTop = 0;
       return;
     }
+
+    list.querySelectorAll(".is-timeline-focus").forEach((item) => item.classList.remove("is-timeline-focus"));
+    target.classList.add("is-timeline-focus");
 
     const listRect = list.getBoundingClientRect();
     const targetRect = target.getBoundingClientRect();
