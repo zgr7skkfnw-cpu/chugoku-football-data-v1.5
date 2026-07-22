@@ -38,11 +38,18 @@ test("プレビューは試合前の全大会フォームと得点王を表示�
   await expect(page.locator(".prematch-form-team")).toHaveCount(2);
   for (const team of await page.locator(".prematch-form-team").all()) await expect(team.locator(".prematch-form-result")).toHaveCount(5);
   await expect(page.locator(".prematch-form-result").filter({ hasText: "中国大学サッカー選手権" })).not.toHaveCount(0);
+  await expect(page.locator(".prematch-insights")).toHaveAttribute("data-insight-count", /[1-5]/);
   await expect(page.locator(".prematch-scorer").first()).toContainText("シュート－");
   await expect(page.locator(".prematch-scorer").first()).toContainText("出場時間");
   await expect(page.locator(".season-comparison__team")).toHaveCount(2);
   await expect(page.locator(".season-comparison")).toContainText("最大の勝利");
   await expect(page.locator(".season-comparison")).toContainText("無失点");
+});
+
+test("出場停止未掲載時は不在を断定せず推測表示しない", async ({ page }) => {
+  await page.goto(`${BASE_URL}?view=match&id=${I1}&tab=suspensions`);
+  await expect(page.locator('[data-suspensions="unpublished"]')).toContainText("公式記録未掲載");
+  await expect(page.locator('[data-suspensions="unpublished"]')).not.toContainText("出場停止者なし");
 });
 
 for (const [label, matchId, rowCount] of [["1部", DIV1, 10], ["2部", DIV2, 11], ["Iリーグ1部", I1, 8], ["Iリーグ2部", I2, 6]]) {
@@ -101,4 +108,14 @@ test("トーナメントをラウンド別表示して公式PKスコアを維持
   await expect(page.locator("#component-fixture .tournament-match-card.is-highlighted")).toHaveCount(2);
   await page.locator('#component-fixture .tournament-round-tab[data-round="準決勝"]').click();
   await expect(page.locator("#component-fixture .tournament-round-matches")).toContainText("PK 4-3");
+  await page.evaluate(async () => {
+    document.querySelector("#component-fixture").remove();
+    const { renderScheduledMatchPage } = await import("/assets/js/pages/scheduled-match.js");
+    const teams = ["a", "b"].map((id) => ({ id, name: `Team ${id.toUpperCase()}` }));
+    const teamDirectory = { byId: new Map(teams.map((team) => [team.id, team])) };
+    const match = { id: "suspension", season: 2026, competitionId: "test", competitionName: "公式テスト", status: "scheduled", kickoffAt: "2026-07-01T12:00:00+09:00", homeTeam: { teamId: "a", name: "Team A" }, awayTeam: { teamId: "b", name: "Team B" }, suspensions: { home: [{ playerName: "公式 選手", number: 8, reason: "累積警告", source: "公式大会記録" }], away: [] } };
+    const host = document.createElement("div"); host.id = "component-fixture"; document.body.append(host); host.append(renderScheduledMatchPage({ match, home: teams[0], away: teams[1], matches: [match], teamDirectory, competition: { competitionType: "league" }, selectedMatchTab: "suspensions" }));
+  });
+  await expect(page.locator("#component-fixture [data-suspensions=official]")).toContainText("累積警告");
+  await expect(page.locator("#component-fixture [data-suspensions=official]")).toContainText("公式大会記録");
 });

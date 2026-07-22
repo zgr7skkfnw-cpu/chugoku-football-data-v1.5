@@ -30,7 +30,7 @@ export function renderScheduledMatchPage({ match, home, away, matches, teamDirec
   const index = TABS.indexOf(activeTab);
   enableHorizontalSwipe(content, { onLeft: () => TABS[index + 1] && changeTab(TABS[index + 1]), onRight: () => TABS[index - 1] && changeTab(TABS[index - 1]) });
   const context = { match, home, away, matches, teamDirectory, playerDirectory, playerStatistics, competition };
-  content.append(activeTab === "suspensions" ? createNotice("出場停止情報は準備中です。") : activeTab === "standings" ? competitionTab(context) : activeTab === "head-to-head" ? headToHeadTab(context) : previewTab(context));
+  content.append(activeTab === "suspensions" ? suspensionsTab(context) : activeTab === "standings" ? competitionTab(context) : activeTab === "head-to-head" ? headToHeadTab(context) : previewTab(context));
   page.append(
     element("header", { className: "prematch-v2-header" }, [element("span", { text: match.competitionName ?? match.leagueName ?? "大会名未掲載" }), element("h1", { text: statusLabel }), element("p", { text: match.roundLabel ?? (match.round != null ? `第${match.round}節` : "節・ラウンド未掲載") })]),
     scoreboard, tabs, content,
@@ -46,6 +46,7 @@ function previewTab(context) {
   return element("div", { className: "section-stack prematch-preview" }, [
     createPanel("試合情報", element("div", { className: "detail-list" }, [detail("大会", match.competitionName ?? match.leagueName ?? "公式記録未掲載"), detail("節・ラウンド", match.roundLabel ?? (match.round != null ? `第${match.round}節` : "公式記録未掲載")), detail("日付", longDateLabel(match.kickoffAt)), detail("キックオフ", timeLabel(match.kickoffAt)), detail("会場", match.venue ?? "公式記録未掲載")]), "公式日程"),
     createForms(forms, teamDirectory),
+    insightsPanel(forms, home, away, matches, match),
     topScorerPanel(context),
     isLeagueLike(competition, match) ? seasonToDatePanel(match, home, away, previousCompetition, competitionScope, teamDirectory) : null,
     createNotice(match.gameId == null ? "公式詳細はまだ公開されていません。日時・対戦カード・会場のみ表示しています。" : "試合終了後、公式詳細が公開されると試合記録へ切り替わります。"),
