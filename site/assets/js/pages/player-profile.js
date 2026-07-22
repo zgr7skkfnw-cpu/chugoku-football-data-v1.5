@@ -101,7 +101,7 @@ function createRegistrationSwitch(player, players, teamDirectory) {
   if (!player.birth || !clubId) return null;
   const registrations = players.filter((candidate) => (candidate.parentClubId ?? (candidate.competitionId ? null : candidate.teamId)) === clubId && candidate.birth === player.birth && normalizePlayerName(candidate.name) === normalizePlayerName(player.name));
   if (registrations.length < 2) return null;
-  return createPanel("登録区分", element("div", { className: "chip-row player-registration-switch" }, registrations.map((candidate) => element("a", { className: `filter-chip${candidate.id === player.id ? " is-active" : ""}`, text: candidate.competitionId ? `${teamDirectory.byId.get(candidate.teamId)?.name ?? candidate.teamId} / Iリーグ登録` : `${teamDirectory.byId.get(candidate.teamId)?.name ?? candidate.teamId} / 中国大学リーグ登録`, attributes: { href: routeHref("player", { playerId: candidate.id }), "data-route": "player", "aria-current": candidate.id === player.id ? "page" : "false" } }))), "公式登録レコードは分離して表示");
+  return createPanel("登録区分", element("div", { className: "chip-row player-registration-switch" }, registrations.map((candidate) => element("a", { className: `filter-chip${candidate.id === player.id ? " is-active" : ""}`, text: candidate.competitionId ? `Iリーグ｜${teamDirectory.byId.get(candidate.teamId)?.name ?? candidate.teamId}` : `中国大学リーグ｜${teamDirectory.byId.get(candidate.teamId)?.name ?? candidate.teamId}`, attributes: { href: routeHref("player", { playerId: candidate.id }), "data-route": "player", "data-player-id": candidate.id, "aria-current": candidate.id === player.id ? "page" : "false" } }))), "公式登録レコードは分離して表示");
 }
 
 function createBasicInformation(player, team, teamDirectory) {
