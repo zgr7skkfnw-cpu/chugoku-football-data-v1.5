@@ -2365,17 +2365,37 @@ a,
 .season-comparison, .suspension-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .season-comparison__team { display: grid; gap: 7px; padding: 14px; border: 1px solid var(--border-soft); border-radius: 16px; }
 .season-comparison__team header { display: flex; align-items: center; gap: 8px; }
+.season-comparison-table { display: grid; grid-template-columns: 1fr; min-width: 0; overflow: hidden; border: 1px solid var(--border-soft); border-radius: 16px; }
+.season-comparison-table > header, .season-comparison-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(110px, .8fr) minmax(0, 1fr); align-items: center; gap: 8px; padding: 10px 12px; text-align: center; }
+.season-comparison-table > header { background: var(--surface-soft); }
+.season-comparison-row { border-top: 1px solid var(--border-soft); }
+.season-comparison-row > strong:first-child { text-align: left; }
+.season-comparison-row > strong:last-child { text-align: right; }
+.season-comparison-row > span { color: var(--text-muted); font-size: 10px; }
+.season-comparison-row .is-better { color: var(--success); font-weight: 950; }
+.season-comparison-team { display: flex; min-width: 0; align-items: center; gap: 7px; padding: 0; border: 0; text-align: left; }
+.season-comparison-team:last-child { flex-direction: row-reverse; text-align: right; }
+.season-comparison-team strong { overflow-wrap: anywhere; }
+.tournament-mode-switch { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; padding: 4px; border-radius: 14px; background: var(--surface-soft); }
+.tournament-round-view, .tournament-overview { min-width: 0; max-width: 100%; }
+.tournament-overview { overflow: hidden; }
+.tournament-mode-button { min-height: 40px; border: 0; border-radius: 10px; background: transparent; color: var(--text-muted); font: inherit; font-weight: 900; cursor: pointer; }
+.tournament-mode-button.is-active { background: var(--surface); color: var(--text); box-shadow: 0 4px 12px rgba(0,0,0,.12); }
+.tournament-round-navigation { display: flex; justify-content: space-between; gap: 8px; margin: 8px 0; }
 .tournament-round-tabs { display: flex; gap: 8px; padding: 4px 0; overflow-x: auto; }
 .tournament-round-tab { flex: 0 0 auto; min-height: 38px; padding: 0 14px; border: 1px solid var(--border-soft); border-radius: 999px; background: var(--surface-soft); color: var(--text-muted); font: inherit; font-weight: 800; cursor: pointer; }
 .tournament-round-tab.is-active { background: var(--surface); color: var(--text); box-shadow: 0 5px 14px rgba(0,0,0,.14); }
 .tournament-round-matches { display: grid; gap: 10px; }
 .tournament-match-card { display: grid; gap: 7px; padding: 13px; border: 1px solid var(--border-soft); border-radius: 14px; background: var(--surface); color: var(--text); text-decoration: none; }
-.tournament-match-card.is-highlighted { outline: 2px solid var(--accent); }
-.tournament-match-card > strong { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 8px; }
-.tournament-match-card > strong > :last-child { text-align: right; }
+.tournament-match-card.is-highlighted { outline: 2px solid var(--accent); outline-offset: -2px; }
 .tournament-match-card > span, .tournament-match-card > small { color: var(--text-muted); font-size: 9px; }
-.tournament-bracket { display: flex; gap: 14px; overflow-x: auto; padding: 4px; }
+.tournament-team-row { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto auto; align-items: center; gap: 7px; padding: 5px; border-radius: 9px; }
+.tournament-team-row.is-winner { background: color-mix(in srgb, var(--success) 14%, transparent); }
+.tournament-team-row small { color: var(--success); font-size: 8px; font-weight: 900; }
+.tournament-bracket { display: flex; width: 100%; max-width: 100%; gap: 14px; overflow-x: auto; overscroll-behavior-inline: contain; padding: 6px 4px 14px; scroll-snap-type: x proximity; }
 .tournament-bracket__round { display: grid; flex: 0 0 260px; align-content: start; gap: 10px; }
+.tournament-bracket__round { scroll-snap-align: start; }
+.horizontal-scroll-hint { margin: 0; color: var(--text-muted); font-size: 10px; }
 .prematch-h2h-filters { display: flex; gap: 8px; overflow-x: auto; }
 .prematch-h2h-filters .filter-select { min-width: 160px; }
 
