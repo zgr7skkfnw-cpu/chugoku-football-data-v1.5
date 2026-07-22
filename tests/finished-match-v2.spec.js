@@ -56,3 +56,14 @@ test("公式先発10名を補完せずそのまま表示する", async ({ page }
   await expect(page.locator(".finished-lineup-grid .panel").nth(1).locator(".finished-lineup-list:not(.finished-lineup-list--bench) li")).toHaveCount(10);
   await expect(page.getByText(/広島工業大学 10名.*11人目は補完していません/)).toBeVisible();
 });
+
+test("スタッツは合計と未掲載の前後半を分け0へ変換しない", async ({ page }) => {
+  await page.goto(`${BASE_URL}?view=match&id=${LEAGUE}&tab=stats`);
+  await expect(page.locator(".finished-stats-period")).toHaveCount(3);
+  await expect(page.locator(".finished-stat-values").filter({ hasText: "総シュート数" })).toBeVisible();
+  await page.getByRole("button", { name: "前半", exact: true }).click();
+  await expect(page.locator(".finished-stats")).toContainText("公式記録未掲載");
+  await expect(page.locator(".finished-stats")).toContainText("按分していません");
+  await page.getByRole("button", { name: "すべて", exact: true }).click();
+  await expect(page.getByText("選手別シュート数は公式記録未掲載です。")).toBeVisible();
+});
