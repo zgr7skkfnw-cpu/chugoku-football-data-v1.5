@@ -17,7 +17,11 @@ export function renderSearchPage({ matches, teams, players, teamDirectory }) {
       query ? createPanel("試合", matchedMatches.length ? element("div", { className: "match-list" }, matchedMatches.map((match) => createMatchRow(match, teamDirectory))) : createNotice("一致する試合はありません。"), `${matchedMatches.length}件`) : null,
     );
   };
-  input.addEventListener("input", renderResults);
+  let renderTimer = null;
+  input.addEventListener("input", () => {
+    window.clearTimeout(renderTimer);
+    renderTimer = window.setTimeout(renderResults, 140);
+  });
   renderResults();
   return element("article", { className: "page", attributes: { "data-page": "search" } }, [
     createPageHeader({ eyebrow: "Search", title: "検索", description: "チーム名・選手名・背番号・対戦カードから探せます。" }),

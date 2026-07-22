@@ -4,7 +4,7 @@ let headToHeadPromise;
 export function loadHeadToHead() {
   headToHeadPromise ??= fetch(HEAD_TO_HEAD_URL, {
     headers: { Accept: "application/json" },
-    cache: "force-cache",
+    cache: "no-cache",
   }).then(async (response) => {
     if (!response.ok) throw new Error(`対戦成績データを取得できませんでした（HTTP ${response.status}）`);
     const data = await response.json();

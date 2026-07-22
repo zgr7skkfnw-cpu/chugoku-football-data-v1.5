@@ -10,7 +10,7 @@ export function loadLeagueStats() {
     const entries = await Promise.all(definitions.map(async (competition) => {
       const response = await fetch(dataUrl(competition.teamStats), {
         headers: { Accept: "application/json" },
-        cache: "force-cache",
+        cache: "no-cache",
       });
       if (!response.ok) throw new Error(`${competition.name}のチーム分析データを取得できませんでした（HTTP ${response.status}）`);
       const data = await response.json();

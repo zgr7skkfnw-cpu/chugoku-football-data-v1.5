@@ -9,7 +9,7 @@ let teamCatalogPromise;
 async function fetchJson(url, label) {
   const response = await fetch(url, {
     headers: { Accept: "application/json" },
-    cache: "force-cache",
+    cache: "no-cache",
   });
 
   if (!response.ok) {
