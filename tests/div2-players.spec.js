@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 import { auditRoster, createPlayerId, createRosterSnapshot, mergeDivisionPlayers, rosterSnapshotChanged } from "../scripts/sync/player-roster-utils.mjs";
 import playersData from "../site/data/players.json" with { type: "json" };
 import auditData from "../reports/player-audit-div2.json" with { type: "json" };
+import registrationSnapshot from "../reports/roster-snapshots/2026/div2/20260729-164727-jst.json" with { type: "json" };
 import matchesData from "../site/data/seasons/2026/div2/matches.json" with { type: "json" };
 import { parseMatchMinute } from "../site/assets/js/utils/players.js";
 
@@ -13,6 +14,32 @@ test("2部11チームの名簿と1部507人を維持する", () => {
   expect(division2.length).toBeGreaterThanOrEqual(250);
   expect(playersData.items.length - division2.length).toBe(507);
   expect(auditData.duplicateCandidates).toEqual([]);
+});
+
+test("広島国際大学の公式追加登録を既存IDを変えずに保持する", () => {
+  const added = playersData.items.find((player) => player.id === "hiroshima-international-77f2058bb1ee");
+  expect(added).toEqual({
+    id: "hiroshima-international-77f2058bb1ee",
+    teamId: "hiroshima-international",
+    name: "桝谷 隼",
+    englishName: "MASUTANI Jun",
+    number: 71,
+    position: "GK",
+    grade: 1,
+    height: 163,
+    weight: 52,
+    birth: "2008-01-07",
+    hometown: null,
+    previousTeam: "",
+  });
+  expect(playersData.items.filter((player) => player.id === added.id)).toHaveLength(1);
+  expect(auditData.duplicateCandidates).toEqual([]);
+  expect(registrationSnapshot.changes).toMatchObject({
+    added: [{ id: added.id, teamId: added.teamId, name: added.name }],
+    removed: [],
+    changed: [],
+    teamCounts: [{ teamId: added.teamId, before: 34, after: 35 }],
+  });
 });
 
 test("異なるチームの同姓同名を分離し同一チーム重複と0人更新を停止する", () => {

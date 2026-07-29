@@ -116,6 +116,9 @@ try {
   const teamNameById = new Map(SPECS.map((spec) => [spec.id, spec.name]));
   const removedCandidates = summarizeRemovedPlayers(snapshot.changes.removed, matches.items, teamNameById);
   let audit = { ...auditRoster(matches.items, merged.players, targetTeamIds, teamIdByName), sources, merge: { added: merged.added, updated: merged.updated, deleted: merged.deleted, preserved: merged.preserved }, divisionPlayerCount: divisionCount, removedCandidates, snapshot: { previous: previousSnapshot?.syncedAt ?? null, saved: shouldSaveSnapshot, path: shouldSaveSnapshot ? `reports/roster-snapshots/2026/div2/${snapshotFileName(updatedAt)}` : null, changes: snapshot.changes } };
+  // An unchanged official roster must not erase the last recorded change from
+  // the audit or create a timestamp-only diff during a full update.
+  if (!shouldSaveSnapshot) audit = existingAudit;
   let playersOutput = { ...existing, updatedAt: updatedAt.toISOString(), count: merged.players.length, items: merged.players };
   if (sameExcept(existing, playersOutput, ["updatedAt"])) playersOutput = { ...playersOutput, updatedAt: existing.updatedAt };
   if (sameExcept(existingAudit, audit, ["checkedAt"])) audit = { ...audit, checkedAt: existingAudit.checkedAt };

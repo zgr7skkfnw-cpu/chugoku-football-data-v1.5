@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-21T03:55:38.151Z",
+  "checkedAt": "2026-07-29T07:47:27.251Z",
   "source": "JUFA中国 2026年度2部チーム登録",
   "checkedLineupEntries": 1949,
   "missing": [
@@ -1481,6 +1481,11 @@
       "name": "楢原 翔太郎"
     },
     {
+      "id": "hiroshima-international-77f2058bb1ee",
+      "teamId": "hiroshima-international",
+      "name": "桝谷 隼"
+    },
+    {
       "id": "hiroshima-international-af94668216b5",
       "teamId": "hiroshima-international",
       "name": "秋積 真"
@@ -1582,7 +1587,7 @@
       "teamName": "広島国際大学",
       "pageId": 607,
       "registrationUrl": "https://football-system.jp/fss/pub_teaminfo.php?tid=yFvc3FfHDJ4%3D",
-      "count": 34
+      "count": 35
     },
     {
       "teamId": "tottori",
@@ -1642,22 +1647,34 @@
     }
   ],
   "merge": {
-    "added": 0,
+    "added": 1,
     "updated": 0,
     "deleted": 0,
     "preserved": 0
   },
-  "divisionPlayerCount": 322,
+  "divisionPlayerCount": 323,
   "removedCandidates": [],
   "snapshot": {
     "previous": "2026-07-21T03:53:57.037Z",
-    "saved": false,
-    "path": null,
+    "saved": true,
+    "path": "reports/roster-snapshots/2026/div2/20260729-164727-jst.json",
     "changes": {
-      "added": [],
+      "added": [
+        {
+          "id": "hiroshima-international-77f2058bb1ee",
+          "teamId": "hiroshima-international",
+          "name": "桝谷 隼"
+        }
+      ],
       "removed": [],
       "changed": [],
-      "teamCounts": []
+      "teamCounts": [
+        {
+          "teamId": "hiroshima-international",
+          "before": 34,
+          "after": 35
+        }
+      ]
     }
   }
 }

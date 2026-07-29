@@ -43,8 +43,8 @@ test("Iリーグ大会内チームIDとparentClubIdを分離する", () => {
   ]);
 });
 
-test("Iリーグ486人を通常リーグ829人と分離して14チームへ登録する", () => {
-  expect(regularPlayers.items).toHaveLength(829);
+test("Iリーグ486人を通常リーグ829人以上と分離して14チームへ登録する", () => {
+  expect(regularPlayers.items.length).toBeGreaterThanOrEqual(829);
   expect(iLeaguePlayers.items).toHaveLength(486);
   expect(new Set(iLeaguePlayers.items.map((player) => player.teamId)).size).toBe(14);
   expect(iLeaguePlayers.items.every((player) => player.personId === null)).toBeTruthy();

@@ -337,7 +337,12 @@ for (const period of ["all", "first", "second"]) {
 if (playersData.schemaVersion !== 3) {
   errors.push(`players.json schemaVersion: expected 3, got ${playersData.schemaVersion}`);
 }
-if (players.length !== 829) errors.push(`players.json must retain 829 regular-league players, got ${players.length}`);
+// 829 is the verified 2026 baseline, not a season-long fixed total. Official
+// mid-season registrations may increase it; reductions remain a hard failure.
+const REGULAR_PLAYER_BASELINE = 829;
+if (players.length < REGULAR_PLAYER_BASELINE) {
+  errors.push(`players.json must retain at least ${REGULAR_PLAYER_BASELINE} regular-league players, got ${players.length}`);
+}
 const playerIds = new Set(players.map((player) => player.id));
 
 if (iLeaguePlayersData.schemaVersion !== 1 || iLeaguePlayers.length < 140) {
