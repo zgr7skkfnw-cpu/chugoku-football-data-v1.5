@@ -3,12 +3,12 @@
   "seasonId": "jufa-chugoku-2026-division-2",
   "stage": "regular",
   "competitionName": "2026年度 中国大学サッカーリーグ 2部",
-  "updatedAt": "2026-07-21T14:32:07.933Z",
+  "updatedAt": "2026-07-29T08:06:30.492Z",
   "source": {
     "pageUrl": "https://jufa-chugoku.jp/result/2026/tid_559/",
     "iframeUrl": "https://football-system.jp/fss/pub_taikaigamelist.php?lid=XIi6FZyy0FQ=",
     "detailPostUrl": "https://football-system.jp/fss/pubGameResultConf.php",
-    "retrievedAt": "2026-07-21T14:32:07.933Z"
+    "retrievedAt": "2026-07-29T08:06:30.492Z"
   },
   "scheduleCount": 110,
   "matchCount": 110,
@@ -253,6 +253,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 6,
+          "directFreeKicks": 2,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 6
+        },
+        "away": {
+          "cornerKicks": 8,
+          "directFreeKicks": 1,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 5
+        }
+      },
       "substitutions": {
         "home": [
           "65 分 [out]横内 優樹 [in]伊藤 優剛",
@@ -566,6 +582,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 5,
+          "directFreeKicks": 12,
+          "indirectFreeKicks": 0,
+          "offsides": 3,
+          "shots": 4
+        },
+        "away": {
+          "cornerKicks": 6,
+          "directFreeKicks": 12,
+          "indirectFreeKicks": 0,
+          "offsides": 3,
+          "shots": 13
+        }
+      },
       "substitutions": {
         "home": [
           "54 分 [out]小益 魁二 [in]安倍 春一",
@@ -850,6 +882,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 6,
+          "directFreeKicks": 2,
+          "indirectFreeKicks": 3,
+          "offsides": 5,
+          "shots": 7
+        },
+        "away": {
+          "cornerKicks": 1,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 5,
+          "offsides": 3,
+          "shots": 4
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]武政 祐輝 [in]川上 大翔",
@@ -1202,6 +1250,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 10,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 0,
+          "offsides": 0,
+          "shots": 21
+        },
+        "away": {
+          "cornerKicks": 0,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 2,
+          "offsides": 2,
+          "shots": 1
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]佐藤 佑哉 [in]田村 隼人",
@@ -1625,6 +1689,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 6,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 2,
+          "offsides": 7,
+          "shots": 11
+        },
+        "away": {
+          "cornerKicks": 1,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 7,
+          "offsides": 1,
+          "shots": 6
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]秦野 徠臥 [in]沖野 凌空",
@@ -2030,6 +2110,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 3,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 3
+        },
+        "away": {
+          "cornerKicks": 6,
+          "directFreeKicks": 8,
+          "indirectFreeKicks": 0,
+          "offsides": 1,
+          "shots": 16
+        }
+      },
       "substitutions": {
         "home": [
           "31 分 [out]庄盛 祐輝 [in]増岡 唯",
@@ -2459,6 +2555,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 11,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 1,
+          "offsides": 3,
+          "shots": 23
+        },
+        "away": {
+          "cornerKicks": 0,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 3,
+          "offsides": 1,
+          "shots": 2
+        }
+      },
       "substitutions": {
         "home": [
           "60 分 [out]柴田 大和 [in]楠木 凰辰",
@@ -2842,6 +2954,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 3,
+          "directFreeKicks": 12,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 12
+        },
+        "away": {
+          "cornerKicks": 5,
+          "directFreeKicks": 13,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 13
+        }
+      },
       "substitutions": {
         "home": [],
         "away": [
@@ -3094,6 +3222,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 5,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 1,
+          "offsides": 2,
+          "shots": 14
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 3,
+          "offsides": 1,
+          "shots": 6
+        }
+      },
       "substitutions": {
         "home": [
           "64 分 [out]村石 旺太郎 [in]伊藤 優剛",
@@ -3447,6 +3591,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 5,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 0,
+          "offsides": 4,
+          "shots": 21
+        },
+        "away": {
+          "cornerKicks": 0,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 4,
+          "offsides": 0,
+          "shots": 3
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]久本 育夢 [in]高橋 叶人",
@@ -3881,6 +4041,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 7,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 8
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 3
+        }
+      },
       "substitutions": {
         "home": [
           "63 分 [out]佐藤 圭斗 [in]武田 秀翔",
@@ -4274,6 +4450,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 5,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 2,
+          "offsides": 3,
+          "shots": 14
+        },
+        "away": {
+          "cornerKicks": 1,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 3,
+          "offsides": 2,
+          "shots": 5
+        }
+      },
       "substitutions": {
         "home": [
           "65 分 [out]三島 康志 [in]玉井 悠斗",
@@ -4605,6 +4797,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 7,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 4,
+          "offsides": 4,
+          "shots": 14
+        },
+        "away": {
+          "cornerKicks": 0,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 4,
+          "offsides": 4,
+          "shots": 6
+        }
+      },
       "substitutions": {
         "home": [
           "90 ＋1 分 [out]日和佐 龍 [in]京井 亜樹"
@@ -4927,6 +5135,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 11,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 24
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 0,
+          "offsides": 1,
+          "shots": 9
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]安原 成一郎 [in]立山 敢一",
@@ -5385,6 +5609,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 0,
+          "offsides": 0,
+          "shots": 1
+        },
+        "away": {
+          "cornerKicks": 8,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 0,
+          "offsides": 5,
+          "shots": 25
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]浦 昌吾 [in]倉貫 立夢",
@@ -5875,6 +6115,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 7,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 3,
+          "offsides": 3,
+          "shots": 22
+        },
+        "away": {
+          "cornerKicks": 0,
+          "directFreeKicks": 10,
+          "indirectFreeKicks": 3,
+          "offsides": 3,
+          "shots": 5
+        }
+      },
       "substitutions": {
         "home": [
           "22 分 [out]村上 元蔵 [in]田中 瑛一"
@@ -6307,6 +6563,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 0,
+          "offsides": 0,
+          "shots": 15
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 2,
+          "indirectFreeKicks": 0,
+          "offsides": 0,
+          "shots": 11
+        }
+      },
       "substitutions": {
         "home": [
           "31 分 [out]梅本 達也 [in]中西 奏太"
@@ -6729,6 +7001,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 1,
+          "directFreeKicks": 0,
+          "indirectFreeKicks": 3,
+          "offsides": 1,
+          "shots": 1
+        },
+        "away": {
+          "cornerKicks": 6,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 2,
+          "offsides": 2,
+          "shots": 13
+        }
+      },
       "substitutions": {
         "home": [
           "67 分 [out]小益 魁二 [in]山口 詩月",
@@ -7075,6 +7363,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 1,
+          "offsides": 2,
+          "shots": 9
+        },
+        "away": {
+          "cornerKicks": 1,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 2,
+          "offsides": 1,
+          "shots": 7
+        }
+      },
       "substitutions": {
         "home": [
           "71 分 [out]横内 優樹 [in]土橋 咲友",
@@ -7445,6 +7749,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 7,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 2,
+          "offsides": 2,
+          "shots": 19
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 10,
+          "indirectFreeKicks": 2,
+          "offsides": 2,
+          "shots": 8
+        }
+      },
       "substitutions": {
         "home": [
           "18 分 [out]綾田 匠眞 [in]楠木 凰辰",
@@ -7862,6 +8182,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 8,
+          "directFreeKicks": 1,
+          "indirectFreeKicks": 6,
+          "offsides": 0,
+          "shots": 7
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 0,
+          "indirectFreeKicks": 6,
+          "offsides": 1,
+          "shots": 18
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]徳田 悠良 [in]加藤 航",
@@ -8231,6 +8567,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 2,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 4
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 0,
+          "offsides": 3,
+          "shots": 12
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]武田 秀翔 [in]山口 優樹",
@@ -8580,6 +8932,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 10,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 25
+        },
+        "away": {
+          "cornerKicks": 0,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 0,
+          "offsides": 4,
+          "shots": 12
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]伊東 大樹 [in]石原 心",
@@ -9071,6 +9439,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 11,
+          "indirectFreeKicks": 4,
+          "offsides": 4,
+          "shots": 13
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 4,
+          "offsides": 4,
+          "shots": 4
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]田村 隼人 [in]吉野 温己",
@@ -9408,6 +9792,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 11,
+          "directFreeKicks": 8,
+          "indirectFreeKicks": 1,
+          "offsides": 4,
+          "shots": 17
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 4,
+          "offsides": 1,
+          "shots": 4
+        }
+      },
       "substitutions": {
         "home": [
           "41 分 [out]高田 翔太 [in]竹本 舜",
@@ -9759,6 +10159,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 0,
+          "directFreeKicks": 8,
+          "indirectFreeKicks": 4,
+          "offsides": 1,
+          "shots": 10
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 1,
+          "offsides": 4,
+          "shots": 23
+        }
+      },
       "substitutions": {
         "home": [
           "78 分 [out]梅本 達也 [in]岡田 拓磨",
@@ -10195,6 +10611,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 2,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 5,
+          "offsides": 0,
+          "shots": 2
+        },
+        "away": {
+          "cornerKicks": 5,
+          "directFreeKicks": 12,
+          "indirectFreeKicks": 0,
+          "offsides": 5,
+          "shots": 4
+        }
+      },
       "substitutions": {
         "home": [
           "58 分 [out]武政 祐輝 [in]小西 純也",
@@ -10482,6 +10914,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 6,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 3,
+          "offsides": 4,
+          "shots": 18
+        },
+        "away": {
+          "cornerKicks": 1,
+          "directFreeKicks": 10,
+          "indirectFreeKicks": 4,
+          "offsides": 3,
+          "shots": 3
+        }
+      },
       "substitutions": {
         "home": [
           "64 分 [out]大津 茜太郎 [in]川本 剛瑠",
@@ -10898,6 +11346,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 8,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 1,
+          "offsides": 3,
+          "shots": 19
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 3,
+          "offsides": 1,
+          "shots": 4
+        }
+      },
       "substitutions": {
         "home": [
           "63 分 [out]脇田 大馳 [in]上田 優太",
@@ -11237,6 +11701,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 12,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 1,
+          "offsides": 2,
+          "shots": 27
+        },
+        "away": {
+          "cornerKicks": 0,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 2,
+          "offsides": 1,
+          "shots": 6
+        }
+      },
       "substitutions": {
         "home": [
           "59 分 [out]加賀野 心二郎 [in]三宅 悠我",
@@ -11618,6 +12098,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 6,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 0,
+          "offsides": 3,
+          "shots": 6
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 2,
+          "indirectFreeKicks": 0,
+          "offsides": 1,
+          "shots": 18
+        }
+      },
       "substitutions": {
         "home": [
           "65 分 [out]松井 星 [in]友川 励",
@@ -11948,6 +12444,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 8,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 1,
+          "offsides": 4,
+          "shots": 16
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 10,
+          "indirectFreeKicks": 4,
+          "offsides": 1,
+          "shots": 8
+        }
+      },
       "substitutions": {
         "home": [],
         "away": [
@@ -12352,6 +12864,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 5,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 0,
+          "offsides": 4,
+          "shots": 11
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 0,
+          "offsides": 5,
+          "shots": 16
+        }
+      },
       "substitutions": {
         "home": [
           "53 分 [out]古宮 蓮士 [in]末津 郁",
@@ -12802,6 +13330,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 1,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 0,
+          "offsides": 3,
+          "shots": 5
+        },
+        "away": {
+          "cornerKicks": 8,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 0,
+          "offsides": 3,
+          "shots": 22
+        }
+      },
       "substitutions": {
         "home": [
           "79 分 [out]三輪 耕平 [in]徳田 悠良",
@@ -13257,6 +13801,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 12
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 10,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 5
+        }
+      },
       "substitutions": {
         "home": [
           "76 分 [out]田村 隼人 [in]水畑 柊志",
@@ -13631,6 +14191,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 0,
+          "directFreeKicks": 15,
+          "indirectFreeKicks": 3,
+          "offsides": 3,
+          "shots": 4
+        },
+        "away": {
+          "cornerKicks": 6,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 3,
+          "offsides": 3,
+          "shots": 29
+        }
+      },
       "substitutions": {
         "home": [
           "76 分 [out]延原 義基 [in]吉岡 想空",
@@ -14001,6 +14577,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 3,
+          "directFreeKicks": 2,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 12
+        },
+        "away": {
+          "cornerKicks": 10,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 11
+        }
+      },
       "substitutions": {
         "home": [
           "35 分 [out]村石 旺太郎 [in]安達 聖仁",
@@ -14380,6 +14972,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 4,
+          "offsides": 3,
+          "shots": 19
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 2,
+          "indirectFreeKicks": 3,
+          "offsides": 4,
+          "shots": 6
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]大津 茜太郎 [in]北山 泰地",
@@ -14759,6 +15367,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 1,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 0,
+          "offsides": 4,
+          "shots": 9
+        },
+        "away": {
+          "cornerKicks": 5,
+          "directFreeKicks": 8,
+          "indirectFreeKicks": 0,
+          "offsides": 1,
+          "shots": 5
+        }
+      },
       "substitutions": {
         "home": [
           "63 分 [out]内藤 颯吾 [in]吉野 颯",
@@ -15166,6 +15790,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 6,
+          "directFreeKicks": 1,
+          "indirectFreeKicks": 0,
+          "offsides": 5,
+          "shots": 30
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 8,
+          "indirectFreeKicks": 5,
+          "offsides": 0,
+          "shots": 1
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]綾田 匠眞 [in]村岡 凜太郎",
@@ -15604,6 +16244,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 1,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 6
+        },
+        "away": {
+          "cornerKicks": 8,
+          "directFreeKicks": 1,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 13
+        }
+      },
       "substitutions": {
         "home": [
           "70 分 [out]加藤 晴大 [in]吉岡 想空",
@@ -16032,6 +16688,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 3,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 3,
+          "offsides": 0,
+          "shots": 6
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 0,
+          "offsides": 3,
+          "shots": 15
+        }
+      },
       "substitutions": {
         "home": [
           "36 分 [out]丸山 心路 [in]安達 惺成",
@@ -16401,6 +17073,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 6,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 18
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 2,
+          "indirectFreeKicks": 3,
+          "offsides": 1,
+          "shots": 8
+        }
+      },
       "substitutions": {
         "home": [],
         "away": [
@@ -16855,6 +17543,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 0,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 0,
+          "offsides": 4,
+          "shots": 14
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 11,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 7
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]末津 郁 [in]宮崎 琉生",
@@ -17181,6 +17885,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 8,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 3,
+          "offsides": 1,
+          "shots": 12
+        },
+        "away": {
+          "cornerKicks": 8,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 1,
+          "offsides": 3,
+          "shots": 13
+        }
+      },
       "substitutions": {
         "home": [
           "85 分 [out]浅野 神陸 [in]北山 泰地",
@@ -17572,6 +18292,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 2,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 2,
+          "offsides": 1,
+          "shots": 9
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 1,
+          "offsides": 2,
+          "shots": 13
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]泉 楓 [in]佐藤 圭斗",
@@ -17922,6 +18658,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 5,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 4,
+          "offsides": 1,
+          "shots": 17
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 1,
+          "offsides": 4,
+          "shots": 14
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]徳田 悠良 [in]篠田 正樹",
@@ -18393,6 +19145,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 6,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 0,
+          "offsides": 0,
+          "shots": 14
+        },
+        "away": {
+          "cornerKicks": 6,
+          "directFreeKicks": 13,
+          "indirectFreeKicks": 0,
+          "offsides": 4,
+          "shots": 23
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]佐々木 典咲 [in]海士部 琉衣",
@@ -18735,6 +19503,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 6,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 2,
+          "offsides": 0,
+          "shots": 9
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 16
+        }
+      },
       "substitutions": {
         "home": [
           "58 分 [out]加賀野 心二郎 [in]藤井 啓斗",
@@ -19068,6 +19852,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 3,
+          "directFreeKicks": 1,
+          "indirectFreeKicks": 1,
+          "offsides": 0,
+          "shots": 3
+        },
+        "away": {
+          "cornerKicks": 5,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 0,
+          "offsides": 1,
+          "shots": 14
+        }
+      },
       "substitutions": {
         "home": [
           "63 分 [out]伊藤 優剛 [in]花光 海大",
@@ -19415,6 +20215,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 8,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 1,
+          "offsides": 2,
+          "shots": 10
+        },
+        "away": {
+          "cornerKicks": 1,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 2,
+          "offsides": 1,
+          "shots": 6
+        }
+      },
       "substitutions": {
         "home": [
           "65 分 [out]脇田 大馳 [in]延原 義基",
@@ -19822,6 +20638,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 7,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 4,
+          "offsides": 8,
+          "shots": 14
+        },
+        "away": {
+          "cornerKicks": 5,
+          "directFreeKicks": 8,
+          "indirectFreeKicks": 8,
+          "offsides": 4,
+          "shots": 7
+        }
+      },
       "substitutions": {
         "home": [
           "32 分 [out]村上 竣平 [in]丸山 白翔",
@@ -20125,6 +20957,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 0,
+          "offsides": 3,
+          "shots": 14
+        },
+        "away": {
+          "cornerKicks": 6,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 0,
+          "offsides": 3,
+          "shots": 26
+        }
+      },
       "substitutions": {
         "home": [
           "65 分 [out]三戸 翼 [in]高橋 洸星"
@@ -20591,6 +21439,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 2,
+          "directFreeKicks": 2,
+          "indirectFreeKicks": 6,
+          "offsides": 3,
+          "shots": 4
+        },
+        "away": {
+          "cornerKicks": 9,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 3,
+          "offsides": 6,
+          "shots": 19
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]竹本 舜 [in]川合 梗士朗",
@@ -21038,6 +21902,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 2,
+          "directFreeKicks": 8,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 8
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 10,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 4
+        }
+      },
       "substitutions": {
         "home": [
           "52 分 [out]淀金 七翔 [in]安達 惺成",
@@ -21178,6 +22058,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 12,
       "kickoffAt": "2026-08-30T16:00:00+09:00",
       "venue": "広島工業大学",
@@ -21189,8 +22070,7 @@
       "awayTeam": {
         "name": "島根大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-4e067781cbb0",
@@ -21200,6 +22080,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 12,
       "kickoffAt": "2026-08-30T17:00:00+09:00",
       "venue": "サン・ビレッジ浜田",
@@ -21211,8 +22092,7 @@
       "awayTeam": {
         "name": "岡山大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-9260f47b2552",
@@ -21222,6 +22102,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 12,
       "kickoffAt": "2026-08-30T17:00:00+09:00",
       "venue": "シュートこざかなくん球技場",
@@ -21233,8 +22114,7 @@
       "awayTeam": {
         "name": "広島国際大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-a6afa5d057e9",
@@ -21244,6 +22124,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 12,
       "kickoffAt": "2026-08-30T17:00:00+09:00",
       "venue": "就実学園祇園グラウンド",
@@ -21255,8 +22136,7 @@
       "awayTeam": {
         "name": "鳥取大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-75cb1d270b1e",
@@ -21266,6 +22146,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 12,
       "kickoffAt": "2026-08-30T17:00:00+09:00",
       "venue": "吉備国際大学楢井グラウンド",
@@ -21277,8 +22158,7 @@
       "awayTeam": {
         "name": "下関市立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-7cb103084dab",
@@ -21288,6 +22168,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 13,
       "kickoffAt": "2026-09-06T16:00:00+09:00",
       "venue": "広島工業大学",
@@ -21299,8 +22180,7 @@
       "awayTeam": {
         "name": "鳥取大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-8cae41378a27",
@@ -21310,6 +22190,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 13,
       "kickoffAt": "2026-09-06T17:00:00+09:00",
       "venue": "就実学園祇園グラウンド",
@@ -21321,8 +22202,7 @@
       "awayTeam": {
         "name": "就実大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-4e1a5c9ae83c",
@@ -21332,6 +22212,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 13,
       "kickoffAt": "2026-09-06T17:00:00+09:00",
       "venue": "広島国際大学",
@@ -21343,8 +22224,7 @@
       "awayTeam": {
         "name": "吉備国際大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-ba218c34bc9f",
@@ -21354,6 +22234,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 13,
       "kickoffAt": "2026-09-06T17:00:00+09:00",
       "venue": "下関市立大学",
@@ -21365,8 +22246,7 @@
       "awayTeam": {
         "name": "島根大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-d47d563c8fdb",
@@ -21376,6 +22256,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 13,
       "kickoffAt": "2026-09-06T18:00:00+09:00",
       "venue": "サン・ビレッジ浜田",
@@ -21387,8 +22268,7 @@
       "awayTeam": {
         "name": "岡山理科大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-10caaca360b9",
@@ -21398,6 +22278,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 14,
       "kickoffAt": "2026-09-13T16:00:00+09:00",
       "venue": "広島工業大学",
@@ -21409,8 +22290,7 @@
       "awayTeam": {
         "name": "岡山大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-a813b4138254",
@@ -21420,6 +22300,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 14,
       "kickoffAt": "2026-09-13T16:30:00+09:00",
       "venue": "ヤマタスポーツパーク球技場",
@@ -21431,8 +22312,7 @@
       "awayTeam": {
         "name": "鳥取大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-c848a98242ac",
@@ -21442,9 +22322,10 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 14,
       "kickoffAt": "2026-09-13T17:00:00+09:00",
-      "venue": null,
+      "venue": "岡山理科大学",
       "status": "scheduled",
       "homeTeam": {
         "name": "尾道市立大学",
@@ -21453,8 +22334,7 @@
       "awayTeam": {
         "name": "岡山理科大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-247a4d4543e8",
@@ -21464,6 +22344,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 14,
       "kickoffAt": "2026-09-13T17:00:00+09:00",
       "venue": "就実学園祇園グラウンド",
@@ -21475,8 +22356,7 @@
       "awayTeam": {
         "name": "島根県立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-f3876807d9d5",
@@ -21486,6 +22366,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 14,
       "kickoffAt": "2026-09-13T17:00:00+09:00",
       "venue": "中海スポーツパーク多目的グラウンド",
@@ -21497,8 +22378,7 @@
       "awayTeam": {
         "name": "広島国際大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-300822948ac3",
@@ -21508,6 +22388,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 15,
       "kickoffAt": "2026-09-19T13:00:00+09:00",
       "venue": "東尾道多目的競技場",
@@ -21519,8 +22400,7 @@
       "awayTeam": {
         "name": "吉備国際大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-27b9c7e99933",
@@ -21530,6 +22410,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 15,
       "kickoffAt": "2026-09-19T13:00:00+09:00",
       "venue": "三隅中央公園陸上競技場",
@@ -21541,8 +22422,7 @@
       "awayTeam": {
         "name": "広島工業大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-58e7b8d22ad0",
@@ -21552,6 +22432,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 15,
       "kickoffAt": "2026-09-19T13:00:00+09:00",
       "venue": "広島国際大学",
@@ -21563,8 +22444,7 @@
       "awayTeam": {
         "name": "鳥取大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-23b4790da1bc",
@@ -21574,6 +22454,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 15,
       "kickoffAt": "2026-09-19T15:30:00+09:00",
       "venue": "岡山理科大学",
@@ -21585,8 +22466,7 @@
       "awayTeam": {
         "name": "下関市立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-9c069800527c",
@@ -21596,6 +22476,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 15,
       "kickoffAt": "2026-09-19T18:45:00+09:00",
       "venue": "岡山理科大学",
@@ -21607,8 +22488,7 @@
       "awayTeam": {
         "name": "就実大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-d42161a13f1a",
@@ -21618,6 +22498,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 16,
       "kickoffAt": "2026-09-23T13:00:00+09:00",
       "venue": "吉備国際大学楢井グラウンド",
@@ -21629,8 +22510,7 @@
       "awayTeam": {
         "name": "岡山理科大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-456b96baecdc",
@@ -21640,6 +22520,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 16,
       "kickoffAt": "2026-09-23T13:00:00+09:00",
       "venue": "広島工業大学",
@@ -21651,8 +22532,7 @@
       "awayTeam": {
         "name": "就実大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-07d8fd57bd00",
@@ -21662,6 +22542,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 16,
       "kickoffAt": "2026-09-23T13:00:00+09:00",
       "venue": "中海スポーツパーク多目的グラウンド",
@@ -21673,8 +22554,7 @@
       "awayTeam": {
         "name": "尾道市立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-d497a3143e45",
@@ -21684,6 +22564,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 16,
       "kickoffAt": "2026-09-23T13:00:00+09:00",
       "venue": "乃木浜総合公園 人工芝",
@@ -21695,8 +22576,7 @@
       "awayTeam": {
         "name": "島根県立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-9c4fa9ab83e4",
@@ -21706,6 +22586,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 16,
       "kickoffAt": "2026-09-23T13:00:00+09:00",
       "venue": "広島国際大学",
@@ -21717,8 +22598,7 @@
       "awayTeam": {
         "name": "岡山大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-7da34cd60b12",
@@ -21728,6 +22608,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 17,
       "kickoffAt": "2026-09-27T13:00:00+09:00",
       "venue": "岡山理科大学",
@@ -21739,8 +22620,7 @@
       "awayTeam": {
         "name": "広島工業大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-d15ebbb2e9ea",
@@ -21750,6 +22630,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 17,
       "kickoffAt": "2026-09-27T13:00:00+09:00",
       "venue": "吉備国際大学楢井グラウンド",
@@ -21761,8 +22642,7 @@
       "awayTeam": {
         "name": "島根大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-f924bf738619",
@@ -21772,6 +22652,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 17,
       "kickoffAt": "2026-09-27T13:00:00+09:00",
       "venue": "就実学園祇園グラウンド",
@@ -21783,8 +22664,7 @@
       "awayTeam": {
         "name": "下関市立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-f8734c37496d",
@@ -21794,6 +22674,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 17,
       "kickoffAt": "2026-09-27T13:00:00+09:00",
       "venue": "東尾道多目的競技場",
@@ -21805,8 +22686,7 @@
       "awayTeam": {
         "name": "鳥取大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-0705a10dd513",
@@ -21816,6 +22696,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 17,
       "kickoffAt": "2026-09-27T13:00:00+09:00",
       "venue": "浜田市陸上競技場",
@@ -21827,8 +22708,7 @@
       "awayTeam": {
         "name": "広島国際大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-581fe554b2b8",
@@ -21838,6 +22718,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 18,
       "kickoffAt": "2026-10-04T11:00:00+09:00",
       "venue": "IPU・環太平洋大学 赤坂グラウンド",
@@ -21849,8 +22730,7 @@
       "awayTeam": {
         "name": "尾道市立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-0a229bddd580",
@@ -21860,6 +22740,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 18,
       "kickoffAt": "2026-10-04T13:00:00+09:00",
       "venue": "中海スポーツパーク多目的グラウンド",
@@ -21871,8 +22752,7 @@
       "awayTeam": {
         "name": "岡山理科大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-891e032e9e69",
@@ -21882,6 +22762,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 18,
       "kickoffAt": "2026-10-04T13:00:00+09:00",
       "venue": "乃木浜総合公園 天然芝",
@@ -21893,8 +22774,7 @@
       "awayTeam": {
         "name": "広島工業大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-04ca9903b85f",
@@ -21904,6 +22784,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 18,
       "kickoffAt": "2026-10-04T13:00:00+09:00",
       "venue": "若葉台スポーツセンター第2グラウンド",
@@ -21915,8 +22796,7 @@
       "awayTeam": {
         "name": "吉備国際大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-3dbda01d9115",
@@ -21926,6 +22806,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 18,
       "kickoffAt": "2026-10-04T13:00:00+09:00",
       "venue": "広島国際大学",
@@ -21937,8 +22818,7 @@
       "awayTeam": {
         "name": "就実大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-8282835878c2",
@@ -21948,6 +22828,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 19,
       "kickoffAt": "2026-10-11T13:00:00+09:00",
       "venue": "岡山理科大学",
@@ -21959,8 +22840,7 @@
       "awayTeam": {
         "name": "下関市立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-a13e7c7c5bde",
@@ -21970,6 +22850,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 19,
       "kickoffAt": "2026-10-11T13:00:00+09:00",
       "venue": "広島工業大学",
@@ -21981,8 +22862,7 @@
       "awayTeam": {
         "name": "広島国際大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-ab3a6880c34a",
@@ -21992,6 +22872,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 19,
       "kickoffAt": "2026-10-11T13:00:00+09:00",
       "venue": "吉備国際大学楢井グラウンド",
@@ -22003,8 +22884,7 @@
       "awayTeam": {
         "name": "岡山大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-5cabd86c3c9a",
@@ -22014,6 +22894,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 19,
       "kickoffAt": "2026-10-11T13:00:00+09:00",
       "venue": "東尾道多目的競技場",
@@ -22025,8 +22906,7 @@
       "awayTeam": {
         "name": "島根県立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-aa016f99d15e",
@@ -22036,6 +22916,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 19,
       "kickoffAt": "2026-10-11T14:00:00+09:00",
       "venue": "松江市北公園多目的広場",
@@ -22047,8 +22928,7 @@
       "awayTeam": {
         "name": "鳥取大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-811030c7774d",
@@ -22058,6 +22938,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 20,
       "kickoffAt": "2026-10-18T13:00:00+09:00",
       "venue": "若葉台スポーツセンター第1グラウンド",
@@ -22069,8 +22950,7 @@
       "awayTeam": {
         "name": "岡山理科大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-0db99eb326e0",
@@ -22080,6 +22960,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 20,
       "kickoffAt": "2026-10-18T13:00:00+09:00",
       "venue": "広島国際大学",
@@ -22091,8 +22972,7 @@
       "awayTeam": {
         "name": "下関市立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-c9240295289d",
@@ -22102,6 +22982,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 20,
       "kickoffAt": "2026-10-18T13:00:00+09:00",
       "venue": "三隅中央公園陸上競技場",
@@ -22113,8 +22994,7 @@
       "awayTeam": {
         "name": "吉備国際大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-df251b943cd0",
@@ -22124,6 +23004,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 20,
       "kickoffAt": "2026-10-18T13:00:00+09:00",
       "venue": "シュートこざかなくん球技場",
@@ -22135,8 +23016,7 @@
       "awayTeam": {
         "name": "就実大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-25c2fed43e2e",
@@ -22146,6 +23026,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 20,
       "kickoffAt": "2026-10-18T13:30:00+09:00",
       "venue": "IPU・環太平洋大学 赤坂グラウンド",
@@ -22157,8 +23038,7 @@
       "awayTeam": {
         "name": "島根大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-ba900156438c",
@@ -22168,6 +23048,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 21,
       "kickoffAt": "2026-10-25T11:00:00+09:00",
       "venue": "吉備国際大学楢井グラウンド",
@@ -22179,8 +23060,7 @@
       "awayTeam": {
         "name": "就実大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-9dcd987197d2",
@@ -22190,6 +23070,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 21,
       "kickoffAt": "2026-10-25T13:00:00+09:00",
       "venue": "岡山理科大学",
@@ -22201,8 +23082,7 @@
       "awayTeam": {
         "name": "広島国際大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-4322a4b4f614",
@@ -22212,6 +23092,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 21,
       "kickoffAt": "2026-10-25T13:00:00+09:00",
       "venue": "松江市営陸上競技場",
@@ -22223,8 +23104,7 @@
       "awayTeam": {
         "name": "島根県立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-50dea947de18",
@@ -22234,6 +23114,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 21,
       "kickoffAt": "2026-10-25T13:00:00+09:00",
       "venue": "広島工業大学",
@@ -22245,8 +23126,7 @@
       "awayTeam": {
         "name": "尾道市立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-e3e991eeb93d",
@@ -22256,6 +23136,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 21,
       "kickoffAt": "2026-10-25T13:30:00+09:00",
       "venue": "吉備国際大学楢井グラウンド",
@@ -22267,8 +23148,7 @@
       "awayTeam": {
         "name": "鳥取大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-b3d6484072f6",
@@ -22278,6 +23158,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 22,
       "kickoffAt": "2026-11-01T13:00:00+09:00",
       "venue": "岡山理科大学",
@@ -22289,8 +23170,7 @@
       "awayTeam": {
         "name": "岡山理科大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-5da7bfdce611",
@@ -22300,6 +23180,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 22,
       "kickoffAt": "2026-11-01T13:00:00+09:00",
       "venue": "三隅中央公園陸上競技場",
@@ -22311,8 +23192,7 @@
       "awayTeam": {
         "name": "鳥取大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-852692d622ab",
@@ -22322,6 +23202,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 22,
       "kickoffAt": "2026-11-01T13:00:00+09:00",
       "venue": "東尾道多目的競技場",
@@ -22333,8 +23214,7 @@
       "awayTeam": {
         "name": "下関市立大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-6eba028bf7d4",
@@ -22344,6 +23224,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 22,
       "kickoffAt": "2026-11-01T13:00:00+09:00",
       "venue": "就実学園祇園グラウンド",
@@ -22355,8 +23236,7 @@
       "awayTeam": {
         "name": "島根大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     },
     {
       "id": "football-system-schedule-abba60f467fa",
@@ -22366,6 +23246,7 @@
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
       "roundLabel": null,
+      "penaltyShootout": null,
       "round": 22,
       "kickoffAt": "2026-11-01T13:00:00+09:00",
       "venue": "吉備国際大学楢井グラウンド",
@@ -22377,8 +23258,7 @@
       "awayTeam": {
         "name": "広島工業大学",
         "score": null
-      },
-      "penaltyShootout": null
+      }
     }
   ]
 }
