@@ -30,12 +30,19 @@ export function renderPlayerProfilePage({
   }
 
   const team = stats.team;
+  const registrations = getSafeRegistrations(player, players);
+  const registrationIds = registrations.map((entry) => entry.id);
+  const canonicalFollowId = registrations.find((entry) => !entry.competitionId)?.id ?? registrations[0]?.id ?? player.id;
+  const isFollowed = favoritePlayerIds.some((id) => registrationIds.includes(id));
   const followButton = element("button", {
-    className: `favorite-button player-follow-button${favoritePlayerIds.includes(player.id) ? " is-active" : ""}`,
-    text: favoritePlayerIds.includes(player.id) ? "★ フォロー中" : "☆ 選手をフォロー",
-    attributes: { type: "button", "aria-pressed": String(favoritePlayerIds.includes(player.id)) },
+    className: `favorite-button player-follow-button${isFollowed ? " is-active" : ""}`,
+    text: isFollowed ? "★ フォロー中" : "☆ 選手をフォロー",
+    attributes: { type: "button", "aria-pressed": String(isFollowed) },
   });
-  followButton.addEventListener("click", () => setState({ favoritePlayerIds: toggleFavoritePlayer(player.id, favoritePlayerIds) }));
+  followButton.addEventListener("click", () => {
+    const withoutPerson = favoritePlayerIds.filter((id) => !registrationIds.includes(id));
+    setState({ favoritePlayerIds: isFollowed ? withoutPerson : toggleFavoritePlayer(canonicalFollowId, withoutPerson) });
+  });
   return element(
     "article",
     {
@@ -82,26 +89,54 @@ export function renderPlayerProfilePage({
         ]),
       ]),
       element("div", { className: "section-stack" }, [
-        createRegistrationSwitch(player, players, teamDirectory),
-        createPanel("基本情報", createBasicInformation(player, team, teamDirectory), "選手登録"),
+        createRegistrationSwitch(player, registrations, teamDirectory),
+        createPanel("人物情報", createBasicInformation(player, team, teamDirectory), "共通情報と選択中の公式登録"),
+        createPanel("成績概要", createSeasonStats(stats, "player-summary-grid"), registrationLabel(player, teamDirectory)),
         createSeasonStatistics(stats),
         createPanel(
-          "試合別成績",
+          "直近の出場試合",
           createMatchHistory(stats, teamDirectory),
-          `${stats.appearances}試合出場 / ${stats.benchSelections}試合ベンチ入り`,
+          `直近${Math.min(stats.matches.length, 5)}試合`,
         ),
+        registrations.length > 1
+          ? createPanel("シーズン・大会別成績", createRegistrationSummary(registrations, playerStatistics, teamDirectory, player.id), `${registrations.length}登録`)
+          : null,
         createNotice("学年のみ生年月日から標準進学時の学年を推定。ベンチ入りはメンバー表の控え登録、出場時間は先発・交代・退場時刻から算出しています。前期は第1〜9節、後期は第10〜18節です。"),
       ]),
     ],
   );
 }
 
-function createRegistrationSwitch(player, players, teamDirectory) {
-  const clubId = player.parentClubId ?? (player.competitionId ? null : player.teamId);
-  if (!player.birth || !clubId) return null;
-  const registrations = players.filter((candidate) => (candidate.parentClubId ?? (candidate.competitionId ? null : candidate.teamId)) === clubId && candidate.birth === player.birth && normalizePlayerName(candidate.name) === normalizePlayerName(player.name));
+function createRegistrationSwitch(player, registrations, teamDirectory) {
   if (registrations.length < 2) return null;
-  return createPanel("登録区分", element("div", { className: "chip-row player-registration-switch" }, registrations.map((candidate) => element("a", { className: `filter-chip${candidate.id === player.id ? " is-active" : ""}`, text: candidate.competitionId ? `Iリーグ｜${teamDirectory.byId.get(candidate.teamId)?.name ?? candidate.teamId}` : `中国大学リーグ｜${teamDirectory.byId.get(candidate.teamId)?.name ?? candidate.teamId}`, attributes: { href: routeHref("player", { playerId: candidate.id }), "data-route": "player", "data-player-id": candidate.id, "aria-current": candidate.id === player.id ? "page" : "false" } }))), "公式登録レコードは分離して表示");
+  return createPanel("登録区分", element("div", { className: "chip-row player-registration-switch" }, registrations.map((candidate) => element("a", {
+    className: `filter-chip${candidate.id === player.id ? " is-active" : ""}`,
+    text: registrationLabel(candidate, teamDirectory),
+    attributes: {
+      href: routeHref("player", { playerId: candidate.id, competitionId: candidate.competitionId }),
+      "data-route": "player",
+      "data-player-id": candidate.id,
+      "data-competition-id": candidate.competitionId ?? "",
+      "aria-current": candidate.id === player.id ? "page" : "false",
+    },
+  }))), "登録別の成績を表示");
+}
+
+function getSafeRegistrations(player, players) {
+  const clubId = player.parentClubId ?? (player.competitionId ? null : player.teamId);
+  if (!player.birth || !clubId) return [player];
+  return players
+    .filter((candidate) =>
+      (candidate.parentClubId ?? (candidate.competitionId ? null : candidate.teamId)) === clubId
+      && candidate.birth === player.birth
+      && normalizePlayerName(candidate.name) === normalizePlayerName(player.name))
+    .sort((left, right) => Number(Boolean(left.competitionId)) - Number(Boolean(right.competitionId)) || left.id.localeCompare(right.id));
+}
+
+function registrationLabel(player, teamDirectory) {
+  const team = teamDirectory?.byId.get(player.teamId);
+  const competition = player.competitionId?.includes("i-league") ? "Iリーグ" : "中国大学リーグ";
+  return `${competition}｜${team?.name ?? player.teamId}`;
 }
 
 function createBasicInformation(player, team, teamDirectory) {
@@ -180,7 +215,9 @@ function createSeasonStatistics(stats) {
   );
 }
 
-function createSeasonStats(stats) {
+function createSeasonStats(stats, className = "player-stat-grid") {
+  const per90 = (value) => stats.minutes > 0 ? (value * 90 / stats.minutes).toFixed(2) : "－";
+  const startRate = stats.appearances > 0 ? `${Math.round(stats.starts / stats.appearances * 100)}%` : "－";
   const values = [
     ["出場試合", stats.appearances],
     ["先発試合", stats.starts],
@@ -196,12 +233,16 @@ function createSeasonStats(stats) {
     ["クリーンシート", stats.cleanSheets],
     ["途中出場数", stats.substitutionsOn],
     ["フル出場", stats.fullAppearances],
+    ["90分当たり得点", per90(stats.goals)],
+    ["90分当たりアシスト", per90(stats.assists)],
+    ["90分当たりG+A", per90(stats.goals + stats.assists)],
+    ["先発率", startRate],
   ];
   return element(
     "div",
-    { className: "player-stat-grid" },
+    { className },
     values.map(([label, value]) =>
-      element("div", { className: "player-stat" }, [
+      element("div", { className: className === "player-stat-grid" ? "player-stat" : "player-summary-stat" }, [
         element("strong", { text: String(value) }),
         element("span", { text: label }),
       ]),
@@ -214,7 +255,7 @@ function createMatchHistory(stats, teamDirectory) {
   return element(
     "div",
     { className: "player-match-list" },
-    stats.matches.map((record) => {
+    stats.matches.slice(0, 5).map((record) => {
       const appeared = record.started || record.substitutionOn;
       const details = [
         appeared ? `${record.minutes}分` : null,
@@ -231,6 +272,7 @@ function createMatchHistory(stats, teamDirectory) {
         record.yellowCards ? `警告${record.yellowCards}` : null,
         record.redCards ? `退場${record.redCards}` : null,
       ].filter(Boolean);
+      const hasScore = Number.isFinite(record.teamScore) && Number.isFinite(record.opponentScore);
       const row = element("div", {
         className: "player-match-row",
         attributes: {
@@ -243,6 +285,7 @@ function createMatchHistory(stats, teamDirectory) {
         element("span", { className: "player-match-row__date", text: formatKickoff(record) }),
         element("div", { className: "row-copy" }, [
           element("span", {}, [element("span", { text: "vs " }), createTeamNameLink(teamDirectory?.byId.get(record.opponentTeamId), record.opponentName)]),
+          element("span", { text: [record.competitionName ?? "選択中の大会", hasScore ? `${record.teamScore}-${record.opponentScore}` : null].filter(Boolean).join(" / ") }),
           element("span", { text: details.join(" / ") }),
         ]),
       ]);
@@ -250,4 +293,23 @@ function createMatchHistory(stats, teamDirectory) {
       return row;
     }),
   );
+}
+
+function createRegistrationSummary(registrations, statistics, teamDirectory, activeId) {
+  return element("div", { className: "player-registration-summary" }, registrations.map((registration) => {
+    const stats = statistics.get(registration.id);
+    return element("a", {
+      className: `player-registration-card${registration.id === activeId ? " is-active" : ""}`,
+      attributes: {
+        href: routeHref("player", { playerId: registration.id, competitionId: registration.competitionId }),
+        "data-route": "player",
+        "data-player-id": registration.id,
+        "data-competition-id": registration.competitionId ?? "",
+      },
+    }, [
+      element("strong", { text: registrationLabel(registration, teamDirectory) }),
+      element("span", { text: `#${registration.number ?? "－"} / ${registration.position ?? "－"}` }),
+      element("span", { text: `${stats?.appearances ?? 0}試合・${stats?.minutes ?? 0}分・${stats?.goals ?? 0}得点・${stats?.assists ?? 0}A` }),
+    ]);
+  }));
 }
