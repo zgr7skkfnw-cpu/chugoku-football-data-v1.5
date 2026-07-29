@@ -142,11 +142,20 @@ test("大会カード順を保存して初期順へ戻せる", async ({ page }) 
   await page.goto(`${BASE_URL}?view=standings`);
   const rows = page.locator(".league-card-row");
   await expect(rows.first()).toHaveAttribute("data-competition-id", "jufa-chugoku-2026-division-1");
+  await expect(rows.first()).toHaveAttribute("draggable", "false");
+  await expect(rows.first().getByRole("button", { name: /上へ/ })).toBeHidden();
+  await page.getByRole("button", { name: "編集" }).click();
+  await expect(rows.first()).toHaveAttribute("draggable", "true");
   await rows.nth(1).getByRole("button", { name: /上へ/ }).click();
   await expect(rows.first()).toHaveAttribute("data-competition-id", "jufa-chugoku-2026-division-2");
+  await page.getByRole("button", { name: "完了" }).click();
   await page.reload();
   await expect(rows.first()).toHaveAttribute("data-competition-id", "jufa-chugoku-2026-division-2");
+  await page.getByRole("button", { name: "編集" }).click();
   await page.getByRole("button", { name: "初期順序へ戻す" }).click();
+  await expect(rows.first()).toHaveAttribute("data-competition-id", "jufa-chugoku-2026-division-1");
+  await page.getByRole("button", { name: "完了" }).click();
+  await page.reload();
   await expect(rows.first()).toHaveAttribute("data-competition-id", "jufa-chugoku-2026-division-1");
 });
 

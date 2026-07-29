@@ -359,7 +359,7 @@ input[type="submit"] {
 
 .stat-strip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
@@ -2584,6 +2584,19 @@ input[type="submit"] {
 .h2h-history-row em { color: var(--accent); font-size: 9px; font-style: normal; font-weight: 900; }
 
 @media (max-width: 520px) {
+  .prematch-tabs {
+    gap: 0;
+    margin-inline: 0;
+  }
+
+  .prematch-tab {
+    min-width: 0;
+    min-height: 46px;
+    padding-inline: 2px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
   .prematch-v2-scoreboard { gap: 8px; min-height: 160px; padding: 16px 8px; }
   .prematch-v2-scoreboard__center strong { font-size: 20px; }
   .prematch-v2-scoreboard__team a { font-size: 11px; }
@@ -2593,6 +2606,11 @@ input[type="submit"] {
   .season-comparison-table > header, .season-comparison-row { grid-template-columns: minmax(0, 1fr) 94px minmax(0, 1fr); padding: 9px 7px; }
   .season-comparison-row > strong { font-size: 10px; overflow-wrap: anywhere; }
   .h2h-extra-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .league-card__copy strong { font-size: 13px; }
+  .league-card__copy span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .league-order-toolbar { align-items: flex-start; }
+  .league-order-actions .secondary-button { min-height: 44px; padding-inline: 9px; }
+  .player-shot-row { grid-template-columns: 20px 26px minmax(0, 1fr) auto auto; gap: 5px; padding-inline: 6px; font-size: 11px; }
 }
 
 .league-card-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
@@ -2602,6 +2620,14 @@ input[type="submit"] {
 .league-order-button { width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); cursor: pointer; }
 .league-order-button:disabled { opacity: .35; cursor: default; }
 .league-order-reset { min-height: 36px; }
+.league-order-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.league-card-row:not(.is-editing) { grid-template-columns: minmax(0, 1fr); }
+.league-card-row:not(.is-editing) .league-order-controls { display: none; }
+.league-card-row.is-editing { cursor: grab; }
+.league-card-row.is-editing .league-card { pointer-events: none; }
+.league-card-row.is-dragging { opacity: .55; }
+.league-order-controls { align-content: center; }
+.league-drag-handle { color: var(--text-muted); text-align: center; font-weight: 900; cursor: grab; }
 .league-match-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .match-round-group.is-timeline-focus { outline: 2px solid var(--accent); outline-offset: -2px; box-shadow: 0 12px 28px color-mix(in srgb, var(--accent) 16%, transparent); }
 
@@ -2778,7 +2804,7 @@ input[type="submit"] {
   top: calc(64px + env(safe-area-inset-top));
   z-index: 12;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0 0 16px;
   border-bottom: 1px solid var(--border);
   background: rgba(11, 14, 17, 0.94);
@@ -2799,6 +2825,48 @@ input[type="submit"] {
 .prematch-tab.is-active {
   border-bottom-color: var(--accent);
   color: var(--text);
+}
+
+.player-shot-ranking {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.player-shot-row {
+  display: grid;
+  grid-template-columns: 24px 30px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 7px 9px;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  background: var(--surface-soft);
+}
+
+.player-shot-row > div {
+  min-width: 0;
+}
+
+.player-shot-row > div strong,
+.player-shot-row > div span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-shot-row > div span {
+  color: var(--text-muted);
+  font-size: 9px;
+}
+
+.player-shot-toggle {
+  width: 100%;
+  margin-top: 10px;
 }
 
 .prematch-tab-content {
@@ -3007,15 +3075,15 @@ input[type="submit"] {
 
 .league-card-list {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .league-card {
   display: flex;
   align-items: center;
-  gap: 14px;
-  min-height: 88px;
-  padding: 16px;
+  gap: 11px;
+  min-height: 68px;
+  padding: 10px 12px;
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
   background: var(--surface);
@@ -3030,11 +3098,11 @@ input[type="submit"] {
 
 .league-card__badge {
   display: grid;
-  width: 54px;
-  height: 54px;
+  width: 42px;
+  height: 42px;
   flex: 0 0 auto;
   place-items: center;
-  border-radius: 16px;
+  border-radius: 12px;
   background: var(--accent);
   color: #06140c;
   font-size: 11px;
@@ -3056,7 +3124,7 @@ input[type="submit"] {
 }
 
 .league-card__copy span {
-  margin-top: 5px;
+  margin-top: 2px;
   color: var(--text-muted);
   font-size: 11px;
 }

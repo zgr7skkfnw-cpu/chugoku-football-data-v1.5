@@ -61,6 +61,8 @@ async function main() {
   assertCleanWorktree();
   console.log("\n[update:data:full] 通常の試合・集計更新");
   run("npm", ["run", "update:data"]);
+  console.log("\n[update:data:full] 2026年新人戦の公式同期");
+  run("npm", ["run", "sync:2026:rookie"]);
   for (const command of [
     "sync:2026:division-2-playoff",
     "sync:2026:i-league-playoff",

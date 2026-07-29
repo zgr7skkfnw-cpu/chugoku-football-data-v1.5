@@ -71,7 +71,8 @@ for (const width of [390, 1440]) test(`${width}pxで比較表示が画面外へ�
   page.on("console", (message) => { if (message.type() === "error") errors.push(message.text()); });
   await page.setViewportSize({ width, height: 900 });
   await page.goto(`${BASE_URL}?view=match&id=${DIV2_SCHEDULED}&tab=standings`);
-  await expect(page.locator(".season-comparison-table")).toBeVisible();
+  await expect(page.locator(".prematch-standing-table")).toBeVisible();
+  await expect(page.locator(".season-comparison-table")).toHaveCount(0);
   expect(await page.evaluate(() => document.body.scrollWidth <= window.innerWidth)).toBe(true);
   await page.goto(`${BASE_URL}?view=match&id=${CHAMPIONSHIP_PK}&tab=standings`);
   await page.getByRole("tab", { name: "全体", exact: true }).click();

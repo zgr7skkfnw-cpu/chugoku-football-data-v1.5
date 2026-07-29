@@ -49,16 +49,58 @@ const ORDER_KEY = "chugoku-football.league-order";
 
 export function renderLeaguesPage() {
   let order = loadOrder();
+  let editing = false;
+  let orderBeforeEdit = [...order];
   const list = element("div", { className: "league-card-list", attributes: { "data-swipe-exclude": "true" } });
+  const status = element("span", { text: "大会を選択", attributes: { "aria-live": "polite" } });
+  const edit = element("button", { className: "secondary-button league-order-edit", text: "編集", attributes: { type: "button", "aria-pressed": "false" } });
+  const reset = element("button", { className: "secondary-button league-order-reset", text: "初期順序へ戻す", attributes: { type: "button", hidden: "" } });
+  const cancel = element("button", { className: "secondary-button league-order-cancel", text: "キャンセル", attributes: { type: "button", hidden: "" } });
   const renderCards = () => {
     const ordered = order.map((id) => LEAGUES.find((league) => league.competitionId === id)).filter(Boolean);
     list.replaceChildren(...ordered.map((league, index) => createLeagueCard(league, {
-      up: () => move(index, -1), down: () => move(index, 1), first: index === 0, last: index === ordered.length - 1,
+      editing,
+      up: () => move(index, -1),
+      down: () => move(index, 1),
+      drop: (draggedId) => moveTo(draggedId, index),
+      first: index === 0,
+      last: index === ordered.length - 1,
     })));
   };
-  const move = (index, amount) => { const next = index + amount; if (next < 0 || next >= order.length) return; [order[index], order[next]] = [order[next], order[index]]; saveOrder(order); renderCards(); };
-  const reset = element("button", { className: "secondary-button league-order-reset", text: "初期順序へ戻す", attributes: { type: "button" } });
-  reset.addEventListener("click", () => { order = LEAGUES.map((league) => league.competitionId); saveOrder(order); renderCards(); });
+  const move = (index, amount) => {
+    if (!editing) return;
+    const next = index + amount;
+    if (next < 0 || next >= order.length) return;
+    [order[index], order[next]] = [order[next], order[index]];
+    renderCards();
+  };
+  const moveTo = (draggedId, targetIndex) => {
+    if (!editing) return;
+    const from = order.indexOf(draggedId);
+    if (from < 0 || from === targetIndex) return;
+    order.splice(targetIndex, 0, order.splice(from, 1)[0]);
+    renderCards();
+  };
+  const setEditing = (value, { restore = false } = {}) => {
+    if (restore) order = [...orderBeforeEdit];
+    if (!value && !restore) saveOrder(order);
+    if (value) orderBeforeEdit = [...order];
+    editing = value;
+    edit.textContent = editing ? "完了" : "編集";
+    edit.setAttribute("aria-pressed", String(editing));
+    reset.hidden = !editing;
+    cancel.hidden = !editing;
+    status.textContent = editing ? "並び替え編集中" : "大会を選択";
+    list.classList.toggle("is-editing", editing);
+    renderCards();
+  };
+  edit.addEventListener("click", () => setEditing(!editing));
+  cancel.addEventListener("click", () => setEditing(false, { restore: true }));
+  reset.addEventListener("click", () => {
+    if (!editing) return;
+    order = LEAGUES.map((league) => league.competitionId);
+    renderCards();
+  });
   renderCards();
 
   return element(
@@ -75,7 +117,10 @@ export function renderLeaguesPage() {
         badge: "一覧",
       }),
       element("div", { className: "section-stack" }, [
-        element("div", { className: "league-order-toolbar" }, [element("span", { text: "大会の表示順" }), reset]),
+        element("div", { className: "league-order-toolbar" }, [
+          status,
+          element("div", { className: "league-order-actions" }, [cancel, reset, edit]),
+        ]),
         list,
         createNotice("リーグ戦、Iリーグ、カップ戦、入替戦を大会別に掲載しています。"),
       ]),
@@ -112,12 +157,45 @@ function createLeagueCard(league, controls) {
       }),
     ],
   );
+  link.addEventListener("click", (event) => {
+    if (!controls.editing) return;
+    event.preventDefault();
+  });
 
   const up = element("button", { className: "league-order-button", text: "↑", attributes: { type: "button", "aria-label": `${league.name}を上へ`, disabled: controls.first ? "" : null } });
   const down = element("button", { className: "league-order-button", text: "↓", attributes: { type: "button", "aria-label": `${league.name}を下へ`, disabled: controls.last ? "" : null } });
   up.disabled = controls.first; down.disabled = controls.last; up.addEventListener("click", controls.up); down.addEventListener("click", controls.down);
-  return element("div", { className: "league-card-row", attributes: { "data-competition-id": league.competitionId } }, [link, element("div", { className: "league-order-controls" }, [up, down])]);
+  const row = element("div", {
+    className: `league-card-row${controls.editing ? " is-editing" : ""}`,
+    attributes: {
+      "data-competition-id": league.competitionId,
+      draggable: controls.editing ? "true" : "false",
+      "aria-label": controls.editing ? `${league.name}を並び替え` : null,
+    },
+  }, [link, element("div", { className: "league-order-controls" }, [
+    element("span", { className: "league-drag-handle", text: "⋮⋮", attributes: { "aria-hidden": "true" } }),
+    up,
+    down,
+  ])]);
+  row.addEventListener("dragstart", (event) => {
+    if (!controls.editing) {
+      event.preventDefault();
+      return;
+    }
+    event.dataTransfer?.setData("text/plain", league.competitionId);
+    row.classList.add("is-dragging");
+  });
+  row.addEventListener("dragend", () => row.classList.remove("is-dragging"));
+  row.addEventListener("dragover", (event) => {
+    if (controls.editing) event.preventDefault();
+  });
+  row.addEventListener("drop", (event) => {
+    if (!controls.editing) return;
+    event.preventDefault();
+    controls.drop(event.dataTransfer?.getData("text/plain"));
+  });
+  return row;
 }
 
-function loadOrder() { try { const stored = JSON.parse(localStorage.getItem(ORDER_KEY) ?? "[]"); const valid = stored.filter((id) => LEAGUES.some((league) => league.competitionId === id)); return [...valid, ...LEAGUES.map((league) => league.competitionId).filter((id) => !valid.includes(id))]; } catch { return LEAGUES.map((league) => league.competitionId); } }
+function loadOrder() { try { const stored = JSON.parse(localStorage.getItem(ORDER_KEY) ?? "[]"); if (!Array.isArray(stored)) return LEAGUES.map((league) => league.competitionId); const valid = [...new Set(stored)].filter((id) => LEAGUES.some((league) => league.competitionId === id)); return [...valid, ...LEAGUES.map((league) => league.competitionId).filter((id) => !valid.includes(id))]; } catch { return LEAGUES.map((league) => league.competitionId); } }
 function saveOrder(order) { localStorage.setItem(ORDER_KEY, JSON.stringify(order)); }

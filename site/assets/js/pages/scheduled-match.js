@@ -16,8 +16,7 @@ export function renderScheduledMatchPage({ match, home, away, matches, teamDirec
     element("div", { className: "prematch-v2-scoreboard__center" }, [element("strong", { text: timeLabel(match.kickoffAt) }), element("span", { text: dateLabel(match.kickoffAt) }), element("small", { text: statusLabel })]),
     createScoreTeam(away, match.awayTeam.name, "アウェイ"),
   ]);
-  const thirdLabel = contextTabLabel(competition, match);
-  const definitions = [["preview", "プレビュー"], ["suspensions", "出場停止"], ["standings", thirdLabel], ["head-to-head", "対戦"]];
+  const definitions = [["preview", "プレビュー"], ["suspensions", "出場停止"], ["standings", "順位表"], ["head-to-head", "対戦"]];
   const tabs = element("div", { className: "prematch-tabs", attributes: { role: "tablist", "aria-label": "未開催試合情報" } });
   const changeTab = (tab) => navigate("match", { matchId: match.id, matchTab: tab });
   tabs.append(...definitions.map(([key, label]) => {
@@ -79,7 +78,7 @@ export function renderMatchCompetitionContext(context, { includeCurrent = false 
   const scope = matches.filter((item) => item.competitionId === match.competitionId && sameGroup(item, match));
   const relevant = (includeCurrent ? matchesThrough(matches, match) : previousMatches(matches, match)).filter((item) => item.competitionId === match.competitionId && sameGroup(item, match));
   const rows = buildStandings(relevant, teamIdsFromMatches(scope));
-  return element("div", { className: "section-stack", attributes: { "data-context-type": "standings" } }, [createPanel(match.groupName ? `${match.groupName} 順位表` : "順位表", standingTable(rows, teamDirectory, [home?.id, away?.id], { compact: !includeCurrent }), includeCurrent ? "この試合終了後まで" : "この試合の直前まで"), createNotice(includeCurrent ? "当該試合終了後までの同一大会の試合から再構成しています。" : "当該試合より前に終了した同一大会の試合から再構成しています。"), seasonToDatePanel(match, home, away, relevant, scope, teamDirectory, includeCurrent)]);
+  return element("div", { className: "section-stack", attributes: { "data-context-type": "standings" } }, [createPanel(match.groupName ? `${match.groupName} 順位表` : "順位表", standingTable(rows, teamDirectory, [home?.id, away?.id], { compact: !includeCurrent }), includeCurrent ? "この試合終了後まで" : "この試合の直前まで"), createNotice(includeCurrent ? "当該試合終了後までの同一大会の試合から再構成しています。" : "当該試合より前に終了した同一大会の試合から再構成しています。")]);
 }
 
 function tournamentView({ match, matches, teamDirectory }) {

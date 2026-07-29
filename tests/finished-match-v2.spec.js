@@ -36,7 +36,7 @@ test("試合情報はスコア内訳・タイムライン・会場・直前フ�
   await expect(page.locator('.finished-timeline-row[data-event-type="交代"]').first()).toContainText("IN");
   await expect(page.locator('.finished-timeline-row[data-event-type="交代"]').first()).toContainText("OUT");
   await expect(page.locator(".finished-timeline-row.is-home")).not.toHaveCount(0);
-  await expect(page.getByRole("heading", { name: "会場情報" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "会場・天候" })).toBeVisible();
   await expect(page.locator(".prematch-form-team")).toHaveCount(2);
 });
 
@@ -65,7 +65,7 @@ test("スタッツは合計と未掲載の前後半を分け0へ変換しない"
   await expect(page.locator(".finished-stats")).toContainText("公式記録未掲載");
   await expect(page.locator(".finished-stats")).toContainText("按分していません");
   await page.getByRole("button", { name: "すべて", exact: true }).click();
-  await expect(page.getByText("選手別シュート数は公式記録未掲載です。")).toBeVisible();
+  await expect(page.getByText("選手別シュート数は公式記録に掲載されていません。")).toBeVisible();
 });
 
 test("終了後順位と選手権トーナメントを大会別に表示しPKを維持する", async ({ page }) => {

@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 const BASE_URL = "http://localhost:4173/";
-const ROOKIE = "football-system-schedule-25f7fddaf184";
+const ROOKIE = "football-system-schedule-3aaadf953aee";
 const SCHEDULED = "football-system-schedule-24e8d7424d7d";
 const FINISHED = "football-system-15-558-25665";
 const I_LEAGUE = "football-system-schedule-28d14d57290a";
@@ -29,8 +29,8 @@ async function expectEmblemsInside(page, containerSelector) {
 test("新人戦の未開催ヘッダーは両エンブレムを枠内に表示する", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(`${BASE_URL}?view=match&id=${ROOKIE}`);
-  await expect(page.locator(".prematch-v2-scoreboard__team").first()).toContainText("岡山大学");
-  await expect(page.locator(".prematch-v2-scoreboard__team").last()).toContainText("広島文化学園大学");
+  await expect(page.locator(".prematch-v2-scoreboard__team").first()).toContainText("広島文化学園大学");
+  await expect(page.locator(".prematch-v2-scoreboard__team").last()).toContainText("福山大学");
   await expectEmblemsInside(page, ".prematch-v2-scoreboard");
   await page.evaluate(() => scrollTo(0, document.body.scrollHeight));
   await expect(page.locator(".bottom-nav .team-emblem--scoreboard")).toHaveCount(0);

@@ -3,7 +3,7 @@ import { navigate, routeHref } from "../router.js";
 import { enableHorizontalSwipe } from "../ui/swipe.js";
 import { getPlayer, normalizePlayerName } from "../utils/players.js";
 import { createTeamNameLink } from "./shared.js";
-import { renderMatchCompetitionContext, renderMatchHeadToHead, renderMatchInsightsForContext, renderTeamForms } from "./scheduled-match.js";
+import { renderMatchCompetitionContext, renderMatchHeadToHead, renderTeamForms } from "./scheduled-match.js";
 
 const TABS = ["info", "lineup", "stats", "standings", "head-to-head"];
 
@@ -46,13 +46,12 @@ export function renderFinishedMatchPage({ match, home, away, matches, teamDirect
 
 function informationTab({ match, home, away, matches, teamDirectory, playerDirectory }) {
   return element("div", { className: "section-stack finished-info" }, [
-    createPanel("試合情報", element("div", { className: "detail-list" }, [detail("日付", longDate(match.kickoffAt)), detail("キックオフ", timeLabel(match.kickoffAt)), detail("会場", match.venue ?? "－（未掲載）"), detail("観客数", match.attendance == null ? "－（未掲載）" : `${match.attendance}人`), detail("試合形式", match.matchFormat ?? "－（未掲載）"), detail("天候", conditionLabel(match.conditions)), match.wasResumed ? detail("再開日", match.resumedDate?.replaceAll("-", "/") ?? "日付未掲載") : null, match.wasResumed ? detail("備考", match.statusNote ?? "中断後に再開された試合") : null]), "公式試合記録"),
-    createPanel("重要スタッツ", overviewStats(match), "試合合計"),
     createPanel("タイムライン", timeline(match, home, away, playerDirectory), "公式掲載イベント"),
-    createPanel("会場情報", element("div", { className: "detail-list" }, [detail("会場名", match.venue ?? "－"), detail("観客数", match.attendance == null ? "－" : `${match.attendance}人`)]), "公式記録掲載項目"),
-    renderTeamForms(matches, match, [home, away], teamDirectory),
-    renderMatchInsightsForContext({ matches, match, home, away }),
+    createPanel("会場・天候", element("div", { className: "detail-list" }, [detail("会場名", match.venue ?? "－"), detail("天候", conditionLabel(match.conditions)), detail("観客数", match.attendance == null ? "－" : `${match.attendance}人`)]), "公式記録掲載項目"),
     createPanel("審判・運営", match.officials?.length ? element("div", { className: "detail-list" }, match.officials.map((official) => detail(official.role, official.name))) : createNotice("審判・運営情報は公式記録未掲載です。"), `${match.officials?.length ?? 0}名`),
+    createPanel("その他の公式情報", element("div", { className: "detail-list" }, [detail("日付", longDate(match.kickoffAt)), detail("キックオフ", timeLabel(match.kickoffAt)), detail("試合形式", match.matchFormat ?? "－（未掲載）"), match.wasResumed ? detail("再開日", match.resumedDate?.replaceAll("-", "/") ?? "日付未掲載") : null, match.wasResumed ? detail("備考", match.statusNote ?? "中断後に再開された試合") : null]), "公式試合記録"),
+    createPanel("重要スタッツ", overviewStats(match), "試合合計"),
+    renderTeamForms(matches, match, [home, away], teamDirectory),
     sourceNotice(match),
   ]);
 }
@@ -99,10 +98,41 @@ function statsTab({ match, home, away }) {
   const render = () => {
     [...tabs.children].forEach((button) => button.classList.toggle("is-active", button.dataset.period === active));
     if (active !== "すべて") { content.replaceChildren(createNotice(`${active}のスタッツ内訳は公式記録未掲載です。合計値を按分していません。`)); return; }
-    content.replaceChildren(createPanel("重要スタッツ", comparisonStats(match, home, away), "試合合計"), createPanel("反則", disciplinaryStats(match, home, away), "公式懲戒記録"), createPanel("選手スタッツ", createNotice("選手別シュート数は公式記録未掲載です。"), "総シュート上位3名"));
+    content.replaceChildren(createPanel("重要スタッツ", comparisonStats(match, home, away), "試合合計"), createPanel("反則", disciplinaryStats(match, home, away), "公式懲戒記録"), createPanel("選手別シュート数", playerShotRanking(match, home, away), match.playerShots?.length ? `${match.playerShots.length}選手` : "公式記録"));
   };
   tabs.append(...uniquePeriods.map((period) => { const button = element("button", { className: "finished-stats-period", text: period, attributes: { type: "button", "data-period": period } }); button.addEventListener("click", () => { active = period; render(); }); return button; }));
   render(); return element("div", { className: "section-stack finished-stats" }, [tabs, content]);
+}
+
+function playerShotRanking(match, home, away) {
+  const records = [...(match.playerShots ?? [])]
+    .filter((item) => Number.isInteger(item.shots) && item.shots >= 0)
+    .sort((left, right) => right.shots - left.shots || left.side.localeCompare(right.side) || left.name.localeCompare(right.name, "ja"));
+  if (!records.length) return createNotice("選手別シュート数は公式記録に掲載されていません。");
+  let expanded = false;
+  const list = element("ol", { className: "player-shot-ranking" });
+  const toggle = element("button", { className: "secondary-button player-shot-toggle", text: "全選手を見る", attributes: { type: "button", "aria-expanded": "false" } });
+  const render = () => {
+    const visible = expanded ? records : records.slice(0, 3);
+    let previousShots = null; let previousRank = 0;
+    list.replaceChildren(...visible.map((record, index) => {
+      const rank = record.shots === previousShots ? previousRank : index + 1;
+      previousShots = record.shots; previousRank = rank;
+      const team = record.side === "home" ? home : away;
+      return element("li", { className: `player-shot-row is-${record.side}` }, [
+        element("strong", { text: String(rank) }),
+        createTeamEmblem(team, "team-emblem team-emblem--compact"),
+        element("div", {}, [element("strong", { text: record.name }), element("span", { text: `${team?.name ?? (record.side === "home" ? match.homeTeam.name : match.awayTeam.name)} / ${record.side.toUpperCase()}` })]),
+        element("span", { text: record.number == null ? "－" : `#${record.number}` }),
+        element("b", { text: `${record.shots}本` }),
+      ]);
+    }));
+    toggle.textContent = expanded ? "上位3人に戻す" : "全選手を見る";
+    toggle.setAttribute("aria-expanded", String(expanded));
+  };
+  toggle.addEventListener("click", () => { expanded = !expanded; render(); });
+  render();
+  return element("div", { className: "player-shot-ranking-wrap" }, [list, records.length > 3 ? toggle : null]);
 }
 
 function timeline(match, home, away, playerDirectory) {

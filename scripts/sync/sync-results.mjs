@@ -632,6 +632,7 @@ function parseDetailHtml(detailHtml, listMatch) {
     .map(cleanText);
   const attendanceText = valueAfterHeader($, "table.result_01", "観客数");
   const resultSections = parseResultSections($);
+  const manualStatistics = parseMatchStatistics($);
 
   return {
     ...listMatch,
@@ -650,7 +651,8 @@ function parseDetailHtml(detailHtml, listMatch) {
     lineups: parseLineups($, listMatch),
     scoreByPeriod: parsePeriodScores($),
     penaltyShootout: parsePenaltyShootout($),
-    manualStatistics: parseMatchStatistics($),
+    manualStatistics,
+    playerShots: parsePlayerShots($, manualStatistics),
     substitutions: resultSections.substitutions,
     disciplinary: resultSections.disciplinary,
     goalSummary: resultSections.goalSummary,
@@ -663,6 +665,40 @@ function parseDetailHtml(detailHtml, listMatch) {
       taikaiHoldId: listMatch.taikaiHoldId,
     },
   };
+}
+
+function parsePlayerShots($, manualStatistics) {
+  const result = [];
+  const playerTables = $("table.result_07_player").toArray().slice(0, 2);
+
+  for (const [index, table] of playerTables.entries()) {
+    const side = index === 0 ? "home" : "away";
+    const records = [];
+    $(table).find("tr").each((_, row) => {
+      const name = cleanText($(row).find("td.player").text());
+      if (!name) return;
+      const values = $(row).find("td.shoot")
+        .map((__, cell) => toInteger(cleanText($(cell).text())))
+        .get()
+        .filter(Number.isFinite);
+      const shots = values.reduce((sum, value) => sum + value, 0);
+      if (shots <= 0) return;
+      records.push({
+        side,
+        name,
+        number: toInteger(cleanText($(row).find("td.number").text())),
+        shots,
+      });
+    });
+
+    // football-systemの選手表と公式チーム合計が一致する側だけを採用する。
+    // 欠落セルやHTML変更時に、見かけ上の選手別値を保存しないための安全弁。
+    const officialTotal = manualStatistics?.[side]?.shots;
+    const parsedTotal = records.reduce((sum, item) => sum + item.shots, 0);
+    if (Number.isInteger(officialTotal) && parsedTotal === officialTotal) result.push(...records);
+  }
+
+  return result.length ? result : null;
 }
 
 function parseMatchStatistics($) {

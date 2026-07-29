@@ -38,9 +38,21 @@ test("選手権のPK戦と決勝詳細を公式記録どおり表示する", asy
   await expect(page.locator(".match-scoreboard")).toContainText("広島経済大学");
 });
 
-test("新人戦21予定をA～Dグループ別に表示し詳細未公開でも開ける", async ({ page }) => {
+test("新人戦21試合をA～Dグループ別に表示し7月26日の公式結果を維持する", async ({ page }) => {
   expect(rookie.items.length).toBeGreaterThanOrEqual(21);
-  expect(rookie.items.every((match) => match.status === "scheduled" && match.gameId === null)).toBeTruthy();
+  const july26 = rookie.items.filter((match) => match.kickoffAt.startsWith("2026-07-26"));
+  expect(july26).toHaveLength(7);
+  expect(july26.every((match) => match.status === "finished" && Number.isInteger(match.gameId))).toBeTruthy();
+  expect(new Set(july26.map((match) => match.id)).size).toBe(7);
+  expect(july26.map((match) => `${match.homeTeam.name} ${match.homeTeam.score}-${match.awayTeam.score} ${match.awayTeam.name}`)).toEqual([
+    "岡山大学 1-1 広島文化学園大学",
+    "就実大学 0-8 IPU・環太平洋大学",
+    "福山平成大学 0-4 岡山理科大学",
+    "島根大学 3-9 広島修道大学",
+    "周南公立大学 2-0 川崎医療福祉大学",
+    "山口大学 0-1 広島大学",
+    "広島経済大学 8-0 広島国際大学",
+  ]);
   expect(new Set(rookie.items.map((match) => match.groupName))).toEqual(new Set(["Aグループ", "Bグループ", "Cグループ", "Dグループ"]));
   await page.goto(`${BASE_URL}?view=league&competition=${ROOKIE}&season=2026`);
   await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", String(rookie.items.length));
@@ -48,7 +60,7 @@ test("新人戦21予定をA～Dグループ別に表示し詳細未公開でも�
     await expect(page.getByText(`${group} 順位表`, { exact: true })).toBeVisible();
     await expect(page.locator(".match-round-group__header", { hasText: group }).first()).toBeVisible();
   }
-  const match = rookie.items[0];
+  const match = rookie.items.find((item) => item.status === "scheduled") ?? rookie.items[0];
   await page.goto(`${BASE_URL}?view=match&id=${match.id}`);
   await expect(page.locator('[data-page="match"]')).toContainText(match.homeTeam.name);
   await expect(page.locator('[data-page="match"]')).toContainText(match.awayTeam.name);
