@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-21T14:03:04.278Z",
+  "generatedAt": "2026-07-29T06:53:02.709Z",
   "sourceSeasons": [
     2024,
     2025,
@@ -125,7 +125,7 @@
       "leagueName": "中国大学サッカー新人戦",
       "stageId": "rookie-tournament",
       "stageName": "中国大学サッカー新人戦",
-      "matchCount": 0
+      "matchCount": 7
     },
     {
       "season": 2026,
@@ -152,7 +152,7 @@
       "matchCount": 0
     }
   ],
-  "matchCount": 529,
+  "matchCount": 536,
   "items": [
     {
       "teamId": "ipu",
@@ -883,6 +883,32 @@
           ]
         },
         {
+          "opponentTeamId": "shujitsu",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 8,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-schedule-d54dea1d6857",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 8,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        },
+        {
           "opponentTeamId": "shunan-public",
           "played": 5,
           "won": 5,
@@ -1143,13 +1169,28 @@
         },
         {
           "opponentTeamId": "hiroshima",
-          "played": 3,
+          "played": 4,
           "won": 0,
           "drawn": 0,
-          "lost": 3,
+          "lost": 4,
           "goalsFor": 1,
-          "goalsAgainst": 20,
+          "goalsAgainst": 21,
           "matches": [
+            {
+              "matchId": "football-system-schedule-5b1308d7cc1d",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            },
             {
               "matchId": "football-system-15-558-25641",
               "season": 2026,
@@ -2756,13 +2797,28 @@
         },
         {
           "opponentTeamId": "shunan-public",
-          "played": 3,
+          "played": 4,
           "won": 0,
           "drawn": 1,
-          "lost": 2,
+          "lost": 3,
           "goalsFor": 4,
-          "goalsAgainst": 7,
+          "goalsAgainst": 9,
           "matches": [
+            {
+              "matchId": "football-system-schedule-e011c284c333",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 0,
+              "goalsAgainst": 2,
+              "result": "L"
+            },
             {
               "matchId": "football-system-15-558-25661",
               "season": 2026,
@@ -3538,13 +3594,28 @@
         },
         {
           "opponentTeamId": "okayama-science",
-          "played": 2,
+          "played": 3,
           "won": 2,
           "drawn": 0,
-          "lost": 0,
+          "lost": 1,
           "goalsFor": 7,
-          "goalsAgainst": 3,
+          "goalsAgainst": 7,
           "matches": [
+            {
+              "matchId": "football-system-schedule-3a31bff94cb8",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 0,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
             {
               "matchId": "football-system-15-516-22004",
               "season": 2025,
@@ -4394,6 +4465,32 @@
           ]
         },
         {
+          "opponentTeamId": "shimane",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 9,
+          "goalsAgainst": 3,
+          "matches": [
+            {
+              "matchId": "football-system-schedule-d20aafa3a230",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 9,
+              "goalsAgainst": 3,
+              "result": "W"
+            }
+          ]
+        },
+        {
           "opponentTeamId": "shunan-public",
           "played": 5,
           "won": 3,
@@ -5159,13 +5256,28 @@
         },
         {
           "opponentTeamId": "kawasaki-medical-welfare",
-          "played": 3,
-          "won": 2,
+          "played": 4,
+          "won": 3,
           "drawn": 1,
           "lost": 0,
-          "goalsFor": 7,
+          "goalsFor": 9,
           "goalsAgainst": 4,
           "matches": [
+            {
+              "matchId": "football-system-schedule-e011c284c333",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 2,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
             {
               "matchId": "football-system-15-558-25661",
               "season": 2026,
@@ -5945,13 +6057,28 @@
         },
         {
           "opponentTeamId": "okayama",
-          "played": 3,
+          "played": 4,
           "won": 2,
-          "drawn": 1,
+          "drawn": 2,
           "lost": 0,
-          "goalsFor": 6,
-          "goalsAgainst": 2,
+          "goalsFor": 7,
+          "goalsAgainst": 3,
           "matches": [
+            {
+              "matchId": "football-system-schedule-25f7fddaf184",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            },
             {
               "matchId": "football-system-22-563-26179",
               "season": 2026,
@@ -6970,13 +7097,28 @@
         },
         {
           "opponentTeamId": "yamaguchi",
-          "played": 3,
-          "won": 3,
+          "played": 4,
+          "won": 4,
           "drawn": 0,
           "lost": 0,
-          "goalsFor": 20,
+          "goalsFor": 21,
           "goalsAgainst": 1,
           "matches": [
+            {
+              "matchId": "football-system-schedule-5b1308d7cc1d",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
             {
               "matchId": "football-system-15-558-25641",
               "season": 2026,
@@ -8255,6 +8397,32 @@
               "period": "first",
               "side": "home",
               "goalsFor": 3,
+              "goalsAgainst": 0,
+              "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "hiroshima-international",
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 8,
+          "goalsAgainst": 0,
+          "matches": [
+            {
+              "matchId": "football-system-schedule-bf611c8c6583",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 8,
               "goalsAgainst": 0,
               "result": "W"
             }
@@ -10727,6 +10895,32 @@
           ]
         },
         {
+          "opponentTeamId": "ipu",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 8,
+          "matches": [
+            {
+              "matchId": "football-system-schedule-d54dea1d6857",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 0,
+              "goalsAgainst": 8,
+              "result": "L"
+            }
+          ]
+        },
+        {
           "opponentTeamId": "kawasaki-medical-welfare",
           "played": 2,
           "won": 0,
@@ -12378,13 +12572,28 @@
         },
         {
           "opponentTeamId": "hiroshima-bunka-gakuen",
-          "played": 3,
+          "played": 4,
           "won": 0,
-          "drawn": 1,
+          "drawn": 2,
           "lost": 2,
-          "goalsFor": 2,
-          "goalsAgainst": 6,
+          "goalsFor": 3,
+          "goalsAgainst": 7,
           "matches": [
+            {
+              "matchId": "football-system-schedule-25f7fddaf184",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 1,
+              "goalsAgainst": 1,
+              "result": "D"
+            },
             {
               "matchId": "football-system-22-563-26179",
               "season": 2026,
@@ -13297,13 +13506,28 @@
         },
         {
           "opponentTeamId": "fukuyama-heisei",
-          "played": 2,
-          "won": 0,
+          "played": 3,
+          "won": 1,
           "drawn": 0,
           "lost": 2,
-          "goalsFor": 3,
+          "goalsFor": 7,
           "goalsAgainst": 7,
           "matches": [
+            {
+              "matchId": "football-system-schedule-3a31bff94cb8",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 4,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
             {
               "matchId": "football-system-15-516-22004",
               "season": 2025,
@@ -14371,6 +14595,32 @@
               "side": "away",
               "goalsFor": 0,
               "goalsAgainst": 2,
+              "result": "L"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "hiroshima-shudo",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 3,
+          "goalsAgainst": 9,
+          "matches": [
+            {
+              "matchId": "football-system-schedule-d20aafa3a230",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "home",
+              "goalsFor": 3,
+              "goalsAgainst": 9,
               "result": "L"
             }
           ]
@@ -15456,6 +15706,32 @@
               "goalsFor": 4,
               "goalsAgainst": 3,
               "result": "W"
+            }
+          ]
+        },
+        {
+          "opponentTeamId": "hiroshima-keizai",
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 0,
+          "goalsAgainst": 8,
+          "matches": [
+            {
+              "matchId": "football-system-schedule-bf611c8c6583",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-rookie-tournament",
+              "leagueName": "中国大学サッカー新人戦",
+              "stageId": "rookie-tournament",
+              "stageName": "中国大学サッカー新人戦",
+              "kickoffAt": "2026-07-26T17:00:00+09:00",
+              "round": 1,
+              "period": null,
+              "side": "away",
+              "goalsFor": 0,
+              "goalsAgainst": 8,
+              "result": "L"
             }
           ]
         },
