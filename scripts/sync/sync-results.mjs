@@ -652,7 +652,9 @@ function parseDetailHtml(detailHtml, listMatch) {
     scoreByPeriod: parsePeriodScores($),
     penaltyShootout: parsePenaltyShootout($),
     manualStatistics,
-    playerShots: parsePlayerShots($, manualStatistics),
+    ...(targetKey === "2026-rookie"
+      ? { playerShots: parsePlayerShots($, manualStatistics) }
+      : {}),
     substitutions: resultSections.substitutions,
     disciplinary: resultSections.disciplinary,
     goalSummary: resultSections.goalSummary,
