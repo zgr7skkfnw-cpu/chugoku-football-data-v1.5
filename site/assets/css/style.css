@@ -3280,6 +3280,176 @@ input[type="submit"] {
   .season-comparison-row { grid-template-columns: minmax(0, 1fr) 86px minmax(0, 1fr); }
 }
 
+/* Profile headers: dedicated small-screen flow for iPhone Safari.
+   Keep every interactive/control group in normal flow so intrinsic grid widths
+   and dynamic Safari viewports cannot place controls over profile content. */
+@media (max-width: 600px) {
+  .team-profile,
+  .player-profile,
+  .team-profile__identity,
+  .team-profile__identity-copy,
+  .player-profile__hero,
+  .player-profile__copy,
+  .player-profile__team-link {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .team-profile__back {
+    position: static !important;
+    display: inline-flex;
+    width: max-content;
+    max-width: calc(100% - 24px);
+    min-height: 44px;
+    align-items: center;
+    margin: 0 0 10px 24px;
+    padding: 0 12px;
+    transform: none !important;
+  }
+
+  .team-profile__identity {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+      "emblem copy"
+      "follow follow"
+      "record record";
+    grid-template-columns: 64px minmax(0, 1fr);
+    min-height: 0;
+    height: auto;
+    align-items: start;
+    gap: 12px;
+    margin: 0 0 16px;
+    padding: 16px 12px 12px;
+    overflow: visible;
+  }
+
+  .team-profile__identity > .team-emblem {
+    grid-area: emblem;
+    width: 58px;
+    height: 58px;
+  }
+
+  .team-profile__identity-copy {
+    grid-area: copy;
+    overflow: visible;
+  }
+
+  .team-profile__identity-copy > * {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .team-profile__name {
+    max-width: 100%;
+    font-size: clamp(20px, 6vw, 26px);
+    overflow-wrap: anywhere;
+  }
+
+  .team-profile__identity > .favorite-button {
+    position: static !important;
+    grid-area: follow;
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    transform: none !important;
+  }
+
+  .team-profile__header-record {
+    position: static !important;
+    grid-area: record;
+    grid-column: auto;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    transform: none !important;
+  }
+
+  .team-profile__header-record div {
+    min-width: 0;
+    padding: 9px 2px 4px;
+  }
+
+  .team-profile__header-record strong {
+    font-size: clamp(15px, 4.5vw, 18px);
+  }
+
+  .team-profile__header-record span {
+    overflow-wrap: anywhere;
+  }
+
+  .player-profile__hero {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+      "avatar copy"
+      "follow follow";
+    grid-template-columns: 68px minmax(0, 1fr);
+    min-height: 0;
+    height: auto;
+    align-items: start;
+    gap: 12px;
+    padding: 16px 12px;
+    overflow: visible;
+  }
+
+  .player-profile__initial {
+    position: static !important;
+    grid-area: avatar;
+    width: 64px;
+    height: 64px;
+    transform: none !important;
+  }
+
+  .player-profile__copy {
+    grid-area: copy;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .player-profile__copy h1,
+  .player-profile__copy > span,
+  .player-profile__team-link,
+  .player-profile__team-link strong {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  .player-profile__copy h1 {
+    font-size: clamp(21px, 6vw, 27px);
+    line-height: 1.2;
+  }
+
+  .player-profile__team-link {
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+  }
+
+  .player-profile__team-link .kit-icon--player-profile {
+    display: none;
+  }
+
+  .player-profile__hero > .player-follow-button {
+    position: static !important;
+    grid-area: follow;
+    grid-column: auto;
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    transform: none !important;
+  }
+
+  .main-content {
+    padding-bottom: calc(var(--nav-height) + 48px + env(safe-area-inset-bottom));
+  }
+}
+
 @media (max-width: 640px) {
   .team-profile__identity {
     grid-template-columns: 54px minmax(0, 1fr);
@@ -4458,5 +4628,22 @@ input[type="submit"] {
   .unified-standing-table th:first-child,
   .unified-standing-table td:first-child {
     width: 20px;
+  }
+}
+
+/* Final mobile profile precedence: old profile rules above must not override
+   named areas in the Safari-specific header layout. */
+@media (max-width: 600px) {
+  .team-profile__identity > .favorite-button {
+    grid-area: follow;
+  }
+
+  .team-profile__header-record {
+    grid-area: record;
+    width: 100%;
+  }
+
+  .player-profile__hero > .player-follow-button {
+    grid-area: follow;
   }
 }

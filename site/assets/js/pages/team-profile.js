@@ -138,7 +138,7 @@ export function renderTeamProfilePage({
       }),
       element("header", { className: "team-profile__identity" }, [
         createTeamEmblem(team, "team-emblem team-emblem--profile"),
-        element("div", {}, [
+        element("div", { className: "team-profile__identity-copy" }, [
           element("p", { className: "page-eyebrow", text: competitionLabel(selectedCompetitionId, competitionDefinitions) }),
           element("h1", { className: "team-profile__name", text: team.name }),
           element("span", { className: "team-profile__short-name", text: team.shortName }),
