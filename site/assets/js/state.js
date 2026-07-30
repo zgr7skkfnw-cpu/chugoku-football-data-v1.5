@@ -6,6 +6,8 @@ const state = {
   selectedMatchTab: "preview",
   currentTeamId: null,
   currentPlayerId: null,
+  selectedTeamTab: "overview",
+  selectedPlayerTab: "profile",
   theme: "dark",
   dataStatus: "loading",
   dataError: null,
