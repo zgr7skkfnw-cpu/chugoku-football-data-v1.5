@@ -13,6 +13,7 @@ import { setState } from "../state.js";
 import { createMatchRow, createPlayerLinkRow, createTeamNameLink } from "./shared.js";
 import { createSeasonPeriodTabs } from "../ui/season-period.js";
 import { selectPlayerStatisticsPeriod } from "../utils/players.js";
+import { createUnifiedStandingTable } from "../ui/standing-table.js";
 
 export function renderTeamProfilePage({
   currentTeamId,
@@ -74,31 +75,46 @@ export function renderTeamProfilePage({
     const nextTeamIds = toggleFavoriteTeam(favoriteTeamIds, team.id);
     setState({ favoriteTeamIds: nextTeamIds });
   });
-  const registrationSwitch = createTeamRegistrationSwitch(team, teamDirectory, matches, selectedSeason, selectedCompetitionId, competitionDefinitions);
   const standings = activeTeamStats?.periods?.all?.standings ?? [];
-  const trophies = collectTeamTrophies(team, competitionDefinitions, leagueStats);
+  const trophies = collectTeamTrophies(team, competitionDefinitions, leagueStats, matches);
+  const competitionMatches = matches.filter((match) =>
+    match.season === selectedSeason && match.competitionId === selectedCompetitionId && match.status === "finished");
+  const registrationSwitch = () => createTeamRegistrationSwitch(
+    team,
+    teamDirectory,
+    matches,
+    selectedSeason,
+    selectedCompetitionId,
+    competitionDefinitions,
+    selectedTeamTab,
+  );
   const tabContent = {
     overview: element("div", { className: "section-stack" }, [
       createPanel("次の試合", createNextMatch(upcomingMatches, team, teamDirectory), upcomingMatches.length ? "直近の公式日程" : "未定"),
       createPanel("チームフォーム", createCompactForm(finishedMatches.slice(0, 5), team, teamDirectory), `${Math.min(finishedMatches.length, 5)}試合`),
-      createPanel("ミニ順位表", createMiniStanding(standings, team, teamDirectory), "現在順位"),
-      createPanel("リーグ表での順位履歴", createFinalRankHistory(team, selectedCompetitionId, leagueStats, teamDirectory), "保存済みシーズン"),
+      createPanel("順位表", createMiniStanding(standings, team, teamDirectory), "現在順位 / 3チーム"),
+      createPanel(
+        "リーグ表での順位履歴",
+        createRankChart(calculateRankProgression(competitionMatches, team.id), standings.length),
+        `${selectedSeason}シーズン / 終了試合ごと`,
+      ),
       createPanel("トロフィー", createTrophyList(trophies), "保存済みデータのみ"),
       createPanel("競技場情報", createVenueInformation(team), "公式・登録済み情報"),
     ]),
-    matches: createPanel("試合", createTimelineMatches(seasonMatches, team, teamDirectory), `${seasonMatches.length}試合`),
-    standings: createPanel("順位表", createProfileStanding(standings, team, teamDirectory), competitionLabel(selectedCompetitionId, competitionDefinitions)),
+    matches: element("div", { className: "section-stack" }, [registrationSwitch(), createPanel("試合", createTimelineMatches(seasonMatches, team, teamDirectory), `${seasonMatches.length}試合`)]),
+    standings: element("div", { className: "section-stack" }, [registrationSwitch(), createPanel("順位表", createProfileStanding(standings, team, teamDirectory), competitionLabel(selectedCompetitionId, competitionDefinitions))]),
     stats: element("div", { className: "section-stack" }, [
-      createPanel("ホーム／アウェー別成績", createHomeAwayOverview(analytics, activeTeamStats, team), "選択大会"),
+      registrationSwitch(),
+      createPanel("総合・ホーム・アウェー成績", createHomeAwayOverview(analytics, activeTeamStats, team), "選択大会"),
       createPanel("ゴール数", createGoalClassification(finishedMatches, team), "公式記録で判別できる範囲"),
       hasSeasonRoster ? createPanel("トッププレイヤー", createExpandableRankings(periodPlayerStats, team), "チーム内") : null,
-      createPanel("重要スタッツ", createImportantStats(activeTeamStats, team), "リーグ比較"),
-      createPanel("攻撃", createAttackStats(analytics, finishedMatches, team), "公式掲載値のみ"),
-      createPanel("守備", createDefenceStats(analytics, finishedMatches, team), "公式掲載値のみ"),
-      createPanel("反則", createDisciplineStats(analytics), "公式掲載値のみ"),
+      createPanel("重要スタッツ", createImportantStats(activeTeamStats, team, teamDirectory), "リーグ比較"),
+      createPanel("攻撃", createCategoryLeagueStats("attack", activeTeamStats, competitionMatches, team, teamDirectory), "リーグ内比較"),
+      createPanel("守備", createCategoryLeagueStats("defence", activeTeamStats, competitionMatches, team, teamDirectory), "リーグ内比較"),
+      createPanel("反則", createCategoryLeagueStats("discipline", activeTeamStats, competitionMatches, team, teamDirectory), "リーグ内比較"),
     ]),
     squad: hasSeasonRoster
-      ? createPanel("スカッド", createRoster(roster, team, periodPlayerStats, favoritePlayerIds, players), `${roster.length}選手`)
+      ? element("div", { className: "section-stack" }, [registrationSwitch(), createPanel("スカッド", createRoster(roster, team, periodPlayerStats, favoritePlayerIds, players), `${roster.length}選手`)])
       : createNotice(`${selectedSeason}年度の大会別選手名簿は未整備です。`),
     trophies: createPanel("トロフィー", createTrophyList(trophies, true), "保存済みデータの対象期間"),
   }[selectedTeamTab] ?? null;
@@ -131,7 +147,6 @@ export function renderTeamProfilePage({
       ]),
       element("div", { className: "team-profile__content section-stack" }, [
         team.competitionId ? createNotice("Iリーグの大会別公式登録です。トップチームや別チームの登録とは統合していません。") : null,
-        registrationSwitch,
         createProfileTabs("team", selectedTeamTab, [
           ["overview", "概要"], ["matches", "試合"], ["standings", "順位表"],
           ["stats", "スタッツ"], ["squad", "スカッド"], ["trophies", "トロフィー"],
@@ -234,9 +249,20 @@ function createHomeAwayRecords(analytics) {
 }
 
 function createSplitRecord(label, record = {}) {
+  const values = [
+    ["試", record.played ?? "－"],
+    ["勝", record.won ?? "－"],
+    ["分", record.drawn ?? "－"],
+    ["敗", record.lost ?? "－"],
+    ["得", record.goalsFor ?? "－"],
+    ["失", record.goalsAgainst ?? "－"],
+    ["差", record.goalDifference === undefined ? "－" : signed(record.goalDifference)],
+    ["点", record.points ?? "－"],
+  ];
   return element("section", { className: "split-record" }, [
     element("h3", { text: label }),
-    createRecordSummary(record),
+    element("div", { className: "split-record__values" }, values.map(([name, value]) =>
+      element("div", {}, [element("strong", { text: String(value) }), element("span", { text: name })]))),
   ]);
 }
 
@@ -273,36 +299,93 @@ function createTeamStatGrid(stats = {}) {
   ));
 }
 
-function createRankChart(points = [], period) {
-  if (!points.length) return createNotice("この期間の順位推移はまだありません。");
+function createRankChart(points = [], teamCount = 10) {
+  if (!points.length) return createNotice("終了済み試合がないため、順位推移を表示できません。");
   const width = 640;
   const height = 260;
   const left = 42;
   const top = 24;
   const chartWidth = 570;
   const chartHeight = 190;
-  const range = period === "first" ? [1, 9] : period === "second" ? [10, 18] : [1, 18];
   const svg = svgElement("svg", { viewBox: `0 0 ${width} ${height}`, role: "img", "aria-label": "節ごとの順位推移グラフ" });
-  for (let rank = 1; rank <= 10; rank += 1) {
-    const y = top + ((rank - 1) / 9) * chartHeight;
+  const maximumRank = Math.max(2, teamCount, ...points.map((point) => point.rank));
+  for (let rank = 1; rank <= maximumRank; rank += 1) {
+    const y = top + ((rank - 1) / Math.max(1, maximumRank - 1)) * chartHeight;
     svg.append(
       svgElement("line", { x1: left, x2: left + chartWidth, y1: y, y2: y, class: "rank-chart__grid" }),
       svgText(8, y + 4, `${rank}位`),
     );
   }
-  const coordinates = points.map((point) => ({
+  const coordinates = points.map((point, index) => ({
     ...point,
-    x: left + ((point.round - range[0]) / Math.max(1, range[1] - range[0])) * chartWidth,
-    y: top + ((point.rank - 1) / 9) * chartHeight,
+    x: left + (index / Math.max(1, points.length - 1)) * chartWidth,
+    y: top + ((point.rank - 1) / Math.max(1, maximumRank - 1)) * chartHeight,
   }));
   svg.append(svgElement("polyline", { points: coordinates.map((point) => `${point.x},${point.y}`).join(" "), class: "rank-chart__line" }));
-  for (const point of coordinates) {
-    svg.append(
-      svgElement("circle", { cx: point.x, cy: point.y, r: 5, class: "rank-chart__point" }),
-      svgText(point.x - 8, height - 15, `${point.round}節`, "rank-chart__round"),
-    );
+  const labelEvery = Math.max(1, Math.ceil(points.length / 8));
+  for (const [index, point] of coordinates.entries()) {
+    svg.append(svgElement("circle", { cx: point.x, cy: point.y, r: 5, class: "rank-chart__point" }));
+    if (index % labelEvery === 0 || index === coordinates.length - 1) {
+      svg.append(svgText(point.x - 8, height - 15, point.label, "rank-chart__round"));
+    }
   }
   return element("div", { className: "rank-chart" }, [svg]);
+}
+
+function calculateRankProgression(matches, targetTeamId) {
+  const finished = [...matches]
+    .filter((match) => match.status === "finished")
+    .filter((match) => Number.isFinite(Number(match.homeTeam?.score)) && Number.isFinite(Number(match.awayTeam?.score)))
+    .sort((left, right) =>
+      new Date(left.kickoffAt) - new Date(right.kickoffAt)
+      || Number(left.gameId ?? Number.MAX_SAFE_INTEGER) - Number(right.gameId ?? Number.MAX_SAFE_INTEGER)
+      || String(left.id).localeCompare(String(right.id)));
+  if (!finished.some((match) => match.homeTeam.teamId === targetTeamId || match.awayTeam.teamId === targetTeamId)) return [];
+  const teamIds = [...new Set(finished.flatMap((match) => [match.homeTeam.teamId, match.awayTeam.teamId]))];
+  const records = new Map(teamIds.map((teamId) => [teamId, {
+    teamId, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0,
+  }]));
+  const points = [];
+  for (const match of finished) {
+    const home = records.get(match.homeTeam.teamId);
+    const away = records.get(match.awayTeam.teamId);
+    const homeScore = Number(match.homeTeam.score);
+    const awayScore = Number(match.awayTeam.score);
+    updateStandingRecord(home, homeScore, awayScore);
+    updateStandingRecord(away, awayScore, homeScore);
+    const table = [...records.values()].sort(compareStandingRecords);
+    const rank = table.findIndex((entry) => entry.teamId === targetTeamId) + 1;
+    points.push({
+      rank,
+      label: match.roundLabel ?? (match.round ? `${match.round}節` : `${points.length + 1}`),
+      matchId: match.id,
+      kickoffAt: match.kickoffAt,
+    });
+  }
+  return points;
+}
+
+function updateStandingRecord(record, goalsFor, goalsAgainst) {
+  record.played += 1;
+  record.goalsFor += goalsFor;
+  record.goalsAgainst += goalsAgainst;
+  record.goalDifference = record.goalsFor - record.goalsAgainst;
+  if (goalsFor > goalsAgainst) {
+    record.won += 1;
+    record.points += 3;
+  } else if (goalsFor === goalsAgainst) {
+    record.drawn += 1;
+    record.points += 1;
+  } else {
+    record.lost += 1;
+  }
+}
+
+function compareStandingRecords(left, right) {
+  return right.points - left.points
+    || right.goalDifference - left.goalDifference
+    || right.goalsFor - left.goalsFor
+    || left.teamId.localeCompare(right.teamId);
 }
 
 function createHeadToHead(opponents, teamDirectory, period) {
@@ -363,7 +446,7 @@ function competitionLabel(id, definitions = []) {
     ?? (id?.includes("i-league") ? "Iリーグ" : id?.includes("division-2") ? "中国大学リーグ2部" : "中国大学リーグ");
 }
 
-function createTeamRegistrationSwitch(team, teamDirectory, matches, season, activeCompetitionId, definitions) {
+function createTeamRegistrationSwitch(team, teamDirectory, matches, season, activeCompetitionId, definitions, activeTab) {
   const parentClubId = team.parentClubId ?? team.id;
   const relatedIds = new Set(
     [...teamDirectory.byId.values()]
@@ -389,11 +472,17 @@ function createTeamRegistrationSwitch(team, teamDirectory, matches, season, acti
       className: `filter-chip${option.season === season && option.competitionId === activeCompetitionId && option.teamId === team.id ? " is-active" : ""}`,
       text: option.label,
       attributes: {
-        href: routeHref("team", { teamId: option.teamId, competitionId: option.competitionId, season: option.season }),
+        href: routeHref("team", {
+          teamId: option.teamId,
+          competitionId: option.competitionId,
+          season: option.season,
+          teamTab: activeTab,
+        }),
         "data-route": "team",
         "data-team-id": option.teamId,
         "data-competition-id": option.competitionId,
         "data-season": option.season,
+        "data-team-tab": activeTab,
         "aria-current": option.season === season && option.competitionId === activeCompetitionId && option.teamId === team.id ? "page" : "false",
       },
     }),
@@ -401,10 +490,12 @@ function createTeamRegistrationSwitch(team, teamDirectory, matches, season, acti
 }
 
 function createInternalRankings(statistics, team) {
-  const metrics = [["goals", "得点", "得点"], ["assists", "アシスト", "アシスト"], ["goalAssist", "G＋A", "G＋A"], ["minutes", "出場時間", "分"]];
+  const metrics = [["goals", "得点", "得点"], ["assists", "アシスト", "アシスト"], ["minutes", "出場時間", "分"]];
   return element("div", { className: "internal-ranking-grid" }, metrics.map(([metric, label, unit]) => {
     const value = (stats) => metric === "goalAssist" ? stats.goals + stats.assists : stats[metric];
-    const rows = [...statistics.values()].filter((stats) => stats.player.teamId === team.id && value(stats) > 0).sort((a, b) => value(b) - value(a) || a.player.name.localeCompare(b.player.name, "ja")).slice(0, 5);
+    const rows = [...statistics.values()]
+      .filter((stats) => stats.player.teamId === team.id && value(stats) > 0)
+      .sort((a, b) => value(b) - value(a) || a.player.name.localeCompare(b.player.name, "ja"));
     return element("section", { className: metric === "goalAssist" ? "internal-ranking-panel" : "internal-ranking internal-ranking-panel" }, [
       element("h3", { text: label }),
       ...(rows.length ? rows.map((stats) => createPlayerLinkRow({ player: stats.player, team, metric: value(stats), metricLabel: unit })) : [createNotice("記録なし")]),
@@ -476,7 +567,10 @@ function createRoster(roster, team, statistics, favoritePlayerIds, allPlayers) {
   return element(
     "div",
     { className: "roster-list", attributes: { "data-roster-count": String(roster.length) } },
-    roster.map((player) => {
+    [...roster].sort((left, right) =>
+      positionOrder(left.position) - positionOrder(right.position)
+      || (left.number ?? 999) - (right.number ?? 999)
+      || left.name.localeCompare(right.name, "ja")).map((player) => {
       const stats = statistics.get(player.id);
       const followed = isSafelyFollowedPlayer(player, allPlayers, favoritePlayerIds);
       return element("a", {
@@ -514,6 +608,10 @@ function isSafelyFollowedPlayer(player, players, favoriteIds) {
 
 function normalizeRosterName(value) {
   return String(value ?? "").normalize("NFKC").replace(/[\s　]+/g, "").replaceAll("遙", "遥");
+}
+
+function positionOrder(position) {
+  return ({ GK: 0, DF: 1, MF: 2, FW: 3 })[String(position ?? "").match(/GK|DF|MF|FW/)?.[0]] ?? 4;
 }
 
 function createProfileTabs(kind, active, tabs, context) {
@@ -562,7 +660,6 @@ function createCompactForm(matches, team, teamDirectory) {
     }, [
       element("strong", { className: "team-form-tile__score", text: `${own}-${other}` }),
       createTeamEmblem(opponent, "team-emblem team-form-tile__emblem"),
-      element("span", { text: result[1] }),
     ]);
   }));
 }
@@ -571,35 +668,20 @@ function createMiniStanding(standings, team, teamDirectory) {
   const index = standings.findIndex((row) => row.teamId === team.id);
   if (index < 0) return createNotice("この大会の順位表はありません。");
   const start = Math.max(0, Math.min(index - 1, standings.length - 3));
-  return createStandingRows(standings.slice(start, start + 3), team, teamDirectory, true);
+  return createUnifiedStandingTable(standings.slice(start, start + 3), teamDirectory, {
+    highlightedTeamIds: [team.id],
+    className: "team-mini-standing",
+  });
 }
 
 function createProfileStanding(standings, team, teamDirectory) {
   if (!standings.length) return createNotice("この大会は通常リーグ形式の順位表を使用しません。");
-  const table = element("table", { className: "prematch-standing-table is-full team-profile-standing" });
-  table.append(
-    element("thead", {}, [element("tr", {}, ["順", "チーム", "試", "勝", "分", "敗", "得", "失", "差", "点"].map((label) => element("th", { text: label })))]),
-    element("tbody", {}, standings.map((row) => standingRow(row, team, teamDirectory, false))),
-  );
-  return element("div", { className: "team-profile-standing-wrap" }, [table]);
-}
-
-function createStandingRows(rows, team, teamDirectory) {
-  const table = element("table", { className: "prematch-standing-table is-compact team-mini-standing" });
-  table.append(
-    element("thead", {}, [element("tr", {}, ["順", "チーム", "試", "差", "点"].map((label) => element("th", { text: label })))]),
-    element("tbody", {}, rows.map((row) => standingRow(row, team, teamDirectory, true))),
-  );
-  return table;
-}
-
-function standingRow(row, activeTeam, teamDirectory, compact) {
-  const candidate = getTeam(teamDirectory, row.teamId);
-  const cells = compact
-    ? [row.rank, candidate?.shortName ?? candidate?.name ?? row.teamId, row.played, signed(row.goalDifference), row.points]
-    : [row.rank, candidate?.shortName ?? candidate?.name ?? row.teamId, row.played, row.won, row.drawn, row.lost, row.goalsFor, row.goalsAgainst, signed(row.goalDifference), row.points];
-  return element("tr", { className: row.teamId === activeTeam.id ? "is-highlighted" : "", attributes: { "data-team-id": row.teamId } },
-    cells.map((value, index) => element("td", { text: String(value ?? "－"), className: index === 1 ? "team-cell" : "" })));
+  return element("div", { className: "team-profile-standing-wrap" }, [
+    createUnifiedStandingTable(standings, teamDirectory, {
+      highlightedTeamIds: [team.id],
+      className: "team-profile-standing",
+    }),
+  ]);
 }
 
 function createFinalRankHistory(team, competitionId, leagueStats, teamDirectory) {
@@ -621,17 +703,23 @@ function createFinalRankHistory(team, competitionId, leagueStats, teamDirectory)
     element("li", {}, [element("strong", { text: String(season) }), element("span", { text: `${rank}位` })])));
 }
 
-function collectTeamTrophies(team, definitions, leagueStats) {
+function collectTeamTrophies(team, definitions, leagueStats, matches) {
   const names = new Set([team.name, team.shortName].filter(Boolean));
   const counts = new Map();
-  const add = (competition, type, season) => {
-    const key = competition || "大会";
-    const value = counts.get(key) ?? { winner: 0, runnerUp: 0, seasons: new Set() };
-    value[type] += 1; value.seasons.add(season); counts.set(key, value);
+  const recorded = new Set();
+  const add = (competition, type, season, sourceId = competition) => {
+    const recordKey = `${season}:${sourceId}:${type}`;
+    if (recorded.has(recordKey)) return;
+    recorded.add(recordKey);
+    const { key, label } = trophySeries(competition);
+    const value = counts.get(key) ?? { name: label, winner: 0, runnerUp: 0, winnerSeasons: new Set(), runnerUpSeasons: new Set() };
+    value[type] += 1;
+    value[type === "winner" ? "winnerSeasons" : "runnerUpSeasons"].add(Number(season));
+    counts.set(key, value);
   };
   for (const definition of definitions ?? []) {
-    if (names.has(definition.results?.winner)) add(definition.name, "winner", definition.season);
-    if (names.has(definition.results?.runnerUp)) add(definition.name, "runnerUp", definition.season);
+    if (names.has(definition.results?.winner)) add(definition.name, "winner", definition.season, definition.id);
+    if (names.has(definition.results?.runnerUp)) add(definition.name, "runnerUp", definition.season, definition.id);
   }
   for (const [season, data] of Object.entries(leagueStats ?? {})) {
     if (Number(season) >= 2026) continue;
@@ -639,11 +727,39 @@ function collectTeamTrophies(team, definitions, leagueStats) {
       const table = stats?.periods?.all?.standings;
       if (!Array.isArray(table)) continue;
       const row = table.find((entry) => entry.teamId === team.id);
-      if (row?.rank === 1) add(id, "winner", season);
-      if (row?.rank === 2) add(id, "runnerUp", season);
+      if (row?.rank === 1) add(id, "winner", season, id);
+      if (row?.rank === 2) add(id, "runnerUp", season, id);
     }
   }
-  return [...counts].map(([name, value]) => ({ name, ...value, seasons: [...value.seasons].sort() }));
+  const leagueDefinitions = new Map((definitions ?? [])
+    .filter((definition) => ["league", "i-league"].includes(definition.competitionType))
+    .map((definition) => [definition.id, definition]));
+  const grouped = new Map();
+  for (const match of matches ?? []) {
+    if (match.status !== "finished" || !leagueDefinitions.has(match.competitionId)) continue;
+    const key = `${match.season}:${match.competitionId}`;
+    grouped.set(key, [...(grouped.get(key) ?? []), match]);
+  }
+  for (const group of grouped.values()) {
+    const definition = leagueDefinitions.get(group[0].competitionId);
+    const records = new Map([...new Set(group.flatMap((match) => [match.homeTeam.teamId, match.awayTeam.teamId]))]
+      .map((teamId) => [teamId, {
+        teamId, played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0,
+      }]));
+    for (const match of group) {
+      if (!Number.isFinite(Number(match.homeTeam.score)) || !Number.isFinite(Number(match.awayTeam.score))) continue;
+      updateStandingRecord(records.get(match.homeTeam.teamId), Number(match.homeTeam.score), Number(match.awayTeam.score));
+      updateStandingRecord(records.get(match.awayTeam.teamId), Number(match.awayTeam.score), Number(match.homeTeam.score));
+    }
+    const row = [...records.values()].sort(compareStandingRecords).findIndex((entry) => entry.teamId === team.id) + 1;
+    if (row === 1) add(definition.name, "winner", definition.season, definition.id);
+    if (row === 2) add(definition.name, "runnerUp", definition.season, definition.id);
+  }
+  return [...counts.values()].map((value) => ({
+    ...value,
+    winnerSeasons: [...value.winnerSeasons].sort(),
+    runnerUpSeasons: [...value.runnerUpSeasons].sort(),
+  }));
 }
 
 function createTrophyList(trophies, detailed = false) {
@@ -652,8 +768,26 @@ function createTrophyList(trophies, detailed = false) {
     element("article", { className: "trophy-card" }, [
       element("strong", { text: item.name }),
       element("span", { text: `優勝 ${item.winner}回 / 準優勝 ${item.runnerUp}回` }),
-      detailed ? element("small", { text: `確認対象: ${item.seasons.join("・")}` }) : null,
+      detailed ? element("small", {
+        text: [
+          item.winnerSeasons.length ? `優勝: ${item.winnerSeasons.join("・")}` : null,
+          item.runnerUpSeasons.length ? `準優勝: ${item.runnerUpSeasons.join("・")}` : null,
+          "保存済みデータのみ",
+        ].filter(Boolean).join(" / "),
+      }) : null,
     ])));
+}
+
+function trophySeries(value) {
+  const text = String(value ?? "");
+  if (/i-league/i.test(text)) return { key: "i-league", label: "Iリーグ" };
+  if (/新人戦|rookie/i.test(text)) return { key: "rookie", label: "中国大学サッカー新人戦" };
+  if (/選手権|championship/i.test(text)) return { key: "championship", label: "中国大学サッカー選手権" };
+  if (/入替|promotion-relegation/i.test(text)) return { key: "promotion-relegation", label: "1部・2部入替戦" };
+  if (/昇格|playoff/i.test(text)) return { key: "promotion-playoff", label: "昇格プレーオフ" };
+  if (/division-2|2部/.test(text)) return { key: "league-division-2", label: "中国大学サッカーリーグ2部" };
+  if (/division-1|1部|中国大学サッカーリーグ/.test(text)) return { key: "league-division-1", label: "中国大学サッカーリーグ1部" };
+  return { key: text.replace(/20\d{2}/g, "YEAR"), label: text.replace(/20\d{2}年度?/g, "").trim() || "大会" };
 }
 
 function createVenueInformation(team) {
@@ -673,20 +807,30 @@ function createTimelineMatches(matches, team, teamDirectory) {
 function createHomeAwayOverview(analytics, activeStats, team) {
   const rankFor = (key) => activeStats?.periods?.all?.[key]?.find((entry) => entry.teamId === team.id)?.rank;
   return element("div", { className: "home-away-grid" }, [
+    createSplitRecord(`総合 ${analytics?.rank ? `${analytics.rank}位` : "－"}`, analytics?.overall),
     createSplitRecord(`ホーム ${rankFor("homeStandings") ? `${rankFor("homeStandings")}位` : "－"}`, analytics?.home),
     createSplitRecord(`アウェー ${rankFor("awayStandings") ? `${rankFor("awayStandings")}位` : "－"}`, analytics?.away),
   ]);
 }
 
 function createGoalClassification(matches, team) {
-  const values = { "オープンプレー": 0, "セットプレー": 0, "フリーキック": 0, "PK": 0, "オウンゴール": 0, "分類不明": 0 };
+  const values = {
+    "オープンプレー": 0,
+    "コーナーキック": 0,
+    "フリーキック": 0,
+    "PK": 0,
+    "オウンゴール": 0,
+    "その他セットプレー": 0,
+    "分類不明": 0,
+  };
   for (const match of matches) for (const goal of match.goals ?? []) {
     const sideTeam = goal.teamId ?? (goal.teamName === match.homeTeam.name ? match.homeTeam.teamId : goal.teamName === match.awayTeam.name ? match.awayTeam.teamId : null);
     if (sideTeam !== team.id) continue;
+    const buildUpActions = (goal.buildUp ?? []).map((entry) => String(entry.action ?? "").toUpperCase());
     if (goal.finish === "O.G" || goal.scorerName === "オウンゴール") values["オウンゴール"] += 1;
-    else if (goal.finish === "PK") values.PK += 1;
-    else if (String(goal.finish).toUpperCase() === "FK") values["フリーキック"] += 1;
-    else if (goal.finish === "CK") values["セットプレー"] += 1;
+    else if (String(goal.finish).toUpperCase() === "PK") values.PK += 1;
+    else if (String(goal.finish).toUpperCase() === "FK" || buildUpActions.includes("FK")) values["フリーキック"] += 1;
+    else if (String(goal.finish).toUpperCase() === "CK" || buildUpActions.includes("CK")) values["コーナーキック"] += 1;
     else values["分類不明"] += 1;
   }
   const max = Math.max(1, ...Object.values(values));
@@ -705,23 +849,102 @@ function createExpandableRankings(statistics, team) {
   return element("div", {}, [container, button]);
 }
 
-function createImportantStats(activeStats, team) {
+function createImportantStats(activeStats, team, teamDirectory) {
   const teams = activeStats?.periods?.all?.teams ?? [];
-  const metrics = [["平均得点", "averageGoals", true], ["平均被失点", "averageConceded", false], ["無失点", "cleanSheets", true]];
+  const metrics = [["平均得点", "averageGoals", true], ["平均被得点", "averageConceded", false], ["無失点数", "cleanSheets", true]];
   return element("div", { className: "important-stat-list" }, metrics.map(([label, key, descending]) => {
-    const sorted = [...teams].sort((a, b) => (descending ? b.stats?.[key] - a.stats?.[key] : a.stats?.[key] - b.stats?.[key]));
+    const sorted = [...teams]
+      .filter((entry) => Number.isFinite(entry.stats?.[key]))
+      .sort((a, b) => (descending ? b.stats[key] - a.stats[key] : a.stats[key] - b.stats[key]) || a.teamId.localeCompare(b.teamId));
     const own = sorted.find((entry) => entry.teamId === team.id);
     const rows = sorted.slice(0, 3).some((entry) => entry.teamId === team.id) ? sorted.slice(0, 3) : [...sorted.slice(0, 2), own].filter(Boolean);
-    return element("section", {}, [element("h3", { text: label }), ...rows.map((entry, index) => element("div", { className: entry.teamId === team.id ? "is-highlighted metric-row" : "metric-row" }, [element("span", { text: `${index + 1}. ${entry.teamName ?? entry.teamId}` }), element("strong", { text: String(entry.stats?.[key] ?? "－") })]))]);
+    return element("section", {}, [element("h3", { text: label }), ...rows.map((entry) => element("div", { className: entry.teamId === team.id ? "is-highlighted metric-row" : "metric-row" }, [
+      element("span", { text: `${sorted.indexOf(entry) + 1}. ${getTeam(teamDirectory, entry.teamId)?.name ?? entry.teamName ?? entry.teamId}` }),
+      element("strong", { text: String(entry.stats?.[key] ?? "－") }),
+    ]))]);
   }));
 }
 
-function createAttackStats(analytics, matches, team) {
-  const recorded = matches.filter((match) => match.manualStatistics && (match.homeTeam.teamId === team.id || match.awayTeam.teamId === team.id));
-  const shots = recorded.map((match) => match.manualStatistics?.[match.homeTeam.teamId === team.id ? "home" : "away"]?.shots).filter(Number.isFinite);
-  return metricGrid([["平均得点数", nullableDecimal(analytics?.stats?.averageGoals)], ["1試合当たりシュート数", shots.length ? decimal(shots.reduce((a, b) => a + b, 0) / shots.length) : "－"], ["PK獲得数", countPenaltyGoals(matches, team)]]);
+function createCategoryLeagueStats(category, activeStats, matches, team, teamDirectory) {
+  const analytics = activeStats?.periods?.all?.teams ?? [];
+  const standingIds = activeStats?.periods?.all?.standings?.map((entry) => entry.teamId) ?? analytics.map((entry) => entry.teamId);
+  const matchMetrics = calculateOfficialMatchMetrics(matches, standingIds);
+  const definitions = {
+    attack: [
+      ["平均得点", (entry) => entry.stats?.averageGoals, true],
+      ["1試合平均シュート", (entry) => matchMetrics.get(entry.teamId)?.averageShots, true],
+      ["PK獲得数", (entry) => matchMetrics.get(entry.teamId)?.penaltiesFor, true],
+    ],
+    defence: [
+      ["平均被得点", (entry) => entry.stats?.averageConceded, false],
+      ["無失点数", (entry) => entry.stats?.cleanSheets, true],
+      ["PK献上数", (entry) => matchMetrics.get(entry.teamId)?.penaltiesAgainst, false],
+    ],
+    discipline: [
+      ["1試合平均ファウル", (entry) => matchMetrics.get(entry.teamId)?.averageFouls, false],
+      ["イエローカード数", (entry) => entry.stats?.yellowCards, false],
+      ["レッドカード数", (entry) => entry.stats?.redCards, false],
+    ],
+  }[category];
+  return element("div", { className: "league-category-stats" }, definitions.map(([label, getter, descending]) => {
+    const values = analytics
+      .map((entry) => ({ entry, value: getter(entry) }))
+      .filter(({ value }) => Number.isFinite(value));
+    if (!values.length) {
+      return element("section", { className: "league-metric-ranking" }, [
+        element("h3", { text: label }),
+        createNotice("公式記録未掲載"),
+      ]);
+    }
+    values.sort((left, right) => (descending ? right.value - left.value : left.value - right.value) || left.entry.teamId.localeCompare(right.entry.teamId));
+    const own = values.find(({ entry }) => entry.teamId === team.id);
+    const rows = values.slice(0, 3).some(({ entry }) => entry.teamId === team.id) ? values.slice(0, 3) : [...values.slice(0, 3), own].filter(Boolean);
+    return element("section", { className: "league-metric-ranking" }, [
+      element("h3", { text: label }),
+      ...rows.map(({ entry, value }) => element("div", {
+        className: `metric-row${entry.teamId === team.id ? " is-highlighted" : ""}`,
+      }, [
+        element("span", { text: `${values.findIndex((item) => item.entry.teamId === entry.teamId) + 1}. ${getTeam(teamDirectory, entry.teamId)?.name ?? entry.teamName ?? entry.teamId}` }),
+        element("strong", { text: formatMetricValue(value, label) }),
+      ])),
+    ]);
+  }));
 }
-function createDefenceStats(analytics, matches, team) { return metricGrid([["平均被失点数", nullableDecimal(analytics?.stats?.averageConceded)], ["無失点数", analytics?.stats?.cleanSheets ?? "－"], ["PK献上数", countPenaltyGoals(matches, team, true)]]); }
-function createDisciplineStats(analytics) { return metricGrid([["1試合当たりファウル数", "－"], ["イエローカード数", analytics?.stats?.yellowCards ?? "－"], ["レッドカード数", analytics?.stats?.redCards ?? "－"]]); }
-function metricGrid(values) { return element("div", { className: "team-record-grid" }, values.map(([label, value]) => element("div", { className: "team-record-stat" }, [element("strong", { text: String(value) }), element("span", { text: label })]))); }
-function countPenaltyGoals(matches, team, conceded = false) { return matches.reduce((sum, match) => sum + (match.goals ?? []).filter((goal) => goal.finish === "PK" && (conceded ? goal.teamName !== (match.homeTeam.teamId === team.id ? match.homeTeam.name : match.awayTeam.name) : goal.teamName === (match.homeTeam.teamId === team.id ? match.homeTeam.name : match.awayTeam.name))).length, 0); }
+
+function calculateOfficialMatchMetrics(matches, teamIds) {
+  const metrics = new Map(teamIds.map((teamId) => [teamId, {
+    shotTotal: 0,
+    shotMatches: 0,
+    foulTotal: 0,
+    foulMatches: 0,
+    // 保存データは成功したPK得点しか網羅しないため、PK獲得・献上数へ流用しない。
+    penaltiesFor: null,
+    penaltiesAgainst: null,
+  }]));
+  for (const match of matches) {
+    for (const side of ["home", "away"]) {
+      const teamId = match[`${side}Team`]?.teamId;
+      const entry = metrics.get(teamId);
+      if (!entry) continue;
+      const official = match.manualStatistics?.[side];
+      if (Number.isFinite(official?.shots)) {
+        entry.shotTotal += official.shots;
+        entry.shotMatches += 1;
+      }
+      if (Number.isFinite(official?.fouls)) {
+        entry.foulTotal += official.fouls;
+        entry.foulMatches += 1;
+      }
+    }
+  }
+  for (const entry of metrics.values()) {
+    entry.averageShots = entry.shotMatches ? entry.shotTotal / entry.shotMatches : null;
+    entry.averageFouls = entry.foulMatches ? entry.foulTotal / entry.foulMatches : null;
+  }
+  return metrics;
+}
+
+function formatMetricValue(value, label) {
+  if (!Number.isFinite(value)) return "－";
+  return label.includes("平均") ? decimal(value) : String(value);
+}

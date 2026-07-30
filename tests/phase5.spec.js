@@ -15,7 +15,7 @@ test("チーム分析・フォーム・H2H・順位推移を表示する", async
   await expect(page.locator('[data-page="team"]')).toBeVisible();
   await expect(page.locator(".profile-tabs [role=tab]")).toHaveCount(6);
   await page.getByRole("tab", { name: "スタッツ" }).click();
-  await expect(page.locator(".home-away-grid .split-record")).toHaveCount(2);
+  await expect(page.locator(".home-away-grid .split-record")).toHaveCount(3);
   await expect(page.getByRole("heading", { name: "ゴール数" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "トッププレイヤー" })).toBeVisible();
   expect(errors).toEqual([]);
@@ -26,9 +26,9 @@ test("順位・選手ランキング・チームランキングを期間切替�
   await page.goto(`${BASE_URL}?view=standings`);
   await page.getByRole("link", { name: /中国大学サッカーリーグ1部の詳細/ }).click();
   await expect(page.locator(".standing-table tbody tr")).toHaveCount(10);
-  await expect(page.locator('[data-standing-team="IPU・環太平洋大学"] .rank-number')).toHaveText("1");
+  await expect(page.locator('[data-standing-team="IPU・環太平洋大学"] .rank')).toHaveText("1");
   await page.getByRole("tab", { name: "後期", exact: true }).click();
-  await expect(page.locator('[data-standing-team="IPU・環太平洋大学"] .rank-number')).toHaveText("–");
+  await expect(page.locator('[data-standing-team="IPU・環太平洋大学"] .rank')).toHaveText("－");
 
   await page.goto(`${BASE_URL}?view=rankings`);
   await expect(page.locator(".ranking-tabs button")).toHaveCount(13);

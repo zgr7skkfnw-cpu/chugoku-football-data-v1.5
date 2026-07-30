@@ -9,6 +9,7 @@ import { createSeasonPeriodTabs } from "../ui/season-period.js";
 import { createSeasonSelect } from "../ui/season-select.js";
 import { navigate } from "../router.js";
 import { enableHorizontalSwipe } from "../ui/swipe.js";
+import { createUnifiedStandingTable } from "../ui/standing-table.js";
 import {
   filterMatchesByPeriod,
   formatUpdatedAt,
@@ -111,7 +112,7 @@ export function renderStandingsPage({
         `${activeCompetition?.name ?? metadata?.competitionName ?? `中国大学サッカーリーグ${leagueDivision}部`} ${label}`,
         element(
           "div",
-          { className: "table-scroll" },
+          { className: "table-scroll unified-standing-scroll" },
           createStandingTable(standings, teamDirectory, activeMode),
         ),
         `${reflectedMatches.length}試合反映`,
@@ -524,74 +525,7 @@ function createLeagueMatchToggle({
 }
 
 function createStandingTable(standings, teamDirectory, mode) {
-  const table = element("table", {
-    className: "standing-table",
-    attributes: {
-      "data-standing-count": String(standings.length),
-      "data-standing-mode": mode,
-    },
-  });
-
-  table.append(
-    element("thead", {}, [
-      element(
-        "tr",
-        {},
-        ["#", "変動", "チーム", "試", "勝", "分", "負", "+/-", "差", "勝率", "点"]
-          .map((label) => element("th", { text: label })),
-      ),
-    ]),
-    element(
-      "tbody",
-      {},
-      standings.map((row) => {
-        const team = getTeam(teamDirectory, row.teamId);
-
-        return element("tr", {
-          attributes: {
-            "data-standing-team": team?.name ?? row.teamId,
-          },
-        }, [
-          element("td", {
-            className: "rank-number",
-            text: row.rank ? String(row.rank) : "–",
-          }),
-          element("td", {
-            className: `rank-change rank-change--${movementKey(row.rankChange)}`,
-            text: mode === "overall" ? movementLabel(row.rankChange) : "–",
-          }),
-          element("td", {}, [
-            element("div", { className: "standing-team" }, [
-              createTeamEmblem(team, "team-emblem team-emblem--standing"),
-              createTeamNameLink(team, row.teamId),
-            ]),
-          ]),
-          element("td", { text: String(row.played) }),
-          element("td", { text: String(row.won) }),
-          element("td", { text: String(row.drawn) }),
-          element("td", { text: String(row.lost) }),
-          element("td", {
-            className: "goals-for-against",
-            text: `${row.goalsFor ?? 0}-${row.goalsAgainst ?? 0}`,
-          }),
-          element("td", {
-            className: "goal-difference",
-            text: signed(row.goalDifference),
-          }),
-          element("td", {
-            className: "win-rate",
-            text: row.played ? `${Math.round((row.won / row.played) * 100)}%` : "–",
-          }),
-          element("td", {
-            className: "points",
-            text: String(row.points),
-          }),
-        ]);
-      }),
-    ),
-  );
-
-  return table;
+  return createUnifiedStandingTable(standings, teamDirectory, { mode });
 }
 
 function movementLabel(value) {

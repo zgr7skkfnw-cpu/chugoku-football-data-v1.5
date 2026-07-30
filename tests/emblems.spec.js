@@ -31,7 +31,7 @@ test("10校のエンブレムが一覧と詳細で読み込まれる", async ({ 
   expect(consoleErrors).toEqual([]);
 });
 
-test("2部10校のエンブレムを表示しミニユニフォームを追加しない", async ({ page }) => {
+test("2部順位表は不要なエンブレム幅とミニユニフォームを持たない", async ({ page }) => {
   const consoleErrors = [];
   page.on("console", (message) => {
     if (message.type() === "error") consoleErrors.push(message.text());
@@ -40,12 +40,7 @@ test("2部10校のエンブレムを表示しミニユニフォームを追加�
   await page.goto("http://localhost:4173/?view=standings");
   await page.getByRole("link", { name: /中国大学サッカーリーグ2部の詳細/ }).click();
   await expect(page.locator(".standing-table tbody tr")).toHaveCount(11);
-  await expect(page.locator(".standing-table .team-emblem")).toHaveCount(11);
-  await expect(page.locator(".standing-table img.team-emblem")).toHaveCount(10);
-  await expect(page.locator('[data-standing-team="島根県立大学"] .crest')).toHaveText("島県大");
-  await expect.poll(() => page.locator(".standing-table img.team-emblem").evaluateAll((images) =>
-    images.filter((image) => image.complete && image.naturalWidth > 0 && image.naturalHeight > 0).length,
-  )).toBe(10);
+  await expect(page.locator(".standing-table .team-emblem")).toHaveCount(0);
   await expect(page.locator(".standing-table")).toContainText("島根県立大学");
   await expect(page.locator(".standing-table .kit-icon")).toHaveCount(0);
   expect(consoleErrors).toEqual([]);

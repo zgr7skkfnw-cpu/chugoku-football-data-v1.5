@@ -3893,3 +3893,360 @@ input[type="submit"] {
   .prematch-standing-table.is-compact th:nth-child(n+3),
   .prematch-standing-table.is-compact td:nth-child(n+3) { width: 28px; }
 }
+
+/* Shared league and profile standings */
+.unified-standing-scroll,
+.team-profile-standing-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.unified-standing-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.unified-standing-table th,
+.unified-standing-table td {
+  height: 42px;
+  padding: 7px 4px;
+  white-space: nowrap;
+}
+
+.unified-standing-table th:first-child,
+.unified-standing-table td:first-child {
+  width: 30px;
+}
+
+.unified-standing-table th:nth-child(n+3),
+.unified-standing-table td:nth-child(n+3) {
+  width: 36px;
+}
+
+.unified-standing-table th:nth-child(2),
+.unified-standing-table td:nth-child(2) {
+  width: auto;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+}
+
+.unified-standing-table .team-cell a {
+  display: block;
+  overflow: hidden;
+  color: inherit;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.unified-standing-table tr.is-highlighted {
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+  box-shadow: inset 2px 0 var(--accent);
+}
+
+/* Profile navigation and result form contrast */
+.profile-tabs {
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--border));
+  background: color-mix(in srgb, var(--accent) 9%, var(--surface-muted));
+}
+
+.profile-tab {
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
+  background: color-mix(in srgb, var(--surface) 86%, var(--accent));
+  color: var(--text);
+}
+
+.profile-tab:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  background: color-mix(in srgb, var(--accent) 15%, var(--surface));
+}
+
+.profile-tab.is-active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 82%, #10231d);
+  box-shadow: inset 0 -3px #fff, 0 2px 7px rgb(0 0 0 / .2);
+  color: #fff;
+  font-weight: 900;
+}
+
+.team-form-tile {
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 94%, var(--accent));
+}
+
+.team-form-tile__score {
+  min-width: 38px;
+  border: 1px solid currentColor;
+  text-align: center;
+}
+
+.team-form-tile.is-win .team-form-tile__score {
+  border-color: #12663f;
+  background: #18794e;
+  color: #fff;
+}
+
+.team-form-tile.is-draw .team-form-tile__score {
+  border-color: #665b35;
+  background: #6b6247;
+  color: #fff;
+}
+
+.team-form-tile.is-loss .team-form-tile__score {
+  border-color: #8f1d2b;
+  background: #b4233a;
+  color: #fff;
+}
+
+.home-away-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.split-record__values {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border-soft);
+}
+
+.split-record__values > div {
+  display: grid;
+  gap: 2px;
+  padding: 8px 2px;
+  background: var(--surface);
+  text-align: center;
+}
+
+.split-record__values strong {
+  color: var(--accent);
+  font-size: .9rem;
+}
+
+.split-record__values span {
+  color: var(--text-muted);
+  font-size: .65rem;
+}
+
+.internal-ranking-grid,
+.league-category-stats,
+.important-stat-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.internal-ranking-panel + .internal-ranking-panel,
+.league-metric-ranking + .league-metric-ranking,
+.important-stat-list > section + section {
+  border-top: 1px solid var(--border-soft);
+  border-left: 0;
+}
+
+.league-metric-ranking h3,
+.important-stat-list h3 {
+  margin: 0;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 11px;
+}
+
+.roster-list {
+  grid-template-columns: 1fr !important;
+}
+
+.roster-list .squad-row:last-child {
+  border-bottom: 0;
+}
+
+/* Player profile cards and match history */
+.player-profile .panel,
+.player-profile .player-basic-item,
+.player-profile .player-stat,
+.player-profile .player-current-strip > div,
+.player-profile .player-registration-card {
+  border-color: color-mix(in srgb, var(--player-color, var(--accent)) 30%, var(--border));
+  background: color-mix(in srgb, var(--player-color, var(--accent)) 7%, var(--surface));
+}
+
+.player-profile .panel__header {
+  background: color-mix(in srgb, var(--player-color, var(--accent)) 10%, var(--surface));
+}
+
+.player-profile .segmented-control,
+.player-profile .percentile-list {
+  padding: 10px;
+  border: 1px solid color-mix(in srgb, var(--player-color, var(--accent)) 22%, var(--border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--player-color, var(--accent)) 5%, var(--surface-muted));
+}
+
+.player-match-list {
+  gap: 8px;
+  padding: 10px;
+}
+
+.player-match-row {
+  grid-template-columns: minmax(84px, .7fr) minmax(150px, 1.4fr) minmax(100px, .9fr);
+  gap: 10px;
+  min-height: 76px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--player-color, var(--accent)) 24%, var(--border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--player-color, var(--accent)) 6%, var(--surface));
+}
+
+.player-match-row:hover,
+.player-match-row:focus-visible {
+  border-color: var(--player-color, var(--accent));
+  background: color-mix(in srgb, var(--player-color, var(--accent)) 12%, var(--surface));
+}
+
+.player-match-row__left,
+.player-match-row__right {
+  display: grid;
+  align-content: center;
+  gap: 3px;
+  min-width: 0;
+}
+
+.player-match-row__left small,
+.player-match-row__right > span {
+  color: var(--text-muted);
+  font-size: .72rem;
+}
+
+.player-match-row__center {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.player-match-row__emblem {
+  width: 28px;
+  height: 28px;
+}
+
+.player-match-row__opponent {
+  overflow: hidden;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-match-row__score {
+  white-space: nowrap;
+}
+
+.player-match-row__appearance {
+  font-weight: 850;
+}
+
+@media (max-width: 640px) {
+  .unified-standing-table {
+    font-size: 11px;
+  }
+
+  .unified-standing-table th {
+    font-size: 10px;
+  }
+
+  .unified-standing-table th,
+  .unified-standing-table td {
+    height: 38px;
+    padding: 7px 2px;
+  }
+
+  .unified-standing-table th:first-child,
+  .unified-standing-table td:first-child {
+    width: 24px;
+  }
+
+  .unified-standing-table th:nth-child(n+3),
+  .unified-standing-table td:nth-child(n+3) {
+    width: 28px;
+  }
+
+  .home-away-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .split-record + .split-record {
+    border-top: 1px solid var(--border-soft);
+    border-left: 0;
+  }
+
+  .player-match-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .player-match-row__left {
+    grid-column: 1 / -1;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .player-match-row__center {
+    grid-column: 1;
+  }
+
+  .player-match-row__right {
+    grid-column: 2;
+    justify-items: end;
+  }
+}
+
+@media (max-width: 430px) {
+  .unified-standing-table {
+    font-size: 10px;
+  }
+
+  .unified-standing-table th {
+    font-size: 9px;
+  }
+
+  .unified-standing-table th:first-child,
+  .unified-standing-table td:first-child {
+    width: 22px;
+  }
+
+  .unified-standing-table th:nth-child(n+3),
+  .unified-standing-table td:nth-child(n+3) {
+    width: 25px;
+  }
+
+  .unified-standing-table th,
+  .unified-standing-table td {
+    padding-inline: 1px;
+  }
+
+  .player-match-row {
+    grid-template-columns: minmax(0, 1fr) 82px;
+    padding-inline: 8px;
+  }
+
+  .player-match-row__center {
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+  }
+
+  .player-match-row__emblem {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 350px) {
+  .unified-standing-table th:nth-child(n+3),
+  .unified-standing-table td:nth-child(n+3) {
+    width: 22px;
+  }
+
+  .unified-standing-table th:first-child,
+  .unified-standing-table td:first-child {
+    width: 20px;
+  }
+}
