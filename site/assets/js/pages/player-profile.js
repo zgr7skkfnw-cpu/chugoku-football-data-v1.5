@@ -11,6 +11,7 @@ import { formatGrade, getPlayer, normalizePlayerName } from "../utils/players.js
 import { createTeamNameLink } from "./shared.js";
 import { setState } from "../state.js";
 import { toggleFavoritePlayer } from "../utils/player-favorites.js";
+import { createMatchEventIcon } from "../ui/match-event-icon.js";
 
 export function renderPlayerProfilePage({
   currentPlayerId,
@@ -19,6 +20,8 @@ export function renderPlayerProfilePage({
   teamDirectory,
   favoritePlayerIds = [],
   players = [],
+  matches = [],
+  selectedPlayerTab = "profile",
 }) {
   const player = getPlayer(playerDirectory, currentPlayerId);
   const stats = player ? playerStatistics?.get(player.id) : null;
@@ -43,11 +46,20 @@ export function renderPlayerProfilePage({
     const withoutPerson = favoritePlayerIds.filter((id) => !registrationIds.includes(id));
     setState({ favoritePlayerIds: isFollowed ? withoutPerson : toggleFavoritePlayer(canonicalFollowId, withoutPerson) });
   });
+  const tabContent = {
+    profile: element("div", { className: "section-stack" }, [
+      createPanel("基本情報", createProfileBasics(player), "公式登録情報"),
+      createPanel("今期スタッツ", createCurrentStats(stats), registrationLabel(player, teamDirectory)),
+      createPanel("トロフィー", createPlayerTrophies(player), "保存済みデータのみ"),
+    ]),
+    matches: createPanel("試合", createMatchHistory(stats, teamDirectory, false), `${stats.matches.length}試合`),
+    stats: createPlayerStatsTab(player, stats, players, playerStatistics, matches, teamDirectory),
+  }[selectedPlayerTab] ?? null;
   return element(
     "article",
     {
       className: "page player-profile",
-      attributes: { "data-page": "player", "data-player-id": player.id },
+      attributes: { "data-page": "player", "data-player-id": player.id, "data-competition-id": player.competitionId ?? "" },
     },
     [
       element("a", {
@@ -90,18 +102,8 @@ export function renderPlayerProfilePage({
       ]),
       element("div", { className: "section-stack" }, [
         createRegistrationSwitch(player, registrations, teamDirectory),
-        createPanel("人物情報", createBasicInformation(player, team, teamDirectory), "共通情報と選択中の公式登録"),
-        createPanel("成績概要", createSeasonStats(stats, "player-summary-grid"), registrationLabel(player, teamDirectory)),
-        createSeasonStatistics(stats),
-        createPanel(
-          "直近の出場試合",
-          createMatchHistory(stats, teamDirectory),
-          `直近${Math.min(stats.matches.length, 5)}試合`,
-        ),
-        registrations.length > 1
-          ? createPanel("シーズン・大会別成績", createRegistrationSummary(registrations, playerStatistics, teamDirectory, player.id), `${registrations.length}登録`)
-          : null,
-        createNotice("学年のみ生年月日から標準進学時の学年を推定。ベンチ入りはメンバー表の控え登録、出場時間は先発・交代・退場時刻から算出しています。前期は第1〜9節、後期は第10〜18節です。"),
+        createPlayerTabs(player, selectedPlayerTab),
+        element("section", { className: "profile-tab-panel", attributes: { role: "tabpanel", tabindex: "0" } }, [tabContent]),
       ]),
     ],
   );
@@ -250,12 +252,12 @@ function createSeasonStats(stats, className = "player-stat-grid") {
   );
 }
 
-function createMatchHistory(stats, teamDirectory) {
+function createMatchHistory(stats, teamDirectory, limited = true) {
   if (!stats.matches.length) return createNotice("出場・ベンチ登録記録はありません。");
   return element(
     "div",
     { className: "player-match-list" },
-    stats.matches.slice(0, 5).map((record) => {
+    (limited ? stats.matches.slice(0, 5) : stats.matches).map((record) => {
       const appeared = record.started || record.substitutionOn;
       const details = [
         appeared ? `${record.minutes}分` : null,
@@ -287,6 +289,13 @@ function createMatchHistory(stats, teamDirectory) {
           element("span", {}, [element("span", { text: "vs " }), createTeamNameLink(teamDirectory?.byId.get(record.opponentTeamId), record.opponentName)]),
           element("span", { text: [record.competitionName ?? "選択中の大会", hasScore ? `${record.teamScore}-${record.opponentScore}` : null].filter(Boolean).join(" / ") }),
           element("span", { text: details.join(" / ") }),
+          element("span", { className: "player-match-events" }, [
+            createMatchEventIcon(record.started ? "starter" : "bench"),
+            record.goals ? createMatchEventIcon("goal", record.goals) : null,
+            record.assists ? createMatchEventIcon("assist", record.assists) : null,
+            record.yellowCards ? createMatchEventIcon("yellow", record.yellowCards) : null,
+            record.redCards ? createMatchEventIcon("red", record.redCards) : null,
+          ]),
         ]),
       ]);
       row.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); row.click(); } });
@@ -312,4 +321,142 @@ function createRegistrationSummary(registrations, statistics, teamDirectory, act
       element("span", { text: `${stats?.appearances ?? 0}試合・${stats?.minutes ?? 0}分・${stats?.goals ?? 0}得点・${stats?.assists ?? 0}A` }),
     ]);
   }));
+}
+
+function createPlayerTabs(player, active) {
+  const tabs = [["profile", "プロフィール"], ["matches", "試合"], ["stats", "スタッツ"]];
+  const list = element("nav", { className: "profile-tabs player-detail-tabs", attributes: { role: "tablist", "aria-label": "選手詳細" } },
+    tabs.map(([key, label]) => element("a", {
+      className: `profile-tab${active === key ? " is-active" : ""}`,
+      text: label,
+      attributes: {
+        href: routeHref("player", { playerId: player.id, playerTab: key, competitionId: player.competitionId }),
+        "data-route": "player", "data-player-id": player.id, "data-player-tab": key,
+        "data-competition-id": player.competitionId ?? "", role: "tab",
+        "aria-selected": String(active === key), tabindex: active === key ? "0" : "-1",
+      },
+    })));
+  list.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+    const tabs = [...list.querySelectorAll('[role="tab"]')];
+    const index = tabs.indexOf(document.activeElement);
+    const next = tabs[(index + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length];
+    event.preventDefault(); next.focus(); next.click();
+  });
+  return list;
+}
+
+function createProfileBasics(player) {
+  const values = [
+    ["身長", player.height == null ? "－" : `${player.height}cm`],
+    ["体重", player.weight == null ? "－" : `${player.weight}kg`],
+    ["生年月日・年齢", player.birth ? `${player.birth}（${calculateAge(player.birth)}歳）` : "－"],
+    ["前所属チーム", player.previousTeam || "－"],
+    ["背番号", player.number ?? "－"],
+    ["ポジション", player.position || "－"],
+  ];
+  return element("div", { className: "player-basic-grid" }, values.map(([label, value]) =>
+    element("div", { className: "player-basic-item" }, [element("span", { text: label }), element("strong", { text: String(value) })])));
+}
+
+function calculateAge(birth) {
+  const date = new Date(`${birth}T00:00:00+09:00`);
+  if (Number.isNaN(date.getTime())) return "－";
+  const today = new Date();
+  let age = today.getFullYear() - date.getFullYear();
+  const beforeBirthday = today.getMonth() < date.getMonth() || (today.getMonth() === date.getMonth() && today.getDate() < date.getDate());
+  return age - Number(beforeBirthday);
+}
+
+function createCurrentStats(stats) {
+  return element("div", { className: "player-current-strip player-stat-grid player-summary-grid" }, [
+    ["試合", stats.appearances], ["ゴール", stats.goals], ["アシスト", stats.assists], ["出場時間", `${stats.minutes}分`],
+  ].map(([label, value]) => element("div", {}, [element("strong", { text: String(value) }), element("span", { text: label })])));
+}
+
+function createPlayerTrophies() {
+  return createNotice("保存済みデータには、この登録へ安全に紐付けられる個人タイトル情報がありません。チームタイトルはチーム詳細で確認できます。");
+}
+
+function createPlayerStatsTab(player, stats, players, allStatistics, matches) {
+  const wrap = element("div", { className: "section-stack player-stats-tab" });
+  let per90 = false;
+  const toggle = element("div", { className: "segmented-control", attributes: { role: "tablist", "aria-label": "集計単位" } });
+  const body = element("div", { className: "section-stack" });
+  const render = () => {
+    for (const button of toggle.children) {
+      const selected = (button.dataset.mode === "per90") === per90;
+      button.classList.toggle("is-active", selected); button.setAttribute("aria-selected", String(selected));
+    }
+    body.replaceChildren(
+      createPanel("基本スタッツ", createBasicSix(stats, per90), per90 ? "90分あたり" : "合計"),
+      createPanel("ポジション内パーセンタイル", createPercentiles(player, stats, players, allStatistics), "同大会・同ポジション比較 / 90分以上"),
+      createPanel("シーズンパフォーマンス", createSeasonPerformance(stats), "選択中の登録"),
+      createPanel("シュート", createShootingStats(player, stats, matches, per90), "公式掲載試合のみ"),
+      createPanel("アシスト", metricCards([["アシスト", formatMetric(stats.assists, stats.minutes, per90)]]), per90 ? "90分あたり" : "合計"),
+      createPanel("反則", metricCards([["イエロー", formatMetric(stats.yellowCards, stats.minutes, per90)], ["レッド", formatMetric(stats.redCards, stats.minutes, per90)]]), per90 ? "90分あたり（少ないほど良い）" : "合計"),
+    );
+  };
+  for (const [mode, label] of [["total", "合計"], ["per90", "90分あたり"]]) {
+    const button = element("button", { className: "filter-chip", text: label, attributes: { type: "button", role: "tab", "data-mode": mode } });
+    button.addEventListener("click", () => { per90 = mode === "per90"; render(); });
+    toggle.append(button);
+  }
+  render(); wrap.append(toggle, body); return wrap;
+}
+
+function createBasicSix(stats, per90) {
+  return metricCards([
+    ["ゴール", formatMetric(stats.goals, stats.minutes, per90)],
+    ["アシスト", formatMetric(stats.assists, stats.minutes, per90)],
+    ["試合", stats.appearances],
+    ["先発", stats.starts],
+    ["ベンチ入り", stats.benchSelections],
+    ["出場時間（分）", stats.minutes],
+  ]);
+}
+function createSeasonPerformance(stats) { return metricCards([["出場", stats.appearances], ["先発", stats.starts], ["ベンチ入り", stats.benchSelections], ["出場時間", `${stats.minutes}分`], ["ゴール", stats.goals], ["アシスト", stats.assists], ["G＋A", stats.goals + stats.assists], ["警告", stats.yellowCards], ["退場", stats.redCards]]); }
+function metricCards(values) { return element("div", { className: "player-stat-six-grid" }, values.map(([label, value]) => element("div", { className: "player-stat" }, [element("strong", { text: String(value) }), element("span", { text: label })]))); }
+function formatMetric(value, minutes, per90) { return per90 ? (minutes > 0 ? (value * 90 / minutes).toFixed(2) : "－") : value; }
+
+function createPercentiles(player, stats, players, allStatistics) {
+  const MIN_MINUTES = 90;
+  const MIN_PLAYERS = 5;
+  const position = String(player.position ?? "").match(/GK|DF|MF|FW/)?.[0];
+  const competitionKey = player.competitionId ?? [...(stats.competitionIds ?? [])][0] ?? null;
+  const candidates = players.map((candidate) => allStatistics.get(candidate.id)).filter((candidate) =>
+    candidate && (candidate.player.competitionId ?? [...(candidate.competitionIds ?? [])][0] ?? null) === competitionKey
+    && String(candidate.player.position ?? "").includes(position)
+    && candidate.minutes >= MIN_MINUTES);
+  if (!position || candidates.length < MIN_PLAYERS) return createNotice(`比較対象が${MIN_PLAYERS}人未満のため表示しません。`);
+  const metrics = [["ゴール", "goals", false], ["アシスト", "assists", false], ["G＋A", "ga", false], ["出場時間", "minutes", false], ["先発", "starts", false], ["イエロー", "yellowCards", true], ["レッド", "redCards", true]];
+  return element("div", { className: "percentile-list", attributes: { "data-comparison-count": String(candidates.length) } }, metrics.map(([label, key, inverse]) => {
+    const value = key === "ga" ? stats.goals + stats.assists : stats[key];
+    const values = candidates.map((entry) => key === "ga" ? entry.goals + entry.assists : entry[key]);
+    const lower = values.filter((entry) => entry < value).length;
+    const equal = values.filter((entry) => entry === value).length;
+    let percentile = Math.round((lower + Math.max(0, equal - 1) / 2) / Math.max(1, values.length - 1) * 100);
+    if (inverse) percentile = 100 - percentile;
+    const level = percentile >= 75 ? "high" : percentile >= 40 ? "middle" : "low";
+    return element("div", { className: `percentile-row is-${level}` }, [
+      element("span", { text: label }), element("strong", { text: String(value) }),
+      element("span", { className: "percentile-bar", attributes: { style: `--percentile:${percentile}%`, "aria-label": `${percentile}パーセンタイル` } }),
+      element("b", { text: String(percentile) }), inverse ? element("small", { text: "少ないほど上位" }) : null,
+    ]);
+  }));
+}
+
+function createShootingStats(player, stats, matches, per90) {
+  let shots = 0; let shotMatches = 0; let headingGoals = 0;
+  for (const match of matches ?? []) {
+    const side = match.homeTeam?.teamId === player.teamId ? "home" : match.awayTeam?.teamId === player.teamId ? "away" : null;
+    if (!side) continue;
+    const row = (match.playerShots ?? []).find((entry) => entry.side === side && normalizePlayerName(entry.name) === normalizePlayerName(player.name));
+    if (row) { shots += Number(row.shots) || 0; shotMatches += 1; }
+    headingGoals += (match.goals ?? []).filter((goal) => goal.finish === "HS" && normalizePlayerName(goal.scorerName) === normalizePlayerName(player.name) && goal.teamName === match[`${side}Team`]?.name).length;
+  }
+  return element("div", {}, [
+    metricCards([["ゴール数", formatMetric(stats.goals, stats.minutes, per90)], ["PK得点数", "－"], ["シュート数", shotMatches ? formatMetric(shots, stats.minutes, per90) : "－"], ["ヘディング得点数", headingGoals]]),
+    element("p", { className: "data-note", text: shotMatches ? `シュート数は公式掲載${shotMatches}試合のみ。` : "選手別シュート数は公式記録未掲載です。" }),
+  ]);
 }

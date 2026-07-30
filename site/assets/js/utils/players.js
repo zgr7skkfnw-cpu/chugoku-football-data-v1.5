@@ -39,6 +39,7 @@ export function calculatePlayerStatistics(players, matches, teamDirectory) {
           second: createStatTotals(),
         },
         matches: [],
+        competitionIds: new Set(),
       },
     ]),
   );
@@ -111,6 +112,10 @@ function aggregateMatchSide({ match, side, directory, statistics }) {
     }
     return matchEntries.get(stats.player.id);
   };
+  for (const normalizedName of new Set([...starters, ...bench])) {
+    const stats = getStatsByName(normalizedName);
+    if (stats && match.competitionId) stats.competitionIds.add(match.competitionId);
+  }
 
   for (const normalizedName of bench) {
     const stats = getStatsByName(normalizedName);
