@@ -15,7 +15,7 @@ test("チーム分析・フォーム・H2H・順位推移を表示する", async
   await expect(page.locator('[data-page="team"]')).toBeVisible();
   await expect(page.locator(".profile-tabs [role=tab]")).toHaveCount(6);
   await page.getByRole("tab", { name: "スタッツ" }).click();
-  await expect(page.locator(".home-away-grid .split-record")).toHaveCount(3);
+  await expect(page.locator(".home-away-card .home-away-row")).toHaveCount(4);
   await expect(page.getByRole("heading", { name: "ゴール数" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "トッププレイヤー" })).toBeVisible();
   expect(errors).toEqual([]);

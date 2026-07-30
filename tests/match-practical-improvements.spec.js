@@ -58,6 +58,8 @@ test("検索は公式登録情報が一致する選手を1人に集約し詳細�
   await page.getByRole("searchbox").fill("伊津 遥人");
   await expect(page.locator('.player-list .player-list__row, .player-list [data-route="player"]')).toHaveCount(1);
   await page.locator('.player-list [data-route="player"]').first().click();
-  await expect(page.getByRole("heading", { name: "登録区分" })).toBeVisible();
-  await expect(page.locator('.player-registration-switch a')).toHaveCount(2);
+  await expect(page.locator(".profile-season-picker")).toBeVisible();
+  await page.locator(".profile-season-picker").click();
+  await expect(page.getByRole("dialog", { name: "登録を選択" })).toBeVisible();
+  await expect(page.locator(".profile-season-option")).toHaveCount(2);
 });

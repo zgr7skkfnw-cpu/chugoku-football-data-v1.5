@@ -1,5 +1,5 @@
 import { routeHref } from "../router.js";
-import { element } from "./elements.js";
+import { createTeamEmblem, element } from "./elements.js";
 import { getTeam } from "../utils/teams.js";
 
 export const STANDING_COLUMNS = Object.freeze([
@@ -18,7 +18,7 @@ export const STANDING_COLUMNS = Object.freeze([
 export function createUnifiedStandingTable(
   standings,
   teamDirectory,
-  { highlightedTeamIds = [], className = "", mode = "overall" } = {},
+  { highlightedTeamIds = [], className = "", mode = "overall", showEmblems = false } = {},
 ) {
   const highlighted = new Set(highlightedTeamIds.filter(Boolean));
   const table = element("table", {
@@ -57,13 +57,15 @@ export function createUnifiedStandingTable(
         if (key !== "team") return element("td", { text: String(values[key]), className: key });
         return element("td", { className: "team-cell" }, [
           element("a", {
-            text: team?.name ?? row.teamName ?? row.teamId,
             attributes: {
               href: routeHref("team", { teamId: row.teamId }),
               "data-route": "team",
               "data-team-id": row.teamId,
             },
-          }),
+          }, [
+            showEmblems ? createTeamEmblem(team, "team-emblem unified-standing-table__emblem") : null,
+            element("span", { text: team?.name ?? row.teamName ?? row.teamId }),
+          ]),
         ]);
       }));
     })),

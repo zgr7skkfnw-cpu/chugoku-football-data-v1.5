@@ -21,7 +21,8 @@ test("チーム詳細は概要・次戦・直近試合・スカッドを上か�
 test("チーム詳細の大会切り替えでURLと表示チームが変わり履歴復元する", async ({ page }) => {
   await page.goto(`${BASE_URL}?view=team&id=ipu`);
   await page.getByRole("tab", { name: "スカッド" }).click();
-  const switcher = page.locator(".profile-registration-switch");
+  await page.locator(".profile-season-picker").click();
+  const switcher = page.getByRole("dialog", { name: "シーズンを選択" });
   await expect(switcher).toBeVisible();
   const iLeague = switcher.locator('[data-team-id="i-league-2026-ipu-a"]').first();
   await iLeague.click();
@@ -29,7 +30,7 @@ test("チーム詳細の大会切り替えでURLと表示チームが変わり�
   await expect(page).toHaveURL(/competition=jufa-chugoku-2026-i-league-division-1/);
   await expect(page.locator(".team-profile__name")).toContainText("A");
   await page.reload();
-  await expect(page.locator('[data-team-id="i-league-2026-ipu-a"][aria-current="page"]')).toBeVisible();
+  await expect(page.locator(".profile-season-picker")).toContainText("Iリーグ");
   await page.goBack();
   await expect(page.locator('[data-page="team"]')).toHaveAttribute("data-team-id", "ipu");
   await page.goForward();
@@ -60,7 +61,8 @@ test("選手詳細は登録別概要と直近5試合を表示する", async ({ p
 test("同一人物の登録切り替えで所属・背番号・成績・URLが変わる", async ({ page }) => {
   await page.goto(`${BASE_URL}?view=player&id=${REGULAR_PLAYER}`);
   const before = await page.locator(".player-current-strip").innerText();
-  await page.locator(`[data-player-id="${I_LEAGUE_PLAYER}"]`).first().click();
+  await page.locator(".profile-season-picker").click();
+  await page.locator(`.profile-season-option[data-player-id="${I_LEAGUE_PLAYER}"]`).click();
   await expect(page).toHaveURL(new RegExp(`id=${I_LEAGUE_PLAYER}`));
   await expect(page).toHaveURL(/competition=jufa-chugoku-2026-i-league-division-1/);
   await expect(page.locator(".player-profile__team-link")).toContainText("広島修道大学");

@@ -12,6 +12,7 @@ import { createTeamNameLink } from "./shared.js";
 import { setState } from "../state.js";
 import { toggleFavoritePlayer } from "../utils/player-favorites.js";
 import { createMatchEventIcon } from "../ui/match-event-icon.js";
+import { createProfileRegistrationPicker } from "../ui/profile-registration-picker.js";
 
 export function renderPlayerProfilePage({
   currentPlayerId,
@@ -46,14 +47,22 @@ export function renderPlayerProfilePage({
     const withoutPerson = favoritePlayerIds.filter((id) => !registrationIds.includes(id));
     setState({ favoritePlayerIds: isFollowed ? withoutPerson : toggleFavoritePlayer(canonicalFollowId, withoutPerson) });
   });
+  const registrationSwitch = () => createRegistrationSwitch(player, registrations, teamDirectory);
   const tabContent = {
     profile: element("div", { className: "section-stack" }, [
+      registrationSwitch(),
       createPanel("基本情報", createProfileBasics(player), "公式登録情報"),
       createPanel("今期スタッツ", createCurrentStats(stats), registrationLabel(player, teamDirectory)),
       createPanel("トロフィー", createPlayerTrophies(player), "保存済みデータのみ"),
     ]),
-    matches: createPanel("試合", createMatchHistory(stats, teamDirectory, false), `${stats.matches.length}試合`),
-    stats: createPlayerStatsTab(player, stats, players, playerStatistics, matches, teamDirectory),
+    matches: element("div", { className: "section-stack" }, [
+      registrationSwitch(),
+      createPanel("試合", createMatchHistory(stats, teamDirectory, false), `${stats.matches.length}試合`),
+    ]),
+    stats: element("div", { className: "section-stack" }, [
+      registrationSwitch(),
+      createPlayerStatsTab(player, stats, players, playerStatistics, matches, teamDirectory),
+    ]),
   }[selectedPlayerTab] ?? null;
   return element(
     "article",
@@ -101,7 +110,6 @@ export function renderPlayerProfilePage({
         ]),
       ]),
       element("div", { className: "section-stack" }, [
-        createRegistrationSwitch(player, registrations, teamDirectory),
         createPlayerTabs(player, selectedPlayerTab),
         element("section", { className: "profile-tab-panel", attributes: { role: "tabpanel", tabindex: "0" } }, [tabContent]),
       ]),
@@ -111,17 +119,27 @@ export function renderPlayerProfilePage({
 
 function createRegistrationSwitch(player, registrations, teamDirectory) {
   if (registrations.length < 2) return null;
-  return createPanel("登録区分", element("div", { className: "chip-row player-registration-switch" }, registrations.map((candidate) => element("a", {
-    className: `filter-chip${candidate.id === player.id ? " is-active" : ""}`,
-    text: registrationLabel(candidate, teamDirectory),
-    attributes: {
+  const options = registrations.map((candidate) => {
+    const team = teamDirectory?.byId.get(candidate.teamId);
+    return {
+      selected: candidate.id === player.id,
+      name: candidate.competitionId?.includes("i-league") ? "Iリーグ" : "中国大学サッカーリーグ",
+      season: candidate.season ?? 2026,
+      detail: team?.name ?? candidate.teamId,
+      icon: candidate.competitionId?.includes("i-league") ? "Ⓘ" : "⚽",
       href: routeHref("player", { playerId: candidate.id, competitionId: candidate.competitionId }),
-      "data-route": "player",
-      "data-player-id": candidate.id,
-      "data-competition-id": candidate.competitionId ?? "",
-      "aria-current": candidate.id === player.id ? "page" : "false",
-    },
-  }))), "登録別の成績を表示");
+      route: "player",
+      data: {
+        "data-player-id": candidate.id,
+        "data-competition-id": candidate.competitionId ?? "",
+      },
+    };
+  });
+  return createProfileRegistrationPicker({
+    label: "登録を選択",
+    current: options.find((option) => option.selected) ?? options[0],
+    options,
+  });
 }
 
 function getSafeRegistrations(player, players) {
@@ -439,7 +457,7 @@ function createPercentiles(player, stats, players, allStatistics) {
     return element("div", { className: `percentile-row is-${level}` }, [
       element("span", { text: label }), element("strong", { text: String(value) }),
       element("span", { className: "percentile-bar", attributes: { style: `--percentile:${percentile}%`, "aria-label": `${percentile}パーセンタイル` } }),
-      element("b", { text: String(percentile) }), inverse ? element("small", { text: "少ないほど上位" }) : null,
+      inverse ? element("small", { text: "少ないほど上位" }) : null,
     ]);
   }));
 }

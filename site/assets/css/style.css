@@ -4138,6 +4138,216 @@ input[type="submit"] {
   white-space: nowrap;
 }
 
+/* Profile selection sheet and shared dark profile surfaces */
+.profile-season-picker-wrap { position: relative; min-width: 0; }
+.profile-season-picker {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 24px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  color: var(--text);
+  text-align: left;
+}
+.profile-season-picker:hover,
+.profile-season-picker:focus-visible { border-color: var(--accent); background: var(--surface-soft); }
+.profile-season-picker__icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 900;
+}
+.profile-season-picker__copy,
+.profile-season-option__copy { display: grid; min-width: 0; }
+.profile-season-picker__copy strong,
+.profile-season-option__copy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.profile-season-picker__copy small,
+.profile-season-option__copy small { color: var(--text-muted); }
+.profile-season-picker__arrow { color: var(--text-muted); text-align: right; font-size: 20px; }
+.profile-season-sheet-backdrop {
+  position: fixed;
+  z-index: 80;
+  inset: 0;
+  background: rgb(0 0 0 / .7);
+  backdrop-filter: blur(3px);
+}
+.profile-season-sheet {
+  position: fixed;
+  z-index: 81;
+  right: max(0px, env(safe-area-inset-right));
+  bottom: 0;
+  left: max(0px, env(safe-area-inset-left));
+  max-height: min(78dvh, 720px);
+  padding: 10px 0 calc(16px + env(safe-area-inset-bottom));
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  border-radius: 22px 22px 0 0;
+  background: var(--bg-elevated);
+  box-shadow: 0 -18px 50px rgb(0 0 0 / .45);
+}
+.profile-season-sheet[hidden],
+.profile-season-sheet-backdrop[hidden] { display: none; }
+.profile-season-sheet__handle {
+  display: block;
+  width: 48px;
+  height: 5px;
+  margin: 0 auto 8px;
+  border-radius: 999px;
+  background: var(--text-faint);
+}
+.profile-season-sheet header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px 14px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.profile-season-sheet h2 { margin: 0; font-size: 1.2rem; }
+.profile-season-sheet__close { border: 0; background: transparent; color: var(--accent); font-weight: 800; }
+.profile-season-sheet__options { display: grid; }
+.profile-season-option {
+  display: grid;
+  grid-template-columns: 26px 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 11px;
+  min-height: 70px;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text);
+  text-decoration: none;
+}
+.profile-season-option:hover,
+.profile-season-option:focus-visible { background: var(--surface-soft); }
+.profile-season-option__radio {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--text-faint);
+  border-radius: 50%;
+}
+.profile-season-option.is-selected .profile-season-option__radio {
+  border: 6px solid var(--accent);
+  background: var(--bg);
+}
+
+.unified-standing-table .team-cell a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.unified-standing-table__emblem {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+}
+.unified-standing-table .team-cell a > span:last-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-away-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+}
+.home-away-card > header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding: 14px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.home-away-card > header div { display: grid; }
+.home-away-card > header strong { color: var(--accent); font-size: 1.8rem; }
+.home-away-card > header span { color: var(--text-muted); font-size: .76rem; }
+.home-away-table { display: grid; }
+.home-away-row {
+  display: grid;
+  grid-template-columns: minmax(72px, 1.25fr) repeat(4, minmax(22px, .45fr)) minmax(42px, .75fr) minmax(28px, .5fr) minmax(26px, .5fr);
+  align-items: center;
+  min-height: 42px;
+  padding: 0 8px;
+  border-top: 1px solid var(--border-soft);
+  text-align: center;
+}
+.home-away-row > strong { text-align: left; white-space: nowrap; }
+.home-away-row--header { min-height: 30px; color: var(--text-muted); font-size: .68rem; }
+
+.metric-team {
+  display: grid;
+  grid-template-columns: 20px 20px minmax(0, 1fr);
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+.metric-team__emblem { width: 18px; height: 18px; }
+.metric-team > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.internal-ranking-rows { display: grid; }
+
+.team-profile .panel,
+.player-profile .panel,
+.player-profile .player-basic-item,
+.player-profile .player-stat,
+.player-profile .player-current-strip > div,
+.player-profile .player-registration-card,
+.team-form-tile,
+.trophy-card {
+  border-color: var(--border);
+  background: var(--surface-raised);
+  color: var(--text);
+}
+.team-profile .panel__header,
+.player-profile .panel__header {
+  border-bottom-color: var(--border-soft);
+  background: var(--surface-soft);
+}
+.profile-tabs {
+  border-color: var(--border);
+  background: var(--bg-elevated);
+}
+.profile-tab {
+  border-color: transparent;
+  background: transparent;
+  color: var(--text-muted);
+}
+.profile-tab:hover { border-color: var(--border); background: var(--surface-soft); color: var(--text); }
+.profile-tab.is-active {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  background: var(--accent-soft);
+  box-shadow: inset 0 -3px var(--accent);
+  color: var(--accent);
+}
+.player-profile .segmented-control,
+.player-profile .percentile-list {
+  border-color: var(--border);
+  background: var(--surface);
+}
+.percentile-row { grid-template-columns: minmax(70px, 1fr) 36px minmax(90px, 3fr); }
+.match-event-icon__assist svg { display: block; width: 18px; height: 14px; }
+
+@media (max-width: 430px) {
+  .profile-season-picker { grid-template-columns: 30px minmax(0, 1fr) 20px; padding-inline: 10px; }
+  .home-away-row { grid-template-columns: minmax(65px, 1.25fr) repeat(4, 21px) 39px 27px 25px; gap: 0; padding-inline: 4px; font-size: 11px; }
+  .home-away-row > strong { font-size: 10px; }
+  .team-mini-standing .unified-standing-table__emblem { width: 12px; height: 12px; }
+  .team-mini-standing .team-cell a { gap: 2px; }
+  .percentile-row { grid-template-columns: 62px 28px minmax(70px, 1fr); }
+}
+
 .player-match-row__score {
   white-space: nowrap;
 }
