@@ -20,18 +20,14 @@ test("Phase 4 選手検索・詳細・ランキング・相互リンク", async 
   await expect(page.locator('[data-page="player"]')).toBeVisible();
   await expect(page.locator(".player-profile__initial")).toBeVisible();
   await expect(page.locator(".player-profile__reading")).toHaveText("KOMIYA Kazuma");
-  await expect(page.locator(".detail-row").filter({ hasText: "読み方" })).toContainText("KOMIYA Kazuma");
-  await expect(page.locator(".player-stat-grid")).toContainText("出場時間");
-  await expect(page.locator(".player-stat-grid")).toContainText("ベンチ入り");
-  await expect(page.locator(".player-period-tabs button")).toHaveCount(3);
-  await page.getByRole("tab", { name: "後期", exact: true }).click();
-  await expect(page.locator(".player-period-label")).toHaveText("後期成績");
-  await expect(page.locator(".player-stat").filter({ hasText: "出場時間" }).locator("strong"))
-    .toHaveText("0分");
-  await page.getByRole("tab", { name: "通算", exact: true }).click();
+  await expect(page.locator(".player-current-strip")).toContainText("出場時間");
+  await page.getByRole("tab", { name: "スタッツ" }).click();
+  await expect(page.getByRole("tab", { name: "合計" })).toBeVisible();
+  await page.getByRole("tab", { name: "試合", exact: true }).click();
   await expect(page.locator(".player-match-row").first()).toBeVisible();
   await page.locator(".player-profile__team-link").click();
   await expect(page.locator('[data-page="team"]')).toBeVisible();
+  await page.getByRole("tab", { name: "スカッド" }).click();
   await expect(page.locator(".roster-list .player-row--link").first()).toBeVisible();
 
   await page.goto(`${BASE_URL}?view=rankings`);

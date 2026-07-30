@@ -59,8 +59,8 @@ test("先発10人の公式記録を注記付きでそのまま表示する", asy
 test("2部チームページと島根県立大学の文字クレストを表示する", async ({ page }) => {
   await page.goto(`${BASE_URL}?view=team&id=okayama`);
   await expect(page.locator('[data-page="team"][data-team-id="okayama"]')).toBeVisible();
-  await expect(page.getByRole("heading", { name: "終了試合" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "今後の日程" })).toBeVisible();
+  await page.getByRole("tab", { name: "試合", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "試合" })).toBeVisible();
 
   await page.goto(`${BASE_URL}?view=team&id=university-of-shimane`);
   await expect(page.locator(".team-profile__identity .crest")).toHaveText("島県大");

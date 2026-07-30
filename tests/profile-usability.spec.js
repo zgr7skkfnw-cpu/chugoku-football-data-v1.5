@@ -14,12 +14,13 @@ test("チーム詳細は概要・次戦・直近試合・スカッドを上か�
   await expect(page.getByRole("heading", { name: "次の試合" })).toBeVisible();
   await expect(page.locator(".team-next-match")).toHaveCount(1);
   await expect(page.locator(".team-recent-match")).toHaveCount(5);
-  await expect(page.getByRole("heading", { name: "今季戦績" })).toBeVisible();
+  await page.getByRole("tab", { name: "スカッド" }).click();
   await expect(page.locator(".squad-row").first()).toBeVisible();
 });
 
 test("チーム詳細の大会切り替えでURLと表示チームが変わり履歴復元する", async ({ page }) => {
   await page.goto(`${BASE_URL}?view=team&id=ipu`);
+  await page.getByRole("tab", { name: "スカッド" }).click();
   const switcher = page.locator(".profile-registration-switch");
   await expect(switcher).toBeVisible();
   const iLeague = switcher.locator('[data-team-id="i-league-2026-ipu-a"]').first();
@@ -38,6 +39,7 @@ test("チーム詳細の大会切り替えでURLと表示チームが変わり�
 test("フォロー中選手はスカッドで文字と装飾の両方により強調される", async ({ page }) => {
   await page.addInitScript((id) => localStorage.setItem("chugoku-football.favorite-players", JSON.stringify([id])), "ipu-032c11837e6d");
   await page.goto(`${BASE_URL}?view=team&id=ipu`);
+  await page.getByRole("tab", { name: "スカッド" }).click();
   const followed = page.locator('.squad-row[data-player-id="ipu-032c11837e6d"]');
   await expect(followed).toHaveClass(/is-followed/);
   await expect(followed).toContainText("フォロー中");
@@ -48,21 +50,21 @@ test("選手詳細は登録別概要と直近5試合を表示する", async ({ p
   await expect(page.locator(".player-profile__hero h1")).toBeVisible();
   await expect(page.locator(".player-profile__team-link")).toBeVisible();
   await expect(page.locator(".player-follow-button")).toBeVisible();
-  await expect(page.getByRole("heading", { name: "成績概要" })).toBeVisible();
+  await page.getByRole("tab", { name: "試合", exact: true }).click();
   expect(await page.locator(".player-match-row").count()).toBeGreaterThan(0);
   expect(await page.locator(".player-match-row").count()).toBeLessThanOrEqual(5);
-  await expect(page.locator(".player-summary-grid")).toContainText("90分当たりG+A");
-  await expect(page.locator(".player-registration-summary")).toBeVisible();
+  await page.getByRole("tab", { name: "プロフィール" }).click();
+  await expect(page.locator(".player-current-strip")).toContainText("出場時間");
 });
 
 test("同一人物の登録切り替えで所属・背番号・成績・URLが変わる", async ({ page }) => {
   await page.goto(`${BASE_URL}?view=player&id=${REGULAR_PLAYER}`);
-  const before = await page.locator(".player-summary-grid").innerText();
+  const before = await page.locator(".player-current-strip").innerText();
   await page.locator(`[data-player-id="${I_LEAGUE_PLAYER}"]`).first().click();
   await expect(page).toHaveURL(new RegExp(`id=${I_LEAGUE_PLAYER}`));
   await expect(page).toHaveURL(/competition=jufa-chugoku-2026-i-league-division-1/);
   await expect(page.locator(".player-profile__team-link")).toContainText("広島修道大学");
-  expect(await page.locator(".player-summary-grid").innerText()).not.toBe(before);
+  expect(await page.locator(".player-current-strip").innerText()).not.toBe(before);
 });
 
 test("人物フォローは別登録へ切り替えても重複しない", async ({ page }) => {

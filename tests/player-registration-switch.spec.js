@@ -9,15 +9,13 @@ test("同一人物の通常リーグとIリーグ登録をURL・再読み込み�
   await expect(page.locator('[data-page="player"]')).toHaveAttribute("data-player-id", REGULAR);
   await expect(page.locator(".player-registration-switch a")).toHaveCount(2);
   await expect(page.locator('.player-registration-switch a[aria-current="page"]')).toContainText("中国大学リーグ");
-  await expect(page.getByText("大会登録", { exact: true })).toHaveCount(0);
   const regularStats = await page.locator(".player-stat-grid").first().innerText();
 
   await page.locator(`.player-registration-switch [data-player-id="${I_LEAGUE}"]`).click();
   await expect(page).toHaveURL(new RegExp(`id=${I_LEAGUE}`));
   await expect(page.locator('[data-page="player"]')).toHaveAttribute("data-player-id", I_LEAGUE);
   await expect(page.locator('.player-registration-switch a[aria-current="page"]')).toContainText("Iリーグ");
-  await expect(page.getByText("大会登録", { exact: true })).toBeVisible();
-  await expect(page.getByText("jufa-chugoku-2026-i-league-division-1", { exact: true })).toBeVisible();
+  await expect(page.locator('[data-page="player"]')).toHaveAttribute("data-competition-id", "jufa-chugoku-2026-i-league-division-1");
   const iLeagueStats = await page.locator(".player-stat-grid").first().innerText();
   expect(iLeagueStats).not.toBe(regularStats);
 

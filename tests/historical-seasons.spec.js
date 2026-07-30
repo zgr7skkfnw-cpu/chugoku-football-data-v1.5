@@ -70,6 +70,7 @@ test("2024年度順位・詳細未公開試合・過年度チームページを�
   await expect(page.locator(".standing-table")).toContainText("広島大学");
   await page.getByRole("link", { name: "広島大学" }).first().click();
   await expect(page.locator('[data-page="team"]')).toContainText("2024");
+  await page.getByRole("tab", { name: "スカッド" }).click();
   await expect(page.locator('[data-page="team"]')).toContainText("大会別選手名簿は未整備");
   await expect(page.locator('[data-roster-count]')).toHaveCount(0);
 

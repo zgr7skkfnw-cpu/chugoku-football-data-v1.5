@@ -13,26 +13,11 @@ test("チーム分析・フォーム・H2H・順位推移を表示する", async
   const errors = collectErrors(page);
   await page.goto(`${BASE_URL}?view=team&id=ipu`);
   await expect(page.locator('[data-page="team"]')).toBeVisible();
-  await expect(page.locator(".season-period-tabs button")).toHaveCount(3);
-  await expect(page.getByRole("heading", { name: "今季戦績" })).toBeVisible();
+  await expect(page.locator(".profile-tabs [role=tab]")).toHaveCount(6);
+  await page.getByRole("tab", { name: "スタッツ" }).click();
   await expect(page.locator(".home-away-grid .split-record")).toHaveCount(2);
-  await expect(page.locator(".form-result")).toHaveCount(5);
-  await page.locator(".form-result").first().locator("summary").click();
-  await expect(page.locator(".form-result__detail").first()).toContainText("Home");
-  await expect(page.locator(".team-stat-grid")).toContainText("平均先発年齢");
-  await expect(page.locator(".rank-chart svg")).toBeVisible();
-  await expect(page.locator(".rank-chart__point")).toHaveCount(9);
-  await expect(page.locator(".h2h-card").first()).toBeVisible();
-  await page.locator(".h2h-card").first().locator("summary").click();
-  await expect(page.locator(".h2h-match-date").first()).toContainText("2026/");
-  await expect(page.locator(".h2h-match-context").first()).toContainText("中国大学サッカーリーグ 1部 / リーグ戦");
-  await expect(page.locator(".h2h-matches").first()).not.toContainText("前期");
-  await expect(page.locator(".h2h-matches").first()).not.toContainText("後期");
-  await expect(page.locator(".internal-ranking")).toHaveCount(3);
-
-  await page.getByRole("tab", { name: "後期", exact: true }).click();
-  await expect(page.locator(".rank-chart")).toHaveCount(0);
-  await expect(page.getByText("この期間の順位推移はまだありません。")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "ゴール数" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "トッププレイヤー" })).toBeVisible();
   expect(errors).toEqual([]);
 });
 

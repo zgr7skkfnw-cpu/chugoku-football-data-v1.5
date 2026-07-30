@@ -96,5 +96,6 @@ test("2部ランキングとチームのスカッドを実データで表示す�
   await expect(page.locator('[data-ranking-count]')).toBeVisible();
   await expect(page.getByText("高木 蒼志").first()).toBeVisible();
   await page.goto(`${BASE_URL}?view=team&id=hiroshima-institute-of-technology`);
+  await page.getByRole("tab", { name: "スカッド" }).click();
   await expect(page.locator('[data-roster-count="17"]')).toBeVisible();
 });

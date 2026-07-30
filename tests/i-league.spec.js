@@ -201,7 +201,7 @@ test("Iリーグ全43試合を大会・チーム・詳細画面で欠落なく�
         competitionTeamId(competitionId, match.homeTeam.name),
         competitionTeamId(competitionId, match.awayTeam.name),
       ]) {
-        await page.goto(`${BASE_URL}?view=team&id=${teamId}`);
+        await page.goto(`${BASE_URL}?view=team&id=${teamId}&tab=matches`);
         await expect(page.locator(`.match-row[data-match-id="${match.id}"]`)).toBeVisible();
       }
       await page.goto(`${BASE_URL}?view=match&id=${match.id}`);
@@ -261,6 +261,7 @@ test("Iリーグ試合詳細・チームページ・管理画面を安全に表�
   await page.goto(`${BASE_URL}?view=team&id=i-league-2026-ipu-a`);
   await expect(page.locator('[data-page="team"]')).toContainText("IPU・環太平洋大学A");
   await expect(page.locator('[data-page="team"]')).toContainText("Iリーグの大会別公式登録");
+  await page.getByRole("tab", { name: "スカッド" }).click();
   await expect(page.locator('[data-roster-count="25"]')).toBeVisible();
 
   await page.goto(`${BASE_URL}?view=admin`);
@@ -288,5 +289,5 @@ test("Iリーグランキングと選手詳細を大会登録単位で表示す�
   const player = iLeaguePlayers.items.find((entry) => entry.teamId === "i-league-2026-ipu-a");
   await page.goto(`${BASE_URL}?view=player&id=${player.id}`);
   await expect(page.locator('[data-page="player"]')).toContainText(player.name);
-  await expect(page.locator('[data-page="player"]')).toContainText("jufa-chugoku-2026-i-league-division-1");
+  await expect(page.locator('[data-page="player"]')).toHaveAttribute("data-competition-id", "jufa-chugoku-2026-i-league-division-1");
 });
