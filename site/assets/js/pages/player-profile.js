@@ -259,36 +259,36 @@ function createMatchHistory(stats, teamDirectory, limited = true) {
     { className: "player-match-list" },
     (limited ? stats.matches.slice(0, 5) : stats.matches).map((record) => {
       const appeared = record.started || record.substitutionOn;
-      const details = [
-        appeared ? `${record.minutes}分` : null,
-        record.started
-          ? "先発"
-          : record.substitutionOn
-            ? "途中出場"
-            : record.benchSelected
-              ? "ベンチ入り（出場なし）"
-              : "出場なし",
-        record.fullAppearance ? "フル出場" : null,
-        record.goals ? `${record.goals}得点` : null,
-        record.assists ? `${record.assists}アシスト` : null,
-        record.yellowCards ? `警告${record.yellowCards}` : null,
-        record.redCards ? `退場${record.redCards}` : null,
-      ].filter(Boolean);
+      const appearance = record.started
+        ? "先発"
+        : record.substitutionOn
+          ? "途中出場"
+          : record.benchSelected
+            ? "ベンチ"
+            : "出場なし";
       const hasScore = Number.isFinite(record.teamScore) && Number.isFinite(record.opponentScore);
-      const row = element("div", {
+      const opponent = teamDirectory?.byId.get(record.opponentTeamId);
+      return element("a", {
         className: "player-match-row",
         attributes: {
+          href: routeHref("match", { matchId: record.matchId }),
           "data-route": "match",
           "data-match-id": record.matchId,
-          role: "link",
-          tabindex: "0",
+          "aria-label": `${formatKickoff(record)} ${record.opponentName}戦 ${appearance}`,
         },
       }, [
-        element("span", { className: "player-match-row__date", text: formatKickoff(record) }),
-        element("div", { className: "row-copy" }, [
-          element("span", {}, [element("span", { text: "vs " }), createTeamNameLink(teamDirectory?.byId.get(record.opponentTeamId), record.opponentName)]),
-          element("span", { text: [record.competitionName ?? "選択中の大会", hasScore ? `${record.teamScore}-${record.opponentScore}` : null].filter(Boolean).join(" / ") }),
-          element("span", { text: details.join(" / ") }),
+        element("div", { className: "player-match-row__left" }, [
+          element("span", { className: "player-match-row__date", text: formatKickoff(record) }),
+          element("small", { text: record.competitionName ?? "選択中の大会" }),
+        ]),
+        element("div", { className: "player-match-row__center" }, [
+          createTeamEmblem(opponent, "team-emblem player-match-row__emblem"),
+          element("span", { className: "player-match-row__opponent", text: record.opponentName }),
+          hasScore ? element("strong", { className: "player-match-row__score", text: `${record.teamScore}-${record.opponentScore}` }) : null,
+        ]),
+        element("div", { className: "player-match-row__right" }, [
+          element("span", { className: "player-match-row__appearance", text: appearance }),
+          appeared && Number.isFinite(record.minutes) ? element("span", { text: `${record.minutes}分` }) : null,
           element("span", { className: "player-match-events" }, [
             createMatchEventIcon(record.started ? "starter" : "bench"),
             record.goals ? createMatchEventIcon("goal", record.goals) : null,
@@ -298,8 +298,6 @@ function createMatchHistory(stats, teamDirectory, limited = true) {
           ]),
         ]),
       ]);
-      row.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); row.click(); } });
-      return row;
     }),
   );
 }
