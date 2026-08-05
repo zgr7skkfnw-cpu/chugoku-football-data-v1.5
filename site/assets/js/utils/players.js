@@ -90,7 +90,9 @@ function aggregateMatchSide({ match, side, directory, statistics }) {
     if (!matchEntries.has(stats.player.id)) {
       matchEntries.set(stats.player.id, {
         matchId: match.id,
+        season: match.season ?? null,
         kickoffAt: match.kickoffAt,
+        teamId,
         opponentTeamId: otherTeam?.teamId ?? null,
         opponentName: otherTeam?.name ?? "",
         competitionId: match.competitionId ?? null,
@@ -191,6 +193,57 @@ function aggregateMatchSide({ match, side, directory, statistics }) {
   for (const [playerId, entry] of matchEntries) {
     statistics.get(playerId).matches.push(entry);
   }
+}
+
+const competitionStatisticsCache = new WeakMap();
+
+export function playerStatisticsScopeKey({ season, competitionId, teamId, period = "all" }) {
+  return [season ?? "", competitionId ?? "", teamId ?? "", period ?? "all"].join("\0");
+}
+
+export function selectPlayerStatisticsCompetition(statistics, scope) {
+  if (!(statistics instanceof Map)) return new Map();
+  let scopedByKey = competitionStatisticsCache.get(statistics);
+  if (!scopedByKey) {
+    scopedByKey = new Map();
+    competitionStatisticsCache.set(statistics, scopedByKey);
+  }
+  const key = playerStatisticsScopeKey(scope);
+  if (scopedByKey.has(key)) return scopedByKey.get(key);
+
+  const result = new Map();
+  for (const [playerId, source] of statistics) {
+    if (scope.teamId && source.player.teamId !== scope.teamId) continue;
+    const matches = source.matches.filter((entry) =>
+      (!scope.season || entry.season === scope.season)
+      && (!scope.competitionId || entry.competitionId === scope.competitionId)
+      && (!scope.teamId || entry.teamId === scope.teamId)
+      && (!scope.period || scope.period === "all" || entry.period === scope.period));
+    const totals = createStatTotals();
+    for (const entry of matches) {
+      const appeared = entry.started || entry.substitutionOn;
+      totals.appearances += appeared ? 1 : 0;
+      totals.starts += entry.started ? 1 : 0;
+      totals.minutes += Number(entry.minutes) || 0;
+      totals.goals += Number(entry.goals) || 0;
+      totals.assists += Number(entry.assists) || 0;
+      totals.yellowCards += Number(entry.yellowCards) || 0;
+      totals.redCards += Number(entry.redCards) || 0;
+      totals.benchSelections += entry.benchSelected ? 1 : 0;
+      totals.fullAppearances += entry.fullAppearance ? 1 : 0;
+      totals.substitutionsOn += entry.substitutionOn ? 1 : 0;
+      totals.substitutionsOff += entry.substitutionOff ? 1 : 0;
+    }
+    result.set(playerId, {
+      ...source,
+      ...totals,
+      matches,
+      competitionIds: new Set(scope.competitionId ? [scope.competitionId] : []),
+      scopeKey: key,
+    });
+  }
+  scopedByKey.set(key, result);
+  return result;
 }
 
 function createStatTotals() {

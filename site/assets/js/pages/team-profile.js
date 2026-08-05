@@ -12,7 +12,7 @@ import { toggleFavoriteTeam } from "../utils/favorites.js";
 import { setState } from "../state.js";
 import { createMatchRow, createPlayerLinkRow, createTeamNameLink } from "./shared.js";
 import { createSeasonPeriodTabs } from "../ui/season-period.js";
-import { selectPlayerStatisticsPeriod } from "../utils/players.js";
+import { selectPlayerStatisticsCompetition } from "../utils/players.js";
 import { createUnifiedStandingTable } from "../ui/standing-table.js";
 import { createProfileRegistrationPicker } from "../ui/profile-registration-picker.js";
 
@@ -42,20 +42,19 @@ export function renderTeamProfilePage({
   }
 
   const hasSeasonRoster = selectedSeason === 2026;
-  const roster = (hasSeasonRoster ? players : [])
-    .filter((player) => player.teamId === team.id)
-    .sort((left, right) => (left.number ?? 999) - (right.number ?? 999));
   const staff = team.staff ?? [];
   const isFavorite = favoriteTeamIds.includes(team.id);
   const competitionStatsById = leagueStats?.[selectedSeason]?.byCompetition ?? {};
   const opponents = headToHead?.items?.find((entry) => entry.teamId === team.id)?.opponents ?? [];
-  const periodPlayerStats = selectPlayerStatisticsPeriod(playerStatistics, seasonPeriod);
   const selectedCompetitionId = routedCompetitionId ?? team.competitionId
     ?? matches.find((match) => match.season === selectedSeason && (match.homeTeam.teamId === team.id || match.awayTeam.teamId === team.id))?.competitionId;
+  const competitionMatches = matches.filter((match) =>
+    match.season === selectedSeason && match.competitionId === selectedCompetitionId && match.status === "finished");
   const activeTeamStats = competitionStatsById[selectedCompetitionId]
     ?? (!routedCompetitionId
       ? Object.values(competitionStatsById).find((stats) => stats?.periods?.all?.teams?.some((entry) => entry.teamId === team.id)) ?? teamStats
-      : null);
+      : null)
+    ?? createCompetitionTeamStats(competitionMatches);
   const analytics = activeTeamStats?.periods?.[seasonPeriod]?.teams?.find((entry) => entry.teamId === team.id);
   const seasonMatches = matches
     .filter((match) => match.season === selectedSeason)
@@ -67,6 +66,18 @@ export function renderTeamProfilePage({
   const upcomingMatches = seasonMatches
     .filter((match) => match.status !== "finished")
     .sort((left, right) => new Date(left.kickoffAt) - new Date(right.kickoffAt));
+  const periodPlayerStats = selectPlayerStatisticsCompetition(playerStatistics, {
+    season: selectedSeason,
+    competitionId: selectedCompetitionId,
+    teamId: team.id,
+    period: seasonPeriod,
+  });
+  const competitionDefinition = competitionDefinitions.find((entry) => entry.id === selectedCompetitionId);
+  const usesDedicatedRoster = team.competitionId || ["regular", "i-league-regular"].includes(competitionDefinition?.stage);
+  const roster = (hasSeasonRoster ? players : [])
+    .filter((player) => player.teamId === team.id)
+    .filter((player) => usesDedicatedRoster || periodPlayerStats.get(player.id)?.matches.length)
+    .sort((left, right) => (left.number ?? 999) - (right.number ?? 999));
   const favoriteButton = element("button", {
     className: `favorite-button${isFavorite ? " is-active" : ""}`,
     text: isFavorite ? "♥ フォロー中" : "♡ フォローする",
@@ -78,8 +89,6 @@ export function renderTeamProfilePage({
   });
   const standings = activeTeamStats?.periods?.all?.standings ?? [];
   const trophies = collectTeamTrophies(team, competitionDefinitions, leagueStats, matches);
-  const competitionMatches = matches.filter((match) =>
-    match.season === selectedSeason && match.competitionId === selectedCompetitionId && match.status === "finished");
   const registrationSwitch = () => createTeamRegistrationSwitch(
     team,
     teamDirectory,
@@ -105,11 +114,11 @@ export function renderTeamProfilePage({
     ]),
     matches: element("div", { className: "section-stack" }, [registrationSwitch(), createPanel("試合", createTimelineMatches(seasonMatches, team, teamDirectory), `${seasonMatches.length}試合`)]),
     standings: element("div", { className: "section-stack" }, [registrationSwitch(), createPanel("順位表", createProfileStanding(standings, team, teamDirectory), competitionLabel(selectedCompetitionId, competitionDefinitions))]),
-    stats: element("div", { className: "section-stack" }, [
+    stats: element("div", { className: "section-stack", attributes: { "data-stats-scope": `${selectedSeason}:${selectedCompetitionId}:${team.id}` } }, [
       registrationSwitch(),
       createPanel("総合・ホーム・アウェー成績", createHomeAwayOverview(analytics, activeTeamStats, team), "選択大会"),
       createPanel("ゴール数", createGoalClassification(finishedMatches, team), "公式記録で判別できる範囲"),
-      hasSeasonRoster ? createPanel("トッププレイヤー", createExpandableRankings(periodPlayerStats, team), "チーム内") : null,
+      hasSeasonRoster ? createPanel("トッププレイヤー", createExpandableRankings(periodPlayerStats, team, selectedCompetitionId), "チーム内") : null,
       createPanel("重要スタッツ", createImportantStats(activeTeamStats, team, teamDirectory), "リーグ比較"),
       createPanel("攻撃", createCategoryLeagueStats("attack", activeTeamStats, competitionMatches, team, teamDirectory), "リーグ内比較"),
       createPanel("守備", createCategoryLeagueStats("defence", activeTeamStats, competitionMatches, team, teamDirectory), "リーグ内比較"),
@@ -622,6 +631,7 @@ function createRoster(roster, team, statistics, favoritePlayerIds, allPlayers) {
           href: routeHref("player", { playerId: player.id }),
           "data-route": "player",
           "data-player-id": player.id,
+          "data-source-competitions": [...new Set(stats?.matches?.map((match) => match.competitionId) ?? [])].join(","),
         },
       }, [
         element("strong", { className: "squad-row__number", text: String(player.number ?? "－") }),
@@ -848,6 +858,90 @@ function createTimelineMatches(matches, team, teamDirectory) {
   return list;
 }
 
+function createCompetitionTeamStats(matches) {
+  const createPeriod = (periodMatches) => {
+    const teamIds = [...new Set(periodMatches.flatMap((match) => [match.homeTeam.teamId, match.awayTeam.teamId]).filter(Boolean))];
+    const records = new Map(teamIds.map((teamId) => [teamId, {
+      teamId,
+      overall: emptyRecord(),
+      home: emptyRecord(),
+      away: emptyRecord(),
+      yellowCards: 0,
+      redCards: 0,
+      cleanSheets: 0,
+    }]));
+    for (const match of periodMatches) {
+      const homeScore = Number(match.homeTeam.score);
+      const awayScore = Number(match.awayTeam.score);
+      if (!Number.isFinite(homeScore) || !Number.isFinite(awayScore)) continue;
+      const home = records.get(match.homeTeam.teamId);
+      const away = records.get(match.awayTeam.teamId);
+      updateRecord(home.overall, homeScore, awayScore);
+      updateRecord(home.home, homeScore, awayScore);
+      updateRecord(away.overall, awayScore, homeScore);
+      updateRecord(away.away, awayScore, homeScore);
+      if (awayScore === 0) home.cleanSheets += 1;
+      if (homeScore === 0) away.cleanSheets += 1;
+      home.yellowCards += countCards(match.disciplinary?.home, false);
+      home.redCards += countCards(match.disciplinary?.home, true);
+      away.yellowCards += countCards(match.disciplinary?.away, false);
+      away.redCards += countCards(match.disciplinary?.away, true);
+    }
+    const rankRecords = (key) => [...records.values()]
+      .map((entry) => ({ teamId: entry.teamId, ...entry[key] }))
+      .sort(compareStandingRecords)
+      .map((entry, index) => ({ ...entry, rank: index + 1 }));
+    const standings = rankRecords("overall");
+    const homeStandings = rankRecords("home");
+    const awayStandings = rankRecords("away");
+    const teams = standings.map((standing) => {
+      const entry = records.get(standing.teamId);
+      return {
+        teamId: standing.teamId,
+        rank: standing.rank,
+        overall: entry.overall,
+        home: entry.home,
+        away: entry.away,
+        stats: {
+          averageGoals: entry.overall.played ? entry.overall.goalsFor / entry.overall.played : null,
+          averageConceded: entry.overall.played ? entry.overall.goalsAgainst / entry.overall.played : null,
+          cleanSheets: entry.cleanSheets,
+          yellowCards: entry.yellowCards,
+          redCards: entry.redCards,
+        },
+      };
+    });
+    return { standings, homeStandings, awayStandings, teams, rankings: {} };
+  };
+  return {
+    periods: {
+      all: createPeriod(matches),
+      first: createPeriod(matches.filter((match) => Number(match.round) <= 9)),
+      second: createPeriod(matches.filter((match) => Number(match.round) > 9)),
+    },
+  };
+}
+
+function emptyRecord() {
+  return { played: 0, won: 0, drawn: 0, lost: 0, points: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0 };
+}
+
+function updateRecord(record, goalsFor, goalsAgainst) {
+  record.played += 1;
+  record.goalsFor += goalsFor;
+  record.goalsAgainst += goalsAgainst;
+  record.goalDifference = record.goalsFor - record.goalsAgainst;
+  if (goalsFor > goalsAgainst) { record.won += 1; record.points += 3; }
+  else if (goalsFor === goalsAgainst) { record.drawn += 1; record.points += 1; }
+  else record.lost += 1;
+}
+
+function countCards(entries = [], redOnly) {
+  return entries.filter((entry) => redOnly
+    ? /(?:^|\s)(?:CS|S[1-9])(?:\s|$)/.test(String(entry))
+    : /(?:^|\s)C[1-9](?:\s|$)/.test(String(entry))).length;
+}
+
 function createHomeAwayOverview(analytics, activeStats, team) {
   const rankFor = (key) => activeStats?.periods?.all?.[key]?.find((entry) => entry.teamId === team.id)?.rank;
   const rows = [
@@ -863,7 +957,15 @@ function createHomeAwayOverview(analytics, activeStats, team) {
     element("div", { className: "home-away-table" }, [
       element("div", { className: "home-away-row home-away-row--header" },
         ["", "試", "勝", "分", "敗", "得-失", "差", "点"].map((label) => element("span", { text: label }))),
-      ...rows.map(([label, rank, record = {}, icon]) => element("div", { className: "home-away-row" }, [
+      ...rows.map(([label, rank, record = {}, icon]) => element("div", {
+        className: "home-away-row",
+        attributes: {
+          "data-record-scope": label,
+          "data-played": record?.played ?? "",
+          "data-goals-for": record?.goalsFor ?? "",
+          "data-goals-against": record?.goalsAgainst ?? "",
+        },
+      }, [
         element("strong", { text: `${icon} ${label}`, attributes: { "aria-label": `${label} ${rank ? `${rank}位` : "順位未掲載"}` } }),
         element("span", { text: String(record?.played ?? "－") }),
         element("span", { text: String(record?.won ?? "－") }),
@@ -898,14 +1000,17 @@ function createGoalClassification(matches, team) {
     else values["分類不明"] += 1;
   }
   const max = Math.max(1, ...Object.values(values));
-  return element("div", { className: "goal-classification" }, Object.entries(values).map(([label, value]) =>
+  return element("div", {
+    className: "goal-classification",
+    attributes: { "data-source-match-ids": matches.map((match) => match.id).join(",") },
+  }, Object.entries(values).map(([label, value]) =>
     element("div", { className: "comparison-bar-row" }, [
       element("span", { text: label }), element("span", { className: "comparison-bar", attributes: { style: `--value:${value / max * 100}%` } }),
       element("strong", { text: String(value) }),
     ])));
 }
 
-function createExpandableRankings(statistics, team) {
+function createExpandableRankings(statistics, team, competitionId) {
   const metrics = [["goals", "得点", "得点"], ["assists", "アシスト", "アシスト"], ["minutes", "出場時間", "分"]];
   return element("div", { className: "internal-ranking-grid" }, metrics.map(([metric, label, unit]) => {
     const rows = [...statistics.values()]
@@ -914,7 +1019,12 @@ function createExpandableRankings(statistics, team) {
     const list = element("div", { className: "internal-ranking-rows" });
     const render = (expanded = false) => list.replaceChildren(...(rows.length
       ? rows.slice(0, expanded ? rows.length : 3)
-        .map((stats) => createPlayerLinkRow({ player: stats.player, team, metric: stats[metric], metricLabel: unit }))
+        .map((stats) => {
+          const row = createPlayerLinkRow({ player: stats.player, team, metric: stats[metric], metricLabel: unit });
+          row.dataset.sourceCompetitions = [...new Set(stats.matches.map((match) => match.competitionId))].join(",");
+          row.dataset.competitionId = competitionId ?? "";
+          return row;
+        })
       : [createNotice("記録なし")]));
     const button = element("button", { className: "text-button", text: "すべて見る", attributes: { type: "button", "aria-expanded": "false" } });
     button.addEventListener("click", () => {
