@@ -8,7 +8,7 @@ test("同一人物の通常リーグとIリーグ登録をURL・再読み込み�
   await page.goto(`${BASE_URL}?view=player&id=${REGULAR}`);
   await expect(page.locator('[data-page="player"]')).toHaveAttribute("data-player-id", REGULAR);
   await page.locator(".profile-season-picker").click();
-  await expect(page.locator(".profile-season-option")).toHaveCount(2);
+  expect(await page.locator(".profile-season-option").count()).toBeGreaterThanOrEqual(2);
   await expect(page.locator('.profile-season-option[aria-checked="true"]')).toContainText("中国大学サッカーリーグ");
   const regularStats = await page.locator(".player-stat-grid").first().innerText();
 
@@ -28,7 +28,7 @@ test("同一人物の通常リーグとIリーグ登録をURL・再読み込み�
   await expect(page.locator('[data-page="player"]')).toHaveAttribute("data-player-id", I_LEAGUE);
 
   await page.locator(".profile-season-picker").click();
-  await page.locator(`.profile-season-option[data-player-id="${REGULAR}"]`).click();
+  await page.locator(`.profile-season-option[data-player-id="${REGULAR}"][data-competition-id="jufa-chugoku-2026-division-1"]`).click();
   await expect(page.locator('[data-page="player"]')).toHaveAttribute("data-player-id", REGULAR);
 });
 

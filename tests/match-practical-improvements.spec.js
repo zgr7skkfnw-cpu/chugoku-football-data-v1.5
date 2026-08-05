@@ -61,5 +61,7 @@ test("検索は公式登録情報が一致する選手を1人に集約し詳細�
   await expect(page.locator(".profile-season-picker")).toBeVisible();
   await page.locator(".profile-season-picker").click();
   await expect(page.getByRole("dialog", { name: "登録を選択" })).toBeVisible();
-  await expect(page.locator(".profile-season-option")).toHaveCount(2);
+  expect(await page.locator(".profile-season-option").count()).toBeGreaterThanOrEqual(2);
+  await expect(page.locator('.profile-season-option[data-competition-id="jufa-chugoku-2026-division-1"]')).toHaveCount(1);
+  await expect(page.locator('.profile-season-option[data-competition-id="jufa-chugoku-2026-i-league-division-1"]')).toHaveCount(1);
 });

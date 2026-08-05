@@ -47,7 +47,7 @@ test("フォロー中選手はスカッドで文字と装飾の両方により�
 });
 
 test("選手詳細は登録別概要と直近5試合を表示する", async ({ page }) => {
-  await page.goto(`${BASE_URL}?view=player&id=${REGULAR_PLAYER}`);
+  await page.goto(`${BASE_URL}?view=player&id=${REGULAR_PLAYER}&competition=jufa-chugoku-2026-rookie-tournament&season=2026`);
   await expect(page.locator(".player-profile__hero h1")).toBeVisible();
   await expect(page.locator(".player-profile__team-link")).toBeVisible();
   await expect(page.locator(".player-follow-button")).toBeVisible();

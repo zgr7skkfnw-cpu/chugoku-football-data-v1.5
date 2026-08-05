@@ -100,7 +100,7 @@ test("年度違いの同一大会トロフィーを大会系列ごとに統合�
 });
 
 test("選手詳細は3タブと基本6項目・今期4項目を表示する", async ({ page }) => {
-  await page.goto(`${BASE_URL}?view=player&id=${PLAYER}`);
+  await page.goto(`${BASE_URL}?view=player&id=${PLAYER}&competition=jufa-chugoku-2026-rookie-tournament&season=2026`);
   await expect(page.locator(".player-profile .profile-tab")).toHaveCount(3);
   await expect(page.locator(".player-basic-item")).toHaveCount(6);
   await expect(page.locator(".player-current-strip > div")).toHaveCount(4);

@@ -80,7 +80,7 @@ export function navigate(view, { replace = false, matchId = null, matchTab = nul
     currentPlayerId: nextView === "player" ? playerId : null,
     selectedTeamTab: nextView === "team" ? normalizeTeamTab(teamTab) : "overview",
     selectedPlayerTab: nextView === "player" ? normalizePlayerTab(playerTab) : "profile",
-    ...(competitionId ? { selectedCompetitionId: competitionId } : {}),
+    ...(["team", "player"].includes(nextView) ? { selectedCompetitionId: competitionId ?? null } : competitionId ? { selectedCompetitionId: competitionId } : {}),
     ...(season ? { selectedSeason: season } : {}),
     ...(nextView === "home" ? { selectedDate: date } : {}),
   });
@@ -111,7 +111,7 @@ export function initializeRouter() {
       currentPlayerId: route.playerId,
       selectedTeamTab: route.teamTab,
       selectedPlayerTab: route.playerTab,
-      ...(route.competitionId ? { selectedCompetitionId: route.competitionId } : {}),
+      ...(["team", "player"].includes(route.view) ? { selectedCompetitionId: route.competitionId ?? null } : route.competitionId ? { selectedCompetitionId: route.competitionId } : {}),
       ...(route.season ? { selectedSeason: route.season } : {}),
       ...(route.view === "home" ? { selectedDate: route.date } : {}),
     });
