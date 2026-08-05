@@ -46,6 +46,7 @@
     "test:e2e": "playwright test",
     "apply:overrides": "node scripts/apply-manual-overrides.mjs",
     "update:data": "node scripts/update-data.mjs",
+    "update:data:auto": "node scripts/update-data-auto.mjs",
     "update:data:full": "node scripts/update-data-full.mjs",
     "update:data:ileague": "node scripts/update-i-league-data.mjs"
   },

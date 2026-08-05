@@ -1,0 +1,102 @@
+name: Sync match results
+
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC 03:00 / 09:00 / 13:00 = JST 12:00 / 18:00 / 22:00
+    - cron: "0 3,9,13 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-match-results
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Synchronize official results
+        run: npm run update:data:auto
+
+      - name: Validate data
+        run: npm run validate:data
+
+      - name: Run synchronization regression tests
+        run: npx playwright test tests/automatic-sync.spec.js --workers=1
+
+      - name: Check whitespace errors
+        run: git diff --check
+
+      - name: Discard state-only update
+        shell: bash
+        run: |
+          if git diff --quiet -- \
+            site/data/head-to-head.json \
+            site/data/seasons/index.json \
+            site/data/seasons/2026/matches.json \
+            site/data/seasons/2026/team-stats.json \
+            site/data/seasons/2026/div2/matches.json \
+            site/data/seasons/2026/div2/team-stats.json \
+            site/data/seasons/2026/rookie/matches.json \
+            site/data/seasons/2026/championship/matches.json \
+            site/data/seasons/2026/i-league/div1/matches.json \
+            site/data/seasons/2026/i-league/div1/team-stats.json \
+            site/data/seasons/2026/i-league/div2/matches.json \
+            site/data/seasons/2026/i-league/div2/team-stats.json; then
+            echo "試合・集計データに変更がないためsync-stateもコミットしません。"
+            git restore -- data/sync-state.json
+          fi
+
+      - name: Reject unexpected generated files
+        shell: bash
+        run: |
+          allowed='^(data/sync-state\.json|site/data/head-to-head\.json|site/data/seasons/index\.json|site/data/seasons/2026/(matches\.json|team-stats\.json|div2/(matches\.json|team-stats\.json)|rookie/matches\.json|championship/matches\.json|i-league/div[12]/(matches\.json|team-stats\.json)))$'
+          unexpected="$(git status --porcelain=v1 | sed -E 's/^.. //' | grep -Ev "$allowed" || true)"
+          if [ -n "$unexpected" ]; then
+            echo "同期対象外の差分を検出しました:"
+            echo "$unexpected"
+            exit 1
+          fi
+
+      - name: Commit changed data
+        shell: bash
+        run: |
+          git add -- \
+            data/sync-state.json \
+            site/data/head-to-head.json \
+            site/data/seasons/index.json \
+            site/data/seasons/2026/matches.json \
+            site/data/seasons/2026/team-stats.json \
+            site/data/seasons/2026/div2/matches.json \
+            site/data/seasons/2026/div2/team-stats.json \
+            site/data/seasons/2026/rookie/matches.json \
+            site/data/seasons/2026/championship/matches.json \
+            site/data/seasons/2026/i-league/div1/matches.json \
+            site/data/seasons/2026/i-league/div1/team-stats.json \
+            site/data/seasons/2026/i-league/div2/matches.json \
+            site/data/seasons/2026/i-league/div2/team-stats.json
+          if git diff --cached --quiet; then
+            echo "公式データに変更はありません。"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "試合結果を自動更新"
+          git push origin HEAD:main
