@@ -151,8 +151,18 @@ const championshipRounds = new Set((championshipMatchesData.items ?? []).map((ma
 for (const round of ["第1回戦", "第2回戦", "第3回戦", "準決勝戦", "３位決定戦", "決勝戦"]) {
   if (!championshipRounds.has(round)) errors.push(`championship: missing ${round}`);
 }
-if ((rookieMatchesData.items ?? []).some((match) => !["Aグループ", "Bグループ", "Cグループ", "Dグループ"].includes(match.groupName))) {
-  errors.push("rookie tournament: group assignment is missing or invalid");
+const rookieGroupByHoldId = new Map([
+  [575, "Aグループ"],
+  [576, "Bグループ"],
+  [577, "Cグループ"],
+  [578, "Dグループ"],
+  [579, "プレーオフ"],
+]);
+for (const match of rookieMatchesData.items ?? []) {
+  const expectedGroup = rookieGroupByHoldId.get(match.taikaiHoldId);
+  if (!expectedGroup || match.groupName !== expectedGroup) {
+    errors.push(`${match.id}: rookie tournament group ${match.groupName ?? "(missing)"} does not match taikaiHoldId ${match.taikaiHoldId}`);
+  }
 }
 
 if (seasonIndexData.schemaVersion !== 1 || seasonIndexData.defaultSeason !== 2026) {

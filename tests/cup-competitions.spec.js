@@ -38,7 +38,7 @@ test("選手権のPK戦と決勝詳細を公式記録どおり表示する", asy
   await expect(page.locator(".match-scoreboard")).toContainText("広島経済大学");
 });
 
-test("新人戦21試合をA～Dグループ別に表示し7月26日の公式結果を維持する", async ({ page }) => {
+test("新人戦をA～Dグループとプレーオフ別に表示し7月26日の公式結果を維持する", async ({ page }) => {
   expect(rookie.items.length).toBeGreaterThanOrEqual(21);
   const july26 = rookie.items.filter((match) => match.kickoffAt.startsWith("2026-07-26"));
   expect(july26).toHaveLength(7);
@@ -53,13 +53,14 @@ test("新人戦21試合をA～Dグループ別に表示し7月26日の公式結�
     "山口大学 0-1 広島大学",
     "広島経済大学 8-0 広島国際大学",
   ]);
-  expect(new Set(rookie.items.map((match) => match.groupName))).toEqual(new Set(["Aグループ", "Bグループ", "Cグループ", "Dグループ"]));
+  expect(new Set(rookie.items.map((match) => match.groupName))).toEqual(new Set(["Aグループ", "Bグループ", "Cグループ", "Dグループ", "プレーオフ"]));
   await page.goto(`${BASE_URL}?view=league&competition=${ROOKIE}&season=2026`);
   await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", String(rookie.items.length));
   for (const group of ["Aグループ", "Bグループ", "Cグループ", "Dグループ"]) {
     await expect(page.getByText(`${group} 順位表`, { exact: true })).toBeVisible();
     await expect(page.locator(".match-round-group__header", { hasText: group }).first()).toBeVisible();
   }
+  await expect(page.locator(".match-round-group__header", { hasText: "プレーオフ" }).first()).toBeVisible();
   const match = rookie.items.find((item) => item.status === "scheduled") ?? rookie.items[0];
   await page.goto(`${BASE_URL}?view=match&id=${match.id}`);
   await expect(page.locator('[data-page="match"]')).toContainText(match.homeTeam.name);

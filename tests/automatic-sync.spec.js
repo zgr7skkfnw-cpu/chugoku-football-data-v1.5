@@ -36,7 +36,19 @@ test("統合コマンドは開催中大会を重複なく同期し未公開大�
 test("sync-stateは公開データと分離し大会別結果を保持する", async () => {
   const state = JSON.parse(await read("data/sync-state.json"));
   const script = await read("scripts/update-data-auto.mjs");
-  expect(state).toEqual({ schemaVersion: 1, lastRunAt: null, status: "never-run", trigger: null, competitions: [] });
+  expect(state.schemaVersion).toBe(1);
+  expect(["never-run", "success"]).toContain(state.status);
+  expect(Array.isArray(state.competitions)).toBeTruthy();
+  if (state.status === "success") {
+    expect(Number.isNaN(Date.parse(state.lastRunAt))).toBeFalsy();
+    expect(typeof state.trigger).toBe("string");
+    expect(state.competitions.length).toBeGreaterThan(0);
+    for (const competition of state.competitions) {
+      for (const field of ["detectedMatches", "finishedMatches", "scheduledMatches", "changedMatches", "failedGameIds", "durationMs"]) {
+        expect(competition).toHaveProperty(field);
+      }
+    }
+  }
   for (const field of ["detectedMatches", "finishedMatches", "scheduledMatches", "changedMatches", "failedGameIds", "durationMs"]) {
     expect(script).toContain(field);
   }
