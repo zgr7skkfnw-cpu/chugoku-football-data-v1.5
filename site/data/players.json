@@ -1,8 +1,8 @@
 {
   "schemaVersion": 3,
   "seasonId": 2026,
-  "updatedAt": "2026-07-29T07:47:27.244Z",
-  "count": 830,
+  "updatedAt": "2026-09-23T10:01:01.870Z",
+  "count": 832,
   "items": [
     {
       "id": "ipu-032c11837e6d",
@@ -7103,6 +7103,20 @@
       "previousTeam": "海田高校"
     },
     {
+      "id": "yamaguchi-5c1ffabd12eb",
+      "teamId": "yamaguchi",
+      "name": "清水 慶太",
+      "englishName": "SHIMIZU Keita",
+      "number": 6,
+      "position": "FW",
+      "grade": 4,
+      "height": 173,
+      "weight": 63,
+      "birth": "2004-09-14",
+      "hometown": null,
+      "previousTeam": "基町高校"
+    },
+    {
       "id": "okayama-science-dfa54f7343c3",
       "teamId": "okayama-science",
       "name": "綱島 翠星",
@@ -11623,6 +11637,20 @@
       "birth": "2006-07-27",
       "hometown": null,
       "previousTeam": "神戸星城高校"
+    },
+    {
+      "id": "hiroshima-shudo-adab556b604a",
+      "teamId": "hiroshima-shudo",
+      "name": "益田 宗侍",
+      "englishName": "MASUDA Soji",
+      "number": 96,
+      "position": "MF",
+      "grade": 4,
+      "height": 165,
+      "weight": 65,
+      "birth": "2005-01-03",
+      "hometown": null,
+      "previousTeam": "呉昭和高校"
     }
   ]
 }
