@@ -10,6 +10,7 @@ import * as cheerio from "cheerio";
 import { buildTeamStats } from "../build/build-team-stats.mjs";
 import { buildHeadToHead } from "../build/build-head-to-head.mjs";
 import { buildSeasonIndex } from "../build/build-season-index.mjs";
+import { fetchTextWithRetry } from "./http-retry.mjs";
 
 const TARGETS = {
   "2024-1": {
@@ -209,7 +210,7 @@ const OUTPUT_PATH = resolve(
 const MINIMUM_SCHEDULE_COUNT = target.minimumScheduleCount;
 const MINIMUM_DETAIL_COUNT = target.minimumDetailCount;
 const DETAIL_CONCURRENCY = 4;
-const REQUEST_TIMEOUT_MS = 30_000;
+const REQUEST_TIMEOUT_MS = 45_000;
 const USER_AGENT =
   "ChugokuFootballData/0.3 (results-sync; https://jufa-chugoku.jp/)";
 
@@ -235,42 +236,18 @@ function assertAllowedUrl(value, { host, label }) {
   return url;
 }
 
-async function fetchText(context, url, options = {}) {
-  const attempts = options.attempts ?? 3;
-  let lastError;
-
-  for (let attempt = 1; attempt <= attempts; attempt += 1) {
-    try {
-      const response = await context.fetch(url, {
-        method: options.method ?? "GET",
-        form: options.form,
-        headers: options.headers,
-        failOnStatusCode: false,
-        timeout: REQUEST_TIMEOUT_MS,
-      });
-
-      if (!response.ok()) {
-        throw new Error(`HTTP ${response.status()} ${response.statusText()}`);
-      }
-
-      const text = await response.text();
-
-      if (!text.trim()) {
-        throw new Error("レスポンス本文が空です");
-      }
-
-      return text;
-    } catch (error) {
-      lastError = error;
-
-      if (attempt < attempts) {
-        await new Promise((resolveDelay) => setTimeout(resolveDelay, attempt * 500));
-      }
-    }
-  }
-
-  throw new Error(`${url} の取得に失敗しました: ${lastError?.message ?? "不明なエラー"}`);
-}
+const fetchText = (context, url, options = {}) => {
+  const attempts = options.attempts ?? 4;
+  return fetchTextWithRetry(context, url, options, {
+    attempts,
+    timeoutMs: REQUEST_TIMEOUT_MS,
+    onRetry: ({ nextAttempt, delayMs, error }) => {
+      console.warn(
+        `通信を再試行します (${nextAttempt}/${attempts}, ${delayMs}ms後): ${url} - ${error.message}`,
+      );
+    },
+  });
+};
 
 function extractIframeUrl(pageHtml) {
   const $ = cheerio.load(pageHtml);
@@ -744,6 +721,7 @@ async function fetchDetails(context, detailUrl, listUrl, matches) {
 
       try {
         const detailHtml = await fetchText(context, detailUrl.href, {
+          attempts: 3,
           method: "POST",
           form: {
             game_id: String(match.gameId),

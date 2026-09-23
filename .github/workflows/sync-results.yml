@@ -41,6 +41,9 @@ jobs:
       - name: Run synchronization regression tests
         run: npx playwright test tests/automatic-sync.spec.js --workers=1
 
+      - name: Run HTTP retry tests
+        run: npm run test:sync:http
+
       - name: Check whitespace errors
         run: git diff --check
 
