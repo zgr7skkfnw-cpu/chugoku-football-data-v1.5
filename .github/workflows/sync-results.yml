@@ -44,6 +44,9 @@ jobs:
       - name: Run HTTP retry tests
         run: npm run test:sync:http
 
+      - name: Run regular roster difference tests
+        run: npm run test:sync:roster
+
       - name: Check whitespace errors
         run: git diff --check
 
@@ -51,6 +54,7 @@ jobs:
         shell: bash
         run: |
           if git diff --quiet -- \
+            site/data/players.json \
             site/data/head-to-head.json \
             site/data/seasons/index.json \
             site/data/seasons/2026/matches.json \
@@ -70,7 +74,7 @@ jobs:
       - name: Reject unexpected generated files
         shell: bash
         run: |
-          allowed='^(data/sync-state\.json|site/data/head-to-head\.json|site/data/seasons/index\.json|site/data/seasons/2026/(matches\.json|team-stats\.json|div2/(matches\.json|team-stats\.json)|rookie/matches\.json|championship/matches\.json|i-league/div[12]/(matches\.json|team-stats\.json)))$'
+          allowed='^(data/sync-state\.json|site/data/(players\.json|head-to-head\.json|seasons/index\.json|seasons/2026/(matches\.json|team-stats\.json|div2/(matches\.json|team-stats\.json)|rookie/matches\.json|championship/matches\.json|i-league/div[12]/(matches\.json|team-stats\.json))))$'
           unexpected="$(git status --porcelain=v1 | sed -E 's/^.. //' | grep -Ev "$allowed" || true)"
           if [ -n "$unexpected" ]; then
             echo "同期対象外の差分を検出しました:"
@@ -83,6 +87,7 @@ jobs:
         run: |
           git add -- \
             data/sync-state.json \
+            site/data/players.json \
             site/data/head-to-head.json \
             site/data/seasons/index.json \
             site/data/seasons/2026/matches.json \

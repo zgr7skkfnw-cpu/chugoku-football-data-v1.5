@@ -17,8 +17,9 @@ test("自動同期workflowは安全な定期実行と手動実行を定義する
   expect(workflow).toContain("Discard state-only update");
   expect(workflow).toContain("git restore -- data/sync-state.json");
   expect(workflow).toContain("github-actions[bot]");
-  expect(workflow).not.toContain("site/data/players.json");
   expect(workflow).not.toContain("package-lock.json");
+  expect(workflow).toContain("npm run test:sync:roster");
+  expect(workflow).toContain("site/data/players.json");
 });
 
 test("統合コマンドは開催中大会を重複なく同期し未公開大会をスキップする", async () => {
@@ -31,6 +32,7 @@ test("統合コマンドは開催中大会を重複なく同期し未公開大�
   expect(script).toContain('trigger === "workflow_dispatch"');
   expect(script).toContain("isWeeklyChampionshipRun");
   expect(script).toContain("now.getUTCHours() === 3");
+  expect(script.indexOf("sync-regular-player-additions.mjs")).toBeLessThan(script.indexOf("for (const competition of competitions)"));
 });
 
 test("sync-stateは公開データと分離し大会別結果を保持する", async () => {

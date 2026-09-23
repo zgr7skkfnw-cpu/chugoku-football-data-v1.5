@@ -68,6 +68,9 @@ function summarize(specification, items, changedMatches, durationMs) {
 async function main() {
   const results = [];
 
+  console.log("[auto-sync] 通常リーグ公式名簿の追加登録を確認します");
+  run(process.execPath, ["scripts/sync/sync-regular-player-additions.mjs"]);
+
   for (const competition of competitions) {
     if (!competition.shouldRun) {
       console.log(`[auto-sync] スキップ: ${competition.name}（${competition.skipReason}）`);
