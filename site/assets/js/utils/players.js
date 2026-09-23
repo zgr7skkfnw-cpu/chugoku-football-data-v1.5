@@ -68,7 +68,11 @@ function aggregateMatchSide({ match, side, directory, statistics }) {
   const duration = getMatchDuration(match);
   const substitutions = (match.substitutions?.[side] ?? [])
     .map(parseSubstitution)
-    .filter(Boolean);
+    .filter(Boolean)
+    .map((event) => ({
+      ...event,
+      boundaryMinute: getSubstitutionBoundaryMinute(event.minute, match, duration),
+    }));
   const disciplinary = (match.disciplinary?.[side] ?? [])
     .map(parseDisciplinary)
     .filter(Boolean);
@@ -141,13 +145,20 @@ function aggregateMatchSide({ match, side, directory, statistics }) {
     const redEvent = disciplinary.find(
       (event) => event.isRed && normalizePlayerName(event.name) === normalizedName,
     );
-    const startMinute = started ? 0 : onEvent?.minute ?? duration;
+    const startMinute = started ? 0 : onEvent?.boundaryMinute ?? duration;
     const endMinute = Math.min(
       duration,
-      offEvent?.minute ?? duration,
+      offEvent?.boundaryMinute ?? duration,
       redEvent?.minute ?? duration,
     );
-    const minutes = Math.max(0, endMinute - startMinute);
+    // 90分以降に実際に出場した選手には、終盤に再交代した場合も
+    // 最低表示単位として1分を与える。ベンチ入りだけの選手は対象外。
+    const minimumLateSubstitutionMinute = onEvent
+      && usesRegulationLateSubstitutionBoundary(match, duration)
+      && onEvent.minute >= duration
+      ? 1
+      : 0;
+    const minutes = Math.max(minimumLateSubstitutionMinute, endMinute - startMinute, 0);
     const entry = getMatchEntry(stats);
     entry.minutes = minutes;
     entry.started = started;
@@ -298,6 +309,17 @@ function playerKey(teamId, name) {
 function getMatchDuration(match) {
   const duration = Number.parseInt(match.matchFormat?.match(/試合時間[:：]\s*(\d+)分/)?.[1], 10);
   return Number.isInteger(duration) ? duration : 90;
+}
+
+function usesRegulationLateSubstitutionBoundary(match, duration) {
+  return duration === 90 && !/延長\s*[:：]\s*\d+分/.test(match.matchFormat ?? "");
+}
+
+function getSubstitutionBoundaryMinute(minute, match, duration) {
+  if (usesRegulationLateSubstitutionBoundary(match, duration) && minute >= duration) {
+    return duration - 1;
+  }
+  return minute;
 }
 
 export function parseMatchMinute(value) {
