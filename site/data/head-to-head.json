@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-23T10:06:51.737Z",
+  "generatedAt": "2026-09-23T14:10:13.429Z",
   "sourceSeasons": [
     2024,
     2025,
@@ -93,7 +93,7 @@
       "leagueName": "中国大学サッカーリーグ 2部",
       "stageId": "regular",
       "stageName": "リーグ戦",
-      "matchCount": 79
+      "matchCount": 80
     },
     {
       "season": 2026,
@@ -152,7 +152,7 @@
       "matchCount": 0
     }
   ],
-  "matchCount": 612,
+  "matchCount": 613,
   "items": [
     {
       "teamId": "ipu",
@@ -11961,13 +11961,28 @@
         },
         {
           "opponentTeamId": "hiroshima-institute-of-technology",
-          "played": 5,
+          "played": 6,
           "won": 1,
           "drawn": 0,
-          "lost": 4,
-          "goalsFor": 17,
-          "goalsAgainst": 29,
+          "lost": 5,
+          "goalsFor": 19,
+          "goalsAgainst": 37,
           "matches": [
+            {
+              "matchId": "football-system-schedule-456b96baecdc",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-division-2",
+              "leagueName": "中国大学サッカーリーグ 2部",
+              "stageId": "regular",
+              "stageName": "リーグ戦",
+              "kickoffAt": "2026-09-23T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "away",
+              "goalsFor": 2,
+              "goalsAgainst": 8,
+              "result": "L"
+            },
             {
               "matchId": "football-system-15-559-25734",
               "season": 2026,
@@ -19096,13 +19111,28 @@
         },
         {
           "opponentTeamId": "shujitsu",
-          "played": 5,
-          "won": 4,
+          "played": 6,
+          "won": 5,
           "drawn": 0,
           "lost": 1,
-          "goalsFor": 29,
-          "goalsAgainst": 17,
+          "goalsFor": 37,
+          "goalsAgainst": 19,
           "matches": [
+            {
+              "matchId": "football-system-schedule-456b96baecdc",
+              "season": 2026,
+              "competitionId": "jufa-chugoku-2026-division-2",
+              "leagueName": "中国大学サッカーリーグ 2部",
+              "stageId": "regular",
+              "stageName": "リーグ戦",
+              "kickoffAt": "2026-09-23T13:00:00+09:00",
+              "round": 16,
+              "period": "second",
+              "side": "home",
+              "goalsFor": 8,
+              "goalsAgainst": 2,
+              "result": "W"
+            },
             {
               "matchId": "football-system-15-559-25734",
               "season": 2026,
