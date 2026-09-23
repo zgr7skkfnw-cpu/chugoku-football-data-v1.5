@@ -73,6 +73,12 @@ export function renderTeamProfilePage({
     period: seasonPeriod,
   });
   const competitionDefinition = competitionDefinitions.find((entry) => entry.id === selectedCompetitionId);
+  const supportsSeasonPeriods = competitionDefinition?.stage === "regular"
+    && [1, 2].includes(competitionDefinition?.division)
+    && !competitionDefinition.id?.includes("i-league")
+    && ["first", "second"].every((period) =>
+      Number.isInteger(competitionDefinition.periodRules?.[period]?.fromRound)
+      && Number.isInteger(competitionDefinition.periodRules?.[period]?.toRound));
   const usesDedicatedRoster = team.competitionId || ["regular", "i-league-regular"].includes(competitionDefinition?.stage);
   const roster = (hasSeasonRoster ? players : [])
     .filter((player) => player.teamId === team.id)
@@ -116,6 +122,7 @@ export function renderTeamProfilePage({
     standings: element("div", { className: "section-stack" }, [registrationSwitch(), createPanel("順位表", createProfileStanding(standings, team, teamDirectory), competitionLabel(selectedCompetitionId, competitionDefinitions))]),
     stats: element("div", { className: "section-stack", attributes: { "data-stats-scope": `${selectedSeason}:${selectedCompetitionId}:${team.id}` } }, [
       registrationSwitch(),
+      supportsSeasonPeriods ? createSeasonPeriodTabs(seasonPeriod) : null,
       createPanel("総合・ホーム・アウェー成績", createHomeAwayOverview(analytics, activeTeamStats, team), "選択大会"),
       createPanel("ゴール数", createGoalClassification(finishedMatches, team), "公式記録で判別できる範囲"),
       hasSeasonRoster ? createPanel("トッププレイヤー", createExpandableRankings(periodPlayerStats, team, selectedCompetitionId), "チーム内") : null,
@@ -125,7 +132,11 @@ export function renderTeamProfilePage({
       createPanel("反則", createCategoryLeagueStats("discipline", activeTeamStats, competitionMatches, team, teamDirectory), "リーグ内比較"),
     ]),
     squad: hasSeasonRoster
-      ? element("div", { className: "section-stack" }, [registrationSwitch(), createPanel("スカッド", createRoster(roster, team, periodPlayerStats, favoritePlayerIds, players), `${roster.length}選手`)])
+      ? element("div", { className: "section-stack" }, [
+        registrationSwitch(),
+        supportsSeasonPeriods ? createSeasonPeriodTabs(seasonPeriod) : null,
+        createPanel("スカッド", createRoster(roster, team, periodPlayerStats, favoritePlayerIds, players), `${roster.length}選手`),
+      ])
       : createNotice(`${selectedSeason}年度の大会別選手名簿は未整備です。`),
     trophies: element("div", { className: "section-stack" }, [
       registrationSwitch(),

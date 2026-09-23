@@ -70,6 +70,7 @@ async function loadCompetition(competition) {
       leagueName: competition.leagueName,
       stageId: competition.stage,
       stageName: competition.stageName,
+      periodRules: competition.periodRules ?? null,
     })),
     metadata: {
       competitionId: competition.id,

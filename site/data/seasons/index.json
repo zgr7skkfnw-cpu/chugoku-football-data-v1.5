@@ -25,6 +25,16 @@
           "teams": null,
           "manualOverrides": "seasons/2026/manual-match-overrides.json",
           "teamStats": "seasons/2026/team-stats.json",
+          "periodRules": {
+            "first": {
+              "fromRound": 1,
+              "toRound": 9
+            },
+            "second": {
+              "fromRound": 10,
+              "toRound": 18
+            }
+          },
           "teamIds": [
             "ipu",
             "yamaguchi",
@@ -57,6 +67,16 @@
           "teams": null,
           "manualOverrides": null,
           "teamStats": "seasons/2026/div2/team-stats.json",
+          "periodRules": {
+            "first": {
+              "fromRound": 1,
+              "toRound": 11
+            },
+            "second": {
+              "fromRound": 12,
+              "toRound": 22
+            }
+          },
           "teamIds": [
             "shimonoseki-city",
             "kibi-international",
@@ -90,6 +110,7 @@
           "teams": null,
           "manualOverrides": "seasons/2026/div2/playoff/manual-match-overrides.json",
           "teamStats": null,
+          "periodRules": null,
           "teamIds": []
         },
         {
@@ -111,6 +132,7 @@
           "teams": null,
           "manualOverrides": "seasons/2026/promotion-relegation/manual-match-overrides.json",
           "teamStats": null,
+          "periodRules": null,
           "teamIds": []
         },
         {
@@ -136,6 +158,7 @@
           "teams": "seasons/2026/championship/teams.json",
           "manualOverrides": "seasons/2026/championship/manual-match-overrides.json",
           "teamStats": null,
+          "periodRules": null,
           "dataAvailable": true,
           "teamIds": [
             "ipu",
@@ -181,6 +204,7 @@
           "teams": "seasons/2026/rookie/teams.json",
           "manualOverrides": "seasons/2026/rookie/manual-match-overrides.json",
           "teamStats": null,
+          "periodRules": null,
           "dataAvailable": true,
           "teamIds": [
             "okayama",
@@ -219,6 +243,16 @@
           "teams": "seasons/2026/i-league/div1/teams.json",
           "manualOverrides": "seasons/2026/i-league/div1/manual-match-overrides.json",
           "teamStats": "seasons/2026/i-league/div1/team-stats.json",
+          "periodRules": {
+            "first": {
+              "fromRound": 1,
+              "toRound": 7
+            },
+            "second": {
+              "fromRound": 8,
+              "toRound": 99
+            }
+          },
           "dataAvailable": true,
           "teamIds": [
             "i-league-2026-ipu-a",
@@ -250,6 +284,16 @@
           "teams": "seasons/2026/i-league/div2/teams.json",
           "manualOverrides": "seasons/2026/i-league/div2/manual-match-overrides.json",
           "teamStats": "seasons/2026/i-league/div2/team-stats.json",
+          "periodRules": {
+            "first": {
+              "fromRound": 1,
+              "toRound": 5
+            },
+            "second": {
+              "fromRound": 6,
+              "toRound": 99
+            }
+          },
           "dataAvailable": true,
           "teamIds": [
             "i-league-2026-ipu-b",
@@ -279,6 +323,7 @@
           "teams": null,
           "manualOverrides": "seasons/2026/i-league/playoff/manual-match-overrides.json",
           "teamStats": null,
+          "periodRules": null,
           "teamIds": []
         }
       ]
@@ -306,6 +351,16 @@
           "teams": null,
           "manualOverrides": "seasons/2025/manual-match-overrides.json",
           "teamStats": "seasons/2025/team-stats.json",
+          "periodRules": {
+            "first": {
+              "fromRound": 1,
+              "toRound": 9
+            },
+            "second": {
+              "fromRound": 10,
+              "toRound": 18
+            }
+          },
           "teamIds": [
             "ipu",
             "shunan-public",
@@ -338,6 +393,16 @@
           "teams": null,
           "manualOverrides": "seasons/2025/div2/manual-match-overrides.json",
           "teamStats": "seasons/2025/div2/team-stats.json",
+          "periodRules": {
+            "first": {
+              "fromRound": 1,
+              "toRound": 9
+            },
+            "second": {
+              "fromRound": 10,
+              "toRound": 18
+            }
+          },
           "teamIds": [
             "shimonoseki-city",
             "kibi-international",
@@ -370,6 +435,7 @@
           "teams": null,
           "manualOverrides": "seasons/2025/div2/playoff/manual-match-overrides.json",
           "teamStats": null,
+          "periodRules": null,
           "teamIds": [
             "hiroshima-international",
             "tottori",
@@ -396,6 +462,7 @@
           "teams": null,
           "manualOverrides": "seasons/2025/promotion-relegation/manual-match-overrides.json",
           "teamStats": null,
+          "periodRules": null,
           "teamIds": [
             "kawasaki-medical-welfare",
             "okayama",
@@ -422,6 +489,7 @@
           "teams": "seasons/2025/i-league/playoff/teams.json",
           "manualOverrides": "seasons/2025/i-league/playoff/upper/manual-match-overrides.json",
           "teamStats": null,
+          "periodRules": null,
           "teamIds": [
             "i-league-2025-ipu-a",
             "i-league-2025-ipu-b",
@@ -450,6 +518,7 @@
           "teams": "seasons/2025/i-league/playoff/teams.json",
           "manualOverrides": "seasons/2025/i-league/playoff/lower/manual-match-overrides.json",
           "teamStats": null,
+          "periodRules": null,
           "teamIds": [
             "i-league-2025-ipu-c",
             "i-league-2025-fukuyama-b",
@@ -487,6 +556,16 @@
           "teams": null,
           "manualOverrides": "seasons/2024/manual-match-overrides.json",
           "teamStats": "seasons/2024/team-stats.json",
+          "periodRules": {
+            "first": {
+              "fromRound": 1,
+              "toRound": 9
+            },
+            "second": {
+              "fromRound": 10,
+              "toRound": 18
+            }
+          },
           "teamIds": [
             "ipu",
             "yamaguchi",
@@ -519,6 +598,16 @@
           "teams": null,
           "manualOverrides": "seasons/2024/div2/manual-match-overrides.json",
           "teamStats": "seasons/2024/div2/team-stats.json",
+          "periodRules": {
+            "first": {
+              "fromRound": 1,
+              "toRound": 9
+            },
+            "second": {
+              "fromRound": 10,
+              "toRound": 18
+            }
+          },
           "teamIds": [
             "tottori",
             "onomichi-city",
@@ -551,6 +640,7 @@
           "teams": null,
           "manualOverrides": "seasons/2024/div2/playoff/manual-match-overrides.json",
           "teamStats": null,
+          "periodRules": null,
           "teamIds": [
             "hiroshima-international",
             "tottori",

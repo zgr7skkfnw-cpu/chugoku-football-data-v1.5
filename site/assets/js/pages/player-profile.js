@@ -30,19 +30,28 @@ export function renderPlayerProfilePage({
   selectedPlayerTab = "profile",
   selectedCompetitionId = null,
   selectedSeason = 2026,
+  seasonPeriod = "all",
+  competitionDefinitions = [],
 }) {
   const player = getPlayer(playerDirectory, currentPlayerId);
   const sourceStats = player ? playerStatistics?.get(player.id) : null;
   const competitionId = player && sourceStats
     ? resolvePlayerCompetitionId(player, sourceStats, selectedCompetitionId, selectedSeason, matches)
     : null;
+  const competition = competitionDefinitions.find((entry) => entry.id === competitionId);
+  const supportsPeriods = isRegularLeagueWithPeriods(competition)
+    && sourceStats.matches.some((match) =>
+      match.season === selectedSeason
+      && match.competitionId === competitionId
+      && ["first", "second"].includes(match.period));
+  const selectedPeriod = supportsPeriods ? seasonPeriod : "all";
   const scopedStatistics = player && competitionId
     ? selectPlayerStatisticsCompetition(playerStatistics, {
       season: selectedSeason,
       competitionId,
       teamId: player.teamId,
       playerRegistrationId: player.id,
-      period: "all",
+      period: selectedPeriod,
     })
     : new Map();
   const stats = player ? scopedStatistics.get(player.id) : null;
@@ -89,7 +98,7 @@ export function renderPlayerProfilePage({
     ]),
     stats: element("div", { className: "section-stack" }, [
       registrationSwitch(),
-      createPlayerStatsTab(player, stats, players, playerStatistics, matches, competitionId, selectedSeason),
+      createPlayerStatsTab(player, stats, players, playerStatistics, matches, competitionId, selectedSeason, selectedPeriod),
     ]),
   }[selectedPlayerTab] ?? null;
   return element(
@@ -143,7 +152,8 @@ export function renderPlayerProfilePage({
         ]),
       ]),
       element("div", { className: "section-stack" }, [
-        createPlayerTabs(player, selectedPlayerTab, competitionId, selectedSeason),
+        createPlayerTabs(player, selectedPlayerTab, competitionId, selectedSeason, selectedPeriod),
+        supportsPeriods ? createPlayerPeriodTabs(player, selectedPlayerTab, competitionId, selectedSeason, selectedPeriod) : null,
         element("section", { className: "profile-tab-panel", attributes: { role: "tabpanel", tabindex: "0" } }, [tabContent]),
       ]),
     ],
@@ -445,16 +455,16 @@ function createRegistrationSummary(registrations, statistics, teamDirectory, act
   }));
 }
 
-function createPlayerTabs(player, active, competitionId, season) {
+function createPlayerTabs(player, active, competitionId, season, period) {
   const tabs = [["profile", "プロフィール"], ["matches", "試合"], ["stats", "スタッツ"]];
   const list = element("nav", { className: "profile-tabs player-detail-tabs", attributes: { role: "tablist", "aria-label": "選手詳細" } },
     tabs.map(([key, label]) => element("a", {
       className: `profile-tab${active === key ? " is-active" : ""}`,
       text: label,
       attributes: {
-        href: routeHref("player", { playerId: player.id, playerTab: key, competitionId, season }),
+        href: routeHref("player", { playerId: player.id, playerTab: key, competitionId, season, period }),
         "data-route": "player", "data-player-id": player.id, "data-player-tab": key,
-        "data-competition-id": competitionId ?? "", "data-season": season, role: "tab",
+        "data-competition-id": competitionId ?? "", "data-season": season, "data-period": period, role: "tab",
         "aria-selected": String(active === key), tabindex: active === key ? "0" : "-1",
       },
     })));
@@ -466,6 +476,36 @@ function createPlayerTabs(player, active, competitionId, season) {
     event.preventDefault(); next.focus(); next.click();
   });
   return list;
+}
+
+function createPlayerPeriodTabs(player, playerTab, competitionId, season, activePeriod) {
+  return element("nav", {
+    className: "chip-row player-period-tabs",
+    attributes: { role: "tablist", "aria-label": "選手成績の期間" },
+  }, [["all", "通年"], ["first", "前期"], ["second", "後期"]].map(([period, label]) => element("a", {
+    className: `filter-chip${period === activePeriod ? " is-active" : ""}`,
+    text: label,
+    attributes: {
+      href: routeHref("player", { playerId: player.id, playerTab, competitionId, season, period }),
+      "data-route": "player",
+      "data-player-id": player.id,
+      "data-player-tab": playerTab,
+      "data-competition-id": competitionId,
+      "data-season": season,
+      "data-period": period,
+      role: "tab",
+      "aria-selected": String(period === activePeriod),
+    },
+  })));
+}
+
+function isRegularLeagueWithPeriods(competition) {
+  const rules = competition?.periodRules;
+  return competition?.stage === "regular"
+    && [1, 2].includes(competition?.division)
+    && !competition.id?.includes("i-league")
+    && ["first", "second"].every((period) =>
+      Number.isInteger(rules?.[period]?.fromRound) && Number.isInteger(rules?.[period]?.toRound));
 }
 
 function createProfileBasics(player) {
@@ -503,7 +543,7 @@ function createPlayerTrophies() {
   return createNotice("保存済みデータには、この登録へ安全に紐付けられる個人タイトル情報がありません。チームタイトルはチーム詳細で確認できます。");
 }
 
-function createPlayerStatsTab(player, stats, players, allStatistics, matches, competitionId, season) {
+function createPlayerStatsTab(player, stats, players, allStatistics, matches, competitionId, season, period) {
   const wrap = element("div", {
     className: "section-stack player-stats-tab",
     attributes: {
@@ -522,7 +562,7 @@ function createPlayerStatsTab(player, stats, players, allStatistics, matches, co
     }
     body.replaceChildren(
       createPanel("基本スタッツ", createBasicSix(stats, per90), per90 ? "90分あたり" : "合計"),
-      createPanel("ポジション内パーセンタイル", createPercentiles(player, stats, players, allStatistics, competitionId, season), "同大会・同ポジション比較 / 90分以上"),
+      createPanel("ポジション内パーセンタイル", createPercentiles(player, stats, players, allStatistics, competitionId, season, period), "同大会・同ポジション比較 / 90分以上"),
       createPanel("シーズンパフォーマンス", createSeasonPerformance(stats), "選択中の登録"),
       createPanel("シュート", createShootingStats(player, stats, matches, per90), "公式掲載試合のみ"),
       createPanel("アシスト", metricCards([["アシスト", formatMetric(stats.assists, stats.minutes, per90)]]), per90 ? "90分あたり" : "合計"),
@@ -551,7 +591,7 @@ function createSeasonPerformance(stats) { return metricCards([["出場", stats.a
 function metricCards(values) { return element("div", { className: "player-stat-six-grid" }, values.map(([label, value]) => element("div", { className: "player-stat" }, [element("strong", { text: String(value) }), element("span", { text: label })]))); }
 function formatMetric(value, minutes, per90) { return per90 ? (minutes > 0 ? (value * 90 / minutes).toFixed(2) : "－") : value; }
 
-function createPercentiles(player, stats, players, allStatistics, competitionId, season) {
+function createPercentiles(player, stats, players, allStatistics, competitionId, season, period) {
   const MIN_MINUTES = 90;
   const MIN_PLAYERS = 5;
   const position = String(player.position ?? "").match(/GK|DF|MF|FW/)?.[0];
@@ -560,7 +600,7 @@ function createPercentiles(player, stats, players, allStatistics, competitionId,
     competitionId,
     teamId: candidate.teamId,
     playerRegistrationId: candidate.id,
-    period: "all",
+    period,
   }).get(candidate.id)).filter((candidate) =>
     candidate
     && String(candidate.player.position ?? "").includes(position)

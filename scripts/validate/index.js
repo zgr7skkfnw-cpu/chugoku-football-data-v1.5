@@ -53,7 +53,12 @@ const teamCatalog = teamCatalogData.items ?? [];
 const profilesById = new Map(teams.map((team) => [team.id, team]));
 const teamDirectory = createTeamDirectory(teamCatalog.map((team) => ({ ...team, ...(profilesById.get(team.id) ?? {}) })));
 const playerDirectory = createPlayerDirectory(players);
-const matches = linkMatchesToTeams(matchesData.items ?? [], teamDirectory);
+const division1PeriodRules = seasonData.competitions.find((competition) =>
+  competition.id === matchesData.seasonId)?.periodRules ?? null;
+const matches = linkMatchesToTeams((matchesData.items ?? []).map((match) => ({
+  ...match,
+  periodRules: division1PeriodRules,
+})), teamDirectory);
 const catalogIds = new Set(teamCatalog.map((team) => team.id));
 const catalogNames = new Map();
 const competitionTeamNames = new Map();

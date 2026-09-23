@@ -109,6 +109,7 @@ function aggregateMatchSide({ match, side, directory, statistics }) {
         assists: 0,
         yellowCards: 0,
         redCards: 0,
+        cleanSheets: 0,
         fullAppearance: false,
       });
     }
@@ -159,7 +160,9 @@ function aggregateMatchSide({ match, side, directory, statistics }) {
     incrementStat(stats, period, "substitutionsOn", onEvent ? 1 : 0);
     incrementStat(stats, period, "substitutionsOff", offEvent ? 1 : 0);
     incrementStat(stats, period, "fullAppearances", entry.fullAppearance ? 1 : 0);
-    incrementStat(stats, period, "cleanSheets", stats.player.position === "GK" && Number(otherTeam?.score) === 0 ? 1 : 0);
+    const cleanSheet = stats.player.position === "GK" && Number(otherTeam?.score) === 0;
+    incrementStat(stats, period, "cleanSheets", cleanSheet ? 1 : 0);
+    entry.cleanSheets = cleanSheet ? 1 : 0;
   }
 
   for (const goal of (match.goals ?? []).filter((event) => event.teamName === lineup.teamName)) {
@@ -248,6 +251,7 @@ function accumulateMatchEntry(totals, entry) {
   totals.assists += Number(entry.assists) || 0;
   totals.yellowCards += Number(entry.yellowCards) || 0;
   totals.redCards += Number(entry.redCards) || 0;
+  totals.cleanSheets += Number(entry.cleanSheets) || 0;
   totals.benchSelections += entry.benchSelected ? 1 : 0;
   totals.fullAppearances += entry.fullAppearance ? 1 : 0;
   totals.substitutionsOn += entry.substitutionOn ? 1 : 0;
@@ -276,10 +280,15 @@ function incrementStat(stats, period, key, amount = 1) {
   if (period) stats.periods[period][key] += amount;
 }
 
-function getSeasonPeriod(match) {
+export function getSeasonPeriod(match) {
   const round = Number(match.round);
-  if (!Number.isInteger(round)) return null;
-  return round <= 9 ? "first" : "second";
+  if (!Number.isInteger(round) || !match.periodRules) return null;
+  for (const period of ["first", "second"]) {
+    const rule = match.periodRules[period];
+    if (Number.isInteger(rule?.fromRound) && Number.isInteger(rule?.toRound)
+      && round >= rule.fromRound && round <= rule.toRound) return period;
+  }
+  return null;
 }
 
 function playerKey(teamId, name) {

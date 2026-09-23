@@ -30,11 +30,12 @@ function readRouteFromUrl() {
     playerTab: view === "player" ? normalizePlayerTab(url.searchParams.get("tab")) : "profile",
     competitionId: url.searchParams.get("competition") || null,
     season: Number.parseInt(url.searchParams.get("season"), 10) || null,
+    period: normalizeSeasonPeriod(url.searchParams.get("period")),
     date: /^\d{4}-\d{2}-\d{2}$/.test(url.searchParams.get("date") ?? "") ? url.searchParams.get("date") : null,
   };
 }
 
-export function routeHref(view, { matchId = null, matchTab = null, teamId = null, teamTab = null, playerId = null, playerTab = null, competitionId = null, season = null, date = null } = {}) {
+export function routeHref(view, { matchId = null, matchTab = null, teamId = null, teamTab = null, playerId = null, playerTab = null, competitionId = null, season = null, period = "all", date = null } = {}) {
   const url = new URL(window.location.href);
   url.search = "";
 
@@ -58,19 +59,20 @@ export function routeHref(view, { matchId = null, matchTab = null, teamId = null
   }
   if (competitionId) url.searchParams.set("competition", competitionId);
   if (season) url.searchParams.set("season", String(season));
+  if (view === "player" && normalizeSeasonPeriod(period) !== "all") url.searchParams.set("period", normalizeSeasonPeriod(period));
   if (view === "home" && date) url.searchParams.set("date", date);
 
   return `${url.pathname}${url.search}`;
 }
 
-export function navigate(view, { replace = false, matchId = null, matchTab = null, teamId = null, teamTab = null, playerId = null, playerTab = null, competitionId = null, season = null, date = null } = {}) {
+export function navigate(view, { replace = false, matchId = null, matchTab = null, teamId = null, teamTab = null, playerId = null, playerTab = null, competitionId = null, season = null, period = "all", date = null } = {}) {
   const nextView = Object.hasOwn(routes, view) ? view : "home";
   const method = replace ? "replaceState" : "pushState";
   if (!replace) window.history.replaceState({ ...(window.history.state ?? {}), scrollY: window.scrollY }, "", window.location.href);
   window.history[method](
     { view: nextView, matchId, matchTab, teamId, teamTab, playerId, playerTab, competitionId, season, scrollY: 0 },
     "",
-    routeHref(nextView, { matchId, matchTab, teamId, teamTab, playerId, playerTab, competitionId, season, date }),
+    routeHref(nextView, { matchId, matchTab, teamId, teamTab, playerId, playerTab, competitionId, season, period, date }),
   );
   setState({
     currentView: nextView,
@@ -80,6 +82,7 @@ export function navigate(view, { replace = false, matchId = null, matchTab = nul
     currentPlayerId: nextView === "player" ? playerId : null,
     selectedTeamTab: nextView === "team" ? normalizeTeamTab(teamTab) : "overview",
     selectedPlayerTab: nextView === "player" ? normalizePlayerTab(playerTab) : "profile",
+    ...(nextView === "player" ? { seasonPeriod: normalizeSeasonPeriod(period) } : {}),
     ...(["team", "player"].includes(nextView) ? { selectedCompetitionId: competitionId ?? null } : competitionId ? { selectedCompetitionId: competitionId } : {}),
     ...(season ? { selectedSeason: season } : {}),
     ...(nextView === "home" ? { selectedDate: date } : {}),
@@ -98,6 +101,7 @@ export function initializeRouter() {
     playerTab: initialRoute.playerTab,
     competitionId: initialRoute.competitionId,
     season: initialRoute.season,
+    period: initialRoute.period,
     date: initialRoute.date,
   });
 
@@ -111,6 +115,7 @@ export function initializeRouter() {
       currentPlayerId: route.playerId,
       selectedTeamTab: route.teamTab,
       selectedPlayerTab: route.playerTab,
+      ...(route.view === "player" ? { seasonPeriod: route.period } : {}),
       ...(["team", "player"].includes(route.view) ? { selectedCompetitionId: route.competitionId ?? null } : route.competitionId ? { selectedCompetitionId: route.competitionId } : {}),
       ...(route.season ? { selectedSeason: route.season } : {}),
       ...(route.view === "home" ? { selectedDate: route.date } : {}),
@@ -139,6 +144,7 @@ export function initializeRouter() {
       playerTab: routeLink.dataset.playerTab ?? null,
       competitionId: routeLink.dataset.competitionId ?? null,
       season: Number.parseInt(routeLink.dataset.season, 10) || null,
+      period: routeLink.dataset.period ?? "all",
     });
   });
 }
@@ -153,4 +159,8 @@ function normalizeTeamTab(value) {
 
 function normalizePlayerTab(value) {
   return ["profile", "matches", "stats"].includes(value) ? value : "profile";
+}
+
+function normalizeSeasonPeriod(value) {
+  return ["first", "second"].includes(value) ? value : "all";
 }
