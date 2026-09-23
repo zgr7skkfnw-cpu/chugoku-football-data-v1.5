@@ -107,10 +107,16 @@ for (const competition of [
 }
 
 for (const width of [320, 375, 390, 430]) {
-  test(`${width}pxで期間切り替えが画面外へはみ出さない`, async ({ page }) => {
+  test(`${width}pxで期間切り替えを操作でき画面外へはみ出さない`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto(playerUrl(DIV1_PLAYER, DIV1));
     await expect(page.locator(".player-period-tabs")).toBeVisible();
+    await page.getByRole("tab", { name: "前期" }).click();
+    await expect(page).toHaveURL(/period=first/);
+    await expect(currentStats(page)).toContainText("810分");
+    await page.getByRole("tab", { name: "後期" }).click();
+    await expect(page).toHaveURL(/period=second/);
+    await expect(currentStats(page)).toContainText("450分");
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
   });
 }
