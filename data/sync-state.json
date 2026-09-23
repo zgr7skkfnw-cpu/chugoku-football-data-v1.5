@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "lastRunAt": "2026-09-23T10:07:04.851Z",
+  "lastRunAt": "2026-09-23T11:37:12.064Z",
   "status": "success",
-  "trigger": "local",
+  "trigger": "workflow_dispatch",
   "competitions": [
     {
       "competitionId": "jufa-chugoku-2026-division-1",
@@ -13,7 +13,7 @@
       "scheduledMatches": 22,
       "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 11913
+      "durationMs": 13564
     },
     {
       "competitionId": "jufa-chugoku-2026-division-2",
@@ -22,9 +22,9 @@
       "detectedMatches": 110,
       "finishedMatches": 79,
       "scheduledMatches": 31,
-      "changedMatches": 1,
+      "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 13232
+      "durationMs": 14484
     },
     {
       "competitionId": "jufa-chugoku-2026-rookie-tournament",
@@ -35,7 +35,7 @@
       "scheduledMatches": 0,
       "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 5066
+      "durationMs": 6091
     },
     {
       "competitionId": "jufa-chugoku-2026-i-league-division-1",
@@ -46,7 +46,7 @@
       "scheduledMatches": 4,
       "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 4785
+      "durationMs": 6098
     },
     {
       "competitionId": "jufa-chugoku-2026-i-league-division-2",
@@ -57,19 +57,18 @@
       "scheduledMatches": 3,
       "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 3078
+      "durationMs": 3813
     },
     {
       "competitionId": "jufa-chugoku-2026-championship",
       "name": "2026年中国大学サッカー選手権",
-      "status": "skipped",
-      "reason": "終了済み大会のため、定期実行は週1回（日曜）です",
-      "detectedMatches": 0,
-      "finishedMatches": 0,
+      "status": "success",
+      "detectedMatches": 22,
+      "finishedMatches": 22,
       "scheduledMatches": 0,
-      "changedMatches": 0,
+      "changedMatches": 22,
       "failedGameIds": [],
-      "durationMs": 0
+      "durationMs": 5342
     },
     {
       "competitionId": "jufa-chugoku-2026-division-1-promotion-playoff",

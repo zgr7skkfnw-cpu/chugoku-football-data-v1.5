@@ -3,12 +3,12 @@
   "seasonId": "jufa-chugoku-2026-championship",
   "stage": "championship",
   "competitionName": "2026年度（第50回）中国大学サッカー選手権",
-  "updatedAt": "2026-07-21T08:20:31.248Z",
+  "updatedAt": "2026-09-23T11:37:11.845Z",
   "source": {
     "pageUrl": "https://jufa-chugoku.jp/result/2026/tid_563/",
     "iframeUrl": "https://football-system.jp/fss/pub_taikaigamelist.php?lid=bZG1exEZuBo=",
     "detailPostUrl": "https://football-system.jp/fss/pubGameResultConf.php",
-    "retrievedAt": "2026-07-21T08:20:31.248Z"
+    "retrievedAt": "2026-09-23T11:37:11.845Z"
   },
   "scheduleCount": 22,
   "matchCount": 22,
@@ -282,6 +282,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 1,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 9,
+          "offsides": 2,
+          "shots": 5
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 2,
+          "offsides": 9,
+          "shots": 14
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]福田 尊 [in]吉岡 想空",
@@ -622,6 +638,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 9,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 0,
+          "offsides": 1,
+          "shots": 18
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 2,
+          "indirectFreeKicks": 2,
+          "offsides": 3,
+          "shots": 8
+        }
+      },
       "substitutions": {
         "home": [
           "64 分 [out]三宅 優輝 [in]天道 朝皐"
@@ -1006,6 +1038,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 0,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 7,
+          "offsides": 1,
+          "shots": 1
+        },
+        "away": {
+          "cornerKicks": 7,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 1,
+          "offsides": 7,
+          "shots": 30
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]小林 絢人 [in]久我 隼士"
@@ -1543,6 +1591,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 7,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 0,
+          "offsides": 0,
+          "shots": 20
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 11,
+          "indirectFreeKicks": 7,
+          "offsides": 7,
+          "shots": 7
+        }
+      },
       "substitutions": {
         "home": [
           "53 分 [out]井戸 一総 [in]高村 悠悟",
@@ -1935,6 +1999,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 2,
+          "offsides": 2,
+          "shots": 8
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 2,
+          "offsides": 2,
+          "shots": 12
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]間野 稜汰 [in]海士部 琉衣",
@@ -2320,6 +2400,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 9,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 1,
+          "offsides": 2,
+          "shots": 35
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 2,
+          "offsides": 1,
+          "shots": 3
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]藤原 陸 [in]大塚 唯泰",
@@ -2691,6 +2787,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 6,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 0,
+          "offsides": 4,
+          "shots": 43
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 4,
+          "offsides": 0,
+          "shots": 3
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]若尾 以心 [in]中村 成那",
@@ -3290,6 +3402,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 2,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 3,
+          "offsides": 6,
+          "shots": 12
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 8,
+          "indirectFreeKicks": 6,
+          "offsides": 3,
+          "shots": 6
+        }
+      },
       "substitutions": {
         "home": [
           "66 分 [out]中桐 文太 [in]政安 大輝",
@@ -3683,6 +3811,22 @@
       "penaltyShootout": {
         "home": 4,
         "away": 5
+      },
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 5,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 1,
+          "offsides": 2,
+          "shots": 3
+        },
+        "away": {
+          "cornerKicks": 8,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 2,
+          "offsides": 1,
+          "shots": 7
+        }
       },
       "substitutions": {
         "home": [
@@ -4086,6 +4230,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 1,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 5,
+          "offsides": 5,
+          "shots": 6
+        },
+        "away": {
+          "cornerKicks": 7,
+          "directFreeKicks": 8,
+          "indirectFreeKicks": 1,
+          "offsides": 1,
+          "shots": 7
+        }
+      },
       "substitutions": {
         "home": [
           "62 分 [out]三島 康志 [in]浅野 神陸",
@@ -4432,6 +4592,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 7,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 0,
+          "offsides": 0,
+          "shots": 47
+        },
+        "away": {
+          "cornerKicks": 0,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 2,
+          "offsides": 2,
+          "shots": 5
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]今村 真仁 [in]又野 寛太",
@@ -5069,6 +5245,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 0,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 9
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 0,
+          "offsides": 0,
+          "shots": 10
+        }
+      },
       "substitutions": {
         "home": [
           "59 分 [out]梶原 大晴 [in]河野 風太",
@@ -5442,6 +5634,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 7,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 1,
+          "offsides": 3,
+          "shots": 10
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 3,
+          "offsides": 1,
+          "shots": 11
+        }
+      },
       "substitutions": {
         "home": [
           "58 分 [out]宮本 浩希 [in]西本 竣亮",
@@ -5791,6 +5999,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 0,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 3,
+          "offsides": 2,
+          "shots": 5
+        },
+        "away": {
+          "cornerKicks": 7,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 2,
+          "offsides": 3,
+          "shots": 12
+        }
+      },
       "substitutions": {
         "home": [],
         "away": [
@@ -6176,6 +6400,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 0,
+          "offsides": 0,
+          "shots": 28
+        },
+        "away": {
+          "cornerKicks": 0,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 1,
+          "offsides": 0,
+          "shots": 2
+        }
+      },
       "substitutions": {
         "home": [
           "68 分 [out]田村 琥良馬 [in]津川 侑和",
@@ -6805,6 +7045,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 6,
+          "directFreeKicks": 9,
+          "indirectFreeKicks": 0,
+          "offsides": 1,
+          "shots": 12
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 8,
+          "indirectFreeKicks": 0,
+          "offsides": 0,
+          "shots": 3
+        }
+      },
       "substitutions": {
         "home": [
           "41 分 [out]最上 尚哉 [in]出原 琉羽",
@@ -7167,6 +7423,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 1,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 0,
+          "offsides": 0,
+          "shots": 6
+        },
+        "away": {
+          "cornerKicks": 8,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 0,
+          "offsides": 5,
+          "shots": 14
+        }
+      },
       "substitutions": {
         "home": [
           "67 分 [out]水畑 柊志 [in]田村 隼人",
@@ -7514,6 +7786,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 1,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 3
+        },
+        "away": {
+          "cornerKicks": 5,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 11
+        }
+      },
       "substitutions": {
         "home": [
           "HT [out]濵崎 隼太 [in]照本 虹大",
@@ -7888,6 +8176,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 12,
+          "indirectFreeKicks": 0,
+          "offsides": 2,
+          "shots": 17
+        },
+        "away": {
+          "cornerKicks": 0,
+          "directFreeKicks": 8,
+          "indirectFreeKicks": 2,
+          "offsides": 0,
+          "shots": 3
+        }
+      },
       "substitutions": {
         "home": [
           "56 分 [out]山並 仁貴 [in]若尾 以心",
@@ -8373,6 +8677,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 13,
+          "indirectFreeKicks": 2,
+          "offsides": 0,
+          "shots": 12
+        },
+        "away": {
+          "cornerKicks": 1,
+          "directFreeKicks": 7,
+          "indirectFreeKicks": 2,
+          "offsides": 1,
+          "shots": 7
+        }
+      },
       "substitutions": {
         "home": [
           "56 分 [out]橋本 亮太 [in]出原 琉羽",
@@ -8731,6 +9051,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 0,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 5,
+          "offsides": 5,
+          "shots": 1
+        },
+        "away": {
+          "cornerKicks": 9,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 2,
+          "offsides": 2,
+          "shots": 19
+        }
+      },
       "substitutions": {
         "home": [
           "57 分 [out]原田 大成 [in]中ノ瀬 健充",
@@ -9224,6 +9560,22 @@
         }
       ],
       "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 4,
+          "directFreeKicks": 6,
+          "indirectFreeKicks": 0,
+          "offsides": 1,
+          "shots": 30
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 1,
+          "offsides": 0,
+          "shots": 5
+        }
+      },
       "substitutions": {
         "home": [
           "53 分 [out]久保 公斗 [in]若尾 以心",
