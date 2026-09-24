@@ -10,6 +10,8 @@
   "scripts": {
     "dev": "http-server site -p 4173 -c-1",
     "sync": "node scripts/sync/sync-results.mjs",
+    "poll:results": "node scripts/sync/poll-results.mjs",
+    "test:poll": "node --test tests/result-list-poll.test.mjs",
     "sync:div2": "node scripts/sync/sync-results.mjs --target=2026-2",
     "sync:2025:div1": "node scripts/sync/sync-results.mjs --target=2025-1",
     "sync:2025:div2": "node scripts/sync/sync-results.mjs --target=2025-2",

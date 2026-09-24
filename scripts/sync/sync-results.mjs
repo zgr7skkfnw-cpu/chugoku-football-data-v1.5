@@ -1,5 +1,4 @@
 import { copyFile, mkdir, mkdtemp, readFile, rename, rm, writeFile } from "node:fs/promises";
-import { createHash } from "node:crypto";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -11,189 +10,15 @@ import { buildTeamStats } from "../build/build-team-stats.mjs";
 import { buildHeadToHead } from "../build/build-head-to-head.mjs";
 import { buildSeasonIndex } from "../build/build-season-index.mjs";
 import { fetchTextWithRetry } from "./http-retry.mjs";
+import {
+  cleanResultText,
+  extractResultIframeUrl,
+  parseResultListHtml,
+  resultInteger,
+} from "./result-list.mjs";
+import { RESULT_TARGETS } from "./result-targets.mjs";
 
-const TARGETS = {
-  "2024-1": {
-    season: 2024,
-    division: 1,
-    competitionId: "jufa-chugoku-2024-division-1",
-    stage: "regular",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2024/tid_485/",
-    outputPath: "../../site/data/seasons/2024/matches.json",
-    minimumScheduleCount: 44,
-    minimumDetailCount: 44,
-    allowIncompleteLineups: true,
-    buildStats: true,
-  },
-  "2024-2": {
-    season: 2024,
-    division: 2,
-    competitionId: "jufa-chugoku-2024-division-2",
-    stage: "regular",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2024/tid_486/",
-    outputPath: "../../site/data/seasons/2024/div2/matches.json",
-    minimumScheduleCount: 44,
-    minimumDetailCount: 44,
-    allowIncompleteLineups: true,
-    buildStats: true,
-  },
-  "2024-2-playoff": {
-    season: 2024,
-    division: 2,
-    competitionId: "jufa-chugoku-2024-division-2-playoff",
-    stage: "division-2-playoff",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2024/tid_508/",
-    outputPath: "../../site/data/seasons/2024/div2/playoff/matches.json",
-    minimumScheduleCount: 3,
-    minimumDetailCount: 3,
-    allowIncompleteLineups: true,
-    buildStats: false,
-  },
-  "2025-1": {
-    season: 2025,
-    division: 1,
-    competitionId: "jufa-chugoku-2025-division-1",
-    stage: "regular",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2025/tid_516/",
-    outputPath: "../../site/data/seasons/2025/matches.json",
-    minimumScheduleCount: 44,
-    minimumDetailCount: 44,
-    allowIncompleteLineups: true,
-    buildStats: true,
-  },
-  "2025-2": {
-    season: 2025,
-    division: 2,
-    competitionId: "jufa-chugoku-2025-division-2",
-    stage: "regular",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2025/tid_517/",
-    outputPath: "../../site/data/seasons/2025/div2/matches.json",
-    minimumScheduleCount: 44,
-    minimumDetailCount: 44,
-    allowIncompleteLineups: true,
-    buildStats: true,
-  },
-  "2025-2-playoff": {
-    season: 2025,
-    division: 2,
-    competitionId: "jufa-chugoku-2025-division-2-playoff",
-    stage: "division-2-playoff",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2025/tid_546/",
-    outputPath: "../../site/data/seasons/2025/div2/playoff/matches.json",
-    minimumScheduleCount: 3,
-    minimumDetailCount: 3,
-    allowIncompleteLineups: true,
-    buildStats: false,
-  },
-  "2025-promotion-relegation": {
-    season: 2025,
-    division: null,
-    competitionId: "jufa-chugoku-2025-promotion-relegation",
-    stage: "promotion-relegation",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2025/tid_547/",
-    outputPath: "../../site/data/seasons/2025/promotion-relegation/matches.json",
-    minimumScheduleCount: 2,
-    minimumDetailCount: 2,
-    allowIncompleteLineups: true,
-    buildStats: false,
-  },
-  "2026-1": {
-    season: 2026,
-    division: 1,
-    competitionId: "jufa-chugoku-2026-division-1",
-    stage: "regular",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2026/tid_558/",
-    outputPath: "../../site/data/seasons/2026/matches.json",
-    minimumScheduleCount: 44,
-    minimumDetailCount: 44,
-    allowIncompleteLineups: false,
-    buildStats: true,
-  },
-  "2026-2": {
-    season: 2026,
-    division: 2,
-    competitionId: "jufa-chugoku-2026-division-2",
-    stage: "regular",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2026/tid_559/",
-    outputPath: "../../site/data/seasons/2026/div2/matches.json",
-    minimumScheduleCount: 55,
-    minimumDetailCount: 1,
-    allowIncompleteLineups: true,
-    buildStats: true,
-  },
-  "2026-i-league-1": {
-    season: 2026,
-    division: 1,
-    competitionId: "jufa-chugoku-2026-i-league-division-1",
-    stage: "i-league-regular",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2026/tid_566/",
-    outputPath: "../../site/data/seasons/2026/i-league/div1/matches.json",
-    minimumScheduleCount: 28,
-    minimumDetailCount: 1,
-    allowIncompleteLineups: true,
-    buildStats: false,
-  },
-  "2026-i-league-2": {
-    season: 2026,
-    division: 2,
-    competitionId: "jufa-chugoku-2026-i-league-division-2",
-    stage: "i-league-regular",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2026/tid_567/",
-    outputPath: "../../site/data/seasons/2026/i-league/div2/matches.json",
-    minimumScheduleCount: 15,
-    minimumDetailCount: 1,
-    allowIncompleteLineups: true,
-    buildStats: false,
-  },
-  "2026-championship": {
-    season: 2026,
-    division: null,
-    competitionId: "jufa-chugoku-2026-championship",
-    stage: "championship",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2026/tid_563/",
-    outputPath: "../../site/data/seasons/2026/championship/matches.json",
-    minimumScheduleCount: 22,
-    minimumDetailCount: 22,
-    allowIncompleteLineups: true,
-    buildStats: false,
-  },
-  "2026-rookie": {
-    season: 2026,
-    division: null,
-    competitionId: "jufa-chugoku-2026-rookie-tournament",
-    stage: "rookie-tournament",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2026/tid_575/",
-    outputPath: "../../site/data/seasons/2026/rookie/matches.json",
-    minimumScheduleCount: 1,
-    minimumDetailCount: 0,
-    allowIncompleteLineups: true,
-    buildStats: false,
-  },
-  "2025-i-league-upper-playoff": {
-    season: 2025,
-    division: null,
-    competitionId: "jufa-chugoku-2025-i-league-upper-playoff",
-    stage: "i-league-playoff-upper",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2025/tid_538/",
-    outputPath: "../../site/data/seasons/2025/i-league/playoff/upper/matches.json",
-    minimumScheduleCount: 5,
-    minimumDetailCount: 5,
-    allowIncompleteLineups: true,
-    buildStats: false,
-  },
-  "2025-i-league-lower-playoff": {
-    season: 2025,
-    division: null,
-    competitionId: "jufa-chugoku-2025-i-league-lower-playoff",
-    stage: "i-league-playoff-lower",
-    sourcePageUrl: "https://jufa-chugoku.jp/result/2025/tid_539/",
-    outputPath: "../../site/data/seasons/2025/i-league/playoff/lower/matches.json",
-    minimumScheduleCount: 8,
-    minimumDetailCount: 8,
-    allowIncompleteLineups: true,
-    buildStats: false,
-  },
-};
+const TARGETS = RESULT_TARGETS;
 const targetKey = process.argv.find((argument) => argument.startsWith("--target="))?.split("=")[1] ?? "2026-1";
 const target = TARGETS[targetKey];
 
@@ -216,12 +41,7 @@ const DIAGNOSTIC_TARGET_KEY = "2026-1";
 const USER_AGENT =
   "ChugokuFootballData/0.3 (results-sync; https://jufa-chugoku.jp/)";
 
-const cleanText = (value = "") =>
-  value
-    .replaceAll("\u3000", " ")
-    .replace(/[\t\r\n]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+const cleanText = cleanResultText;
 
 const isDiagnosticMatch = (match) =>
   targetKey === DIAGNOSTIC_TARGET_KEY && match?.gameId === DIAGNOSTIC_GAME_ID;
@@ -264,10 +84,7 @@ function logDiagnosticParsed(match) {
 ${substitutions.length ? substitutions.join("\n") : "substitutions=none"}`);
 }
 
-const toInteger = (value) => {
-  const match = cleanText(value).match(/-?\d+/);
-  return match ? Number.parseInt(match[0], 10) : null;
-};
+const toInteger = resultInteger;
 
 function assertAllowedUrl(value, { host, label }) {
   const url = new URL(value);
@@ -293,150 +110,11 @@ const fetchText = (context, url, options = {}) => {
 };
 
 function extractIframeUrl(pageHtml) {
-  const $ = cheerio.load(pageHtml);
-  const iframeSource = $("iframe.score_h08").first().attr("src") ?? $("iframe").first().attr("src");
-
-  if (!iframeSource) {
-    throw new Error("JUFA中国ページにiframeが見つかりません");
-  }
-
-  return assertAllowedUrl(new URL(iframeSource, SOURCE_PAGE_URL), {
-    host: EXPECTED_IFRAME_HOST,
-    label: "iframe URL",
-  });
-}
-
-function parseScore(value) {
-  const match = cleanText(value).match(/(\d+)\s*-\s*(\d+)/);
-  return match
-    ? { home: Number.parseInt(match[1], 10), away: Number.parseInt(match[2], 10) }
-    : null;
-}
-
-function parseKickoffAt(dateText, timeText) {
-  const date = cleanText(dateText).match(/(\d{4})\/(\d{2})\/(\d{2})/);
-  const time = cleanText(timeText).match(/(\d{1,2}):(\d{2})/);
-
-  if (!date || !time) {
-    throw new Error(`試合日時を解析できません: ${dateText} ${timeText}`);
-  }
-
-  const [, year, month, day] = date;
-  const hour = time[1].padStart(2, "0");
-  return `${year}-${month}-${day}T${hour}:${time[2]}:00+09:00`;
+  return extractResultIframeUrl(pageHtml, SOURCE_PAGE_URL);
 }
 
 function parseListHtml(listHtml) {
-  const $ = cheerio.load(listHtml);
-  const tables = $("table.game_schedule");
-
-  if (!tables.length) {
-    throw new Error("football-system一覧にtable.game_scheduleが見つかりません");
-  }
-
-  const competitionName = cleanText($("table.head td.name").first().text());
-  const groupNames = $("table.head td.name").map((_, cell) => cleanText($(cell).text())).get();
-  const allScheduleRows = [];
-  tables.each((tableIndex, table) => {
-    $(table).find("tr").each((_, row) => {
-      const $row = $(row);
-      if (cleanText($row.find("td.team_home").text()) && cleanText($row.find("td.team_away").text())) {
-        allScheduleRows.push({ row, groupName: groupNames[tableIndex] || competitionName });
-      }
-    });
-  });
-  const matches = [];
-  const scheduledMatches = [];
-
-  allScheduleRows.forEach(({ row, groupName }, sourceOrder) => {
-    const $row = $(row);
-    const detailLink = $row.find("[onclick*='gamedetail']").first();
-    const onclick = detailLink.attr("onclick") ?? "";
-    const identifiers = onclick.match(
-      /gamedetail\s*\(\s*['"]?(\d+)['"]?\s*,\s*['"]?(\d+)['"]?\s*,\s*['"]?(\d+)['"]?\s*\)/i,
-    );
-
-    const round = toInteger($row.find("td.round").text());
-    const kickoffAt = parseKickoffAt(
-      $row.find("td.match_date").text(),
-      $row.find("td.match_time").text(),
-    );
-    const venue = cleanText($row.find("td.arena.pc").first().text()) || null;
-    const homeName = cleanText($row.find("td.team_home").text());
-    const awayName = cleanText($row.find("td.team_away").text());
-    const rowText = cleanText($row.text());
-    const scheduleStatus = rowText.includes("中止")
-      ? "cancelled"
-      : rowText.includes("延期")
-        ? "postponed"
-        : rowText.includes("中断")
-          ? "suspended"
-          : "scheduled";
-
-    // football-systemは結果詳細が公開された試合にだけgamedetailを付与する。
-    if (!identifiers) {
-      const stableKey = `${groupName}|${round}|${kickoffAt}|${homeName}|${awayName}`;
-      const digest = createHash("sha1").update(stableKey).digest("hex").slice(0, 12);
-      scheduledMatches.push({
-        id: `football-system-schedule-${digest}`,
-        gameId: null,
-        fedId: null,
-        taikaiHoldId: null,
-        sourceOrder,
-        competitionName: groupName,
-        groupName: groupNames.length > 1 ? groupName.replace(/^.*新人戦\s*/, "") : null,
-        roundLabel: groupNames.length > 1 ? `${groupName.replace(/^.*新人戦\s*/, "")} 第${round}節` : null,
-        penaltyShootout: null,
-        round,
-        kickoffAt,
-        venue,
-        status: scheduleStatus,
-        homeTeam: { name: homeName, score: null },
-        awayTeam: { name: awayName, score: null },
-      });
-      return;
-    }
-
-    const [, gameId, fedId, taikaiHoldId] = identifiers;
-    const score = parseScore($row.find("td.match_result").text());
-
-    if (!score) {
-      throw new Error(`game_id=${gameId} の一覧スコアを解析できません`);
-    }
-
-    matches.push({
-      id: `football-system-${fedId}-${taikaiHoldId}-${gameId}`,
-      gameId: Number.parseInt(gameId, 10),
-      fedId: Number.parseInt(fedId, 10),
-      taikaiHoldId: Number.parseInt(taikaiHoldId, 10),
-      sourceOrder,
-      competitionName: groupName,
-      groupName: groupNames.length > 1 ? groupName.replace(/^.*新人戦\s*/, "") : null,
-      round,
-      kickoffAt,
-      venue,
-      status: "finished",
-      homeTeam: {
-        name: homeName,
-        score: score.home,
-      },
-      awayTeam: {
-        name: awayName,
-        score: score.away,
-      },
-    });
-  });
-
-  if (allScheduleRows.length < MINIMUM_SCHEDULE_COUNT) {
-    throw new Error(`一覧の試合行が少なすぎます: ${allScheduleRows.length}件`);
-  }
-
-  return {
-    competitionName,
-    scheduleCount: allScheduleRows.length,
-    detailTargets: matches,
-    scheduledMatches,
-  };
+  return parseResultListHtml(listHtml, { minimumScheduleCount: MINIMUM_SCHEDULE_COUNT });
 }
 
 function valueAfterHeader($, tableSelector, label) {
