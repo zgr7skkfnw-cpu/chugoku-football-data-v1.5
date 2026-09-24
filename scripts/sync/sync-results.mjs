@@ -211,6 +211,8 @@ const MINIMUM_SCHEDULE_COUNT = target.minimumScheduleCount;
 const MINIMUM_DETAIL_COUNT = target.minimumDetailCount;
 const DETAIL_CONCURRENCY = 4;
 const REQUEST_TIMEOUT_MS = 45_000;
+const DIAGNOSTIC_GAME_ID = 25692;
+const DIAGNOSTIC_TARGET_KEY = "2026-1";
 const USER_AGENT =
   "ChugokuFootballData/0.3 (results-sync; https://jufa-chugoku.jp/)";
 
@@ -220,6 +222,47 @@ const cleanText = (value = "") =>
     .replace(/[\t\r\n]+/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+
+const isDiagnosticMatch = (match) =>
+  targetKey === DIAGNOSTIC_TARGET_KEY && match?.gameId === DIAGNOSTIC_GAME_ID;
+
+function logDiagnosticRaw(detailHtml, match) {
+  if (!isDiagnosticMatch(match)) return;
+
+  const $ = cheerio.load(detailHtml);
+  const pageText = cleanText($.root().text());
+  const substitutionTexts = [];
+  $("table.result_04 tr").each((_, row) => {
+    if (cleanText($(row).children("th").first().text()) !== "交代") return;
+    $(row).find("td p").each((__, paragraph) => {
+      const value = cleanText($(paragraph).text());
+      if (value) substitutionTexts.push(value);
+    });
+  });
+  const minute80 = substitutionTexts.filter((value) => /^80\s*分/.test(value));
+
+  console.log(`[SYNC DETAIL]
+competition=${targetKey}
+gameId=${match.gameId}
+fedId=${match.fedId}
+taikaiHoldId=${match.taikaiHoldId}
+detailFetch=true`);
+  console.log(`[SYNC RAW gameId=${match.gameId}]
+containsSegawa=${pageText.includes("瀬川 智輝")}
+containsImaoka=${pageText.includes("今岡 煌星")}
+minute80=${minute80.length ? minute80.join(" | ") : "not-found"}`);
+}
+
+function logDiagnosticParsed(match) {
+  if (!isDiagnosticMatch(match)) return;
+
+  const substitutions = [
+    ...match.substitutions.home.map((value) => `home ${value}`),
+    ...match.substitutions.away.map((value) => `away ${value}`),
+  ];
+  console.log(`[SYNC DEBUG gameId=${match.gameId}]
+${substitutions.length ? substitutions.join("\n") : "substitutions=none"}`);
+}
 
 const toInteger = (value) => {
   const match = cleanText(value).match(/-?\d+/);
@@ -730,7 +773,9 @@ async function fetchDetails(context, detailUrl, listUrl, matches) {
           },
           headers: { Referer: listUrl.href },
         });
+        logDiagnosticRaw(detailHtml, match);
         results[index] = parseDetailHtml(detailHtml, match);
+        logDiagnosticParsed(results[index]);
         completed += 1;
 
         if (completed % 10 === 0 || completed === matches.length) {
@@ -888,6 +933,15 @@ async function main() {
     }
     const items = preserveScheduledMatchIds(previous?.items, fetchedItems);
     changeCount = countChanges(previous?.items, items);
+    const diagnosticPrevious = previous?.items?.find(isDiagnosticMatch);
+    const diagnosticNext = items.find(isDiagnosticMatch);
+    const diagnosticChanged = diagnosticNext
+      ? !isDeepStrictEqual(diagnosticPrevious, diagnosticNext)
+      : null;
+    if (diagnosticNext) {
+      console.log(`[SYNC DIFF gameId=${DIAGNOSTIC_GAME_ID}]
+changed=${diagnosticChanged}`);
+    }
 
     if (changeCount > 0 || !previous) {
       const syncedAt = new Date().toISOString();
@@ -908,8 +962,22 @@ async function main() {
         items,
       });
       console.log(`JSON保存: ${OUTPUT_PATH}`);
+      if (diagnosticNext) {
+        console.log(`[SYNC WRITE]
+competition=${targetKey}
+matchesChanged=true
+gameId=${DIAGNOSTIC_GAME_ID}
+gameChanged=${diagnosticChanged}`);
+      }
     } else {
       console.log("試合データに変更はありません。JSONは書き換えませんでした。");
+      if (diagnosticNext) {
+        console.log(`[SYNC WRITE]
+competition=${targetKey}
+matchesChanged=false
+gameId=${DIAGNOSTIC_GAME_ID}
+gameChanged=${diagnosticChanged}`);
+      }
     }
   } catch (error) {
     if (!errors.some((entry) => entry.message === error.message)) {

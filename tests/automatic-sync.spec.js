@@ -71,3 +71,21 @@ test("大会ごとの保存先は分離されている", async () => {
   expect(new Set(paths).size).toBe(paths.length);
   for (const path of paths) expect(script).toContain(path);
 });
+
+test("対象試合の取得元・解析・差分・保存診断をログへ残す", async () => {
+  const script = await read("scripts/sync/sync-results.mjs");
+  expect(script).toContain("const DIAGNOSTIC_GAME_ID = 25692");
+  expect(script).toContain('const DIAGNOSTIC_TARGET_KEY = "2026-1"');
+  expect(script).toContain("[SYNC DETAIL]");
+  expect(script).toContain("detailFetch=true");
+  expect(script).toContain("[SYNC RAW gameId=");
+  expect(script).toContain("containsSegawa=");
+  expect(script).toContain("containsImaoka=");
+  expect(script).toContain("minute80=");
+  expect(script).toContain("[SYNC DEBUG gameId=");
+  expect(script).toContain("[SYNC DIFF gameId=");
+  expect(script).toContain("[SYNC WRITE]");
+  expect(script.indexOf("logDiagnosticRaw(detailHtml, match)")).toBeLessThan(
+    script.indexOf("parseDetailHtml(detailHtml, match)"),
+  );
+});
