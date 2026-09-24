@@ -71,11 +71,16 @@ function aggregateMatchSide({ match, side, directory, statistics }) {
     .filter(Boolean)
     .map((event) => ({
       ...event,
-      boundaryMinute: getSubstitutionBoundaryMinute(event.minute, match, duration),
+      inBoundaryMinute: getSubstitutionBoundaryMinute(event, "in", match, duration),
+      outBoundaryMinute: getSubstitutionBoundaryMinute(event, "out", match, duration),
     }));
   const disciplinary = (match.disciplinary?.[side] ?? [])
     .map(parseDisciplinary)
-    .filter(Boolean);
+    .filter(Boolean)
+    .map((event) => ({
+      ...event,
+      boundaryMinute: getDisciplinaryBoundaryMinute(event, match, duration),
+    }));
   const starters = new Set((lineup.starters ?? []).map((entry) => normalizePlayerName(entry.name)));
   const bench = new Set(
     (lineup.substitutes ?? []).map((entry) => normalizePlayerName(entry.name)),
@@ -145,16 +150,16 @@ function aggregateMatchSide({ match, side, directory, statistics }) {
     const redEvent = disciplinary.find(
       (event) => event.isRed && normalizePlayerName(event.name) === normalizedName,
     );
-    const startMinute = started ? 0 : onEvent?.boundaryMinute ?? duration;
+    const startMinute = started ? 0 : onEvent?.inBoundaryMinute ?? duration;
     const endMinute = Math.min(
       duration,
-      offEvent?.boundaryMinute ?? duration,
-      redEvent?.minute ?? duration,
+      offEvent?.outBoundaryMinute ?? duration,
+      redEvent?.boundaryMinute ?? duration,
     );
     // 90分以降に実際に出場した選手には、終盤に再交代した場合も
     // 最低表示単位として1分を与える。ベンチ入りだけの選手は対象外。
     const minimumLateSubstitutionMinute = onEvent
-      && usesRegulationLateSubstitutionBoundary(match, duration)
+      && usesRegulationMinuteBoundaries(match, duration)
       && onEvent.minute >= duration
       ? 1
       : 0;
@@ -311,15 +316,24 @@ function getMatchDuration(match) {
   return Number.isInteger(duration) ? duration : 90;
 }
 
-function usesRegulationLateSubstitutionBoundary(match, duration) {
+function usesRegulationMinuteBoundaries(match, duration) {
   return duration === 90 && !/延長\s*[:：]\s*\d+分/.test(match.matchFormat ?? "");
 }
 
-function getSubstitutionBoundaryMinute(minute, match, duration) {
-  if (usesRegulationLateSubstitutionBoundary(match, duration) && minute >= duration) {
+function getSubstitutionBoundaryMinute(event, direction, match, duration) {
+  if (!usesRegulationMinuteBoundaries(match, duration)) return event.minute;
+  if (event.minute >= duration) {
     return duration - 1;
   }
-  return minute;
+  if (direction === "out" && event.minute === 45 && event.hasAddedTime) return 44;
+  return event.minute;
+}
+
+function getDisciplinaryBoundaryMinute(event, match, duration) {
+  if (usesRegulationMinuteBoundaries(match, duration) && event.minute >= duration) {
+    return duration - 1;
+  }
+  return event.minute;
 }
 
 export function parseMatchMinute(value) {
@@ -336,6 +350,7 @@ function parseSubstitution(text) {
   if (!match) return null;
   return {
     minute: parseMatchMinute(match[1]),
+    hasAddedTime: /[+＋]/.test(match[1]),
     playerOut: match[2].trim(),
     playerIn: match[3].trim(),
   };
@@ -349,6 +364,7 @@ function parseDisciplinary(text) {
   const code = match[3];
   return {
     minute: parseMatchMinute(match[1]),
+    hasAddedTime: /[+＋]/.test(match[1]),
     name: match[2].trim(),
     code,
     isYellow: /^C[1-9]$/.test(code),

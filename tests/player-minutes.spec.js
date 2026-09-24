@@ -8,7 +8,7 @@ import {
 } from "../site/assets/js/utils/players.js";
 import { createTeamDirectory, linkMatchesToTeams } from "../site/assets/js/utils/teams.js";
 
-test("出場時間へ前後半の追加時間を加算しない", () => {
+test("追加時間の公式時刻を保持し、前半ATのOUTだけ44分境界にする", () => {
   expect(parseMatchMinute("45+2")).toBe(45);
   expect(parseMatchMinute("90+5")).toBe(90);
   expect(parseMatchMinute("90 ＋4 分")).toBe(90);
@@ -44,7 +44,8 @@ test("出場時間へ前後半の追加時間を加算しない", () => {
   const teamDirectory = { byId: new Map([["team-a", { id: "team-a", name: "チームA" }]]) };
   const stats = calculatePlayerStatistics(players, matches, teamDirectory);
 
-  expect(stats.get("team-a-starter").minutes).toBe(45);
+  expect(matches[0].substitutions.home[0]).toBe("45 ＋2 分 [out]先発 選手 [in]交代 選手");
+  expect(stats.get("team-a-starter").minutes).toBe(44);
   expect(stats.get("team-a-substitute").minutes).toBe(45);
   expect(stats.get("team-a-substitute").yellowCards).toBe(1);
 });
@@ -58,13 +59,38 @@ for (const [label, minute] of [["89", "89"], ["90", "90"], ["90+1", "90 ＋1"], 
   });
 }
 
-test("交代なし、HT、前半追加時間は従来の境界を維持する", () => {
+test("交代なしとHT交代は従来の境界を維持する", () => {
   expect(calculate(null).get("starter").minutes).toBe(90);
-  for (const time of ["HT", "45 ＋3"]) {
+  const stats = calculate("HT [out]先発 選手 [in]交代 選手");
+  expect(stats.get("starter").minutes).toBe(45);
+  expect(stats.get("substitute").minutes).toBe(45);
+});
+
+for (const time of ["45 ＋1", "45 ＋5"]) {
+  test(`${time}分交代はOUT 44分・IN 45分として配分する`, () => {
     const stats = calculate(`${time} 分 [out]先発 選手 [in]交代 選手`);
-    expect(stats.get("starter").minutes).toBe(45);
+    expect(stats.get("starter").minutes).toBe(44);
     expect(stats.get("substitute").minutes).toBe(45);
+    expect(stats.get("starter").minutes + stats.get("substitute").minutes).toBe(89);
+  });
+}
+
+test("45+○分INとHT INから60分OUTはいずれも15分", () => {
+  for (const firstEvent of [
+    "45 ＋3 分 [out]先発 選手 [in]中間 選手",
+    "HT [out]先発 選手 [in]中間 選手",
+  ]) {
+    const stats = calculate([firstEvent, "60 分 [out]中間 選手 [in]交代 選手"]);
+    expect(stats.get("middle").minutes).toBe(15);
   }
+});
+
+test("途中出場選手が45+○分にOUTした場合は44分境界までを集計する", () => {
+  const stats = calculate([
+    "20 分 [out]先発 選手 [in]中間 選手",
+    "45 ＋3 分 [out]中間 選手 [in]交代 選手",
+  ]);
+  expect(stats.get("middle").minutes).toBe(24);
 });
 
 for (const [on, expected] of [[60, 29], [80, 9], [82, 7]]) {
@@ -97,12 +123,21 @@ test("ベンチ入りのみには最低1分を与えない", () => {
   expect(stats.get("substitute").benchSelections).toBe(1);
 });
 
-test("90分以降の退場は90分のまま", () => {
-  for (const card of ["90 分 先発 選手 CS 警告2回", "90 ＋3 分 先発 選手 S1 著しい反則"]) {
+test("90分以降の退場は89分境界、90分未満と前半ATの退場は従来どおり", () => {
+  for (const card of ["90 分 先発 選手 CS 警告2回", "90 ＋1 分 先発 選手 S1 著しい反則", "90 ＋5 分 先発 選手 S1 著しい反則"]) {
     const stats = calculate(null, { disciplinary: [card] });
-    expect(stats.get("starter").minutes).toBe(90);
+    expect(stats.get("starter").minutes).toBe(89);
   }
   expect(calculate(null, { disciplinary: ["70 分 先発 選手 S1 著しい反則"] }).get("starter").minutes).toBe(70);
+  expect(calculate(null, { disciplinary: ["45 ＋3 分 先発 選手 S1 著しい反則"] }).get("starter").minutes).toBe(45);
+});
+
+test("途中出場から90分以降の退場は89分境界までを集計し、公式時刻を保持する", () => {
+  const disciplinary = "90 ＋3 分 中間 選手 S1 著しい反則";
+  const stats = calculate("60 分 [out]先発 選手 [in]中間 選手", { disciplinary: [disciplinary] });
+  expect(stats.get("middle").minutes).toBe(29);
+  expect(stats.get("middle").redCards).toBe(1);
+  expect(disciplinary).toBe("90 ＋3 分 中間 選手 S1 著しい反則");
 });
 
 test("延長あり試合には終盤交代の89/1ルールを適用しない", () => {
@@ -149,7 +184,8 @@ test("2026年の実例と正常チームの990分を維持する", async () => {
         const teamTotal = [...statistics.values()]
           .filter((stats) => stats.player.teamId === match[`${side}Team`].teamId)
           .reduce((sum, stats) => sum + (stats.matches.find((entry) => entry.matchId === match.id)?.minutes ?? 0), 0);
-        expect(teamTotal, `${match.id} ${side}`).toBe(990);
+        const expected = officialMinuteException(match.id, match[`${side}Team`].teamId) ?? 990;
+        expect(teamTotal, `${match.id} ${side}`).toBe(expected);
       }
     }
   }
@@ -160,6 +196,15 @@ test("2026年の実例と正常チームの990分を維持する", async () => {
   expect(first.get("hiroshima-keizai-babd07df03e5").matches.find((entry) => entry.matchId === "football-system-15-558-25659").minutes).toBe(1);
   expect(first.get("hiroshima-d66c858f34af").matches.find((entry) => entry.matchId === "football-system-15-558-25649").minutes).toBe(7);
   expect(first.get("hiroshima-ae5983ca9ee7").matches.find((entry) => entry.matchId === "football-system-15-558-25649").minutes).toBe(1);
+  expect(first.get("hiroshima-c2205cbf4c49").matches.find((entry) => entry.matchId === "football-system-15-558-25649").minutes).toBe(44);
+  expect(first.get("hiroshima-2dabedfc4f46").matches.find((entry) => entry.matchId === "football-system-15-558-25649").minutes).toBe(45);
+  expect(first.get("hiroshima-f1447d82fcce").matches.find((entry) => entry.matchId === "football-system-15-558-25649").minutes).toBe(44);
+  expect(first.get("hiroshima-5f572603cac2").matches.find((entry) => entry.matchId === "football-system-15-558-25649").minutes).toBe(45);
+  expect(first.get("hiroshima-keizai-cacfc5d5f339").matches.find((entry) => entry.matchId === "football-system-schedule-44886142f49b").minutes).toBe(44);
+  expect(first.get("hiroshima-keizai-ffdbbf4c063f").matches.find((entry) => entry.matchId === "football-system-schedule-44886142f49b").minutes).toBe(45);
+  const [, second] = allStatistics;
+  expect(second.get("okayama-5c428e75d4dc").matches.find((entry) => entry.matchId === "football-system-15-559-25725").minutes).toBe(31);
+  expect(second.get("okayama-1af62c4e7763").matches.find((entry) => entry.matchId === "football-system-15-559-25751").minutes).toBe(89);
 });
 
 function calculate(substitutions, options = {}) {
@@ -203,4 +248,12 @@ function knownAbnormalTeamMatch(matchId, teamId) {
     "football-system-15-559-25765\0shimonoseki-city",
     "football-system-schedule-f3876807d9d5\0hiroshima-international",
   ]).has(`${matchId}\0${teamId}`);
+}
+
+function officialMinuteException(matchId, teamId) {
+  return new Map([
+    ["football-system-15-558-25649\0hiroshima", 988],
+    ["football-system-15-559-25725\0okayama", 989],
+    ["football-system-15-559-25751\0okayama", 989],
+  ]).get(`${matchId}\0${teamId}`) ?? null;
 }
