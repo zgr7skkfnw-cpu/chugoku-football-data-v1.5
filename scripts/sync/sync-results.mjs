@@ -1,7 +1,7 @@
 import { copyFile, mkdir, mkdtemp, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { isDeepStrictEqual } from "node:util";
 
 import { request } from "@playwright/test";
@@ -173,7 +173,7 @@ function parseOfficials($) {
   return officials;
 }
 
-function parseLineups($, listMatch) {
+function parseLineups($, listMatch, { allowIncompleteLineups, warn }) {
   const sideCells = $("table.result_07")
     .first()
     .find("td.left, td.right")
@@ -212,14 +212,14 @@ function parseLineups($, listMatch) {
       (parsingSubstitutes ? substitutes : starters).push(player);
     });
 
-    if (starters.length !== 11 && !target.allowIncompleteLineups) {
+    if (starters.length !== 11 && !allowIncompleteLineups) {
       throw new Error(
         `game_id=${listMatch.gameId} ${teamNames[sideIndex]} の先発が11人ではありません: ${starters.length}人`,
       );
     }
 
     if (starters.length !== 11) {
-      console.warn(
+      warn(
         `掲載メンバー注意 game_id=${listMatch.gameId} ${teamNames[sideIndex]}: 先発${starters.length}人`,
       );
     }
@@ -305,7 +305,10 @@ function parseGoalTimeline($) {
     .get();
 }
 
-function parseDetailHtml(detailHtml, listMatch) {
+export function parseDetailHtml(detailHtml, listMatch, options = {}) {
+  const allowIncompleteLineups = options.allowIncompleteLineups ?? target.allowIncompleteLineups;
+  const includePlayerShots = options.includePlayerShots ?? targetKey === "2026-rookie";
+  const warn = options.warn ?? console.warn;
   const $ = cheerio.load(detailHtml);
 
   if (!$("body#game_result").length || !$("table.result_01").length) {
@@ -346,11 +349,11 @@ function parseDetailHtml(detailHtml, listMatch) {
       pitch: conditions[2] || null,
     },
     officials: parseOfficials($),
-    lineups: parseLineups($, listMatch),
+    lineups: parseLineups($, listMatch, { allowIncompleteLineups, warn }),
     scoreByPeriod: parsePeriodScores($),
     penaltyShootout: parsePenaltyShootout($),
     manualStatistics,
-    ...(targetKey === "2026-rookie"
+    ...(includePlayerShots
       ? { playerShots: parsePlayerShots($, manualStatistics) }
       : {}),
     substitutions: resultSections.substitutions,
@@ -501,7 +504,7 @@ function countChanges(previousItems = [], nextItems = []) {
   return changes;
 }
 
-function preserveScheduledMatchIds(previousItems = [], nextItems = []) {
+export function preserveScheduledMatchIds(previousItems = [], nextItems = []) {
   const previousByFixture = new Map(previousItems.map((match) => [
     `${match.groupName ?? ""}\0${match.round}\0${match.homeTeam?.name}\0${match.awayTeam?.name}`,
     match,
@@ -680,7 +683,9 @@ gameChanged=${diagnosticChanged}`);
   console.log(`処理時間: ${durationSeconds}秒`);
 }
 
-await main();
-if (!process.exitCode && target.buildStats) await buildTeamStats({ season: target.season, division: target.division });
-if (!process.exitCode) await buildHeadToHead();
-if (!process.exitCode) await buildSeasonIndex();
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  await main();
+  if (!process.exitCode && target.buildStats) await buildTeamStats({ season: target.season, division: target.division });
+  if (!process.exitCode) await buildHeadToHead();
+  if (!process.exitCode) await buildSeasonIndex();
+}

@@ -23,26 +23,8 @@ export async function pollCompetition({ targetKey, context, log = console.log })
     throw new Error(`poll対象外または未対応の大会です: ${targetKey}`);
   }
 
-  let httpRequests = 0;
-  const countedContext = {
-    fetch: (...args) => {
-      httpRequests += 1;
-      return context.fetch(...args);
-    },
-  };
-  const fetchText = (url, options = {}) => fetchTextWithRetry(countedContext, url, options, {
-    attempts: 4,
-    timeoutMs: REQUEST_TIMEOUT_MS,
-    onRetry: ({ nextAttempt, delayMs, error }) => log(
-      `[POLL RETRY] competition=${targetKey} attempt=${nextAttempt}/4 delayMs=${delayMs} error=${error.message}`,
-    ),
-  });
-
-  const outerHtml = await fetchText(target.sourcePageUrl);
-  const iframeUrl = extractResultIframeUrl(outerHtml, target.sourcePageUrl);
-  const listHtml = await fetchText(iframeUrl.href, { headers: { Referer: target.sourcePageUrl } });
-  const parsedList = parseResultListHtml(listHtml, { minimumScheduleCount: target.minimumScheduleCount });
-  const currentSnapshot = canonicalSnapshotFromParsedList(parsedList);
+  const fetched = await fetchCompetitionList({ targetKey, context, log });
+  const { parsedList, currentSnapshot, httpRequests } = fetched;
   const outputPath = resolve(import.meta.dirname, target.outputPath);
   const savedData = JSON.parse(await readFile(outputPath, "utf8"));
   const previousSnapshot = canonicalSnapshotFromMatches(savedData.items ?? []);
@@ -69,6 +51,43 @@ detailPosts=0`);
     savedGames: previousSnapshot.length,
     httpRequests,
     detailPosts: 0,
+    parsedList,
+    iframeUrl: fetched.iframeUrl,
+    currentSnapshot,
+    previousSnapshot,
+  };
+}
+
+export async function fetchCompetitionList({ targetKey, context, log = console.log }) {
+  const target = RESULT_TARGETS[targetKey];
+  if (!target || !POLL_TARGET_KEYS.includes(targetKey)) {
+    throw new Error(`poll対象外または未対応の大会です: ${targetKey}`);
+  }
+  let httpRequests = 0;
+  const countedContext = {
+    fetch: (...args) => {
+      httpRequests += 1;
+      return context.fetch(...args);
+    },
+  };
+  const fetchText = (url, options = {}) => fetchTextWithRetry(countedContext, url, options, {
+    attempts: 4,
+    timeoutMs: REQUEST_TIMEOUT_MS,
+    onRetry: ({ nextAttempt, delayMs, error }) => log(
+      `[POLL RETRY] competition=${targetKey} attempt=${nextAttempt}/4 delayMs=${delayMs} error=${error.message}`,
+    ),
+  });
+
+  const outerHtml = await fetchText(target.sourcePageUrl);
+  const iframeUrl = extractResultIframeUrl(outerHtml, target.sourcePageUrl);
+  const listHtml = await fetchText(iframeUrl.href, { headers: { Referer: target.sourcePageUrl } });
+  const parsedList = parseResultListHtml(listHtml, { minimumScheduleCount: target.minimumScheduleCount });
+  const currentSnapshot = canonicalSnapshotFromParsedList(parsedList);
+  return {
+    parsedList,
+    currentSnapshot,
+    iframeUrl,
+    httpRequests,
   };
 }
 
@@ -85,12 +104,13 @@ export async function pollTargets({ targetKeys = POLL_TARGET_KEYS, context, log 
   try {
     const results = [];
     for (const targetKey of targetKeys) results.push(await pollCompetition({ targetKey, context: api, log }));
+    const publicResults = results.map(({ parsedList, iframeUrl, currentSnapshot, previousSnapshot, ...result }) => result);
     return {
-      changed: results.some((result) => result.changed),
-      changedGameIds: [...new Set(results.flatMap((result) => result.changedGameIds))].sort((a, b) => a - b),
-      httpRequests: results.reduce((sum, result) => sum + result.httpRequests, 0),
+      changed: publicResults.some((result) => result.changed),
+      changedGameIds: [...new Set(publicResults.flatMap((result) => result.changedGameIds))].sort((a, b) => a - b),
+      httpRequests: publicResults.reduce((sum, result) => sum + result.httpRequests, 0),
       detailPosts: 0,
-      results,
+      results: publicResults,
     };
   } finally {
     if (ownsContext) await api.dispose();
