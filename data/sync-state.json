@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "lastRunAt": "2026-09-23T14:10:32.845Z",
+  "lastRunAt": "2026-09-24T05:19:11.651Z",
   "status": "success",
-  "trigger": "schedule",
+  "trigger": "workflow_dispatch",
   "competitions": [
     {
       "competitionId": "jufa-chugoku-2026-division-1",
@@ -11,9 +11,9 @@
       "detectedMatches": 90,
       "finishedMatches": 68,
       "scheduledMatches": 22,
-      "changedMatches": 0,
+      "changedMatches": 1,
       "failedGameIds": [],
-      "durationMs": 14119
+      "durationMs": 13354
     },
     {
       "competitionId": "jufa-chugoku-2026-division-2",
@@ -22,9 +22,9 @@
       "detectedMatches": 110,
       "finishedMatches": 80,
       "scheduledMatches": 30,
-      "changedMatches": 1,
+      "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 16534
+      "durationMs": 15502
     },
     {
       "competitionId": "jufa-chugoku-2026-rookie-tournament",
@@ -35,7 +35,7 @@
       "scheduledMatches": 0,
       "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 7395
+      "durationMs": 6693
     },
     {
       "competitionId": "jufa-chugoku-2026-i-league-division-1",
@@ -46,7 +46,7 @@
       "scheduledMatches": 4,
       "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 6850
+      "durationMs": 6390
     },
     {
       "competitionId": "jufa-chugoku-2026-i-league-division-2",
@@ -57,19 +57,18 @@
       "scheduledMatches": 3,
       "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 4845
+      "durationMs": 4797
     },
     {
       "competitionId": "jufa-chugoku-2026-championship",
       "name": "2026年中国大学サッカー選手権",
-      "status": "skipped",
-      "reason": "終了済み大会のため、定期実行は週1回（日曜）です",
-      "detectedMatches": 0,
-      "finishedMatches": 0,
+      "status": "success",
+      "detectedMatches": 22,
+      "finishedMatches": 22,
       "scheduledMatches": 0,
       "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 0
+      "durationMs": 6218
     },
     {
       "competitionId": "jufa-chugoku-2026-division-1-promotion-playoff",
