@@ -1,5 +1,6 @@
 import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 import { request } from "@playwright/test";
 
@@ -21,7 +22,6 @@ async function main() {
   if (!targetKey || !POLL_TARGET_KEYS.includes(targetKey)) {
     throw new Error(`--targetにはpoll対象大会を指定してください: ${targetKey ?? "未指定"}`);
   }
-  const target = RESULT_TARGETS[targetKey];
   const dryRun = process.argv.includes("--dry-run");
   const fromPoll = process.argv.includes("--from-poll");
   const directGameIds = gameIdArguments();
@@ -52,39 +52,13 @@ async function main() {
       listResult = await fetchCompetitionList({ targetKey, context });
     }
 
-    const outputPath = resolve(import.meta.dirname, target.outputPath);
-    const existingData = JSON.parse(await readFile(outputPath, "utf8"));
-    const detailUrl = new URL("./pubGameResultConf.php", listResult.iframeUrl);
-    if (detailUrl.protocol !== "https:" || detailUrl.hostname !== "football-system.jp") {
-      throw new Error(`詳細POST URLが許可されていません: ${detailUrl.href}`);
-    }
-    let detailPosts = 0;
-    const fetchDetailHtml = async (match) => {
-      detailPosts += 1;
-      return fetchTextWithRetry(context, detailUrl.href, {
-        method: "POST",
-        form: {
-          game_id: String(match.gameId),
-          fed_id: String(match.fedId),
-          taikai_hold_id: String(match.taikaiHoldId),
-        },
-        headers: { Referer: listResult.iframeUrl.href },
-      }, { attempts: 3, timeoutMs: REQUEST_TIMEOUT_MS });
-    };
-
-    const plan = await executeSelectedDetailSync({
-      planOptions: {
-        targetKey,
-        existingData,
-        parsedList: listResult.parsedList,
-        selectedGameIds: [...new Set(directGameIds)],
-        changeHints,
-        fetchDetailHtml,
-      },
-      validate: validateSelectedPlayers,
+    const plan = await runSelectedCompetition({
+      targetKey,
+      context,
+      listResult,
+      selectedGameIds: directGameIds,
+      changeHints,
       dryRun,
-      write: async ({ nextData }) => writeMatches(outputPath, nextData, target, listResult, detailUrl),
-      buildDerived: async () => buildDerivedData(target),
     });
 
     for (const change of requiresFullSync) {
@@ -96,7 +70,7 @@ async function main() {
     console.log(`[SELECTED SYNC]
 competition=${targetKey}
 selectedGames=${plan.selectedGameIds.length}
-detailPosts=${detailPosts}
+detailPosts=${plan.detailPosts}
 changedGames=${plan.changedGames.length}
 dryRun=${dryRun}`);
     if (plan.unavailableGameIds.length) {
@@ -107,7 +81,54 @@ dryRun=${dryRun}`);
   }
 }
 
-async function validateSelectedPlayers(plan) {
+export async function runSelectedCompetition({
+  targetKey,
+  context,
+  listResult,
+  selectedGameIds,
+  changeHints = [],
+  dryRun = true,
+  includeGlobalDerived = true,
+}) {
+  const target = RESULT_TARGETS[targetKey];
+  if (!target) throw new Error(`未対応の同期対象です: ${targetKey}`);
+  const fetchedList = listResult ?? await fetchCompetitionList({ targetKey, context });
+  const outputPath = resolve(import.meta.dirname, target.outputPath);
+  const existingData = JSON.parse(await readFile(outputPath, "utf8"));
+  const detailUrl = new URL("./pubGameResultConf.php", fetchedList.iframeUrl);
+  if (detailUrl.protocol !== "https:" || detailUrl.hostname !== "football-system.jp") {
+    throw new Error(`詳細POST URLが許可されていません: ${detailUrl.href}`);
+  }
+  const fetchDetailHtml = (match) => fetchTextWithRetry(context, detailUrl.href, {
+    method: "POST",
+    form: {
+      game_id: String(match.gameId),
+      fed_id: String(match.fedId),
+      taikai_hold_id: String(match.taikaiHoldId),
+    },
+    headers: { Referer: fetchedList.iframeUrl.href },
+  }, { attempts: 3, timeoutMs: REQUEST_TIMEOUT_MS });
+
+  return executeSelectedDetailSync({
+    planOptions: {
+      targetKey,
+      existingData,
+      parsedList: fetchedList.parsedList,
+      selectedGameIds: [...new Set(selectedGameIds)],
+      changeHints,
+      fetchDetailHtml,
+    },
+    validate: validateSelectedPlayers,
+    dryRun,
+    write: async ({ nextData }) => writeMatches(outputPath, nextData, target, fetchedList, detailUrl),
+    buildDerived: async () => {
+      await buildCompetitionDerivedData(target);
+      if (includeGlobalDerived) await buildGlobalDerivedData();
+    },
+  });
+}
+
+export async function validateSelectedPlayers(plan) {
   const target = RESULT_TARGETS[plan.targetKey];
   const [teamCatalog, playerData] = await Promise.all([
     readJson(resolve(ROOT, "site/data/team-catalog.json")),
@@ -156,11 +177,14 @@ async function writeMatches(outputPath, data, target, listResult, detailUrl) {
   }
 }
 
-async function buildDerivedData(target) {
+export async function buildCompetitionDerivedData(target) {
   if (target.buildStats) await buildTeamStats({ season: target.season, division: target.division });
   if (target.stage === "i-league-regular") {
     await buildTeamStats({ competitionId: target.competitionId });
   }
+}
+
+export async function buildGlobalDerivedData() {
   await buildHeadToHead();
   await buildSeasonIndex();
 }
@@ -181,7 +205,9 @@ async function readJson(path) {
   return JSON.parse(await readFile(path, "utf8"));
 }
 
-await main().catch((error) => {
-  console.error(`[SELECTED SYNC ERROR] ${error.message}`);
-  process.exitCode = 1;
-});
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  await main().catch((error) => {
+    console.error(`[SELECTED SYNC ERROR] ${error.message}`);
+    process.exitCode = 1;
+  });
+}
