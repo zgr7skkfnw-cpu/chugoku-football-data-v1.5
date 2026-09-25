@@ -150,7 +150,7 @@ test("match保存失敗時はplayers保存をrollbackする", async () => {
 function selectedMatchPlan(playerName) {
   return {
     targetKey: "2026-1",
-    replacements: [{ nextMatch: {
+    replacements: [{ changed: true, nextMatch: {
       gameId: 1,
       homeTeam: { name: "大学A" }, awayTeam: { name: "大学B" },
       lineups: {

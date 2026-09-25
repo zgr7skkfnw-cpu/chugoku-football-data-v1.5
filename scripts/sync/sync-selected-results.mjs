@@ -134,6 +134,7 @@ export async function runSelectedCompetition({
         throw new Error(`通常リーグ以外では対象rosterを自動取得しません: ${unknownPlayers.map((entry) => entry.name).join(", ")}`);
       }
       const teamIds = [...new Set(unknownPlayers.map((entry) => entry.teamId))];
+      plan.rosterRequests = teamIds.length;
       rosterPlan = await createSelectedRosterPlan({ teamIds, context, playersData, teamCatalog });
       assertUnknownPlayersResolved(unknownPlayers, rosterPlan.nextPlayersData.items ?? []);
       const remaining = findUnknownSelectedPlayers(plan, { playersData: rosterPlan.nextPlayersData, teamCatalog });
@@ -178,6 +179,8 @@ export function findUnknownSelectedPlayers(plan, { playersData, teamCatalog }) {
   const playerDirectory = createPlayerDirectory(playersData.items ?? []);
   const unknown = [];
   for (const replacement of plan.replacements) {
+    // 差分なしの既存試合は書き換えないため、今回新たに持ち込む未知選手だけを検証する。
+    if (replacement.changed === false) continue;
     const match = replacement.nextMatch;
     for (const side of ["home", "away"]) {
       const lineup = match.lineups?.[side];

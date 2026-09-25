@@ -29,7 +29,7 @@ export function createAuditPlan({
     }
   }
 
-  if (mode === "recent") {
+  if (mode !== "full") {
     for (const gameId of pollResult.changedGameIds ?? []) {
       const savedMatch = (savedMatches ?? []).find((match) => match.gameId === gameId);
       const officialMatch = officialByGameId.get(gameId);

@@ -6,11 +6,14 @@ const read = async (path) => readFile(new URL(`../${path}`, import.meta.url), "u
 test("自動同期workflowは安全な定期実行と手動実行を定義する", async () => {
   const workflow = await read(".github/workflows/sync-results.yml");
   expect(workflow).toContain("workflow_dispatch:");
-  expect(workflow).toContain('cron: "0 3,9,13 * * *"');
+  expect(workflow).toContain('cron: "17 0-15,18,21-23 * * *"');
+  expect(workflow).toContain('cron: "37 17 * * *"');
+  expect(workflow).toContain('cron: "37 19 * * 6"');
+  for (const mode of ["hourly", "daily", "weekly", "manual-full"]) expect(workflow).toContain(`- ${mode}`);
   expect(workflow).toContain("contents: write");
   expect(workflow).toContain("concurrency:");
   expect(workflow).not.toContain("continue-on-error");
-  expect(workflow.indexOf("npm run update:data:auto")).toBeLessThan(workflow.indexOf("npm run validate:data"));
+  expect(workflow.indexOf("npm run update:data:smart")).toBeLessThan(workflow.indexOf("npm run validate:data"));
   expect(workflow.indexOf("npm run validate:data")).toBeLessThan(workflow.indexOf("git commit"));
   expect(workflow.indexOf("git diff --check")).toBeLessThan(workflow.indexOf("git commit"));
   expect(workflow).toContain("git diff --cached --quiet");
@@ -20,6 +23,8 @@ test("自動同期workflowは安全な定期実行と手動実行を定義する
   expect(workflow).not.toContain("package-lock.json");
   expect(workflow).toContain("npm run test:sync:roster");
   expect(workflow).toContain("site/data/players.json");
+  expect(workflow).toContain("cancel-in-progress: false");
+  expect(workflow).toContain("Restore generated data after failure");
 });
 
 test("統合コマンドは開催中大会を重複なく同期し未公開大会をスキップする", async () => {
@@ -72,20 +77,9 @@ test("大会ごとの保存先は分離されている", async () => {
   for (const path of paths) expect(script).toContain(path);
 });
 
-test("対象試合の取得元・解析・差分・保存診断をログへ残す", async () => {
+test("本番同期ログは特定gameIdを常時特別扱いしない", async () => {
   const script = await read("scripts/sync/sync-results.mjs");
-  expect(script).toContain("const DIAGNOSTIC_GAME_ID = 25692");
-  expect(script).toContain('const DIAGNOSTIC_TARGET_KEY = "2026-1"');
-  expect(script).toContain("[SYNC DETAIL]");
-  expect(script).toContain("detailFetch=true");
-  expect(script).toContain("[SYNC RAW gameId=");
-  expect(script).toContain("containsSegawa=");
-  expect(script).toContain("containsImaoka=");
-  expect(script).toContain("minute80=");
-  expect(script).toContain("[SYNC DEBUG gameId=");
-  expect(script).toContain("[SYNC DIFF gameId=");
-  expect(script).toContain("[SYNC WRITE]");
-  expect(script.indexOf("logDiagnosticRaw(detailHtml, match)")).toBeLessThan(
-    script.indexOf("parseDetailHtml(detailHtml, match)"),
-  );
+  expect(script).not.toContain("DIAGNOSTIC_GAME_ID");
+  expect(script).not.toContain("[SYNC RAW");
+  expect(script).not.toContain("containsSegawa");
 });

@@ -123,7 +123,7 @@ test("名簿同期後は全角空白の清水慶太を山口大学選手とし�
 
 test("名簿または後続同期が失敗すればworkflowはcommit・pushへ進まない", async () => {
   const workflow = await readFile(new URL("../.github/workflows/sync-results.yml", import.meta.url), "utf8");
-  const autoSync = workflow.indexOf("npm run update:data:auto");
+  const autoSync = workflow.indexOf("npm run update:data:smart");
   const commit = workflow.indexOf("git commit");
   const push = workflow.indexOf("git push");
   assert.ok(autoSync >= 0 && autoSync < commit && commit < push);

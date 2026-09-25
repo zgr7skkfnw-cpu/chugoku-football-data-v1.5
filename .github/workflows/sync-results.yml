@@ -2,9 +2,24 @@ name: Sync match results
 
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: Synchronization mode
+        required: true
+        default: hourly
+        type: choice
+        options:
+          - hourly
+          - daily
+          - weekly
+          - manual-full
   schedule:
-    # UTC 03:00 / 09:00 / 13:00 = JST 12:00 / 18:00 / 22:00
-    - cron: "0 3,9,13 * * *"
+    # JST 07:17-23:17 hourly, plus JST 00:17/03:17/06:17.
+    - cron: "17 0-15,18,21-23 * * *"
+    # JST 02:37 daily (UTC is the previous calendar day).
+    - cron: "37 17 * * *"
+    # Sunday JST 04:37 = Saturday UTC 19:37.
+    - cron: "37 19 * * 6"
 
 permissions:
   contents: write
@@ -32,8 +47,29 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Determine synchronization mode
+        id: sync-mode
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_MODE: ${{ inputs.mode }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            mode="$DISPATCH_MODE"
+          else
+            case "$EVENT_SCHEDULE" in
+              "17 0-15,18,21-23 * * *") mode="hourly" ;;
+              "37 17 * * *") mode="daily" ;;
+              "37 19 * * 6") mode="weekly" ;;
+              *) echo "Unknown schedule: $EVENT_SCHEDULE"; exit 1 ;;
+            esac
+          fi
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "Synchronization mode: $mode"
+
       - name: Synchronize official results
-        run: npm run update:data:auto
+        run: npm run update:data:smart -- --mode=${{ steps.sync-mode.outputs.mode }}
 
       - name: Validate data
         run: npm run validate:data
@@ -47,8 +83,39 @@ jobs:
       - name: Run regular roster difference tests
         run: npm run test:sync:roster
 
+      - name: Run smart synchronization tests
+        run: |
+          npm run test:sync:smart
+          npm run test:poll
+          npm run test:sync:selected
+          npm run test:audit
+          npm run test:roster:selected
+
+      - name: Run player statistics regression tests
+        run: npx playwright test tests/player-minutes.spec.js tests/player-season-period.spec.js --workers=1
+
       - name: Check whitespace errors
         run: git diff --check
+
+      - name: Restore generated data after failure
+        if: failure()
+        shell: bash
+        run: |
+          git restore -- \
+            data/sync-state.json \
+            site/data/players.json \
+            site/data/head-to-head.json \
+            site/data/seasons/index.json \
+            site/data/seasons/2026/matches.json \
+            site/data/seasons/2026/team-stats.json \
+            site/data/seasons/2026/div2/matches.json \
+            site/data/seasons/2026/div2/team-stats.json \
+            site/data/seasons/2026/rookie/matches.json \
+            site/data/seasons/2026/championship/matches.json \
+            site/data/seasons/2026/i-league/div1/matches.json \
+            site/data/seasons/2026/i-league/div1/team-stats.json \
+            site/data/seasons/2026/i-league/div2/matches.json \
+            site/data/seasons/2026/i-league/div2/team-stats.json
 
       - name: Discard state-only update
         shell: bash

@@ -58,7 +58,7 @@ async function main() {
           includeGlobalDerived: false,
         }),
       });
-      console.log(`[AUDIT RESULT] competition=${targetKey} detailPosts=${result.detailPosts} changedGames=${result.changedGames} dryRun=${dryRun}`);
+      console.log(`[AUDIT RESULT] competition=${targetKey} detailPosts=${result.detailPosts} rosterRequests=${result.selectedResult?.rosterRequests ?? 0} changedGames=${result.changedGames} dryRun=${dryRun}`);
       results.push({ targetKey, httpRequests: pollResult.httpRequests, ...result });
     }
     if (!dryRun && results.some((result) => result.changedGames > 0)) await buildGlobalDerivedData();
@@ -66,7 +66,7 @@ async function main() {
     await context.dispose();
   }
 
-  console.log(`[AUDIT TOTAL] mode=${mode} competitions=${results.length} listGets=${results.reduce((sum, result) => sum + result.httpRequests, 0)} selectedGames=${results.reduce((sum, result) => sum + result.plan.selectedGames, 0)} detailPosts=${results.reduce((sum, result) => sum + result.detailPosts, 0)} planOnly=${planOnly} dryRun=${dryRun}`);
+  console.log(`[AUDIT TOTAL] mode=${mode} competitions=${results.length} listGets=${results.reduce((sum, result) => sum + result.httpRequests, 0)} selectedGames=${results.reduce((sum, result) => sum + result.plan.selectedGames, 0)} detailPosts=${results.reduce((sum, result) => sum + result.detailPosts, 0)} rosterRequests=${results.reduce((sum, result) => sum + (result.selectedResult?.rosterRequests ?? 0), 0)} planOnly=${planOnly} dryRun=${dryRun}`);
 }
 
 function logAuditPlan(targetKey, plan, httpRequests, planOnly) {
