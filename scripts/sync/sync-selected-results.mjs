@@ -11,6 +11,7 @@ import { createPlayerDirectory, getPlayer } from "../../site/assets/js/utils/pla
 import { createTeamDirectory, getTeam } from "../../site/assets/js/utils/teams.js";
 import { fetchTextWithRetry } from "./http-retry.mjs";
 import { fetchCompetitionList, pollCompetition } from "./poll-results.mjs";
+import { assertUnknownPlayersResolved, commitRosterAndMatch, createSelectedRosterPlan, PLAYERS_PATH } from "./selected-roster-sync.mjs";
 import { executeSelectedDetailSync, selectedGameIdsFromPoll } from "./selected-detail-sync.mjs";
 import { POLL_TARGET_KEYS, RESULT_TARGETS } from "./result-targets.mjs";
 
@@ -95,6 +96,13 @@ export async function runSelectedCompetition({
   const fetchedList = listResult ?? await fetchCompetitionList({ targetKey, context });
   const outputPath = resolve(import.meta.dirname, target.outputPath);
   const existingData = JSON.parse(await readFile(outputPath, "utf8"));
+  const selectedPlayersPath = target.stage === "i-league-regular"
+    ? resolve(ROOT, "site/data/seasons/2026/i-league/players.json")
+    : PLAYERS_PATH;
+  const [playersData, teamCatalog] = await Promise.all([
+    readJson(selectedPlayersPath),
+    readJson(resolve(ROOT, "site/data/team-catalog.json")),
+  ]);
   const detailUrl = new URL("./pubGameResultConf.php", fetchedList.iframeUrl);
   if (detailUrl.protocol !== "https:" || detailUrl.hostname !== "football-system.jp") {
     throw new Error(`詳細POST URLが許可されていません: ${detailUrl.href}`);
@@ -109,6 +117,7 @@ export async function runSelectedCompetition({
     headers: { Referer: fetchedList.iframeUrl.href },
   }, { attempts: 3, timeoutMs: REQUEST_TIMEOUT_MS });
 
+  let rosterPlan = null;
   return executeSelectedDetailSync({
     planOptions: {
       targetKey,
@@ -118,9 +127,32 @@ export async function runSelectedCompetition({
       changeHints,
       fetchDetailHtml,
     },
-    validate: validateSelectedPlayers,
+    validate: async (plan) => {
+      const unknownPlayers = findUnknownSelectedPlayers(plan, { playersData, teamCatalog });
+      if (!unknownPlayers.length) return;
+      if (target.stage !== "regular" || target.season !== 2026) {
+        throw new Error(`通常リーグ以外では対象rosterを自動取得しません: ${unknownPlayers.map((entry) => entry.name).join(", ")}`);
+      }
+      const teamIds = [...new Set(unknownPlayers.map((entry) => entry.teamId))];
+      rosterPlan = await createSelectedRosterPlan({ teamIds, context, playersData, teamCatalog });
+      assertUnknownPlayersResolved(unknownPlayers, rosterPlan.nextPlayersData.items ?? []);
+      const remaining = findUnknownSelectedPlayers(plan, { playersData: rosterPlan.nextPlayersData, teamCatalog });
+      if (remaining.length) throw new Error(`名簿同期後も未解決選手があります: ${remaining.map((entry) => entry.name).join(", ")}`);
+      if (rosterPlan.changed) {
+        plan.changed = true;
+        plan.rosterChanged = true;
+      }
+      console.log(`[ROSTER RESOLVE] teams=${teamIds.join(",")} unknownPlayers=${unknownPlayers.length} resolved=${unknownPlayers.length}`);
+    },
     dryRun,
-    write: async ({ nextData }) => writeMatches(outputPath, nextData, target, fetchedList, detailUrl),
+    write: async ({ nextData }) => writeSelectedDataAtomically({
+      outputPath,
+      nextData,
+      target,
+      fetchedList,
+      detailUrl,
+      rosterPlan,
+    }),
     buildDerived: async () => {
       await buildCompetitionDerivedData(target);
       if (includeGlobalDerived) await buildGlobalDerivedData();
@@ -136,8 +168,15 @@ export async function validateSelectedPlayers(plan) {
       ? "site/data/seasons/2026/i-league/players.json"
       : "site/data/players.json")),
   ]);
+  const unknown = findUnknownSelectedPlayers(plan, { playersData: playerData, teamCatalog });
+  if (unknown.length) throw new Error(`未登録選手です: ${unknown.map((entry) => `${entry.teamName} ${entry.name}`).join(", ")}`);
+}
+
+export function findUnknownSelectedPlayers(plan, { playersData, teamCatalog }) {
+  const target = RESULT_TARGETS[plan.targetKey];
   const teamDirectory = createTeamDirectory(teamCatalog.items ?? []);
-  const playerDirectory = createPlayerDirectory(playerData.items ?? []);
+  const playerDirectory = createPlayerDirectory(playersData.items ?? []);
+  const unknown = [];
   for (const replacement of plan.replacements) {
     const match = replacement.nextMatch;
     for (const side of ["home", "away"]) {
@@ -147,10 +186,39 @@ export async function validateSelectedPlayers(plan) {
       if (!team) throw new Error(`game_id=${match.gameId} ${side} teamIdを解決できません`);
       for (const entry of [...(lineup.starters ?? []), ...(lineup.substitutes ?? [])]) {
         if (!getPlayer(playerDirectory, entry.name, team.id)) {
-          throw new Error(`game_id=${match.gameId} ${team.name} の未登録選手です: ${entry.name}`);
+          unknown.push({ gameId: match.gameId, teamId: team.id, teamName: team.name, name: entry.name });
         }
       }
     }
+  }
+  return [...new Map(unknown.map((entry) => [`${entry.teamId}\0${entry.name}`, entry])).values()];
+}
+
+async function writeSelectedDataAtomically({ outputPath, nextData, target, fetchedList, detailUrl, rosterPlan }) {
+  if (!rosterPlan?.changed) return writeMatches(outputPath, nextData, target, fetchedList, detailUrl);
+  const [previousPlayers, previousMatches] = await Promise.all([
+    readFile(PLAYERS_PATH, "utf8"),
+    readFile(outputPath, "utf8"),
+  ]);
+  await commitRosterAndMatch({
+    rosterChanged: true,
+    writePlayers: () => writeJsonAtomic(PLAYERS_PATH, rosterPlan.nextPlayersData),
+    writeMatch: () => writeMatches(outputPath, nextData, target, fetchedList, detailUrl),
+    rollback: () => Promise.all([
+      writeFile(PLAYERS_PATH, previousPlayers, "utf8"),
+      writeFile(outputPath, previousMatches, "utf8"),
+    ]),
+  });
+}
+
+async function writeJsonAtomic(path, data) {
+  const temporaryPath = `${path}.tmp`;
+  try {
+    await writeFile(temporaryPath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+    JSON.parse(await readFile(temporaryPath, "utf8"));
+    await rename(temporaryPath, path);
+  } finally {
+    await rm(temporaryPath, { force: true });
   }
 }
 

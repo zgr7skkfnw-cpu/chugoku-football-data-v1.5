@@ -1,5 +1,6 @@
 import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 import { request } from "@playwright/test";
 
@@ -12,7 +13,7 @@ const TEAM_CATALOG_PATH = resolve(ROOT, "site/data/team-catalog.json");
 const TEMPORARY_PATH = `${PLAYERS_PATH}.tmp`;
 const WAIT_MS = 250;
 
-const SPECIFICATIONS = [
+export const REGULAR_ROSTER_SPECIFICATIONS = [
   ["ipu", "IPU・環太平洋大学", 1, "https://football-system.jp/fss/pub_teaminfo_jufa_chugoku.php?tid=Vb2DRDIZ%2B2M%3D"],
   ["hiroshima-keizai", "広島経済大学", 1, "https://football-system.jp/fss/pub_teaminfo.php?tid=5lA0uLGR2%2BA%3D"],
   ["fukuyama", "福山大学", 1, "https://football-system.jp/fss/pub_teaminfo.php?tid=mP77admFzug%3D"],
@@ -36,7 +37,7 @@ const SPECIFICATIONS = [
   ["university-of-shimane", "島根県立大学", 2, "https://football-system.jp/fss/pub_teaminfo.php?tid=eDcnsECM8mQ%3D"],
 ].map(([teamId, teamName, division, registrationUrl]) => ({ teamId, teamName, division, registrationUrl }));
 
-function assertOfficialUrl(value) {
+export function assertOfficialRosterUrl(value) {
   const url = new URL(value);
   if (url.protocol !== "https:" || url.hostname !== "football-system.jp") {
     throw new Error(`許可されていない公式名簿URLです: ${url.href}`);
@@ -60,9 +61,9 @@ async function main() {
   });
   const officialRosters = new Map();
   try {
-    for (const [index, specification] of SPECIFICATIONS.entries()) {
+    for (const [index, specification] of REGULAR_ROSTER_SPECIFICATIONS.entries()) {
       if (index) await new Promise((resolveDelay) => setTimeout(resolveDelay, WAIT_MS));
-      const url = assertOfficialUrl(specification.registrationUrl);
+      const url = assertOfficialRosterUrl(specification.registrationUrl);
       const html = await fetchTextWithRetry(api, url, {}, {
         attempts: 4,
         timeoutMs: 45_000,
@@ -81,7 +82,7 @@ async function main() {
   const additions = planRegularRosterAdditions({
     existingPlayers: playersData.items ?? [],
     officialRosters,
-    specifications: SPECIFICATIONS,
+    specifications: REGULAR_ROSTER_SPECIFICATIONS,
     validTeamIds,
   });
   if (!additions.length) {
@@ -109,8 +110,10 @@ async function main() {
   console.log(`[roster-sync] ${additions.length}人を公式名簿から追加しました。`);
 }
 
-await main().catch((error) => {
-  console.error(`[roster-sync] 失敗: ${error.message}`);
-  console.error("players.jsonは更新しません。GitHub Actionsでは後続の試合同期・commit・pushへ進みません。");
-  process.exitCode = 1;
-});
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  await main().catch((error) => {
+    console.error(`[roster-sync] 失敗: ${error.message}`);
+    console.error("players.jsonは更新しません。GitHub Actionsでは後続の試合同期・commit・pushへ進みません。");
+    process.exitCode = 1;
+  });
+}
