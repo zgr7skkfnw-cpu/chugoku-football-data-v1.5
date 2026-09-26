@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "seasonId": "jufa-chugoku-2026-i-league-division-2",
-  "updatedAt": "2026-09-26T08:28:15.020Z",
+  "updatedAt": "2026-09-26T13:42:11.129Z",
   "competitionId": "jufa-chugoku-2026-i-league-division-2",
   "division": 1,
   "periodRules": {
@@ -31,54 +31,54 @@
           "rankChange": 1
         },
         {
-          "teamId": "i-league-2026-hiroshima-b",
-          "played": 4,
-          "won": 3,
-          "drawn": 0,
-          "lost": 1,
-          "points": 9,
-          "goalsFor": 12,
-          "goalsAgainst": 9,
-          "goalDifference": 3,
-          "rank": 2,
-          "rankChange": -1
-        },
-        {
           "teamId": "i-league-2026-ipu-b",
-          "played": 4,
-          "won": 2,
+          "played": 5,
+          "won": 3,
           "drawn": 1,
           "lost": 1,
-          "points": 7,
-          "goalsFor": 22,
-          "goalsAgainst": 5,
-          "goalDifference": 17,
+          "points": 10,
+          "goalsFor": 26,
+          "goalsAgainst": 6,
+          "goalDifference": 20,
+          "rank": 2,
+          "rankChange": 1
+        },
+        {
+          "teamId": "i-league-2026-hiroshima-b",
+          "played": 5,
+          "won": 3,
+          "drawn": 1,
+          "lost": 1,
+          "points": 10,
+          "goalsFor": 16,
+          "goalsAgainst": 13,
+          "goalDifference": 3,
           "rank": 3,
-          "rankChange": 0
+          "rankChange": -2
         },
         {
           "teamId": "i-league-2026-hue-b",
-          "played": 4,
+          "played": 5,
           "won": 2,
-          "drawn": 0,
+          "drawn": 1,
           "lost": 2,
-          "points": 6,
-          "goalsFor": 7,
-          "goalsAgainst": 12,
+          "points": 7,
+          "goalsFor": 11,
+          "goalsAgainst": 16,
           "goalDifference": -5,
           "rank": 4,
           "rankChange": 0
         },
         {
           "teamId": "i-league-2026-ipu-d",
-          "played": 4,
+          "played": 5,
           "won": 1,
           "drawn": 1,
-          "lost": 2,
+          "lost": 3,
           "points": 4,
-          "goalsFor": 10,
-          "goalsAgainst": 7,
-          "goalDifference": 3,
+          "goalsFor": 11,
+          "goalsAgainst": 11,
+          "goalDifference": 0,
           "rank": 5,
           "rankChange": 0
         },
@@ -111,13 +111,13 @@
         },
         {
           "teamId": "i-league-2026-hiroshima-b",
-          "played": 2,
+          "played": 3,
           "won": 2,
-          "drawn": 0,
+          "drawn": 1,
           "lost": 0,
-          "points": 6,
-          "goalsFor": 8,
-          "goalsAgainst": 2,
+          "points": 7,
+          "goalsFor": 12,
+          "goalsAgainst": 6,
           "goalDifference": 6,
           "rank": 2
         },
@@ -147,14 +147,14 @@
         },
         {
           "teamId": "i-league-2026-ipu-d",
-          "played": 1,
+          "played": 2,
           "won": 0,
           "drawn": 1,
-          "lost": 0,
+          "lost": 1,
           "points": 1,
-          "goalsFor": 1,
-          "goalsAgainst": 1,
-          "goalDifference": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 5,
+          "goalDifference": -3,
           "rank": 5
         },
         {
@@ -172,19 +172,19 @@
       ],
       "awayStandings": [
         {
-          "teamId": "i-league-2026-fukuyama-b",
-          "played": 2,
-          "won": 1,
+          "teamId": "i-league-2026-ipu-b",
+          "played": 3,
+          "won": 2,
           "drawn": 1,
           "lost": 0,
-          "points": 4,
-          "goalsFor": 9,
-          "goalsAgainst": 2,
-          "goalDifference": 7,
+          "points": 7,
+          "goalsFor": 13,
+          "goalsAgainst": 3,
+          "goalDifference": 10,
           "rank": 1
         },
         {
-          "teamId": "i-league-2026-ipu-b",
+          "teamId": "i-league-2026-fukuyama-b",
           "played": 2,
           "won": 1,
           "drawn": 1,
@@ -196,6 +196,18 @@
           "rank": 2
         },
         {
+          "teamId": "i-league-2026-hue-b",
+          "played": 3,
+          "won": 1,
+          "drawn": 1,
+          "lost": 1,
+          "points": 4,
+          "goalsFor": 8,
+          "goalsAgainst": 8,
+          "goalDifference": 0,
+          "rank": 3
+        },
+        {
           "teamId": "i-league-2026-ipu-d",
           "played": 3,
           "won": 1,
@@ -205,18 +217,6 @@
           "goalsFor": 9,
           "goalsAgainst": 6,
           "goalDifference": 3,
-          "rank": 3
-        },
-        {
-          "teamId": "i-league-2026-hue-b",
-          "played": 2,
-          "won": 1,
-          "drawn": 0,
-          "lost": 1,
-          "points": 3,
-          "goalsFor": 4,
-          "goalsAgainst": 4,
-          "goalDifference": 0,
           "rank": 4
         },
         {
@@ -247,16 +247,16 @@
       "teams": [
         {
           "teamId": "i-league-2026-ipu-b",
-          "rank": 3,
+          "rank": 2,
           "overall": {
-            "played": 4,
-            "won": 2,
+            "played": 5,
+            "won": 3,
             "drawn": 1,
             "lost": 1,
-            "points": 7,
-            "goalsFor": 22,
-            "goalsAgainst": 5,
-            "goalDifference": 17
+            "points": 10,
+            "goalsFor": 26,
+            "goalsAgainst": 6,
+            "goalDifference": 20
           },
           "home": {
             "played": 2,
@@ -269,16 +269,28 @@
             "goalDifference": 10
           },
           "away": {
-            "played": 2,
-            "won": 1,
+            "played": 3,
+            "won": 2,
             "drawn": 1,
             "lost": 0,
-            "points": 4,
-            "goalsFor": 9,
-            "goalsAgainst": 2,
-            "goalDifference": 7
+            "points": 7,
+            "goalsFor": 13,
+            "goalsAgainst": 3,
+            "goalDifference": 10
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-cb72fd789eaf",
+              "kickoffAt": "2026-09-26T15:30:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "i-league-2026-ipu-d",
+              "opponentName": "IPU・環太平洋大学D",
+              "goalsFor": 4,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
             {
               "matchId": "football-system-schedule-4c29accc4fa5",
               "kickoffAt": "2026-09-05T18:30:00+09:00",
@@ -329,14 +341,14 @@
             }
           ],
           "stats": {
-            "averageGoals": 5.5,
-            "averageConceded": 1.25,
+            "averageGoals": 5.2,
+            "averageConceded": 1.2,
             "cleanSheets": 1,
             "scorelessMatches": 0,
             "yellowCards": 2,
             "redCards": 0,
-            "benchSelections": 36,
-            "averageBench": 9,
+            "benchSelections": 47,
+            "averageBench": 9.4,
             "averageStartingAge": null
           },
           "rankProgression": [
@@ -358,7 +370,7 @@
             },
             {
               "round": 5,
-              "rank": 3
+              "rank": 2
             }
           ]
         },
@@ -366,24 +378,24 @@
           "teamId": "i-league-2026-ipu-d",
           "rank": 5,
           "overall": {
-            "played": 4,
+            "played": 5,
             "won": 1,
             "drawn": 1,
-            "lost": 2,
+            "lost": 3,
             "points": 4,
-            "goalsFor": 10,
-            "goalsAgainst": 7,
-            "goalDifference": 3
+            "goalsFor": 11,
+            "goalsAgainst": 11,
+            "goalDifference": 0
           },
           "home": {
-            "played": 1,
+            "played": 2,
             "won": 0,
             "drawn": 1,
-            "lost": 0,
+            "lost": 1,
             "points": 1,
-            "goalsFor": 1,
-            "goalsAgainst": 1,
-            "goalDifference": 0
+            "goalsFor": 2,
+            "goalsAgainst": 5,
+            "goalDifference": -3
           },
           "away": {
             "played": 3,
@@ -396,6 +408,18 @@
             "goalDifference": 3
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-cb72fd789eaf",
+              "kickoffAt": "2026-09-26T15:30:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "i-league-2026-ipu-b",
+              "opponentName": "IPU・環太平洋大学B",
+              "goalsFor": 1,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
             {
               "matchId": "football-system-schedule-b820874c7cbb",
               "kickoffAt": "2026-09-05T17:00:00+09:00",
@@ -446,14 +470,14 @@
             }
           ],
           "stats": {
-            "averageGoals": 2.5,
-            "averageConceded": 1.75,
+            "averageGoals": 2.2,
+            "averageConceded": 2.2,
             "cleanSheets": 1,
             "scorelessMatches": 0,
             "yellowCards": 0,
             "redCards": 0,
-            "benchSelections": 36,
-            "averageBench": 9,
+            "benchSelections": 47,
+            "averageBench": 9.4,
             "averageStartingAge": null
           },
           "rankProgression": [
@@ -483,13 +507,13 @@
           "teamId": "i-league-2026-hue-b",
           "rank": 4,
           "overall": {
-            "played": 4,
+            "played": 5,
             "won": 2,
-            "drawn": 0,
+            "drawn": 1,
             "lost": 2,
-            "points": 6,
-            "goalsFor": 7,
-            "goalsAgainst": 12,
+            "points": 7,
+            "goalsFor": 11,
+            "goalsAgainst": 16,
             "goalDifference": -5
           },
           "home": {
@@ -503,16 +527,28 @@
             "goalDifference": -5
           },
           "away": {
-            "played": 2,
+            "played": 3,
             "won": 1,
-            "drawn": 0,
+            "drawn": 1,
             "lost": 1,
-            "points": 3,
-            "goalsFor": 4,
-            "goalsAgainst": 4,
+            "points": 4,
+            "goalsFor": 8,
+            "goalsAgainst": 8,
             "goalDifference": 0
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-49af3d093bbe",
+              "kickoffAt": "2026-09-26T17:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "i-league-2026-hiroshima-b",
+              "opponentName": "広島大学B",
+              "goalsFor": 4,
+              "goalsAgainst": 4,
+              "result": "D"
+            },
             {
               "matchId": "football-system-schedule-4c29accc4fa5",
               "kickoffAt": "2026-09-05T18:30:00+09:00",
@@ -563,13 +599,13 @@
             }
           ],
           "stats": {
-            "averageGoals": 1.75,
-            "averageConceded": 3,
+            "averageGoals": 2.2,
+            "averageConceded": 3.2,
             "cleanSheets": 0,
             "scorelessMatches": 2,
             "yellowCards": 1,
             "redCards": 0,
-            "benchSelections": 44,
+            "benchSelections": 55,
             "averageBench": 11,
             "averageStartingAge": null
           },
@@ -856,25 +892,25 @@
         },
         {
           "teamId": "i-league-2026-hiroshima-b",
-          "rank": 2,
+          "rank": 3,
           "overall": {
-            "played": 4,
+            "played": 5,
             "won": 3,
-            "drawn": 0,
+            "drawn": 1,
             "lost": 1,
-            "points": 9,
-            "goalsFor": 12,
-            "goalsAgainst": 9,
+            "points": 10,
+            "goalsFor": 16,
+            "goalsAgainst": 13,
             "goalDifference": 3
           },
           "home": {
-            "played": 2,
+            "played": 3,
             "won": 2,
-            "drawn": 0,
+            "drawn": 1,
             "lost": 0,
-            "points": 6,
-            "goalsFor": 8,
-            "goalsAgainst": 2,
+            "points": 7,
+            "goalsFor": 12,
+            "goalsAgainst": 6,
             "goalDifference": 6
           },
           "away": {
@@ -888,6 +924,18 @@
             "goalDifference": -3
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-49af3d093bbe",
+              "kickoffAt": "2026-09-26T17:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "i-league-2026-hue-b",
+              "opponentName": "広島経済大学B",
+              "goalsFor": 4,
+              "goalsAgainst": 4,
+              "result": "D"
+            },
             {
               "matchId": "football-system-schedule-6531ebfb4f0b",
               "kickoffAt": "2026-09-05T16:00:00+09:00",
@@ -938,14 +986,14 @@
             }
           ],
           "stats": {
-            "averageGoals": 3,
-            "averageConceded": 2.25,
+            "averageGoals": 3.2,
+            "averageConceded": 2.6,
             "cleanSheets": 1,
             "scorelessMatches": 0,
             "yellowCards": 2,
             "redCards": 0,
-            "benchSelections": 43,
-            "averageBench": 10.75,
+            "benchSelections": 54,
+            "averageBench": 10.8,
             "averageStartingAge": null
           },
           "rankProgression": [
@@ -967,7 +1015,7 @@
             },
             {
               "round": 5,
-              "rank": 2
+              "rank": 3
             }
           ]
         }
@@ -977,7 +1025,7 @@
           {
             "rank": 1,
             "teamId": "i-league-2026-ipu-b",
-            "value": 5.5
+            "value": 5.2
           },
           {
             "rank": 2,
@@ -987,17 +1035,17 @@
           {
             "rank": 3,
             "teamId": "i-league-2026-hiroshima-b",
-            "value": 3
+            "value": 3.2
           },
           {
             "rank": 4,
-            "teamId": "i-league-2026-ipu-d",
-            "value": 2.5
+            "teamId": "i-league-2026-hue-b",
+            "value": 2.2
           },
           {
             "rank": 5,
-            "teamId": "i-league-2026-hue-b",
-            "value": 1.75
+            "teamId": "i-league-2026-ipu-d",
+            "value": 2.2
           },
           {
             "rank": 6,
@@ -1014,26 +1062,26 @@
           {
             "rank": 2,
             "teamId": "i-league-2026-hue-b",
-            "value": 3
+            "value": 3.2
           },
           {
             "rank": 3,
             "teamId": "i-league-2026-hiroshima-b",
-            "value": 2.25
+            "value": 2.6
           },
           {
             "rank": 4,
             "teamId": "i-league-2026-ipu-d",
-            "value": 1.75
+            "value": 2.2
           },
           {
             "rank": 5,
-            "teamId": "i-league-2026-ipu-b",
-            "value": 1.25
+            "teamId": "i-league-2026-fukuyama-b",
+            "value": 1.2
           },
           {
             "rank": 6,
-            "teamId": "i-league-2026-fukuyama-b",
+            "teamId": "i-league-2026-ipu-b",
             "value": 1.2
           }
         ],
@@ -1168,33 +1216,33 @@
         "benchSelections": [
           {
             "rank": 1,
+            "teamId": "i-league-2026-hue-b",
+            "value": 55
+          },
+          {
+            "rank": 2,
             "teamId": "i-league-2026-fukuyama-b",
             "value": 54
           },
           {
-            "rank": 2,
-            "teamId": "i-league-2026-hue-b",
-            "value": 44
-          },
-          {
             "rank": 3,
             "teamId": "i-league-2026-hiroshima-b",
-            "value": 43
+            "value": 54
           },
           {
             "rank": 4,
-            "teamId": "i-league-2026-ipu-c",
-            "value": 42
+            "teamId": "i-league-2026-ipu-b",
+            "value": 47
           },
           {
             "rank": 5,
-            "teamId": "i-league-2026-ipu-b",
-            "value": 36
+            "teamId": "i-league-2026-ipu-d",
+            "value": 47
           },
           {
             "rank": 6,
-            "teamId": "i-league-2026-ipu-d",
-            "value": 36
+            "teamId": "i-league-2026-ipu-c",
+            "value": 42
           }
         ],
         "averageBench": [
@@ -1211,17 +1259,17 @@
           {
             "rank": 3,
             "teamId": "i-league-2026-hiroshima-b",
-            "value": 10.75
+            "value": 10.8
           },
           {
             "rank": 4,
             "teamId": "i-league-2026-ipu-b",
-            "value": 9
+            "value": 9.4
           },
           {
             "rank": 5,
             "teamId": "i-league-2026-ipu-d",
-            "value": 9
+            "value": 9.4
           },
           {
             "rank": 6,
@@ -1248,54 +1296,54 @@
           "rankChange": 1
         },
         {
-          "teamId": "i-league-2026-hiroshima-b",
-          "played": 4,
-          "won": 3,
-          "drawn": 0,
-          "lost": 1,
-          "points": 9,
-          "goalsFor": 12,
-          "goalsAgainst": 9,
-          "goalDifference": 3,
-          "rank": 2,
-          "rankChange": -1
-        },
-        {
           "teamId": "i-league-2026-ipu-b",
-          "played": 4,
-          "won": 2,
+          "played": 5,
+          "won": 3,
           "drawn": 1,
           "lost": 1,
-          "points": 7,
-          "goalsFor": 22,
-          "goalsAgainst": 5,
-          "goalDifference": 17,
+          "points": 10,
+          "goalsFor": 26,
+          "goalsAgainst": 6,
+          "goalDifference": 20,
+          "rank": 2,
+          "rankChange": 1
+        },
+        {
+          "teamId": "i-league-2026-hiroshima-b",
+          "played": 5,
+          "won": 3,
+          "drawn": 1,
+          "lost": 1,
+          "points": 10,
+          "goalsFor": 16,
+          "goalsAgainst": 13,
+          "goalDifference": 3,
           "rank": 3,
-          "rankChange": 0
+          "rankChange": -2
         },
         {
           "teamId": "i-league-2026-hue-b",
-          "played": 4,
+          "played": 5,
           "won": 2,
-          "drawn": 0,
+          "drawn": 1,
           "lost": 2,
-          "points": 6,
-          "goalsFor": 7,
-          "goalsAgainst": 12,
+          "points": 7,
+          "goalsFor": 11,
+          "goalsAgainst": 16,
           "goalDifference": -5,
           "rank": 4,
           "rankChange": 0
         },
         {
           "teamId": "i-league-2026-ipu-d",
-          "played": 4,
+          "played": 5,
           "won": 1,
           "drawn": 1,
-          "lost": 2,
+          "lost": 3,
           "points": 4,
-          "goalsFor": 10,
-          "goalsAgainst": 7,
-          "goalDifference": 3,
+          "goalsFor": 11,
+          "goalsAgainst": 11,
+          "goalDifference": 0,
           "rank": 5,
           "rankChange": 0
         },
@@ -1328,13 +1376,13 @@
         },
         {
           "teamId": "i-league-2026-hiroshima-b",
-          "played": 2,
+          "played": 3,
           "won": 2,
-          "drawn": 0,
+          "drawn": 1,
           "lost": 0,
-          "points": 6,
-          "goalsFor": 8,
-          "goalsAgainst": 2,
+          "points": 7,
+          "goalsFor": 12,
+          "goalsAgainst": 6,
           "goalDifference": 6,
           "rank": 2
         },
@@ -1364,14 +1412,14 @@
         },
         {
           "teamId": "i-league-2026-ipu-d",
-          "played": 1,
+          "played": 2,
           "won": 0,
           "drawn": 1,
-          "lost": 0,
+          "lost": 1,
           "points": 1,
-          "goalsFor": 1,
-          "goalsAgainst": 1,
-          "goalDifference": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 5,
+          "goalDifference": -3,
           "rank": 5
         },
         {
@@ -1389,19 +1437,19 @@
       ],
       "awayStandings": [
         {
-          "teamId": "i-league-2026-fukuyama-b",
-          "played": 2,
-          "won": 1,
+          "teamId": "i-league-2026-ipu-b",
+          "played": 3,
+          "won": 2,
           "drawn": 1,
           "lost": 0,
-          "points": 4,
-          "goalsFor": 9,
-          "goalsAgainst": 2,
-          "goalDifference": 7,
+          "points": 7,
+          "goalsFor": 13,
+          "goalsAgainst": 3,
+          "goalDifference": 10,
           "rank": 1
         },
         {
-          "teamId": "i-league-2026-ipu-b",
+          "teamId": "i-league-2026-fukuyama-b",
           "played": 2,
           "won": 1,
           "drawn": 1,
@@ -1413,6 +1461,18 @@
           "rank": 2
         },
         {
+          "teamId": "i-league-2026-hue-b",
+          "played": 3,
+          "won": 1,
+          "drawn": 1,
+          "lost": 1,
+          "points": 4,
+          "goalsFor": 8,
+          "goalsAgainst": 8,
+          "goalDifference": 0,
+          "rank": 3
+        },
+        {
           "teamId": "i-league-2026-ipu-d",
           "played": 3,
           "won": 1,
@@ -1422,18 +1482,6 @@
           "goalsFor": 9,
           "goalsAgainst": 6,
           "goalDifference": 3,
-          "rank": 3
-        },
-        {
-          "teamId": "i-league-2026-hue-b",
-          "played": 2,
-          "won": 1,
-          "drawn": 0,
-          "lost": 1,
-          "points": 3,
-          "goalsFor": 4,
-          "goalsAgainst": 4,
-          "goalDifference": 0,
           "rank": 4
         },
         {
@@ -1464,16 +1512,16 @@
       "teams": [
         {
           "teamId": "i-league-2026-ipu-b",
-          "rank": 3,
+          "rank": 2,
           "overall": {
-            "played": 4,
-            "won": 2,
+            "played": 5,
+            "won": 3,
             "drawn": 1,
             "lost": 1,
-            "points": 7,
-            "goalsFor": 22,
-            "goalsAgainst": 5,
-            "goalDifference": 17
+            "points": 10,
+            "goalsFor": 26,
+            "goalsAgainst": 6,
+            "goalDifference": 20
           },
           "home": {
             "played": 2,
@@ -1486,16 +1534,28 @@
             "goalDifference": 10
           },
           "away": {
-            "played": 2,
-            "won": 1,
+            "played": 3,
+            "won": 2,
             "drawn": 1,
             "lost": 0,
-            "points": 4,
-            "goalsFor": 9,
-            "goalsAgainst": 2,
-            "goalDifference": 7
+            "points": 7,
+            "goalsFor": 13,
+            "goalsAgainst": 3,
+            "goalDifference": 10
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-cb72fd789eaf",
+              "kickoffAt": "2026-09-26T15:30:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "i-league-2026-ipu-d",
+              "opponentName": "IPU・環太平洋大学D",
+              "goalsFor": 4,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
             {
               "matchId": "football-system-schedule-4c29accc4fa5",
               "kickoffAt": "2026-09-05T18:30:00+09:00",
@@ -1546,14 +1606,14 @@
             }
           ],
           "stats": {
-            "averageGoals": 5.5,
-            "averageConceded": 1.25,
+            "averageGoals": 5.2,
+            "averageConceded": 1.2,
             "cleanSheets": 1,
             "scorelessMatches": 0,
             "yellowCards": 2,
             "redCards": 0,
-            "benchSelections": 36,
-            "averageBench": 9,
+            "benchSelections": 47,
+            "averageBench": 9.4,
             "averageStartingAge": null
           },
           "rankProgression": [
@@ -1575,7 +1635,7 @@
             },
             {
               "round": 5,
-              "rank": 3
+              "rank": 2
             }
           ]
         },
@@ -1583,24 +1643,24 @@
           "teamId": "i-league-2026-ipu-d",
           "rank": 5,
           "overall": {
-            "played": 4,
+            "played": 5,
             "won": 1,
             "drawn": 1,
-            "lost": 2,
+            "lost": 3,
             "points": 4,
-            "goalsFor": 10,
-            "goalsAgainst": 7,
-            "goalDifference": 3
+            "goalsFor": 11,
+            "goalsAgainst": 11,
+            "goalDifference": 0
           },
           "home": {
-            "played": 1,
+            "played": 2,
             "won": 0,
             "drawn": 1,
-            "lost": 0,
+            "lost": 1,
             "points": 1,
-            "goalsFor": 1,
-            "goalsAgainst": 1,
-            "goalDifference": 0
+            "goalsFor": 2,
+            "goalsAgainst": 5,
+            "goalDifference": -3
           },
           "away": {
             "played": 3,
@@ -1613,6 +1673,18 @@
             "goalDifference": 3
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-cb72fd789eaf",
+              "kickoffAt": "2026-09-26T15:30:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "i-league-2026-ipu-b",
+              "opponentName": "IPU・環太平洋大学B",
+              "goalsFor": 1,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
             {
               "matchId": "football-system-schedule-b820874c7cbb",
               "kickoffAt": "2026-09-05T17:00:00+09:00",
@@ -1663,14 +1735,14 @@
             }
           ],
           "stats": {
-            "averageGoals": 2.5,
-            "averageConceded": 1.75,
+            "averageGoals": 2.2,
+            "averageConceded": 2.2,
             "cleanSheets": 1,
             "scorelessMatches": 0,
             "yellowCards": 0,
             "redCards": 0,
-            "benchSelections": 36,
-            "averageBench": 9,
+            "benchSelections": 47,
+            "averageBench": 9.4,
             "averageStartingAge": null
           },
           "rankProgression": [
@@ -1700,13 +1772,13 @@
           "teamId": "i-league-2026-hue-b",
           "rank": 4,
           "overall": {
-            "played": 4,
+            "played": 5,
             "won": 2,
-            "drawn": 0,
+            "drawn": 1,
             "lost": 2,
-            "points": 6,
-            "goalsFor": 7,
-            "goalsAgainst": 12,
+            "points": 7,
+            "goalsFor": 11,
+            "goalsAgainst": 16,
             "goalDifference": -5
           },
           "home": {
@@ -1720,16 +1792,28 @@
             "goalDifference": -5
           },
           "away": {
-            "played": 2,
+            "played": 3,
             "won": 1,
-            "drawn": 0,
+            "drawn": 1,
             "lost": 1,
-            "points": 3,
-            "goalsFor": 4,
-            "goalsAgainst": 4,
+            "points": 4,
+            "goalsFor": 8,
+            "goalsAgainst": 8,
             "goalDifference": 0
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-49af3d093bbe",
+              "kickoffAt": "2026-09-26T17:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "away",
+              "opponentTeamId": "i-league-2026-hiroshima-b",
+              "opponentName": "広島大学B",
+              "goalsFor": 4,
+              "goalsAgainst": 4,
+              "result": "D"
+            },
             {
               "matchId": "football-system-schedule-4c29accc4fa5",
               "kickoffAt": "2026-09-05T18:30:00+09:00",
@@ -1780,13 +1864,13 @@
             }
           ],
           "stats": {
-            "averageGoals": 1.75,
-            "averageConceded": 3,
+            "averageGoals": 2.2,
+            "averageConceded": 3.2,
             "cleanSheets": 0,
             "scorelessMatches": 2,
             "yellowCards": 1,
             "redCards": 0,
-            "benchSelections": 44,
+            "benchSelections": 55,
             "averageBench": 11,
             "averageStartingAge": null
           },
@@ -2073,25 +2157,25 @@
         },
         {
           "teamId": "i-league-2026-hiroshima-b",
-          "rank": 2,
+          "rank": 3,
           "overall": {
-            "played": 4,
+            "played": 5,
             "won": 3,
-            "drawn": 0,
+            "drawn": 1,
             "lost": 1,
-            "points": 9,
-            "goalsFor": 12,
-            "goalsAgainst": 9,
+            "points": 10,
+            "goalsFor": 16,
+            "goalsAgainst": 13,
             "goalDifference": 3
           },
           "home": {
-            "played": 2,
+            "played": 3,
             "won": 2,
-            "drawn": 0,
+            "drawn": 1,
             "lost": 0,
-            "points": 6,
-            "goalsFor": 8,
-            "goalsAgainst": 2,
+            "points": 7,
+            "goalsFor": 12,
+            "goalsAgainst": 6,
             "goalDifference": 6
           },
           "away": {
@@ -2105,6 +2189,18 @@
             "goalDifference": -3
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-49af3d093bbe",
+              "kickoffAt": "2026-09-26T17:00:00+09:00",
+              "round": 5,
+              "period": "first",
+              "side": "home",
+              "opponentTeamId": "i-league-2026-hue-b",
+              "opponentName": "広島経済大学B",
+              "goalsFor": 4,
+              "goalsAgainst": 4,
+              "result": "D"
+            },
             {
               "matchId": "football-system-schedule-6531ebfb4f0b",
               "kickoffAt": "2026-09-05T16:00:00+09:00",
@@ -2155,14 +2251,14 @@
             }
           ],
           "stats": {
-            "averageGoals": 3,
-            "averageConceded": 2.25,
+            "averageGoals": 3.2,
+            "averageConceded": 2.6,
             "cleanSheets": 1,
             "scorelessMatches": 0,
             "yellowCards": 2,
             "redCards": 0,
-            "benchSelections": 43,
-            "averageBench": 10.75,
+            "benchSelections": 54,
+            "averageBench": 10.8,
             "averageStartingAge": null
           },
           "rankProgression": [
@@ -2184,7 +2280,7 @@
             },
             {
               "round": 5,
-              "rank": 2
+              "rank": 3
             }
           ]
         }
@@ -2194,7 +2290,7 @@
           {
             "rank": 1,
             "teamId": "i-league-2026-ipu-b",
-            "value": 5.5
+            "value": 5.2
           },
           {
             "rank": 2,
@@ -2204,17 +2300,17 @@
           {
             "rank": 3,
             "teamId": "i-league-2026-hiroshima-b",
-            "value": 3
+            "value": 3.2
           },
           {
             "rank": 4,
-            "teamId": "i-league-2026-ipu-d",
-            "value": 2.5
+            "teamId": "i-league-2026-hue-b",
+            "value": 2.2
           },
           {
             "rank": 5,
-            "teamId": "i-league-2026-hue-b",
-            "value": 1.75
+            "teamId": "i-league-2026-ipu-d",
+            "value": 2.2
           },
           {
             "rank": 6,
@@ -2231,26 +2327,26 @@
           {
             "rank": 2,
             "teamId": "i-league-2026-hue-b",
-            "value": 3
+            "value": 3.2
           },
           {
             "rank": 3,
             "teamId": "i-league-2026-hiroshima-b",
-            "value": 2.25
+            "value": 2.6
           },
           {
             "rank": 4,
             "teamId": "i-league-2026-ipu-d",
-            "value": 1.75
+            "value": 2.2
           },
           {
             "rank": 5,
-            "teamId": "i-league-2026-ipu-b",
-            "value": 1.25
+            "teamId": "i-league-2026-fukuyama-b",
+            "value": 1.2
           },
           {
             "rank": 6,
-            "teamId": "i-league-2026-fukuyama-b",
+            "teamId": "i-league-2026-ipu-b",
             "value": 1.2
           }
         ],
@@ -2385,33 +2481,33 @@
         "benchSelections": [
           {
             "rank": 1,
+            "teamId": "i-league-2026-hue-b",
+            "value": 55
+          },
+          {
+            "rank": 2,
             "teamId": "i-league-2026-fukuyama-b",
             "value": 54
           },
           {
-            "rank": 2,
-            "teamId": "i-league-2026-hue-b",
-            "value": 44
-          },
-          {
             "rank": 3,
             "teamId": "i-league-2026-hiroshima-b",
-            "value": 43
+            "value": 54
           },
           {
             "rank": 4,
-            "teamId": "i-league-2026-ipu-c",
-            "value": 42
+            "teamId": "i-league-2026-ipu-b",
+            "value": 47
           },
           {
             "rank": 5,
-            "teamId": "i-league-2026-ipu-b",
-            "value": 36
+            "teamId": "i-league-2026-ipu-d",
+            "value": 47
           },
           {
             "rank": 6,
-            "teamId": "i-league-2026-ipu-d",
-            "value": 36
+            "teamId": "i-league-2026-ipu-c",
+            "value": 42
           }
         ],
         "averageBench": [
@@ -2428,17 +2524,17 @@
           {
             "rank": 3,
             "teamId": "i-league-2026-hiroshima-b",
-            "value": 10.75
+            "value": 10.8
           },
           {
             "rank": 4,
             "teamId": "i-league-2026-ipu-b",
-            "value": 9
+            "value": 9.4
           },
           {
             "rank": 5,
             "teamId": "i-league-2026-ipu-d",
-            "value": 9
+            "value": 9.4
           },
           {
             "rank": 6,
