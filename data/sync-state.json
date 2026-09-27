@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastRunAt": "2026-09-27T09:06:28.553Z",
+  "lastRunAt": "2026-09-27T17:37:57.390Z",
   "status": "success",
   "trigger": "schedule",
   "competitions": [
@@ -11,20 +11,20 @@
       "detectedMatches": 90,
       "finishedMatches": 73,
       "scheduledMatches": 17,
-      "changedMatches": 5,
+      "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 15137
+      "durationMs": 13923
     },
     {
       "competitionId": "jufa-chugoku-2026-division-2",
       "name": "2026年中国大学リーグ2部",
       "status": "success",
       "detectedMatches": 110,
-      "finishedMatches": 84,
-      "scheduledMatches": 26,
-      "changedMatches": 4,
+      "finishedMatches": 85,
+      "scheduledMatches": 25,
+      "changedMatches": 1,
       "failedGameIds": [],
-      "durationMs": 16704
+      "durationMs": 15553
     },
     {
       "competitionId": "jufa-chugoku-2026-rookie-tournament",
@@ -35,7 +35,7 @@
       "scheduledMatches": 0,
       "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 7103
+      "durationMs": 6333
     },
     {
       "competitionId": "jufa-chugoku-2026-i-league-division-1",
@@ -46,7 +46,7 @@
       "scheduledMatches": 0,
       "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 7716
+      "durationMs": 6335
     },
     {
       "competitionId": "jufa-chugoku-2026-i-league-division-2",
@@ -57,7 +57,7 @@
       "scheduledMatches": 0,
       "changedMatches": 0,
       "failedGameIds": [],
-      "durationMs": 5193
+      "durationMs": 4370
     },
     {
       "competitionId": "jufa-chugoku-2026-championship",
