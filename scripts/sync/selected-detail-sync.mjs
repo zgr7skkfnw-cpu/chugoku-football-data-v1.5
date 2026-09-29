@@ -1,6 +1,5 @@
 import { isDeepStrictEqual } from "node:util";
 
-import { parseDetailHtml } from "./sync-results.mjs";
 import { RESULT_TARGETS } from "./result-targets.mjs";
 
 const LOCAL_PRESERVED_FIELDS = Object.freeze([
@@ -26,11 +25,12 @@ export async function createSelectedDetailPlan({
   selectedGameIds,
   changeHints = [],
   fetchDetailHtml,
-  parseDetail = parseDetailHtml,
+  parseDetail,
   warn = () => {},
 }) {
   const target = RESULT_TARGETS[targetKey];
   if (!target) throw new Error(`未対応の同期対象です: ${targetKey}`);
+  if (typeof parseDetail !== "function") throw new Error("詳細parserを指定してください");
   const requestedIds = [...new Set(selectedGameIds.map(Number))];
   if (requestedIds.some((gameId) => !Number.isInteger(gameId))) {
     throw new Error("gameIdは整数で指定してください");

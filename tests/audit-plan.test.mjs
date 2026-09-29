@@ -31,13 +31,13 @@ function official(match, overrides = {}) {
   };
 }
 
-function plan(mode, matches, { changedGameIds = [], officialOverrides = new Map() } = {}) {
+function plan(mode, matches, { changedGameIds = [], changes = [], officialOverrides = new Map() } = {}) {
   return createAuditPlan({
     mode,
     now: NOW,
     savedMatches: matches,
     parsedList: { detailTargets: matches.map((match) => official(match, officialOverrides.get(match.gameId))) },
-    pollResult: { changedGameIds },
+    pollResult: { changedGameIds, changes },
   });
 }
 
@@ -90,6 +90,69 @@ test("fullは全終了済みdetail公開試合を選択", () => {
 test("poll-changeとrecent-windowを1gameIdへ統合", () => {
   const result = plan("recent", [saved(1, 24 * 3600000)], { changedGameIds: [1, 1] });
   assert.deepEqual(result.selections[0].reasons, ["recent-window", "poll-change"]);
+});
+
+test("gameId未公開から公開された終了試合をstable matchIdで選択する", () => {
+  const unpublished = saved(null, 24 * 3600000, {
+    id: "stable-25693",
+    gameId: null,
+    status: "scheduled",
+    homeTeam: { name: "A", score: null },
+    awayTeam: { name: "B", score: null },
+  });
+  const result = createAuditPlan({
+    mode: "recent",
+    now: NOW,
+    savedMatches: [unpublished],
+    parsedList: { detailTargets: [official(unpublished, { gameId: 25693 })] },
+    pollResult: {
+      changedGameIds: [25693],
+      changes: [{
+        gameId: 25693,
+        matchId: "stable-25693",
+        before: { gameId: null, matchId: "stable-25693", status: "scheduled" },
+        after: { gameId: 25693, matchId: "stable-25693", status: "finished" },
+      }],
+    },
+  });
+  assert.equal(result.pollChanged, 1);
+  assert.equal(result.selectedGames, 1);
+  assert.equal(result.plannedDetailPosts, 1);
+  assert.deepEqual(result.selectedGameIds, [25693]);
+  assert.deepEqual(result.selections[0].reasons, ["poll-change", "recent-window"]);
+  assert.equal(result.selections[0].matchId, "stable-25693");
+});
+
+test("1節5試合のgameId同時公開を欠落・重複なく選択する", () => {
+  const unpublished = Array.from({ length: 5 }, (_, index) => saved(null, 24 * 3600000, {
+    id: `stable-${index}`,
+    gameId: null,
+    status: "scheduled",
+    homeTeam: { name: `H${index}`, score: null },
+    awayTeam: { name: `A${index}`, score: null },
+  }));
+  const detailTargets = unpublished.map((match, index) => official(match, {
+    gameId: 25693 + index,
+    homeTeam: { name: `H${index}`, score: index + 1 },
+    awayTeam: { name: `A${index}`, score: 0 },
+  }));
+  const changes = unpublished.map((match, index) => ({
+    gameId: 25693 + index,
+    matchId: match.id,
+    before: { gameId: null, matchId: match.id, status: "scheduled" },
+    after: { gameId: 25693 + index, matchId: match.id, status: "finished" },
+  }));
+  const result = createAuditPlan({
+    mode: "recent",
+    now: NOW,
+    savedMatches: unpublished,
+    parsedList: { detailTargets },
+    pollResult: { changedGameIds: changes.map((change) => change.gameId), changes },
+  });
+  assert.equal(result.pollChanged, 5);
+  assert.equal(result.selectedGames, 5);
+  assert.equal(result.plannedDetailPosts, 5);
+  assert.deepEqual(result.selectedGameIds, [25693, 25694, 25695, 25696, 25697]);
 });
 
 test("plan-onlyはselected syncを呼ばずdetail POST 0", async () => {

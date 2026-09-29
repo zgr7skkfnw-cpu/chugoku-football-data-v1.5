@@ -6,6 +6,7 @@ import {
   executeSelectedDetailSync,
   selectedGameIdsFromPoll,
 } from "../scripts/sync/selected-detail-sync.mjs";
+import { createAuditPlan } from "../scripts/sync/audit-plan.mjs";
 
 const target = {
   key: "2026-1",
@@ -173,6 +174,81 @@ test("gameId未公開から公開後も安定match.idを維持する", async () 
   const plan = await h.create([40000], { changeHints: [{ gameId: 40000, matchId: "stable-fixture" }] });
   assert.equal(plan.nextItems[0].id, "stable-fixture");
   assert.equal(plan.nextItems[0].gameId, 40000);
+});
+
+test("pollからauditとselected syncを通してgameId公開後の公式detailを反映する", async () => {
+  const stableId = "football-system-schedule-0a377fb50741";
+  const unpublished = {
+    id: stableId,
+    gameId: null,
+    status: "scheduled",
+    kickoffAt: "2026-09-27T13:00:00+09:00",
+    round: 15,
+    venue: "会場A",
+    homeTeam: { name: "広島経済大学", score: null },
+    awayTeam: { name: "山口大学", score: null },
+    lineups: { home: { starters: [], substitutes: [] }, away: { starters: [], substitutes: [] } },
+  };
+  const untouched = match(30000);
+  const listTarget = {
+    id: "football-system-15-558-25693",
+    gameId: 25693,
+    fedId: 15,
+    taikaiHoldId: 558,
+    kickoffAt: "2026-09-27T13:00:00+09:00",
+    round: 15,
+    venue: "会場A",
+    status: "finished",
+    detailAvailable: true,
+    homeTeam: { name: "広島経済大学", score: 11 },
+    awayTeam: { name: "山口大学", score: 0 },
+  };
+  const pollResult = {
+    competitionId: "2026-1",
+    changed: true,
+    changedGameIds: [25693],
+    changes: [{
+      type: "updated",
+      gameId: 25693,
+      matchId: stableId,
+      changedFields: ["gameId", "score", "status", "detailAvailable"],
+      before: { gameId: null, matchId: stableId, status: "scheduled" },
+      after: { gameId: 25693, matchId: stableId, status: "finished" },
+    }],
+  };
+  const auditPlan = createAuditPlan({
+    mode: "recent",
+    now: "2026-09-29T12:00:00+09:00",
+    savedMatches: [unpublished, untouched],
+    parsedList: { detailTargets: [listTarget] },
+    pollResult,
+  });
+  const published = {
+    ...unpublished,
+    id: "official-generated-id",
+    gameId: 25693,
+    homeTeam: { name: "広島経済大学", score: 11 },
+    awayTeam: { name: "山口大学", score: 0 },
+    status: "finished",
+    lineups: { home: { starters: ["新先発"], substitutes: [] }, away: { starters: ["選手B"], substitutes: [] } },
+  };
+  const selectedPlan = await createSelectedDetailPlan({
+    targetKey: target.key,
+    existingData: { items: [unpublished, untouched] },
+    parsedList: { detailTargets: [listTarget] },
+    selectedGameIds: auditPlan.selectedGameIds,
+    changeHints: pollResult.changes,
+    fetchDetailHtml: async () => JSON.stringify(published),
+    parseDetail: (html) => JSON.parse(html),
+  });
+  assert.deepEqual(auditPlan.selectedGameIds, [25693]);
+  assert.equal(selectedPlan.detailPosts, 1);
+  assert.equal(selectedPlan.nextItems[0].id, stableId);
+  assert.equal(selectedPlan.nextItems[0].gameId, 25693);
+  assert.equal(selectedPlan.nextItems[0].homeTeam.score, 11);
+  assert.equal(selectedPlan.nextItems[0].status, "finished");
+  assert.deepEqual(selectedPlan.nextItems[0].lineups.home.starters, ["新先発"]);
+  assert.strictEqual(selectedPlan.nextItems[1], untouched);
 });
 
 test("detailAvailable=falseならPOSTしない", async () => {

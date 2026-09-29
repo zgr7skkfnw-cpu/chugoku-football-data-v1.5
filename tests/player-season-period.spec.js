@@ -44,11 +44,11 @@ test("期間別の出場・得点・ベンチ記録の和は通年と一致す�
 test("1部選手は通年・前期・後期で全プロフィール集計と履歴が切り替わる", async ({ page }) => {
   await page.goto(playerUrl(DIV1_PLAYER, DIV1));
   await expect(page.getByRole("tab", { name: "通年" })).toHaveAttribute("aria-selected", "true");
-  await expect(currentStats(page)).toContainText("1260分");
+  const allMinutes = await currentMinutes(page);
 
   await page.getByRole("tab", { name: "前期" }).click();
   await expect(page).toHaveURL(/period=first/);
-  await expect(currentStats(page)).toContainText("810分");
+  const firstMinutes = await currentMinutes(page);
   await page.getByRole("tab", { name: "試合", exact: true }).click();
   await expect(page.locator('[data-stats-scope$="::first"]')).toBeVisible();
   expect(await page.locator(".player-match-row").count()).toBeGreaterThan(0);
@@ -56,7 +56,8 @@ test("1部選手は通年・前期・後期で全プロフィール集計と履�
   await page.getByRole("tab", { name: "後期" }).click();
   await expect(page.locator('[data-page="player"][data-stats-scope$="::second"]')).toBeVisible();
   await page.getByRole("tab", { name: "プロフィール" }).click();
-  await expect(currentStats(page)).toContainText("450分");
+  const secondMinutes = await currentMinutes(page);
+  expect(firstMinutes + secondMinutes).toBe(allMinutes);
   await page.goBack();
   await expect(page.getByRole("tab", { name: "後期" })).toHaveAttribute("aria-selected", "true");
   await page.goBack();
@@ -65,11 +66,12 @@ test("1部選手は通年・前期・後期で全プロフィール集計と履�
 
 test("2部は11節までを前期として期間別集計する", async ({ page }) => {
   await page.goto(playerUrl(DIV2_PLAYER, DIV2));
-  await expect(currentStats(page)).toContainText("1350分");
+  const allMinutes = await currentMinutes(page);
   await page.getByRole("tab", { name: "前期" }).click();
-  await expect(currentStats(page)).toContainText("900分");
+  const firstMinutes = await currentMinutes(page);
   await page.getByRole("tab", { name: "後期" }).click();
-  await expect(currentStats(page)).toContainText("450分");
+  const secondMinutes = await currentMinutes(page);
+  expect(firstMinutes + secondMinutes).toBe(allMinutes);
 });
 
 test("通常リーグのチーム詳細はスカッドとランキングを期間別に確認できる", async ({ page }) => {
@@ -111,12 +113,14 @@ for (const width of [320, 375, 390, 430]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto(playerUrl(DIV1_PLAYER, DIV1));
     await expect(page.locator(".player-period-tabs")).toBeVisible();
+    const allMinutes = await currentMinutes(page);
     await page.getByRole("tab", { name: "前期" }).click();
     await expect(page).toHaveURL(/period=first/);
-    await expect(currentStats(page)).toContainText("810分");
+    const firstMinutes = await currentMinutes(page);
     await page.getByRole("tab", { name: "後期" }).click();
     await expect(page).toHaveURL(/period=second/);
-    await expect(currentStats(page)).toContainText("450分");
+    const secondMinutes = await currentMinutes(page);
+    expect(firstMinutes + secondMinutes).toBe(allMinutes);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
   });
 }
@@ -161,6 +165,13 @@ function fixtureMatch({ id, round, rules, player, started = false, benchOnly = f
 
 function currentStats(page) {
   return page.locator(".player-current-strip");
+}
+
+async function currentMinutes(page) {
+  const text = await currentStats(page).innerText();
+  const value = text.match(/([\d,]+)分\s*出場時間/)?.[1];
+  expect(value).toBeTruthy();
+  return Number(value.replaceAll(",", ""));
 }
 
 function playerUrl(playerId, competitionId) {

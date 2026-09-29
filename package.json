@@ -21,6 +21,7 @@
     "test:roster:selected": "node --test tests/selected-roster-sync.test.mjs",
     "update:data:smart": "node scripts/update-data-smart.mjs",
     "test:sync:smart": "node --test tests/smart-sync.test.mjs",
+    "test:workflow:pages": "node --test tests/pages-deployment.test.mjs",
     "sync:div2": "node scripts/sync/sync-results.mjs --target=2026-2",
     "sync:2025:div1": "node scripts/sync/sync-results.mjs --target=2025-1",
     "sync:2025:div2": "node scripts/sync/sync-results.mjs --target=2025-2",

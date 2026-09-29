@@ -17,10 +17,11 @@ export function createAuditPlan({
   const modeConfig = AUDIT_MODES[mode];
   if (!modeConfig) throw new Error(`未対応の監査モードです: ${mode}`);
   const nowMs = instantValue(now, "現在時刻");
+  const savedItems = savedMatches ?? [];
   const officialByGameId = new Map((parsedList.detailTargets ?? []).map((match) => [match.gameId, match]));
   const selected = new Map();
 
-  for (const savedMatch of savedMatches ?? []) {
+  for (const savedMatch of savedItems) {
     const officialMatch = officialByGameId.get(savedMatch.gameId);
     if (!isSafelyFinishedMatch(savedMatch, officialMatch, nowMs)) continue;
     const ageMs = nowMs - auditReferenceTime(savedMatch);
@@ -29,12 +30,19 @@ export function createAuditPlan({
     }
   }
 
-  if (mode !== "full") {
-    for (const gameId of pollResult.changedGameIds ?? []) {
-      const savedMatch = (savedMatches ?? []).find((match) => match.gameId === gameId);
-      const officialMatch = officialByGameId.get(gameId);
-      if (isSafelyFinishedMatch(savedMatch, officialMatch, nowMs)) {
-        addReason(selected, gameId, "poll-change", savedMatch, officialMatch);
+  const pollChanges = pollResult.changes?.length
+    ? pollResult.changes
+    : (pollResult.changedGameIds ?? []).map((gameId) => ({ gameId }));
+  for (const change of pollChanges) {
+    const gameId = change.after?.gameId ?? change.gameId;
+    const officialMatch = officialByGameId.get(gameId);
+    if (!isOfficialSafelyFinishedMatch(officialMatch, nowMs)) continue;
+    const savedMatch = findSavedMatchForPollChange(savedItems, change);
+    addReason(selected, gameId, mode === "full" ? modeConfig.reason : "poll-change", savedMatch, officialMatch, change.matchId);
+    if (modeConfig.windowMs !== null) {
+      const ageMs = nowMs - auditReferenceTime(savedMatch ?? officialMatch);
+      if (ageMs <= modeConfig.windowMs) {
+        addReason(selected, gameId, modeConfig.reason, savedMatch, officialMatch, change.matchId);
       }
     }
   }
@@ -55,12 +63,18 @@ export function isSafelyFinishedMatch(savedMatch, officialMatch, now = Date.now(
   if (!savedMatch || !officialMatch) return false;
   if (savedMatch.status !== "finished" || officialMatch.status !== "finished") return false;
   if (!Number.isInteger(officialMatch.gameId) || officialMatch.gameId !== savedMatch.gameId) return false;
+  return isOfficialSafelyFinishedMatch(officialMatch, now);
+}
+
+export function isOfficialSafelyFinishedMatch(officialMatch, now = Date.now()) {
+  if (!officialMatch || officialMatch.status !== "finished") return false;
+  if (!Number.isInteger(officialMatch.gameId)) return false;
   if (officialMatch.detailAvailable === false) return false;
   const homeScore = officialMatch.homeTeam?.score ?? officialMatch.score?.home;
   const awayScore = officialMatch.awayTeam?.score ?? officialMatch.score?.away;
   if (!Number.isFinite(Number(homeScore)) || !Number.isFinite(Number(awayScore))) return false;
   try {
-    return instantValue(savedMatch.kickoffAt, "kickoffAt") <= instantValue(now, "現在時刻");
+    return instantValue(officialMatch.kickoffAt, "kickoffAt") <= instantValue(now, "現在時刻");
   } catch {
     return false;
   }
@@ -82,17 +96,44 @@ export async function executeAuditPlan({ plan, planOnly = false, dryRun = true, 
   };
 }
 
-function addReason(selected, gameId, reason, savedMatch, officialMatch) {
+function addReason(selected, gameId, reason, savedMatch, officialMatch, matchId = null) {
   if (!selected.has(gameId)) {
     selected.set(gameId, {
       gameId,
-      kickoffAt: savedMatch.kickoffAt,
+      kickoffAt: savedMatch?.kickoffAt ?? officialMatch.kickoffAt,
       reasons: [],
-      matchId: savedMatch.id ?? officialMatch.id ?? null,
+      matchId: savedMatch?.id ?? matchId ?? officialMatch.id ?? null,
     });
   }
   const entry = selected.get(gameId);
   if (!entry.reasons.includes(reason)) entry.reasons.push(reason);
+}
+
+function findSavedMatchForPollChange(savedMatches, change) {
+  const matchId = change.matchId ?? change.before?.matchId ?? null;
+  if (matchId) {
+    const matches = savedMatches.filter((match) => match.id === matchId);
+    if (matches.length > 1) throw new Error(`poll changeのmatchIdが重複しています: ${matchId}`);
+    if (matches.length === 1) return matches[0];
+  }
+
+  const gameId = change.after?.gameId ?? change.gameId ?? change.before?.gameId;
+  if (Number.isInteger(gameId)) {
+    const matches = savedMatches.filter((match) => match.gameId === gameId);
+    if (matches.length > 1) throw new Error(`poll changeのgameIdが重複しています: ${gameId}`);
+    if (matches.length === 1) return matches[0];
+  }
+
+  const identity = change.after ?? change.before ?? change.identity;
+  if (!identity) return null;
+  const matches = savedMatches.filter((match) =>
+    match.kickoffAt === identity.kickoffAt
+    && match.homeTeam?.name === identity.home
+    && match.awayTeam?.name === identity.away);
+  if (matches.length > 1) {
+    throw new Error(`poll changeの安全な一意照合に失敗しました: ${identity.home} vs ${identity.away}`);
+  }
+  return matches[0] ?? null;
 }
 
 function auditReferenceTime(match) {

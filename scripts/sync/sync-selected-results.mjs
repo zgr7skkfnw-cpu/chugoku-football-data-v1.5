@@ -13,6 +13,7 @@ import { fetchTextWithRetry } from "./http-retry.mjs";
 import { fetchCompetitionList, pollCompetition } from "./poll-results.mjs";
 import { assertUnknownPlayersResolved, commitRosterAndMatch, createSelectedRosterPlan, PLAYERS_PATH } from "./selected-roster-sync.mjs";
 import { executeSelectedDetailSync, selectedGameIdsFromPoll } from "./selected-detail-sync.mjs";
+import { parseDetailHtml } from "./sync-results.mjs";
 import { POLL_TARGET_KEYS, RESULT_TARGETS } from "./result-targets.mjs";
 
 const ROOT = resolve(import.meta.dirname, "../..");
@@ -126,6 +127,7 @@ export async function runSelectedCompetition({
       selectedGameIds: [...new Set(selectedGameIds)],
       changeHints,
       fetchDetailHtml,
+      parseDetail: parseDetailHtml,
     },
     validate: async (plan) => {
       const unknownPlayers = findUnknownSelectedPlayers(plan, { playersData, teamCatalog });

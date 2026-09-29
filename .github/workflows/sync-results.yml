@@ -21,17 +21,18 @@ on:
     # Sunday JST 04:37 = Saturday UTC 19:37.
     - cron: "37 19 * * 6"
 
-permissions:
-  contents: write
-
 concurrency:
   group: sync-match-results
   cancel-in-progress: false
 
 jobs:
   sync:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    outputs:
+      data_commit_sha: ${{ steps.commit-data.outputs.data_commit_sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -86,6 +87,7 @@ jobs:
       - name: Run smart synchronization tests
         run: |
           npm run test:sync:smart
+          npm run test:workflow:pages
           npm run test:poll
           npm run test:sync:selected
           npm run test:audit
@@ -150,6 +152,7 @@ jobs:
           fi
 
       - name: Commit changed data
+        id: commit-data
         shell: bash
         run: |
           git add -- \
@@ -175,3 +178,41 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "試合結果を自動更新"
           git push origin HEAD:main
+          commit_sha="$(git rev-parse HEAD)"
+          echo "data_commit_sha=$commit_sha" >> "$GITHUB_OUTPUT"
+          echo "deploy_sha=$commit_sha" >> "$GITHUB_STEP_SUMMARY"
+
+  deploy-data-update:
+    name: Deploy updated data to GitHub Pages
+    needs: sync
+    if: needs.sync.outputs.data_commit_sha != ''
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout committed data
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.sync.outputs.data_commit_sha }}
+
+      - name: Report deploy SHA
+        run: |
+          echo "deploy_sha=${{ needs.sync.outputs.data_commit_sha }}"
+          echo "deploy_sha=${{ needs.sync.outputs.data_commit_sha }}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
