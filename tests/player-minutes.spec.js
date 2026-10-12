@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 
 import {
   calculatePlayerStatistics,
+  normalizePlayerName,
   parseMatchMinute,
   sortPlayerStatistics,
 } from "../site/assets/js/utils/players.js";
@@ -158,6 +159,35 @@ test("新しいminutesを90分換算とランキングの共通値として利�
   expect(sortPlayerStatistics(stats, "minutes").map((entry) => entry.minutes)).toEqual([89, 1, 0]);
 });
 
+test("退場後の欠員時間だけチーム合計出場時間から減算する", () => {
+  const fixtures = [
+    { label: "通常試合・退場なし", expected: 990 },
+    { label: "72分直接退場", disciplinary: ["72 分 選手1 S5 阻止（他）"], expected: 972 },
+    { label: "82分直接退場", disciplinary: ["82 分 選手1 S1 著しい反則"], expected: 982 },
+    {
+      label: "通常交代あり・退場なし",
+      substitutions: ["60 分 [out]選手1 [in]選手12"],
+      expected: 990,
+    },
+    { label: "90+の退場", disciplinary: ["90 ＋3 分 選手1 CS 警告2回"], expected: 989 },
+    {
+      label: "退場＋通常交代",
+      substitutions: ["60 分 [out]選手2 [in]選手12"],
+      disciplinary: ["72 分 選手1 S5 阻止（他）"],
+      expected: 972,
+    },
+  ];
+
+  for (const fixture of fixtures) {
+    const { match, statistics, teamTotal } = calculateTeamFixture(fixture);
+    expect(teamTotal, fixture.label).toBe(fixture.expected);
+    expect(
+      expectedRegulationTeamMinutes(match, "home", statistics),
+      `${fixture.label} expectation`,
+    ).toBe(fixture.expected);
+  }
+});
+
 test("2026年の実例と正常チームの990分を維持する", async () => {
   const [playersData, teamsData, seasonData, division1, division2] = await Promise.all([
     readJson("../site/data/players.json"),
@@ -184,7 +214,8 @@ test("2026年の実例と正常チームの990分を維持する", async () => {
         const teamTotal = [...statistics.values()]
           .filter((stats) => stats.player.teamId === match[`${side}Team`].teamId)
           .reduce((sum, stats) => sum + (stats.matches.find((entry) => entry.matchId === match.id)?.minutes ?? 0), 0);
-        const expected = officialMinuteException(match.id, match[`${side}Team`].teamId) ?? 990;
+        const expected = officialMinuteException(match.id, match[`${side}Team`].teamId)
+          ?? expectedRegulationTeamMinutes(match, side, statistics);
         expect(teamTotal, `${match.id} ${side}`).toBe(expected);
       }
     }
@@ -231,6 +262,119 @@ function calculate(substitutions, options = {}) {
   return calculatePlayerStatistics(players, [match], { byId: new Map() });
 }
 
+function calculateTeamFixture({ substitutions = [], disciplinary = [] }) {
+  const players = Array.from({ length: 12 }, (_, index) => ({
+    id: `team-a-${index + 1}`,
+    teamId: "team-a",
+    name: `選手${index + 1}`,
+    position: index === 0 ? "GK" : "MF",
+  }));
+  const match = {
+    id: "team-total-minutes-test",
+    season: 2026,
+    competitionId: "test-competition",
+    status: "finished",
+    kickoffAt: "2026-10-12T13:00:00+09:00",
+    round: 1,
+    matchFormat: "試合時間：90分 PK戦：なし",
+    homeTeam: { teamId: "team-a", name: "チームA", score: 0 },
+    awayTeam: { teamId: "team-b", name: "チームB", score: 0 },
+    lineups: {
+      home: {
+        teamId: "team-a",
+        teamName: "チームA",
+        starters: players.slice(0, 11).map(({ name }) => ({ name })),
+        substitutes: [{ name: players[11].name }],
+      },
+      away: null,
+    },
+    substitutions: { home: substitutions, away: [] },
+    disciplinary: { home: disciplinary, away: [] },
+    goals: [],
+  };
+  const statistics = calculatePlayerStatistics(players, [match], { byId: new Map() });
+  const teamTotal = [...statistics.values()].reduce(
+    (sum, stats) => sum + (stats.matches.find((entry) => entry.matchId === match.id)?.minutes ?? 0),
+    0,
+  );
+  return { match, statistics, teamTotal };
+}
+
+function expectedRegulationTeamMinutes(match, side, statistics) {
+  const duration = 90;
+  if (/延長\s*[：:]\s*(?!0\s*分)\d+\s*分/.test(match.matchFormat ?? "")) {
+    throw new Error(`${match.id} ${side}: 延長戦のチーム合計出場時間は自動判定対象外です`);
+  }
+  const teamId = match[`${side}Team`]?.teamId;
+  const substitutions = (match.substitutions?.[side] ?? [])
+    .map(parseExpectedSubstitution)
+    .filter(Boolean)
+    .map((event) => ({
+      ...event,
+      inBoundaryMinute: expectedBoundaryMinute(event, "in", duration),
+      outBoundaryMinute: expectedBoundaryMinute(event, "out", duration),
+    }));
+  let missingMinutes = 0;
+  for (const rawEvent of match.disciplinary?.[side] ?? []) {
+    const event = parseExpectedDisciplinary(rawEvent);
+    if (!event?.isRed) continue;
+    if (event.hasAddedTime && event.minute < duration) {
+      throw new Error(`${match.id} ${side}: 前半追加時間の退場は自動判定対象外です: ${rawEvent}`);
+    }
+    const playerStats = [...statistics.values()].find(
+      (stats) => stats.player.teamId === teamId
+        && normalizePlayerName(stats.player.name) === normalizePlayerName(event.name),
+    );
+    const matchEntry = playerStats?.matches.find((entry) => entry.matchId === match.id);
+    if (!matchEntry) {
+      throw new Error(`${match.id} ${side}: 退場選手を出場記録へ解決できません: ${rawEvent}`);
+    }
+    const normalizedName = normalizePlayerName(event.name);
+    const onEvent = substitutions.find(
+      (substitution) => normalizePlayerName(substitution.playerIn) === normalizedName,
+    );
+    const offEvent = substitutions.find(
+      (substitution) => normalizePlayerName(substitution.playerOut) === normalizedName,
+    );
+    const boundaryMinute = event.minute >= duration ? duration - 1 : event.minute;
+    if (!matchEntry.started && (!onEvent || onEvent.inBoundaryMinute > boundaryMinute)) continue;
+    if (offEvent?.outBoundaryMinute <= boundaryMinute) continue;
+    if (offEvent?.outBoundaryMinute > boundaryMinute) {
+      throw new Error(`${match.id} ${side}: 退場選手に交代OUTも記録されています: ${rawEvent}`);
+    }
+    missingMinutes += duration - boundaryMinute;
+  }
+  return 11 * duration - missingMinutes;
+}
+
+function parseExpectedSubstitution(text) {
+  const match = String(text).match(/^(HT|\d+(?:\s*[+＋]\s*\d+)?)\s*(?:分)?\s+\[out\](.*?)\s+\[in\](.*)$/);
+  if (!match) return null;
+  return {
+    minute: match[1] === "HT" ? 45 : parseMatchMinute(match[1]),
+    hasAddedTime: /[+＋]/.test(match[1]),
+    playerOut: match[2].trim(),
+    playerIn: match[3].trim(),
+  };
+}
+
+function parseExpectedDisciplinary(text) {
+  const match = String(text).match(/^(HT|\d+(?:\s*[+＋]\s*\d+)?)\s*(?:分)?\s+(.+?)\s+(C[1-9]|CS|S[1-9])(?:\s|$)/);
+  if (!match) return null;
+  return {
+    minute: match[1] === "HT" ? 45 : parseMatchMinute(match[1]),
+    hasAddedTime: /[+＋]/.test(match[1]),
+    name: match[2].trim(),
+    isRed: match[3] === "CS" || /^S[1-9]$/.test(match[3]),
+  };
+}
+
+function expectedBoundaryMinute(event, direction, duration) {
+  if (event.minute >= duration) return duration - 1;
+  if (direction === "out" && event.minute === 45 && event.hasAddedTime) return 44;
+  return event.minute;
+}
+
 async function readJson(relativePath) {
   return JSON.parse(await readFile(new URL(relativePath, import.meta.url), "utf8"));
 }
@@ -253,7 +397,5 @@ function knownAbnormalTeamMatch(matchId, teamId) {
 function officialMinuteException(matchId, teamId) {
   return new Map([
     ["football-system-15-558-25649\0hiroshima", 988],
-    ["football-system-15-559-25725\0okayama", 989],
-    ["football-system-15-559-25751\0okayama", 989],
   ]).get(`${matchId}\0${teamId}`) ?? null;
 }
