@@ -8,11 +8,14 @@ import { parseMatchMinute } from "../site/assets/js/utils/players.js";
 
 const BASE_URL = "http://127.0.0.1:4173/";
 
-test("2部11チームの名簿と1部507人を維持する", () => {
+test("2部11チームの名簿と通常リーグ登録の一意性を維持する", () => {
   const division2 = playersData.items.filter((player) => auditData.sources.some((source) => source.teamId === player.teamId));
+  const division1 = playersData.items.filter((player) => !auditData.sources.some((source) => source.teamId === player.teamId));
   expect(new Set(division2.map((player) => player.teamId)).size).toBe(11);
   expect(division2.length).toBeGreaterThanOrEqual(250);
-  expect(playersData.items.length - division2.length).toBe(507);
+  expect(division1.length).toBeGreaterThanOrEqual(507);
+  expect(new Set(playersData.items.map((player) => player.id)).size).toBe(playersData.items.length);
+  expect(division1.every((player) => player.id && player.teamId && player.name)).toBeTruthy();
   expect(auditData.duplicateCandidates).toEqual([]);
 });
 

@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { readFile } from "node:fs/promises";
+import division1 from "../site/data/seasons/2026/matches.json" with { type: "json" };
+import division2 from "../site/data/seasons/2026/div2/matches.json" with { type: "json" };
 
 const BASE_URL = "http://127.0.0.1:4173/";
 
@@ -8,12 +10,16 @@ test("試合一覧で大会・年度・節を安全に切り替えられる", as
 
   await expect(page.getByLabel("大会を選択")).toHaveValue("jufa-chugoku-2026-division-1");
   await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "90");
-  await expect(page.locator(".match-round-group")).toHaveCount(18);
+  for (const label of new Set(division1.items.map((match) => match.roundLabel))) {
+    await expect(page.locator(".match-round-group__header", { hasText: label }).first()).toBeVisible();
+  }
   await expect(page.getByRole("navigation", { name: "節の移動" })).toBeVisible();
 
   await page.getByLabel("大会を選択").selectOption("jufa-chugoku-2026-division-2");
   await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "110");
-  await expect(page.locator(".match-round-group")).toHaveCount(22);
+  for (const label of new Set(division2.items.map((match) => match.roundLabel))) {
+    await expect(page.locator(".match-round-group__header", { hasText: label }).first()).toBeVisible();
+  }
 
   const missingRequests = [];
   page.on("response", (response) => {

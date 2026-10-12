@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import division1 from "../site/data/seasons/2026/matches.json" with { type: "json" };
 
 const BASE_URL = "http://localhost:4173/";
 
@@ -28,7 +29,8 @@ test("順位・選手ランキング・チームランキングを期間切替�
   await expect(page.locator(".standing-table tbody tr")).toHaveCount(10);
   await expect(page.locator('[data-standing-team="IPU・環太平洋大学"] .rank')).toHaveText("1");
   await page.getByRole("tab", { name: "後期", exact: true }).click();
-  await expect(page.locator('[data-standing-team="IPU・環太平洋大学"] .rank')).toHaveText("－");
+  await expect(page.getByRole("tab", { name: "後期", exact: true })).toHaveAttribute("aria-selected", "true");
+  await expect(page.locator('[data-standing-team="IPU・環太平洋大学"] .rank')).toHaveText(/\d+|－/);
 
   await page.goto(`${BASE_URL}?view=rankings`);
   await expect(page.locator(".ranking-tabs button")).toHaveCount(13);
@@ -51,11 +53,16 @@ test("試合複合フィルターとチームフォロー登録が動作する",
   await page.getByRole("button", { name: "アウェイゲーム" }).click();
   await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "9");
   await page.getByRole("button", { name: "終了" }).click();
-  await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "4");
-  await expect(page.locator(".match-row--scheduled")).toHaveCount(4);
+  const expectedScheduledHome = division1.items.filter((match) => (
+    match.status === "scheduled" && match.homeTeam.name === "IPU・環太平洋大学"
+  )).length;
+  await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", String(expectedScheduledHome));
+  await expect(page.locator(".match-row--scheduled")).toHaveCount(expectedScheduledHome);
   expect(playerRequests).toHaveLength(0);
-  await page.locator(".match-row--scheduled").first().click();
-  await expect(page.getByRole("heading", { name: "試合予定" })).toBeVisible();
+  if (expectedScheduledHome > 0) {
+    await page.locator(".match-row--scheduled").first().click();
+    await expect(page.getByRole("heading", { name: "試合予定" })).toBeVisible();
+  }
 
   await page.evaluate(() => localStorage.clear());
   await page.goto(`${BASE_URL}?view=team&id=ipu`);

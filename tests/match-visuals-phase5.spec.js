@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
+import division1 from "../site/data/seasons/2026/matches.json" with { type: "json" };
+import division2 from "../site/data/seasons/2026/div2/matches.json" with { type: "json" };
 
 const BASE_URL = "http://localhost:4173/";
-const DIV1_SCHEDULED = "football-system-schedule-24e8d7424d7d";
-const DIV2_SCHEDULED = "football-system-schedule-c07493e87099";
+const DIV1_SCHEDULED = division1.items.find((match) => match.status === "scheduled").id;
+const DIV2_SCHEDULED = division2.items.find((match) => match.status === "scheduled").id;
 const CHAMPIONSHIP_PK = "football-system-22-563-26179";
 const FINISHED = "football-system-15-558-25623";
 

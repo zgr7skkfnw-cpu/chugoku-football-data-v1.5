@@ -1,4 +1,7 @@
 import { expect, test } from "@playwright/test";
+import division1 from "../site/data/seasons/2026/matches.json" with { type: "json" };
+import division2 from "../site/data/seasons/2026/div2/matches.json" with { type: "json" };
+import catalog from "../site/data/team-catalog.json" with { type: "json" };
 
 const BASE_URL = "http://localhost:4173/";
 
@@ -25,10 +28,11 @@ test("大会一覧は全展開で開始し見出し全体から折りたため�
   await expect(page.locator(".collapsible-competition")).toHaveCount(2);
   await expect(page.locator(".collapsible-competition__body")).toHaveCount(2);
   const first = page.locator(".collapsible-competition").first();
-  await expect(first.locator(".match-row")).toHaveCount(5);
+  const rowCount = await first.locator(".match-row").count();
+  expect(rowCount).toBeGreaterThan(0);
   await first.locator(".collapsible-competition__toggle").click();
   await expect(first.locator(".collapsible-competition__body")).toBeHidden();
-  await expect(first.locator(".collapsible-competition__count")).toHaveText("5");
+  await expect(first.locator(".collapsible-competition__count")).toHaveText(String(rowCount));
 });
 
 test("明日はフォロー欄を大会一覧より先に表示しフォローなしでも安全に表示する", async ({ page }) => {
@@ -121,19 +125,27 @@ test("保存済みチームIDの重複を読み込み時に除去する", async 
 });
 
 test("明日の複数フォロー試合を時刻順に重複なしで表示する", async ({ page }) => {
-  await page.clock.setFixedTime(new Date("2026-08-29T12:00:00+09:00"));
+  const scheduled = [...division1.items, ...division2.items].filter((match) => match.status === "scheduled");
+  const groups = Map.groupBy(scheduled, (match) => match.kickoffAt.slice(0, 10));
+  const [date, matches] = [...groups].find(([, items]) => items.length >= 2);
+  const previous = new Date(`${date}T12:00:00+09:00`);
+  previous.setDate(previous.getDate() - 1);
+  const teamIds = [...new Set(matches.flatMap((match) => [match.homeTeam.name, match.awayTeam.name]).map((name) => (
+    catalog.items.find((team) => team.name === name || team.aliases?.includes(name))?.id
+  )).filter(Boolean))];
+  await page.clock.setFixedTime(previous);
   await page.goto(BASE_URL);
   await page.evaluate(() => localStorage.setItem("chugoku-football.favorite-teams", JSON.stringify({
-    teamIds: ["ipu", "yamaguchi", "hiroshima-institute-of-technology", "shimane"],
+    teamIds: [],
   })));
+  await page.evaluate((ids) => localStorage.setItem("chugoku-football.favorite-teams", JSON.stringify({ teamIds: ids })), teamIds);
   await page.reload();
-  await page.goto(`${BASE_URL}?date=2026-08-30`);
+  await page.goto(`${BASE_URL}?date=${date}`);
   const cards = page.locator(".tomorrow-following__card");
-  await expect(cards).toHaveCount(2);
-  await expect(cards.first()).toContainText("16:00");
-  await expect(cards.nth(1)).toContainText("17:00");
+  await expect(cards).toHaveCount(matches.length);
   const matchIds = await cards.evaluateAll((items) => items.map((item) => new URL(item.href).searchParams.get("id")));
-  expect(new Set(matchIds).size).toBe(2);
+  expect(matchIds).toEqual([...matches].sort((a, b) => a.kickoffAt.localeCompare(b.kickoffAt)).map((match) => match.id));
+  expect(new Set(matchIds).size).toBe(matches.length);
 });
 
 test("大会カード順を保存して初期順へ戻せる", async ({ page }) => {

@@ -58,9 +58,13 @@ test("新人戦をA～Dグループとプレーオフ別に表示し7月26日の
   await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", String(rookie.items.length));
   for (const group of ["Aグループ", "Bグループ", "Cグループ", "Dグループ"]) {
     await expect(page.getByText(`${group} 順位表`, { exact: true })).toBeVisible();
-    await expect(page.locator(".match-round-group__header", { hasText: group }).first()).toBeVisible();
+    const groupMatches = rookie.items.filter((match) => match.groupName === group);
+    expect(groupMatches.length).toBeGreaterThan(0);
+    for (const match of groupMatches) await expect(page.locator(`[data-match-id="${match.id}"]`)).toBeVisible();
   }
-  await expect(page.locator(".match-round-group__header", { hasText: "プレーオフ" }).first()).toBeVisible();
+  const playoffMatches = rookie.items.filter((match) => match.groupName === "プレーオフ");
+  expect(playoffMatches.length).toBeGreaterThan(0);
+  for (const match of playoffMatches) await expect(page.locator(`[data-match-id="${match.id}"]`)).toBeVisible();
   const match = rookie.items.find((item) => item.status === "scheduled") ?? rookie.items[0];
   await page.goto(`${BASE_URL}?view=match&id=${match.id}`);
   await expect(page.locator('[data-page="match"]')).toContainText(match.homeTeam.name);

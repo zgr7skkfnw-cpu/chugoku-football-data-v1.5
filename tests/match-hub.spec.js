@@ -1,7 +1,16 @@
 import { expect, test } from "@playwright/test";
+import division1 from "../site/data/seasons/2026/matches.json" with { type: "json" };
+import division2 from "../site/data/seasons/2026/div2/matches.json" with { type: "json" };
 
 const BASE_URL = "http://localhost:4173/";
-const SCHEDULED_MATCH_ID = "football-system-schedule-24e8d7424d7d";
+const SCHEDULED_MATCH = division1.items.find((match) => match.status === "scheduled");
+const SCHEDULED_MATCH_ID = SCHEDULED_MATCH.id;
+const DIV2_SCHEDULED = division2.items.find((match) => match.status === "scheduled");
+const sharedDate = division1.items.map((match) => match.kickoffAt.slice(0, 10)).find((date) => (
+  division2.items.some((match) => match.kickoffAt.startsWith(date))
+));
+const sharedDateMatches = [...division1.items, ...division2.items].filter((match) => match.kickoffAt.startsWith(sharedDate));
+const HUB_MATCH = sharedDateMatches[0];
 
 function collectErrors(page) {
   const errors = [];
@@ -20,14 +29,14 @@ test("試合ハブの日付切替・4タブ・チームリンクが動作する"
   await expect(page.locator("#bottom-navigation")).toContainText("検索");
   await expect(page.getByText("今日の試合はありません")).toBeVisible();
 
-  await page.goto(`${BASE_URL}?date=2026-08-30`);
-  await expect(page.locator('[data-date-matches="10"]')).toBeVisible();
+  await page.goto(`${BASE_URL}?date=${sharedDate}`);
+  await expect(page.locator(`[data-date-matches="${sharedDateMatches.length}"]`)).toBeVisible();
   await expect(page.locator(".collapsible-competition__name").nth(0)).toHaveText("中国大学サッカーリーグ 1部");
   await expect(page.locator(".collapsible-competition__name").nth(1)).toHaveText("中国大学サッカーリーグ 2部");
-  const card = page.locator(`[data-match-card="${SCHEDULED_MATCH_ID}"]`);
-  await expect(card).toContainText("山口大学");
+  const card = page.locator(`[data-match-card="${HUB_MATCH.id}"]`);
+  await expect(card).toContainText(HUB_MATCH.homeTeam.name);
   await card.locator('.team-name-link').first().click();
-  await expect(page.locator('[data-page="team"][data-team-id="yamaguchi"]')).toBeVisible();
+  await expect(page.locator('[data-page="team"]')).toBeVisible();
   expect(errors).toEqual([]);
 });
 
@@ -57,7 +66,7 @@ test("試合前のプレビュー・順位表を公開データで表示する",
 
 test("2部の試合詳細から2部順位表を表示する", async ({ page }) => {
   const errors = collectErrors(page);
-  await page.goto(`${BASE_URL}?view=match&id=football-system-schedule-c07493e87099`);
+  await page.goto(`${BASE_URL}?view=match&id=${DIV2_SCHEDULED.id}`);
   await expect(page.getByRole("heading", { name: "試合予定" })).toBeVisible();
   await expect(page.locator('[data-page="match"]')).toContainText("中国大学サッカーリーグ 2部");
   await page.getByRole("tab", { name: "順位表", exact: true }).click();

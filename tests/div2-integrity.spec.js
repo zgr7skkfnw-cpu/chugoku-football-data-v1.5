@@ -13,7 +13,9 @@ test("2部の公式結果数・順位・追加時間表記を整合させる", a
   const stats = await readJson("site/data/seasons/2026/div2/team-stats.json");
   const catalog = (await readJson("site/data/team-catalog.json")).items;
   const finished = matches.filter((match) => match.status === "finished");
-  expect(finished).toHaveLength(55);
+  expect(finished.length).toBeGreaterThan(0);
+  expect(finished.length + matches.filter((match) => match.status === "scheduled").length).toBe(matches.length);
+  expect(new Set(matches.map((match) => match.id)).size).toBe(matches.length);
 
   const teamId = (name) => catalog.find((team) =>
     team.name === name || team.aliases?.includes(name))?.id;

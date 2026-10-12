@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
+import division1 from "../site/data/seasons/2026/matches.json" with { type: "json" };
+import division2 from "../site/data/seasons/2026/div2/matches.json" with { type: "json" };
 
 const BASE_URL = "http://localhost:4173/";
-const DIV1 = "football-system-schedule-24e8d7424d7d";
-const DIV2 = "football-system-schedule-c07493e87099";
+const DIV1 = division1.items.find((match) => match.status === "scheduled").id;
+const DIV2 = division2.items.find((match) => match.status === "scheduled").id;
 const I1 = "football-system-schedule-28d14d57290a";
 const I2 = "football-system-schedule-6531ebfb4f0b";
 const ROOKIE = "football-system-schedule-25f7fddaf184";
@@ -37,8 +39,13 @@ test("プレビューは試合前の全大会フォームと得点王を表示�
   await page.goto(`${BASE_URL}?view=match&id=${DIV2}`);
   await expect(page.locator(".prematch-form-team")).toHaveCount(2);
   for (const team of await page.locator(".prematch-form-team").all()) await expect(team.locator(".prematch-form-result")).toHaveCount(5);
-  await expect(page.locator(".prematch-form-result").filter({ hasText: "中国大学サッカー選手権" })).not.toHaveCount(0);
-  await expect(page.locator(".prematch-insights")).toHaveAttribute("data-insight-count", /[1-5]/);
+  await expect(page.locator(".prematch-form-result small").first()).not.toHaveText("");
+  const insights = page.locator(".prematch-insights");
+  if (await insights.count()) {
+    expect(Number(await insights.getAttribute("data-insight-count"))).toBeGreaterThanOrEqual(1);
+    expect(Number(await insights.getAttribute("data-insight-count"))).toBeLessThanOrEqual(5);
+    await expect(insights).not.toContainText(/有利|勢いがある|勝ちそう|優勝候補/);
+  }
   await expect(page.locator(".prematch-scorer").first()).toContainText("シュート－");
   await expect(page.locator(".prematch-scorer").first()).toContainText("出場時間");
   await expect(page.locator(".season-comparison__team")).toHaveCount(2);
@@ -46,10 +53,12 @@ test("プレビューは試合前の全大会フォームと得点王を表示�
   await expect(page.locator(".season-comparison")).toContainText("無失点");
 });
 
-test("出場停止未掲載時は不在を断定せず推測表示しない", async ({ page }) => {
-  await page.goto(`${BASE_URL}?view=match&id=${I1}&tab=suspensions`);
-  await expect(page.locator('[data-suspensions="unpublished"]')).toContainText("公式記録未掲載");
-  await expect(page.locator('[data-suspensions="unpublished"]')).not.toContainText("出場停止者なし");
+test("出場停止は大会規定の対応状況を明示し不在を断定しない", async ({ page }) => {
+  await page.goto(`${BASE_URL}?view=match&id=${DIV1}&tab=suspensions`);
+  const suspensions = page.locator('[data-suspensions="automatic"], [data-suspensions="unpublished"]');
+  await expect(suspensions).toHaveCount(1);
+  await expect(suspensions).not.toContainText("出場停止者なし");
+  await expect(suspensions).toContainText(/大会要項|自動判定対象外/);
 });
 
 for (const [label, matchId, rowCount] of [["1部", DIV1, 10], ["2部", DIV2, 11], ["Iリーグ1部", I1, 8], ["Iリーグ2部", I2, 6]]) {

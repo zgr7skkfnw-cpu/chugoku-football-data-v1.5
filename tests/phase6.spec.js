@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import division1 from "../site/data/seasons/2026/matches.json" with { type: "json" };
 
 const BASE_URL = "http://localhost:4173/";
 
@@ -15,7 +16,11 @@ test("試合検索と複合フィルターを併用できる", async ({ page }) 
   await page.getByLabel("試合検索").fill("IPU");
   await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "18");
   await page.getByRole("button", { name: "未開催" }).click();
-  await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "9");
+  const finishedIpu = division1.items.filter((match) => (
+    match.status === "finished" && [match.homeTeam.name, match.awayTeam.name].includes("IPU・環太平洋大学")
+  )).length;
+  await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", String(finishedIpu));
+  await expect(page.locator(".match-row--finished")).toHaveCount(finishedIpu);
   await page.getByLabel("試合検索").fill("存在しない試合");
   await expect(page.locator(".match-list")).toHaveAttribute("data-match-count", "0");
   expect(errors).toEqual([]);

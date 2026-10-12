@@ -1,10 +1,15 @@
 import { expect, test } from "@playwright/test";
+import division1 from "../site/data/seasons/2026/matches.json" with { type: "json" };
+import rookieData from "../site/data/seasons/2026/rookie/matches.json" with { type: "json" };
+import iLeagueData from "../site/data/seasons/2026/i-league/div1/matches.json" with { type: "json" };
 
 const BASE_URL = "http://localhost:4173/";
-const ROOKIE = "football-system-schedule-3aaadf953aee";
-const SCHEDULED = "football-system-schedule-24e8d7424d7d";
+const ROOKIE_MATCH = rookieData.items[0];
+const ROOKIE = ROOKIE_MATCH.id;
+const SCHEDULED = division1.items.find((match) => match.status === "scheduled").id;
 const FINISHED = "football-system-15-558-25665";
-const I_LEAGUE = "football-system-schedule-28d14d57290a";
+const I_LEAGUE_MATCH = iLeagueData.items[0];
+const I_LEAGUE = I_LEAGUE_MATCH.id;
 const CHAMPIONSHIP = "football-system-22-563-26179";
 
 async function expectEmblemsInside(page, containerSelector) {
@@ -26,12 +31,13 @@ async function expectEmblemsInside(page, containerSelector) {
   await expect(page.locator("body > .team-emblem--scoreboard")).toHaveCount(0);
 }
 
-test("新人戦の未開催ヘッダーは両エンブレムを枠内に表示する", async ({ page }) => {
+test("新人戦ヘッダーは現在の試合状態に応じて両エンブレムを枠内に表示する", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(`${BASE_URL}?view=match&id=${ROOKIE}`);
-  await expect(page.locator(".prematch-v2-scoreboard__team").first()).toContainText("広島文化学園大学");
-  await expect(page.locator(".prematch-v2-scoreboard__team").last()).toContainText("福山大学");
-  await expectEmblemsInside(page, ".prematch-v2-scoreboard");
+  const selector = ROOKIE_MATCH.status === "finished" ? ".finished-scoreboard" : ".prematch-v2-scoreboard";
+  await expect(page.locator(selector)).toContainText(ROOKIE_MATCH.homeTeam.name);
+  await expect(page.locator(selector)).toContainText(ROOKIE_MATCH.awayTeam.name);
+  await expectEmblemsInside(page, selector);
   await page.evaluate(() => scrollTo(0, document.body.scrollHeight));
   await expect(page.locator(".bottom-nav .team-emblem--scoreboard")).toHaveCount(0);
 });
@@ -42,7 +48,7 @@ test("終了済み試合ヘッダーも両エンブレムを枠内に表示す�
   await expectEmblemsInside(page, ".finished-scoreboard");
 });
 
-for (const [label, matchId, selector] of [["Iリーグ", I_LEAGUE, ".prematch-v2-scoreboard"], ["選手権", CHAMPIONSHIP, ".finished-scoreboard"]]) {
+for (const [label, matchId, selector] of [["Iリーグ", I_LEAGUE, I_LEAGUE_MATCH.status === "finished" ? ".finished-scoreboard" : ".prematch-v2-scoreboard"], ["選手権", CHAMPIONSHIP, ".finished-scoreboard"]]) {
   test(`${label}でも大会別チームの両エンブレム枠を表示する`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`${BASE_URL}?view=match&id=${matchId}`);
@@ -53,8 +59,8 @@ for (const [label, matchId, selector] of [["Iリーグ", I_LEAGUE, ".prematch-v2
 test("画像取得失敗時も元のチーム枠内で文字クレストへ置換する", async ({ page }) => {
   await page.route("**/assets/images/teams/**", (route) => route.abort());
   await page.goto(`${BASE_URL}?view=match&id=${ROOKIE}`);
-  const teams = page.locator(".prematch-v2-scoreboard__team");
-  await expect(teams.locator(".crest.team-emblem--scoreboard")).toHaveCount(2);
+  const scoreboard = page.locator(ROOKIE_MATCH.status === "finished" ? ".finished-scoreboard" : ".prematch-v2-scoreboard");
+  await expect(scoreboard.locator(".crest.team-emblem--scoreboard")).toHaveCount(2);
   await expect(page.locator("body > .crest.team-emblem--scoreboard")).toHaveCount(0);
 });
 
