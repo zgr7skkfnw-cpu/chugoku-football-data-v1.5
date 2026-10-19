@@ -3,12 +3,12 @@
   "seasonId": "jufa-chugoku-2026-division-2",
   "stage": "regular",
   "competitionName": "2026年度 中国大学サッカーリーグ 2部",
-  "updatedAt": "2026-10-18T15:58:18.773Z",
+  "updatedAt": "2026-10-19T04:51:37.869Z",
   "source": {
     "pageUrl": "https://jufa-chugoku.jp/result/2026/tid_559/",
     "iframeUrl": "https://football-system.jp/fss/pub_taikaigamelist.php?lid=XIi6FZyy0FQ=",
     "detailPostUrl": "https://football-system.jp/fss/pubGameResultConf.php",
-    "retrievedAt": "2026-10-18T15:58:18.773Z"
+    "retrievedAt": "2026-10-19T04:51:37.869Z"
   },
   "scheduleCount": 110,
   "matchCount": 110,
@@ -38585,7 +38585,7 @@
               "position": "GK"
             },
             {
-              "name": "津島 晴明",
+              "name": "津島 晴明 [Cap]",
               "number": 12,
               "position": "DF"
             },
