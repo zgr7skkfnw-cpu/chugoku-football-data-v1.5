@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "seasonId": "jufa-chugoku-2026-division-1",
-  "updatedAt": "2026-10-18T11:19:56.757Z",
+  "updatedAt": "2026-10-25T09:53:49.782Z",
   "competitionId": "jufa-chugoku-2026-division-1",
   "division": 1,
   "periodRules": {
@@ -19,42 +19,55 @@
       "standings": [
         {
           "teamId": "ipu",
-          "played": 17,
-          "won": 17,
+          "played": 18,
+          "won": 18,
           "drawn": 0,
           "lost": 0,
-          "points": 51,
-          "goalsFor": 100,
+          "points": 54,
+          "goalsFor": 103,
           "goalsAgainst": 10,
-          "goalDifference": 90,
+          "goalDifference": 93,
           "rank": 1,
           "rankChange": 0
         },
         {
-          "teamId": "hiroshima-keizai",
-          "played": 17,
-          "won": 13,
-          "drawn": 0,
-          "lost": 4,
-          "points": 39,
-          "goalsFor": 50,
-          "goalsAgainst": 14,
-          "goalDifference": 36,
-          "rank": 2,
-          "rankChange": 0
-        },
-        {
           "teamId": "hiroshima",
-          "played": 17,
-          "won": 12,
+          "played": 18,
+          "won": 13,
           "drawn": 2,
           "lost": 3,
-          "points": 38,
-          "goalsFor": 42,
+          "points": 41,
+          "goalsFor": 46,
           "goalsAgainst": 22,
-          "goalDifference": 20,
+          "goalDifference": 24,
+          "rank": 2,
+          "rankChange": 1
+        },
+        {
+          "teamId": "hiroshima-keizai",
+          "played": 18,
+          "won": 13,
+          "drawn": 0,
+          "lost": 5,
+          "points": 39,
+          "goalsFor": 50,
+          "goalsAgainst": 17,
+          "goalDifference": 33,
           "rank": 3,
-          "rankChange": 0
+          "rankChange": -1
+        },
+        {
+          "teamId": "shunan-public",
+          "played": 18,
+          "won": 10,
+          "drawn": 0,
+          "lost": 8,
+          "points": 30,
+          "goalsFor": 29,
+          "goalsAgainst": 30,
+          "goalDifference": -1,
+          "rank": 4,
+          "rankChange": 1
         },
         {
           "teamId": "fukuyama",
@@ -66,71 +79,58 @@
           "goalsFor": 33,
           "goalsAgainst": 32,
           "goalDifference": 1,
-          "rank": 4,
-          "rankChange": 0
-        },
-        {
-          "teamId": "shunan-public",
-          "played": 17,
-          "won": 9,
-          "drawn": 0,
-          "lost": 8,
-          "points": 27,
-          "goalsFor": 26,
-          "goalsAgainst": 29,
-          "goalDifference": -3,
           "rank": 5,
-          "rankChange": 1
-        },
-        {
-          "teamId": "hiroshima-shudo",
-          "played": 17,
-          "won": 8,
-          "drawn": 0,
-          "lost": 9,
-          "points": 24,
-          "goalsFor": 29,
-          "goalsAgainst": 31,
-          "goalDifference": -2,
-          "rank": 6,
           "rankChange": -1
         },
         {
-          "teamId": "fukuyama-heisei",
-          "played": 17,
-          "won": 6,
-          "drawn": 1,
+          "teamId": "hiroshima-shudo",
+          "played": 18,
+          "won": 8,
+          "drawn": 0,
           "lost": 10,
-          "points": 19,
-          "goalsFor": 21,
-          "goalsAgainst": 39,
-          "goalDifference": -18,
-          "rank": 7,
+          "points": 24,
+          "goalsFor": 30,
+          "goalsAgainst": 34,
+          "goalDifference": -4,
+          "rank": 6,
           "rankChange": 0
         },
         {
           "teamId": "hiroshima-bunka-gakuen",
-          "played": 17,
-          "won": 5,
+          "played": 18,
+          "won": 6,
           "drawn": 1,
           "lost": 11,
-          "points": 16,
-          "goalsFor": 27,
+          "points": 19,
+          "goalsFor": 28,
           "goalsAgainst": 40,
-          "goalDifference": -13,
+          "goalDifference": -12,
+          "rank": 7,
+          "rankChange": 1
+        },
+        {
+          "teamId": "fukuyama-heisei",
+          "played": 18,
+          "won": 6,
+          "drawn": 1,
+          "lost": 11,
+          "points": 19,
+          "goalsFor": 21,
+          "goalsAgainst": 40,
+          "goalDifference": -19,
           "rank": 8,
-          "rankChange": 0
+          "rankChange": -1
         },
         {
           "teamId": "kawasaki-medical-welfare",
-          "played": 17,
+          "played": 18,
           "won": 2,
           "drawn": 2,
-          "lost": 13,
+          "lost": 14,
           "points": 8,
           "goalsFor": 18,
-          "goalsAgainst": 67,
-          "goalDifference": -49,
+          "goalsAgainst": 71,
+          "goalDifference": -53,
           "rank": 9,
           "rankChange": 0
         },
@@ -162,27 +162,27 @@
           "rank": 1
         },
         {
-          "teamId": "hiroshima-keizai",
-          "played": 8,
+          "teamId": "hiroshima",
+          "played": 9,
           "won": 7,
-          "drawn": 0,
+          "drawn": 1,
           "lost": 1,
-          "points": 21,
-          "goalsFor": 26,
-          "goalsAgainst": 4,
-          "goalDifference": 22,
+          "points": 22,
+          "goalsFor": 23,
+          "goalsAgainst": 7,
+          "goalDifference": 16,
           "rank": 2
         },
         {
-          "teamId": "hiroshima",
-          "played": 8,
-          "won": 6,
-          "drawn": 1,
-          "lost": 1,
-          "points": 19,
-          "goalsFor": 19,
+          "teamId": "hiroshima-keizai",
+          "played": 9,
+          "won": 7,
+          "drawn": 0,
+          "lost": 2,
+          "points": 21,
+          "goalsFor": 26,
           "goalsAgainst": 7,
-          "goalDifference": 12,
+          "goalDifference": 19,
           "rank": 3
         },
         {
@@ -211,26 +211,26 @@
         },
         {
           "teamId": "hiroshima-shudo",
-          "played": 8,
+          "played": 9,
           "won": 4,
           "drawn": 0,
-          "lost": 4,
+          "lost": 5,
           "points": 12,
-          "goalsFor": 12,
-          "goalsAgainst": 16,
-          "goalDifference": -4,
+          "goalsFor": 13,
+          "goalsAgainst": 19,
+          "goalDifference": -6,
           "rank": 6
         },
         {
           "teamId": "hiroshima-bunka-gakuen",
-          "played": 8,
-          "won": 2,
+          "played": 9,
+          "won": 3,
           "drawn": 1,
           "lost": 5,
-          "points": 7,
-          "goalsFor": 13,
+          "points": 10,
+          "goalsFor": 14,
           "goalsAgainst": 18,
-          "goalDifference": -5,
+          "goalDifference": -4,
           "rank": 7
         },
         {
@@ -273,14 +273,14 @@
       "awayStandings": [
         {
           "teamId": "ipu",
-          "played": 8,
-          "won": 8,
+          "played": 9,
+          "won": 9,
           "drawn": 0,
           "lost": 0,
-          "points": 24,
-          "goalsFor": 48,
+          "points": 27,
+          "goalsFor": 51,
           "goalsAgainst": 5,
-          "goalDifference": 43,
+          "goalDifference": 46,
           "rank": 1
         },
         {
@@ -309,14 +309,14 @@
         },
         {
           "teamId": "fukuyama-heisei",
-          "played": 8,
+          "played": 9,
           "won": 4,
           "drawn": 1,
-          "lost": 3,
+          "lost": 4,
           "points": 13,
           "goalsFor": 10,
-          "goalsAgainst": 13,
-          "goalDifference": -3,
+          "goalsAgainst": 14,
+          "goalDifference": -4,
           "rank": 4
         },
         {
@@ -333,14 +333,14 @@
         },
         {
           "teamId": "shunan-public",
-          "played": 8,
-          "won": 3,
+          "played": 9,
+          "won": 4,
           "drawn": 0,
           "lost": 5,
-          "points": 9,
-          "goalsFor": 7,
-          "goalsAgainst": 12,
-          "goalDifference": -5,
+          "points": 12,
+          "goalsFor": 10,
+          "goalsAgainst": 13,
+          "goalDifference": -3,
           "rank": 6
         },
         {
@@ -369,14 +369,14 @@
         },
         {
           "teamId": "kawasaki-medical-welfare",
-          "played": 8,
+          "played": 9,
           "won": 1,
           "drawn": 2,
-          "lost": 5,
+          "lost": 6,
           "points": 5,
           "goalsFor": 12,
-          "goalsAgainst": 23,
-          "goalDifference": -11,
+          "goalsAgainst": 27,
+          "goalDifference": -15,
           "rank": 9
         },
         {
@@ -397,14 +397,14 @@
           "teamId": "ipu",
           "rank": 1,
           "overall": {
-            "played": 17,
-            "won": 17,
+            "played": 18,
+            "won": 18,
             "drawn": 0,
             "lost": 0,
-            "points": 51,
-            "goalsFor": 100,
+            "points": 54,
+            "goalsFor": 103,
             "goalsAgainst": 10,
-            "goalDifference": 90
+            "goalDifference": 93
           },
           "home": {
             "played": 9,
@@ -417,16 +417,28 @@
             "goalDifference": 47
           },
           "away": {
-            "played": 8,
-            "won": 8,
+            "played": 9,
+            "won": 9,
             "drawn": 0,
             "lost": 0,
-            "points": 24,
-            "goalsFor": 48,
+            "points": 27,
+            "goalsFor": 51,
             "goalsAgainst": 5,
-            "goalDifference": 43
+            "goalDifference": 46
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-b5bc8a59054d",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-keizai",
+              "opponentName": "広島経済大学",
+              "goalsFor": 3,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
             {
               "matchId": "football-system-schedule-67b8c830dd9a",
               "kickoffAt": "2026-10-18T11:00:00+09:00",
@@ -474,30 +486,18 @@
               "goalsFor": 11,
               "goalsAgainst": 0,
               "result": "W"
-            },
-            {
-              "matchId": "football-system-schedule-4ac4bca9a8ed",
-              "kickoffAt": "2026-09-23T13:00:00+09:00",
-              "round": 14,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "shunan-public",
-              "opponentName": "周南公立大学",
-              "goalsFor": 1,
-              "goalsAgainst": 0,
-              "result": "W"
             }
           ],
           "stats": {
-            "averageGoals": 5.88,
-            "averageConceded": 0.59,
-            "cleanSheets": 10,
+            "averageGoals": 5.72,
+            "averageConceded": 0.56,
+            "cleanSheets": 11,
             "scorelessMatches": 0,
             "yellowCards": 7,
             "redCards": 1,
-            "benchSelections": 153,
+            "benchSelections": 162,
             "averageBench": 9,
-            "averageStartingAge": 21.19
+            "averageStartingAge": 21.2
           },
           "rankProgression": [
             {
@@ -566,6 +566,10 @@
             },
             {
               "round": 17,
+              "rank": 1
+            },
+            {
+              "round": 18,
               "rank": 1
             }
           ]
@@ -744,6 +748,10 @@
             {
               "round": 17,
               "rank": 10
+            },
+            {
+              "round": 18,
+              "rank": 10
             }
           ]
         },
@@ -751,14 +759,14 @@
           "teamId": "kawasaki-medical-welfare",
           "rank": 9,
           "overall": {
-            "played": 17,
+            "played": 18,
             "won": 2,
             "drawn": 2,
-            "lost": 13,
+            "lost": 14,
             "points": 8,
             "goalsFor": 18,
-            "goalsAgainst": 67,
-            "goalDifference": -49
+            "goalsAgainst": 71,
+            "goalDifference": -53
           },
           "home": {
             "played": 9,
@@ -771,16 +779,28 @@
             "goalDifference": -38
           },
           "away": {
-            "played": 8,
+            "played": 9,
             "won": 1,
             "drawn": 2,
-            "lost": 5,
+            "lost": 6,
             "points": 5,
             "goalsFor": 12,
-            "goalsAgainst": 23,
-            "goalDifference": -11
+            "goalsAgainst": 27,
+            "goalDifference": -15
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-37da8f2b2690",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima",
+              "opponentName": "広島大学",
+              "goalsFor": 0,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
             {
               "matchId": "football-system-schedule-a60905ce452f",
               "kickoffAt": "2026-10-18T13:00:00+09:00",
@@ -828,30 +848,18 @@
               "goalsFor": 3,
               "goalsAgainst": 1,
               "result": "W"
-            },
-            {
-              "matchId": "football-system-schedule-0a050f889c24",
-              "kickoffAt": "2026-09-23T13:00:00+09:00",
-              "round": 14,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "fukuyama",
-              "opponentName": "福山大学",
-              "goalsFor": 1,
-              "goalsAgainst": 4,
-              "result": "L"
             }
           ],
           "stats": {
-            "averageGoals": 1.06,
+            "averageGoals": 1,
             "averageConceded": 3.94,
             "cleanSheets": 0,
-            "scorelessMatches": 6,
+            "scorelessMatches": 7,
             "yellowCards": 12,
             "redCards": 0,
-            "benchSelections": 138,
-            "averageBench": 8.12,
-            "averageStartingAge": 19.51
+            "benchSelections": 147,
+            "averageBench": 8.17,
+            "averageStartingAge": 19.54
           },
           "rankProgression": [
             {
@@ -921,21 +929,25 @@
             {
               "round": 17,
               "rank": 9
+            },
+            {
+              "round": 18,
+              "rank": 9
             }
           ]
         },
         {
           "teamId": "fukuyama-heisei",
-          "rank": 7,
+          "rank": 8,
           "overall": {
-            "played": 17,
+            "played": 18,
             "won": 6,
             "drawn": 1,
-            "lost": 10,
+            "lost": 11,
             "points": 19,
             "goalsFor": 21,
-            "goalsAgainst": 39,
-            "goalDifference": -18
+            "goalsAgainst": 40,
+            "goalDifference": -19
           },
           "home": {
             "played": 9,
@@ -948,16 +960,28 @@
             "goalDifference": -15
           },
           "away": {
-            "played": 8,
+            "played": 9,
             "won": 4,
             "drawn": 1,
-            "lost": 3,
+            "lost": 4,
             "points": 13,
             "goalsFor": 10,
-            "goalsAgainst": 13,
-            "goalDifference": -3
+            "goalsAgainst": 14,
+            "goalDifference": -4
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-e79c6b13e327",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-bunka-gakuen",
+              "opponentName": "広島文化学園大学",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            },
             {
               "matchId": "football-system-schedule-dc21ba848f97",
               "kickoffAt": "2026-10-18T13:00:00+09:00",
@@ -1005,29 +1029,17 @@
               "goalsFor": 1,
               "goalsAgainst": 1,
               "result": "D"
-            },
-            {
-              "matchId": "football-system-schedule-5f56bd21f3e5",
-              "kickoffAt": "2026-09-19T13:00:00+09:00",
-              "round": 13,
-              "period": "second",
-              "side": "home",
-              "opponentTeamId": "shunan-public",
-              "opponentName": "周南公立大学",
-              "goalsFor": 0,
-              "goalsAgainst": 1,
-              "result": "L"
             }
           ],
           "stats": {
-            "averageGoals": 1.24,
-            "averageConceded": 2.29,
+            "averageGoals": 1.17,
+            "averageConceded": 2.22,
             "cleanSheets": 3,
-            "scorelessMatches": 5,
-            "yellowCards": 10,
+            "scorelessMatches": 6,
+            "yellowCards": 11,
             "redCards": 1,
-            "benchSelections": 144,
-            "averageBench": 8.47,
+            "benchSelections": 153,
+            "averageBench": 8.5,
             "averageStartingAge": 20.53
           },
           "rankProgression": [
@@ -1098,6 +1110,10 @@
             {
               "round": 17,
               "rank": 7
+            },
+            {
+              "round": 18,
+              "rank": 8
             }
           ]
         },
@@ -1105,24 +1121,24 @@
           "teamId": "hiroshima-shudo",
           "rank": 6,
           "overall": {
-            "played": 17,
+            "played": 18,
             "won": 8,
             "drawn": 0,
-            "lost": 9,
+            "lost": 10,
             "points": 24,
-            "goalsFor": 29,
-            "goalsAgainst": 31,
-            "goalDifference": -2
+            "goalsFor": 30,
+            "goalsAgainst": 34,
+            "goalDifference": -4
           },
           "home": {
-            "played": 8,
+            "played": 9,
             "won": 4,
             "drawn": 0,
-            "lost": 4,
+            "lost": 5,
             "points": 12,
-            "goalsFor": 12,
-            "goalsAgainst": 16,
-            "goalDifference": -4
+            "goalsFor": 13,
+            "goalsAgainst": 19,
+            "goalDifference": -6
           },
           "away": {
             "played": 9,
@@ -1135,6 +1151,18 @@
             "goalDifference": 2
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-530b1dfcb525",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shunan-public",
+              "opponentName": "周南公立大学",
+              "goalsFor": 1,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
             {
               "matchId": "football-system-schedule-dc21ba848f97",
               "kickoffAt": "2026-10-18T13:00:00+09:00",
@@ -1182,30 +1210,18 @@
               "goalsFor": 2,
               "goalsAgainst": 1,
               "result": "W"
-            },
-            {
-              "matchId": "football-system-schedule-1969f3199c89",
-              "kickoffAt": "2026-09-19T13:00:00+09:00",
-              "round": 13,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "ipu",
-              "opponentName": "IPU・環太平洋大学",
-              "goalsFor": 1,
-              "goalsAgainst": 3,
-              "result": "L"
             }
           ],
           "stats": {
-            "averageGoals": 1.71,
-            "averageConceded": 1.82,
+            "averageGoals": 1.67,
+            "averageConceded": 1.89,
             "cleanSheets": 2,
             "scorelessMatches": 5,
-            "yellowCards": 9,
+            "yellowCards": 11,
             "redCards": 1,
-            "benchSelections": 153,
+            "benchSelections": 162,
             "averageBench": 9,
-            "averageStartingAge": 19.88
+            "averageStartingAge": 19.89
           },
           "rankProgression": [
             {
@@ -1275,21 +1291,25 @@
             {
               "round": 17,
               "rank": 6
+            },
+            {
+              "round": 18,
+              "rank": 6
             }
           ]
         },
         {
           "teamId": "shunan-public",
-          "rank": 5,
+          "rank": 4,
           "overall": {
-            "played": 17,
-            "won": 9,
+            "played": 18,
+            "won": 10,
             "drawn": 0,
             "lost": 8,
-            "points": 27,
-            "goalsFor": 26,
-            "goalsAgainst": 29,
-            "goalDifference": -3
+            "points": 30,
+            "goalsFor": 29,
+            "goalsAgainst": 30,
+            "goalDifference": -1
           },
           "home": {
             "played": 9,
@@ -1302,16 +1322,28 @@
             "goalDifference": 2
           },
           "away": {
-            "played": 8,
-            "won": 3,
+            "played": 9,
+            "won": 4,
             "drawn": 0,
             "lost": 5,
-            "points": 9,
-            "goalsFor": 7,
-            "goalsAgainst": 12,
-            "goalDifference": -5
+            "points": 12,
+            "goalsFor": 10,
+            "goalsAgainst": 13,
+            "goalDifference": -3
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-530b1dfcb525",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-shudo",
+              "opponentName": "広島修道大学",
+              "goalsFor": 3,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
             {
               "matchId": "football-system-schedule-a60905ce452f",
               "kickoffAt": "2026-10-18T13:00:00+09:00",
@@ -1359,30 +1391,18 @@
               "goalsFor": 0,
               "goalsAgainst": 1,
               "result": "L"
-            },
-            {
-              "matchId": "football-system-schedule-5f56bd21f3e5",
-              "kickoffAt": "2026-09-19T13:00:00+09:00",
-              "round": 13,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "fukuyama-heisei",
-              "opponentName": "福山平成大学",
-              "goalsFor": 1,
-              "goalsAgainst": 0,
-              "result": "W"
             }
           ],
           "stats": {
-            "averageGoals": 1.53,
-            "averageConceded": 1.71,
+            "averageGoals": 1.61,
+            "averageConceded": 1.67,
             "cleanSheets": 5,
             "scorelessMatches": 4,
-            "yellowCards": 19,
+            "yellowCards": 21,
             "redCards": 0,
-            "benchSelections": 156,
-            "averageBench": 9.18,
-            "averageStartingAge": 20.78
+            "benchSelections": 165,
+            "averageBench": 9.17,
+            "averageStartingAge": 20.81
           },
           "rankProgression": [
             {
@@ -1452,31 +1472,35 @@
             {
               "round": 17,
               "rank": 5
+            },
+            {
+              "round": 18,
+              "rank": 4
             }
           ]
         },
         {
           "teamId": "hiroshima-bunka-gakuen",
-          "rank": 8,
+          "rank": 7,
           "overall": {
-            "played": 17,
-            "won": 5,
+            "played": 18,
+            "won": 6,
             "drawn": 1,
             "lost": 11,
-            "points": 16,
-            "goalsFor": 27,
+            "points": 19,
+            "goalsFor": 28,
             "goalsAgainst": 40,
-            "goalDifference": -13
+            "goalDifference": -12
           },
           "home": {
-            "played": 8,
-            "won": 2,
+            "played": 9,
+            "won": 3,
             "drawn": 1,
             "lost": 5,
-            "points": 7,
-            "goalsFor": 13,
+            "points": 10,
+            "goalsFor": 14,
             "goalsAgainst": 18,
-            "goalDifference": -5
+            "goalDifference": -4
           },
           "away": {
             "played": 9,
@@ -1489,6 +1513,18 @@
             "goalDifference": -8
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-e79c6b13e327",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "fukuyama-heisei",
+              "opponentName": "福山平成大学",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
             {
               "matchId": "football-system-schedule-ad4d10e26062",
               "kickoffAt": "2026-10-18T13:00:00+09:00",
@@ -1536,30 +1572,18 @@
               "goalsFor": 1,
               "goalsAgainst": 2,
               "result": "L"
-            },
-            {
-              "matchId": "football-system-schedule-b9d9305c6997",
-              "kickoffAt": "2026-09-19T13:00:00+09:00",
-              "round": 13,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "kawasaki-medical-welfare",
-              "opponentName": "川崎医療福祉大学",
-              "goalsFor": 7,
-              "goalsAgainst": 0,
-              "result": "W"
             }
           ],
           "stats": {
-            "averageGoals": 1.59,
-            "averageConceded": 2.35,
-            "cleanSheets": 3,
+            "averageGoals": 1.56,
+            "averageConceded": 2.22,
+            "cleanSheets": 4,
             "scorelessMatches": 4,
-            "yellowCards": 7,
+            "yellowCards": 8,
             "redCards": 0,
-            "benchSelections": 154,
+            "benchSelections": 163,
             "averageBench": 9.06,
-            "averageStartingAge": 20.27
+            "averageStartingAge": 20.33
           },
           "rankProgression": [
             {
@@ -1629,31 +1653,35 @@
             {
               "round": 17,
               "rank": 8
+            },
+            {
+              "round": 18,
+              "rank": 7
             }
           ]
         },
         {
           "teamId": "hiroshima",
-          "rank": 3,
+          "rank": 2,
           "overall": {
-            "played": 17,
-            "won": 12,
+            "played": 18,
+            "won": 13,
             "drawn": 2,
             "lost": 3,
-            "points": 38,
-            "goalsFor": 42,
+            "points": 41,
+            "goalsFor": 46,
             "goalsAgainst": 22,
-            "goalDifference": 20
+            "goalDifference": 24
           },
           "home": {
-            "played": 8,
-            "won": 6,
+            "played": 9,
+            "won": 7,
             "drawn": 1,
             "lost": 1,
-            "points": 19,
-            "goalsFor": 19,
+            "points": 22,
+            "goalsFor": 23,
             "goalsAgainst": 7,
-            "goalDifference": 12
+            "goalDifference": 16
           },
           "away": {
             "played": 9,
@@ -1666,6 +1694,18 @@
             "goalDifference": 8
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-37da8f2b2690",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 4,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
             {
               "matchId": "football-system-schedule-ca0b9b3eb007",
               "kickoffAt": "2026-10-18T14:00:00+09:00",
@@ -1713,30 +1753,18 @@
               "goalsFor": 1,
               "goalsAgainst": 1,
               "result": "D"
-            },
-            {
-              "matchId": "football-system-schedule-de32b639aaf7",
-              "kickoffAt": "2026-09-19T14:15:00+09:00",
-              "round": 13,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "yamaguchi",
-              "opponentName": "山口大学",
-              "goalsFor": 5,
-              "goalsAgainst": 1,
-              "result": "W"
             }
           ],
           "stats": {
-            "averageGoals": 2.47,
-            "averageConceded": 1.29,
-            "cleanSheets": 5,
+            "averageGoals": 2.56,
+            "averageConceded": 1.22,
+            "cleanSheets": 6,
             "scorelessMatches": 3,
             "yellowCards": 12,
             "redCards": 0,
-            "benchSelections": 150,
-            "averageBench": 8.82,
-            "averageStartingAge": 20.56
+            "benchSelections": 159,
+            "averageBench": 8.83,
+            "averageStartingAge": 20.57
           },
           "rankProgression": [
             {
@@ -1806,12 +1834,16 @@
             {
               "round": 17,
               "rank": 3
+            },
+            {
+              "round": 18,
+              "rank": 2
             }
           ]
         },
         {
           "teamId": "fukuyama",
-          "rank": 4,
+          "rank": 5,
           "overall": {
             "played": 17,
             "won": 9,
@@ -1983,31 +2015,35 @@
             {
               "round": 17,
               "rank": 4
+            },
+            {
+              "round": 18,
+              "rank": 5
             }
           ]
         },
         {
           "teamId": "hiroshima-keizai",
-          "rank": 2,
+          "rank": 3,
           "overall": {
-            "played": 17,
+            "played": 18,
             "won": 13,
             "drawn": 0,
-            "lost": 4,
+            "lost": 5,
             "points": 39,
             "goalsFor": 50,
-            "goalsAgainst": 14,
-            "goalDifference": 36
+            "goalsAgainst": 17,
+            "goalDifference": 33
           },
           "home": {
-            "played": 8,
+            "played": 9,
             "won": 7,
             "drawn": 0,
-            "lost": 1,
+            "lost": 2,
             "points": 21,
             "goalsFor": 26,
-            "goalsAgainst": 4,
-            "goalDifference": 22
+            "goalsAgainst": 7,
+            "goalDifference": 19
           },
           "away": {
             "played": 9,
@@ -2020,6 +2056,18 @@
             "goalDifference": 14
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-b5bc8a59054d",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "ipu",
+              "opponentName": "IPU・環太平洋大学",
+              "goalsFor": 0,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
             {
               "matchId": "football-system-schedule-ca0b9b3eb007",
               "kickoffAt": "2026-10-18T14:00:00+09:00",
@@ -2067,30 +2115,18 @@
               "goalsFor": 5,
               "goalsAgainst": 1,
               "result": "W"
-            },
-            {
-              "matchId": "football-system-schedule-44886142f49b",
-              "kickoffAt": "2026-09-23T13:00:00+09:00",
-              "round": 14,
-              "period": "second",
-              "side": "home",
-              "opponentTeamId": "yamaguchi",
-              "opponentName": "山口大学",
-              "goalsFor": 7,
-              "goalsAgainst": 0,
-              "result": "W"
             }
           ],
           "stats": {
-            "averageGoals": 2.94,
-            "averageConceded": 0.82,
+            "averageGoals": 2.78,
+            "averageConceded": 0.94,
             "cleanSheets": 9,
-            "scorelessMatches": 3,
+            "scorelessMatches": 4,
             "yellowCards": 13,
             "redCards": 0,
-            "benchSelections": 152,
+            "benchSelections": 161,
             "averageBench": 8.94,
-            "averageStartingAge": 20.58
+            "averageStartingAge": 20.59
           },
           "rankProgression": [
             {
@@ -2160,6 +2196,10 @@
             {
               "round": 17,
               "rank": 2
+            },
+            {
+              "round": 18,
+              "rank": 3
             }
           ]
         }
@@ -2169,17 +2209,17 @@
           {
             "rank": 1,
             "teamId": "ipu",
-            "value": 5.88
+            "value": 5.72
           },
           {
             "rank": 2,
             "teamId": "hiroshima-keizai",
-            "value": 2.94
+            "value": 2.78
           },
           {
             "rank": 3,
             "teamId": "hiroshima",
-            "value": 2.47
+            "value": 2.56
           },
           {
             "rank": 4,
@@ -2189,27 +2229,27 @@
           {
             "rank": 5,
             "teamId": "hiroshima-shudo",
-            "value": 1.71
+            "value": 1.67
           },
           {
             "rank": 6,
-            "teamId": "hiroshima-bunka-gakuen",
-            "value": 1.59
+            "teamId": "shunan-public",
+            "value": 1.61
           },
           {
             "rank": 7,
-            "teamId": "shunan-public",
-            "value": 1.53
+            "teamId": "hiroshima-bunka-gakuen",
+            "value": 1.56
           },
           {
             "rank": 8,
             "teamId": "fukuyama-heisei",
-            "value": 1.24
+            "value": 1.17
           },
           {
             "rank": 9,
             "teamId": "kawasaki-medical-welfare",
-            "value": 1.06
+            "value": 1
           },
           {
             "rank": 10,
@@ -2230,50 +2270,50 @@
           },
           {
             "rank": 3,
-            "teamId": "hiroshima-bunka-gakuen",
-            "value": 2.35
+            "teamId": "fukuyama-heisei",
+            "value": 2.22
           },
           {
             "rank": 4,
-            "teamId": "fukuyama-heisei",
-            "value": 2.29
+            "teamId": "hiroshima-bunka-gakuen",
+            "value": 2.22
           },
           {
             "rank": 5,
+            "teamId": "hiroshima-shudo",
+            "value": 1.89
+          },
+          {
+            "rank": 6,
             "teamId": "fukuyama",
             "value": 1.88
           },
           {
-            "rank": 6,
-            "teamId": "hiroshima-shudo",
-            "value": 1.82
-          },
-          {
             "rank": 7,
             "teamId": "shunan-public",
-            "value": 1.71
+            "value": 1.67
           },
           {
             "rank": 8,
             "teamId": "hiroshima",
-            "value": 1.29
+            "value": 1.22
           },
           {
             "rank": 9,
             "teamId": "hiroshima-keizai",
-            "value": 0.82
+            "value": 0.94
           },
           {
             "rank": 10,
             "teamId": "ipu",
-            "value": 0.59
+            "value": 0.56
           }
         ],
         "cleanSheets": [
           {
             "rank": 1,
             "teamId": "ipu",
-            "value": 10
+            "value": 11
           },
           {
             "rank": 2,
@@ -2283,7 +2323,7 @@
           {
             "rank": 3,
             "teamId": "hiroshima",
-            "value": 5
+            "value": 6
           },
           {
             "rank": 4,
@@ -2292,17 +2332,17 @@
           },
           {
             "rank": 5,
+            "teamId": "hiroshima-bunka-gakuen",
+            "value": 4
+          },
+          {
+            "rank": 6,
             "teamId": "fukuyama",
             "value": 3
           },
           {
-            "rank": 6,
-            "teamId": "fukuyama-heisei",
-            "value": 3
-          },
-          {
             "rank": 7,
-            "teamId": "hiroshima-bunka-gakuen",
+            "teamId": "fukuyama-heisei",
             "value": 3
           },
           {
@@ -2330,12 +2370,12 @@
           {
             "rank": 2,
             "teamId": "kawasaki-medical-welfare",
-            "value": 6
+            "value": 7
           },
           {
             "rank": 3,
             "teamId": "fukuyama-heisei",
-            "value": 5
+            "value": 6
           },
           {
             "rank": 4,
@@ -2349,17 +2389,17 @@
           },
           {
             "rank": 6,
-            "teamId": "shunan-public",
+            "teamId": "hiroshima-keizai",
             "value": 4
           },
           {
             "rank": 7,
-            "teamId": "hiroshima",
-            "value": 3
+            "teamId": "shunan-public",
+            "value": 4
           },
           {
             "rank": 8,
-            "teamId": "hiroshima-keizai",
+            "teamId": "hiroshima",
             "value": 3
           },
           {
@@ -2377,7 +2417,7 @@
           {
             "rank": 1,
             "teamId": "shunan-public",
-            "value": 19
+            "value": 21
           },
           {
             "rank": 2,
@@ -2407,17 +2447,17 @@
           {
             "rank": 7,
             "teamId": "fukuyama-heisei",
-            "value": 10
+            "value": 11
           },
           {
             "rank": 8,
             "teamId": "hiroshima-shudo",
-            "value": 9
+            "value": 11
           },
           {
             "rank": 9,
             "teamId": "hiroshima-bunka-gakuen",
-            "value": 7
+            "value": 8
           },
           {
             "rank": 10,
@@ -2481,59 +2521,59 @@
           {
             "rank": 1,
             "teamId": "shunan-public",
-            "value": 156
+            "value": 165
           },
           {
             "rank": 2,
             "teamId": "hiroshima-bunka-gakuen",
-            "value": 154
+            "value": 163
           },
           {
             "rank": 3,
             "teamId": "hiroshima-shudo",
-            "value": 153
+            "value": 162
           },
           {
             "rank": 4,
             "teamId": "ipu",
-            "value": 153
+            "value": 162
           },
           {
             "rank": 5,
+            "teamId": "hiroshima-keizai",
+            "value": 161
+          },
+          {
+            "rank": 6,
+            "teamId": "hiroshima",
+            "value": 159
+          },
+          {
+            "rank": 7,
+            "teamId": "fukuyama-heisei",
+            "value": 153
+          },
+          {
+            "rank": 8,
             "teamId": "fukuyama",
             "value": 152
           },
           {
-            "rank": 6,
-            "teamId": "hiroshima-keizai",
-            "value": 152
-          },
-          {
-            "rank": 7,
-            "teamId": "hiroshima",
-            "value": 150
-          },
-          {
-            "rank": 8,
+            "rank": 9,
             "teamId": "yamaguchi",
             "value": 150
           },
           {
-            "rank": 9,
-            "teamId": "fukuyama-heisei",
-            "value": 144
-          },
-          {
             "rank": 10,
             "teamId": "kawasaki-medical-welfare",
-            "value": 138
+            "value": 147
           }
         ],
         "averageBench": [
           {
             "rank": 1,
             "teamId": "shunan-public",
-            "value": 9.18
+            "value": 9.17
           },
           {
             "rank": 2,
@@ -2563,7 +2603,7 @@
           {
             "rank": 7,
             "teamId": "hiroshima",
-            "value": 8.82
+            "value": 8.83
           },
           {
             "rank": 8,
@@ -2573,19 +2613,19 @@
           {
             "rank": 9,
             "teamId": "fukuyama-heisei",
-            "value": 8.47
+            "value": 8.5
           },
           {
             "rank": 10,
             "teamId": "kawasaki-medical-welfare",
-            "value": 8.12
+            "value": 8.17
           }
         ],
         "averageStartingAge": [
           {
             "rank": 1,
             "teamId": "ipu",
-            "value": 21.19
+            "value": 21.2
           },
           {
             "rank": 2,
@@ -2595,17 +2635,17 @@
           {
             "rank": 3,
             "teamId": "shunan-public",
-            "value": 20.78
+            "value": 20.81
           },
           {
             "rank": 4,
             "teamId": "hiroshima-keizai",
-            "value": 20.58
+            "value": 20.59
           },
           {
             "rank": 5,
             "teamId": "hiroshima",
-            "value": 20.56
+            "value": 20.57
           },
           {
             "rank": 6,
@@ -2620,17 +2660,17 @@
           {
             "rank": 8,
             "teamId": "hiroshima-bunka-gakuen",
-            "value": 20.27
+            "value": 20.33
           },
           {
             "rank": 9,
             "teamId": "hiroshima-shudo",
-            "value": 19.88
+            "value": 19.89
           },
           {
             "rank": 10,
             "teamId": "kawasaki-medical-welfare",
-            "value": 19.51
+            "value": 19.54
           }
         ]
       }
@@ -4939,81 +4979,81 @@
       "standings": [
         {
           "teamId": "ipu",
-          "played": 8,
-          "won": 8,
+          "played": 9,
+          "won": 9,
           "drawn": 0,
           "lost": 0,
-          "points": 24,
-          "goalsFor": 42,
+          "points": 27,
+          "goalsFor": 45,
           "goalsAgainst": 7,
-          "goalDifference": 35,
+          "goalDifference": 38,
           "rank": 1,
           "rankChange": 0
         },
         {
-          "teamId": "hiroshima-keizai",
-          "played": 8,
-          "won": 7,
-          "drawn": 0,
-          "lost": 1,
-          "points": 21,
-          "goalsFor": 30,
-          "goalsAgainst": 4,
-          "goalDifference": 26,
-          "rank": 2,
-          "rankChange": 0
-        },
-        {
           "teamId": "hiroshima",
-          "played": 8,
-          "won": 6,
+          "played": 9,
+          "won": 7,
           "drawn": 1,
           "lost": 1,
-          "points": 19,
-          "goalsFor": 22,
+          "points": 22,
+          "goalsFor": 26,
           "goalsAgainst": 10,
-          "goalDifference": 12,
-          "rank": 3,
-          "rankChange": 0
-        },
-        {
-          "teamId": "fukuyama-heisei",
-          "played": 8,
-          "won": 4,
-          "drawn": 1,
-          "lost": 3,
-          "points": 13,
-          "goalsFor": 12,
-          "goalsAgainst": 18,
-          "goalDifference": -6,
-          "rank": 4,
+          "goalDifference": 16,
+          "rank": 2,
           "rankChange": 1
         },
         {
-          "teamId": "hiroshima-shudo",
-          "played": 8,
-          "won": 4,
+          "teamId": "hiroshima-keizai",
+          "played": 9,
+          "won": 7,
           "drawn": 0,
-          "lost": 4,
-          "points": 12,
-          "goalsFor": 15,
-          "goalsAgainst": 13,
-          "goalDifference": 2,
-          "rank": 5,
+          "lost": 2,
+          "points": 21,
+          "goalsFor": 30,
+          "goalsAgainst": 7,
+          "goalDifference": 23,
+          "rank": 3,
           "rankChange": -1
         },
         {
           "teamId": "shunan-public",
-          "played": 8,
-          "won": 4,
+          "played": 9,
+          "won": 5,
           "drawn": 0,
           "lost": 4,
+          "points": 15,
+          "goalsFor": 16,
+          "goalsAgainst": 14,
+          "goalDifference": 2,
+          "rank": 4,
+          "rankChange": 2
+        },
+        {
+          "teamId": "fukuyama-heisei",
+          "played": 9,
+          "won": 4,
+          "drawn": 1,
+          "lost": 4,
+          "points": 13,
+          "goalsFor": 12,
+          "goalsAgainst": 19,
+          "goalDifference": -7,
+          "rank": 5,
+          "rankChange": -1
+        },
+        {
+          "teamId": "hiroshima-shudo",
+          "played": 9,
+          "won": 4,
+          "drawn": 0,
+          "lost": 5,
           "points": 12,
-          "goalsFor": 13,
-          "goalsAgainst": 13,
+          "goalsFor": 16,
+          "goalsAgainst": 16,
           "goalDifference": 0,
           "rank": 6,
-          "rankChange": 0
+          "rankChange": -1
         },
         {
           "teamId": "fukuyama",
@@ -5030,27 +5070,27 @@
         },
         {
           "teamId": "hiroshima-bunka-gakuen",
-          "played": 8,
-          "won": 2,
+          "played": 9,
+          "won": 3,
           "drawn": 0,
           "lost": 6,
-          "points": 6,
-          "goalsFor": 15,
+          "points": 9,
+          "goalsFor": 16,
           "goalsAgainst": 27,
-          "goalDifference": -12,
+          "goalDifference": -11,
           "rank": 8,
           "rankChange": 0
         },
         {
           "teamId": "kawasaki-medical-welfare",
-          "played": 8,
+          "played": 9,
           "won": 1,
           "drawn": 0,
-          "lost": 7,
+          "lost": 8,
           "points": 3,
           "goalsFor": 10,
-          "goalsAgainst": 28,
-          "goalDifference": -18,
+          "goalsAgainst": 32,
+          "goalDifference": -22,
           "rank": 9,
           "rankChange": 0
         },
@@ -5071,15 +5111,27 @@
       "homeStandings": [
         {
           "teamId": "hiroshima-keizai",
-          "played": 5,
+          "played": 6,
           "won": 5,
           "drawn": 0,
-          "lost": 0,
+          "lost": 1,
           "points": 15,
           "goalsFor": 21,
-          "goalsAgainst": 1,
-          "goalDifference": 20,
+          "goalsAgainst": 4,
+          "goalDifference": 17,
           "rank": 1
+        },
+        {
+          "teamId": "hiroshima",
+          "played": 6,
+          "won": 4,
+          "drawn": 1,
+          "lost": 1,
+          "points": 13,
+          "goalsFor": 13,
+          "goalsAgainst": 6,
+          "goalDifference": 7,
+          "rank": 2
         },
         {
           "teamId": "ipu",
@@ -5091,18 +5143,6 @@
           "goalsFor": 20,
           "goalsAgainst": 5,
           "goalDifference": 15,
-          "rank": 2
-        },
-        {
-          "teamId": "hiroshima",
-          "played": 5,
-          "won": 3,
-          "drawn": 1,
-          "lost": 1,
-          "points": 10,
-          "goalsFor": 9,
-          "goalsAgainst": 6,
-          "goalDifference": 3,
           "rank": 3
         },
         {
@@ -5131,26 +5171,26 @@
         },
         {
           "teamId": "hiroshima-shudo",
+          "played": 5,
+          "won": 2,
+          "drawn": 0,
+          "lost": 3,
+          "points": 6,
+          "goalsFor": 9,
+          "goalsAgainst": 9,
+          "goalDifference": 0,
+          "rank": 6
+        },
+        {
+          "teamId": "hiroshima-bunka-gakuen",
           "played": 4,
           "won": 2,
           "drawn": 0,
           "lost": 2,
           "points": 6,
-          "goalsFor": 8,
-          "goalsAgainst": 6,
-          "goalDifference": 2,
-          "rank": 6
-        },
-        {
-          "teamId": "hiroshima-bunka-gakuen",
-          "played": 3,
-          "won": 1,
-          "drawn": 0,
-          "lost": 2,
-          "points": 3,
-          "goalsFor": 6,
+          "goalsFor": 7,
           "goalsAgainst": 8,
-          "goalDifference": -2,
+          "goalDifference": -1,
           "rank": 7
         },
         {
@@ -5193,26 +5233,26 @@
       "awayStandings": [
         {
           "teamId": "ipu",
-          "played": 4,
-          "won": 4,
+          "played": 5,
+          "won": 5,
           "drawn": 0,
           "lost": 0,
-          "points": 12,
-          "goalsFor": 22,
+          "points": 15,
+          "goalsFor": 25,
           "goalsAgainst": 2,
-          "goalDifference": 20,
+          "goalDifference": 23,
           "rank": 1
         },
         {
           "teamId": "fukuyama-heisei",
-          "played": 4,
+          "played": 5,
           "won": 3,
           "drawn": 1,
-          "lost": 0,
+          "lost": 1,
           "points": 10,
           "goalsFor": 7,
-          "goalsAgainst": 2,
-          "goalDifference": 5,
+          "goalsAgainst": 3,
+          "goalDifference": 4,
           "rank": 2
         },
         {
@@ -5240,6 +5280,18 @@
           "rank": 4
         },
         {
+          "teamId": "shunan-public",
+          "played": 4,
+          "won": 2,
+          "drawn": 0,
+          "lost": 2,
+          "points": 6,
+          "goalsFor": 4,
+          "goalsAgainst": 3,
+          "goalDifference": 1,
+          "rank": 5
+        },
+        {
           "teamId": "hiroshima-shudo",
           "played": 4,
           "won": 2,
@@ -5249,18 +5301,6 @@
           "goalsFor": 7,
           "goalsAgainst": 7,
           "goalDifference": 0,
-          "rank": 5
-        },
-        {
-          "teamId": "shunan-public",
-          "played": 3,
-          "won": 1,
-          "drawn": 0,
-          "lost": 2,
-          "points": 3,
-          "goalsFor": 1,
-          "goalsAgainst": 2,
-          "goalDifference": -1,
           "rank": 6
         },
         {
@@ -5276,18 +5316,6 @@
           "rank": 7
         },
         {
-          "teamId": "kawasaki-medical-welfare",
-          "played": 5,
-          "won": 0,
-          "drawn": 0,
-          "lost": 5,
-          "points": 0,
-          "goalsFor": 7,
-          "goalsAgainst": 19,
-          "goalDifference": -12,
-          "rank": 8
-        },
-        {
           "teamId": "yamaguchi",
           "played": 4,
           "won": 0,
@@ -5297,7 +5325,7 @@
           "goalsFor": 6,
           "goalsAgainst": 19,
           "goalDifference": -13,
-          "rank": 9
+          "rank": 8
         },
         {
           "teamId": "fukuyama",
@@ -5309,6 +5337,18 @@
           "goalsFor": 5,
           "goalsAgainst": 18,
           "goalDifference": -13,
+          "rank": 9
+        },
+        {
+          "teamId": "kawasaki-medical-welfare",
+          "played": 6,
+          "won": 0,
+          "drawn": 0,
+          "lost": 6,
+          "points": 0,
+          "goalsFor": 7,
+          "goalsAgainst": 23,
+          "goalDifference": -16,
           "rank": 10
         }
       ],
@@ -5317,14 +5357,14 @@
           "teamId": "ipu",
           "rank": 1,
           "overall": {
-            "played": 8,
-            "won": 8,
+            "played": 9,
+            "won": 9,
             "drawn": 0,
             "lost": 0,
-            "points": 24,
-            "goalsFor": 42,
+            "points": 27,
+            "goalsFor": 45,
             "goalsAgainst": 7,
-            "goalDifference": 35
+            "goalDifference": 38
           },
           "home": {
             "played": 4,
@@ -5337,16 +5377,28 @@
             "goalDifference": 15
           },
           "away": {
-            "played": 4,
-            "won": 4,
+            "played": 5,
+            "won": 5,
             "drawn": 0,
             "lost": 0,
-            "points": 12,
-            "goalsFor": 22,
+            "points": 15,
+            "goalsFor": 25,
             "goalsAgainst": 2,
-            "goalDifference": 20
+            "goalDifference": 23
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-b5bc8a59054d",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-keizai",
+              "opponentName": "広島経済大学",
+              "goalsFor": 3,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
             {
               "matchId": "football-system-schedule-67b8c830dd9a",
               "kickoffAt": "2026-10-18T11:00:00+09:00",
@@ -5394,28 +5446,16 @@
               "goalsFor": 11,
               "goalsAgainst": 0,
               "result": "W"
-            },
-            {
-              "matchId": "football-system-schedule-4ac4bca9a8ed",
-              "kickoffAt": "2026-09-23T13:00:00+09:00",
-              "round": 14,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "shunan-public",
-              "opponentName": "周南公立大学",
-              "goalsFor": 1,
-              "goalsAgainst": 0,
-              "result": "W"
             }
           ],
           "stats": {
-            "averageGoals": 5.25,
-            "averageConceded": 0.88,
-            "cleanSheets": 3,
+            "averageGoals": 5,
+            "averageConceded": 0.78,
+            "cleanSheets": 4,
             "scorelessMatches": 0,
             "yellowCards": 5,
             "redCards": 0,
-            "benchSelections": 72,
+            "benchSelections": 81,
             "averageBench": 9,
             "averageStartingAge": 21.39
           },
@@ -5450,6 +5490,10 @@
             },
             {
               "round": 17,
+              "rank": 1
+            },
+            {
+              "round": 18,
               "rank": 1
             }
           ]
@@ -5592,6 +5636,10 @@
             {
               "round": 17,
               "rank": 10
+            },
+            {
+              "round": 18,
+              "rank": 10
             }
           ]
         },
@@ -5599,14 +5647,14 @@
           "teamId": "kawasaki-medical-welfare",
           "rank": 9,
           "overall": {
-            "played": 8,
+            "played": 9,
             "won": 1,
             "drawn": 0,
-            "lost": 7,
+            "lost": 8,
             "points": 3,
             "goalsFor": 10,
-            "goalsAgainst": 28,
-            "goalDifference": -18
+            "goalsAgainst": 32,
+            "goalDifference": -22
           },
           "home": {
             "played": 3,
@@ -5619,16 +5667,28 @@
             "goalDifference": -6
           },
           "away": {
-            "played": 5,
+            "played": 6,
             "won": 0,
             "drawn": 0,
-            "lost": 5,
+            "lost": 6,
             "points": 0,
             "goalsFor": 7,
-            "goalsAgainst": 19,
-            "goalDifference": -12
+            "goalsAgainst": 23,
+            "goalDifference": -16
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-37da8f2b2690",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima",
+              "opponentName": "広島大学",
+              "goalsFor": 0,
+              "goalsAgainst": 4,
+              "result": "L"
+            },
             {
               "matchId": "football-system-schedule-a60905ce452f",
               "kickoffAt": "2026-10-18T13:00:00+09:00",
@@ -5676,30 +5736,18 @@
               "goalsFor": 3,
               "goalsAgainst": 1,
               "result": "W"
-            },
-            {
-              "matchId": "football-system-schedule-0a050f889c24",
-              "kickoffAt": "2026-09-23T13:00:00+09:00",
-              "round": 14,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "fukuyama",
-              "opponentName": "福山大学",
-              "goalsFor": 1,
-              "goalsAgainst": 4,
-              "result": "L"
             }
           ],
           "stats": {
-            "averageGoals": 1.25,
-            "averageConceded": 3.5,
+            "averageGoals": 1.11,
+            "averageConceded": 3.56,
             "cleanSheets": 0,
-            "scorelessMatches": 3,
+            "scorelessMatches": 4,
             "yellowCards": 6,
             "redCards": 0,
-            "benchSelections": 57,
-            "averageBench": 7.13,
-            "averageStartingAge": 19.52
+            "benchSelections": 66,
+            "averageBench": 7.33,
+            "averageStartingAge": 19.57
           },
           "rankProgression": [
             {
@@ -5733,21 +5781,25 @@
             {
               "round": 17,
               "rank": 9
+            },
+            {
+              "round": 18,
+              "rank": 9
             }
           ]
         },
         {
           "teamId": "fukuyama-heisei",
-          "rank": 4,
+          "rank": 5,
           "overall": {
-            "played": 8,
+            "played": 9,
             "won": 4,
             "drawn": 1,
-            "lost": 3,
+            "lost": 4,
             "points": 13,
             "goalsFor": 12,
-            "goalsAgainst": 18,
-            "goalDifference": -6
+            "goalsAgainst": 19,
+            "goalDifference": -7
           },
           "home": {
             "played": 4,
@@ -5760,16 +5812,28 @@
             "goalDifference": -11
           },
           "away": {
-            "played": 4,
+            "played": 5,
             "won": 3,
             "drawn": 1,
-            "lost": 0,
+            "lost": 1,
             "points": 10,
             "goalsFor": 7,
-            "goalsAgainst": 2,
-            "goalDifference": 5
+            "goalsAgainst": 3,
+            "goalDifference": 4
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-e79c6b13e327",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-bunka-gakuen",
+              "opponentName": "広島文化学園大学",
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "result": "L"
+            },
             {
               "matchId": "football-system-schedule-dc21ba848f97",
               "kickoffAt": "2026-10-18T13:00:00+09:00",
@@ -5817,30 +5881,18 @@
               "goalsFor": 1,
               "goalsAgainst": 1,
               "result": "D"
-            },
-            {
-              "matchId": "football-system-schedule-5f56bd21f3e5",
-              "kickoffAt": "2026-09-19T13:00:00+09:00",
-              "round": 13,
-              "period": "second",
-              "side": "home",
-              "opponentTeamId": "shunan-public",
-              "opponentName": "周南公立大学",
-              "goalsFor": 0,
-              "goalsAgainst": 1,
-              "result": "L"
             }
           ],
           "stats": {
-            "averageGoals": 1.5,
-            "averageConceded": 2.25,
+            "averageGoals": 1.33,
+            "averageConceded": 2.11,
             "cleanSheets": 2,
-            "scorelessMatches": 1,
-            "yellowCards": 3,
+            "scorelessMatches": 2,
+            "yellowCards": 4,
             "redCards": 0,
-            "benchSelections": 71,
-            "averageBench": 8.88,
-            "averageStartingAge": 20.69
+            "benchSelections": 80,
+            "averageBench": 8.89,
+            "averageStartingAge": 20.67
           },
           "rankProgression": [
             {
@@ -5874,31 +5926,35 @@
             {
               "round": 17,
               "rank": 4
+            },
+            {
+              "round": 18,
+              "rank": 5
             }
           ]
         },
         {
           "teamId": "hiroshima-shudo",
-          "rank": 5,
+          "rank": 6,
           "overall": {
-            "played": 8,
+            "played": 9,
             "won": 4,
             "drawn": 0,
-            "lost": 4,
+            "lost": 5,
             "points": 12,
-            "goalsFor": 15,
-            "goalsAgainst": 13,
-            "goalDifference": 2
+            "goalsFor": 16,
+            "goalsAgainst": 16,
+            "goalDifference": 0
           },
           "home": {
-            "played": 4,
+            "played": 5,
             "won": 2,
             "drawn": 0,
-            "lost": 2,
+            "lost": 3,
             "points": 6,
-            "goalsFor": 8,
-            "goalsAgainst": 6,
-            "goalDifference": 2
+            "goalsFor": 9,
+            "goalsAgainst": 9,
+            "goalDifference": 0
           },
           "away": {
             "played": 4,
@@ -5911,6 +5967,18 @@
             "goalDifference": 0
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-530b1dfcb525",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "shunan-public",
+              "opponentName": "周南公立大学",
+              "goalsFor": 1,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
             {
               "matchId": "football-system-schedule-dc21ba848f97",
               "kickoffAt": "2026-10-18T13:00:00+09:00",
@@ -5958,30 +6026,18 @@
               "goalsFor": 2,
               "goalsAgainst": 1,
               "result": "W"
-            },
-            {
-              "matchId": "football-system-schedule-1969f3199c89",
-              "kickoffAt": "2026-09-19T13:00:00+09:00",
-              "round": 13,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "ipu",
-              "opponentName": "IPU・環太平洋大学",
-              "goalsFor": 1,
-              "goalsAgainst": 3,
-              "result": "L"
             }
           ],
           "stats": {
-            "averageGoals": 1.88,
-            "averageConceded": 1.63,
+            "averageGoals": 1.78,
+            "averageConceded": 1.78,
             "cleanSheets": 1,
             "scorelessMatches": 2,
-            "yellowCards": 3,
+            "yellowCards": 5,
             "redCards": 0,
-            "benchSelections": 72,
+            "benchSelections": 81,
             "averageBench": 9,
-            "averageStartingAge": 19.97
+            "averageStartingAge": 19.98
           },
           "rankProgression": [
             {
@@ -6015,21 +6071,25 @@
             {
               "round": 17,
               "rank": 5
+            },
+            {
+              "round": 18,
+              "rank": 6
             }
           ]
         },
         {
           "teamId": "shunan-public",
-          "rank": 6,
+          "rank": 4,
           "overall": {
-            "played": 8,
-            "won": 4,
+            "played": 9,
+            "won": 5,
             "drawn": 0,
             "lost": 4,
-            "points": 12,
-            "goalsFor": 13,
-            "goalsAgainst": 13,
-            "goalDifference": 0
+            "points": 15,
+            "goalsFor": 16,
+            "goalsAgainst": 14,
+            "goalDifference": 2
           },
           "home": {
             "played": 5,
@@ -6042,16 +6102,28 @@
             "goalDifference": 1
           },
           "away": {
-            "played": 3,
-            "won": 1,
+            "played": 4,
+            "won": 2,
             "drawn": 0,
             "lost": 2,
-            "points": 3,
-            "goalsFor": 1,
-            "goalsAgainst": 2,
-            "goalDifference": -1
+            "points": 6,
+            "goalsFor": 4,
+            "goalsAgainst": 3,
+            "goalDifference": 1
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-530b1dfcb525",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "away",
+              "opponentTeamId": "hiroshima-shudo",
+              "opponentName": "広島修道大学",
+              "goalsFor": 3,
+              "goalsAgainst": 1,
+              "result": "W"
+            },
             {
               "matchId": "football-system-schedule-a60905ce452f",
               "kickoffAt": "2026-10-18T13:00:00+09:00",
@@ -6099,30 +6171,18 @@
               "goalsFor": 0,
               "goalsAgainst": 1,
               "result": "L"
-            },
-            {
-              "matchId": "football-system-schedule-5f56bd21f3e5",
-              "kickoffAt": "2026-09-19T13:00:00+09:00",
-              "round": 13,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "fukuyama-heisei",
-              "opponentName": "福山平成大学",
-              "goalsFor": 1,
-              "goalsAgainst": 0,
-              "result": "W"
             }
           ],
           "stats": {
-            "averageGoals": 1.63,
-            "averageConceded": 1.63,
+            "averageGoals": 1.78,
+            "averageConceded": 1.56,
             "cleanSheets": 2,
             "scorelessMatches": 3,
-            "yellowCards": 11,
+            "yellowCards": 13,
             "redCards": 0,
-            "benchSelections": 72,
+            "benchSelections": 81,
             "averageBench": 9,
-            "averageStartingAge": 21.02
+            "averageStartingAge": 21.05
           },
           "rankProgression": [
             {
@@ -6156,6 +6216,10 @@
             {
               "round": 17,
               "rank": 6
+            },
+            {
+              "round": 18,
+              "rank": 4
             }
           ]
         },
@@ -6163,24 +6227,24 @@
           "teamId": "hiroshima-bunka-gakuen",
           "rank": 8,
           "overall": {
-            "played": 8,
-            "won": 2,
+            "played": 9,
+            "won": 3,
             "drawn": 0,
             "lost": 6,
-            "points": 6,
-            "goalsFor": 15,
+            "points": 9,
+            "goalsFor": 16,
             "goalsAgainst": 27,
-            "goalDifference": -12
+            "goalDifference": -11
           },
           "home": {
-            "played": 3,
-            "won": 1,
+            "played": 4,
+            "won": 2,
             "drawn": 0,
             "lost": 2,
-            "points": 3,
-            "goalsFor": 6,
+            "points": 6,
+            "goalsFor": 7,
             "goalsAgainst": 8,
-            "goalDifference": -2
+            "goalDifference": -1
           },
           "away": {
             "played": 5,
@@ -6193,6 +6257,18 @@
             "goalDifference": -10
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-e79c6b13e327",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "fukuyama-heisei",
+              "opponentName": "福山平成大学",
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
             {
               "matchId": "football-system-schedule-ad4d10e26062",
               "kickoffAt": "2026-10-18T13:00:00+09:00",
@@ -6240,30 +6316,18 @@
               "goalsFor": 1,
               "goalsAgainst": 2,
               "result": "L"
-            },
-            {
-              "matchId": "football-system-schedule-b9d9305c6997",
-              "kickoffAt": "2026-09-19T13:00:00+09:00",
-              "round": 13,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "kawasaki-medical-welfare",
-              "opponentName": "川崎医療福祉大学",
-              "goalsFor": 7,
-              "goalsAgainst": 0,
-              "result": "W"
             }
           ],
           "stats": {
-            "averageGoals": 1.88,
-            "averageConceded": 3.38,
-            "cleanSheets": 1,
+            "averageGoals": 1.78,
+            "averageConceded": 3,
+            "cleanSheets": 2,
             "scorelessMatches": 2,
-            "yellowCards": 4,
+            "yellowCards": 5,
             "redCards": 0,
-            "benchSelections": 72,
+            "benchSelections": 81,
             "averageBench": 9,
-            "averageStartingAge": 20.48
+            "averageStartingAge": 20.56
           },
           "rankProgression": [
             {
@@ -6297,31 +6361,35 @@
             {
               "round": 17,
               "rank": 8
+            },
+            {
+              "round": 18,
+              "rank": 8
             }
           ]
         },
         {
           "teamId": "hiroshima",
-          "rank": 3,
+          "rank": 2,
           "overall": {
-            "played": 8,
-            "won": 6,
+            "played": 9,
+            "won": 7,
             "drawn": 1,
             "lost": 1,
-            "points": 19,
-            "goalsFor": 22,
+            "points": 22,
+            "goalsFor": 26,
             "goalsAgainst": 10,
-            "goalDifference": 12
+            "goalDifference": 16
           },
           "home": {
-            "played": 5,
-            "won": 3,
+            "played": 6,
+            "won": 4,
             "drawn": 1,
             "lost": 1,
-            "points": 10,
-            "goalsFor": 9,
+            "points": 13,
+            "goalsFor": 13,
             "goalsAgainst": 6,
-            "goalDifference": 3
+            "goalDifference": 7
           },
           "away": {
             "played": 3,
@@ -6334,6 +6402,18 @@
             "goalDifference": 9
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-37da8f2b2690",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "kawasaki-medical-welfare",
+              "opponentName": "川崎医療福祉大学",
+              "goalsFor": 4,
+              "goalsAgainst": 0,
+              "result": "W"
+            },
             {
               "matchId": "football-system-schedule-ca0b9b3eb007",
               "kickoffAt": "2026-10-18T14:00:00+09:00",
@@ -6381,30 +6461,18 @@
               "goalsFor": 1,
               "goalsAgainst": 1,
               "result": "D"
-            },
-            {
-              "matchId": "football-system-schedule-de32b639aaf7",
-              "kickoffAt": "2026-09-19T14:15:00+09:00",
-              "round": 13,
-              "period": "second",
-              "side": "away",
-              "opponentTeamId": "yamaguchi",
-              "opponentName": "山口大学",
-              "goalsFor": 5,
-              "goalsAgainst": 1,
-              "result": "W"
             }
           ],
           "stats": {
-            "averageGoals": 2.75,
-            "averageConceded": 1.25,
-            "cleanSheets": 1,
+            "averageGoals": 2.89,
+            "averageConceded": 1.11,
+            "cleanSheets": 2,
             "scorelessMatches": 1,
             "yellowCards": 6,
             "redCards": 0,
-            "benchSelections": 72,
+            "benchSelections": 81,
             "averageBench": 9,
-            "averageStartingAge": 20.53
+            "averageStartingAge": 20.57
           },
           "rankProgression": [
             {
@@ -6438,6 +6506,10 @@
             {
               "round": 17,
               "rank": 3
+            },
+            {
+              "round": 18,
+              "rank": 2
             }
           ]
         },
@@ -6579,31 +6651,35 @@
             {
               "round": 17,
               "rank": 7
+            },
+            {
+              "round": 18,
+              "rank": 7
             }
           ]
         },
         {
           "teamId": "hiroshima-keizai",
-          "rank": 2,
+          "rank": 3,
           "overall": {
-            "played": 8,
+            "played": 9,
             "won": 7,
             "drawn": 0,
-            "lost": 1,
+            "lost": 2,
             "points": 21,
             "goalsFor": 30,
-            "goalsAgainst": 4,
-            "goalDifference": 26
+            "goalsAgainst": 7,
+            "goalDifference": 23
           },
           "home": {
-            "played": 5,
+            "played": 6,
             "won": 5,
             "drawn": 0,
-            "lost": 0,
+            "lost": 1,
             "points": 15,
             "goalsFor": 21,
-            "goalsAgainst": 1,
-            "goalDifference": 20
+            "goalsAgainst": 4,
+            "goalDifference": 17
           },
           "away": {
             "played": 3,
@@ -6616,6 +6692,18 @@
             "goalDifference": 6
           },
           "form": [
+            {
+              "matchId": "football-system-schedule-b5bc8a59054d",
+              "kickoffAt": "2026-10-25T13:00:00+09:00",
+              "round": 18,
+              "period": "second",
+              "side": "home",
+              "opponentTeamId": "ipu",
+              "opponentName": "IPU・環太平洋大学",
+              "goalsFor": 0,
+              "goalsAgainst": 3,
+              "result": "L"
+            },
             {
               "matchId": "football-system-schedule-ca0b9b3eb007",
               "kickoffAt": "2026-10-18T14:00:00+09:00",
@@ -6663,30 +6751,18 @@
               "goalsFor": 5,
               "goalsAgainst": 1,
               "result": "W"
-            },
-            {
-              "matchId": "football-system-schedule-44886142f49b",
-              "kickoffAt": "2026-09-23T13:00:00+09:00",
-              "round": 14,
-              "period": "second",
-              "side": "home",
-              "opponentTeamId": "yamaguchi",
-              "opponentName": "山口大学",
-              "goalsFor": 7,
-              "goalsAgainst": 0,
-              "result": "W"
             }
           ],
           "stats": {
-            "averageGoals": 3.75,
-            "averageConceded": 0.5,
+            "averageGoals": 3.33,
+            "averageConceded": 0.78,
             "cleanSheets": 4,
-            "scorelessMatches": 1,
+            "scorelessMatches": 2,
             "yellowCards": 6,
             "redCards": 0,
-            "benchSelections": 72,
+            "benchSelections": 81,
             "averageBench": 9,
-            "averageStartingAge": 20.5
+            "averageStartingAge": 20.53
           },
           "rankProgression": [
             {
@@ -6720,6 +6796,10 @@
             {
               "round": 17,
               "rank": 2
+            },
+            {
+              "round": 18,
+              "rank": 3
             }
           ]
         }
@@ -6729,52 +6809,52 @@
           {
             "rank": 1,
             "teamId": "ipu",
-            "value": 5.25
+            "value": 5
           },
           {
             "rank": 2,
             "teamId": "hiroshima-keizai",
-            "value": 3.75
+            "value": 3.33
           },
           {
             "rank": 3,
             "teamId": "hiroshima",
-            "value": 2.75
+            "value": 2.89
           },
           {
             "rank": 4,
             "teamId": "hiroshima-bunka-gakuen",
-            "value": 1.88
+            "value": 1.78
           },
           {
             "rank": 5,
             "teamId": "hiroshima-shudo",
-            "value": 1.88
+            "value": 1.78
           },
           {
             "rank": 6,
-            "teamId": "fukuyama",
-            "value": 1.63
+            "teamId": "shunan-public",
+            "value": 1.78
           },
           {
             "rank": 7,
-            "teamId": "shunan-public",
+            "teamId": "fukuyama",
             "value": 1.63
           },
           {
             "rank": 8,
             "teamId": "fukuyama-heisei",
-            "value": 1.5
+            "value": 1.33
           },
           {
             "rank": 9,
-            "teamId": "kawasaki-medical-welfare",
-            "value": 1.25
+            "teamId": "yamaguchi",
+            "value": 1.13
           },
           {
             "rank": 10,
-            "teamId": "yamaguchi",
-            "value": 1.13
+            "teamId": "kawasaki-medical-welfare",
+            "value": 1.11
           }
         ],
         "averageConceded": [
@@ -6786,12 +6866,12 @@
           {
             "rank": 2,
             "teamId": "kawasaki-medical-welfare",
-            "value": 3.5
+            "value": 3.56
           },
           {
             "rank": 3,
             "teamId": "hiroshima-bunka-gakuen",
-            "value": 3.38
+            "value": 3
           },
           {
             "rank": 4,
@@ -6801,32 +6881,32 @@
           {
             "rank": 5,
             "teamId": "fukuyama-heisei",
-            "value": 2.25
+            "value": 2.11
           },
           {
             "rank": 6,
             "teamId": "hiroshima-shudo",
-            "value": 1.63
+            "value": 1.78
           },
           {
             "rank": 7,
             "teamId": "shunan-public",
-            "value": 1.63
+            "value": 1.56
           },
           {
             "rank": 8,
             "teamId": "hiroshima",
-            "value": 1.25
+            "value": 1.11
           },
           {
             "rank": 9,
-            "teamId": "ipu",
-            "value": 0.88
+            "teamId": "hiroshima-keizai",
+            "value": 0.78
           },
           {
             "rank": 10,
-            "teamId": "hiroshima-keizai",
-            "value": 0.5
+            "teamId": "ipu",
+            "value": 0.78
           }
         ],
         "cleanSheets": [
@@ -6838,7 +6918,7 @@
           {
             "rank": 2,
             "teamId": "ipu",
-            "value": 3
+            "value": 4
           },
           {
             "rank": 3,
@@ -6847,22 +6927,22 @@
           },
           {
             "rank": 4,
-            "teamId": "shunan-public",
+            "teamId": "hiroshima",
             "value": 2
           },
           {
             "rank": 5,
-            "teamId": "fukuyama",
-            "value": 1
+            "teamId": "hiroshima-bunka-gakuen",
+            "value": 2
           },
           {
             "rank": 6,
-            "teamId": "hiroshima",
-            "value": 1
+            "teamId": "shunan-public",
+            "value": 2
           },
           {
             "rank": 7,
-            "teamId": "hiroshima-bunka-gakuen",
+            "teamId": "fukuyama",
             "value": 1
           },
           {
@@ -6885,7 +6965,7 @@
           {
             "rank": 1,
             "teamId": "kawasaki-medical-welfare",
-            "value": 3
+            "value": 4
           },
           {
             "rank": 2,
@@ -6894,32 +6974,32 @@
           },
           {
             "rank": 3,
-            "teamId": "hiroshima-bunka-gakuen",
+            "teamId": "fukuyama-heisei",
             "value": 2
           },
           {
             "rank": 4,
-            "teamId": "hiroshima-shudo",
+            "teamId": "hiroshima-bunka-gakuen",
             "value": 2
           },
           {
             "rank": 5,
-            "teamId": "yamaguchi",
+            "teamId": "hiroshima-keizai",
             "value": 2
           },
           {
             "rank": 6,
-            "teamId": "fukuyama-heisei",
-            "value": 1
+            "teamId": "hiroshima-shudo",
+            "value": 2
           },
           {
             "rank": 7,
-            "teamId": "hiroshima",
-            "value": 1
+            "teamId": "yamaguchi",
+            "value": 2
           },
           {
             "rank": 8,
-            "teamId": "hiroshima-keizai",
+            "teamId": "hiroshima",
             "value": 1
           },
           {
@@ -6937,7 +7017,7 @@
           {
             "rank": 1,
             "teamId": "shunan-public",
-            "value": 11
+            "value": 13
           },
           {
             "rank": 2,
@@ -6966,23 +7046,23 @@
           },
           {
             "rank": 7,
-            "teamId": "ipu",
+            "teamId": "hiroshima-bunka-gakuen",
             "value": 5
           },
           {
             "rank": 8,
-            "teamId": "hiroshima-bunka-gakuen",
-            "value": 4
+            "teamId": "hiroshima-shudo",
+            "value": 5
           },
           {
             "rank": 9,
-            "teamId": "fukuyama-heisei",
-            "value": 3
+            "teamId": "ipu",
+            "value": 5
           },
           {
             "rank": 10,
-            "teamId": "hiroshima-shudo",
-            "value": 3
+            "teamId": "fukuyama-heisei",
+            "value": 4
           }
         ],
         "redCards": [
@@ -7040,43 +7120,43 @@
         "benchSelections": [
           {
             "rank": 1,
-            "teamId": "fukuyama",
-            "value": 72
+            "teamId": "hiroshima",
+            "value": 81
           },
           {
             "rank": 2,
-            "teamId": "hiroshima",
-            "value": 72
+            "teamId": "hiroshima-bunka-gakuen",
+            "value": 81
           },
           {
             "rank": 3,
-            "teamId": "hiroshima-bunka-gakuen",
-            "value": 72
+            "teamId": "hiroshima-keizai",
+            "value": 81
           },
           {
             "rank": 4,
-            "teamId": "hiroshima-keizai",
-            "value": 72
+            "teamId": "hiroshima-shudo",
+            "value": 81
           },
           {
             "rank": 5,
-            "teamId": "hiroshima-shudo",
-            "value": 72
+            "teamId": "ipu",
+            "value": 81
           },
           {
             "rank": 6,
-            "teamId": "ipu",
-            "value": 72
+            "teamId": "shunan-public",
+            "value": 81
           },
           {
             "rank": 7,
-            "teamId": "shunan-public",
-            "value": 72
+            "teamId": "fukuyama-heisei",
+            "value": 80
           },
           {
             "rank": 8,
-            "teamId": "fukuyama-heisei",
-            "value": 71
+            "teamId": "fukuyama",
+            "value": 72
           },
           {
             "rank": 9,
@@ -7086,7 +7166,7 @@
           {
             "rank": 10,
             "teamId": "kawasaki-medical-welfare",
-            "value": 57
+            "value": 66
           }
         ],
         "averageBench": [
@@ -7128,7 +7208,7 @@
           {
             "rank": 8,
             "teamId": "fukuyama-heisei",
-            "value": 8.88
+            "value": 8.89
           },
           {
             "rank": 9,
@@ -7138,7 +7218,7 @@
           {
             "rank": 10,
             "teamId": "kawasaki-medical-welfare",
-            "value": 7.13
+            "value": 7.33
           }
         ],
         "averageStartingAge": [
@@ -7155,12 +7235,12 @@
           {
             "rank": 3,
             "teamId": "shunan-public",
-            "value": 21.02
+            "value": 21.05
           },
           {
             "rank": 4,
             "teamId": "fukuyama-heisei",
-            "value": 20.69
+            "value": 20.67
           },
           {
             "rank": 5,
@@ -7170,27 +7250,27 @@
           {
             "rank": 6,
             "teamId": "hiroshima",
-            "value": 20.53
+            "value": 20.57
           },
           {
             "rank": 7,
-            "teamId": "hiroshima-keizai",
-            "value": 20.5
+            "teamId": "hiroshima-bunka-gakuen",
+            "value": 20.56
           },
           {
             "rank": 8,
-            "teamId": "hiroshima-bunka-gakuen",
-            "value": 20.48
+            "teamId": "hiroshima-keizai",
+            "value": 20.53
           },
           {
             "rank": 9,
             "teamId": "hiroshima-shudo",
-            "value": 19.97
+            "value": 19.98
           },
           {
             "rank": 10,
             "teamId": "kawasaki-medical-welfare",
-            "value": 19.52
+            "value": 19.57
           }
         ]
       }
