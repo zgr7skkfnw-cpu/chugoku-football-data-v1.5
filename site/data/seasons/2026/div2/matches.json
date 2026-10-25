@@ -3,12 +3,12 @@
   "seasonId": "jufa-chugoku-2026-division-2",
   "stage": "regular",
   "competitionName": "2026年度 中国大学サッカーリーグ 2部",
-  "updatedAt": "2026-10-21T04:59:09.807Z",
+  "updatedAt": "2026-10-25T04:53:19.982Z",
   "source": {
     "pageUrl": "https://jufa-chugoku.jp/result/2026/tid_559/",
     "iframeUrl": "https://football-system.jp/fss/pub_taikaigamelist.php?lid=XIi6FZyy0FQ=",
     "detailPostUrl": "https://football-system.jp/fss/pubGameResultConf.php",
-    "retrievedAt": "2026-10-21T04:59:09.807Z"
+    "retrievedAt": "2026-10-25T04:53:19.982Z"
   },
   "scheduleCount": 110,
   "matchCount": 110,
@@ -40090,24 +40090,483 @@
     },
     {
       "id": "football-system-schedule-ba900156438c",
-      "gameId": null,
-      "fedId": null,
-      "taikaiHoldId": null,
+      "gameId": 25817,
+      "fedId": 15,
+      "taikaiHoldId": 559,
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
-      "roundLabel": null,
-      "penaltyShootout": null,
       "round": 21,
       "kickoffAt": "2026-10-25T11:00:00+09:00",
       "venue": "吉備国際大学楢井グラウンド",
-      "status": "scheduled",
+      "status": "finished",
       "homeTeam": {
         "name": "吉備国際大学",
-        "score": null
+        "score": 9
       },
       "awayTeam": {
         "name": "就実大学",
-        "score": null
+        "score": 1
+      },
+      "matchNumber": 105,
+      "roundLabel": "第21節",
+      "matchFormat": "試合時間：90分 PK戦：なし",
+      "attendance": 40,
+      "conditions": {
+        "weather": "雨",
+        "wind": "微風",
+        "pitch": "不良"
+      },
+      "officials": [
+        {
+          "role": "主審",
+          "name": "廣末 存実"
+        },
+        {
+          "role": "副審",
+          "name": "井上 遥太"
+        },
+        {
+          "role": "副審",
+          "name": "横内 優樹"
+        },
+        {
+          "role": "会場責任者",
+          "name": "下山 雅司"
+        },
+        {
+          "role": "記録員",
+          "name": "小林 春翔"
+        }
+      ],
+      "lineups": {
+        "home": {
+          "teamName": "吉備国際大学",
+          "manager": "下山 雅司",
+          "starters": [
+            {
+              "name": "田中 瑛一",
+              "number": 1,
+              "position": "GK"
+            },
+            {
+              "name": "桑原 飛比希",
+              "number": 3,
+              "position": "DF"
+            },
+            {
+              "name": "藤井 千耀",
+              "number": 19,
+              "position": "DF"
+            },
+            {
+              "name": "岡田 晃成",
+              "number": 20,
+              "position": "DF"
+            },
+            {
+              "name": "藤原 拓斗",
+              "number": 5,
+              "position": "MF"
+            },
+            {
+              "name": "神﨑 陽大",
+              "number": 6,
+              "position": "MF"
+            },
+            {
+              "name": "目次 啓悟 [Cap]",
+              "number": 8,
+              "position": "MF"
+            },
+            {
+              "name": "葛籠 聖斗",
+              "number": 10,
+              "position": "MF"
+            },
+            {
+              "name": "藤原 太陽",
+              "number": 9,
+              "position": "FW"
+            },
+            {
+              "name": "泉 日向",
+              "number": 11,
+              "position": "FW"
+            },
+            {
+              "name": "古庄 倭",
+              "number": 15,
+              "position": "FW"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "村上 元蔵",
+              "number": 12,
+              "position": "GK"
+            },
+            {
+              "name": "杉原 悠太",
+              "number": 4,
+              "position": "DF"
+            },
+            {
+              "name": "小林 春翔",
+              "number": 16,
+              "position": "MF"
+            },
+            {
+              "name": "石原 快地",
+              "number": 14,
+              "position": "FW"
+            }
+          ]
+        },
+        "away": {
+          "teamName": "就実大学",
+          "manager": "宮川 紗弥",
+          "starters": [
+            {
+              "name": "高月 愛輝",
+              "number": 17,
+              "position": "GK"
+            },
+            {
+              "name": "増岡 唯",
+              "number": 4,
+              "position": "DF"
+            },
+            {
+              "name": "浦 昌吾 [Cap]",
+              "number": 5,
+              "position": "DF"
+            },
+            {
+              "name": "友宗 聡士",
+              "number": 18,
+              "position": "DF"
+            },
+            {
+              "name": "小倉 真",
+              "number": 30,
+              "position": "DF"
+            },
+            {
+              "name": "小田 颯汰",
+              "number": 10,
+              "position": "MF"
+            },
+            {
+              "name": "石原 拓歩",
+              "number": 13,
+              "position": "MF"
+            },
+            {
+              "name": "間野 稜汰",
+              "number": 21,
+              "position": "MF"
+            },
+            {
+              "name": "平元 珀愛",
+              "number": 24,
+              "position": "MF"
+            },
+            {
+              "name": "倉貫 立夢",
+              "number": 25,
+              "position": "MF"
+            },
+            {
+              "name": "塩瀬 敦士",
+              "number": 32,
+              "position": "FW"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "椎葉 颯太",
+              "number": 16,
+              "position": "GK"
+            },
+            {
+              "name": "庄盛 祐輝",
+              "number": 26,
+              "position": "DF"
+            },
+            {
+              "name": "石原 心",
+              "number": 9,
+              "position": "MF"
+            }
+          ]
+        }
+      },
+      "scoreByPeriod": [
+        {
+          "label": "前半",
+          "home": 3,
+          "away": 1
+        },
+        {
+          "label": "後半",
+          "home": 6,
+          "away": 0
+        }
+      ],
+      "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 5,
+          "directFreeKicks": 13,
+          "indirectFreeKicks": 1,
+          "offsides": 2,
+          "shots": 28
+        },
+        "away": {
+          "cornerKicks": 2,
+          "directFreeKicks": 1,
+          "indirectFreeKicks": 2,
+          "offsides": 1,
+          "shots": 7
+        }
+      },
+      "substitutions": {
+        "home": [
+          "81 分 [out]古庄 倭 [in]石原 快地",
+          "83 分 [out]藤原 拓斗 [in]杉原 悠太",
+          "85 分 [out]田中 瑛一 [in]村上 元蔵"
+        ],
+        "away": [
+          "HT [out]塩瀬 敦士 [in]石原 心",
+          "72 分 [out]間野 稜汰 [in]庄盛 祐輝"
+        ]
+      },
+      "disciplinary": {
+        "home": [],
+        "away": [
+          "26 分 間野 稜汰 C1 反スポーツ",
+          "31 分 増岡 唯 C2 ラフ",
+          "60 分 小田 颯汰 C2 ラフ"
+        ]
+      },
+      "goalSummary": {
+        "home": [
+          "12 分 神﨑 陽大 （藤原 太陽）",
+          "19 分 葛籠 聖斗 （藤原 太陽）",
+          "23 分 葛籠 聖斗",
+          "47 分 古庄 倭 （目次 啓悟）",
+          "74 分 古庄 倭 （藤原 拓斗）",
+          "76 分 目次 啓悟",
+          "80 分 葛籠 聖斗",
+          "82 分 葛籠 聖斗 （石原 快地）",
+          "90 分 藤原 太陽 （石原 快地）"
+        ],
+        "away": [
+          "42 分 平元 珀愛 （間野 稜汰）"
+        ]
+      },
+      "goals": [
+        {
+          "minute": 12,
+          "teamName": "吉備国際大学",
+          "scorerNumber": "6",
+          "scorerName": "神﨑 陽大",
+          "assistNames": [
+            "藤原 太陽"
+          ],
+          "buildUp": [
+            {
+              "number": "9",
+              "action": "→"
+            },
+            {
+              "number": "6",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 19,
+          "teamName": "吉備国際大学",
+          "scorerNumber": "10",
+          "scorerName": "葛籠 聖斗",
+          "assistNames": [
+            "藤原 太陽"
+          ],
+          "buildUp": [
+            {
+              "number": "9",
+              "action": "→"
+            },
+            {
+              "number": "10",
+              "action": "～"
+            },
+            {
+              "number": "10",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 23,
+          "teamName": "吉備国際大学",
+          "scorerNumber": "10",
+          "scorerName": "葛籠 聖斗",
+          "assistNames": [],
+          "buildUp": [
+            {
+              "number": "10",
+              "action": "～"
+            },
+            {
+              "number": "10",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 42,
+          "teamName": "就実大学",
+          "scorerNumber": "24",
+          "scorerName": "平元 珀愛",
+          "assistNames": [
+            "間野 稜汰"
+          ],
+          "buildUp": [
+            {
+              "number": "21",
+              "action": "→"
+            },
+            {
+              "number": "24",
+              "action": "～"
+            },
+            {
+              "number": "24",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 47,
+          "teamName": "吉備国際大学",
+          "scorerNumber": "15",
+          "scorerName": "古庄 倭",
+          "assistNames": [
+            "目次 啓悟"
+          ],
+          "buildUp": [
+            {
+              "number": "8",
+              "action": "∩"
+            },
+            {
+              "number": "15",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 74,
+          "teamName": "吉備国際大学",
+          "scorerNumber": "15",
+          "scorerName": "古庄 倭",
+          "assistNames": [
+            "藤原 拓斗"
+          ],
+          "buildUp": [
+            {
+              "number": "5",
+              "action": "→"
+            },
+            {
+              "number": "15",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 76,
+          "teamName": "吉備国際大学",
+          "scorerNumber": "8",
+          "scorerName": "目次 啓悟",
+          "assistNames": [],
+          "buildUp": [
+            {
+              "number": "8",
+              "action": "FK"
+            }
+          ],
+          "finish": "FK"
+        },
+        {
+          "minute": 80,
+          "teamName": "吉備国際大学",
+          "scorerNumber": "10",
+          "scorerName": "葛籠 聖斗",
+          "assistNames": [],
+          "buildUp": [
+            {
+              "number": "10",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 82,
+          "teamName": "吉備国際大学",
+          "scorerNumber": "10",
+          "scorerName": "葛籠 聖斗",
+          "assistNames": [
+            "石原 快地"
+          ],
+          "buildUp": [
+            {
+              "number": "14",
+              "action": "∩"
+            },
+            {
+              "number": "10",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 90,
+          "teamName": "吉備国際大学",
+          "scorerNumber": "9",
+          "scorerName": "藤原 太陽",
+          "assistNames": [
+            "石原 快地"
+          ],
+          "buildUp": [
+            {
+              "number": "14",
+              "action": "H"
+            },
+            {
+              "number": "9",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        }
+      ],
+      "officialStatus": "confirmed",
+      "source": {
+        "provider": "football-system.jp",
+        "gameId": 25817,
+        "fedId": 15,
+        "taikaiHoldId": 559
       }
     },
     {
