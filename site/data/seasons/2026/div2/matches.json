@@ -3,12 +3,12 @@
   "seasonId": "jufa-chugoku-2026-division-2",
   "stage": "regular",
   "competitionName": "2026年度 中国大学サッカーリーグ 2部",
-  "updatedAt": "2026-10-25T18:27:18.342Z",
+  "updatedAt": "2026-11-01T06:20:43.122Z",
   "source": {
     "pageUrl": "https://jufa-chugoku.jp/result/2026/tid_559/",
     "iframeUrl": "https://football-system.jp/fss/pub_taikaigamelist.php?lid=XIi6FZyy0FQ=",
     "detailPostUrl": "https://football-system.jp/fss/pubGameResultConf.php",
-    "retrievedAt": "2026-10-25T18:27:18.342Z"
+    "retrievedAt": "2026-11-01T06:20:43.122Z"
   },
   "scheduleCount": 110,
   "matchCount": 110,
@@ -42106,24 +42106,376 @@
     },
     {
       "id": "football-system-schedule-5da7bfdce611",
-      "gameId": null,
-      "fedId": null,
-      "taikaiHoldId": null,
+      "gameId": 25819,
+      "fedId": 15,
+      "taikaiHoldId": 559,
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
-      "roundLabel": null,
-      "penaltyShootout": null,
       "round": 22,
       "kickoffAt": "2026-11-01T13:00:00+09:00",
       "venue": "三隅中央公園陸上競技場",
-      "status": "scheduled",
+      "status": "finished",
       "homeTeam": {
         "name": "島根県立大学",
-        "score": null
+        "score": 3
       },
       "awayTeam": {
         "name": "鳥取大学",
-        "score": null
+        "score": 2
+      },
+      "matchNumber": 107,
+      "roundLabel": "第22節",
+      "matchFormat": "試合時間：90分 PK戦：なし",
+      "attendance": 20,
+      "conditions": {
+        "weather": "晴",
+        "wind": "微風",
+        "pitch": "全体良"
+      },
+      "officials": [
+        {
+          "role": "主審",
+          "name": "吉山 和彦"
+        },
+        {
+          "role": "副審",
+          "name": "大澤 夏生"
+        },
+        {
+          "role": "副審",
+          "name": "田原 知典"
+        },
+        {
+          "role": "会場責任者",
+          "name": "井谷 魁"
+        },
+        {
+          "role": "記録員",
+          "name": "一井 大地"
+        }
+      ],
+      "lineups": {
+        "home": {
+          "teamName": "島根県立大学",
+          "manager": "前田 颯人",
+          "starters": [
+            {
+              "name": "﨑田 翔喜",
+              "number": 32,
+              "position": "GK"
+            },
+            {
+              "name": "津島 晴明",
+              "number": 12,
+              "position": "DF"
+            },
+            {
+              "name": "池田 陽祐",
+              "number": 31,
+              "position": "DF"
+            },
+            {
+              "name": "日野 遼生",
+              "number": 34,
+              "position": "DF"
+            },
+            {
+              "name": "山口 優樹",
+              "number": 10,
+              "position": "MF"
+            },
+            {
+              "name": "福間 琉晟",
+              "number": 48,
+              "position": "MF"
+            },
+            {
+              "name": "有富 達哉",
+              "number": 66,
+              "position": "MF"
+            },
+            {
+              "name": "有木 想真",
+              "number": 74,
+              "position": "MF"
+            },
+            {
+              "name": "井谷 魁",
+              "number": 18,
+              "position": "FW"
+            },
+            {
+              "name": "前田 颯人 [Cap]",
+              "number": 22,
+              "position": "FW"
+            },
+            {
+              "name": "藤本 創大",
+              "number": 99,
+              "position": "FW"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "河野 斡大",
+              "number": 4,
+              "position": "DF"
+            },
+            {
+              "name": "内藤 颯吾",
+              "number": 23,
+              "position": "DF"
+            },
+            {
+              "name": "武田 秀翔",
+              "number": 24,
+              "position": "DF"
+            },
+            {
+              "name": "秋野 蒼空",
+              "number": 77,
+              "position": "DF"
+            },
+            {
+              "name": "渡辺 大毅",
+              "number": 7,
+              "position": "MF"
+            },
+            {
+              "name": "泉 楓",
+              "number": 8,
+              "position": "MF"
+            }
+          ]
+        },
+        "away": {
+          "teamName": "鳥取大学",
+          "manager": "加川 由菜",
+          "starters": [
+            {
+              "name": "廣瀬 斗紀",
+              "number": 46,
+              "position": "GK"
+            },
+            {
+              "name": "松田 光平",
+              "number": 4,
+              "position": "DF"
+            },
+            {
+              "name": "土橋 咲友",
+              "number": 6,
+              "position": "DF"
+            },
+            {
+              "name": "花光 海大",
+              "number": 8,
+              "position": "DF"
+            },
+            {
+              "name": "竹本 舜",
+              "number": 18,
+              "position": "DF"
+            },
+            {
+              "name": "清水 楽",
+              "number": 27,
+              "position": "DF"
+            },
+            {
+              "name": "安達 聖仁 [Cap]",
+              "number": 7,
+              "position": "MF"
+            },
+            {
+              "name": "高田 翔太",
+              "number": 17,
+              "position": "MF"
+            },
+            {
+              "name": "伊藤 優剛",
+              "number": 29,
+              "position": "MF"
+            },
+            {
+              "name": "京井 亜樹",
+              "number": 22,
+              "position": "FW"
+            },
+            {
+              "name": "水谷 圭佑",
+              "number": 26,
+              "position": "FW"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "伊地知 陽太",
+              "number": 14,
+              "position": "DF"
+            },
+            {
+              "name": "井上 竣介",
+              "number": 2,
+              "position": "MF"
+            },
+            {
+              "name": "川合 梗士朗",
+              "number": 3,
+              "position": "MF"
+            },
+            {
+              "name": "村石 旺太郎",
+              "number": 10,
+              "position": "MF"
+            },
+            {
+              "name": "横内 優樹",
+              "number": 23,
+              "position": "MF"
+            },
+            {
+              "name": "倉田 琉生",
+              "number": 55,
+              "position": "MF"
+            }
+          ]
+        }
+      },
+      "scoreByPeriod": [
+        {
+          "label": "前半",
+          "home": 2,
+          "away": 2
+        },
+        {
+          "label": "後半",
+          "home": 1,
+          "away": 0
+        }
+      ],
+      "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 1,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 2,
+          "offsides": 2,
+          "shots": 19
+        },
+        "away": {
+          "cornerKicks": 3,
+          "directFreeKicks": 5,
+          "indirectFreeKicks": 2,
+          "offsides": 2,
+          "shots": 17
+        }
+      },
+      "substitutions": {
+        "home": [
+          "69 分 [out]福間 琉晟 [in]渡辺 大毅",
+          "81 分 [out]津島 晴明 [in]内藤 颯吾",
+          "81 分 [out]有木 想真 [in]河野 斡大",
+          "85 分 [out]藤本 創大 [in]秋野 蒼空"
+        ],
+        "away": [
+          "69 分 [out]京井 亜樹 [in]村石 旺太郎",
+          "70 分 [out]伊藤 優剛 [in]横内 優樹",
+          "81 分 [out]清水 楽 [in]川合 梗士朗",
+          "90 分 [out]竹本 舜 [in]井上 竣介"
+        ]
+      },
+      "disciplinary": {
+        "home": [
+          "67 分 藤本 創大 C3 異議"
+        ],
+        "away": []
+      },
+      "goalSummary": {
+        "home": [
+          "09 分 井谷 魁 （津島 晴明）",
+          "45 ＋1 分 福間 琉晟 （日野 遼生）",
+          "64 分 有木 想真"
+        ],
+        "away": [
+          "28 分 安達 聖仁",
+          "30 分 京井 亜樹 （高田 翔太）"
+        ]
+      },
+      "goals": [
+        {
+          "minute": 9,
+          "teamName": "島根県立大学",
+          "scorerNumber": "18",
+          "scorerName": "井谷 魁",
+          "assistNames": [
+            "津島 晴明"
+          ],
+          "buildUp": [
+            {
+              "number": "12",
+              "action": "∩"
+            }
+          ],
+          "finish": "DS"
+        },
+        {
+          "minute": 28,
+          "teamName": "鳥取大学",
+          "scorerNumber": "7",
+          "scorerName": "安達 聖仁",
+          "assistNames": [],
+          "buildUp": [],
+          "finish": "DS"
+        },
+        {
+          "minute": 30,
+          "teamName": "鳥取大学",
+          "scorerNumber": "22",
+          "scorerName": "京井 亜樹",
+          "assistNames": [
+            "高田 翔太"
+          ],
+          "buildUp": [
+            {
+              "number": "17",
+              "action": "∩"
+            }
+          ],
+          "finish": "HS"
+        },
+        {
+          "minute": 45,
+          "teamName": "島根県立大学",
+          "scorerNumber": "48",
+          "scorerName": "福間 琉晟",
+          "assistNames": [
+            "日野 遼生"
+          ],
+          "buildUp": [
+            {
+              "number": "34",
+              "action": "→"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 64,
+          "teamName": "島根県立大学",
+          "scorerNumber": "74",
+          "scorerName": "有木 想真",
+          "assistNames": [],
+          "buildUp": [],
+          "finish": "DS"
+        }
+      ],
+      "officialStatus": "confirmed",
+      "source": {
+        "provider": "football-system.jp",
+        "gameId": 25819,
+        "fedId": 15,
+        "taikaiHoldId": 559
       }
     },
     {
@@ -42150,24 +42502,400 @@
     },
     {
       "id": "football-system-schedule-6eba028bf7d4",
-      "gameId": null,
-      "fedId": null,
-      "taikaiHoldId": null,
+      "gameId": 25821,
+      "fedId": 15,
+      "taikaiHoldId": 559,
       "competitionName": "2026年度 中国大学サッカーリーグ 2部",
       "groupName": null,
-      "roundLabel": null,
-      "penaltyShootout": null,
       "round": 22,
       "kickoffAt": "2026-11-01T13:00:00+09:00",
       "venue": "就実学園祇園グラウンド",
-      "status": "scheduled",
+      "status": "finished",
       "homeTeam": {
         "name": "就実大学",
-        "score": null
+        "score": 0
       },
       "awayTeam": {
         "name": "島根大学",
-        "score": null
+        "score": 6
+      },
+      "matchNumber": 109,
+      "roundLabel": "第22節",
+      "matchFormat": "試合時間：90分 PK戦：なし",
+      "attendance": 10,
+      "conditions": {
+        "weather": "晴",
+        "wind": "微風",
+        "pitch": "全体良"
+      },
+      "officials": [
+        {
+          "role": "主審",
+          "name": "水田勝"
+        },
+        {
+          "role": "副審",
+          "name": "荒木健"
+        },
+        {
+          "role": "副審",
+          "name": "豊島寛人"
+        },
+        {
+          "role": "第４審判",
+          "name": "小森彩"
+        },
+        {
+          "role": "マッチコミッショナー",
+          "name": "浦昌吾"
+        },
+        {
+          "role": "会場責任者",
+          "name": "浦昌吾"
+        },
+        {
+          "role": "記録員",
+          "name": "小森彩耶"
+        }
+      ],
+      "lineups": {
+        "home": {
+          "teamName": "就実大学",
+          "manager": "丹生 裕一",
+          "starters": [
+            {
+              "name": "高月 愛輝",
+              "number": 17,
+              "position": "GK"
+            },
+            {
+              "name": "増岡 唯",
+              "number": 4,
+              "position": "DF"
+            },
+            {
+              "name": "浦 昌吾 [Cap]",
+              "number": 5,
+              "position": "DF"
+            },
+            {
+              "name": "小倉 真",
+              "number": 30,
+              "position": "DF"
+            },
+            {
+              "name": "石原 心",
+              "number": 9,
+              "position": "MF"
+            },
+            {
+              "name": "小田 颯汰",
+              "number": 10,
+              "position": "MF"
+            },
+            {
+              "name": "佐々木 典咲",
+              "number": 12,
+              "position": "MF"
+            },
+            {
+              "name": "石原 拓歩",
+              "number": 13,
+              "position": "MF"
+            },
+            {
+              "name": "古宮 蓮士",
+              "number": 14,
+              "position": "MF"
+            },
+            {
+              "name": "間野 稜汰",
+              "number": 21,
+              "position": "MF"
+            },
+            {
+              "name": "倉貫 立夢",
+              "number": 25,
+              "position": "MF"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "椎葉 颯太",
+              "number": 16,
+              "position": "GK"
+            },
+            {
+              "name": "土江 陸翔",
+              "number": 22,
+              "position": "DF"
+            },
+            {
+              "name": "庄盛 祐輝",
+              "number": 26,
+              "position": "DF"
+            }
+          ]
+        },
+        "away": {
+          "teamName": "島根大学",
+          "manager": "植木 潤",
+          "starters": [
+            {
+              "name": "岡田 陽人",
+              "number": 13,
+              "position": "GK"
+            },
+            {
+              "name": "上野 八雲",
+              "number": 4,
+              "position": "DF"
+            },
+            {
+              "name": "安達 惺成",
+              "number": 17,
+              "position": "DF"
+            },
+            {
+              "name": "淀金 七翔",
+              "number": 87,
+              "position": "DF"
+            },
+            {
+              "name": "松本 理玖",
+              "number": 5,
+              "position": "MF"
+            },
+            {
+              "name": "妹尾 和弥",
+              "number": 24,
+              "position": "MF"
+            },
+            {
+              "name": "淀金 一希",
+              "number": 77,
+              "position": "MF"
+            },
+            {
+              "name": "木村 一貴",
+              "number": 85,
+              "position": "MF"
+            },
+            {
+              "name": "村上 竣平",
+              "number": 8,
+              "position": "FW"
+            },
+            {
+              "name": "井上 海音人 [Cap]",
+              "number": 37,
+              "position": "FW"
+            },
+            {
+              "name": "川上 大翔",
+              "number": 96,
+              "position": "FW"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "原田 悠生",
+              "number": 1,
+              "position": "GK"
+            },
+            {
+              "name": "佐藤 公紀",
+              "number": 14,
+              "position": "DF"
+            },
+            {
+              "name": "野口 颯也",
+              "number": 15,
+              "position": "DF"
+            },
+            {
+              "name": "福島 優仁",
+              "number": 21,
+              "position": "MF"
+            },
+            {
+              "name": "岡田 凌",
+              "number": 67,
+              "position": "MF"
+            },
+            {
+              "name": "丸山 白翔",
+              "number": 9,
+              "position": "FW"
+            },
+            {
+              "name": "武政 祐輝",
+              "number": 35,
+              "position": "FW"
+            }
+          ]
+        }
+      },
+      "scoreByPeriod": [
+        {
+          "label": "前半",
+          "home": 0,
+          "away": 5
+        },
+        {
+          "label": "後半",
+          "home": 0,
+          "away": 1
+        }
+      ],
+      "penaltyShootout": null,
+      "manualStatistics": {
+        "home": {
+          "cornerKicks": 1,
+          "directFreeKicks": 3,
+          "indirectFreeKicks": 0,
+          "offsides": 1,
+          "shots": 2
+        },
+        "away": {
+          "cornerKicks": 4,
+          "directFreeKicks": 4,
+          "indirectFreeKicks": 0,
+          "offsides": 7,
+          "shots": 25
+        }
+      },
+      "substitutions": {
+        "home": [
+          "HT [out]間野 稜汰 [in]土江 陸翔",
+          "71 分 [out]小倉 真 [in]庄盛 祐輝"
+        ],
+        "away": [
+          "59 分 [out]岡田 陽人 [in]原田 悠生",
+          "59 分 [out]妹尾 和弥 [in]岡田 凌",
+          "67 分 [out]井上 海音人 [in]佐藤 公紀",
+          "67 分 [out]松本 理玖 [in]野口 颯也",
+          "71 分 [out]村上 竣平 [in]武政 祐輝"
+        ]
+      },
+      "disciplinary": {
+        "home": [
+          "18 分 石原 拓歩 C1 反スポーツ",
+          "84 分 石原 心 C2 ラフ",
+          "85 分 浦 昌吾 C3 異議"
+        ],
+        "away": []
+      },
+      "goalSummary": {
+        "home": [],
+        "away": [
+          "07 分 木村 一貴",
+          "10 分 木村 一貴",
+          "16 分 井上 海音人 （妹尾 和弥）",
+          "19 分 木村 一貴",
+          "35 分 木村 一貴 （井上 海音人）",
+          "69 分 川上 大翔"
+        ]
+      },
+      "goals": [
+        {
+          "minute": 7,
+          "teamName": "島根大学",
+          "scorerNumber": "85",
+          "scorerName": "木村 一貴",
+          "assistNames": [],
+          "buildUp": [
+            {
+              "number": "85",
+              "action": "×"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 10,
+          "teamName": "島根大学",
+          "scorerNumber": "85",
+          "scorerName": "木村 一貴",
+          "assistNames": [],
+          "buildUp": [
+            {
+              "number": "85",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 16,
+          "teamName": "島根大学",
+          "scorerNumber": "37",
+          "scorerName": "井上 海音人",
+          "assistNames": [
+            "妹尾 和弥"
+          ],
+          "buildUp": [
+            {
+              "number": "24",
+              "action": "→"
+            },
+            {
+              "number": "37",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 19,
+          "teamName": "島根大学",
+          "scorerNumber": "85",
+          "scorerName": "木村 一貴",
+          "assistNames": [],
+          "buildUp": [],
+          "finish": "PK"
+        },
+        {
+          "minute": 35,
+          "teamName": "島根大学",
+          "scorerNumber": "85",
+          "scorerName": "木村 一貴",
+          "assistNames": [
+            "井上 海音人"
+          ],
+          "buildUp": [
+            {
+              "number": "37",
+              "action": "→"
+            },
+            {
+              "number": "85",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        },
+        {
+          "minute": 69,
+          "teamName": "島根大学",
+          "scorerNumber": "96",
+          "scorerName": "川上 大翔",
+          "assistNames": [],
+          "buildUp": [
+            {
+              "number": "96",
+              "action": "S"
+            }
+          ],
+          "finish": "S"
+        }
+      ],
+      "officialStatus": "confirmed",
+      "source": {
+        "provider": "football-system.jp",
+        "gameId": 25821,
+        "fedId": 15,
+        "taikaiHoldId": 559
       }
     },
     {
